@@ -16,7 +16,7 @@ def page(r, rec, model_name, scored=None) -> str:
         ("Tickets read", f"{len(r.tickets):,}", ""),
         ("Locations", str(len(r.locations)), ""),
         ("Already yours", str(len(matched)), "ready"),
-        ("Units", str(len(active)), ""),
+        ("Active units", str(len(active)), ""),
         ("Open quotes", money(sum(o["quoted"] or 0 for o in r.open_quotes)), ""),
         ("Needs a person", str(len(r.review)), "review" if r.review else ""),
     ]

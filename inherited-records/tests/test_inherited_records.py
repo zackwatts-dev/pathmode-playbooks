@@ -304,7 +304,12 @@ def test_year_refrigerant_tag_and_visits_must_be_in_the_ticket_too():
     notes = "RTU-1 Carrier s/n 123456789 mfd 2015 R-410A. Signed PM agreement - quarterly, $1,200/yr, renews 6/1/25."
     t = ir.Ticket({"Ticket": "T1", "Date": "1/2/24", "Location": "Cafe - 12 Main St", "Notes": notes})
     u = unit("rtu", 1, serial="123456789") | {"install_year": 2015, "refrigerant": "R410A"}
-    agreement = {"visits_per_year": 4, "price": "$1,200", "renews": "6/1/25", "evidence": "PM agreement - quarterly"}
+    agreement = {
+        "visits_per_year": 4,
+        "price": "$1,200",
+        "renews": "6/1/25",
+        "evidence": "PM agreement - quarterly, $1,200/yr, renews 6/1/25",
+    }
     ir.read_ticket(t, ScriptedModel([json.dumps(blank(where("Cafe"), units=[u], agreement=agreement))]))
     assert t.read["units"][0]["install_year"] == 2015 and t.read["units"][0]["refrigerant"] == "R410A"
     assert t.read["agreement"]["visits_per_year"] == 4 and not t.problems
@@ -348,7 +353,8 @@ def test_every_merge_row_says_whether_its_ready_or_which_review_items_it_waits_o
     for name in ("locations", "equipment", "agreements", "open-quotes"):
         for row in csv.DictReader((tmp_path / "merge" / f"{name}.csv").open()):
             assert row["review"] == "ready" or row["review"].startswith("needs review: item "), row
-            refs = row["review"].removeprefix("needs review: item ").split(", ") if row["review"] != "ready" else []
+            waits = row["review"].removeprefix("needs review: item ").replace(" (its location)", "")
+            refs = waits.split(", ") if row["review"] != "ready" else []
             assert all(n in items for n in refs)
             waiting += bool(refs)
     assert waiting
@@ -356,3 +362,236 @@ def test_every_merge_row_says_whether_its_ready_or_which_review_items_it_waits_o
         assert (p.status == "ready") == (not p.problems and not any(t.problems for t in p.tickets))
     for u in r.units:
         assert u.status != "ready" or not u.problems
+
+
+# --- the recorded run, replayed: the published numbers, and the properties every row must have ----------------------
+
+import csv  # noqa: E402
+
+import pytest  # noqa: E402
+
+
+@pytest.fixture(scope="module")
+def replayed(tmp_path_factory):
+    out = tmp_path_factory.mktemp("replay")
+    model = ir.Replay(ir.SAMPLE / "recorded-run.json")
+    r, _ = ir.run(ir.SAMPLE, model, out)
+    rows = {n: list(csv.DictReader((out / "merge" / f"{n}.csv").open())) for n in ("agreements", "open-quotes")}
+    rows |= {n: list(csv.DictReader((out / "merge" / f"{n}.csv").open())) for n in ("locations", "equipment")}
+    return r, model, out, rows
+
+
+def test_the_recorded_run_keeps_its_published_numbers(replayed):
+    r, model, out, _ = replayed
+    s = ir.score(r, ir.SAMPLE)
+    assert (s["grouped"], s["tickets"], s["locs"]) == (295, 296, 31)
+    assert (s["loc_ok"], s["loc_asked"], s["loc_split"]) == (25, 5, 1)
+    assert (s["unit_ok"], s["units"], s["ag_ok"], s["o_ok"], s["o_wrong"]) == (92, 92, 16, 14, 0)
+    assert sum(o["quoted"] for o in r.open_quotes) == 96270 and sum(a["annual price"] for a in r.agreements) == 38640
+    assert len(r.review) == 30 and model.misses == 0
+    assert "0 items had no recorded answer" in (out / "score.md").read_text()
+
+
+def test_agreement_and_quote_rows_say_whether_theyre_ready(replayed):
+    _, _, _, rows = replayed
+    assert rows["agreements"] and rows["open-quotes"]
+    for row in rows["agreements"] + rows["open-quotes"]:
+        assert row["review"] == "ready" or row["review"].startswith("needs review: item "), row
+
+
+def test_every_row_at_a_location_with_a_question_waits_on_it(replayed):
+    r, _, _, rows = replayed
+    asked = {x["which"]: x["item"] for x in reversed(r.review) if x["what"] == "location"}
+    for name in ("equipment", "agreements", "open-quotes"):
+        for row in rows[name]:
+            if row["location"] in asked:
+                assert f"{asked[row['location']]} (its location)" in row["review"], row
+    r21 = [row for row in rows["equipment"] if row["location"] == "R21"]
+    assert r21 and all(row["review"].startswith("needs review") for row in r21)
+
+
+def test_a_unit_with_no_serial_is_counted_as_extra(replayed):
+    r, _, _, _ = replayed
+    s = ir.score(r, ir.SAMPLE)
+    assert s["extra_units"] == 1 and s["extra_units_asked"] == 1  # R30's rtu 1, sent to a person
+    assert "1 extra (1 of them sent to a person)" in s["md"]
+
+
+def test_the_dashboard_counts_active_units_and_says_so(replayed):
+    r, model, _, _ = replayed
+    from records_page import page
+
+    html = page(r, REC, model.name)
+    active = sum(1 for u in r.units if not u.replaced_on)
+    assert f"<b>{active}</b>Active units" in html
+
+
+def test_a_replay_that_misses_says_how_many(tmp_path):
+    path = tmp_path / "recording.json"
+    data = json.loads((ir.SAMPLE / "recorded-run.json").read_text())
+    for key in list(data["answers"])[:3]:
+        del data["answers"][key]
+    path.write_text(json.dumps(data))
+    model = ir.Replay(path)
+    ir.run(ir.SAMPLE, model, tmp_path / "out")
+    assert model.misses == 3 and "3 items had no recorded answer" in (tmp_path / "out" / "score.md").read_text()
+
+
+# --- what the AI copies is checked against the ticket, and where in it --------------------------------------------
+
+
+def read(notes, answer, location="Cafe"):
+    t = ir.Ticket({"Ticket": "T1", "Date": "1/2/24", "Location": location, "Notes": notes})
+    ir.read_ticket(t, ScriptedModel([json.dumps(answer)]))
+    return t
+
+
+def test_a_location_the_ai_made_up_isnt_matched_to_your_site():
+    made_up = town("Joe's Diner", "8729", "State Route 89A", "Sedona")
+    t = read("No cool, reset breaker.", blank(made_up), location="Joe's Diner")
+    loc = t.read["location"]
+    assert loc["name"] == "Joe's Diner" and loc["street_number"] is None and loc["street"] is None
+    assert loc["town"] is None and any("address 8729" in x for x in t.problems)
+    review = []
+    locs = ir.group([t], review)
+    ir.match(locs[0], REC)
+    assert locs[0].site != "20"
+
+
+def test_a_different_route_number_or_direction_is_a_different_street():
+    assert not ir.same_address("8729 state route 87", "8729 state route 89a")
+    assert not ir.same_address("500 n fourth st", "500 s fourth st")
+    assert not ir.same_address("500 north fourth st", "500 s fourth st")
+    assert ir.same_address("500 n fourth st", "500 north furth st")  # a typo, and N written out
+
+
+def test_each_unit_value_is_a_whole_word_in_what_the_ticket_says_about_that_unit():
+    t = read("RTU-1 Carrier s/n 111222333.", blank(where("Cafe"), units=[unit("rtu", 1, "1222", make="s", model="n")]))
+    assert t.read["units"][0] | {} == unit("rtu", 1) | {"install_year": None, "refrigerant": None}
+    assert len(t.problems) == 3
+    notes = "RTU-1 Carrier s/n 111111111 mfd 2010 R-22. RTU-2 Trane s/n 222222222 mfd 2018 R-410A."
+    swapped = [
+        unit("rtu", 1, "222222222", "Trane") | {"install_year": 2018, "refrigerant": "R-410A"},
+        unit("rtu", 2, "111111111", "Carrier") | {"install_year": 2010, "refrigerant": "R-22"},
+    ]
+    t = read(notes, blank(where("Cafe"), units=swapped))
+    assert all(u[f] is None for u in t.read["units"] for f in ("serial", "make", "install_year", "refrigerant"))
+    right = [
+        unit("rtu", 1, "111111111", "Carrier") | {"install_year": 2010, "refrigerant": "R-22"},
+        unit("rtu", 2, "222222222", "Trane") | {"install_year": 2018, "refrigerant": "R-410A"},
+    ]
+    t = read(notes, blank(where("Cafe"), units=right))
+    assert not t.problems and t.read["units"][1]["serial"] == "222222222"
+
+
+def test_a_quote_needs_its_amount_in_words_that_quote_something():
+    notes = "No cool. Found bad cont. on RTU2, replaced. Billed $218. Will call back."
+    rec = {"family": "rtu", "number": 2, "work": "contactor", "quoted": "$218", "evidence": "call back"}
+    t = read(notes, blank(where("Cafe"), rec=[rec]))
+    assert t.read["recommended"] == [] and any("don't recommend or quote" in x for x in t.problems)
+    rec = {"family": "rtu", "number": 2, "work": "compressor", "quoted": "$218", "evidence": "Recommend comp"}
+    t = read("RTU2 billed $218. Recommend comp - quoted 3860.", blank(where("Cafe"), rec=[rec]))
+    assert t.read["recommended"][0]["quoted"] is None and any("quoted amount $218" in x for x in t.problems)
+    rec = {"family": "rtu", "number": 2, "work": "compressor", "quoted": "$3-4k", "evidence": "Recommend comp, $3-4k"}
+    t = read("RTU2 no cool. Recommend comp, $3-4k.", blank(where("Cafe"), rec=[rec]))
+    assert t.read["recommended"][0]["quoted"] is None and any("isn't one amount" in x for x in t.problems)
+
+
+def test_a_done_per_quote_that_doesnt_name_the_work_keeps_the_quote_open_for_a_person():
+    p = ir.Location("R01")
+    rec = {
+        "family": "rtu",
+        "number": 2,
+        "work": "compressor",
+        "quoted": "3860",
+        "evidence": "Recommend comp - quoted 3860",
+    }
+    first = read("Not cooling on rtu #2. Recommend comp - quoted 3860.", blank(where("x"), rec=[rec]))
+    done_ = {"family": "rtu", "number": 2, "work": "compressor", "per_quote": True}
+    later = read("Replaced capacitor on rtu #2 per quote, tested ok.", blank(where("x"), done=[done_]))
+    assert later.read["work_done"][0]["per_quote"] is None and later.problems
+    first.when, later.when = date(2024, 1, 1), date(2024, 3, 1)
+    later.row["Ticket"] = "T2"
+    p.tickets = [first, later]
+    _, open_ = ir.promises(p, [])
+    assert [o["quoted"] for o in open_] == [3860] and "T2 may be this work" in open_[0]["check"]
+    # Said in so many words, it closes the quote.
+    sure = read("Installed cmpr on rtu #2 per quote, tested ok.", blank(where("x"), done=[dict(done_)]))
+    sure.when = date(2024, 3, 1)
+    p.tickets = [first, sure]
+    assert ir.promises(p, [])[1] == []
+
+
+def test_renewal_dates_and_prices_are_read_or_sent_to_a_person():
+    assert ir.renewal_date("March 1, 2026") == (date(2026, 3, 1), "")
+    assert ir.renewal_date("Mar 1, 2026")[0] == date(2026, 3, 1) and ir.renewal_date("1-Aug-25")[0] == date(2025, 8, 1)
+    assert ir.renewal_date("01/03/26")[0] is None and "more than one way" in ir.renewal_date("01/03/26")[1]
+    assert ir.renewal_date("next spring")[0] is None and ir.renewal_date("next spring")[1]
+    assert ir.annual("$290/mo") == (3480, "") and ir.annual("$600 per quarter") == (2400, "")
+    assert ir.annual("$1,200/yr") == (1200, "") and ir.annual("$95 per visit")[0] is None
+    p = ir.Location("R01")
+    terms = {"visits_per_year": 12, "price": "$290/mo", "renews": "01/03/26", "evidence": "x"}
+    p.tickets = [ticket("A", date(2024, 1, 1), "", "", blank(where("x"), agreement=terms))]
+    a, _ = ir.promises(p, [])
+    assert a["annual price"] == 3480 and a["renews"] is None and "more than one way" in a["check"]
+
+
+# --- units: replacements and near serials -------------------------------------------------------------------------
+
+
+def test_a_replacement_isnt_retired_on_its_own_install_date():
+    p = ir.Location("R01")
+    swap = {"family": "rtu", "number": 1, "work": "replace unit", "per_quote": True}
+    p.tickets = [
+        ticket("A", date(2023, 5, 1), "", "", blank(where("x"), units=[unit("rtu", 1, "111111111")])),
+        ticket("B", date(2024, 5, 1), "", "", blank(where("x"), units=[unit("rtu", 1, "222222222")], done=[swap])),
+        ticket("C", date(2024, 9, 1), "", "", blank(where("x"), units=[unit("rtu", 1, "333333333")])),
+    ]
+    old, new, third = ir.units_at(p, REC)
+    assert old.replaced_on == date(2024, 5, 1) and not new.replaced_on and not third.replaced_on
+    assert any("another serial (333333333)" in x for x in new.problems)  # no replacement after it: a question
+
+
+def test_replacing_the_rtu_without_saying_which_goes_to_a_person():
+    p = ir.Location("R01")
+    swap = {"family": "rtu", "number": None, "work": "replace unit", "per_quote": False}
+    p.tickets = [
+        ticket("A", date(2023, 5, 1), "", "", blank(where("x"), units=[unit("rtu", 1, "111111111")])),
+        ticket("B", date(2023, 5, 1), "", "", blank(where("x"), units=[unit("rtu", 3, "333333333")])),
+        ticket("C", date(2024, 5, 1), "", "", blank(where("x"), units=[unit("rtu", None, "444444444")], done=[swap])),
+    ]
+    us = ir.units_at(p, REC)
+    assert not any(u.replaced_on for u in us)
+    assert any("without saying which" in x for x in p.problems)
+    assert any("a person says which" in x for x in us[-1].problems)
+
+
+def test_a_near_serial_thats_another_of_your_records_is_that_unit_not_a_typo():
+    rec = ir.Records.load(ir.SAMPLE)
+    rec.equipment["2218"] = rec.equipment["2218"] + [
+        {"Equipment ID": "90002", "Site ID": "2218", "Family": "rtu", "Serial": "323010763", "Make": "Lennox"}
+    ]
+    p = ir.Location("R01")
+    p.site = "2218"
+    p.tickets = [
+        ticket("A", date(2023, 1, 5), "", "", blank(where("x"), units=[unit("rtu", 1, "323010762")])),
+        ticket("B", date(2023, 3, 1), "", "", blank(where("x"), units=[unit("rtu", None, "323010763")])),
+    ]
+    us = ir.units_at(p, rec)
+    assert sorted(u.summit for u in us) == ["90002", "9365"]
+
+
+def test_an_unnumbered_near_serial_goes_to_a_person():
+    p = ir.Location("R01")
+    p.tickets = [
+        ticket("A", date(2023, 1, 5), "", "", blank(where("x"), units=[unit("rtu", 1, "441700631")])),
+        ticket("B", date(2023, 3, 1), "", "", blank(where("x"), units=[unit("rtu", None, "441700632")])),
+    ]
+    us = ir.units_at(p, REC)
+    assert len(us) == 2 and any("one mistyping from" in x for x in us[1].problems)
+    # "The boiler", the only one here, with a serial one mistyping from its own: the same boiler.
+    p.tickets = [
+        ticket("A", date(2023, 1, 5), "", "", blank(where("x"), units=[unit("boiler", None, "441700631")])),
+        ticket("B", date(2023, 3, 1), "", "", blank(where("x"), units=[unit("boiler", None, "441700632")])),
+    ]
+    assert len(ir.units_at(p, REC)) == 1

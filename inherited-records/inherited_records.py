@@ -13,7 +13,8 @@ The AI reads; code decides.
   tie to a customer) goes to a person.
 
 Writes out/merge/locations.csv, equipment.csv, agreements.csv and open-quotes.csv (each row ready, or marked with
-the review items it waits on), out/review.csv, out/dashboard.html and, with the sample, out/score.md.
+the review items it waits on, its location's included), out/review.csv, out/dashboard.html and, with the sample,
+out/score.md.
 """
 
 from __future__ import annotations
@@ -42,12 +43,30 @@ WORK = (
     "drain", "igniter", "flame sensor", "circulator pump", "low water cutoff", "door gasket", "evaporator fan motor",
     "defrost timer", "compressor", "replace unit", "maintenance", "other",
 )  # fmt: skip
-DATE_FORMATS = ("%m/%d/%y", "%m/%d/%Y", "%Y-%m-%d", "%b %d %Y", "%d-%b-%y")
+# Numeric dates are read month first, as US offices write them.
+DATE_FORMATS = ("%m/%d/%y", "%m/%d/%Y", "%Y-%m-%d", "%b %d %Y", "%d-%b-%y", "%B %d %Y", "%d-%b-%Y", "%m-%d-%Y",
+                "%m-%d-%y", "%d %b %Y", "%d %B %Y", "%b. %d %Y")  # fmt: skip
 SUFFIX = {"street": "st", "st": "st", "road": "rd", "rd": "rd", "avenue": "ave", "ave": "ave", "boulevard": "blvd",
           "blvd": "blvd", "drive": "dr", "dr": "dr"}  # fmt: skip
 NAME_NOISE = {"the", "store", "inc", "llc", "family", "company", "grill", "kitchens", "accounting", "co"}
 TAG_WORDS = {"rtu": ("rtu", "unit"), "split": ("ac", "split", "unit"), "boiler": ("boiler",),
              "walkin": ("walkin", "wic"), "reachin": ("reachin", "ri")}  # fmt: skip
+# A difference in one of these is a different address, never a typo: 500 N Fourth St isn't 500 S Fourth St.
+DIRECTIONS = {"n": "n", "north": "n", "s": "s", "south": "s", "e": "e", "east": "e", "w": "w", "west": "w",
+              "ne": "ne", "nw": "nw", "se": "se", "sw": "sw"}  # fmt: skip
+# The words a ticket uses for each kind of work, so code can check a "done per the quote" names the quoted job.
+WORK_WORDS = {
+    "capacitor": ("cap", "caps", "capacitor"), "contactor": ("cont", "contactor"),
+    "condenser fan motor": ("fan motor", "od fan", "condenser fan", "cond fan"), "refrigerant leak": ("leak",),
+    "belt": ("belt", "belts"), "economizer": ("econ", "economizer"),
+    "thermostat or control": ("thermostat", "tstat", "control", "controls", "board"),
+    "drain": ("drain", "condensate"), "igniter": ("igniter", "ignitor"), "flame sensor": ("flame sensor",),
+    "circulator pump": ("circulator", "circ pump"), "low water cutoff": ("low water", "lwco"),
+    "door gasket": ("gasket",), "evaporator fan motor": ("evap fan", "evaporator fan"), "defrost timer": ("defrost",),
+    "compressor": ("comp", "cmpr", "compressor"), "replace unit": ("replaced", "replacement", "new"),
+}  # fmt: skip
+QUOTE_WORDS = re.compile(r"\b(quot\w*|recommend\w*|rec|recd|est|estimate\w*|propos\w*|bid)\b", re.I)
+PER_QUOTE = re.compile(r"\bper (?:the |our |a )?(?:quote|estimate|proposal)\b", re.I)
 # How tickets say how often: "quarterly" is 4 visits a year. Plain "annual" isn't here: it's said of the price too.
 VISIT_WORDS = {"monthly": 12, "quarterly": 4, "semi annual": 2, "semiannual": 2, "twice a year": 2, "once a year": 1}
 
@@ -84,14 +103,38 @@ def parse_date(s: str) -> date | None:
     return None
 
 
+def renewal_date(s) -> tuple[date | None, str]:
+    """A renewal date, and what's wrong with it if code can't be sure. 01/03/26 could be three different days."""
+    s = str(s or "").strip()
+    parts = re.fullmatch(r"(\d{1,4})[/.-](\d{1,2})[/.-](\d{1,4})", s)
+    if parts and all(len(x) == 2 for x in parts.groups()) and len({int(x) for x in parts.groups()}) > 1:
+        if all(int(x) <= 12 for x in parts.groups()[:2]):
+            return None, f"renewal date {s} could be read more than one way; a person says which"
+    d = parse_date(s) or parse_date(" ".join(s.replace(",", " ").split()))
+    return (d, "") if d else (None, f"renewal date {s} isn't a date code can read; a person enters it")
+
+
+def annual(s) -> tuple[float | None, str]:
+    """An agreement's price a year, and what's wrong with it if code can't be sure. $290/mo is $3,480 a year."""
+    x, text = money(s), str(s or "").lower()
+    if x is None:
+        return None, f"price {s} isn't an amount code can read; a person enters it"
+    if re.search(r"/\s*mo\b|/\s*month|\bper month|\ba month|\bmonthly|\bmo\.?$", text):
+        return x * 12, ""
+    if re.search(r"/\s*q(?:tr|uarter)?\b|\bper quarter|\ba quarter|\bquarterly", text):
+        return x * 4, ""
+    if re.search(r"/\s*(?:wk|week|visit|day)\b|\bper (?:week|visit|day)|\beach\b", text):
+        return None, f"price {s} isn't a price a year; a person works it out"
+    return x, ""
+
+
 def money(s) -> float | None:
-    if s is None:
+    """One amount, as written: "$1,360.00/yr", "4.2k". A range ("$3-4k"), or words ("four grand"), is None."""
+    found = re.findall(r"\$?\s*(\d[\d,]*(?:\.\d+)?)\s*(k)?", str(s or ""), re.I)
+    if len(found) != 1:
         return None
-    m = re.search(r"\$?\s*(\d[\d,]*(?:\.\d+)?)\s*(k)?", str(s), re.I)
-    if not m:
-        return None
-    x = float(m.group(1).replace(",", ""))
-    return x * 1000 if m.group(2) else x
+    x = float(found[0][0].replace(",", ""))
+    return x * 1000 if found[0][1] else x
 
 
 def squash(s) -> str:
@@ -115,10 +158,19 @@ def town_key(town) -> str | None:
 
 
 def same_address(a: str, b: str) -> bool:
-    """The same street number, and street names that differ by no more than a typo."""
+    """The same street number, and street names that differ by no more than a typo. A different number in the street
+    name (Route 87, Route 89A) or a different direction (N, S) is a different street, however alike they look."""
     na, _, sa = a.partition(" ")
     nb, _, sb = b.partition(" ")
-    return na == nb and difflib.SequenceMatcher(None, sa, sb).ratio() >= 0.85
+    if na != nb:
+        return False
+
+    sa, sb = (" ".join(DIRECTIONS.get(w, w) for w in x.split()) for x in (sa, sb))
+
+    def fixed(street: str) -> list[str]:
+        return [w for w in street.split() if w in DIRECTIONS or re.search(r"\d", w)]
+
+    return fixed(sa) == fixed(sb) and difflib.SequenceMatcher(None, sa, sb).ratio() >= 0.85
 
 
 def name_key(name) -> str:
@@ -260,33 +312,82 @@ def tag_in(family: str, number: int, text: str) -> bool:
     return any(value_in_quote(f"{w}{number}", text) for w in TAG_WORDS.get(family, ()))
 
 
+def tag_starts(family: str, number: int | None, text: str) -> list[int]:
+    """Where the unit's tag is written in the ticket. A word that names the kind ("RTU-2", "AC 1", "the boiler") is
+    used before the generic "unit 2", which could be any kind."""
+    toks = [(m.group(), m.start()) for m in re.finditer(r"[a-z0-9]+", text.lower())]
+    words = TAG_WORDS.get(family, ()) + (family,)
+    for group in ([w for w in words if w != "unit"], ["unit"] if number is not None else []):
+        wants = {f"{w}{'' if number is None else number}" for w in group}
+        found = []
+        for i, (_, at) in enumerate(toks):
+            joined = ""
+            for tok, _ in toks[i : i + 4]:
+                joined += tok
+                if joined in wants:
+                    found.append(at)
+                    break
+        if found:
+            return found
+    return []
+
+
+def unit_evidence(u: dict, units: list[dict], text: str) -> str:
+    """The words a unit's details must come from. With one unit in the ticket, the ticket; with several, the words
+    from each mention of its tag up to the next unit's tag, so RTU-1's serial can't be taken from RTU-2's words."""
+    if len(units) <= 1:
+        return text
+    mine = tag_starts(u["family"], u.get("number"), text)
+    others = sorted({at for x in units if x is not u for at in tag_starts(x["family"], x.get("number"), text)})
+    pieces = []
+    for at in mine:
+        end = next((o for o in others if o > at and o not in mine), len(text))
+        pieces.append(text[at:end])
+    return " ... ".join(pieces)
+
+
 def visits_in(n: int, quote: str) -> bool:
     """The visits a year are in the agreement's words: as a number ("4 visits") or a word ("quarterly")."""
     words = " ".join(re.findall(r"[a-z0-9]+", quote.lower()))
     return value_in_quote(n, quote) or any(re.search(rf"\b{w}\b", words) and v == n for w, v in VISIT_WORDS.items())
 
 
+def words_in(value, text: str) -> bool:
+    """Every word of a name or street is in the ticket ("Fourth Street" is in "4613 Fourth st.")."""
+    norm = [SUFFIX.get(w, DIRECTIONS.get(w, w)) for w in re.findall(r"[a-z0-9]+", text.lower())]
+    want = [SUFFIX.get(w, DIRECTIONS.get(w, w)) for w in re.findall(r"[a-z0-9]+", str(value).lower())]
+    return bool(want) and all(w in norm for w in want)
+
+
+def work_named(work: str, text: str) -> bool:
+    """The ticket names this kind of work in its own words: "Installed cmpr" is a compressor."""
+    words = " ".join(re.findall(r"[a-z0-9]+", text.lower()))
+    return any(re.search(rf"\b{w}\b", words) for w in WORK_WORDS.get(work, (work,)))
+
+
 def check(t: Ticket, text: str) -> None:
     """Every value the AI copied must be in the ticket. A value that isn't is dropped, and a person is told."""
-    flat = squash(text)
     a = t.read
+    check_location(t, text)
     units = []
     for u in a["units"]:
         if u.get("family") not in FAMILIES:
             t.problems.append(f"a unit with an unknown kind ({u.get('family')})")
             continue
-        for f in ("serial", "model", "make"):
-            if u.get(f) and squash(u[f]) not in flat:
-                t.problems.append(f"{f} {u[f]} isn't in the ticket")
-                u[f] = None
-        for f in ("install_year", "refrigerant"):  # R-22 or not decides what a repair costs
-            if u.get(f) is not None and not value_in_quote(u[f], text):
-                t.problems.append(f"{f.replace('_', ' ')} {u[f]} isn't in the ticket")
-                u[f] = None
         if u.get("number") is not None and not tag_in(u["family"], u["number"], text):
             t.problems.append(f"unit {u['family']} {u['number']} isn't in the ticket; a person says which unit")
             continue  # without its tag, a mention could land on the wrong unit
         units.append(u)
+    for u in units:
+        # Each value is a whole word (or run of words) in the words about this unit: serial 1222 isn't in 111222333,
+        # and RTU-1's serial isn't in what the ticket says about RTU-2.
+        evidence = unit_evidence(u, units, text)
+        where = f"{u['family']} {u.get('number') or ''}".strip()
+        for f in ("serial", "model", "make", "install_year", "refrigerant"):  # R-22 or not decides a repair's cost
+            v = u.get(f)
+            if v is not None and (len(squash(v)) < 2 or not value_in_quote(v, evidence)):
+                t.problems.append(f"{f.replace('_', ' ')} {v} isn't in the ticket's words about {where}")
+                u[f] = None
     a["units"] = units
     for key in ("work_done", "recommended"):
         kept = []
@@ -299,13 +400,19 @@ def check(t: Ticket, text: str) -> None:
             if w.get("number") is not None and not tag_in(w["family"], w["number"], text):
                 t.problems.append(f"{key.replace('_', ' ')} on {w['family']} {w['number']}, which isn't in the ticket")
                 continue
-            if key == "recommended":
-                if not quote_found(str(w.get("evidence") or ""), text, min_words=2):
-                    t.problems.append("a recommendation's evidence isn't in the ticket")
-                    continue
-                if w.get("quoted") and squash(w["quoted"]) not in flat:
-                    t.problems.append(f"quoted amount {w['quoted']} isn't in the ticket")
-                    w["quoted"] = None
+            if key == "recommended" and not check_recommendation(t, w, text):
+                continue
+            if (
+                key == "work_done"
+                and w.get("per_quote")
+                and not (PER_QUOTE.search(text) and work_named(w["work"], text))
+            ):
+                # Done per a quote closes the quote. The ticket must say so, and name the same work, or a person checks.
+                w["per_quote"], w["doubt"] = None, t.id
+                t.problems.append(
+                    f"{w['work']} on {w['family']} {w.get('number') or ''} read as done per a quote, but the ticket "
+                    "doesn't say that in so many words; a person checks whether it closes a quote"
+                )
             kept.append(w)
         a[key] = kept
     ag = a.get("agreement")
@@ -313,13 +420,48 @@ def check(t: Ticket, text: str) -> None:
         evidence = str(ag.get("evidence") or "")
         ok = quote_found(evidence, text, min_words=2)
         for f in ("price", "renews"):
-            ok = ok and bool(ag.get(f)) and squash(ag[f]) in flat
+            ok = ok and bool(ag.get(f)) and value_in_quote(ag[f], evidence)
         if not ok:
             t.problems.append("an agreement whose terms aren't all in the ticket")
             a["agreement"] = None
         elif ag.get("visits_per_year") is not None and not visits_in(ag["visits_per_year"], evidence):
             t.problems.append(f"{ag['visits_per_year']} visits a year isn't in the agreement's words")
             ag["visits_per_year"] = None
+
+
+def check_location(t: Ticket, text: str) -> None:
+    """The location's name, address and town must be in the ticket. An address the AI supplied itself would match a
+    real site of yours, so it's dropped (number and street together), and a person is told."""
+    loc = t.read["location"]
+    for f in ("name", "town"):
+        if loc.get(f) and not words_in(loc[f], text):
+            t.problems.append(f"location {f} {loc[f]} isn't in the ticket")
+            loc[f] = None
+    number, street = loc.get("street_number"), loc.get("street")
+    if not (number and street):
+        return  # half an address isn't used to group or match
+    if not (value_in_quote(number, text) and (value_in_quote(street, text) or words_in(street, text))):
+        t.problems.append(f"address {number} {street} isn't in the ticket")
+        loc["street_number"] = loc["street"] = None
+
+
+def check_recommendation(t: Ticket, w: dict, text: str) -> bool:
+    """A quote is a recommendation in the ticket's words, and its amount is in those words: "Billed $218 ... will call
+    back" isn't a quote. Without that, it isn't kept, and a person is told."""
+    evidence = str(w.get("evidence") or "")
+    if not quote_found(evidence, text, min_words=2):
+        t.problems.append("a recommendation's evidence isn't in the ticket")
+        return False
+    if not QUOTE_WORDS.search(evidence):
+        t.problems.append(f"a recommendation whose words don't recommend or quote anything ({evidence})"[:160])
+        return False
+    if w.get("quoted") and not value_in_quote(w["quoted"], evidence):
+        t.problems.append(f"quoted amount {w['quoted']} isn't in the recommendation's words")
+        w["quoted"] = None
+    elif w.get("quoted") and money(w["quoted"]) is None:
+        t.problems.append(f"quoted amount {w['quoted']} isn't one amount code can read; a person enters it")
+        w["quoted"] = None
+    return True
 
 
 # --- code: locations ----------------------------------------------------------------------------------------------
@@ -503,12 +645,16 @@ class Unit:
         return self.family, self.number or 1
 
 
-def by_serial(units: list[Unit], family: str, number: int | None, serial: str) -> tuple[Unit | None, list[Unit]]:
+def by_serial(
+    units: list[Unit], family: str, number: int | None, serial: str, yours: set[str] = frozenset()
+) -> tuple[Unit | None, list[Unit]]:
     """The unit a written serial belongs to, and the units it might be if that's unclear.
 
     The same serial is the same unit, even written on another tag (a person is told). A serial one mistyping away
-    is the same unit only on the same tag, or where one side has no number: units installed together often have
-    serials one apart, and RTU-1 and RTU-2 are two units however alike their serials look."""
+    is the same unit only on the same tag: units installed together often have serials one apart, and RTU-1 and
+    RTU-2 are two units however alike their serials look. Two serials that are both in your equipment records are two
+    units, never a typo. A serial written with no tag that's one mistyping from a unit's is a question for a person,
+    unless that unit is the only one of its kind here and has no number either ("the boiler")."""
     same = [x for x in units if x.family == family and serial in x.serials]
     if same:
         u = same[-1]
@@ -521,23 +667,50 @@ def by_serial(units: list[Unit], family: str, number: int | None, serial: str) -
         if x.family == family
         and (number is None or x.number is None or x.number == number)
         and any(near(serial, s) for s in x.serials)
+        and not (serial in yours and any(s in yours for s in x.serials))
     ]
+    if len(close) == 1 and number is None:
+        alone = all(y is close[0] for y in units if y.family == family)
+        if close[0].number is not None or not alone:
+            return None, close
     return (close[0], []) if len(close) == 1 else (None, close)
 
 
 def units_at(p: Location, rec: Records) -> list[Unit]:
     units: list[Unit] = []
+    mine = {e["Serial"]: e for e in rec.equipment.get(p.site or "", [])}
+    numbers = defaultdict(set)  # family -> the unit numbers written for it here
+    for t in p.tickets:
+        for m in t.read.get("units", []):
+            numbers[m["family"]].add(m.get("number"))
+
+    def tag_of(family: str, number: int | None) -> tuple[str, int] | None:
+        """The tag a mention is on. "The RTU" is the one RTU here, or, with several, no tag code can be sure of."""
+        if number is not None:
+            return family, number
+        known = numbers[family] - {None}
+        return (family, next(iter(known)) if known else 1) if len(known) <= 1 else None
+
     replaced = defaultdict(list)  # tag -> dates a whole-unit replacement was done
     for t in sorted(p.tickets, key=lambda t: t.when or date.min):
         for w in t.read.get("work_done", []):
             if w["work"] == "replace unit":
-                replaced[(w["family"], w.get("number") or 1)].append(t.when)
+                tag = tag_of(w["family"], w.get("number"))
+                if tag:
+                    replaced[tag].append(t.when)
+                else:
+                    p.problems.append(
+                        f"ticket {t.id} replaced a whole {w['family']} without saying which, and there are "
+                        f"{len(numbers[w['family']] - {None})} here; a person says which unit was replaced"
+                    )
         for m in t.read.get("units", []):
-            tag = (m["family"], m.get("number") or 1)
+            tag = tag_of(m["family"], m.get("number"))
             serial = squash(m.get("serial"))
-            u, unsure = by_serial(units, m["family"], m.get("number"), serial) if serial else (None, [])
+            u, unsure = by_serial(units, m["family"], m.get("number"), serial, set(mine)) if serial else (None, [])
             if u is None and not unsure:
-                live = [x for x in units if x.tag == tag and not x.replaced_on]
+                if not tag and not serial:
+                    continue  # "the RTU", with several here and no serial: no way to tell which it's about
+                live = [x for x in units if x.tag == tag and not x.replaced_on] if tag else []
                 if not serial:
                     u = live[-1] if live else None
                 elif live and not live[-1].serials:  # mentioned by its tag before anyone wrote its serial down
@@ -552,13 +725,17 @@ def units_at(p: Location, rec: Records) -> list[Unit]:
                         )
                         + ": a person says which it is, or that it's another unit"
                     )
-                if serial:  # a new serial on a tag that already has one: replaced, or a question for a person
+                if serial and tag:  # a new serial on a tag that already has one: replaced, or a question for a person
                     for old in (x for x in units if x.tag == tag and not x.replaced_on and x.serials):
-                        if any(old.first and d and d >= old.first for d in replaced.get(tag, [])):
-                            old.replaced_on = max(d for d in replaced[tag])
+                        # Only a replacement after the old unit was first seen retires it: never on its own first day.
+                        after = [d for d in replaced.get(tag, []) if old.first and d and d > old.first]
+                        if after:
+                            old.replaced_on = min(after)
                         else:
                             old.problems.append(f"another serial ({serial}) is written for the same unit later")
                 units.append(u)
+            if u.number is None and m.get("number") is not None:
+                u.number = m["number"]
             if serial:
                 u.serials[serial] += 1
             u.tickets.add(t.id)
@@ -568,8 +745,11 @@ def units_at(p: Location, rec: Records) -> list[Unit]:
                 u.models[squash(m["model"]).upper()] += 1
             u.year = u.year or m.get("install_year")
             u.refrigerant = u.refrigerant or m.get("refrigerant")
-    mine = {e["Serial"]: e for e in rec.equipment.get(p.site or "", [])}
     for u in units:
+        if u.number is None and not tag_of(u.family, None) and not any(s in mine for s in u.serials):
+            u.problems.append(
+                f"written without its number, and there are several {u.family}s here; a person says which"
+            )
         if not u.serials:
             u.problems.append("no serial number anywhere in the tickets")
             continue
@@ -598,21 +778,31 @@ def promises(p: Location, units: list[Unit]) -> tuple[dict | None, list[dict]]:
         if t.read.get("agreement"):
             a = t.read["agreement"]
             before = agreement or {}
+            price, price_check = annual(a["price"])
+            renews, date_check = renewal_date(a["renews"])
             agreement = {
                 "location": p.id,
                 # a renewal may not restate the visits
                 "visits a year": a.get("visits_per_year") or before.get("visits a year"),
-                "annual price": money(a["price"]),
-                "renews": parse_date(a["renews"]),
+                "annual price": price,
+                "renews": renews,
                 "ticket": t.id,
                 # the tickets its terms come from, so what's in question about them follows it
                 "sources": [t.id] if a.get("visits_per_year") else before.get("sources", []) + [t.id],
+                "check": "; ".join(x for x in (price_check, date_check) if x),
             }
         for w in t.read.get("recommended", []):
             recs.append((t, w))
         for w in t.read.get("work_done", []):
-            if w.get("per_quote"):
-                done_.append((t.when, (w["family"], w.get("number") or 1), w["work"]))
+            if w.get("per_quote") or w.get("doubt"):  # done per a quote, or read that way without the ticket saying so
+                done_.append((t.when, w["family"], w.get("number"), w["work"], t.id, bool(w.get("per_quote"))))
+
+    def same_unit(family: str, a: int | None, b: int | None) -> bool | None:
+        """True if two mentions are the same unit, False if not, None if code can't tell ("the RTU", with several)."""
+        several = len({u.number for u in units if u.family == family}) > 1
+        if a is not None and b is not None:
+            return a == b
+        return None if several else True
 
     def unit_then(tag, when):
         live = [u for u in units if u.tag == tag and (u.first is None or when is None or u.first <= when)]
@@ -621,18 +811,26 @@ def promises(p: Location, units: list[Unit]) -> tuple[dict | None, list[dict]]:
     open_ = []
     for t, w in recs:
         tag = (w["family"], w.get("number") or 1)
-        if any(d and t.when and d > t.when and tg == tag and wk == w["work"] for d, tg, wk in done_):
-            continue
+        later = [
+            (sure, same_unit(w["family"], w.get("number"), n), tid)
+            for d, fam, n, work, tid, sure in done_
+            if d and t.when and d > t.when and fam == w["family"] and work == w["work"]
+        ]
+        if any(sure and same is True for sure, same, _ in later):
+            continue  # done per the quote, on the same unit, in the ticket's own words
         u = unit_then(tag, t.when)
         same_kind = {x.number for x in units if x.family == w["family"]}
         unsure = w.get("number") is None and len(same_kind) > 1  # "the RTU", at a place with several
+        checks = [f"which {w['family']}? the ticket's reading names none, and there are {len(same_kind)}"] * unsure
+        # Never closed on a maybe: a later ticket that might be this job keeps it open, for a person to confirm.
+        maybe = sorted({tid for sure, same, tid in later if same is not False})
+        if maybe:
+            checks.append(f"ticket {', '.join(maybe)} may be this work done per the quote; a person confirms")
         open_.append(
             {
                 "location": p.id,
                 "serial": "" if unsure or not u else u.serial,
-                "check": f"which {w['family']}? the ticket's reading names none, and there are {len(same_kind)}"
-                if unsure
-                else "",
+                "check": "; ".join(checks),
                 "work": w["work"],
                 "quoted": money(w.get("quoted")),
                 "ticket": t.id,
@@ -678,8 +876,8 @@ def process(folder: Path, model) -> Result:
         units += us
         agreements += [a] if a else []
         open_quotes += o
-        mine = ask(review, [{"what": "location", "which": p.id, "why": x, "ticket": p.name} for x in p.problems])
-        p.status = status(mine + [i for t in p.tickets for i in of_ticket[t.id]])
+        here = ask(review, [{"what": "location", "which": p.id, "why": x, "ticket": p.name} for x in p.problems])
+        p.status = status(here + [i for t in p.tickets for i in of_ticket[t.id]])
         quote_items = [
             ask(review, [{"what": "open quote", "which": f"{p.id} {q['ticket']}", "why": q["check"], "ticket": p.name}])
             if q["check"]
@@ -690,12 +888,17 @@ def process(folder: Path, model) -> Result:
         for u in us:
             which = f"{p.id} {u.family} {u.number or ''}".strip()
             mine = ask(review, [{"what": "unit", "which": which, "why": x, "ticket": p.name} for x in u.problems])
-            u.status = status(mine + [i for t in sorted(u.tickets) for i in of_ticket[t]])
+            # A unit waits on its location too: until a person settles whose place it is, nothing there is ready.
+            u.status = status(mine + [i for t in sorted(u.tickets) for i in of_ticket[t]], here)
             of_serial[u.serial] += mine
         for q, mine in zip(o, quote_items, strict=True):
-            q["status"] = status(mine + of_ticket[q["ticket"]] + (of_serial[q["serial"]] if q["serial"] else []))
+            own = mine + of_ticket[q["ticket"]] + (of_serial[q["serial"]] if q["serial"] else [])
+            q["review"] = status(own, here)
         if a:
-            a["status"] = status([i for t in a["sources"] for i in of_ticket[t]])
+            mine = ask(
+                review, [{"what": "agreement", "which": p.id, "why": a["check"], "ticket": p.name}] * bool(a["check"])
+            )
+            a["review"] = status(mine + [i for t in a["sources"] for i in of_ticket[t]], here)
     for i, x in enumerate(review, 1):
         x["item"] = i
     return Result(tickets, locs, units, agreements, open_quotes, review)
@@ -707,10 +910,11 @@ def ask(review: list[dict], items: list[dict]) -> list[int]:
     return list(range(len(review) - len(items) + 1, len(review) + 1))
 
 
-def status(items: list[int]) -> str:
-    """A merge row is ready, or waits on the review items that are about it."""
-    items = sorted(set(items))
-    return "needs review: item " + ", ".join(map(str, items)) if items else "ready"
+def status(items: list[int], location: list[int] = ()) -> str:
+    """A merge row is ready, or waits on the review items that are about it, and on its location's."""
+    own = sorted(set(items) - set(location))
+    waits = [str(i) for i in own] + [f"{i} (its location)" for i in sorted(set(location))]
+    return "needs review: item " + ", ".join(waits) if waits else "ready"
 
 
 def score(r: Result, folder: Path) -> dict:
@@ -749,7 +953,10 @@ def score(r: Result, folder: Path) -> dict:
         and (found[(u["Location"], u["Serial"])].summit or "NEW") == u["Summit equipment"]
         and bool(found[(u["Location"], u["Serial"])].replaced_on) == (u["Status"] == "replaced")
     )
-    extra_u = len([1 for k in found if k not in {(u["Location"], u["Serial"]) for u in truth_u}])
+    true_keys = {(u["Location"], u["Serial"]) for u in truth_u}
+    # A unit with no serial can't be any unit in the key: it's extra, and counted, so a phantom unit can't hide.
+    extras = [u for k, u in found.items() if k not in true_keys] + [u for u in r.units if not u.serial]
+    extra_u, extra_asked = len(extras), sum(1 for u in extras if u.problems)
     flagged_u = 0  # not right, but sent to a person: a unit with the same (or a mistyped) serial and a question on it
     for u in truth_u:
         mine = found.get((u["Location"], u["Serial"]))
@@ -786,7 +993,8 @@ def score(r: Result, folder: Path) -> dict:
         + (f", {split} a second location for a place already found, sent to a person" if split else "")
         + f", {len(r.locations) - ok_loc - asked - split} wrong.",
         f"- Units with the right serial, match and status: {unit_ok} of {len(truth_u)}; {flagged_u} more sent to a "
-        f"person; {len(truth_u) - unit_ok - flagged_u} missed or wrong ({extra_u} extra).",
+        f"person; {len(truth_u) - unit_ok - flagged_u} missed or wrong. {extra_u} extra "
+        f"({extra_asked} of them sent to a person).",
         f"- Agreements with the right terms: {ag_ok} of {len(truth_a)} ({len(r.agreements)} found).",
         f"- Open quotes found: {o_ok} of {len(truth_o)} ({len(mine_o - truth_o)} wrong or extra).",
     ]
@@ -801,6 +1009,7 @@ def score(r: Result, folder: Path) -> dict:
         "unit_ok": unit_ok,
         "units": len(truth_u),
         "extra_units": extra_u,
+        "extra_units_asked": extra_asked,
         "units_asked": flagged_u,
         "ag_ok": ag_ok,
         "ags": len(truth_a),
@@ -872,7 +1081,7 @@ def run(folder: Path, model, out: Path, answer_key: bool = True):
         write_csv(
             merge / "agreements.csv",
             r.agreements,
-            ["location", "visits a year", "annual price", "renews", "ticket", "review"],
+            ["location", "visits a year", "annual price", "renews", "ticket", "check", "review"],
         ),
         write_csv(
             merge / "open-quotes.csv",
@@ -884,7 +1093,8 @@ def run(folder: Path, model, out: Path, answer_key: bool = True):
     scored = score(r, folder) if answer_key and (folder / "answer-key").exists() else None
     written.insert(0, write_text(out / "dashboard.html", page(r, rec, model.name, scored)))
     if scored:
-        written.append(write_text(out / "score.md", "# Against the answer keys\n\n" + scored["md"] + "\n"))
+        misses = f"\n\n{model.misses} items had no recorded answer." if hasattr(model, "misses") else ""
+        written.append(write_text(out / "score.md", "# Against the answer keys\n\n" + scored["md"] + misses + "\n"))
     log = out / "runs.csv"
     row = {
         "ran_at": datetime.now().isoformat(timespec="seconds"),
@@ -908,10 +1118,12 @@ class Replay:
     def __init__(self, path: Path):
         data = json.loads(path.read_text())
         self.answers, self.name = data["answers"], f"{data['model']}, recorded {data['recorded']} (replayed)"
+        self.misses = 0  # counted and printed, so a recording that's out of date can't pass quietly
 
     def complete(self, system: str, user: str, max_tokens: int = 2000) -> str:
         key = replay_key(system, user)
         if key not in self.answers:
+            self.misses += 1
             raise BadAnswer(f"no recorded answer for {key}")
         return self.answers[key]
 
@@ -980,7 +1192,8 @@ def main() -> None:
         model,
         written,
         f"{len(r.tickets)} tickets: {len(r.locations)} locations, {len(r.units)} units, "
-        f"{len(r.agreements)} agreements, {len(r.open_quotes)} open quotes; {len(r.review)} for a person.",
+        f"{len(r.agreements)} agreements, {len(r.open_quotes)} open quotes; {len(r.review)} for a person."
+        + (f"\n{model.misses} items had no recorded answer." if hasattr(model, "misses") else ""),
     )
 
 
