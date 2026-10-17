@@ -1,0 +1,1208 @@
+Customer ID,Name,Segment,Branch,Terms (days),Uses portal,Since
+1,Brickhouse Grill,national_chain,TUS,60,1,2012-09-11
+2,Fresh Plate Kitchens,national_chain,PHX,60,1,2014-06-06
+3,Value Mart Stores,national_chain,NTH,60,1,2018-10-23
+4,Corner Pharmacy,national_chain,TUS,60,1,2014-08-01
+5,Sunny Side Diners,national_chain,PHX,60,1,2018-09-09
+6,Main & Vine Outfitters,national_chain,TUS,60,1,2012-05-18
+7,PetPoint Supply,national_chain,PHX,60,1,2017-07-09
+8,QuickLube Express,national_chain,TUS,60,1,2019-11-26
+9,Harvest Table,national_chain,PHX,60,1,2013-08-16
+11,Northstar Dental,national_chain,NTH,60,1,2015-09-27
+12,Urgent Care Partners,national_chain,PHX,60,1,2017-07-17
+13,Grand Canyon Tire,national_chain,PHX,60,1,2019-02-25
+14,BurgerBarn,national_chain,PHX,60,1,2013-01-02
+15,Pasta Fresca,national_chain,TUS,60,1,2011-11-09
+16,FitLife Gyms,national_chain,PHX,60,1,2016-11-18
+17,DollarWise,national_chain,PHX,60,1,2019-02-02
+18,Hometown Bank,national_chain,PHX,60,1,2014-11-11
+19,Cinema Plex,national_chain,PHX,60,1,2013-06-24
+20,Golden Wok,national_chain,PHX,60,1,2011-11-13
+21,Bright Smiles Dental,national_chain,PHX,60,1,2018-05-17
+22,Taco Rio,national_chain,NTH,60,1,2014-09-15
+24,SpeedyPrint,national_chain,PHX,60,1,2018-04-17
+25,Crust & Co. Pizza,national_chain,PHX,60,1,2013-05-31
+26,GreenLeaf Grocers,national_chain,PHX,60,1,2014-10-27
+27,Kidz Learning Center,national_chain,PHX,60,1,2019-04-29
+29,Catalina Foothills Holdings,property_manager,TUS,45,0,2017-07-24
+30,Paradise Valley Realty Partners,property_manager,PHX,45,0,2012-01-05
+31,Tempe Holdings,property_manager,PHX,45,0,2012-03-25
+32,Saguaro Commercial Properties,property_manager,PHX,45,1,2016-06-01
+33,Estrella Property Management,property_manager,PHX,45,0,2018-03-23
+34,Vail Commercial Properties,property_manager,TUS,45,0,2014-03-23
+35,Peoria Realty Partners,property_manager,PHX,45,0,2019-08-25
+36,Mesa Holdings,property_manager,PHX,45,0,2019-03-16
+38,Oro Valley Holdings,property_manager,TUS,45,1,2017-04-03
+39,Old Pueblo Holdings,property_manager,TUS,45,0,2016-07-06
+40,Cottonwood Holdings,property_manager,NTH,45,1,2013-12-24
+42,Coconino Realty Partners,property_manager,NTH,45,1,2017-10-10
+43,Tempe Commercial Properties,property_manager,PHX,45,0,2016-09-16
+44,Rincon Asset Management,property_manager,TUS,45,0,2019-02-15
+46,Ahwatukee Asset Management,property_manager,PHX,45,0,2013-04-01
+47,Avondale Holdings,property_manager,PHX,45,0,2017-05-06
+48,Vail Holdings,property_manager,TUS,45,1,2018-05-05
+49,Rita Ranch Holdings,property_manager,TUS,45,0,2013-12-29
+50,Marana Commercial Properties,property_manager,TUS,45,0,2018-10-22
+51,Desert Ridge Realty Partners,property_manager,PHX,45,0,2015-07-21
+52,Scottsdale Realty Partners,property_manager,PHX,45,0,2016-05-30
+53,Peoria Holdings,property_manager,PHX,45,1,2014-04-28
+54,Superstition Holdings,property_manager,PHX,45,0,2017-08-10
+55,Ahwatukee Commercial Properties,property_manager,PHX,45,1,2013-01-08
+56,Camelback Real Estate Group,property_manager,PHX,45,0,2017-01-25
+57,Saguaro Realty Partners,property_manager,PHX,45,0,2018-02-19
+58,Williams Realty Partners,property_manager,NTH,45,0,2014-03-29
+59,Ponderosa Holdings,property_manager,NTH,45,0,2018-02-22
+60,Camp Verde Realty Partners,property_manager,NTH,45,0,2015-02-14
+61,Scottsdale Real Estate Group,property_manager,PHX,45,0,2013-01-18
+62,Gilbert Commercial Properties,property_manager,PHX,45,1,2014-08-05
+63,Saguaro Holdings,property_manager,PHX,45,0,2018-11-04
+64,Fountain Hills Holdings,property_manager,PHX,45,0,2015-05-20
+65,San Tan Valley Asset Management,property_manager,PHX,45,0,2016-03-25
+66,Sahuarita Realty Partners,property_manager,TUS,45,0,2018-11-20
+67,Pueblo Real Estate Group,property_manager,TUS,45,0,2015-06-30
+68,Marana Commercial Properties,property_manager,TUS,45,0,2018-06-22
+69,Verde Valley Holdings,property_manager,NTH,45,0,2015-08-10
+70,Rincon Realty Partners,property_manager,TUS,45,1,2015-11-06
+72,Goodyear Asset Management,property_manager,PHX,45,1,2017-12-29
+73,Green Valley Asset Management,property_manager,TUS,45,1,2012-12-26
+74,Prescott Valley Asset Management,property_manager,NTH,45,1,2019-08-21
+75,Old Pueblo Commercial Properties,property_manager,TUS,45,0,2017-01-28
+76,Avondale Asset Management,property_manager,PHX,45,0,2017-06-08
+77,Goodyear Realty Partners,property_manager,PHX,45,0,2016-02-21
+78,Arcadia Realty Partners,property_manager,PHX,45,1,2018-03-30
+79,Estrella Holdings,property_manager,PHX,45,0,2013-07-30
+80,San Tan Valley Asset Management,property_manager,PHX,45,0,2015-04-14
+82,Rincon Commercial Properties,property_manager,TUS,45,0,2018-10-21
+83,Estrella Property Management,property_manager,PHX,45,0,2014-04-26
+84,Tempe Commercial Properties,property_manager,PHX,45,1,2016-11-19
+85,Ahwatukee Property Management,property_manager,PHX,45,0,2016-08-22
+86,Paradise Valley Property Management,property_manager,PHX,45,0,2014-10-28
+87,Fountain Hills Real Estate Group,property_manager,PHX,45,1,2019-04-17
+88,Cottonwood Property Management,property_manager,NTH,45,0,2015-03-12
+89,Sabino Commercial Properties,property_manager,TUS,45,1,2013-12-18
+90,Oro Valley Property Management,property_manager,TUS,45,0,2014-01-21
+91,Coconino Real Estate Group,property_manager,NTH,45,0,2013-08-27
+92,Sabino Property Management,property_manager,TUS,45,0,2013-06-22
+93,Sabino Real Estate Group,property_manager,TUS,45,0,2014-07-10
+94,Laveen Asset Management,property_manager,PHX,45,0,2013-06-25
+95,Tempe Commercial Properties,property_manager,PHX,45,0,2017-09-01
+96,Desert Ridge Realty Partners,property_manager,PHX,45,0,2016-03-25
+97,Mountain View Real Estate Group,property_manager,NTH,45,0,2014-06-05
+98,Fountain Hills Holdings,property_manager,PHX,45,0,2012-10-09
+99,Sonoran Holdings,property_manager,PHX,45,1,2012-06-15
+101,Scottsdale Real Estate Group,property_manager,PHX,45,0,2012-10-02
+102,Ahwatukee Property Management,property_manager,PHX,45,0,2017-08-07
+103,Camelback Real Estate Group,property_manager,PHX,45,0,2016-12-13
+104,Desert Ridge Realty Partners,property_manager,PHX,45,0,2018-05-27
+105,Arcadia Real Estate Group,property_manager,PHX,45,0,2017-09-17
+106,Sedona Real Estate Group,property_manager,NTH,45,0,2015-04-14
+107,Mesa Realty Partners,property_manager,PHX,45,0,2019-07-05
+108,Chandler Commercial Properties,property_manager,PHX,45,0,2014-06-08
+109,Santa Cruz Realty Partners,property_manager,TUS,45,0,2019-01-12
+110,Chandler Property Management,property_manager,PHX,45,0,2015-06-10
+111,Arcadia Asset Management,property_manager,PHX,45,1,2018-03-23
+112,Tempe Holdings,property_manager,PHX,45,0,2017-10-20
+113,Oro Valley Real Estate Group,property_manager,TUS,45,0,2015-04-23
+114,Sabino Asset Management,property_manager,TUS,45,0,2019-08-29
+115,Gilbert Commercial Properties,property_manager,PHX,45,0,2013-03-14
+116,Green Valley Commercial Properties,property_manager,TUS,45,0,2017-03-06
+117,Camp Verde Property Management,property_manager,NTH,45,0,2016-10-18
+118,Ponderosa Real Estate Group,property_manager,NTH,45,0,2018-07-10
+119,Green Valley Realty Partners,property_manager,TUS,45,0,2018-09-30
+120,Avondale Holdings,property_manager,PHX,45,1,2016-03-12
+121,Casas Adobes Commercial Properties,property_manager,TUS,45,0,2018-06-18
+122,Casas Adobes Commercial Properties,property_manager,TUS,45,1,2015-02-14
+123,Scottsdale Commercial Properties,property_manager,PHX,45,0,2018-09-23
+124,Apache Junction Property Management,property_manager,PHX,45,0,2016-12-31
+125,Deer Valley Real Estate Group,property_manager,PHX,45,1,2012-05-14
+126,Deer Valley Realty Partners,property_manager,PHX,45,0,2014-05-08
+127,Saguaro Commercial Properties,property_manager,PHX,45,1,2014-12-25
+128,Santa Cruz Commercial Properties,property_manager,TUS,45,0,2014-04-27
+129,Sonoran Realty Partners,property_manager,PHX,45,0,2014-07-22
+130,Arcadia Real Estate Group,property_manager,PHX,45,0,2013-02-05
+131,Sabino Realty Partners,property_manager,TUS,45,0,2012-06-01
+132,Tanque Verde Realty Partners,property_manager,TUS,45,0,2015-01-03
+133,Chandler Commercial Properties,property_manager,PHX,45,1,2019-06-28
+136,Prescott Valley Unified School District,school_district,NTH,45,0,2014-04-22
+137,Maryvale Unified School District,school_district,PHX,45,0,2015-06-26
+138,Glendale Unified School District,school_district,PHX,45,0,2019-09-15
+139,Chandler Unified School District,school_district,PHX,45,0,2018-07-20
+140,Scottsdale Unified School District,school_district,PHX,45,0,2015-04-21
+141,Cottonwood Unified School District,school_district,NTH,45,0,2018-01-15
+143,Laveen Unified School District,school_district,PHX,45,0,2012-05-01
+144,Fountain Hills Unified School District,school_district,PHX,45,0,2016-04-26
+145,Oro Valley Unified School District,school_district,TUS,45,0,2015-08-13
+146,Sedona Unified School District,school_district,NTH,45,0,2017-09-14
+147,Verde Valley Unified School District,school_district,NTH,45,0,2015-02-22
+148,Sonoran Unified School District,school_district,PHX,45,0,2018-04-20
+149,Sedona Unified School District,school_district,NTH,45,0,2011-12-01
+150,Goodyear Unified School District,school_district,PHX,45,0,2017-05-11
+151,Sedona Unified School District,school_district,NTH,45,0,2016-09-15
+152,Sonoran Unified School District,school_district,PHX,45,0,2019-03-25
+153,Oro Valley Unified School District,school_district,TUS,45,0,2014-11-20
+154,Sahuarita Unified School District,school_district,TUS,45,0,2019-11-20
+155,Goodyear Unified School District,school_district,PHX,45,0,2017-03-23
+156,Mesa Unified School District,school_district,PHX,45,0,2013-02-21
+157,Gilbert Unified School District,school_district,PHX,45,0,2018-02-28
+158,Oro Valley Unified School District,school_district,TUS,45,0,2015-06-18
+159,Deer Valley Bakery,regional_chain,PHX,30,0,2013-08-12
+160,Desert Ridge Taqueria,regional_chain,PHX,30,0,2012-05-15
+161,Green Valley Pizzeria,regional_chain,TUS,30,0,2013-07-20
+162,Mesa Taqueria,regional_chain,PHX,30,0,2015-03-25
+163,San Tan Valley Grill,regional_chain,PHX,30,0,2015-04-07
+164,Kachina Village Eye Care,regional_chain,NTH,30,0,2016-05-09
+166,Gilbert Pharmacy,regional_chain,PHX,30,0,2015-01-24
+167,Queen Creek Boutique,regional_chain,PHX,30,0,2018-02-20
+168,Sonoran Family Dental,regional_chain,PHX,30,0,2017-09-11
+169,Papago Taqueria,regional_chain,PHX,30,0,2014-01-20
+170,Peoria Diner,regional_chain,PHX,30,0,2016-08-12
+171,Deer Valley Hardware,regional_chain,PHX,30,1,2011-12-29
+172,Estrella Boutique,regional_chain,PHX,30,0,2012-04-02
+173,Casas Adobes Physical Therapy,regional_chain,TUS,30,0,2017-09-23
+175,Kachina Village Pediatrics,regional_chain,NTH,30,0,2017-04-24
+176,Green Valley Liquor,regional_chain,TUS,30,0,2018-07-04
+177,Fountain Hills Furniture,regional_chain,PHX,30,0,2012-02-08
+178,Mesa Veterinary Clinic,regional_chain,PHX,30,0,2015-11-09
+180,Tempe Hardware,regional_chain,PHX,30,0,2019-05-02
+181,Laveen Pizzeria,regional_chain,PHX,30,0,2017-10-01
+182,Glendale Appliance,regional_chain,PHX,30,0,2017-10-07
+183,Desert Ridge Florist,regional_chain,PHX,30,0,2015-12-18
+184,Verde Valley Pharmacy,regional_chain,NTH,30,0,2017-09-09
+185,Chandler Eye Care,regional_chain,PHX,30,0,2013-05-21
+186,Paradise Valley Diner,regional_chain,PHX,30,0,2016-01-21
+187,Gilbert Bistro,regional_chain,PHX,30,0,2019-02-19
+188,Kachina Village Liquor,regional_chain,NTH,30,1,2012-08-02
+189,Sahuarita Family Dental,regional_chain,TUS,30,0,2013-12-08
+190,Oro Valley Florist,regional_chain,TUS,30,0,2018-07-31
+191,Sabino Furniture,regional_chain,TUS,30,0,2012-10-30
+192,San Tan Valley Florist,regional_chain,PHX,30,0,2013-12-23
+194,Williams Pizzeria,regional_chain,NTH,30,0,2013-06-26
+195,Glendale Pharmacy,regional_chain,PHX,30,0,2016-06-01
+196,Glendale Boutique,regional_chain,PHX,30,0,2016-05-16
+198,Superstition Appliance,regional_chain,PHX,30,0,2013-01-09
+199,Laveen Family Dental,regional_chain,PHX,30,0,2012-04-18
+200,Papago Grill,regional_chain,PHX,30,1,2016-10-12
+201,Sonoran Liquor,regional_chain,PHX,30,0,2016-02-27
+202,Green Valley Physical Therapy,regional_chain,TUS,30,0,2015-06-20
+203,Peoria Boutique,regional_chain,PHX,30,0,2015-05-09
+204,Rita Ranch Veterinary Clinic,regional_chain,TUS,30,0,2015-07-15
+206,Cottonwood Family Dental,regional_chain,NTH,30,0,2016-07-16
+208,Ponderosa Physical Therapy,regional_chain,NTH,30,0,2012-10-26
+209,Avondale Pediatrics,regional_chain,PHX,30,0,2013-10-02
+210,Vail Cafe,regional_chain,TUS,30,0,2012-08-16
+211,Superstition Furniture,regional_chain,PHX,30,1,2019-11-05
+213,Mesa Eye Care,regional_chain,PHX,30,1,2012-01-23
+214,Camp Verde Diner,regional_chain,NTH,30,0,2019-01-21
+215,Avondale Taqueria,regional_chain,PHX,30,0,2017-02-26
+216,Apache Junction Appliance,regional_chain,PHX,30,0,2016-08-01
+218,Catalina Foothills Taqueria,regional_chain,TUS,30,0,2015-07-11
+219,Mesa Diner,regional_chain,PHX,30,0,2017-09-21
+220,Santa Cruz Grill,regional_chain,TUS,30,0,2019-04-12
+221,Avondale Boutique,regional_chain,PHX,30,0,2018-07-22
+222,Saguaro Chiropractic,regional_chain,PHX,30,0,2012-01-11
+223,Vail Family Dental,regional_chain,TUS,30,0,2017-08-21
+224,Arcadia Taqueria,regional_chain,PHX,30,0,2016-01-15
+226,Fountain Hills Physical Therapy,regional_chain,PHX,30,0,2015-03-19
+227,Camp Verde Boutique,regional_chain,NTH,30,0,2011-12-04
+228,Pueblo Pizzeria,regional_chain,TUS,30,0,2015-01-18
+229,Kachina Village Liquor,regional_chain,NTH,30,0,2016-11-06
+231,Fountain Hills Veterinary Clinic,regional_chain,PHX,30,0,2017-06-13
+232,Goodyear Bakery,regional_chain,PHX,30,0,2011-12-26
+233,Rita Ranch Bakery,regional_chain,TUS,30,0,2019-04-11
+234,Mogollon Rim Physical Therapy,regional_chain,NTH,30,0,2012-02-09
+235,Williams Pizzeria,regional_chain,NTH,30,0,2013-05-09
+236,Saguaro Hardware,regional_chain,PHX,30,0,2018-09-22
+238,Rita Ranch Chiropractic,regional_chain,TUS,30,0,2017-12-08
+240,Peoria Family Dental,regional_chain,PHX,30,0,2012-12-29
+241,San Francisco Peaks Boutique,regional_chain,NTH,30,0,2015-12-11
+243,San Tan Valley Liquor,regional_chain,PHX,30,0,2017-09-03
+244,Mogollon Rim Chiropractic,regional_chain,NTH,30,0,2013-08-13
+245,Rita Ranch Pediatrics,regional_chain,TUS,30,0,2017-10-17
+246,Peoria Grill,regional_chain,PHX,30,0,2018-09-07
+247,Desert Ridge Bistro,regional_chain,PHX,30,0,2015-11-05
+248,Vail Physical Therapy,regional_chain,TUS,30,0,2018-12-28
+249,Green Valley Physical Therapy,regional_chain,TUS,30,0,2017-05-07
+250,Fountain Hills Pediatrics,regional_chain,PHX,30,0,2013-06-09
+251,Mogollon Rim Cafe,regional_chain,NTH,30,0,2013-12-18
+252,Rincon Taqueria,regional_chain,TUS,30,0,2014-08-28
+253,Glendale Appliance,regional_chain,PHX,30,0,2014-09-04
+254,Catalina Foothills Pizzeria,regional_chain,TUS,30,1,2017-12-12
+255,Mountain View Physical Therapy,regional_chain,NTH,30,0,2014-06-02
+256,Papago Grill,regional_chain,PHX,30,0,2015-12-05
+257,Vail Appliance,regional_chain,TUS,30,0,2016-12-28
+258,Laveen Bakery,regional_chain,PHX,30,0,2017-06-01
+260,Deer Valley Furniture,regional_chain,PHX,30,1,2015-12-12
+261,Rita Ranch Appliance,regional_chain,TUS,30,0,2016-01-18
+262,Verde Valley Appliance,regional_chain,NTH,30,0,2015-11-10
+263,Mountain View Pharmacy,regional_chain,NTH,30,0,2013-11-19
+264,Saguaro Veterinary Clinic,regional_chain,PHX,30,0,2019-01-25
+266,Scottsdale Liquor,regional_chain,PHX,30,0,2019-11-24
+267,Williams Family Dental,regional_chain,NTH,30,1,2018-03-08
+268,Desert Ridge Grill,regional_chain,PHX,30,0,2018-10-08
+270,Apache Junction Florist,regional_chain,PHX,30,0,2018-12-05
+271,Catalina Foothills Boutique,regional_chain,TUS,30,0,2015-04-04
+272,Catalina Foothills Chiropractic,regional_chain,TUS,30,0,2013-09-14
+273,Saguaro Appliance,regional_chain,PHX,30,0,2015-11-07
+274,Tempe Boutique,regional_chain,PHX,30,0,2015-06-06
+277,Kachina Village Furniture,regional_chain,NTH,30,0,2013-12-04
+278,Peoria Taqueria,regional_chain,PHX,30,0,2014-11-29
+279,Maryvale Bistro,regional_chain,PHX,30,0,2018-06-06
+280,Scottsdale Bistro,regional_chain,PHX,30,0,2013-04-02
+281,Peoria Appliance,regional_chain,PHX,30,0,2019-02-26
+283,Avondale Eye Care,regional_chain,PHX,30,0,2019-06-18
+285,Tempe Pediatrics,regional_chain,PHX,30,0,2015-03-20
+286,Catalina Foothills Hardware,regional_chain,TUS,30,0,2014-06-15
+287,Rita Ranch Hardware,regional_chain,TUS,30,0,2012-03-31
+288,Scottsdale Diner,regional_chain,PHX,30,0,2013-05-24
+289,Saguaro Pediatrics,regional_chain,PHX,30,0,2016-06-29
+290,Pueblo Pizzeria,regional_chain,TUS,30,1,2018-05-09
+291,Saguaro Hardware,regional_chain,PHX,30,1,2012-11-16
+292,Murphy & White Eye Care,single_site,PHX,30,0,2016-01-29
+293,Jason Jackson Physical Therapy,single_site,NTH,30,0,2018-11-05
+294,Warner Street Medical Billing,single_site,PHX,30,0,2012-01-05
+295,Dustin Martinez Diner,single_site,TUS,30,0,2012-11-03
+296,Paradise Valley Bistro,single_site,PHX,30,0,2013-05-06
+297,Wilson Insurance Agency,single_site,TUS,30,0,2015-12-21
+298,Lewis & Cook Veterinary Clinic,single_site,PHX,30,0,2012-11-18
+299,Travis Stewart Architects,single_site,PHX,30,0,2014-06-01
+300,Collins & Harris Pediatrics,single_site,PHX,30,0,2012-02-27
+301,Kolb Street Medical Billing,single_site,TUS,30,0,2015-02-01
+302,Collins Bistro,single_site,PHX,30,0,2014-06-04
+303,Kolb Street Eye Care,single_site,TUS,30,0,2019-09-08
+304,Martin & Clark Diner,single_site,PHX,30,0,2014-06-21
+305,Apache Junction Law Offices,single_site,PHX,30,0,2017-09-22
+306,Angela Garcia Engineering,single_site,PHX,30,0,2017-08-30
+307,Taylor & Wilson Veterinary Clinic,single_site,TUS,30,0,2018-08-21
+308,Sedona Bistro,single_site,NTH,30,0,2017-01-01
+310,Ray Street Physical Therapy,single_site,PHX,30,0,2014-09-01
+311,White & Green Boutique,single_site,TUS,30,0,2013-05-12
+312,Murphy & Hill Boutique,single_site,PHX,30,0,2017-03-15
+313,Ponderosa Boutique,single_site,NTH,30,0,2015-12-02
+316,Brian Scott Pediatrics,single_site,PHX,30,0,2019-11-11
+317,Allen Appliance,single_site,PHX,30,0,2012-09-06
+318,Route Street Bakery,single_site,NTH,30,0,2013-04-02
+320,Green Appliance,single_site,TUS,30,0,2013-11-23
+322,Maryvale Furniture,single_site,PHX,30,0,2017-01-04
+323,Young Pediatrics,single_site,PHX,30,0,2019-01-18
+324,Evans & Green Furniture,single_site,TUS,30,0,2019-12-02
+325,Eric Collins Pediatrics,single_site,TUS,30,0,2015-12-18
+326,Glendale Hardware,single_site,PHX,30,0,2016-02-04
+328,Rita Ranch Architects,single_site,TUS,30,0,2013-07-23
+329,Wright & Cooper Family Dental,single_site,PHX,30,0,2019-05-23
+330,Kolb Street Diner,single_site,TUS,30,0,2014-09-13
+331,Young Florist,single_site,TUS,30,0,2012-09-24
+334,Johnson & Hall Taqueria,single_site,NTH,30,0,2014-07-21
+335,Garcia Pizzeria,single_site,PHX,30,0,2018-07-10
+337,Avondale Veterinary Clinic,single_site,PHX,30,0,2018-12-26
+338,Adams Bakery,single_site,TUS,30,0,2013-12-05
+339,Tyler Garcia Architects,single_site,PHX,30,0,2012-04-08
+340,Deer Valley Family Dental,single_site,PHX,30,0,2015-08-14
+341,Gilbert Street Bakery,single_site,PHX,30,0,2019-10-16
+342,Price Engineering,single_site,PHX,30,0,2012-11-10
+343,Chandler Taqueria,single_site,PHX,30,0,2018-10-21
+344,Cooper & Adams Engineering,single_site,NTH,30,0,2018-04-08
+346,Green & Campbell Hardware,single_site,TUS,30,0,2014-04-12
+347,Camelback Street Family Dental,single_site,PHX,30,0,2013-11-05
+349,Lee & Cooper Taqueria,single_site,PHX,30,0,2015-01-28
+350,Cook & Nelson Physical Therapy,single_site,PHX,30,0,2014-12-16
+352,Goodyear Taqueria,single_site,PHX,30,0,2013-03-24
+354,Heather Edwards Pediatrics,single_site,NTH,30,0,2017-08-21
+355,Maryvale Taqueria,single_site,PHX,30,0,2016-02-09
+357,Jose Wilson Accounting,single_site,NTH,30,0,2017-12-22
+358,Melissa Taylor Cafe,single_site,PHX,30,0,2016-02-05
+359,Nate Kelly Florist,single_site,TUS,30,0,2016-01-06
+360,Chris Morris Accounting,single_site,TUS,30,0,2017-01-18
+361,Bell Street Veterinary Clinic,single_site,PHX,30,0,2017-05-09
+364,Stewart & Davis Title Company,single_site,NTH,30,0,2015-05-05
+365,Kim Martin Boutique,single_site,NTH,30,0,2016-10-26
+366,Green & Allen Diner,single_site,PHX,30,0,2017-04-02
+367,Ward Family Dental,single_site,PHX,30,0,2016-02-10
+368,Linda Cook Eye Care,single_site,PHX,30,0,2013-08-07
+369,Davis & Hughes Veterinary Clinic,single_site,PHX,30,0,2019-04-27
+370,Old Pueblo Veterinary Clinic,single_site,TUS,30,0,2019-07-26
+371,Edwards & Thompson Cafe,single_site,NTH,30,0,2019-01-25
+373,San Francisco Peaks Architects,single_site,NTH,30,0,2015-03-18
+374,Swan Street Eye Care,single_site,TUS,30,0,2014-05-04
+375,Baseline Street Bakery,single_site,PHX,30,0,2013-01-20
+376,Lisa Stewart Hardware,single_site,PHX,30,0,2013-06-17
+377,Southern Street Bakery,single_site,PHX,30,0,2019-07-29
+379,Wes Roberts Insurance Agency,single_site,PHX,30,0,2015-04-19
+380,Garcia & Thomas Boutique,single_site,PHX,30,0,2014-04-01
+382,Daniel Howard Insurance Agency,single_site,PHX,30,0,2014-04-28
+383,Thomas Street Architects,single_site,PHX,30,0,2019-07-16
+384,Ahwatukee Diner,single_site,PHX,30,0,2016-08-22
+385,Sonoran Bakery,single_site,PHX,30,0,2018-02-18
+386,Sabino Chiropractic,single_site,TUS,30,0,2013-04-24
+387,Valencia Street Law Offices,single_site,TUS,30,0,2013-11-25
+388,Main Street Insurance Agency,single_site,PHX,30,0,2014-06-30
+389,Gilbert Street Bakery,single_site,PHX,30,0,2018-07-08
+390,Ponderosa Medical Billing,single_site,NTH,30,0,2015-05-31
+391,Cook Furniture,single_site,TUS,30,0,2015-11-08
+392,Prescott Valley Diner,single_site,NTH,30,0,2019-08-04
+393,Valencia Street Hardware,single_site,TUS,30,0,2014-11-24
+394,Rita Ranch Architects,single_site,TUS,30,0,2014-06-19
+395,Tempe Accounting,single_site,PHX,30,0,2018-04-16
+397,Cody Allen Family Dental,single_site,PHX,30,0,2019-04-01
+398,Nelson Diner,single_site,PHX,30,0,2012-10-23
+399,Main Street Bakery,single_site,PHX,30,0,2013-07-20
+400,King Physical Therapy,single_site,PHX,30,0,2016-12-24
+402,Cook & Walker Florist,single_site,NTH,30,0,2017-07-03
+403,Broadway Street Accounting,single_site,TUS,30,0,2015-10-30
+407,Linda Davis Chiropractic,single_site,PHX,30,0,2018-12-24
+408,Coconino Architects,single_site,NTH,30,0,2016-08-21
+409,Rita Ranch Cafe,single_site,TUS,30,0,2018-10-12
+410,Pueblo Pizzeria,single_site,TUS,30,0,2013-01-25
+412,Evans Physical Therapy,single_site,TUS,30,0,2014-12-18
+413,Phillips Liquor,single_site,TUS,30,0,2014-02-04
+414,Nelson Bistro,single_site,PHX,30,0,2019-07-03
+415,Val Street Insurance Agency,single_site,PHX,30,0,2014-12-06
+416,Evans Bakery,single_site,PHX,30,0,2013-12-28
+418,Lee & Hall Florist,single_site,TUS,30,0,2012-10-01
+420,Robert Anderson Grill,single_site,TUS,30,0,2019-07-01
+422,Parker Diner,single_site,PHX,30,0,2014-06-12
+424,Reed & Adams Title Company,single_site,TUS,30,0,2014-12-17
+425,Warner Street Family Dental,single_site,PHX,30,0,2013-09-12
+426,Roberts Law Offices,single_site,PHX,30,0,2014-04-15
+427,Casas Adobes Pediatrics,single_site,TUS,30,0,2014-07-28
+428,Amanda Roberts Title Company,single_site,PHX,30,0,2014-01-27
+429,Old Pueblo Medical Billing,single_site,TUS,30,0,2014-09-22
+430,Verde Valley Cafe,single_site,NTH,30,0,2012-03-23
+431,Sabino Bakery,single_site,TUS,30,0,2019-06-29
+434,Allen & Brown Family Dental,single_site,PHX,30,0,2014-04-07
+435,Lisa Jackson Hardware,single_site,PHX,30,0,2015-01-22
+436,Amanda Allen Eye Care,single_site,PHX,30,0,2013-12-10
+437,King & Lee Veterinary Clinic,single_site,TUS,30,0,2013-02-28
+438,Paradise Valley Medical Billing,single_site,PHX,30,0,2012-11-07
+439,Swan Street Veterinary Clinic,single_site,TUS,30,0,2014-11-01
+440,Garcia & Turner Bistro,single_site,NTH,30,0,2012-02-23
+441,Luis King Eye Care,single_site,PHX,30,0,2014-01-21
+442,Wilson Chiropractic,single_site,TUS,30,0,2016-03-28
+443,McDowell Street Title Company,single_site,PHX,30,0,2015-01-27
+444,Turner & Morris Insurance Agency,single_site,PHX,30,0,2014-10-17
+445,Thomas & Turner Chiropractic,single_site,PHX,30,0,2013-01-22
+446,Bell Street Engineering,single_site,PHX,30,0,2014-05-18
+449,Tyler Turner Taqueria,single_site,NTH,30,0,2019-04-04
+450,Patricia Collins Bakery,single_site,PHX,30,0,2015-10-27
+451,Cook & Carter Engineering,single_site,PHX,30,0,2012-03-22
+452,Johnson Insurance Agency,single_site,PHX,30,0,2011-12-10
+453,Paradise Valley Accounting,single_site,PHX,30,0,2012-12-03
+454,Luis Martin Boutique,single_site,TUS,30,0,2013-10-16
+456,Carmen Collins Insurance Agency,single_site,TUS,30,0,2017-10-31
+457,Butler Street Appliance,single_site,NTH,30,0,2012-03-11
+458,Scottsdale Cafe,single_site,PHX,30,0,2018-07-26
+459,Carmen Scott Appliance,single_site,PHX,30,0,2012-07-29
+460,Linda White Insurance Agency,single_site,PHX,30,0,2015-09-03
+461,Queen Creek Taqueria,single_site,PHX,30,0,2014-10-21
+462,University Street Law Offices,single_site,PHX,30,0,2012-04-29
+465,Dustin Davis Bakery,single_site,PHX,30,0,2015-08-31
+468,Brown Hardware,single_site,PHX,30,0,2014-10-05
+469,Baker & Cox Appliance,single_site,NTH,30,0,2015-06-30
+471,Fountain Hills Title Company,single_site,PHX,30,0,2013-06-16
+472,Tempe Insurance Agency,single_site,PHX,30,0,2013-09-29
+473,Davis & Harris Bistro,single_site,PHX,30,0,2017-02-14
+474,Allen Taqueria,single_site,PHX,30,0,2013-06-10
+475,Santa Cruz Hardware,single_site,TUS,30,0,2017-12-30
+477,Anderson Boutique,single_site,PHX,30,0,2019-05-31
+478,Irvington Street Medical Billing,single_site,TUS,30,0,2015-11-09
+479,Main Street Accounting,single_site,PHX,30,0,2012-05-13
+481,Wilson Engineering,single_site,PHX,30,0,2013-12-20
+483,Elliot Street Hardware,single_site,PHX,30,0,2016-06-29
+484,Papago Pediatrics,single_site,PHX,30,0,2017-01-18
+485,Carter Insurance Agency,single_site,PHX,30,0,2019-04-15
+486,Dobson Street Appliance,single_site,PHX,30,0,2019-01-06
+487,Baker Engineering,single_site,PHX,30,0,2016-11-07
+488,Alicia Ward Engineering,single_site,NTH,30,0,2012-09-01
+489,Thomas & Parker Physical Therapy,single_site,TUS,30,0,2017-11-03
+490,McDowell Street Chiropractic,single_site,PHX,30,0,2011-10-29
+491,Green Insurance Agency,single_site,TUS,30,0,2014-06-18
+493,Miller & Adams Title Company,single_site,PHX,30,0,2019-01-26
+494,Linda Harris Physical Therapy,single_site,PHX,30,0,2012-05-24
+495,Oro Valley Cafe,single_site,TUS,30,0,2017-02-25
+496,Heather Turner Veterinary Clinic,single_site,NTH,30,0,2014-02-16
+497,Clark & Brown Appliance,single_site,TUS,30,0,2019-01-26
+498,Taylor & Hill Appliance,single_site,PHX,30,0,2011-12-01
+499,Superstition Appliance,single_site,PHX,30,0,2019-10-27
+500,Main Street Florist,single_site,TUS,30,0,2019-09-10
+501,Mitchell & Reed Bistro,single_site,PHX,30,0,2014-11-28
+502,Gina Murphy Taqueria,single_site,PHX,30,0,2013-04-06
+503,Southern Street Bakery,single_site,PHX,30,0,2014-07-25
+504,Turner Bistro,single_site,PHX,30,0,2015-08-02
+505,Tasha Young Accounting,single_site,PHX,30,0,2014-10-17
+506,Lewis & Edwards Pizzeria,single_site,TUS,30,0,2015-10-07
+507,Thomas Street Furniture,single_site,PHX,30,0,2016-10-22
+508,Alma Street Veterinary Clinic,single_site,PHX,30,0,2019-10-16
+509,Tanya Rogers Furniture,single_site,PHX,30,0,2013-04-29
+511,Alicia Taylor Boutique,single_site,PHX,30,0,2019-07-11
+512,Moore & Scott Grill,single_site,TUS,30,0,2015-11-03
+513,Thompson Eye Care,single_site,PHX,30,0,2011-11-14
+514,Southern Street Medical Billing,single_site,PHX,30,0,2013-05-07
+515,Williams Physical Therapy,single_site,NTH,30,0,2017-05-12
+516,Sedona Engineering,single_site,NTH,30,0,2013-08-22
+518,Catalina Foothills Florist,single_site,TUS,30,0,2016-02-14
+519,Phillips & Turner Insurance Agency,single_site,TUS,30,0,2016-08-20
+520,Jackson Physical Therapy,single_site,PHX,30,0,2017-08-28
+524,Speedway Street Chiropractic,single_site,TUS,30,0,2016-03-31
+526,Melissa Anderson Engineering,single_site,PHX,30,0,2018-12-24
+527,Davis & Thomas Accounting,single_site,TUS,30,0,2011-11-03
+528,Morris Bakery,single_site,TUS,30,0,2017-12-22
+529,Elliot Street Diner,single_site,PHX,30,0,2018-10-04
+530,Valencia Street Law Offices,single_site,TUS,30,0,2016-11-09
+531,Heather Morris Law Offices,single_site,NTH,30,0,2018-08-18
+532,Irvington Street Hardware,single_site,TUS,30,0,2015-01-05
+533,Ray Street Cafe,single_site,PHX,30,0,2015-02-13
+536,Howard Liquor,single_site,PHX,30,0,2018-01-12
+537,Camelback Street Medical Billing,single_site,PHX,30,0,2019-04-10
+538,Campbell Architects,single_site,PHX,30,0,2014-05-13
+539,Dustin Campbell Grill,single_site,PHX,30,0,2013-10-02
+540,Garcia Hardware,single_site,PHX,30,0,2018-01-12
+541,Main Street Architects,single_site,PHX,30,0,2018-09-05
+542,Kevin Anderson Hardware,single_site,NTH,30,0,2012-11-21
+544,Travis Brown Law Offices,single_site,TUS,30,0,2015-09-13
+545,Walker & Evans Accounting,single_site,TUS,30,0,2014-11-18
+547,Morris & Nelson Grill,single_site,PHX,30,0,2018-03-09
+550,Holly Rogers Veterinary Clinic,single_site,PHX,30,0,2016-08-15
+551,Santa Cruz Architects,single_site,TUS,30,0,2012-11-05
+552,Johnson Accounting,single_site,PHX,30,0,2015-07-07
+554,Anderson Taqueria,single_site,PHX,30,0,2017-03-19
+555,Thompson Veterinary Clinic,single_site,TUS,30,0,2019-09-29
+559,Fourth Street Boutique,single_site,NTH,30,0,2014-02-03
+560,Anderson & Jackson Pharmacy,single_site,TUS,30,0,2016-08-09
+561,Rogers & Parker Chiropractic,single_site,PHX,30,0,2018-04-26
+562,Valencia Street Furniture,single_site,TUS,30,0,2019-11-17
+564,Daniel Walker Accounting,single_site,NTH,30,0,2015-06-12
+567,Cook Florist,single_site,PHX,30,0,2017-02-18
+570,Taylor Hardware,single_site,TUS,30,0,2018-06-25
+573,Tyler Thompson Title Company,single_site,NTH,30,0,2019-07-08
+574,Mountain View Diner,single_site,NTH,30,0,2011-12-05
+576,Mitchell Veterinary Clinic,single_site,PHX,30,0,2017-05-19
+577,Nate Robinson Diner,single_site,NTH,30,0,2011-11-20
+578,Hill Pharmacy,single_site,PHX,30,0,2018-08-20
+581,Kelly Accounting,single_site,PHX,30,0,2014-02-20
+582,Sonoran Eye Care,single_site,PHX,30,0,2013-04-02
+584,Superstition Insurance Agency,single_site,PHX,30,0,2018-05-04
+585,Tanque Street Grill,single_site,TUS,30,0,2018-07-17
+586,Ward Appliance,single_site,PHX,30,0,2012-05-15
+587,Cox Hardware,single_site,TUS,30,0,2015-03-29
+588,Main Street Pharmacy,single_site,PHX,30,0,2014-09-16
+589,Martinez Eye Care,single_site,TUS,30,0,2015-04-08
+592,Maryvale Family Dental,single_site,PHX,30,0,2015-07-30
+594,Carter & Hall Eye Care,single_site,PHX,30,0,2017-01-06
+595,Dustin Jackson Cafe,single_site,PHX,30,0,2014-11-08
+596,Allen Florist,single_site,NTH,30,0,2017-03-10
+597,Cox & Hall Eye Care,single_site,NTH,30,0,2012-07-19
+599,Edwards Law Offices,single_site,PHX,30,0,2012-03-09
+600,University Street Law Offices,single_site,PHX,30,0,2013-03-12
+601,Nate Thomas Cafe,single_site,TUS,30,0,2015-12-01
+602,Phillips & Cooper Bakery,single_site,PHX,30,0,2019-05-15
+604,Bailey & Scott Furniture,single_site,PHX,30,0,2011-12-16
+605,Anderson Veterinary Clinic,single_site,PHX,30,0,2015-08-30
+607,James Cox Liquor,single_site,TUS,30,0,2012-01-17
+608,Superstition Insurance Agency,single_site,PHX,30,0,2016-03-12
+609,Shauna Parker Law Offices,single_site,NTH,30,0,2012-12-13
+611,Holly Allen Bakery,single_site,PHX,30,0,2013-07-14
+612,Kachina Village Florist,single_site,NTH,30,0,2012-09-25
+613,Carmen Carter Florist,single_site,PHX,30,0,2014-05-15
+614,Hill & Scott Appliance,single_site,PHX,30,0,2013-12-31
+615,Oro Valley Bistro,single_site,TUS,30,0,2016-09-20
+616,Walker Diner,single_site,TUS,30,0,2016-05-21
+617,Jennifer Turner Chiropractic,single_site,TUS,30,0,2015-09-09
+618,Kolb Street Title Company,single_site,TUS,30,0,2017-09-22
+619,Avondale Architects,single_site,PHX,30,0,2017-04-25
+621,Catalina Foothills Insurance Agency,single_site,TUS,30,0,2011-12-14
+622,Gilbert Street Veterinary Clinic,single_site,PHX,30,0,2017-07-25
+623,Gilbert Street Liquor,single_site,PHX,30,0,2019-11-25
+624,Cottonwood Street Bistro,single_site,NTH,30,0,2018-01-18
+625,Thompson & Cooper Title Company,single_site,PHX,30,0,2019-09-01
+627,Milton Street Eye Care,single_site,NTH,30,0,2013-02-19
+628,Main Street Eye Care,single_site,PHX,30,0,2012-05-11
+631,Kevin Murphy Title Company,single_site,TUS,30,0,2011-11-29
+632,Karen Edwards Furniture,single_site,PHX,30,0,2014-05-11
+633,Cox & Ward Pizzeria,single_site,PHX,30,0,2015-12-19
+634,Tanya Robinson Eye Care,single_site,PHX,30,0,2018-06-14
+635,Chandler Diner,single_site,PHX,30,0,2013-01-05
+636,Daniel Miller Pizzeria,single_site,NTH,30,0,2017-12-04
+637,Tyler Nelson Florist,single_site,PHX,30,0,2016-12-14
+639,Oracle Street Pediatrics,single_site,TUS,30,0,2017-04-28
+640,Swan Street Family Dental,single_site,TUS,30,0,2014-10-06
+641,Miller & Scott Physical Therapy,single_site,PHX,30,0,2012-10-05
+643,Maryvale Bistro,single_site,PHX,30,0,2018-05-11
+645,Alicia Carter Bistro,single_site,TUS,30,0,2018-03-06
+646,Camelback Law Offices,single_site,PHX,30,0,2012-07-31
+647,Tyler Kelly Taqueria,single_site,PHX,30,0,2014-10-12
+648,Apache Junction Taqueria,single_site,PHX,30,0,2015-06-24
+649,Davis & Phillips Veterinary Clinic,single_site,TUS,30,0,2016-04-26
+652,Rincon Appliance,single_site,TUS,30,0,2014-06-23
+653,Deer Valley Law Offices,single_site,PHX,30,0,2012-04-09
+654,Green & Brown Family Dental,single_site,PHX,30,0,2019-02-26
+655,Alma Street Florist,single_site,PHX,30,0,2016-06-13
+656,Clark Florist,single_site,PHX,30,0,2016-09-24
+657,Alicia Cooper Insurance Agency,single_site,PHX,30,0,2016-05-12
+659,Cottonwood Street Law Offices,single_site,NTH,30,0,2013-02-10
+660,Superstition Medical Billing,single_site,PHX,30,0,2016-01-11
+661,Thomas Street Florist,single_site,PHX,30,0,2018-01-31
+663,Route Street Medical Billing,single_site,NTH,30,0,2012-06-03
+664,Green Veterinary Clinic,single_site,NTH,30,0,2014-06-10
+665,Martinez Medical Billing,single_site,PHX,30,0,2013-01-27
+666,Harris Pediatrics,single_site,PHX,30,0,2017-09-10
+667,Pueblo Boutique,single_site,TUS,30,0,2018-04-25
+668,Parker & Mitchell Boutique,single_site,TUS,30,0,2011-11-27
+669,Nicole Nelson Hardware,single_site,PHX,30,0,2012-04-30
+671,Howard & Moore Bakery,single_site,NTH,30,0,2015-05-24
+672,Gilbert Law Offices,single_site,PHX,30,0,2018-09-02
+675,Garcia Pharmacy,single_site,PHX,30,0,2013-02-21
+676,Bailey Boutique,single_site,NTH,30,0,2018-03-29
+679,Sahuarita Physical Therapy,single_site,TUS,30,0,2016-11-29
+681,Karen Scott Taqueria,single_site,TUS,30,0,2012-07-13
+682,Wright Eye Care,single_site,NTH,30,0,2014-02-20
+684,Rita Ranch Chiropractic,single_site,TUS,30,0,2015-02-27
+685,Patricia Hall Architects,single_site,PHX,30,0,2015-03-29
+686,White Grill,single_site,PHX,30,0,2016-10-30
+688,Karen Howard Architects,single_site,PHX,30,0,2012-01-19
+690,Nate Moore Engineering,single_site,TUS,30,0,2018-10-18
+691,Marcus Cooper Family Dental,single_site,NTH,30,0,2018-05-16
+692,Beaver Street Diner,single_site,NTH,30,0,2018-04-27
+693,Main Street Chiropractic,single_site,NTH,30,0,2018-07-27
+694,Deer Valley Liquor,single_site,PHX,30,0,2014-09-17
+697,Anderson Accounting,single_site,NTH,30,0,2019-10-28
+699,Indian Street Title Company,single_site,PHX,30,0,2011-10-27
+700,Mountain View Taqueria,single_site,NTH,30,0,2015-03-30
+702,Papago Medical Billing,single_site,PHX,30,0,2019-05-29
+703,Clark Bistro,single_site,TUS,30,0,2016-11-25
+706,Morris & White Appliance,single_site,TUS,30,0,2015-01-17
+709,Mitchell & Rogers Title Company,single_site,PHX,30,0,2017-10-21
+711,Denise Bailey Accounting,single_site,NTH,30,0,2019-08-13
+713,Main Street Family Dental,single_site,NTH,30,0,2014-03-04
+714,Michael Phillips Florist,single_site,PHX,30,0,2012-08-19
+715,Sonoran Title Company,single_site,PHX,30,0,2014-07-13
+716,James Lee Liquor,single_site,PHX,30,0,2014-03-28
+717,Camelback Family Dental,single_site,PHX,30,0,2019-12-01
+719,Martin & Thompson Liquor,single_site,PHX,30,0,2011-12-19
+720,Hughes Boutique,single_site,PHX,30,0,2018-03-23
+722,Thompson & Hall Bistro,single_site,TUS,30,0,2014-08-13
+724,Reed Engineering,single_site,NTH,30,0,2019-08-19
+725,Chris Rogers Bakery,single_site,TUS,30,0,2013-11-03
+727,Thomas & Lee Engineering,single_site,PHX,30,0,2012-03-04
+728,Maria Lee Florist,single_site,PHX,30,0,2012-04-07
+729,Val Street Florist,single_site,PHX,30,0,2016-10-22
+730,Evans Physical Therapy,single_site,NTH,30,0,2015-04-03
+731,Tanque Verde Bakery,single_site,TUS,30,0,2017-03-07
+732,Hall Architects,single_site,PHX,30,0,2013-06-06
+734,Patricia Wilson Liquor,single_site,TUS,30,0,2013-08-13
+735,Wilson Insurance Agency,single_site,PHX,30,0,2017-07-11
+736,Taylor Hardware,single_site,PHX,30,0,2016-08-28
+737,Brown Veterinary Clinic,single_site,PHX,30,0,2019-02-14
+738,Broadway Street Accounting,single_site,PHX,30,0,2017-09-19
+740,Parker Grill,single_site,PHX,30,0,2017-07-29
+741,Denise Roberts Veterinary Clinic,single_site,NTH,30,0,2016-08-13
+743,Young & Davis Physical Therapy,single_site,TUS,30,0,2015-10-19
+745,Alicia Garcia Liquor,single_site,TUS,30,0,2012-11-22
+746,Alicia Lewis Bistro,single_site,PHX,30,0,2017-05-30
+748,Baker & Wright Bakery,single_site,PHX,30,0,2016-11-24
+749,Baker & Cook Diner,single_site,TUS,30,0,2018-12-23
+750,Carter Boutique,single_site,NTH,30,0,2019-08-29
+751,Milton Street Law Offices,single_site,NTH,30,0,2016-01-01
+752,Green Valley Eye Care,single_site,TUS,30,0,2018-04-04
+754,Wes Bailey Veterinary Clinic,single_site,TUS,30,0,2017-02-16
+757,Harris & Rogers Hardware,single_site,PHX,30,0,2015-11-10
+759,Peoria Pharmacy,single_site,PHX,30,0,2018-01-04
+760,Broadway Street Liquor,single_site,PHX,30,0,2016-10-03
+761,Reed & Mitchell Liquor,single_site,NTH,30,0,2018-11-20
+762,Chris Miller Cafe,single_site,TUS,30,0,2017-10-12
+763,Mesa Grill,single_site,PHX,30,0,2019-07-01
+764,Shauna Rogers Medical Billing,single_site,PHX,30,0,2014-04-14
+765,Lisa Mitchell Taqueria,single_site,PHX,30,0,2014-01-26
+766,Scottsdale Accounting,single_site,PHX,30,0,2017-07-04
+767,Lee & Evans Boutique,single_site,PHX,30,0,2019-03-19
+768,Ahwatukee Boutique,single_site,PHX,30,0,2015-05-11
+770,Oro Valley Physical Therapy,single_site,TUS,30,0,2012-02-13
+771,Kolb Street Pizzeria,single_site,TUS,30,0,2012-02-06
+772,Maryvale Chiropractic,single_site,PHX,30,0,2018-06-14
+773,Martin & Brown Law Offices,single_site,PHX,30,0,2013-04-20
+774,Melissa Jackson Appliance,single_site,PHX,30,0,2014-07-05
+776,Kolb Street Furniture,single_site,TUS,30,0,2013-06-10
+778,Evans Family Dental,single_site,PHX,30,0,2016-12-12
+779,Tanya Clark Eye Care,single_site,TUS,30,0,2018-09-06
+780,Carter Grill,single_site,PHX,30,0,2017-04-17
+781,Catalina Foothills Bakery,single_site,TUS,30,0,2014-05-30
+782,Shea Street Medical Billing,single_site,PHX,30,0,2016-04-16
+783,Karen Lewis Chiropractic,single_site,PHX,30,0,2015-10-06
+784,Maria Rogers Diner,single_site,TUS,30,0,2015-07-31
+786,Martin Physical Therapy,single_site,TUS,30,0,2016-12-23
+788,Robinson Accounting,single_site,PHX,30,0,2017-05-20
+789,Glendale Appliance,single_site,PHX,30,0,2018-09-06
+792,Hughes & Wright Florist,single_site,NTH,30,0,2019-04-01
+793,Tanya Clark Architects,single_site,PHX,30,0,2015-05-18
+796,Wes Morris Appliance,single_site,PHX,30,0,2012-09-03
+797,Arcadia Veterinary Clinic,single_site,PHX,30,0,2019-03-27
+798,Green Hardware,single_site,PHX,30,0,2015-01-14
+800,Hall & Baker Cafe,single_site,TUS,30,0,2015-12-24
+801,Carmen Hughes Engineering,single_site,PHX,30,0,2013-06-14
+802,Morris & Bailey Furniture,single_site,PHX,30,0,2012-05-01
+803,Johnson & Scott Accounting,single_site,PHX,30,0,2017-08-22
+806,Tanque Verde Boutique,single_site,TUS,30,0,2019-05-07
+807,Morris & Stewart Accounting,single_site,PHX,30,0,2012-03-21
+809,White Family Dental,single_site,PHX,30,0,2018-03-27
+810,Roberts Law Offices,single_site,TUS,30,0,2017-12-14
+812,Wes Martinez Pediatrics,single_site,TUS,30,0,2017-02-02
+814,Route Street Insurance Agency,single_site,NTH,30,0,2014-12-19
+815,Speedway Street Pediatrics,single_site,TUS,30,0,2015-06-19
+816,Broadway Street Hardware,single_site,PHX,30,0,2016-07-05
+818,Broadway Street Pharmacy,single_site,TUS,30,0,2019-09-08
+819,Hall Florist,single_site,PHX,30,0,2019-02-20
+820,Kachina Village Hardware,single_site,NTH,30,0,2011-11-11
+821,Swan Street Bakery,single_site,TUS,30,0,2013-10-25
+823,Phillips Pharmacy,single_site,PHX,30,0,2019-04-08
+824,Carter & Wilson Appliance,single_site,NTH,30,0,2019-04-02
+825,Lee Pediatrics,single_site,NTH,30,0,2014-05-08
+826,Indian Street Pizzeria,single_site,PHX,30,0,2017-01-20
+827,Melissa Anderson Furniture,single_site,PHX,30,0,2015-09-28
+828,Scott Engineering,single_site,PHX,30,0,2019-07-18
+829,Anderson & Lee Taqueria,single_site,PHX,30,0,2013-01-24
+830,Adams & Miller Bistro,single_site,PHX,30,0,2014-06-29
+831,Moore & Allen Florist,single_site,PHX,30,0,2015-09-06
+832,Anderson Diner,single_site,PHX,30,0,2016-03-07
+833,Goodyear Pediatrics,single_site,PHX,30,0,2017-11-18
+834,Avondale Medical Billing,single_site,PHX,30,0,2014-07-29
+835,Lisa Kelly Liquor,single_site,PHX,30,0,2017-03-24
+836,Adams & Brown Accounting,single_site,PHX,30,0,2019-11-23
+837,Oracle Street Physical Therapy,single_site,TUS,30,0,2016-12-29
+838,Avondale Florist,single_site,PHX,30,0,2017-03-11
+839,Roberts Law Offices,single_site,TUS,30,0,2014-03-06
+840,McDowell Street Boutique,single_site,PHX,30,0,2012-05-03
+841,Saguaro Chiropractic,single_site,PHX,30,0,2011-10-20
+842,Collins & Scott Physical Therapy,single_site,TUS,30,0,2018-08-29
+843,Mesa Accounting,single_site,PHX,30,0,2012-08-03
+844,Broadway Street Medical Billing,single_site,PHX,30,0,2018-02-05
+845,Baker Florist,single_site,PHX,30,0,2015-09-10
+846,Casas Adobes Pediatrics,single_site,TUS,30,0,2012-12-31
+847,Young & Clark Liquor,single_site,TUS,30,0,2019-07-01
+849,Vail Title Company,single_site,TUS,30,0,2013-03-22
+851,Trent Martin Liquor,single_site,TUS,30,0,2012-04-03
+852,James Roberts Accounting,single_site,PHX,30,0,2016-10-04
+853,Hill & White Bistro,single_site,PHX,30,0,2016-03-17
+855,Price & Taylor Chiropractic,single_site,PHX,30,0,2014-09-28
+856,Turner & Allen Title Company,single_site,TUS,30,0,2014-07-11
+857,Lisa Nelson Pharmacy,single_site,NTH,30,0,2015-08-06
+858,Papago Florist,single_site,PHX,30,0,2019-01-24
+860,White Physical Therapy,single_site,PHX,30,0,2013-06-17
+861,Queen Creek Cafe,single_site,PHX,30,0,2016-07-11
+862,Kolb Street Physical Therapy,single_site,TUS,30,0,2013-01-12
+863,Miller Chiropractic,single_site,PHX,30,0,2017-10-30
+864,Apache Junction Medical Billing,single_site,PHX,30,0,2013-11-02
+866,Angela Cooper Furniture,single_site,TUS,30,0,2017-09-04
+868,Nate King Eye Care,single_site,PHX,30,0,2019-08-02
+869,Nelson Engineering,single_site,TUS,30,0,2018-02-01
+870,Alma Street Pharmacy,single_site,PHX,30,0,2015-10-13
+871,Sahuarita Medical Billing,single_site,TUS,30,0,2014-05-25
+872,Howard & Lee Engineering,single_site,PHX,30,0,2012-02-03
+873,Vail Veterinary Clinic,single_site,TUS,30,0,2012-06-26
+874,Clark Architects,single_site,TUS,30,0,2018-02-13
+875,University Street Eye Care,single_site,PHX,30,0,2018-09-25
+877,Linda Rogers Appliance,single_site,TUS,30,0,2014-04-22
+879,Green & Anderson Grill,single_site,PHX,30,0,2019-05-18
+882,Young & Kelly Architects,single_site,NTH,30,0,2016-06-14
+883,Miller & Baker Bakery,single_site,TUS,30,0,2012-01-15
+884,Ward & Turner Appliance,single_site,PHX,30,0,2016-09-17
+885,Tanque Street Physical Therapy,single_site,TUS,30,0,2015-12-05
+886,Jamal Garcia Physical Therapy,single_site,PHX,30,0,2014-05-23
+887,Price Pediatrics,single_site,PHX,30,0,2012-08-09
+889,Johnson Pediatrics,single_site,TUS,30,0,2014-01-11
+890,Eric Miller Bistro,single_site,TUS,30,0,2014-05-18
+891,Santa Cruz Liquor,single_site,TUS,30,0,2018-09-11
+892,Mountain View Architects,single_site,NTH,30,0,2019-08-03
+893,Robert Bailey Boutique,single_site,NTH,30,0,2017-05-18
+894,Rogers Physical Therapy,single_site,PHX,30,0,2015-02-11
+895,Jennifer Morris Title Company,single_site,TUS,30,0,2013-05-19
+897,Shauna Allen Engineering,single_site,TUS,30,0,2015-10-15
+899,Howard & Taylor Liquor,single_site,PHX,30,0,2012-06-16
+900,Andre Wilson Furniture,single_site,PHX,30,0,2014-03-20
+901,Hill Architects,single_site,NTH,30,0,2019-02-05
+902,Parker & Robinson Furniture,single_site,PHX,30,0,2012-05-28
+903,Maryvale Family Dental,single_site,PHX,30,0,2016-07-18
+905,Hill Architects,single_site,PHX,30,0,2019-10-25
+906,Maria Nelson Family Dental,single_site,PHX,30,0,2011-12-17
+907,Jackson Eye Care,single_site,TUS,30,0,2019-07-02
+908,Carter & Stewart Bistro,single_site,PHX,30,0,2013-05-30
+909,Mitchell Hardware,single_site,PHX,30,0,2015-11-01
+910,Roberts Title Company,single_site,NTH,30,0,2013-07-11
+911,Denise Evans Appliance,single_site,PHX,30,0,2013-05-20
+913,Jackson & Murphy Boutique,single_site,NTH,30,0,2014-10-09
+914,Dobson Street Law Offices,single_site,PHX,30,0,2017-01-15
+915,Camp Verde Eye Care,single_site,NTH,30,0,2018-07-15
+916,Maria Martinez Appliance,single_site,NTH,30,0,2013-06-08
+918,Ahwatukee Florist,single_site,PHX,30,0,2017-01-07
+919,Morris & Cooper Architects,single_site,TUS,30,0,2014-09-11
+920,Martin & Martin Family Dental,single_site,NTH,30,0,2016-07-24
+921,Miller Appliance,single_site,NTH,30,0,2018-10-05
+922,Ward & Cooper Florist,single_site,PHX,30,0,2016-10-09
+923,Valencia Street Furniture,single_site,TUS,30,0,2014-10-26
+924,Tanque Street Appliance,single_site,TUS,30,0,2013-03-27
+925,Hill & Robinson Hardware,single_site,PHX,30,0,2015-01-12
+927,Sabino Cafe,single_site,TUS,30,0,2018-09-27
+929,Nate Green Family Dental,single_site,PHX,30,0,2018-02-06
+930,Kevin Brown Pediatrics,single_site,PHX,30,0,2015-04-17
+931,Gilbert Street Law Offices,single_site,PHX,30,0,2015-10-19
+932,Sabino Physical Therapy,single_site,TUS,30,0,2013-11-10
+933,Kelly & Turner Eye Care,single_site,TUS,30,0,2012-01-29
+934,Gilbert Cafe,single_site,PHX,30,0,2011-11-06
+935,Ray Street Eye Care,single_site,PHX,30,0,2012-12-28
+936,Grant Street Hardware,single_site,TUS,30,0,2014-04-16
+937,Thomas & Stewart Appliance,single_site,PHX,30,0,2014-08-11
+938,Paula Garcia Veterinary Clinic,single_site,PHX,30,0,2012-04-29
+940,Speedway Street Appliance,single_site,TUS,30,0,2015-12-16
+941,Milton Street Liquor,single_site,NTH,30,0,2018-10-02
+942,Derek Taylor Pharmacy,single_site,TUS,30,0,2016-09-04
+943,Daniel Parker Appliance,single_site,PHX,30,0,2015-12-20
+944,Alma Street Diner,single_site,PHX,30,0,2018-06-16
+946,Dobson Street Florist,single_site,PHX,30,0,2019-09-21
+947,Nicole Moore Physical Therapy,single_site,PHX,30,0,2016-07-29
+948,Gilbert Street Hardware,single_site,PHX,30,0,2017-02-20
+949,Baker & Rogers Law Offices,single_site,TUS,30,0,2019-02-02
+950,Bailey Family Dental,single_site,PHX,30,0,2014-01-08
+951,Old Pueblo Physical Therapy,single_site,TUS,30,0,2013-11-03
+952,Eric Lewis Appliance,single_site,TUS,30,0,2012-05-12
+953,Kelly Pediatrics,single_site,PHX,30,0,2013-10-28
+954,King Grill,single_site,NTH,30,0,2019-11-05
+955,Harris & Roberts Florist,single_site,PHX,30,0,2014-05-10
+956,Bailey & Harris Family Dental,single_site,PHX,30,0,2012-03-19
+957,Speedway Street Furniture,single_site,TUS,30,0,2014-10-02
+958,University Street Chiropractic,single_site,PHX,30,0,2016-09-02
+959,Rita Ranch Liquor,single_site,TUS,30,0,2013-10-06
+960,Baseline Street Pizzeria,single_site,PHX,30,0,2013-06-03
+961,Kelly Veterinary Clinic,single_site,PHX,30,0,2013-05-23
+963,Warner Street Chiropractic,single_site,PHX,30,0,2018-08-11
+965,Angela Young Liquor,single_site,PHX,30,0,2019-10-16
+966,Baseline Street Law Offices,single_site,PHX,30,0,2013-05-25
+967,Edwards & Mitchell Cafe,single_site,NTH,30,0,2016-07-06
+969,Shea Street Grill,single_site,PHX,30,0,2019-04-02
+970,Mitchell Cafe,single_site,PHX,30,0,2012-07-23
+971,Anderson & Green Title Company,single_site,PHX,30,0,2016-03-21
+972,Thompson Insurance Agency,single_site,PHX,30,0,2018-12-05
+973,Ray Street Eye Care,single_site,PHX,30,0,2016-12-13
+974,Bell Street Hardware,single_site,PHX,30,0,2012-12-19
+975,Alma Street Accounting,single_site,PHX,30,0,2012-03-02
+977,Pueblo Cafe,single_site,TUS,30,0,2016-12-01
+978,Thompson Diner,single_site,PHX,30,0,2019-11-01
+979,Adams Boutique,single_site,NTH,30,0,2019-09-10
+980,Scott Pharmacy,single_site,NTH,30,0,2019-02-08
+982,Campbell Hardware,single_site,PHX,30,0,2013-10-19
+984,Casas Adobes Diner,single_site,TUS,30,0,2016-02-17
+985,Tyler Cox Liquor,single_site,PHX,30,0,2014-07-13
+986,Santa Cruz Medical Billing,single_site,TUS,30,0,2019-11-07
+987,Moore Engineering,single_site,PHX,30,0,2018-06-06
+988,Chris Hill Pediatrics,single_site,PHX,30,0,2019-08-10
+989,Green Valley Diner,single_site,TUS,30,0,2013-05-06
+990,Glendale Title Company,single_site,PHX,30,0,2019-09-22
+992,Jose Lee Accounting,single_site,PHX,30,0,2012-06-26
+994,Luis Martinez Bakery,single_site,TUS,30,0,2019-11-12
+996,Stewart & Bailey Family Dental,single_site,TUS,30,0,2019-09-08
+997,Patricia Cox Bistro,single_site,NTH,30,0,2014-01-30
+999,Megan Martin Pediatrics,single_site,NTH,30,0,2014-05-27
+1000,Eric Jackson Diner,single_site,PHX,30,0,2012-07-13
+1001,Cottonwood Architects,single_site,NTH,30,0,2015-11-18
+1002,Superstition Grill,single_site,PHX,30,0,2013-04-06
+1004,Ahwatukee Hardware,single_site,PHX,30,0,2013-03-28
+1005,Vail Chiropractic,single_site,TUS,30,0,2016-02-23
+1006,Allen Pediatrics,single_site,TUS,30,0,2012-08-05
+1007,Lewis Bistro,single_site,TUS,30,0,2013-07-25
+1008,Cox & Cox Family Dental,single_site,TUS,30,0,2017-09-11
+1010,Avondale Pizzeria,single_site,PHX,30,0,2017-03-27
+1013,Jennifer Miller Florist,single_site,PHX,30,0,2016-11-07
+1014,Southern Street Family Dental,single_site,PHX,30,0,2019-10-06
+1016,David Davis Liquor,single_site,PHX,30,0,2014-02-05
+1017,Garcia Appliance,single_site,NTH,30,0,2013-07-13
+1018,Davis & Kelly Florist,single_site,PHX,30,0,2015-09-04
+1019,Green Pharmacy,single_site,TUS,30,0,2017-12-08
+1020,Shea Street Cafe,single_site,PHX,30,0,2016-08-27
+1021,Cottonwood Veterinary Clinic,single_site,NTH,30,0,2012-06-17
+1022,Sabino Cafe,single_site,TUS,30,0,2014-04-22
+1023,Howard & Thomas Hardware,single_site,TUS,30,0,2014-05-25
+1024,Eric Clark Boutique,single_site,PHX,30,0,2019-03-04
+1025,Daniel Thompson Diner,single_site,NTH,30,0,2014-10-06
+1026,Elliot Street Florist,single_site,PHX,30,0,2019-05-28
+1027,Morris Engineering,single_site,TUS,30,0,2016-03-02
+1028,Main Street Florist,single_site,TUS,30,0,2013-02-04
+1029,Hill & Howard Appliance,single_site,NTH,30,0,2017-07-06
+1032,Broadway Street Cafe,single_site,TUS,30,0,2013-05-17
+1034,Sean Turner Bistro,single_site,PHX,30,0,2015-08-30
+1035,Shea Street Family Dental,single_site,PHX,30,0,2013-03-28
+1036,Michael Garcia Insurance Agency,single_site,TUS,30,0,2019-07-19
+1038,Clark & Campbell Grill,single_site,PHX,30,0,2016-02-12
+1039,Luis Clark Insurance Agency,single_site,PHX,30,0,2016-04-05
+1040,Phillips & Parker Title Company,single_site,PHX,30,0,2019-07-03
+1041,Scottsdale Veterinary Clinic,single_site,PHX,30,0,2012-01-01
+1042,Ray Murphy Florist,single_site,TUS,30,0,2013-07-14
+1043,Brittany Nelson Florist,single_site,TUS,30,0,2018-01-23
+1045,Robinson & Scott Engineering,single_site,PHX,30,0,2018-06-27
+1046,Casas Adobes Bakery,single_site,TUS,30,0,2013-07-06
+1047,Wes Martinez Bakery,single_site,TUS,30,0,2017-12-22
+1048,Valencia Street Physical Therapy,single_site,TUS,30,0,2014-10-16
+1050,Lake Street Boutique,single_site,NTH,30,0,2014-04-15
+1051,Paradise Valley Bakery,single_site,PHX,30,0,2014-05-06
+1052,Clark & Stewart Liquor,single_site,PHX,30,0,2013-01-28
+1053,Murphy & Hughes Bistro,single_site,TUS,30,0,2013-03-14
+1054,Casas Adobes Hardware,single_site,TUS,30,0,2019-07-02
+1055,Mountain View Cafe,single_site,NTH,30,0,2013-08-30
+1058,Elliot Street Chiropractic,single_site,PHX,30,0,2019-05-31
+1059,Camelback Street Accounting,single_site,PHX,30,0,2014-08-25
+1060,Kelly Diner,single_site,TUS,30,0,2013-12-05
+1062,Broadway Street Insurance Agency,single_site,PHX,30,0,2012-11-09
+1063,Patricia Robinson Title Company,single_site,PHX,30,0,2013-12-17
+1065,Thomas Cafe,single_site,PHX,30,0,2014-10-22
+1066,Arcadia Taqueria,single_site,PHX,30,0,2017-03-18
+1067,Robert Murphy Engineering,single_site,TUS,30,0,2018-08-20
+1069,Rita Ranch Florist,single_site,TUS,30,0,2016-02-19
+1070,King Cafe,single_site,PHX,30,0,2013-10-03
+1071,Luis White Florist,single_site,PHX,30,0,2012-05-31
+1072,Brittany Murphy Diner,single_site,NTH,30,0,2016-10-02
+1073,James White Furniture,single_site,NTH,30,0,2018-03-14
+1074,Santa Cruz Engineering,single_site,TUS,30,0,2014-02-05
+1075,Nicole Wright Pediatrics,single_site,TUS,30,0,2014-04-22
+1077,Camelback Cafe,single_site,PHX,30,0,2011-11-23
+1078,Wright & Morris Medical Billing,single_site,PHX,30,0,2017-12-25
+1080,Wilson Pediatrics,single_site,PHX,30,0,2014-09-28
+1081,Hill Diner,single_site,PHX,30,0,2013-05-22
+1082,Vail Architects,single_site,TUS,30,0,2012-09-18
+1083,Power Street Accounting,single_site,PHX,30,0,2017-03-10
+1084,Walker Diner,single_site,PHX,30,0,2015-01-15
+1085,Cooper & Cox Bistro,single_site,PHX,30,0,2016-04-24
+1091,Pueblo Eye Care,single_site,TUS,30,0,2014-03-08
+1093,Bell Street Hardware,single_site,PHX,30,0,2019-11-23
+1096,Holly Nelson Pizzeria,single_site,PHX,30,0,2019-04-25
+1099,Reed Taqueria,single_site,PHX,30,0,2016-08-15
+1100,Eric Taylor Family Dental,single_site,PHX,30,0,2017-10-19
+1101,Warner Street Accounting,single_site,PHX,30,0,2016-07-17
+1103,Nelson Bakery,single_site,NTH,30,0,2018-03-05
+1104,Oracle Street Engineering,single_site,TUS,30,0,2014-02-28
+1105,Oro Valley Chiropractic,single_site,TUS,30,0,2013-11-11
+1106,Ray Hughes Appliance,single_site,NTH,30,0,2013-04-13
+1107,Carter & Walker Engineering,single_site,TUS,30,0,2012-03-28
+1110,Gina Phillips Veterinary Clinic,single_site,PHX,30,0,2014-07-04
+1112,Sedona Chiropractic,single_site,NTH,30,0,2013-02-09
+1114,Collins Chiropractic,single_site,PHX,30,0,2012-02-23
+1116,Morris Chiropractic,single_site,NTH,30,0,2013-09-17
+1118,Moore & Thomas Medical Billing,single_site,PHX,30,0,2014-11-26
+1119,Martinez Pediatrics,single_site,PHX,30,0,2016-06-02
+1120,Bell Street Engineering,single_site,PHX,30,0,2019-02-25
+1121,Avondale Medical Billing,single_site,PHX,30,0,2015-06-18
+1123,Trent Clark Veterinary Clinic,single_site,TUS,30,0,2012-04-03
+1124,Jamal Adams Bistro,single_site,PHX,30,0,2017-11-18
+1125,Evans Grill,single_site,NTH,30,0,2019-04-04
+1128,Carmen Stewart Chiropractic,single_site,PHX,30,0,2018-10-02
+1129,Mesa Taqueria,single_site,PHX,30,0,2016-04-25
+1130,Robinson Accounting,single_site,PHX,30,0,2013-05-10
+1131,Casas Adobes Appliance,single_site,TUS,30,0,2017-12-02
+1132,Dustin Robinson Architects,single_site,PHX,30,0,2015-10-19
+1134,Miller & Lee Family Dental,single_site,NTH,30,0,2012-09-09
+1136,Hughes & Anderson Furniture,single_site,TUS,30,0,2016-08-30
+1138,Nelson & Martin Pizzeria,single_site,TUS,30,0,2016-07-25
+1141,Camp Verde Bakery,single_site,NTH,30,0,2014-08-23
+1143,Murphy & Ward Medical Billing,single_site,TUS,30,0,2012-03-31
+1144,Patricia Hughes Grill,single_site,NTH,30,0,2015-08-06
+1145,Howard & Carter Hardware,single_site,NTH,30,0,2014-11-03
+1147,Sean Phillips Chiropractic,single_site,TUS,30,0,2019-11-07
+1148,Cooper & Adams Bistro,single_site,PHX,30,0,2013-05-10
+1149,Camelback Pediatrics,single_site,PHX,30,0,2016-06-18
+1151,Fountain Hills Eye Care,single_site,PHX,30,0,2015-05-14
+1152,Vail Pizzeria,single_site,TUS,30,0,2018-01-24
+1153,Shauna Hall Boutique,single_site,PHX,30,0,2018-02-04
+1154,Laveen Hardware,single_site,PHX,30,0,2014-07-27
+1158,Scottsdale Furniture,single_site,PHX,30,0,2012-11-14
+1159,Speedway Street Physical Therapy,single_site,TUS,30,0,2012-11-19
+1160,Scott Bakery,single_site,PHX,30,0,2017-03-04
+1162,Santa Cruz Family Dental,single_site,TUS,30,0,2016-10-02
+1163,Main Street Liquor,single_site,PHX,30,0,2011-10-29
+1164,Anderson Liquor,single_site,PHX,30,0,2015-04-11
+1165,Roberts & Wright Eye Care,single_site,PHX,30,0,2012-05-19
+1167,Chandler Bakery,single_site,PHX,30,0,2019-09-17
+1168,Tyler Hall Family Dental,single_site,TUS,30,0,2014-08-09
+1169,Southern Street Engineering,single_site,PHX,30,0,2014-07-24
+1170,Mitchell & Roberts Medical Billing,single_site,TUS,30,0,2013-07-23
+1171,Reed Family Dental,single_site,TUS,30,0,2016-07-02
+1172,Harris Eye Care,single_site,NTH,30,0,2016-09-08
+1173,Goodyear Physical Therapy,single_site,PHX,30,0,2018-07-15
+1174,Main Street Architects,single_site,TUS,30,0,2018-12-10
+1175,Cottonwood Street Furniture,single_site,NTH,30,0,2014-01-11
+1176,Parker & Robinson Family Dental,single_site,TUS,30,0,2013-11-30
+1177,Angela Davis Boutique,single_site,PHX,30,0,2017-03-10
+1178,Young Veterinary Clinic,single_site,PHX,30,0,2016-04-10
+1179,Chandler Engineering,single_site,PHX,30,0,2016-09-05
+1180,Gina Baker Physical Therapy,single_site,PHX,30,0,2012-10-03
+1181,Fountain Hills Taqueria,single_site,PHX,30,0,2019-08-11
+1182,Baker & Cook Diner,single_site,NTH,30,0,2019-02-02
+1183,Megan White Bakery,single_site,PHX,30,0,2012-05-24
+1184,Young Family Dental,single_site,TUS,30,0,2016-02-05
+1185,Cox & Collins Boutique,single_site,PHX,30,0,2012-03-29
+1187,Nicole Allen Liquor,single_site,PHX,30,0,2017-06-06
+1188,Sonoran Title Company,single_site,PHX,30,0,2013-02-23
+1189,Casas Adobes Liquor,single_site,TUS,30,0,2013-09-28
+1190,Maria Campbell Grill,single_site,PHX,30,0,2014-12-03
+1191,Rachel Turner Law Offices,single_site,PHX,30,0,2019-01-04
+1193,Val Street Furniture,single_site,PHX,30,0,2017-03-18
+1194,Val Street Grill,single_site,PHX,30,0,2018-03-01
+1195,Johnson & Anderson Eye Care,single_site,PHX,30,0,2011-10-25
+1196,Estrella Appliance,single_site,PHX,30,0,2016-04-01
+1197,Allen & Carter Eye Care,single_site,PHX,30,0,2019-11-15
+1200,Hill & Young Architects,single_site,PHX,30,0,2017-05-15
+1201,Denise Thompson Bakery,single_site,PHX,30,0,2018-01-04
+1202,Baseline Street Bistro,single_site,PHX,30,0,2014-03-08
+1203,Kolb Street Boutique,single_site,TUS,30,0,2017-09-23
+1205,Milton Street Physical Therapy,single_site,NTH,30,0,2011-12-31
+1207,Southern Street Florist,single_site,PHX,30,0,2017-02-02
+1208,Oracle Street Family Dental,single_site,TUS,30,0,2013-09-19
+1209,Melissa Thomas Taqueria,single_site,PHX,30,0,2012-02-19
+1211,Tempe Bistro,single_site,PHX,30,0,2013-07-02
+1212,Dustin Anderson Pharmacy,single_site,NTH,30,0,2015-04-26
+1214,Lisa Davis Pediatrics,single_site,NTH,30,0,2018-01-21
+1215,Dobson Street Title Company,single_site,PHX,30,0,2016-06-30
+1217,Maria Davis Diner,single_site,PHX,30,0,2012-10-26
+1218,Speedway Street Engineering,single_site,TUS,30,0,2015-03-05
+1219,Carter & Young Accounting,single_site,NTH,30,0,2018-08-30
+1220,Bailey & Howard Title Company,single_site,PHX,30,0,2012-08-23
+1222,Gina Collins Physical Therapy,single_site,TUS,30,0,2016-01-16
+1224,Catalina Foothills Pizzeria,single_site,TUS,30,0,2016-09-16
+1225,Indian Street Grill,single_site,PHX,30,0,2016-02-09
+1226,Ray Lee Grill,single_site,PHX,30,0,2018-05-14
+1227,Clark & Evans Physical Therapy,single_site,PHX,30,0,2019-04-28
+1228,Nate Brown Architects,single_site,PHX,30,0,2014-02-12
+1229,Milton Street Title Company,single_site,NTH,30,0,2014-09-16
+1230,Stewart & Edwards Furniture,single_site,PHX,30,0,2012-01-13
+1231,Thompson Grill,single_site,PHX,30,0,2019-11-04
+1232,Angela Kelly Florist,single_site,PHX,30,0,2016-08-09
+1233,Andre Martin Pharmacy,single_site,PHX,30,0,2016-03-03
+1234,Dobson Street Physical Therapy,single_site,PHX,30,0,2012-02-11
+1235,Val Street Appliance,single_site,PHX,30,0,2016-06-17
+1236,Price Pizzeria,single_site,PHX,30,0,2014-02-24
+1237,Southern Street Pediatrics,single_site,PHX,30,0,2013-07-31
+1238,Cox & Stewart Cafe,single_site,TUS,30,0,2014-07-26
+1239,Valencia Street Law Offices,single_site,TUS,30,0,2018-03-13
+1240,Collins & Martinez Architects,single_site,PHX,30,0,2017-04-01
+1241,Patricia Price Hardware,single_site,PHX,30,0,2015-02-21
+1242,Mogollon Rim Bistro,regional_chain,NTH,30,1,2020-01-01
+1243,Karen Lee Engineering,single_site,PHX,30,0,2020-01-01
+1244,Green Valley Furniture,single_site,TUS,30,0,2020-01-01
+1245,Apache Junction Pizzeria,single_site,PHX,30,0,2020-01-01
+1246,Walker & Green Insurance Agency,single_site,TUS,30,0,2020-01-01
+1247,Cox & Moore Insurance Agency,single_site,PHX,30,0,2020-01-01
+1250,Coconino Cafe,regional_chain,NTH,30,0,2020-03-01
+1251,Mesa Pizzeria,regional_chain,PHX,30,0,2020-03-01
+1253,Camelback Appliance,regional_chain,PHX,30,0,2020-03-01
+1254,Alma Street Boutique,single_site,PHX,30,0,2020-04-01
+1255,Hill & Mitchell Insurance Agency,single_site,PHX,30,0,2020-04-01
+1256,Andre Collins Chiropractic,single_site,TUS,30,0,2020-04-01
+1258,Collins Liquor,single_site,TUS,30,0,2020-05-01
+1261,Sonoran Taqueria,regional_chain,PHX,30,0,2020-05-01
+1262,Valencia Street Liquor,single_site,TUS,30,0,2020-06-01
+1263,Coconino Family Dental,regional_chain,NTH,30,0,2020-06-01
+1264,Power Street Appliance,single_site,PHX,30,0,2020-06-01
+1265,Kelly & Clark Pizzeria,single_site,NTH,30,0,2020-06-01
+1267,Paradise Valley Veterinary Clinic,regional_chain,PHX,30,0,2020-07-01
+1268,Desert Ridge Boutique,regional_chain,PHX,30,0,2020-07-01
+1269,Price & Johnson Medical Billing,single_site,NTH,30,0,2020-07-01
+1271,Southern Street Medical Billing,single_site,PHX,30,0,2020-08-01
+1273,Vail Pharmacy,regional_chain,TUS,30,0,2020-08-01
+1275,Karen Moore Engineering,single_site,TUS,30,0,2020-09-01
+1276,Scottsdale Liquor,regional_chain,PHX,30,0,2020-10-01
+1277,Trent Anderson Accounting,single_site,NTH,30,0,2020-10-01
+1278,Wes Scott Florist,single_site,PHX,30,0,2020-11-01
+1279,Bailey & Anderson Accounting,single_site,NTH,30,0,2020-11-01
+1280,King & Turner Taqueria,single_site,NTH,30,0,2020-11-01
+1281,Sedona Bakery,regional_chain,NTH,30,0,2020-11-01
+1282,Clark Accounting,single_site,PHX,30,0,2020-12-01
+1283,Trent Davis Pediatrics,single_site,PHX,30,0,2020-12-01
+1285,Chandler Real Estate Group,property_manager,PHX,45,0,2021-01-01
+1286,Elliot Street Medical Billing,single_site,PHX,30,0,2021-01-01
+1288,Harris Diner,single_site,PHX,30,0,2021-01-01
+1289,Andre Morris Pizzeria,single_site,PHX,30,0,2021-01-01
+1290,Mountain View Pharmacy,regional_chain,NTH,30,0,2021-01-01
+1291,Ina Street Physical Therapy,single_site,TUS,30,0,2021-01-01
+1292,Camelback Pizzeria,single_site,PHX,30,0,2021-01-01
+1293,Avondale Realty Partners,property_manager,PHX,45,0,2021-02-01
+1296,Stewart Title Company,single_site,NTH,30,0,2021-02-01
+1297,Ahwatukee Commercial Properties,property_manager,PHX,45,0,2021-03-01
+1298,Sahuarita Diner,regional_chain,TUS,30,0,2021-03-01
+1299,Martin Pediatrics,single_site,PHX,30,0,2021-03-01
+1300,Val Street Pediatrics,single_site,PHX,30,0,2021-03-01
+1301,Sean Taylor Hardware,single_site,NTH,30,0,2021-03-01
+1302,Taylor & Cook Family Dental,single_site,PHX,30,0,2021-03-01
+1306,Dobson Street Furniture,single_site,PHX,30,0,2021-04-01
+1307,Miller & Hall Family Dental,single_site,PHX,30,0,2021-04-01
+1308,Stewart & Cook Liquor,single_site,TUS,30,0,2021-04-01
+1309,Cook Hardware,single_site,TUS,30,0,2021-05-01
+1310,Williams Pediatrics,regional_chain,NTH,30,0,2021-05-01
+1311,Laveen Pharmacy,single_site,PHX,30,0,2021-06-01
+1312,Elliot Street Bakery,single_site,PHX,30,0,2021-06-01
+1313,Johnson & Hill Florist,single_site,PHX,30,0,2021-06-01
+1314,Stewart & Wilson Boutique,single_site,PHX,30,0,2021-07-01
+1315,Cox Chiropractic,single_site,PHX,30,0,2021-07-01
+1316,Kelly Furniture,single_site,TUS,30,0,2021-07-01
+1317,Moore Physical Therapy,single_site,NTH,30,0,2021-07-01
+1319,King & Morris Chiropractic,single_site,TUS,30,0,2021-09-01
+1320,Power Street Medical Billing,single_site,PHX,30,0,2021-09-01
+1321,Eric Collins Physical Therapy,single_site,TUS,30,0,2021-09-01
+1322,Main Street Architects,single_site,PHX,30,0,2021-09-01
+1323,Sedona Eye Care,regional_chain,NTH,30,0,2021-10-01
+1324,Nicole Morris Appliance,single_site,PHX,30,0,2021-10-01
+1325,Jennifer Johnson Chiropractic,single_site,NTH,30,0,2021-10-01
+1326,Catalina Foothills Hardware,regional_chain,TUS,30,0,2021-11-01
+1328,Shauna Collins Architects,single_site,NTH,30,0,2021-11-01
+1329,Carter Eye Care,single_site,PHX,30,0,2021-11-01
+1330,Lee & Hall Taqueria,single_site,TUS,30,0,2021-11-01
+1331,Dobson Street Grill,single_site,PHX,30,0,2021-11-01
+1332,Tempe Engineering,single_site,PHX,30,0,2021-11-01
+1333,Peoria Holdings,property_manager,PHX,45,0,2021-12-01
+1335,Lewis & Nelson Furniture,single_site,NTH,30,0,2021-12-01
+1336,Maryvale Bakery,regional_chain,PHX,30,0,2021-12-01
+1338,Old Pueblo Boutique,single_site,TUS,30,0,2022-01-01
+1339,Coconino Bistro,single_site,NTH,30,0,2022-01-01
+1340,Parker Liquor,single_site,TUS,30,0,2022-01-01
+1341,Davis & Rogers Veterinary Clinic,single_site,PHX,30,0,2022-01-01
+1342,Evans Pediatrics,single_site,PHX,30,0,2022-01-01
+1343,Collins Diner,single_site,PHX,30,0,2022-01-01
+1344,Andre Hughes Liquor,single_site,TUS,30,0,2022-01-01
+1345,Oro Valley Title Company,single_site,TUS,30,0,2022-02-01
+1346,Elliot Street Engineering,single_site,PHX,30,0,2022-02-01
+1347,Nelson & Scott Diner,single_site,TUS,30,0,2022-03-01
+1348,Jason Carter Grill,single_site,PHX,30,0,2022-03-01
+1349,Hall Appliance,single_site,TUS,30,0,2022-03-01
+1350,Cox Pharmacy,single_site,PHX,30,0,2022-03-01
+1351,Sahuarita Realty Partners,property_manager,TUS,45,0,2022-03-01
+1352,Gilbert Cafe,regional_chain,PHX,30,0,2022-04-01
+1353,State Street Medical Billing,single_site,NTH,30,0,2022-04-01
+1354,Shea Street Chiropractic,single_site,PHX,30,0,2022-04-01
+1355,King & Martin Law Offices,single_site,NTH,30,0,2022-04-01
+1356,Mountain View Appliance,single_site,NTH,30,0,2022-04-01
+1358,Turner Boutique,single_site,TUS,30,0,2022-05-01
+1359,Elliot Street Diner,single_site,PHX,30,0,2022-05-01
+1360,Thomas & Hughes Pizzeria,single_site,NTH,30,0,2022-05-01
+1361,Karen Miller Bistro,single_site,PHX,30,0,2022-05-01
+1362,Green Valley Diner,regional_chain,TUS,30,0,2022-05-01
+1363,Estrella Hardware,regional_chain,PHX,30,0,2022-05-01
+1364,Mesa Cafe,single_site,PHX,30,0,2022-06-01
+1365,Old Pueblo Veterinary Clinic,regional_chain,TUS,30,0,2022-06-01
+1366,Chandler Pediatrics,single_site,PHX,30,0,2022-07-01
+1368,Hill Diner,single_site,PHX,30,0,2022-07-01
+1369,Rita Ranch Commercial Properties,property_manager,TUS,45,0,2022-08-01
+1370,Davis Insurance Agency,single_site,PHX,30,0,2022-08-01
+1371,Brown Title Company,single_site,PHX,30,0,2022-09-01
+1373,Paula Price Boutique,single_site,TUS,30,0,2022-09-01
+1374,Maryvale Pharmacy,regional_chain,PHX,30,0,2022-09-01
+1375,Camelback Street Furniture,single_site,PHX,30,0,2022-09-01
+1377,Robinson & Walker Accounting,single_site,PHX,30,0,2022-10-01
+1379,Kelly Grill,single_site,TUS,30,0,2022-10-01
+1380,Fountain Hills Pharmacy,regional_chain,PHX,30,0,2022-10-01
+1381,Alma Street Title Company,single_site,PHX,30,0,2022-10-01
+1382,Papago Family Dental,regional_chain,PHX,30,0,2022-10-01
+1383,Dobson Street Taqueria,single_site,PHX,30,0,2022-10-01
+1384,Gilbert Chiropractic,regional_chain,PHX,30,0,2022-10-01
+1385,James Howard Medical Billing,single_site,NTH,30,0,2022-10-01
+1386,Bailey & Thomas Family Dental,single_site,TUS,30,0,2022-10-01
+1387,Angela Reed Law Offices,single_site,PHX,30,0,2022-10-01
+1388,Estrella Medical Billing,single_site,PHX,30,0,2022-10-01
+1389,King & Cox Pharmacy,single_site,PHX,30,0,2022-10-01
+1390,Scottsdale Liquor,regional_chain,PHX,30,0,2022-11-01
+1391,Collins Veterinary Clinic,single_site,TUS,30,0,2022-11-01
+1392,Deer Valley Property Management,property_manager,PHX,45,0,2022-11-01
+1393,Fountain Hills Family Dental,regional_chain,PHX,30,0,2022-11-01
+1394,Martin Florist,single_site,TUS,30,0,2022-12-01
+1395,Sonoran Grill,regional_chain,PHX,30,0,2023-01-01
+1396,Angela Thompson Law Offices,single_site,NTH,30,0,2023-01-01
+1397,Marana Family Dental,regional_chain,TUS,30,0,2023-01-01
+1398,Superstition Pizzeria,regional_chain,PHX,30,0,2023-02-01
+1399,Wilson Physical Therapy,single_site,TUS,30,0,2023-02-01
+1400,Broadway Street Furniture,single_site,PHX,30,0,2023-02-01
+1401,Adams & Allen Cafe,single_site,PHX,30,0,2023-03-01
+1402,Green Pizzeria,single_site,NTH,30,0,2023-03-01
+1403,Mesa Realty Partners,property_manager,PHX,45,0,2023-03-01
+1404,Moore Medical Billing,single_site,PHX,30,0,2023-03-01
+1405,Derek Walker Eye Care,single_site,TUS,30,0,2023-04-01
+1407,Heather Murphy Boutique,single_site,TUS,30,0,2023-04-01
+1408,Michael King Physical Therapy,single_site,TUS,30,0,2023-05-01
+1409,Avondale Grill,regional_chain,PHX,30,0,2023-05-01
+1410,Melissa Miller Pediatrics,single_site,PHX,30,0,2023-05-01
+1413,Route Street Grill,single_site,NTH,30,0,2023-06-01
+1414,Tempe Boutique,regional_chain,PHX,30,0,2023-06-01
+1415,Phillips & Ward Physical Therapy,single_site,TUS,30,0,2023-06-01
+1416,Vail Family Dental,regional_chain,TUS,30,0,2023-07-01
+1417,Pueblo Diner,regional_chain,TUS,30,0,2023-07-01
+1418,Laveen Accounting,single_site,PHX,30,0,2023-07-01
+1419,Stewart & King Pharmacy,single_site,PHX,30,0,2023-07-01
+1420,Angela Lewis Insurance Agency,single_site,TUS,30,0,2023-08-01
+1421,Robinson Cafe,single_site,NTH,30,0,2023-08-01
+1422,Indian Street Pizzeria,single_site,PHX,30,0,2023-08-01
+1423,Ahwatukee Boutique,regional_chain,PHX,30,0,2023-08-01
+1424,Eric Nelson Pediatrics,single_site,PHX,30,0,2023-09-01
+1425,Hill Medical Billing,single_site,PHX,30,0,2023-09-01
+1426,Gilbert Street Title Company,single_site,PHX,30,0,2023-09-01
+1427,Maryvale Boutique,single_site,PHX,30,0,2023-09-01
+1428,Rogers & Johnson Diner,single_site,PHX,30,0,2023-10-01
+1430,Oro Valley Physical Therapy,regional_chain,TUS,30,1,2023-10-01
+1431,Old Pueblo Taqueria,regional_chain,TUS,30,0,2023-10-01
+1432,Val Street Accounting,single_site,PHX,30,0,2023-10-01
+1433,Collins & Lee Family Dental,single_site,PHX,30,0,2023-10-01
+1434,Sonoran Boutique,single_site,PHX,30,0,2023-10-01
+1436,Warner Street Pharmacy,single_site,PHX,30,0,2023-11-01
+1437,Rincon Pizzeria,regional_chain,TUS,30,0,2023-11-01
+1438,Elliot Street Furniture,single_site,PHX,30,0,2023-11-01
+1439,Turner & Campbell Insurance Agency,single_site,TUS,30,0,2023-12-01
+1440,Brittany Campbell Furniture,single_site,TUS,30,0,2023-12-01
+1441,Stewart & Evans Bistro,single_site,PHX,30,0,2023-12-01
+1442,Walker Boutique,single_site,NTH,30,0,2023-12-01
+1443,Young Pizzeria,single_site,PHX,30,0,2023-12-01
+1444,University Street Furniture,single_site,PHX,30,0,2023-12-01
+1445,Ward & Parker Florist,single_site,NTH,30,0,2023-12-01
+1446,Harris Eye Care,single_site,PHX,30,0,2023-12-01
+1447,Prescott Valley Taqueria,single_site,NTH,30,0,2024-01-01
+1448,Cook & Green Cafe,single_site,PHX,30,0,2024-01-01
+1449,Cottonwood Street Pizzeria,single_site,NTH,30,0,2024-01-01
+1450,Arcadia Pharmacy,regional_chain,PHX,30,0,2024-01-01
+1451,Brown & Wilson Architects,single_site,NTH,30,0,2024-01-01
+1452,Nate Young Medical Billing,single_site,NTH,30,0,2024-02-01
+1453,Scott Diner,single_site,TUS,30,0,2024-02-01
+1454,Moore & Young Bistro,single_site,PHX,30,0,2024-02-01
+1455,Gilbert Street Liquor,single_site,PHX,30,0,2024-03-01
+1456,Casas Adobes Chiropractic,regional_chain,TUS,30,0,2024-03-01
+1457,Fourth Street Pizzeria,single_site,NTH,30,0,2024-04-01
+1458,Kelly Chiropractic,single_site,PHX,30,0,2024-04-01
+1459,Angela Bailey Veterinary Clinic,single_site,TUS,30,0,2024-04-01
+1460,Tanque Verde Eye Care,single_site,TUS,30,0,2024-05-01
+1461,David Hill Hardware,single_site,PHX,30,0,2024-05-01
+1463,Carter Boutique,single_site,NTH,30,0,2024-05-01
+1465,Ponderosa Family Dental,single_site,NTH,30,0,2024-06-01
+1466,Price & Campbell Hardware,single_site,NTH,30,0,2024-06-01
+1467,Queen Creek Pharmacy,regional_chain,PHX,30,0,2024-06-01
+1469,Murphy Eye Care,single_site,TUS,30,0,2024-06-01
+1470,Jackson & Edwards Diner,single_site,TUS,30,0,2024-07-01
+1471,Johnson & Young Veterinary Clinic,single_site,PHX,30,0,2024-07-01
+1472,Baseline Street Physical Therapy,single_site,PHX,30,0,2024-07-01
+1473,Luis Hall Chiropractic,single_site,PHX,30,0,2024-07-01
+1474,Anderson Architects,single_site,PHX,30,0,2024-08-01
+1475,Mogollon Rim Law Offices,single_site,NTH,30,0,2024-08-01
+1476,Pueblo Family Dental,regional_chain,TUS,30,0,2024-08-01
+1477,Gilbert Street Hardware,single_site,PHX,30,0,2024-08-01
+1478,Jackson Grill,single_site,PHX,30,0,2024-09-01
+1479,Scott Hardware,single_site,TUS,30,0,2024-09-01
+1480,Gilbert Street Diner,single_site,PHX,30,0,2024-09-01
+1481,Pueblo Furniture,regional_chain,TUS,30,1,2024-09-01
+1482,Shauna Anderson Engineering,single_site,TUS,30,0,2024-10-01
+1483,Williams Real Estate Group,property_manager,NTH,45,0,2024-10-01
+1484,Rincon Diner,single_site,TUS,30,0,2024-10-01
+1485,Megan Murphy Law Offices,single_site,NTH,30,0,2024-10-01
+1486,Collins Bistro,single_site,NTH,30,0,2024-10-01
+1487,Camelback Street Engineering,single_site,PHX,30,0,2024-10-01
+1488,Camp Verde Holdings,property_manager,NTH,45,1,2024-11-01
+1489,Rogers & Rogers Furniture,single_site,PHX,30,0,2024-11-01
+1490,Estrella Appliance,regional_chain,PHX,30,0,2024-12-01
+1491,Wilson & Campbell Insurance Agency,single_site,PHX,30,0,2024-12-01
+1492,Cottonwood Veterinary Clinic,regional_chain,NTH,30,0,2024-12-01
+1493,Eric Stewart Grill,single_site,NTH,30,0,2024-12-01
+1494,Saguaro Liquor,regional_chain,PHX,30,0,2024-12-01
+1495,Garcia & Cook Accounting,single_site,PHX,30,0,2024-12-01
+1496,Patricia Hall Pharmacy,single_site,PHX,30,0,2024-12-01
+1549,Paradise  Valley Realty Partners,property_manager,PHX,45,0,2012-01-05
+1550,AVONDALE DINER,single_site,PHX,30,0,2019-04-27
+1551,Vail Dner,single_site,TUS,30,0,2016-02-23
+1552,Denise  Adams Florist,single_site,PHX,30,0,2017-12-21
+1553,The Arcadia Veterinary Clinic,single_site,PHX,30,0,2019-03-27
+1554,The Oro Valley Chiropractic,single_site,TUS,30,0,2013-11-11
+1555,Allen  & Carter Eye Care,single_site,PHX,30,0,2019-11-15

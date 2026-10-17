@@ -1,0 +1,4924 @@
+Site ID,Customer ID,Site,Branch
+1,1,Brickhouse Grill #100,PHX
+2,1,Brickhouse Grill #101,TUS
+3,1,Brickhouse Grill #102,TUS
+4,1,Brickhouse Grill #103,PHX
+5,1,Brickhouse Grill #104,PHX
+6,1,Brickhouse Grill #105,PHX
+7,1,Brickhouse Grill #106,TUS
+8,1,Brickhouse Grill #107,TUS
+9,1,Brickhouse Grill #108,PHX
+10,1,Brickhouse Grill #109,TUS
+11,1,Brickhouse Grill #110,PHX
+12,1,Brickhouse Grill #111,PHX
+13,1,Brickhouse Grill #112,NTH
+14,1,Brickhouse Grill #113,NTH
+15,1,Brickhouse Grill #114,NTH
+16,1,Brickhouse Grill #115,NTH
+17,1,Brickhouse Grill #116,TUS
+18,1,Brickhouse Grill #117,PHX
+19,1,Brickhouse Grill #118,PHX
+20,1,Brickhouse Grill #119,NTH
+21,1,Brickhouse Grill #120,TUS
+22,1,Brickhouse Grill #121,PHX
+23,1,Brickhouse Grill #122,PHX
+24,1,Brickhouse Grill #123,TUS
+25,1,Brickhouse Grill #124,PHX
+26,1,Brickhouse Grill #125,TUS
+27,1,Brickhouse Grill #126,PHX
+28,1,Brickhouse Grill #127,NTH
+29,1,Brickhouse Grill #128,PHX
+30,1,Brickhouse Grill #129,PHX
+31,2,Fresh Plate Kitchens #100,PHX
+32,2,Fresh Plate Kitchens #101,PHX
+33,2,Fresh Plate Kitchens #102,PHX
+34,2,Fresh Plate Kitchens #103,PHX
+35,2,Fresh Plate Kitchens #104,PHX
+36,2,Fresh Plate Kitchens #105,NTH
+37,2,Fresh Plate Kitchens #106,TUS
+38,2,Fresh Plate Kitchens #107,PHX
+39,2,Fresh Plate Kitchens #108,PHX
+40,2,Fresh Plate Kitchens #109,NTH
+41,2,Fresh Plate Kitchens #110,PHX
+42,2,Fresh Plate Kitchens #111,PHX
+43,2,Fresh Plate Kitchens #112,TUS
+44,2,Fresh Plate Kitchens #113,PHX
+45,2,Fresh Plate Kitchens #114,TUS
+46,2,Fresh Plate Kitchens #115,PHX
+47,2,Fresh Plate Kitchens #116,PHX
+48,2,Fresh Plate Kitchens #117,NTH
+49,2,Fresh Plate Kitchens #118,PHX
+50,2,Fresh Plate Kitchens #119,PHX
+51,2,Fresh Plate Kitchens #120,PHX
+52,2,Fresh Plate Kitchens #121,PHX
+53,2,Fresh Plate Kitchens #122,TUS
+54,2,Fresh Plate Kitchens #123,PHX
+55,2,Fresh Plate Kitchens #124,NTH
+56,2,Fresh Plate Kitchens #125,NTH
+57,2,Fresh Plate Kitchens #126,TUS
+58,2,Fresh Plate Kitchens #127,PHX
+59,2,Fresh Plate Kitchens #128,PHX
+60,2,Fresh Plate Kitchens #129,PHX
+61,2,Fresh Plate Kitchens #130,TUS
+62,2,Fresh Plate Kitchens #131,TUS
+63,2,Fresh Plate Kitchens #132,PHX
+64,2,Fresh Plate Kitchens #133,TUS
+65,2,Fresh Plate Kitchens #134,TUS
+66,2,Fresh Plate Kitchens #135,PHX
+67,2,Fresh Plate Kitchens #136,PHX
+68,2,Fresh Plate Kitchens #137,TUS
+69,2,Fresh Plate Kitchens #138,TUS
+70,2,Fresh Plate Kitchens #139,PHX
+71,2,Fresh Plate Kitchens #140,NTH
+72,2,Fresh Plate Kitchens #141,PHX
+73,2,Fresh Plate Kitchens #142,PHX
+74,2,Fresh Plate Kitchens #143,TUS
+75,2,Fresh Plate Kitchens #144,PHX
+76,2,Fresh Plate Kitchens #145,PHX
+77,2,Fresh Plate Kitchens #146,TUS
+78,2,Fresh Plate Kitchens #147,PHX
+79,2,Fresh Plate Kitchens #148,PHX
+80,2,Fresh Plate Kitchens #149,PHX
+81,2,Fresh Plate Kitchens #150,PHX
+82,2,Fresh Plate Kitchens #151,PHX
+83,2,Fresh Plate Kitchens #152,NTH
+84,2,Fresh Plate Kitchens #153,NTH
+85,2,Fresh Plate Kitchens #154,PHX
+86,2,Fresh Plate Kitchens #155,PHX
+87,2,Fresh Plate Kitchens #156,PHX
+88,2,Fresh Plate Kitchens #157,NTH
+89,2,Fresh Plate Kitchens #158,NTH
+90,2,Fresh Plate Kitchens #159,NTH
+91,2,Fresh Plate Kitchens #160,PHX
+92,3,Value Mart Stores #100,PHX
+93,3,Value Mart Stores #101,PHX
+94,3,Value Mart Stores #102,PHX
+95,3,Value Mart Stores #103,PHX
+96,3,Value Mart Stores #104,NTH
+97,3,Value Mart Stores #105,PHX
+98,3,Value Mart Stores #106,NTH
+99,3,Value Mart Stores #107,NTH
+100,3,Value Mart Stores #108,TUS
+101,3,Value Mart Stores #109,PHX
+102,3,Value Mart Stores #110,PHX
+103,3,Value Mart Stores #111,PHX
+104,3,Value Mart Stores #112,TUS
+105,3,Value Mart Stores #113,TUS
+106,3,Value Mart Stores #114,PHX
+107,3,Value Mart Stores #115,TUS
+108,3,Value Mart Stores #116,TUS
+109,3,Value Mart Stores #117,TUS
+110,3,Value Mart Stores #118,NTH
+111,3,Value Mart Stores #119,PHX
+112,3,Value Mart Stores #120,PHX
+113,3,Value Mart Stores #121,PHX
+114,3,Value Mart Stores #122,NTH
+115,3,Value Mart Stores #123,PHX
+116,3,Value Mart Stores #124,PHX
+117,3,Value Mart Stores #125,TUS
+118,3,Value Mart Stores #126,PHX
+119,3,Value Mart Stores #127,PHX
+120,3,Value Mart Stores #128,PHX
+121,3,Value Mart Stores #129,PHX
+122,3,Value Mart Stores #130,NTH
+123,3,Value Mart Stores #131,PHX
+124,3,Value Mart Stores #132,NTH
+125,3,Value Mart Stores #133,TUS
+126,3,Value Mart Stores #134,PHX
+127,3,Value Mart Stores #135,TUS
+128,3,Value Mart Stores #136,PHX
+129,3,Value Mart Stores #137,TUS
+130,3,Value Mart Stores #138,TUS
+131,3,Value Mart Stores #139,NTH
+132,3,Value Mart Stores #140,PHX
+133,3,Value Mart Stores #141,PHX
+134,3,Value Mart Stores #142,PHX
+135,3,Value Mart Stores #143,PHX
+136,3,Value Mart Stores #144,NTH
+137,3,Value Mart Stores #145,PHX
+138,3,Value Mart Stores #146,NTH
+139,3,Value Mart Stores #147,NTH
+140,3,Value Mart Stores #148,PHX
+141,3,Value Mart Stores #149,PHX
+142,3,Value Mart Stores #150,PHX
+143,3,Value Mart Stores #151,TUS
+144,3,Value Mart Stores #152,TUS
+145,3,Value Mart Stores #153,PHX
+146,3,Value Mart Stores #154,PHX
+147,3,Value Mart Stores #155,PHX
+148,3,Value Mart Stores #156,TUS
+149,3,Value Mart Stores #157,TUS
+150,3,Value Mart Stores #158,NTH
+151,3,Value Mart Stores #159,PHX
+152,3,Value Mart Stores #160,TUS
+153,4,Corner Pharmacy #100,PHX
+154,4,Corner Pharmacy #101,PHX
+155,4,Corner Pharmacy #102,PHX
+156,4,Corner Pharmacy #103,PHX
+157,4,Corner Pharmacy #104,PHX
+158,4,Corner Pharmacy #105,TUS
+159,4,Corner Pharmacy #106,PHX
+160,4,Corner Pharmacy #107,PHX
+161,4,Corner Pharmacy #108,TUS
+162,4,Corner Pharmacy #109,NTH
+163,4,Corner Pharmacy #110,PHX
+164,4,Corner Pharmacy #111,TUS
+165,4,Corner Pharmacy #112,PHX
+166,4,Corner Pharmacy #113,PHX
+167,4,Corner Pharmacy #114,TUS
+168,4,Corner Pharmacy #115,PHX
+169,4,Corner Pharmacy #116,NTH
+170,4,Corner Pharmacy #117,NTH
+171,4,Corner Pharmacy #118,TUS
+172,4,Corner Pharmacy #119,PHX
+173,4,Corner Pharmacy #120,PHX
+174,4,Corner Pharmacy #121,PHX
+175,4,Corner Pharmacy #122,NTH
+176,5,Sunny Side Diners #100,TUS
+177,5,Sunny Side Diners #101,PHX
+178,5,Sunny Side Diners #102,TUS
+179,5,Sunny Side Diners #103,PHX
+180,5,Sunny Side Diners #104,NTH
+181,5,Sunny Side Diners #105,PHX
+182,5,Sunny Side Diners #106,PHX
+183,5,Sunny Side Diners #107,TUS
+184,5,Sunny Side Diners #108,PHX
+185,5,Sunny Side Diners #109,TUS
+186,5,Sunny Side Diners #110,PHX
+187,5,Sunny Side Diners #111,PHX
+188,5,Sunny Side Diners #112,NTH
+189,5,Sunny Side Diners #113,PHX
+190,5,Sunny Side Diners #114,NTH
+191,5,Sunny Side Diners #115,PHX
+192,5,Sunny Side Diners #116,NTH
+193,5,Sunny Side Diners #117,PHX
+194,5,Sunny Side Diners #118,NTH
+195,6,Main & Vine Outfitters #100,TUS
+196,6,Main & Vine Outfitters #101,PHX
+197,6,Main & Vine Outfitters #102,TUS
+198,6,Main & Vine Outfitters #103,PHX
+199,6,Main & Vine Outfitters #104,PHX
+200,6,Main & Vine Outfitters #105,TUS
+201,6,Main & Vine Outfitters #106,NTH
+202,6,Main & Vine Outfitters #107,PHX
+203,6,Main & Vine Outfitters #108,TUS
+204,6,Main & Vine Outfitters #109,PHX
+205,6,Main & Vine Outfitters #110,TUS
+206,6,Main & Vine Outfitters #111,TUS
+207,6,Main & Vine Outfitters #112,NTH
+208,6,Main & Vine Outfitters #113,NTH
+209,6,Main & Vine Outfitters #114,PHX
+210,6,Main & Vine Outfitters #115,TUS
+211,6,Main & Vine Outfitters #116,TUS
+212,6,Main & Vine Outfitters #117,PHX
+213,6,Main & Vine Outfitters #118,TUS
+214,6,Main & Vine Outfitters #119,PHX
+215,6,Main & Vine Outfitters #120,NTH
+216,6,Main & Vine Outfitters #121,PHX
+217,6,Main & Vine Outfitters #122,TUS
+218,6,Main & Vine Outfitters #123,PHX
+219,6,Main & Vine Outfitters #124,NTH
+220,6,Main & Vine Outfitters #125,PHX
+221,6,Main & Vine Outfitters #126,NTH
+222,6,Main & Vine Outfitters #127,PHX
+223,6,Main & Vine Outfitters #128,NTH
+224,6,Main & Vine Outfitters #129,PHX
+225,6,Main & Vine Outfitters #130,PHX
+226,6,Main & Vine Outfitters #131,PHX
+227,6,Main & Vine Outfitters #132,TUS
+228,6,Main & Vine Outfitters #133,TUS
+229,6,Main & Vine Outfitters #134,PHX
+230,6,Main & Vine Outfitters #135,NTH
+231,6,Main & Vine Outfitters #136,NTH
+232,6,Main & Vine Outfitters #137,PHX
+233,6,Main & Vine Outfitters #138,TUS
+234,6,Main & Vine Outfitters #139,NTH
+235,6,Main & Vine Outfitters #140,NTH
+236,6,Main & Vine Outfitters #141,TUS
+237,6,Main & Vine Outfitters #142,TUS
+238,6,Main & Vine Outfitters #143,TUS
+239,6,Main & Vine Outfitters #144,TUS
+240,6,Main & Vine Outfitters #145,PHX
+241,6,Main & Vine Outfitters #146,TUS
+242,6,Main & Vine Outfitters #147,PHX
+243,6,Main & Vine Outfitters #148,PHX
+244,6,Main & Vine Outfitters #149,PHX
+245,6,Main & Vine Outfitters #150,PHX
+246,6,Main & Vine Outfitters #151,PHX
+247,7,PetPoint Supply #100,NTH
+248,7,PetPoint Supply #101,TUS
+249,7,PetPoint Supply #102,TUS
+250,7,PetPoint Supply #103,PHX
+251,7,PetPoint Supply #104,TUS
+252,7,PetPoint Supply #105,PHX
+253,7,PetPoint Supply #106,PHX
+254,7,PetPoint Supply #107,NTH
+255,7,PetPoint Supply #108,PHX
+256,7,PetPoint Supply #109,TUS
+257,7,PetPoint Supply #110,PHX
+258,7,PetPoint Supply #111,PHX
+259,7,PetPoint Supply #112,PHX
+260,7,PetPoint Supply #113,TUS
+261,7,PetPoint Supply #114,TUS
+262,7,PetPoint Supply #115,PHX
+263,7,PetPoint Supply #116,PHX
+264,7,PetPoint Supply #117,PHX
+265,7,PetPoint Supply #118,PHX
+266,7,PetPoint Supply #119,PHX
+267,7,PetPoint Supply #120,TUS
+268,7,PetPoint Supply #121,PHX
+269,7,PetPoint Supply #122,PHX
+270,7,PetPoint Supply #123,PHX
+271,7,PetPoint Supply #124,TUS
+272,7,PetPoint Supply #125,PHX
+273,7,PetPoint Supply #126,TUS
+274,7,PetPoint Supply #127,PHX
+275,7,PetPoint Supply #128,TUS
+276,7,PetPoint Supply #129,PHX
+277,7,PetPoint Supply #130,PHX
+278,7,PetPoint Supply #131,PHX
+279,7,PetPoint Supply #132,PHX
+280,7,PetPoint Supply #133,PHX
+281,7,PetPoint Supply #134,PHX
+282,7,PetPoint Supply #135,PHX
+283,7,PetPoint Supply #136,PHX
+284,7,PetPoint Supply #137,PHX
+285,7,PetPoint Supply #138,PHX
+286,7,PetPoint Supply #139,PHX
+287,7,PetPoint Supply #140,PHX
+288,7,PetPoint Supply #141,PHX
+289,7,PetPoint Supply #142,PHX
+290,7,PetPoint Supply #143,PHX
+291,7,PetPoint Supply #144,PHX
+292,7,PetPoint Supply #145,NTH
+293,7,PetPoint Supply #146,PHX
+294,7,PetPoint Supply #147,PHX
+295,7,PetPoint Supply #148,NTH
+296,7,PetPoint Supply #149,PHX
+297,8,QuickLube Express #100,TUS
+298,8,QuickLube Express #101,PHX
+299,8,QuickLube Express #102,TUS
+300,8,QuickLube Express #103,NTH
+301,8,QuickLube Express #104,TUS
+302,8,QuickLube Express #105,PHX
+303,8,QuickLube Express #106,PHX
+304,8,QuickLube Express #107,NTH
+305,8,QuickLube Express #108,TUS
+306,8,QuickLube Express #109,NTH
+307,8,QuickLube Express #110,PHX
+308,8,QuickLube Express #111,PHX
+309,8,QuickLube Express #112,PHX
+310,8,QuickLube Express #113,PHX
+311,8,QuickLube Express #114,PHX
+312,8,QuickLube Express #115,PHX
+313,8,QuickLube Express #116,TUS
+314,8,QuickLube Express #117,PHX
+315,8,QuickLube Express #118,PHX
+316,8,QuickLube Express #119,PHX
+317,8,QuickLube Express #120,PHX
+318,8,QuickLube Express #121,PHX
+319,8,QuickLube Express #122,TUS
+320,8,QuickLube Express #123,NTH
+321,8,QuickLube Express #124,PHX
+322,8,QuickLube Express #125,PHX
+323,8,QuickLube Express #126,PHX
+324,8,QuickLube Express #127,PHX
+325,8,QuickLube Express #128,PHX
+326,8,QuickLube Express #129,TUS
+327,8,QuickLube Express #130,TUS
+328,9,Harvest Table #100,NTH
+329,9,Harvest Table #101,NTH
+330,9,Harvest Table #102,PHX
+331,9,Harvest Table #103,PHX
+332,9,Harvest Table #104,PHX
+333,9,Harvest Table #105,TUS
+334,9,Harvest Table #106,TUS
+335,9,Harvest Table #107,TUS
+336,9,Harvest Table #108,TUS
+337,9,Harvest Table #109,NTH
+338,9,Harvest Table #110,TUS
+339,9,Harvest Table #111,NTH
+340,9,Harvest Table #112,PHX
+341,9,Harvest Table #113,TUS
+342,9,Harvest Table #114,TUS
+343,9,Harvest Table #115,PHX
+344,9,Harvest Table #116,PHX
+345,9,Harvest Table #117,TUS
+346,9,Harvest Table #118,TUS
+347,9,Harvest Table #119,PHX
+348,9,Harvest Table #120,PHX
+349,9,Harvest Table #121,PHX
+350,9,Harvest Table #122,PHX
+351,9,Harvest Table #123,TUS
+352,9,Harvest Table #124,PHX
+353,9,Harvest Table #125,TUS
+354,9,Harvest Table #126,PHX
+355,9,Harvest Table #127,PHX
+356,9,Harvest Table #128,PHX
+357,9,Harvest Table #129,TUS
+358,9,Harvest Table #130,PHX
+359,9,Harvest Table #131,TUS
+403,11,Northstar Dental #100,PHX
+404,11,Northstar Dental #101,NTH
+405,11,Northstar Dental #102,PHX
+406,11,Northstar Dental #103,NTH
+407,11,Northstar Dental #104,PHX
+408,11,Northstar Dental #105,TUS
+409,11,Northstar Dental #106,PHX
+410,11,Northstar Dental #107,NTH
+411,11,Northstar Dental #108,PHX
+412,11,Northstar Dental #109,TUS
+413,11,Northstar Dental #110,PHX
+414,11,Northstar Dental #111,PHX
+415,11,Northstar Dental #112,TUS
+416,11,Northstar Dental #113,PHX
+417,11,Northstar Dental #114,TUS
+418,11,Northstar Dental #115,PHX
+419,11,Northstar Dental #116,TUS
+420,11,Northstar Dental #117,PHX
+421,11,Northstar Dental #118,TUS
+422,11,Northstar Dental #119,PHX
+423,11,Northstar Dental #120,PHX
+424,11,Northstar Dental #121,NTH
+425,11,Northstar Dental #122,PHX
+426,11,Northstar Dental #123,NTH
+427,11,Northstar Dental #124,TUS
+428,11,Northstar Dental #125,PHX
+429,11,Northstar Dental #126,TUS
+430,11,Northstar Dental #127,TUS
+431,11,Northstar Dental #128,PHX
+432,11,Northstar Dental #129,PHX
+433,11,Northstar Dental #130,TUS
+434,11,Northstar Dental #131,PHX
+435,11,Northstar Dental #132,PHX
+436,11,Northstar Dental #133,TUS
+437,11,Northstar Dental #134,TUS
+438,11,Northstar Dental #135,TUS
+439,11,Northstar Dental #136,PHX
+440,11,Northstar Dental #137,PHX
+441,11,Northstar Dental #138,PHX
+442,11,Northstar Dental #139,NTH
+443,11,Northstar Dental #140,NTH
+444,11,Northstar Dental #141,PHX
+445,11,Northstar Dental #142,TUS
+446,11,Northstar Dental #143,PHX
+447,11,Northstar Dental #144,TUS
+448,11,Northstar Dental #145,NTH
+449,11,Northstar Dental #146,PHX
+450,11,Northstar Dental #147,PHX
+451,11,Northstar Dental #148,PHX
+452,11,Northstar Dental #149,TUS
+453,11,Northstar Dental #150,PHX
+454,11,Northstar Dental #151,NTH
+455,11,Northstar Dental #152,PHX
+456,11,Northstar Dental #153,PHX
+457,11,Northstar Dental #154,PHX
+458,11,Northstar Dental #155,TUS
+459,11,Northstar Dental #156,PHX
+460,11,Northstar Dental #157,TUS
+461,11,Northstar Dental #158,TUS
+462,11,Northstar Dental #159,TUS
+463,11,Northstar Dental #160,PHX
+464,11,Northstar Dental #161,PHX
+465,11,Northstar Dental #162,PHX
+466,11,Northstar Dental #163,NTH
+467,11,Northstar Dental #164,PHX
+468,11,Northstar Dental #165,PHX
+469,11,Northstar Dental #166,PHX
+470,11,Northstar Dental #167,NTH
+471,11,Northstar Dental #168,TUS
+472,12,Urgent Care Partners #100,PHX
+473,12,Urgent Care Partners #101,PHX
+474,12,Urgent Care Partners #102,TUS
+475,12,Urgent Care Partners #103,TUS
+476,12,Urgent Care Partners #104,TUS
+477,12,Urgent Care Partners #105,PHX
+478,12,Urgent Care Partners #106,PHX
+479,12,Urgent Care Partners #107,PHX
+480,12,Urgent Care Partners #108,PHX
+481,12,Urgent Care Partners #109,TUS
+482,12,Urgent Care Partners #110,PHX
+483,12,Urgent Care Partners #111,TUS
+484,12,Urgent Care Partners #112,PHX
+485,12,Urgent Care Partners #113,PHX
+486,12,Urgent Care Partners #114,NTH
+487,12,Urgent Care Partners #115,PHX
+488,12,Urgent Care Partners #116,PHX
+489,12,Urgent Care Partners #117,TUS
+490,12,Urgent Care Partners #118,TUS
+491,12,Urgent Care Partners #119,PHX
+492,12,Urgent Care Partners #120,PHX
+493,12,Urgent Care Partners #121,TUS
+494,12,Urgent Care Partners #122,PHX
+495,12,Urgent Care Partners #123,PHX
+496,12,Urgent Care Partners #124,PHX
+497,12,Urgent Care Partners #125,NTH
+498,12,Urgent Care Partners #126,PHX
+499,12,Urgent Care Partners #127,NTH
+500,12,Urgent Care Partners #128,NTH
+501,12,Urgent Care Partners #129,TUS
+502,12,Urgent Care Partners #130,TUS
+503,12,Urgent Care Partners #131,PHX
+504,12,Urgent Care Partners #132,PHX
+505,12,Urgent Care Partners #133,PHX
+506,12,Urgent Care Partners #134,PHX
+507,12,Urgent Care Partners #135,TUS
+508,12,Urgent Care Partners #136,TUS
+509,12,Urgent Care Partners #137,TUS
+510,12,Urgent Care Partners #138,TUS
+511,12,Urgent Care Partners #139,PHX
+512,12,Urgent Care Partners #140,TUS
+513,12,Urgent Care Partners #141,PHX
+514,12,Urgent Care Partners #142,TUS
+515,12,Urgent Care Partners #143,NTH
+516,12,Urgent Care Partners #144,TUS
+517,12,Urgent Care Partners #145,PHX
+518,12,Urgent Care Partners #146,PHX
+519,12,Urgent Care Partners #147,TUS
+520,12,Urgent Care Partners #148,TUS
+521,12,Urgent Care Partners #149,PHX
+522,12,Urgent Care Partners #150,PHX
+523,12,Urgent Care Partners #151,NTH
+524,12,Urgent Care Partners #152,PHX
+525,12,Urgent Care Partners #153,TUS
+526,12,Urgent Care Partners #154,TUS
+527,12,Urgent Care Partners #155,NTH
+528,12,Urgent Care Partners #156,TUS
+529,12,Urgent Care Partners #157,PHX
+530,12,Urgent Care Partners #158,NTH
+531,12,Urgent Care Partners #159,PHX
+532,12,Urgent Care Partners #160,TUS
+533,12,Urgent Care Partners #161,PHX
+534,12,Urgent Care Partners #162,PHX
+535,12,Urgent Care Partners #163,PHX
+536,12,Urgent Care Partners #164,PHX
+537,13,Grand Canyon Tire #100,PHX
+538,13,Grand Canyon Tire #101,NTH
+539,13,Grand Canyon Tire #102,PHX
+540,13,Grand Canyon Tire #103,PHX
+541,13,Grand Canyon Tire #104,PHX
+542,13,Grand Canyon Tire #105,TUS
+543,13,Grand Canyon Tire #106,PHX
+544,13,Grand Canyon Tire #107,PHX
+545,13,Grand Canyon Tire #108,PHX
+546,13,Grand Canyon Tire #109,PHX
+547,13,Grand Canyon Tire #110,TUS
+548,13,Grand Canyon Tire #111,TUS
+549,13,Grand Canyon Tire #112,TUS
+550,13,Grand Canyon Tire #113,TUS
+551,13,Grand Canyon Tire #114,PHX
+552,13,Grand Canyon Tire #115,PHX
+553,13,Grand Canyon Tire #116,PHX
+554,13,Grand Canyon Tire #117,PHX
+555,13,Grand Canyon Tire #118,TUS
+556,13,Grand Canyon Tire #119,TUS
+557,13,Grand Canyon Tire #120,TUS
+558,13,Grand Canyon Tire #121,PHX
+559,13,Grand Canyon Tire #122,PHX
+560,13,Grand Canyon Tire #123,NTH
+561,13,Grand Canyon Tire #124,PHX
+562,13,Grand Canyon Tire #125,PHX
+563,13,Grand Canyon Tire #126,NTH
+564,13,Grand Canyon Tire #127,NTH
+565,13,Grand Canyon Tire #128,PHX
+566,13,Grand Canyon Tire #129,PHX
+567,13,Grand Canyon Tire #130,TUS
+568,13,Grand Canyon Tire #131,PHX
+569,13,Grand Canyon Tire #132,PHX
+570,13,Grand Canyon Tire #133,TUS
+571,13,Grand Canyon Tire #134,PHX
+572,13,Grand Canyon Tire #135,TUS
+573,13,Grand Canyon Tire #136,NTH
+574,13,Grand Canyon Tire #137,PHX
+575,13,Grand Canyon Tire #138,TUS
+576,13,Grand Canyon Tire #139,PHX
+577,13,Grand Canyon Tire #140,TUS
+578,13,Grand Canyon Tire #141,TUS
+579,13,Grand Canyon Tire #142,PHX
+580,13,Grand Canyon Tire #143,PHX
+581,13,Grand Canyon Tire #144,PHX
+582,13,Grand Canyon Tire #145,PHX
+583,13,Grand Canyon Tire #146,NTH
+584,13,Grand Canyon Tire #147,PHX
+585,13,Grand Canyon Tire #148,TUS
+586,13,Grand Canyon Tire #149,TUS
+587,13,Grand Canyon Tire #150,PHX
+588,13,Grand Canyon Tire #151,TUS
+589,13,Grand Canyon Tire #152,PHX
+590,13,Grand Canyon Tire #153,PHX
+591,13,Grand Canyon Tire #154,PHX
+592,13,Grand Canyon Tire #155,PHX
+593,13,Grand Canyon Tire #156,PHX
+594,13,Grand Canyon Tire #157,PHX
+595,13,Grand Canyon Tire #158,TUS
+596,13,Grand Canyon Tire #159,PHX
+597,13,Grand Canyon Tire #160,PHX
+598,14,BurgerBarn #100,NTH
+599,14,BurgerBarn #101,PHX
+600,14,BurgerBarn #102,TUS
+601,14,BurgerBarn #103,NTH
+602,14,BurgerBarn #104,PHX
+603,14,BurgerBarn #105,TUS
+604,14,BurgerBarn #106,PHX
+605,14,BurgerBarn #107,PHX
+606,14,BurgerBarn #108,PHX
+607,14,BurgerBarn #109,PHX
+608,14,BurgerBarn #110,PHX
+609,14,BurgerBarn #111,TUS
+610,14,BurgerBarn #112,NTH
+611,14,BurgerBarn #113,TUS
+612,14,BurgerBarn #114,PHX
+613,14,BurgerBarn #115,PHX
+614,14,BurgerBarn #116,PHX
+615,14,BurgerBarn #117,PHX
+616,14,BurgerBarn #118,TUS
+617,14,BurgerBarn #119,PHX
+618,14,BurgerBarn #120,TUS
+619,14,BurgerBarn #121,TUS
+620,14,BurgerBarn #122,PHX
+621,14,BurgerBarn #123,PHX
+622,14,BurgerBarn #124,NTH
+623,14,BurgerBarn #125,NTH
+624,14,BurgerBarn #126,PHX
+625,14,BurgerBarn #127,PHX
+626,14,BurgerBarn #128,PHX
+627,14,BurgerBarn #129,PHX
+628,14,BurgerBarn #130,NTH
+629,14,BurgerBarn #131,PHX
+630,14,BurgerBarn #132,PHX
+631,14,BurgerBarn #133,NTH
+632,14,BurgerBarn #134,PHX
+633,14,BurgerBarn #135,NTH
+634,14,BurgerBarn #136,PHX
+635,14,BurgerBarn #137,NTH
+636,14,BurgerBarn #138,PHX
+637,14,BurgerBarn #139,TUS
+638,14,BurgerBarn #140,PHX
+639,14,BurgerBarn #141,PHX
+640,14,BurgerBarn #142,PHX
+641,14,BurgerBarn #143,PHX
+642,14,BurgerBarn #144,PHX
+643,14,BurgerBarn #145,PHX
+644,14,BurgerBarn #146,PHX
+645,14,BurgerBarn #147,PHX
+646,14,BurgerBarn #148,PHX
+647,14,BurgerBarn #149,PHX
+648,15,Pasta Fresca #100,TUS
+649,15,Pasta Fresca #101,NTH
+650,15,Pasta Fresca #102,PHX
+651,15,Pasta Fresca #103,TUS
+652,15,Pasta Fresca #104,PHX
+653,15,Pasta Fresca #105,PHX
+654,15,Pasta Fresca #106,PHX
+655,15,Pasta Fresca #107,PHX
+656,15,Pasta Fresca #108,NTH
+657,15,Pasta Fresca #109,TUS
+658,15,Pasta Fresca #110,PHX
+659,15,Pasta Fresca #111,PHX
+660,15,Pasta Fresca #112,NTH
+661,15,Pasta Fresca #113,TUS
+662,15,Pasta Fresca #114,NTH
+663,15,Pasta Fresca #115,PHX
+664,15,Pasta Fresca #116,TUS
+665,15,Pasta Fresca #117,PHX
+666,15,Pasta Fresca #118,TUS
+667,15,Pasta Fresca #119,TUS
+668,15,Pasta Fresca #120,NTH
+669,15,Pasta Fresca #121,PHX
+670,15,Pasta Fresca #122,TUS
+671,15,Pasta Fresca #123,PHX
+672,15,Pasta Fresca #124,TUS
+673,15,Pasta Fresca #125,PHX
+674,15,Pasta Fresca #126,TUS
+675,15,Pasta Fresca #127,PHX
+676,15,Pasta Fresca #128,PHX
+677,15,Pasta Fresca #129,PHX
+678,15,Pasta Fresca #130,PHX
+679,15,Pasta Fresca #131,NTH
+680,15,Pasta Fresca #132,PHX
+681,15,Pasta Fresca #133,NTH
+682,15,Pasta Fresca #134,PHX
+683,15,Pasta Fresca #135,PHX
+684,15,Pasta Fresca #136,TUS
+685,15,Pasta Fresca #137,PHX
+686,15,Pasta Fresca #138,PHX
+687,15,Pasta Fresca #139,PHX
+688,15,Pasta Fresca #140,PHX
+689,15,Pasta Fresca #141,TUS
+690,15,Pasta Fresca #142,PHX
+691,15,Pasta Fresca #143,TUS
+692,15,Pasta Fresca #144,TUS
+693,16,FitLife Gyms #100,PHX
+694,16,FitLife Gyms #101,PHX
+695,16,FitLife Gyms #102,TUS
+696,16,FitLife Gyms #103,PHX
+697,16,FitLife Gyms #104,PHX
+698,16,FitLife Gyms #105,PHX
+699,16,FitLife Gyms #106,PHX
+700,16,FitLife Gyms #107,TUS
+701,16,FitLife Gyms #108,TUS
+702,16,FitLife Gyms #109,PHX
+703,16,FitLife Gyms #110,TUS
+704,16,FitLife Gyms #111,NTH
+705,16,FitLife Gyms #112,TUS
+706,16,FitLife Gyms #113,NTH
+707,16,FitLife Gyms #114,TUS
+708,16,FitLife Gyms #115,PHX
+709,16,FitLife Gyms #116,PHX
+710,16,FitLife Gyms #117,NTH
+711,16,FitLife Gyms #118,PHX
+712,16,FitLife Gyms #119,NTH
+713,16,FitLife Gyms #120,PHX
+714,16,FitLife Gyms #121,TUS
+715,16,FitLife Gyms #122,PHX
+716,16,FitLife Gyms #123,PHX
+717,16,FitLife Gyms #124,TUS
+718,17,DollarWise #100,TUS
+719,17,DollarWise #101,PHX
+720,17,DollarWise #102,PHX
+721,17,DollarWise #103,TUS
+722,17,DollarWise #104,PHX
+723,17,DollarWise #105,TUS
+724,17,DollarWise #106,PHX
+725,17,DollarWise #107,PHX
+726,17,DollarWise #108,TUS
+727,17,DollarWise #109,TUS
+728,17,DollarWise #110,TUS
+729,17,DollarWise #111,PHX
+730,17,DollarWise #112,PHX
+731,17,DollarWise #113,PHX
+732,17,DollarWise #114,NTH
+733,17,DollarWise #115,PHX
+734,17,DollarWise #116,PHX
+735,17,DollarWise #117,PHX
+736,17,DollarWise #118,PHX
+737,17,DollarWise #119,TUS
+738,17,DollarWise #120,NTH
+739,17,DollarWise #121,TUS
+740,17,DollarWise #122,PHX
+741,17,DollarWise #123,TUS
+742,17,DollarWise #124,PHX
+743,17,DollarWise #125,TUS
+744,17,DollarWise #126,NTH
+745,17,DollarWise #127,PHX
+746,17,DollarWise #128,TUS
+747,17,DollarWise #129,TUS
+748,17,DollarWise #130,NTH
+749,17,DollarWise #131,PHX
+750,17,DollarWise #132,PHX
+751,17,DollarWise #133,TUS
+752,17,DollarWise #134,PHX
+753,17,DollarWise #135,PHX
+754,18,Hometown Bank #100,PHX
+755,18,Hometown Bank #101,TUS
+756,18,Hometown Bank #102,NTH
+757,18,Hometown Bank #103,PHX
+758,18,Hometown Bank #104,TUS
+759,18,Hometown Bank #105,NTH
+760,18,Hometown Bank #106,PHX
+761,18,Hometown Bank #107,TUS
+762,18,Hometown Bank #108,PHX
+763,18,Hometown Bank #109,NTH
+764,18,Hometown Bank #110,PHX
+765,18,Hometown Bank #111,PHX
+766,18,Hometown Bank #112,PHX
+767,18,Hometown Bank #113,TUS
+768,18,Hometown Bank #114,PHX
+769,18,Hometown Bank #115,PHX
+770,18,Hometown Bank #116,PHX
+771,18,Hometown Bank #117,PHX
+772,18,Hometown Bank #118,TUS
+773,18,Hometown Bank #119,PHX
+774,18,Hometown Bank #120,PHX
+775,18,Hometown Bank #121,TUS
+776,18,Hometown Bank #122,NTH
+777,18,Hometown Bank #123,PHX
+778,18,Hometown Bank #124,TUS
+779,18,Hometown Bank #125,PHX
+780,18,Hometown Bank #126,TUS
+781,18,Hometown Bank #127,TUS
+782,18,Hometown Bank #128,TUS
+783,18,Hometown Bank #129,PHX
+784,18,Hometown Bank #130,PHX
+785,18,Hometown Bank #131,NTH
+786,18,Hometown Bank #132,PHX
+787,18,Hometown Bank #133,PHX
+788,18,Hometown Bank #134,TUS
+789,18,Hometown Bank #135,TUS
+790,18,Hometown Bank #136,PHX
+791,18,Hometown Bank #137,NTH
+792,18,Hometown Bank #138,TUS
+793,19,Cinema Plex #100,TUS
+794,19,Cinema Plex #101,PHX
+795,19,Cinema Plex #102,PHX
+796,19,Cinema Plex #103,PHX
+797,19,Cinema Plex #104,PHX
+798,19,Cinema Plex #105,PHX
+799,19,Cinema Plex #106,PHX
+800,19,Cinema Plex #107,PHX
+801,19,Cinema Plex #108,PHX
+802,19,Cinema Plex #109,NTH
+803,19,Cinema Plex #110,TUS
+804,19,Cinema Plex #111,PHX
+805,19,Cinema Plex #112,PHX
+806,19,Cinema Plex #113,PHX
+807,19,Cinema Plex #114,TUS
+808,19,Cinema Plex #115,PHX
+809,19,Cinema Plex #116,TUS
+810,19,Cinema Plex #117,PHX
+811,19,Cinema Plex #118,NTH
+812,19,Cinema Plex #119,PHX
+813,19,Cinema Plex #120,PHX
+814,19,Cinema Plex #121,PHX
+815,19,Cinema Plex #122,PHX
+816,19,Cinema Plex #123,PHX
+817,19,Cinema Plex #124,PHX
+818,19,Cinema Plex #125,PHX
+819,19,Cinema Plex #126,TUS
+820,19,Cinema Plex #127,PHX
+821,19,Cinema Plex #128,PHX
+822,19,Cinema Plex #129,PHX
+823,19,Cinema Plex #130,PHX
+824,19,Cinema Plex #131,TUS
+825,19,Cinema Plex #132,PHX
+826,19,Cinema Plex #133,TUS
+827,19,Cinema Plex #134,TUS
+828,19,Cinema Plex #135,PHX
+829,19,Cinema Plex #136,PHX
+830,19,Cinema Plex #137,NTH
+831,19,Cinema Plex #138,PHX
+832,19,Cinema Plex #139,PHX
+833,19,Cinema Plex #140,PHX
+834,19,Cinema Plex #141,TUS
+835,19,Cinema Plex #142,PHX
+836,19,Cinema Plex #143,PHX
+837,19,Cinema Plex #144,TUS
+838,19,Cinema Plex #145,TUS
+839,19,Cinema Plex #146,TUS
+840,19,Cinema Plex #147,PHX
+841,19,Cinema Plex #148,TUS
+842,19,Cinema Plex #149,NTH
+843,19,Cinema Plex #150,TUS
+844,19,Cinema Plex #151,TUS
+845,19,Cinema Plex #152,PHX
+846,19,Cinema Plex #153,PHX
+847,19,Cinema Plex #154,PHX
+848,19,Cinema Plex #155,PHX
+849,20,Golden Wok #100,PHX
+850,20,Golden Wok #101,TUS
+851,20,Golden Wok #102,PHX
+852,20,Golden Wok #103,PHX
+853,20,Golden Wok #104,TUS
+854,20,Golden Wok #105,PHX
+855,20,Golden Wok #106,PHX
+856,20,Golden Wok #107,PHX
+857,20,Golden Wok #108,PHX
+858,20,Golden Wok #109,NTH
+859,20,Golden Wok #110,PHX
+860,20,Golden Wok #111,PHX
+861,20,Golden Wok #112,TUS
+862,20,Golden Wok #113,PHX
+863,20,Golden Wok #114,PHX
+864,20,Golden Wok #115,TUS
+865,20,Golden Wok #116,TUS
+866,20,Golden Wok #117,TUS
+867,20,Golden Wok #118,PHX
+868,20,Golden Wok #119,TUS
+869,20,Golden Wok #120,TUS
+870,20,Golden Wok #121,PHX
+871,20,Golden Wok #122,PHX
+872,20,Golden Wok #123,TUS
+873,20,Golden Wok #124,NTH
+874,20,Golden Wok #125,PHX
+875,20,Golden Wok #126,TUS
+876,20,Golden Wok #127,TUS
+877,20,Golden Wok #128,PHX
+878,20,Golden Wok #129,NTH
+879,20,Golden Wok #130,TUS
+880,20,Golden Wok #131,PHX
+881,20,Golden Wok #132,PHX
+882,20,Golden Wok #133,PHX
+883,20,Golden Wok #134,PHX
+884,20,Golden Wok #135,PHX
+885,20,Golden Wok #136,TUS
+886,20,Golden Wok #137,PHX
+887,20,Golden Wok #138,PHX
+888,20,Golden Wok #139,PHX
+889,20,Golden Wok #140,PHX
+890,20,Golden Wok #141,PHX
+891,20,Golden Wok #142,PHX
+892,20,Golden Wok #143,PHX
+893,20,Golden Wok #144,PHX
+894,20,Golden Wok #145,TUS
+895,20,Golden Wok #146,TUS
+896,20,Golden Wok #147,PHX
+897,20,Golden Wok #148,PHX
+898,20,Golden Wok #149,PHX
+899,20,Golden Wok #150,PHX
+900,20,Golden Wok #151,TUS
+901,20,Golden Wok #152,PHX
+902,21,Bright Smiles Dental #100,PHX
+903,21,Bright Smiles Dental #101,PHX
+904,21,Bright Smiles Dental #102,PHX
+905,21,Bright Smiles Dental #103,NTH
+906,21,Bright Smiles Dental #104,NTH
+907,21,Bright Smiles Dental #105,PHX
+908,21,Bright Smiles Dental #106,TUS
+909,21,Bright Smiles Dental #107,PHX
+910,21,Bright Smiles Dental #108,PHX
+911,21,Bright Smiles Dental #109,NTH
+912,21,Bright Smiles Dental #110,PHX
+913,21,Bright Smiles Dental #111,NTH
+914,21,Bright Smiles Dental #112,PHX
+915,21,Bright Smiles Dental #113,TUS
+916,21,Bright Smiles Dental #114,PHX
+917,21,Bright Smiles Dental #115,TUS
+918,21,Bright Smiles Dental #116,TUS
+919,21,Bright Smiles Dental #117,NTH
+920,21,Bright Smiles Dental #118,PHX
+921,21,Bright Smiles Dental #119,TUS
+922,21,Bright Smiles Dental #120,PHX
+923,21,Bright Smiles Dental #121,PHX
+924,21,Bright Smiles Dental #122,PHX
+925,21,Bright Smiles Dental #123,PHX
+926,21,Bright Smiles Dental #124,TUS
+927,21,Bright Smiles Dental #125,TUS
+928,21,Bright Smiles Dental #126,PHX
+929,21,Bright Smiles Dental #127,TUS
+930,21,Bright Smiles Dental #128,NTH
+931,21,Bright Smiles Dental #129,PHX
+932,21,Bright Smiles Dental #130,PHX
+933,21,Bright Smiles Dental #131,TUS
+934,21,Bright Smiles Dental #132,PHX
+935,21,Bright Smiles Dental #133,PHX
+936,21,Bright Smiles Dental #134,PHX
+937,21,Bright Smiles Dental #135,TUS
+938,21,Bright Smiles Dental #136,TUS
+939,21,Bright Smiles Dental #137,NTH
+940,21,Bright Smiles Dental #138,NTH
+941,21,Bright Smiles Dental #139,PHX
+942,21,Bright Smiles Dental #140,NTH
+943,21,Bright Smiles Dental #141,PHX
+944,21,Bright Smiles Dental #142,PHX
+945,21,Bright Smiles Dental #143,PHX
+946,21,Bright Smiles Dental #144,TUS
+947,21,Bright Smiles Dental #145,TUS
+948,22,Taco Rio #100,PHX
+949,22,Taco Rio #101,PHX
+950,22,Taco Rio #102,NTH
+951,22,Taco Rio #103,PHX
+952,22,Taco Rio #104,TUS
+953,22,Taco Rio #105,PHX
+954,22,Taco Rio #106,PHX
+955,22,Taco Rio #107,PHX
+956,22,Taco Rio #108,NTH
+957,22,Taco Rio #109,PHX
+958,22,Taco Rio #110,PHX
+959,22,Taco Rio #111,NTH
+960,22,Taco Rio #112,PHX
+961,22,Taco Rio #113,PHX
+962,22,Taco Rio #114,TUS
+963,22,Taco Rio #115,TUS
+964,22,Taco Rio #116,TUS
+965,22,Taco Rio #117,PHX
+966,22,Taco Rio #118,PHX
+967,22,Taco Rio #119,TUS
+968,22,Taco Rio #120,TUS
+969,22,Taco Rio #121,PHX
+970,22,Taco Rio #122,PHX
+971,22,Taco Rio #123,TUS
+972,22,Taco Rio #124,PHX
+973,22,Taco Rio #125,TUS
+974,22,Taco Rio #126,TUS
+975,22,Taco Rio #127,PHX
+976,22,Taco Rio #128,TUS
+977,22,Taco Rio #129,PHX
+978,22,Taco Rio #130,PHX
+979,22,Taco Rio #131,TUS
+980,22,Taco Rio #132,TUS
+981,22,Taco Rio #133,PHX
+982,22,Taco Rio #134,TUS
+983,22,Taco Rio #135,NTH
+984,22,Taco Rio #136,NTH
+985,22,Taco Rio #137,TUS
+986,22,Taco Rio #138,TUS
+987,22,Taco Rio #139,PHX
+988,22,Taco Rio #140,NTH
+989,22,Taco Rio #141,PHX
+990,22,Taco Rio #142,PHX
+991,22,Taco Rio #143,PHX
+992,22,Taco Rio #144,PHX
+993,22,Taco Rio #145,NTH
+994,22,Taco Rio #146,PHX
+995,22,Taco Rio #147,TUS
+996,22,Taco Rio #148,NTH
+997,22,Taco Rio #149,TUS
+998,22,Taco Rio #150,PHX
+999,22,Taco Rio #151,NTH
+1000,22,Taco Rio #152,PHX
+1001,22,Taco Rio #153,PHX
+1002,22,Taco Rio #154,TUS
+1003,22,Taco Rio #155,PHX
+1004,22,Taco Rio #156,TUS
+1005,22,Taco Rio #157,PHX
+1006,22,Taco Rio #158,PHX
+1007,22,Taco Rio #159,NTH
+1008,22,Taco Rio #160,TUS
+1009,22,Taco Rio #161,TUS
+1010,22,Taco Rio #162,TUS
+1011,22,Taco Rio #163,TUS
+1068,24,SpeedyPrint #100,NTH
+1069,24,SpeedyPrint #101,PHX
+1070,24,SpeedyPrint #102,NTH
+1071,24,SpeedyPrint #103,TUS
+1072,24,SpeedyPrint #104,PHX
+1073,24,SpeedyPrint #105,PHX
+1074,24,SpeedyPrint #106,TUS
+1075,24,SpeedyPrint #107,TUS
+1076,24,SpeedyPrint #108,PHX
+1077,24,SpeedyPrint #109,PHX
+1078,24,SpeedyPrint #110,PHX
+1079,24,SpeedyPrint #111,TUS
+1080,24,SpeedyPrint #112,NTH
+1081,24,SpeedyPrint #113,TUS
+1082,24,SpeedyPrint #114,PHX
+1083,24,SpeedyPrint #115,TUS
+1084,24,SpeedyPrint #116,TUS
+1085,24,SpeedyPrint #117,PHX
+1086,24,SpeedyPrint #118,NTH
+1087,24,SpeedyPrint #119,PHX
+1088,24,SpeedyPrint #120,PHX
+1089,24,SpeedyPrint #121,PHX
+1090,24,SpeedyPrint #122,TUS
+1091,24,SpeedyPrint #123,PHX
+1092,24,SpeedyPrint #124,PHX
+1093,24,SpeedyPrint #125,PHX
+1094,24,SpeedyPrint #126,NTH
+1095,24,SpeedyPrint #127,PHX
+1096,24,SpeedyPrint #128,TUS
+1097,24,SpeedyPrint #129,NTH
+1098,24,SpeedyPrint #130,TUS
+1099,24,SpeedyPrint #131,PHX
+1100,24,SpeedyPrint #132,TUS
+1101,24,SpeedyPrint #133,PHX
+1102,24,SpeedyPrint #134,PHX
+1103,24,SpeedyPrint #135,TUS
+1104,24,SpeedyPrint #136,NTH
+1105,24,SpeedyPrint #137,TUS
+1106,24,SpeedyPrint #138,PHX
+1107,24,SpeedyPrint #139,NTH
+1108,24,SpeedyPrint #140,PHX
+1109,24,SpeedyPrint #141,PHX
+1110,24,SpeedyPrint #142,PHX
+1111,24,SpeedyPrint #143,PHX
+1112,24,SpeedyPrint #144,PHX
+1113,24,SpeedyPrint #145,PHX
+1114,24,SpeedyPrint #146,PHX
+1115,24,SpeedyPrint #147,NTH
+1116,24,SpeedyPrint #148,TUS
+1117,24,SpeedyPrint #149,NTH
+1118,24,SpeedyPrint #150,PHX
+1119,24,SpeedyPrint #151,PHX
+1120,24,SpeedyPrint #152,TUS
+1121,24,SpeedyPrint #153,PHX
+1122,24,SpeedyPrint #154,PHX
+1123,24,SpeedyPrint #155,PHX
+1124,25,Crust & Co. Pizza #100,TUS
+1125,25,Crust & Co. Pizza #101,PHX
+1126,25,Crust & Co. Pizza #102,PHX
+1127,25,Crust & Co. Pizza #103,TUS
+1128,25,Crust & Co. Pizza #104,TUS
+1129,25,Crust & Co. Pizza #105,NTH
+1130,25,Crust & Co. Pizza #106,PHX
+1131,25,Crust & Co. Pizza #107,PHX
+1132,25,Crust & Co. Pizza #108,TUS
+1133,25,Crust & Co. Pizza #109,NTH
+1134,25,Crust & Co. Pizza #110,PHX
+1135,25,Crust & Co. Pizza #111,PHX
+1136,25,Crust & Co. Pizza #112,PHX
+1137,25,Crust & Co. Pizza #113,PHX
+1138,25,Crust & Co. Pizza #114,TUS
+1139,25,Crust & Co. Pizza #115,PHX
+1140,25,Crust & Co. Pizza #116,TUS
+1141,25,Crust & Co. Pizza #117,TUS
+1142,25,Crust & Co. Pizza #118,TUS
+1143,25,Crust & Co. Pizza #119,TUS
+1144,25,Crust & Co. Pizza #120,NTH
+1145,25,Crust & Co. Pizza #121,TUS
+1146,25,Crust & Co. Pizza #122,PHX
+1147,25,Crust & Co. Pizza #123,PHX
+1148,25,Crust & Co. Pizza #124,PHX
+1149,25,Crust & Co. Pizza #125,PHX
+1150,25,Crust & Co. Pizza #126,PHX
+1151,25,Crust & Co. Pizza #127,PHX
+1152,25,Crust & Co. Pizza #128,NTH
+1153,25,Crust & Co. Pizza #129,PHX
+1154,25,Crust & Co. Pizza #130,NTH
+1155,25,Crust & Co. Pizza #131,TUS
+1156,25,Crust & Co. Pizza #132,PHX
+1157,25,Crust & Co. Pizza #133,TUS
+1158,25,Crust & Co. Pizza #134,PHX
+1159,25,Crust & Co. Pizza #135,PHX
+1160,25,Crust & Co. Pizza #136,NTH
+1161,25,Crust & Co. Pizza #137,PHX
+1162,25,Crust & Co. Pizza #138,NTH
+1163,25,Crust & Co. Pizza #139,PHX
+1164,25,Crust & Co. Pizza #140,NTH
+1165,26,GreenLeaf Grocers #100,PHX
+1166,26,GreenLeaf Grocers #101,NTH
+1167,26,GreenLeaf Grocers #102,PHX
+1168,26,GreenLeaf Grocers #103,PHX
+1169,26,GreenLeaf Grocers #104,TUS
+1170,26,GreenLeaf Grocers #105,TUS
+1171,26,GreenLeaf Grocers #106,PHX
+1172,26,GreenLeaf Grocers #107,PHX
+1173,26,GreenLeaf Grocers #108,TUS
+1174,26,GreenLeaf Grocers #109,PHX
+1175,26,GreenLeaf Grocers #110,NTH
+1176,26,GreenLeaf Grocers #111,TUS
+1177,26,GreenLeaf Grocers #112,PHX
+1178,26,GreenLeaf Grocers #113,TUS
+1179,26,GreenLeaf Grocers #114,PHX
+1180,26,GreenLeaf Grocers #115,NTH
+1181,26,GreenLeaf Grocers #116,TUS
+1182,26,GreenLeaf Grocers #117,NTH
+1183,26,GreenLeaf Grocers #118,TUS
+1184,26,GreenLeaf Grocers #119,PHX
+1185,26,GreenLeaf Grocers #120,TUS
+1186,26,GreenLeaf Grocers #121,NTH
+1187,26,GreenLeaf Grocers #122,PHX
+1188,26,GreenLeaf Grocers #123,PHX
+1189,26,GreenLeaf Grocers #124,TUS
+1190,26,GreenLeaf Grocers #125,PHX
+1191,26,GreenLeaf Grocers #126,PHX
+1192,26,GreenLeaf Grocers #127,TUS
+1193,26,GreenLeaf Grocers #128,PHX
+1194,26,GreenLeaf Grocers #129,NTH
+1195,26,GreenLeaf Grocers #130,PHX
+1196,26,GreenLeaf Grocers #131,PHX
+1197,26,GreenLeaf Grocers #132,PHX
+1198,26,GreenLeaf Grocers #133,TUS
+1199,26,GreenLeaf Grocers #134,PHX
+1200,26,GreenLeaf Grocers #135,PHX
+1201,26,GreenLeaf Grocers #136,NTH
+1202,26,GreenLeaf Grocers #137,PHX
+1203,26,GreenLeaf Grocers #138,TUS
+1204,26,GreenLeaf Grocers #139,PHX
+1205,26,GreenLeaf Grocers #140,PHX
+1206,26,GreenLeaf Grocers #141,TUS
+1207,26,GreenLeaf Grocers #142,PHX
+1208,26,GreenLeaf Grocers #143,PHX
+1209,26,GreenLeaf Grocers #144,TUS
+1210,26,GreenLeaf Grocers #145,NTH
+1211,26,GreenLeaf Grocers #146,NTH
+1212,26,GreenLeaf Grocers #147,TUS
+1213,27,Kidz Learning Center #100,PHX
+1214,27,Kidz Learning Center #101,PHX
+1215,27,Kidz Learning Center #102,PHX
+1216,27,Kidz Learning Center #103,TUS
+1217,27,Kidz Learning Center #104,PHX
+1218,27,Kidz Learning Center #105,PHX
+1219,27,Kidz Learning Center #106,NTH
+1220,27,Kidz Learning Center #107,PHX
+1221,27,Kidz Learning Center #108,PHX
+1222,27,Kidz Learning Center #109,PHX
+1223,27,Kidz Learning Center #110,PHX
+1224,27,Kidz Learning Center #111,NTH
+1225,27,Kidz Learning Center #112,NTH
+1226,27,Kidz Learning Center #113,NTH
+1227,27,Kidz Learning Center #114,PHX
+1228,27,Kidz Learning Center #115,PHX
+1229,27,Kidz Learning Center #116,PHX
+1230,27,Kidz Learning Center #117,PHX
+1231,27,Kidz Learning Center #118,PHX
+1232,27,Kidz Learning Center #119,NTH
+1233,27,Kidz Learning Center #120,PHX
+1234,27,Kidz Learning Center #121,PHX
+1235,27,Kidz Learning Center #122,PHX
+1236,27,Kidz Learning Center #123,PHX
+1237,27,Kidz Learning Center #124,PHX
+1238,27,Kidz Learning Center #125,PHX
+1262,29,Chandler Plaza,PHX
+1263,29,Vail Center,TUS
+1264,29,San Francisco Peaks Commons,NTH
+1265,29,Chandler Office Park,PHX
+1266,29,Arcadia Medical Building,PHX
+1267,29,Green Valley Plaza,TUS
+1268,29,Fountain Hills Center,PHX
+1269,29,Catalina Foothills Commons,TUS
+1270,29,Sedona Office Park,NTH
+1271,29,Tanque Verde Medical Building,TUS
+1272,29,Cottonwood Plaza,NTH
+1273,29,Goodyear Center,PHX
+1274,29,Coconino Commons,NTH
+1275,30,Santa Cruz Plaza,TUS
+1276,30,Marana Center,TUS
+1277,30,Tempe Commons,PHX
+1278,30,Kachina Village Office Park,NTH
+1279,1549,Old Pueblo Medical Building,TUS
+1280,30,Paradise Valley Plaza,PHX
+1281,30,Avondale Center,PHX
+1282,30,Pueblo Commons,TUS
+1283,30,Avondale Office Park,PHX
+1284,1549,Deer Valley Medical Building,PHX
+1285,30,Desert Ridge Plaza,PHX
+1286,1549,Casas Adobes Center,TUS
+1287,1549,Camelback Commons,PHX
+1288,30,Camp Verde Office Park,NTH
+1289,30,Camp Verde Medical Building,NTH
+1290,30,Williams Plaza,NTH
+1291,30,Ahwatukee Center,PHX
+1292,30,Maryvale Commons,PHX
+1293,1549,Tempe Office Park,PHX
+1294,30,Mesa Medical Building,PHX
+1295,31,Rita Ranch Plaza,TUS
+1296,31,Santa Cruz Center,TUS
+1297,31,Pueblo Commons,TUS
+1298,31,Estrella Office Park,PHX
+1299,31,Maryvale Medical Building,PHX
+1300,31,Camp Verde Plaza,NTH
+1301,31,Superstition Center,PHX
+1302,31,Superstition Commons,PHX
+1303,31,Laveen Office Park,PHX
+1304,31,Marana Medical Building,TUS
+1305,31,Camp Verde Plaza,NTH
+1306,31,Pueblo Center,TUS
+1307,31,Goodyear Commons,PHX
+1308,31,Ponderosa Office Park,NTH
+1309,31,Rincon Medical Building,TUS
+1310,31,Papago Plaza,PHX
+1311,31,Apache Junction Center,PHX
+1312,31,Green Valley Commons,TUS
+1313,31,Mesa Office Park,PHX
+1314,31,Fountain Hills Medical Building,PHX
+1315,31,Mogollon Rim Plaza,NTH
+1316,32,Glendale Plaza,PHX
+1317,32,Coconino Center,NTH
+1318,32,Peoria Commons,PHX
+1319,32,Papago Office Park,PHX
+1320,32,Sedona Medical Building,NTH
+1321,32,Estrella Plaza,PHX
+1322,32,Vail Center,TUS
+1323,32,Queen Creek Commons,PHX
+1324,32,Marana Office Park,TUS
+1325,32,San Tan Valley Medical Building,PHX
+1326,32,Desert Ridge Plaza,PHX
+1327,32,Queen Creek Center,PHX
+1328,32,Estrella Commons,PHX
+1329,32,Mesa Office Park,PHX
+1330,32,Marana Medical Building,TUS
+1331,32,Maryvale Plaza,PHX
+1332,32,Papago Center,PHX
+1333,32,Camp Verde Commons,NTH
+1334,33,Pueblo Plaza,TUS
+1335,33,Sedona Center,NTH
+1336,33,Camp Verde Commons,NTH
+1337,33,Sahuarita Office Park,TUS
+1338,33,Old Pueblo Medical Building,TUS
+1339,33,Catalina Foothills Plaza,TUS
+1340,33,Sahuarita Center,TUS
+1341,34,Chandler Plaza,PHX
+1342,34,Vail Center,TUS
+1343,34,Maryvale Commons,PHX
+1344,34,Camelback Office Park,PHX
+1345,34,Queen Creek Medical Building,PHX
+1346,34,Vail Plaza,TUS
+1347,34,Goodyear Center,PHX
+1348,34,Old Pueblo Commons,TUS
+1349,34,Sonoran Office Park,PHX
+1350,34,Camelback Medical Building,PHX
+1351,34,Mountain View Plaza,NTH
+1352,34,Sabino Center,TUS
+1353,34,Fountain Hills Commons,PHX
+1354,34,Vail Office Park,TUS
+1355,34,Superstition Medical Building,PHX
+1356,35,Scottsdale Plaza,PHX
+1357,35,Estrella Center,PHX
+1358,35,Catalina Foothills Commons,TUS
+1359,35,Casas Adobes Office Park,TUS
+1360,35,Scottsdale Medical Building,PHX
+1361,35,Glendale Plaza,PHX
+1362,35,Fountain Hills Center,PHX
+1363,35,Tempe Commons,PHX
+1364,35,Paradise Valley Office Park,PHX
+1365,35,Coconino Medical Building,NTH
+1366,35,Verde Valley Plaza,NTH
+1367,35,Ahwatukee Center,PHX
+1368,35,Superstition Commons,PHX
+1369,35,Cottonwood Office Park,NTH
+1370,35,Casas Adobes Medical Building,TUS
+1371,35,Deer Valley Plaza,PHX
+1372,35,Casas Adobes Center,TUS
+1373,35,Pueblo Commons,TUS
+1374,35,Glendale Office Park,PHX
+1375,35,San Tan Valley Medical Building,PHX
+1376,35,Paradise Valley Plaza,PHX
+1377,36,Pueblo Plaza,TUS
+1378,36,Sabino Center,TUS
+1379,36,Maryvale Commons,PHX
+1380,36,Chandler Office Park,PHX
+1381,36,Green Valley Medical Building,TUS
+1382,36,Laveen Plaza,PHX
+1383,36,Catalina Foothills Center,TUS
+1384,36,Papago Commons,PHX
+1391,38,Deer Valley Plaza,PHX
+1392,38,Chandler Center,PHX
+1393,38,Coconino Commons,NTH
+1394,38,Camp Verde Office Park,NTH
+1395,38,Mesa Medical Building,PHX
+1396,38,Rincon Plaza,TUS
+1397,38,Tanque Verde Center,TUS
+1398,38,Chandler Commons,PHX
+1399,38,Papago Office Park,PHX
+1400,38,Kachina Village Medical Building,NTH
+1401,38,Sonoran Plaza,PHX
+1402,38,Williams Center,NTH
+1403,38,Tanque Verde Commons,TUS
+1404,38,Camp Verde Office Park,NTH
+1405,38,Sahuarita Medical Building,TUS
+1406,38,Green Valley Plaza,TUS
+1407,38,Tempe Center,PHX
+1408,38,Tempe Commons,PHX
+1409,38,Superstition Office Park,PHX
+1410,38,Maryvale Medical Building,PHX
+1411,38,San Francisco Peaks Plaza,NTH
+1412,39,Camelback Plaza,PHX
+1413,39,Avondale Center,PHX
+1414,39,Rita Ranch Commons,TUS
+1415,39,Oro Valley Office Park,TUS
+1416,39,Gilbert Medical Building,PHX
+1417,39,Rita Ranch Plaza,TUS
+1418,39,Camelback Center,PHX
+1419,39,Scottsdale Commons,PHX
+1420,40,Scottsdale Plaza,PHX
+1421,40,Casas Adobes Center,TUS
+1422,40,Avondale Commons,PHX
+1423,40,Santa Cruz Office Park,TUS
+1424,40,Green Valley Medical Building,TUS
+1425,40,Verde Valley Plaza,NTH
+1426,40,Glendale Center,PHX
+1427,40,Camp Verde Commons,NTH
+1428,40,Laveen Office Park,PHX
+1429,40,Mesa Medical Building,PHX
+1430,40,Mesa Plaza,PHX
+1441,42,Verde Valley Plaza,NTH
+1442,42,Vail Center,TUS
+1443,42,Tanque Verde Commons,TUS
+1444,42,Old Pueblo Office Park,TUS
+1445,42,Estrella Medical Building,PHX
+1446,42,Coconino Plaza,NTH
+1447,42,Arcadia Center,PHX
+1448,42,Santa Cruz Commons,TUS
+1449,42,Laveen Office Park,PHX
+1450,42,Chandler Medical Building,PHX
+1451,42,Rincon Plaza,TUS
+1452,42,Estrella Center,PHX
+1453,42,Verde Valley Commons,NTH
+1454,42,Superstition Office Park,PHX
+1455,42,Pueblo Medical Building,TUS
+1456,42,Old Pueblo Plaza,TUS
+1457,42,Queen Creek Center,PHX
+1458,42,Santa Cruz Commons,TUS
+1459,43,Fountain Hills Plaza,PHX
+1460,43,Ahwatukee Center,PHX
+1461,43,Verde Valley Commons,NTH
+1462,43,Papago Office Park,PHX
+1463,43,Estrella Medical Building,PHX
+1464,43,Vail Plaza,TUS
+1465,43,Sonoran Center,PHX
+1466,44,Sabino Plaza,TUS
+1467,44,Gilbert Center,PHX
+1468,44,Rincon Commons,TUS
+1469,44,San Tan Valley Office Park,PHX
+1470,44,Pueblo Medical Building,TUS
+1471,44,Avondale Plaza,PHX
+1472,44,Tempe Center,PHX
+1473,44,Santa Cruz Commons,TUS
+1474,44,Gilbert Office Park,PHX
+1475,44,Prescott Valley Medical Building,NTH
+1476,44,Rincon Plaza,TUS
+1477,44,Goodyear Center,PHX
+1478,44,Maryvale Commons,PHX
+1479,44,Mogollon Rim Office Park,NTH
+1480,44,Laveen Medical Building,PHX
+1481,44,Peoria Plaza,PHX
+1482,44,Casas Adobes Center,TUS
+1483,44,Vail Commons,TUS
+1484,44,Mountain View Office Park,NTH
+1485,44,Arcadia Medical Building,PHX
+1493,46,Goodyear Plaza,PHX
+1494,46,Kachina Village Center,NTH
+1495,46,Saguaro Commons,PHX
+1496,46,Prescott Valley Office Park,NTH
+1497,46,Kachina Village Medical Building,NTH
+1498,46,Cottonwood Plaza,NTH
+1499,46,Green Valley Center,TUS
+1500,46,Laveen Commons,PHX
+1501,46,Arcadia Office Park,PHX
+1502,46,Sahuarita Medical Building,TUS
+1503,46,Apache Junction Plaza,PHX
+1504,46,Sabino Center,TUS
+1505,46,Vail Commons,TUS
+1506,46,Laveen Office Park,PHX
+1507,47,Marana Plaza,TUS
+1508,47,Gilbert Center,PHX
+1509,47,Paradise Valley Commons,PHX
+1510,47,Scottsdale Office Park,PHX
+1511,47,Casas Adobes Medical Building,TUS
+1512,47,Apache Junction Plaza,PHX
+1513,47,Rincon Center,TUS
+1514,47,Camelback Commons,PHX
+1515,47,Casas Adobes Office Park,TUS
+1516,47,Sonoran Medical Building,PHX
+1517,47,Williams Plaza,NTH
+1518,47,Ponderosa Center,NTH
+1519,47,Sonoran Commons,PHX
+1520,47,Santa Cruz Office Park,TUS
+1521,47,Tanque Verde Medical Building,TUS
+1522,47,Estrella Plaza,PHX
+1523,47,Sahuarita Center,TUS
+1524,47,Mogollon Rim Commons,NTH
+1525,47,Pueblo Office Park,TUS
+1526,47,Estrella Medical Building,PHX
+1527,47,Williams Plaza,NTH
+1528,47,Mogollon Rim Center,NTH
+1529,48,Glendale Plaza,PHX
+1530,48,Mesa Center,PHX
+1531,48,Apache Junction Commons,PHX
+1532,48,Green Valley Office Park,TUS
+1533,48,Laveen Medical Building,PHX
+1534,48,Sabino Plaza,TUS
+1535,48,Deer Valley Center,PHX
+1536,48,Rita Ranch Commons,TUS
+1537,48,Camelback Office Park,PHX
+1538,48,Green Valley Medical Building,TUS
+1539,48,Glendale Plaza,PHX
+1540,48,Verde Valley Center,NTH
+1541,49,Laveen Plaza,PHX
+1542,49,San Francisco Peaks Center,NTH
+1543,49,Sedona Commons,NTH
+1544,49,Camelback Office Park,PHX
+1545,49,Avondale Medical Building,PHX
+1546,49,Sahuarita Plaza,TUS
+1547,49,Avondale Center,PHX
+1548,49,Ponderosa Commons,NTH
+1549,49,Pueblo Office Park,TUS
+1550,49,Paradise Valley Medical Building,PHX
+1551,49,Laveen Plaza,PHX
+1552,49,Rita Ranch Center,TUS
+1553,49,Deer Valley Commons,PHX
+1554,49,Camelback Office Park,PHX
+1555,49,Rita Ranch Medical Building,TUS
+1556,49,Glendale Plaza,PHX
+1557,49,Mountain View Center,NTH
+1558,49,Sabino Commons,TUS
+1559,49,Laveen Office Park,PHX
+1560,49,Marana Medical Building,TUS
+1561,49,Peoria Plaza,PHX
+1562,50,Sonoran Plaza,PHX
+1563,50,Sedona Center,NTH
+1564,50,Vail Commons,TUS
+1565,50,Sahuarita Office Park,TUS
+1566,50,Queen Creek Medical Building,PHX
+1567,50,Paradise Valley Plaza,PHX
+1568,50,Camelback Center,PHX
+1569,50,Camelback Commons,PHX
+1570,50,Marana Office Park,TUS
+1571,51,Arcadia Plaza,PHX
+1572,51,Saguaro Center,PHX
+1573,51,Green Valley Commons,TUS
+1574,51,Deer Valley Office Park,PHX
+1575,51,Laveen Medical Building,PHX
+1576,51,Tanque Verde Plaza,TUS
+1577,51,Avondale Center,PHX
+1578,51,Sedona Commons,NTH
+1579,51,Coconino Office Park,NTH
+1580,52,Maryvale Plaza,PHX
+1581,52,Sedona Center,NTH
+1582,52,Laveen Commons,PHX
+1583,52,Gilbert Office Park,PHX
+1584,53,Mogollon Rim Plaza,NTH
+1585,53,Cottonwood Center,NTH
+1586,53,Desert Ridge Commons,PHX
+1587,53,Verde Valley Office Park,NTH
+1588,53,Williams Medical Building,NTH
+1589,53,Green Valley Plaza,TUS
+1590,53,San Francisco Peaks Center,NTH
+1591,53,Verde Valley Commons,NTH
+1592,53,Maryvale Office Park,PHX
+1593,53,Vail Medical Building,TUS
+1594,53,Laveen Plaza,PHX
+1595,53,Apache Junction Center,PHX
+1596,53,Queen Creek Commons,PHX
+1597,54,Chandler Plaza,PHX
+1598,54,Queen Creek Center,PHX
+1599,54,Estrella Commons,PHX
+1600,54,Marana Office Park,TUS
+1601,54,Mountain View Medical Building,NTH
+1602,54,Casas Adobes Plaza,TUS
+1603,54,Verde Valley Center,NTH
+1604,54,Ahwatukee Commons,PHX
+1605,54,Catalina Foothills Office Park,TUS
+1606,54,Santa Cruz Medical Building,TUS
+1607,54,Green Valley Plaza,TUS
+1608,54,Deer Valley Center,PHX
+1609,54,Santa Cruz Commons,TUS
+1610,54,Peoria Office Park,PHX
+1611,54,Sonoran Medical Building,PHX
+1612,54,Oro Valley Plaza,TUS
+1613,54,Catalina Foothills Center,TUS
+1614,54,Kachina Village Commons,NTH
+1615,55,Tempe Plaza,PHX
+1616,55,Arcadia Center,PHX
+1617,55,Paradise Valley Commons,PHX
+1618,55,Sonoran Office Park,PHX
+1619,55,Coconino Medical Building,NTH
+1620,56,Sahuarita Plaza,TUS
+1621,56,Kachina Village Center,NTH
+1622,56,Desert Ridge Commons,PHX
+1623,56,Tanque Verde Office Park,TUS
+1624,56,Sahuarita Medical Building,TUS
+1625,57,Deer Valley Plaza,PHX
+1626,57,Old Pueblo Center,TUS
+1627,57,Vail Commons,TUS
+1628,57,Camelback Office Park,PHX
+1629,58,Oro Valley Plaza,TUS
+1630,58,Laveen Center,PHX
+1631,58,Gilbert Commons,PHX
+1632,58,Deer Valley Office Park,PHX
+1633,58,Apache Junction Medical Building,PHX
+1634,58,Old Pueblo Plaza,TUS
+1635,58,Mesa Center,PHX
+1636,58,Tanque Verde Commons,TUS
+1637,58,Gilbert Office Park,PHX
+1638,58,Tanque Verde Medical Building,TUS
+1639,58,Peoria Plaza,PHX
+1640,58,Superstition Center,PHX
+1641,58,Oro Valley Commons,TUS
+1642,58,Glendale Office Park,PHX
+1643,58,Estrella Medical Building,PHX
+1644,58,Desert Ridge Plaza,PHX
+1645,58,Arcadia Center,PHX
+1646,58,Williams Commons,NTH
+1647,58,Santa Cruz Office Park,TUS
+1648,58,Tempe Medical Building,PHX
+1649,58,Estrella Plaza,PHX
+1650,58,Santa Cruz Center,TUS
+1651,59,Paradise Valley Plaza,PHX
+1652,59,Maryvale Center,PHX
+1653,59,Sabino Commons,TUS
+1654,59,Catalina Foothills Office Park,TUS
+1655,59,Old Pueblo Medical Building,TUS
+1656,59,Queen Creek Plaza,PHX
+1657,59,Oro Valley Center,TUS
+1658,59,Camelback Commons,PHX
+1659,59,Paradise Valley Office Park,PHX
+1660,59,Camelback Medical Building,PHX
+1661,59,Saguaro Plaza,PHX
+1662,59,Gilbert Center,PHX
+1663,59,Sonoran Commons,PHX
+1664,59,Apache Junction Office Park,PHX
+1665,59,Rita Ranch Medical Building,TUS
+1666,59,Ponderosa Plaza,NTH
+1667,59,Prescott Valley Center,NTH
+1668,59,Mesa Commons,PHX
+1669,59,Maryvale Office Park,PHX
+1670,59,Sonoran Medical Building,PHX
+1671,59,Tanque Verde Plaza,TUS
+1672,60,Peoria Plaza,PHX
+1673,60,Verde Valley Center,NTH
+1674,60,Mesa Commons,PHX
+1675,60,Fountain Hills Office Park,PHX
+1676,60,Williams Medical Building,NTH
+1677,60,Apache Junction Plaza,PHX
+1678,60,Green Valley Center,TUS
+1679,60,Sahuarita Commons,TUS
+1680,60,Rincon Office Park,TUS
+1681,60,Coconino Medical Building,NTH
+1682,60,Tempe Plaza,PHX
+1683,60,Camelback Center,PHX
+1684,61,Oro Valley Plaza,TUS
+1685,61,Ponderosa Center,NTH
+1686,61,Queen Creek Commons,PHX
+1687,61,Camelback Office Park,PHX
+1688,61,Estrella Medical Building,PHX
+1689,61,Deer Valley Plaza,PHX
+1690,61,Sonoran Center,PHX
+1691,61,Arcadia Commons,PHX
+1692,61,Estrella Office Park,PHX
+1693,61,Avondale Medical Building,PHX
+1694,61,Peoria Plaza,PHX
+1695,61,Oro Valley Center,TUS
+1696,61,Scottsdale Commons,PHX
+1697,61,Vail Office Park,TUS
+1698,61,Rincon Medical Building,TUS
+1699,61,Deer Valley Plaza,PHX
+1700,61,Avondale Center,PHX
+1701,61,Sahuarita Commons,TUS
+1702,61,Superstition Office Park,PHX
+1703,61,Saguaro Medical Building,PHX
+1704,62,Sonoran Plaza,PHX
+1705,62,Sedona Center,NTH
+1706,62,Queen Creek Commons,PHX
+1707,62,Tempe Office Park,PHX
+1708,62,Santa Cruz Medical Building,TUS
+1709,62,Goodyear Plaza,PHX
+1710,62,Desert Ridge Center,PHX
+1711,62,Fountain Hills Commons,PHX
+1712,62,Fountain Hills Office Park,PHX
+1713,62,Mesa Medical Building,PHX
+1714,62,Rincon Plaza,TUS
+1715,62,Chandler Center,PHX
+1716,62,Verde Valley Commons,NTH
+1717,62,Catalina Foothills Office Park,TUS
+1718,62,Paradise Valley Medical Building,PHX
+1719,62,Goodyear Plaza,PHX
+1720,62,Verde Valley Center,NTH
+1721,62,Pueblo Commons,TUS
+1722,62,San Tan Valley Office Park,PHX
+1723,62,Superstition Medical Building,PHX
+1724,62,Marana Plaza,TUS
+1725,62,Gilbert Center,PHX
+1726,63,Rincon Plaza,TUS
+1727,63,Queen Creek Center,PHX
+1728,63,Cottonwood Commons,NTH
+1729,63,Deer Valley Office Park,PHX
+1730,63,Scottsdale Medical Building,PHX
+1731,63,Casas Adobes Plaza,TUS
+1732,63,Fountain Hills Center,PHX
+1733,63,Vail Commons,TUS
+1734,63,Tempe Office Park,PHX
+1735,63,Williams Medical Building,NTH
+1736,63,Mogollon Rim Plaza,NTH
+1737,63,Vail Center,TUS
+1738,63,Rita Ranch Commons,TUS
+1739,63,Scottsdale Office Park,PHX
+1740,63,Mesa Medical Building,PHX
+1741,63,Marana Plaza,TUS
+1742,63,Rincon Center,TUS
+1743,63,Pueblo Commons,TUS
+1744,63,Camp Verde Office Park,NTH
+1745,63,Oro Valley Medical Building,TUS
+1746,63,Queen Creek Plaza,PHX
+1747,64,Santa Cruz Plaza,TUS
+1748,64,Sonoran Center,PHX
+1749,64,Apache Junction Commons,PHX
+1750,64,Pueblo Office Park,TUS
+1751,64,Maryvale Medical Building,PHX
+1752,64,Mountain View Plaza,NTH
+1753,65,Apache Junction Plaza,PHX
+1754,65,Tempe Center,PHX
+1755,65,Sahuarita Commons,TUS
+1756,65,Chandler Office Park,PHX
+1757,65,Camp Verde Medical Building,NTH
+1758,65,Oro Valley Plaza,TUS
+1759,65,Sahuarita Center,TUS
+1760,66,Rincon Plaza,TUS
+1761,66,Mesa Center,PHX
+1762,66,Chandler Commons,PHX
+1763,66,Prescott Valley Office Park,NTH
+1764,66,Arcadia Medical Building,PHX
+1765,66,Scottsdale Plaza,PHX
+1766,66,Maryvale Center,PHX
+1767,66,Camp Verde Commons,NTH
+1768,66,Ahwatukee Office Park,PHX
+1769,67,Arcadia Plaza,PHX
+1770,67,San Tan Valley Center,PHX
+1771,67,Desert Ridge Commons,PHX
+1772,67,Desert Ridge Office Park,PHX
+1773,67,Santa Cruz Medical Building,TUS
+1774,67,Ahwatukee Plaza,PHX
+1775,67,Camelback Center,PHX
+1776,67,Desert Ridge Commons,PHX
+1777,67,Fountain Hills Office Park,PHX
+1778,67,San Tan Valley Medical Building,PHX
+1779,67,Kachina Village Plaza,NTH
+1780,67,Sahuarita Center,TUS
+1781,67,San Tan Valley Commons,PHX
+1782,68,Green Valley Plaza,TUS
+1783,68,Superstition Center,PHX
+1784,68,Camelback Commons,PHX
+1785,68,Laveen Office Park,PHX
+1786,68,Avondale Medical Building,PHX
+1787,68,Scottsdale Plaza,PHX
+1788,68,Green Valley Center,TUS
+1789,68,Queen Creek Commons,PHX
+1790,68,Scottsdale Office Park,PHX
+1791,68,Superstition Medical Building,PHX
+1792,68,Mountain View Plaza,NTH
+1793,68,Oro Valley Center,TUS
+1794,68,Cottonwood Commons,NTH
+1795,68,San Tan Valley Office Park,PHX
+1796,68,Catalina Foothills Medical Building,TUS
+1797,68,Sedona Plaza,NTH
+1798,68,Green Valley Center,TUS
+1799,68,Fountain Hills Commons,PHX
+1800,68,Casas Adobes Office Park,TUS
+1801,68,Marana Medical Building,TUS
+1802,68,Fountain Hills Plaza,PHX
+1803,68,Cottonwood Center,NTH
+1804,69,Casas Adobes Plaza,TUS
+1805,69,Maryvale Center,PHX
+1806,69,Estrella Commons,PHX
+1807,69,Tanque Verde Office Park,TUS
+1808,69,Deer Valley Medical Building,PHX
+1809,69,Maryvale Plaza,PHX
+1810,69,Laveen Center,PHX
+1811,69,Laveen Commons,PHX
+1812,69,Laveen Office Park,PHX
+1813,69,Goodyear Medical Building,PHX
+1814,69,Sedona Plaza,NTH
+1815,69,Deer Valley Center,PHX
+1816,69,Glendale Commons,PHX
+1817,69,Peoria Office Park,PHX
+1818,69,Santa Cruz Medical Building,TUS
+1819,69,Verde Valley Plaza,NTH
+1820,69,Prescott Valley Center,NTH
+1821,69,Chandler Commons,PHX
+1822,69,Green Valley Office Park,TUS
+1823,69,Glendale Medical Building,PHX
+1824,69,Coconino Plaza,NTH
+1825,69,Mogollon Rim Center,NTH
+1826,70,Saguaro Plaza,PHX
+1827,70,Mogollon Rim Center,NTH
+1828,70,Papago Commons,PHX
+1829,70,Pueblo Office Park,TUS
+1830,70,Gilbert Medical Building,PHX
+1831,70,Tempe Plaza,PHX
+1832,70,Laveen Center,PHX
+1833,70,Arcadia Commons,PHX
+1834,70,Rincon Office Park,TUS
+1851,72,Camp Verde Plaza,NTH
+1852,72,Old Pueblo Center,TUS
+1853,72,Tanque Verde Commons,TUS
+1854,72,Mogollon Rim Office Park,NTH
+1855,72,Deer Valley Medical Building,PHX
+1856,72,Goodyear Plaza,PHX
+1857,72,Tempe Center,PHX
+1858,72,Paradise Valley Commons,PHX
+1859,72,Arcadia Office Park,PHX
+1860,72,Estrella Medical Building,PHX
+1861,72,Tanque Verde Plaza,TUS
+1862,72,Maryvale Center,PHX
+1863,72,Chandler Commons,PHX
+1864,72,Apache Junction Office Park,PHX
+1865,73,Ahwatukee Plaza,PHX
+1866,73,Sahuarita Center,TUS
+1867,73,Chandler Commons,PHX
+1868,73,Paradise Valley Office Park,PHX
+1869,73,Saguaro Medical Building,PHX
+1870,73,Queen Creek Plaza,PHX
+1871,73,Kachina Village Center,NTH
+1872,73,Williams Commons,NTH
+1873,73,Prescott Valley Office Park,NTH
+1874,73,Tanque Verde Medical Building,TUS
+1875,73,Tanque Verde Plaza,TUS
+1876,73,Camelback Center,PHX
+1877,73,Fountain Hills Commons,PHX
+1878,73,Sabino Office Park,TUS
+1879,73,Casas Adobes Medical Building,TUS
+1880,73,Tempe Plaza,PHX
+1881,73,Queen Creek Center,PHX
+1882,73,Apache Junction Commons,PHX
+1883,73,Peoria Office Park,PHX
+1884,73,Ahwatukee Medical Building,PHX
+1885,73,Rita Ranch Plaza,TUS
+1886,74,Green Valley Plaza,TUS
+1887,74,Casas Adobes Center,TUS
+1888,74,Glendale Commons,PHX
+1889,74,Casas Adobes Office Park,TUS
+1890,74,Peoria Medical Building,PHX
+1891,75,Pueblo Plaza,TUS
+1892,75,Mountain View Center,NTH
+1893,75,Arcadia Commons,PHX
+1894,75,Marana Office Park,TUS
+1895,75,Avondale Medical Building,PHX
+1896,75,Maryvale Plaza,PHX
+1897,75,Sabino Center,TUS
+1898,75,Catalina Foothills Commons,TUS
+1899,75,Gilbert Office Park,PHX
+1900,75,Green Valley Medical Building,TUS
+1901,75,San Tan Valley Plaza,PHX
+1902,76,Fountain Hills Plaza,PHX
+1903,76,Rita Ranch Center,TUS
+1904,76,Cottonwood Commons,NTH
+1905,76,Gilbert Office Park,PHX
+1906,76,Peoria Medical Building,PHX
+1907,76,Glendale Plaza,PHX
+1908,76,Mesa Center,PHX
+1909,76,Ahwatukee Commons,PHX
+1910,76,Fountain Hills Office Park,PHX
+1911,76,Ahwatukee Medical Building,PHX
+1912,76,Arcadia Plaza,PHX
+1913,76,Fountain Hills Center,PHX
+1914,76,Mesa Commons,PHX
+1915,76,Tempe Office Park,PHX
+1916,76,Coconino Medical Building,NTH
+1917,76,Cottonwood Plaza,NTH
+1918,76,Apache Junction Center,PHX
+1919,76,Fountain Hills Commons,PHX
+1920,76,Ahwatukee Office Park,PHX
+1921,76,Fountain Hills Medical Building,PHX
+1922,76,Papago Plaza,PHX
+1923,77,Tanque Verde Plaza,TUS
+1924,77,Sedona Center,NTH
+1925,77,Queen Creek Commons,PHX
+1926,77,Kachina Village Office Park,NTH
+1927,77,Laveen Medical Building,PHX
+1928,77,Williams Plaza,NTH
+1929,77,Kachina Village Center,NTH
+1930,77,Oro Valley Commons,TUS
+1931,77,Mogollon Rim Office Park,NTH
+1932,77,Old Pueblo Medical Building,TUS
+1933,77,Casas Adobes Plaza,TUS
+1934,77,Maryvale Center,PHX
+1935,77,Prescott Valley Commons,NTH
+1936,77,Old Pueblo Office Park,TUS
+1937,77,Tempe Medical Building,PHX
+1938,77,Saguaro Plaza,PHX
+1939,77,Cottonwood Center,NTH
+1940,77,Peoria Commons,PHX
+1941,77,Papago Office Park,PHX
+1942,77,Glendale Medical Building,PHX
+1943,77,Marana Plaza,TUS
+1944,77,Catalina Foothills Center,TUS
+1945,78,Glendale Plaza,PHX
+1946,78,Sabino Center,TUS
+1947,78,Sonoran Commons,PHX
+1948,78,Williams Office Park,NTH
+1949,79,San Tan Valley Plaza,PHX
+1950,79,Vail Center,TUS
+1951,79,Estrella Commons,PHX
+1952,79,Arcadia Office Park,PHX
+1953,79,Saguaro Medical Building,PHX
+1954,79,Deer Valley Plaza,PHX
+1955,79,Arcadia Center,PHX
+1956,79,Tempe Commons,PHX
+1957,79,San Francisco Peaks Office Park,NTH
+1958,79,Goodyear Medical Building,PHX
+1959,79,Paradise Valley Plaza,PHX
+1960,79,Avondale Center,PHX
+1961,79,Glendale Commons,PHX
+1962,79,Pueblo Office Park,TUS
+1963,79,Paradise Valley Medical Building,PHX
+1964,79,Estrella Plaza,PHX
+1965,79,Casas Adobes Center,TUS
+1966,79,Sahuarita Commons,TUS
+1967,80,Pueblo Plaza,TUS
+1968,80,Verde Valley Center,NTH
+1969,80,Camp Verde Commons,NTH
+1970,80,Peoria Office Park,PHX
+1971,80,Sabino Medical Building,TUS
+1972,80,Laveen Plaza,PHX
+1973,80,Cottonwood Center,NTH
+1974,80,Arcadia Commons,PHX
+1975,80,Peoria Office Park,PHX
+1976,80,Gilbert Medical Building,PHX
+1977,80,Laveen Plaza,PHX
+1978,80,Papago Center,PHX
+1984,82,Deer Valley Plaza,PHX
+1985,82,Avondale Center,PHX
+1986,82,Tempe Commons,PHX
+1987,82,Avondale Office Park,PHX
+1988,82,Estrella Medical Building,PHX
+1989,82,Sabino Plaza,TUS
+1990,82,Catalina Foothills Center,TUS
+1991,82,Mountain View Commons,NTH
+1992,82,Scottsdale Office Park,PHX
+1993,82,Goodyear Medical Building,PHX
+1994,82,Chandler Plaza,PHX
+1995,82,Arcadia Center,PHX
+1996,82,Papago Commons,PHX
+1997,82,Tanque Verde Office Park,TUS
+1998,82,Kachina Village Medical Building,NTH
+1999,82,Pueblo Plaza,TUS
+2000,82,Fountain Hills Center,PHX
+2001,82,Peoria Commons,PHX
+2002,82,Peoria Office Park,PHX
+2003,83,Scottsdale Plaza,PHX
+2004,83,Scottsdale Center,PHX
+2005,83,Camelback Commons,PHX
+2006,83,Glendale Office Park,PHX
+2007,83,Mountain View Medical Building,NTH
+2008,83,Rincon Plaza,TUS
+2009,83,Saguaro Center,PHX
+2010,83,Rincon Commons,TUS
+2011,84,Papago Plaza,PHX
+2012,84,Queen Creek Center,PHX
+2013,84,Estrella Commons,PHX
+2014,84,Maryvale Office Park,PHX
+2015,84,Verde Valley Medical Building,NTH
+2016,84,Paradise Valley Plaza,PHX
+2017,84,Scottsdale Center,PHX
+2018,84,Mountain View Commons,NTH
+2019,84,Sonoran Office Park,PHX
+2020,84,Paradise Valley Medical Building,PHX
+2021,84,Camelback Plaza,PHX
+2022,84,Saguaro Center,PHX
+2023,84,Kachina Village Commons,NTH
+2024,85,Goodyear Plaza,PHX
+2025,85,San Tan Valley Center,PHX
+2026,85,Sedona Commons,NTH
+2027,85,Sonoran Office Park,PHX
+2028,85,Superstition Medical Building,PHX
+2029,85,Sahuarita Plaza,TUS
+2030,85,Vail Center,TUS
+2031,85,Prescott Valley Commons,NTH
+2032,85,Sonoran Office Park,PHX
+2033,85,Goodyear Medical Building,PHX
+2034,85,Mogollon Rim Plaza,NTH
+2035,86,Williams Plaza,NTH
+2036,86,Pueblo Center,TUS
+2037,86,Chandler Commons,PHX
+2038,86,Superstition Office Park,PHX
+2039,86,Maryvale Medical Building,PHX
+2040,86,Marana Plaza,TUS
+2041,86,Chandler Center,PHX
+2042,86,Oro Valley Commons,TUS
+2043,86,Goodyear Office Park,PHX
+2044,86,Apache Junction Medical Building,PHX
+2045,86,Rincon Plaza,TUS
+2046,86,Arcadia Center,PHX
+2047,86,Sedona Commons,NTH
+2048,86,Coconino Office Park,NTH
+2049,86,Goodyear Medical Building,PHX
+2050,86,Peoria Plaza,PHX
+2051,86,Tanque Verde Center,TUS
+2052,86,Santa Cruz Commons,TUS
+2053,86,Saguaro Office Park,PHX
+2054,86,Marana Medical Building,TUS
+2055,87,Deer Valley Plaza,PHX
+2056,87,Casas Adobes Center,TUS
+2057,87,Coconino Commons,NTH
+2058,87,Gilbert Office Park,PHX
+2059,87,Oro Valley Medical Building,TUS
+2060,87,Desert Ridge Plaza,PHX
+2061,87,Ahwatukee Center,PHX
+2062,87,Vail Commons,TUS
+2063,87,Mesa Office Park,PHX
+2064,87,Casas Adobes Medical Building,TUS
+2065,88,Goodyear Plaza,PHX
+2066,88,Scottsdale Center,PHX
+2067,88,Laveen Commons,PHX
+2068,88,Oro Valley Office Park,TUS
+2069,88,Casas Adobes Medical Building,TUS
+2070,88,Peoria Plaza,PHX
+2071,88,Vail Center,TUS
+2072,88,Desert Ridge Commons,PHX
+2073,88,Camelback Office Park,PHX
+2074,88,Peoria Medical Building,PHX
+2075,88,Sahuarita Plaza,TUS
+2076,89,Queen Creek Plaza,PHX
+2077,89,Chandler Center,PHX
+2078,89,Sonoran Commons,PHX
+2079,89,Ahwatukee Office Park,PHX
+2080,89,Fountain Hills Medical Building,PHX
+2081,89,Sonoran Plaza,PHX
+2082,89,Coconino Center,NTH
+2083,89,Rita Ranch Commons,TUS
+2084,89,Maryvale Office Park,PHX
+2085,89,Camelback Medical Building,PHX
+2086,89,San Francisco Peaks Plaza,NTH
+2087,89,Glendale Center,PHX
+2088,89,Laveen Commons,PHX
+2089,90,Saguaro Plaza,PHX
+2090,90,Tempe Center,PHX
+2091,90,Scottsdale Commons,PHX
+2092,90,Scottsdale Office Park,PHX
+2093,90,Coconino Medical Building,NTH
+2094,90,Casas Adobes Plaza,TUS
+2095,90,Vail Center,TUS
+2096,90,Maryvale Commons,PHX
+2097,90,Tempe Office Park,PHX
+2098,90,San Tan Valley Medical Building,PHX
+2099,90,Estrella Plaza,PHX
+2100,90,Sabino Center,TUS
+2101,90,San Francisco Peaks Commons,NTH
+2102,90,Tempe Office Park,PHX
+2103,90,Paradise Valley Medical Building,PHX
+2104,90,Rita Ranch Plaza,TUS
+2105,90,Deer Valley Center,PHX
+2106,90,Ahwatukee Commons,PHX
+2107,90,Queen Creek Office Park,PHX
+2108,91,Deer Valley Plaza,PHX
+2109,91,Saguaro Center,PHX
+2110,91,Maryvale Commons,PHX
+2111,91,Queen Creek Office Park,PHX
+2112,91,Vail Medical Building,TUS
+2113,91,Queen Creek Plaza,PHX
+2114,91,Tanque Verde Center,TUS
+2115,91,Desert Ridge Commons,PHX
+2116,91,Old Pueblo Office Park,TUS
+2117,91,Oro Valley Medical Building,TUS
+2118,91,Peoria Plaza,PHX
+2119,91,Glendale Center,PHX
+2120,91,Ahwatukee Commons,PHX
+2121,91,Rincon Office Park,TUS
+2122,91,Scottsdale Medical Building,PHX
+2123,91,Santa Cruz Plaza,TUS
+2124,92,Estrella Plaza,PHX
+2125,92,Deer Valley Center,PHX
+2126,92,Coconino Commons,NTH
+2127,92,Santa Cruz Office Park,TUS
+2128,92,Avondale Medical Building,PHX
+2129,92,Avondale Plaza,PHX
+2130,92,Green Valley Center,TUS
+2131,92,San Tan Valley Commons,PHX
+2132,92,Scottsdale Office Park,PHX
+2133,92,Cottonwood Medical Building,NTH
+2134,92,Glendale Plaza,PHX
+2135,92,Green Valley Center,TUS
+2136,92,Tempe Commons,PHX
+2137,92,Tempe Office Park,PHX
+2138,92,Laveen Medical Building,PHX
+2139,92,Sedona Plaza,NTH
+2140,92,Chandler Center,PHX
+2141,93,Saguaro Plaza,PHX
+2142,93,Glendale Center,PHX
+2143,93,Sabino Commons,TUS
+2144,93,Scottsdale Office Park,PHX
+2145,93,Queen Creek Medical Building,PHX
+2146,93,Gilbert Plaza,PHX
+2147,93,Sabino Center,TUS
+2148,93,Mogollon Rim Commons,NTH
+2149,93,Arcadia Office Park,PHX
+2150,93,Green Valley Medical Building,TUS
+2151,93,Williams Plaza,NTH
+2152,93,Sonoran Center,PHX
+2153,93,Papago Commons,PHX
+2154,93,Rincon Office Park,TUS
+2155,93,Catalina Foothills Medical Building,TUS
+2156,93,Mogollon Rim Plaza,NTH
+2157,93,Laveen Center,PHX
+2158,93,Williams Commons,NTH
+2159,93,Ahwatukee Office Park,PHX
+2160,94,Gilbert Plaza,PHX
+2161,94,Goodyear Center,PHX
+2162,94,Gilbert Commons,PHX
+2163,94,Estrella Office Park,PHX
+2164,95,Casas Adobes Plaza,TUS
+2165,95,Apache Junction Center,PHX
+2166,95,Ahwatukee Commons,PHX
+2167,95,Catalina Foothills Office Park,TUS
+2168,95,Glendale Medical Building,PHX
+2169,95,Goodyear Plaza,PHX
+2170,95,Marana Center,TUS
+2171,95,Marana Commons,TUS
+2172,95,Queen Creek Office Park,PHX
+2173,95,Goodyear Medical Building,PHX
+2174,95,Chandler Plaza,PHX
+2175,95,Queen Creek Center,PHX
+2176,95,Camelback Commons,PHX
+2177,95,Gilbert Office Park,PHX
+2178,95,Saguaro Medical Building,PHX
+2179,95,Kachina Village Plaza,NTH
+2180,95,Rincon Center,TUS
+2181,96,Laveen Plaza,PHX
+2182,96,Goodyear Center,PHX
+2183,96,Rita Ranch Commons,TUS
+2184,96,Vail Office Park,TUS
+2185,96,Scottsdale Medical Building,PHX
+2186,96,Camelback Plaza,PHX
+2187,96,Old Pueblo Center,TUS
+2188,97,Chandler Plaza,PHX
+2189,97,Desert Ridge Center,PHX
+2190,97,Chandler Commons,PHX
+2191,97,Pueblo Office Park,TUS
+2192,97,Sedona Medical Building,NTH
+2193,97,Saguaro Plaza,PHX
+2194,97,Marana Center,TUS
+2195,97,Camelback Commons,PHX
+2196,97,Superstition Office Park,PHX
+2197,97,Saguaro Medical Building,PHX
+2198,97,Fountain Hills Plaza,PHX
+2199,97,Paradise Valley Center,PHX
+2200,97,Kachina Village Commons,NTH
+2201,97,Marana Office Park,TUS
+2202,97,Pueblo Medical Building,TUS
+2203,97,Prescott Valley Plaza,NTH
+2204,97,Scottsdale Center,PHX
+2205,97,Marana Commons,TUS
+2206,97,Chandler Office Park,PHX
+2207,98,Queen Creek Plaza,PHX
+2208,98,Papago Center,PHX
+2209,98,Arcadia Commons,PHX
+2210,98,Papago Office Park,PHX
+2211,98,Oro Valley Medical Building,TUS
+2212,98,Gilbert Plaza,PHX
+2213,99,Marana Plaza,TUS
+2214,99,Ponderosa Center,NTH
+2215,99,Mogollon Rim Commons,NTH
+2216,99,Tempe Office Park,PHX
+2217,99,Catalina Foothills Medical Building,TUS
+2218,99,San Francisco Peaks Plaza,NTH
+2219,99,Catalina Foothills Center,TUS
+2220,99,Tanque Verde Commons,TUS
+2221,99,Sahuarita Office Park,TUS
+2222,99,Scottsdale Medical Building,PHX
+2223,99,Rita Ranch Plaza,TUS
+2224,99,Casas Adobes Center,TUS
+2225,99,Saguaro Commons,PHX
+2226,99,Paradise Valley Office Park,PHX
+2227,99,Desert Ridge Medical Building,PHX
+2228,99,Sonoran Plaza,PHX
+2248,101,Mesa Plaza,PHX
+2249,101,Santa Cruz Center,TUS
+2250,101,Estrella Commons,PHX
+2251,101,Chandler Office Park,PHX
+2252,101,Avondale Medical Building,PHX
+2253,101,Maryvale Plaza,PHX
+2254,101,Scottsdale Center,PHX
+2255,101,Sahuarita Commons,TUS
+2256,101,Saguaro Office Park,PHX
+2257,101,Santa Cruz Medical Building,TUS
+2258,101,Old Pueblo Plaza,TUS
+2259,101,Sahuarita Center,TUS
+2260,101,Chandler Commons,PHX
+2261,101,Deer Valley Office Park,PHX
+2262,101,Rincon Medical Building,TUS
+2263,101,Apache Junction Plaza,PHX
+2264,102,Oro Valley Plaza,TUS
+2265,102,Rita Ranch Center,TUS
+2266,102,Camelback Commons,PHX
+2267,102,Fountain Hills Office Park,PHX
+2268,102,Avondale Medical Building,PHX
+2269,102,Paradise Valley Plaza,PHX
+2270,102,Mesa Center,PHX
+2271,102,Laveen Commons,PHX
+2272,102,Mesa Office Park,PHX
+2273,102,Fountain Hills Medical Building,PHX
+2274,102,Williams Plaza,NTH
+2275,102,Vail Center,TUS
+2276,102,Avondale Commons,PHX
+2277,103,Avondale Plaza,PHX
+2278,103,Sahuarita Center,TUS
+2279,103,Deer Valley Commons,PHX
+2280,103,Mogollon Rim Office Park,NTH
+2281,104,San Tan Valley Plaza,PHX
+2282,104,Green Valley Center,TUS
+2283,104,Superstition Commons,PHX
+2284,104,Goodyear Office Park,PHX
+2285,104,Maryvale Medical Building,PHX
+2286,104,Papago Plaza,PHX
+2287,104,Chandler Center,PHX
+2288,104,Rita Ranch Commons,TUS
+2289,105,Avondale Plaza,PHX
+2290,105,Camelback Center,PHX
+2291,105,Ahwatukee Commons,PHX
+2292,105,Rincon Office Park,TUS
+2293,105,Laveen Medical Building,PHX
+2294,105,Deer Valley Plaza,PHX
+2295,105,Williams Center,NTH
+2296,105,Glendale Commons,PHX
+2297,105,Saguaro Office Park,PHX
+2298,105,Desert Ridge Medical Building,PHX
+2299,105,Old Pueblo Plaza,TUS
+2300,105,Sonoran Center,PHX
+2301,105,Laveen Commons,PHX
+2302,105,Mountain View Office Park,NTH
+2303,105,Saguaro Medical Building,PHX
+2304,105,Casas Adobes Plaza,TUS
+2305,105,Prescott Valley Center,NTH
+2306,105,Paradise Valley Commons,PHX
+2307,105,Sabino Office Park,TUS
+2308,105,Sabino Medical Building,TUS
+2309,105,Mesa Plaza,PHX
+2310,105,Mountain View Center,NTH
+2311,106,Chandler Plaza,PHX
+2312,106,Sahuarita Center,TUS
+2313,106,Verde Valley Commons,NTH
+2314,106,Glendale Office Park,PHX
+2315,106,San Francisco Peaks Medical Building,NTH
+2316,106,Mountain View Plaza,NTH
+2317,106,Maryvale Center,PHX
+2318,106,Vail Commons,TUS
+2319,106,Desert Ridge Office Park,PHX
+2320,106,Green Valley Medical Building,TUS
+2321,106,Camelback Plaza,PHX
+2322,106,Mesa Center,PHX
+2323,106,Vail Commons,TUS
+2324,106,Cottonwood Office Park,NTH
+2325,106,Goodyear Medical Building,PHX
+2326,106,Sahuarita Plaza,TUS
+2327,106,Kachina Village Center,NTH
+2328,106,Sedona Commons,NTH
+2329,106,Santa Cruz Office Park,TUS
+2330,106,Oro Valley Medical Building,TUS
+2331,106,Sabino Plaza,TUS
+2332,107,Prescott Valley Plaza,NTH
+2333,107,Tanque Verde Center,TUS
+2334,107,Oro Valley Commons,TUS
+2335,107,Desert Ridge Office Park,PHX
+2336,107,Goodyear Medical Building,PHX
+2337,107,Avondale Plaza,PHX
+2338,107,Deer Valley Center,PHX
+2339,107,Camp Verde Commons,NTH
+2340,107,Marana Office Park,TUS
+2341,107,Casas Adobes Medical Building,TUS
+2342,107,Kachina Village Plaza,NTH
+2343,107,Catalina Foothills Center,TUS
+2344,107,Avondale Commons,PHX
+2345,107,Ponderosa Office Park,NTH
+2346,107,Apache Junction Medical Building,PHX
+2347,108,Camelback Plaza,PHX
+2348,108,Estrella Center,PHX
+2349,108,Ponderosa Commons,NTH
+2350,108,Paradise Valley Office Park,PHX
+2351,108,Sahuarita Medical Building,TUS
+2352,108,Prescott Valley Plaza,NTH
+2353,108,Desert Ridge Center,PHX
+2354,108,Santa Cruz Commons,TUS
+2355,108,Santa Cruz Office Park,TUS
+2356,108,Coconino Medical Building,NTH
+2357,108,Tempe Plaza,PHX
+2358,108,San Tan Valley Center,PHX
+2359,108,Sahuarita Commons,TUS
+2360,108,Estrella Office Park,PHX
+2361,108,Peoria Medical Building,PHX
+2362,108,Rincon Plaza,TUS
+2363,109,Gilbert Plaza,PHX
+2364,109,Camelback Center,PHX
+2365,109,Laveen Commons,PHX
+2366,109,Camelback Office Park,PHX
+2367,109,Mogollon Rim Medical Building,NTH
+2368,109,Fountain Hills Plaza,PHX
+2369,109,Sonoran Center,PHX
+2370,109,Mesa Commons,PHX
+2371,109,Camp Verde Office Park,NTH
+2372,109,Gilbert Medical Building,PHX
+2373,110,Saguaro Plaza,PHX
+2374,110,Marana Center,TUS
+2375,110,Sahuarita Commons,TUS
+2376,110,Paradise Valley Office Park,PHX
+2377,110,Marana Medical Building,TUS
+2378,110,Saguaro Plaza,PHX
+2379,110,Saguaro Center,PHX
+2380,110,San Tan Valley Commons,PHX
+2381,110,Sahuarita Office Park,TUS
+2382,111,Maryvale Plaza,PHX
+2383,111,Desert Ridge Center,PHX
+2384,111,Pueblo Commons,TUS
+2385,111,Tanque Verde Office Park,TUS
+2386,111,Casas Adobes Medical Building,TUS
+2387,111,Deer Valley Plaza,PHX
+2388,112,Rita Ranch Plaza,TUS
+2389,112,Apache Junction Center,PHX
+2390,112,Desert Ridge Commons,PHX
+2391,112,Tanque Verde Office Park,TUS
+2392,112,San Tan Valley Medical Building,PHX
+2393,112,Mesa Plaza,PHX
+2394,112,Ahwatukee Center,PHX
+2395,112,Deer Valley Commons,PHX
+2396,112,Maryvale Office Park,PHX
+2397,112,Rincon Medical Building,TUS
+2398,112,Mesa Plaza,PHX
+2399,112,Laveen Center,PHX
+2400,112,Scottsdale Commons,PHX
+2401,113,Cottonwood Plaza,NTH
+2402,113,Old Pueblo Center,TUS
+2403,113,Williams Commons,NTH
+2404,113,Papago Office Park,PHX
+2405,113,Glendale Medical Building,PHX
+2406,113,Pueblo Plaza,TUS
+2407,113,Catalina Foothills Center,TUS
+2408,113,Maryvale Commons,PHX
+2409,113,Camp Verde Office Park,NTH
+2410,113,Mesa Medical Building,PHX
+2411,113,San Tan Valley Plaza,PHX
+2412,113,San Francisco Peaks Center,NTH
+2413,113,Paradise Valley Commons,PHX
+2414,113,Superstition Office Park,PHX
+2415,114,Mesa Plaza,PHX
+2416,114,Mountain View Center,NTH
+2417,114,Goodyear Commons,PHX
+2418,114,Desert Ridge Office Park,PHX
+2419,114,Fountain Hills Medical Building,PHX
+2420,114,Vail Plaza,TUS
+2421,114,Mesa Center,PHX
+2422,114,Green Valley Commons,TUS
+2423,114,Sedona Office Park,NTH
+2424,114,Saguaro Medical Building,PHX
+2425,114,Arcadia Plaza,PHX
+2426,114,Old Pueblo Center,TUS
+2427,114,Deer Valley Commons,PHX
+2428,114,Superstition Office Park,PHX
+2429,114,Camelback Medical Building,PHX
+2430,114,Rincon Plaza,TUS
+2431,114,Glendale Center,PHX
+2432,114,Glendale Commons,PHX
+2433,114,Saguaro Office Park,PHX
+2434,114,Rita Ranch Medical Building,TUS
+2435,115,Ahwatukee Plaza,PHX
+2436,115,Mogollon Rim Center,NTH
+2437,115,Queen Creek Commons,PHX
+2438,115,Mesa Office Park,PHX
+2439,115,Marana Medical Building,TUS
+2440,115,Laveen Plaza,PHX
+2441,115,Sedona Center,NTH
+2442,115,Maryvale Commons,PHX
+2443,115,Laveen Office Park,PHX
+2444,115,Sonoran Medical Building,PHX
+2445,115,Pueblo Plaza,TUS
+2446,115,Vail Center,TUS
+2447,115,Deer Valley Commons,PHX
+2448,115,Gilbert Office Park,PHX
+2449,115,Rincon Medical Building,TUS
+2450,115,Sonoran Plaza,PHX
+2451,115,Pueblo Center,TUS
+2452,115,Deer Valley Commons,PHX
+2453,115,Sonoran Office Park,PHX
+2454,115,San Tan Valley Medical Building,PHX
+2455,115,Goodyear Plaza,PHX
+2456,115,Maryvale Center,PHX
+2457,116,Sabino Plaza,TUS
+2458,116,Queen Creek Center,PHX
+2459,116,Fountain Hills Commons,PHX
+2460,116,Avondale Office Park,PHX
+2461,117,Papago Plaza,PHX
+2462,117,Gilbert Center,PHX
+2463,117,Mountain View Commons,NTH
+2464,117,Gilbert Office Park,PHX
+2465,117,Pueblo Medical Building,TUS
+2466,117,Marana Plaza,TUS
+2467,117,Papago Center,PHX
+2468,117,Sabino Commons,TUS
+2469,117,Sabino Office Park,TUS
+2470,117,Deer Valley Medical Building,PHX
+2471,117,Peoria Plaza,PHX
+2472,117,Santa Cruz Center,TUS
+2473,117,Superstition Commons,PHX
+2474,117,San Tan Valley Office Park,PHX
+2475,117,Glendale Medical Building,PHX
+2476,117,Avondale Plaza,PHX
+2477,117,Sahuarita Center,TUS
+2478,117,Fountain Hills Commons,PHX
+2479,118,Desert Ridge Plaza,PHX
+2480,118,Tanque Verde Center,TUS
+2481,118,Gilbert Commons,PHX
+2482,118,Sedona Office Park,NTH
+2483,118,Laveen Medical Building,PHX
+2484,118,Avondale Plaza,PHX
+2485,119,Avondale Plaza,PHX
+2486,119,Mountain View Center,NTH
+2487,119,Ahwatukee Commons,PHX
+2488,119,San Francisco Peaks Office Park,NTH
+2489,119,Superstition Medical Building,PHX
+2490,119,Oro Valley Plaza,TUS
+2491,119,Prescott Valley Center,NTH
+2492,119,Chandler Commons,PHX
+2493,119,Queen Creek Office Park,PHX
+2494,119,Maryvale Medical Building,PHX
+2495,119,Camp Verde Plaza,NTH
+2496,119,Chandler Center,PHX
+2497,119,Casas Adobes Commons,TUS
+2498,119,Santa Cruz Office Park,TUS
+2499,119,Queen Creek Medical Building,PHX
+2500,119,Rincon Plaza,TUS
+2501,119,Cottonwood Center,NTH
+2502,119,Sedona Commons,NTH
+2503,119,Saguaro Office Park,PHX
+2504,119,Mogollon Rim Medical Building,NTH
+2505,120,Maryvale Plaza,PHX
+2506,120,Santa Cruz Center,TUS
+2507,120,Rita Ranch Commons,TUS
+2508,120,Cottonwood Office Park,NTH
+2509,120,Queen Creek Medical Building,PHX
+2510,120,Tempe Plaza,PHX
+2511,120,Sahuarita Center,TUS
+2512,120,Ahwatukee Commons,PHX
+2513,120,Catalina Foothills Office Park,TUS
+2514,120,Catalina Foothills Medical Building,TUS
+2515,120,Prescott Valley Plaza,NTH
+2516,120,Apache Junction Center,PHX
+2517,120,Green Valley Commons,TUS
+2518,120,Marana Office Park,TUS
+2519,120,Desert Ridge Medical Building,PHX
+2520,120,Fountain Hills Plaza,PHX
+2521,120,Laveen Center,PHX
+2522,120,Old Pueblo Commons,TUS
+2523,120,Desert Ridge Office Park,PHX
+2524,120,Rita Ranch Medical Building,TUS
+2525,120,Cottonwood Plaza,NTH
+2526,121,Santa Cruz Plaza,TUS
+2527,121,Fountain Hills Center,PHX
+2528,121,Peoria Commons,PHX
+2529,121,Glendale Office Park,PHX
+2530,121,Tempe Medical Building,PHX
+2531,121,San Francisco Peaks Plaza,NTH
+2532,121,Desert Ridge Center,PHX
+2533,122,Goodyear Plaza,PHX
+2534,122,Arcadia Center,PHX
+2535,122,Gilbert Commons,PHX
+2536,122,Superstition Office Park,PHX
+2537,122,Mesa Medical Building,PHX
+2538,122,Kachina Village Plaza,NTH
+2539,122,Tempe Center,PHX
+2540,123,Maryvale Plaza,PHX
+2541,123,Catalina Foothills Center,TUS
+2542,123,Rita Ranch Commons,TUS
+2543,123,Goodyear Office Park,PHX
+2544,123,Avondale Medical Building,PHX
+2545,123,Paradise Valley Plaza,PHX
+2546,123,Santa Cruz Center,TUS
+2547,123,Ponderosa Commons,NTH
+2548,123,Saguaro Office Park,PHX
+2549,123,Tempe Medical Building,PHX
+2550,123,Vail Plaza,TUS
+2551,123,Mesa Center,PHX
+2552,123,Maryvale Commons,PHX
+2553,123,Sabino Office Park,TUS
+2554,123,Casas Adobes Medical Building,TUS
+2555,124,Williams Plaza,NTH
+2556,124,Glendale Center,PHX
+2557,124,Marana Commons,TUS
+2558,124,Apache Junction Office Park,PHX
+2559,124,Desert Ridge Medical Building,PHX
+2560,124,Sabino Plaza,TUS
+2561,124,Mesa Center,PHX
+2562,124,Tanque Verde Commons,TUS
+2563,125,Gilbert Plaza,PHX
+2564,125,Apache Junction Center,PHX
+2565,125,Tanque Verde Commons,TUS
+2566,125,Tanque Verde Office Park,TUS
+2567,126,Pueblo Plaza,TUS
+2568,126,Ahwatukee Center,PHX
+2569,126,Avondale Commons,PHX
+2570,126,Peoria Office Park,PHX
+2571,126,Old Pueblo Medical Building,TUS
+2572,126,Saguaro Plaza,PHX
+2573,127,Gilbert Plaza,PHX
+2574,127,Ahwatukee Center,PHX
+2575,127,Superstition Commons,PHX
+2576,127,Casas Adobes Office Park,TUS
+2577,127,Camp Verde Medical Building,NTH
+2578,127,Apache Junction Plaza,PHX
+2579,127,Camp Verde Center,NTH
+2580,127,Williams Commons,NTH
+2581,127,Superstition Office Park,PHX
+2582,127,Arcadia Medical Building,PHX
+2583,127,Tanque Verde Plaza,TUS
+2584,127,San Tan Valley Center,PHX
+2585,127,Queen Creek Commons,PHX
+2586,127,Scottsdale Office Park,PHX
+2587,127,Arcadia Medical Building,PHX
+2588,128,Mogollon Rim Plaza,NTH
+2589,128,Catalina Foothills Center,TUS
+2590,128,Old Pueblo Commons,TUS
+2591,128,Gilbert Office Park,PHX
+2592,128,Saguaro Medical Building,PHX
+2593,128,Avondale Plaza,PHX
+2594,128,Old Pueblo Center,TUS
+2595,128,Cottonwood Commons,NTH
+2596,128,Scottsdale Office Park,PHX
+2597,128,San Francisco Peaks Medical Building,NTH
+2598,128,Pueblo Plaza,TUS
+2599,128,Camelback Center,PHX
+2600,128,Apache Junction Commons,PHX
+2601,128,Avondale Office Park,PHX
+2602,128,Vail Medical Building,TUS
+2603,128,Chandler Plaza,PHX
+2604,129,Avondale Plaza,PHX
+2605,129,San Francisco Peaks Center,NTH
+2606,129,Rita Ranch Commons,TUS
+2607,129,Chandler Office Park,PHX
+2608,130,Sahuarita Plaza,TUS
+2609,130,Prescott Valley Center,NTH
+2610,130,Laveen Commons,PHX
+2611,130,Arcadia Office Park,PHX
+2612,130,Paradise Valley Medical Building,PHX
+2613,130,Mogollon Rim Plaza,NTH
+2614,130,Old Pueblo Center,TUS
+2615,130,Saguaro Commons,PHX
+2616,130,Tanque Verde Office Park,TUS
+2617,131,Paradise Valley Plaza,PHX
+2618,131,Rincon Center,TUS
+2619,131,Green Valley Commons,TUS
+2620,131,Peoria Office Park,PHX
+2621,131,Camp Verde Medical Building,NTH
+2622,131,Santa Cruz Plaza,TUS
+2623,131,Mesa Center,PHX
+2624,131,Avondale Commons,PHX
+2625,131,Camelback Office Park,PHX
+2626,131,Sonoran Medical Building,PHX
+2627,131,Sabino Plaza,TUS
+2628,131,Sonoran Center,PHX
+2629,131,Scottsdale Commons,PHX
+2630,131,Deer Valley Office Park,PHX
+2631,131,Queen Creek Medical Building,PHX
+2632,131,Tanque Verde Plaza,TUS
+2633,131,Cottonwood Center,NTH
+2634,131,Prescott Valley Commons,NTH
+2635,131,San Tan Valley Office Park,PHX
+2636,131,Mesa Medical Building,PHX
+2637,131,Cottonwood Plaza,NTH
+2638,132,Sabino Plaza,TUS
+2639,132,Chandler Center,PHX
+2640,132,San Francisco Peaks Commons,NTH
+2641,132,Queen Creek Office Park,PHX
+2642,132,Mesa Medical Building,PHX
+2643,132,Vail Plaza,TUS
+2644,132,Santa Cruz Center,TUS
+2645,132,Goodyear Commons,PHX
+2646,132,Avondale Office Park,PHX
+2647,132,Chandler Medical Building,PHX
+2648,132,Mogollon Rim Plaza,NTH
+2649,132,Coconino Center,NTH
+2650,132,Rincon Commons,TUS
+2651,133,Estrella Plaza,PHX
+2652,133,Arcadia Center,PHX
+2653,133,Sabino Commons,TUS
+2654,133,Arcadia Office Park,PHX
+2655,133,Prescott Valley Medical Building,NTH
+2656,133,Mogollon Rim Plaza,NTH
+2657,133,Goodyear Center,PHX
+2658,133,Mesa Commons,PHX
+2659,133,Glendale Office Park,PHX
+2687,136,Prescott Valley Unified School District #100,NTH
+2688,136,Prescott Valley Unified School District #101,NTH
+2689,136,Prescott Valley Unified School District #102,NTH
+2690,136,Prescott Valley Unified School District #103,NTH
+2691,136,Prescott Valley Unified School District #104,NTH
+2692,136,Prescott Valley Unified School District #105,NTH
+2693,136,Prescott Valley Unified School District #106,NTH
+2694,136,Prescott Valley Unified School District #107,NTH
+2695,136,Prescott Valley Unified School District #108,NTH
+2696,136,Prescott Valley Unified School District #109,NTH
+2697,136,Prescott Valley Unified School District #110,NTH
+2698,136,Prescott Valley Unified School District #111,NTH
+2699,137,Maryvale Unified School District #100,PHX
+2700,137,Maryvale Unified School District #101,PHX
+2701,137,Maryvale Unified School District #102,PHX
+2702,137,Maryvale Unified School District #103,PHX
+2703,137,Maryvale Unified School District #104,PHX
+2704,137,Maryvale Unified School District #105,PHX
+2705,137,Maryvale Unified School District #106,PHX
+2706,137,Maryvale Unified School District #107,PHX
+2707,137,Maryvale Unified School District #108,PHX
+2708,137,Maryvale Unified School District #109,PHX
+2709,137,Maryvale Unified School District #110,PHX
+2710,138,Glendale Unified School District #100,PHX
+2711,138,Glendale Unified School District #101,PHX
+2712,138,Glendale Unified School District #102,PHX
+2713,138,Glendale Unified School District #103,PHX
+2714,138,Glendale Unified School District #104,PHX
+2715,138,Glendale Unified School District #105,PHX
+2716,138,Glendale Unified School District #106,PHX
+2717,138,Glendale Unified School District #107,PHX
+2718,138,Glendale Unified School District #108,PHX
+2719,138,Glendale Unified School District #109,PHX
+2720,138,Glendale Unified School District #110,PHX
+2721,139,Chandler Unified School District #100,PHX
+2722,139,Chandler Unified School District #101,PHX
+2723,139,Chandler Unified School District #102,PHX
+2724,139,Chandler Unified School District #103,PHX
+2725,139,Chandler Unified School District #104,PHX
+2726,139,Chandler Unified School District #105,PHX
+2727,139,Chandler Unified School District #106,PHX
+2728,139,Chandler Unified School District #107,PHX
+2729,139,Chandler Unified School District #108,PHX
+2730,139,Chandler Unified School District #109,PHX
+2731,140,Scottsdale Unified School District #100,PHX
+2732,140,Scottsdale Unified School District #101,PHX
+2733,140,Scottsdale Unified School District #102,PHX
+2734,140,Scottsdale Unified School District #103,PHX
+2735,140,Scottsdale Unified School District #104,PHX
+2736,140,Scottsdale Unified School District #105,PHX
+2737,140,Scottsdale Unified School District #106,PHX
+2738,140,Scottsdale Unified School District #107,PHX
+2739,140,Scottsdale Unified School District #108,PHX
+2740,140,Scottsdale Unified School District #109,PHX
+2741,140,Scottsdale Unified School District #110,PHX
+2742,141,Cottonwood Unified School District #100,NTH
+2743,141,Cottonwood Unified School District #101,NTH
+2744,141,Cottonwood Unified School District #102,NTH
+2745,141,Cottonwood Unified School District #103,NTH
+2746,141,Cottonwood Unified School District #104,NTH
+2747,141,Cottonwood Unified School District #105,NTH
+2748,141,Cottonwood Unified School District #106,NTH
+2749,141,Cottonwood Unified School District #107,NTH
+2750,141,Cottonwood Unified School District #108,NTH
+2751,141,Cottonwood Unified School District #109,NTH
+2752,141,Cottonwood Unified School District #110,NTH
+2753,141,Cottonwood Unified School District #111,NTH
+2767,143,Laveen Unified School District #100,PHX
+2768,143,Laveen Unified School District #101,PHX
+2769,143,Laveen Unified School District #102,PHX
+2770,143,Laveen Unified School District #103,PHX
+2771,143,Laveen Unified School District #104,PHX
+2772,143,Laveen Unified School District #105,PHX
+2773,143,Laveen Unified School District #106,PHX
+2774,143,Laveen Unified School District #107,PHX
+2775,143,Laveen Unified School District #108,PHX
+2776,143,Laveen Unified School District #109,PHX
+2777,143,Laveen Unified School District #110,PHX
+2778,143,Laveen Unified School District #111,PHX
+2779,143,Laveen Unified School District #112,PHX
+2780,144,Fountain Hills Unified School District #100,PHX
+2781,144,Fountain Hills Unified School District #101,PHX
+2782,144,Fountain Hills Unified School District #102,PHX
+2783,144,Fountain Hills Unified School District #103,PHX
+2784,144,Fountain Hills Unified School District #104,PHX
+2785,145,Oro Valley Unified School District #100,TUS
+2786,145,Oro Valley Unified School District #101,TUS
+2787,145,Oro Valley Unified School District #102,TUS
+2788,145,Oro Valley Unified School District #103,TUS
+2789,145,Oro Valley Unified School District #104,TUS
+2790,145,Oro Valley Unified School District #105,TUS
+2791,145,Oro Valley Unified School District #106,TUS
+2792,146,Sedona Unified School District #100,NTH
+2793,146,Sedona Unified School District #101,NTH
+2794,146,Sedona Unified School District #102,NTH
+2795,146,Sedona Unified School District #103,NTH
+2796,146,Sedona Unified School District #104,NTH
+2797,146,Sedona Unified School District #105,NTH
+2798,146,Sedona Unified School District #106,NTH
+2799,146,Sedona Unified School District #107,NTH
+2800,146,Sedona Unified School District #108,NTH
+2801,146,Sedona Unified School District #109,NTH
+2802,146,Sedona Unified School District #110,NTH
+2803,146,Sedona Unified School District #111,NTH
+2804,146,Sedona Unified School District #112,NTH
+2805,146,Sedona Unified School District #113,NTH
+2806,147,Verde Valley Unified School District #100,NTH
+2807,147,Verde Valley Unified School District #101,NTH
+2808,147,Verde Valley Unified School District #102,NTH
+2809,147,Verde Valley Unified School District #103,NTH
+2810,147,Verde Valley Unified School District #104,NTH
+2811,147,Verde Valley Unified School District #105,NTH
+2812,147,Verde Valley Unified School District #106,NTH
+2813,148,Sonoran Unified School District #100,PHX
+2814,148,Sonoran Unified School District #101,PHX
+2815,148,Sonoran Unified School District #102,PHX
+2816,148,Sonoran Unified School District #103,PHX
+2817,148,Sonoran Unified School District #104,PHX
+2818,148,Sonoran Unified School District #105,PHX
+2819,148,Sonoran Unified School District #106,PHX
+2820,148,Sonoran Unified School District #107,PHX
+2821,148,Sonoran Unified School District #108,PHX
+2822,148,Sonoran Unified School District #109,PHX
+2823,149,Sedona Unified School District #100,NTH
+2824,149,Sedona Unified School District #101,NTH
+2825,149,Sedona Unified School District #102,NTH
+2826,149,Sedona Unified School District #103,NTH
+2827,149,Sedona Unified School District #104,NTH
+2828,149,Sedona Unified School District #105,NTH
+2829,150,Goodyear Unified School District #100,PHX
+2830,150,Goodyear Unified School District #101,PHX
+2831,150,Goodyear Unified School District #102,PHX
+2832,150,Goodyear Unified School District #103,PHX
+2833,150,Goodyear Unified School District #104,PHX
+2834,150,Goodyear Unified School District #105,PHX
+2835,150,Goodyear Unified School District #106,PHX
+2836,150,Goodyear Unified School District #107,PHX
+2837,151,Sedona Unified School District #100,NTH
+2838,151,Sedona Unified School District #101,NTH
+2839,151,Sedona Unified School District #102,NTH
+2840,151,Sedona Unified School District #103,NTH
+2841,151,Sedona Unified School District #104,NTH
+2842,151,Sedona Unified School District #105,NTH
+2843,151,Sedona Unified School District #106,NTH
+2844,151,Sedona Unified School District #107,NTH
+2845,151,Sedona Unified School District #108,NTH
+2846,151,Sedona Unified School District #109,NTH
+2847,152,Sonoran Unified School District #100,PHX
+2848,152,Sonoran Unified School District #101,PHX
+2849,152,Sonoran Unified School District #102,PHX
+2850,152,Sonoran Unified School District #103,PHX
+2851,152,Sonoran Unified School District #104,PHX
+2852,152,Sonoran Unified School District #105,PHX
+2853,152,Sonoran Unified School District #106,PHX
+2854,152,Sonoran Unified School District #107,PHX
+2855,152,Sonoran Unified School District #108,PHX
+2856,152,Sonoran Unified School District #109,PHX
+2857,152,Sonoran Unified School District #110,PHX
+2858,153,Oro Valley Unified School District #100,TUS
+2859,153,Oro Valley Unified School District #101,TUS
+2860,153,Oro Valley Unified School District #102,TUS
+2861,153,Oro Valley Unified School District #103,TUS
+2862,153,Oro Valley Unified School District #104,TUS
+2863,153,Oro Valley Unified School District #105,TUS
+2864,153,Oro Valley Unified School District #106,TUS
+2865,153,Oro Valley Unified School District #107,TUS
+2866,153,Oro Valley Unified School District #108,TUS
+2867,153,Oro Valley Unified School District #109,TUS
+2868,153,Oro Valley Unified School District #110,TUS
+2869,153,Oro Valley Unified School District #111,TUS
+2870,153,Oro Valley Unified School District #112,TUS
+2871,153,Oro Valley Unified School District #113,TUS
+2872,154,Sahuarita Unified School District #100,TUS
+2873,154,Sahuarita Unified School District #101,TUS
+2874,154,Sahuarita Unified School District #102,TUS
+2875,154,Sahuarita Unified School District #103,TUS
+2876,154,Sahuarita Unified School District #104,TUS
+2877,154,Sahuarita Unified School District #105,TUS
+2878,154,Sahuarita Unified School District #106,TUS
+2879,154,Sahuarita Unified School District #107,TUS
+2880,154,Sahuarita Unified School District #108,TUS
+2881,154,Sahuarita Unified School District #109,TUS
+2882,154,Sahuarita Unified School District #110,TUS
+2883,154,Sahuarita Unified School District #111,TUS
+2884,154,Sahuarita Unified School District #112,TUS
+2885,154,Sahuarita Unified School District #113,TUS
+2886,155,Goodyear Unified School District #100,PHX
+2887,155,Goodyear Unified School District #101,PHX
+2888,155,Goodyear Unified School District #102,PHX
+2889,155,Goodyear Unified School District #103,PHX
+2890,155,Goodyear Unified School District #104,PHX
+2891,156,Mesa Unified School District #100,PHX
+2892,156,Mesa Unified School District #101,PHX
+2893,156,Mesa Unified School District #102,PHX
+2894,156,Mesa Unified School District #103,PHX
+2895,156,Mesa Unified School District #104,PHX
+2896,156,Mesa Unified School District #105,PHX
+2897,156,Mesa Unified School District #106,PHX
+2898,157,Gilbert Unified School District #100,PHX
+2899,157,Gilbert Unified School District #101,PHX
+2900,157,Gilbert Unified School District #102,PHX
+2901,157,Gilbert Unified School District #103,PHX
+2902,157,Gilbert Unified School District #104,PHX
+2903,157,Gilbert Unified School District #105,PHX
+2904,157,Gilbert Unified School District #106,PHX
+2905,157,Gilbert Unified School District #107,PHX
+2906,157,Gilbert Unified School District #108,PHX
+2907,157,Gilbert Unified School District #109,PHX
+2908,157,Gilbert Unified School District #110,PHX
+2909,157,Gilbert Unified School District #111,PHX
+2910,157,Gilbert Unified School District #112,PHX
+2911,157,Gilbert Unified School District #113,PHX
+2912,157,Gilbert Unified School District #114,PHX
+2913,158,Oro Valley Unified School District #100,TUS
+2914,158,Oro Valley Unified School District #101,TUS
+2915,158,Oro Valley Unified School District #102,TUS
+2916,158,Oro Valley Unified School District #103,TUS
+2917,158,Oro Valley Unified School District #104,TUS
+2918,158,Oro Valley Unified School District #105,TUS
+2919,158,Oro Valley Unified School District #106,TUS
+2920,158,Oro Valley Unified School District #107,TUS
+2921,159,Deer Valley Bakery #100,PHX
+2922,159,Deer Valley Bakery #101,PHX
+2923,159,Deer Valley Bakery #102,PHX
+2924,159,Deer Valley Bakery #103,PHX
+2925,160,Desert Ridge Taqueria #100,PHX
+2926,160,Desert Ridge Taqueria #101,PHX
+2927,160,Desert Ridge Taqueria #102,PHX
+2928,160,Desert Ridge Taqueria #103,PHX
+2929,160,Desert Ridge Taqueria #104,PHX
+2930,160,Desert Ridge Taqueria #105,PHX
+2931,161,Green Valley Pizzeria #100,TUS
+2932,161,Green Valley Pizzeria #101,TUS
+2933,161,Green Valley Pizzeria #102,TUS
+2934,162,Mesa Taqueria #100,PHX
+2935,162,Mesa Taqueria #101,PHX
+2936,163,San Tan Valley Grill #100,PHX
+2937,163,San Tan Valley Grill #101,PHX
+2938,163,San Tan Valley Grill #102,PHX
+2939,163,San Tan Valley Grill #103,PHX
+2940,163,San Tan Valley Grill #104,PHX
+2941,163,San Tan Valley Grill #105,PHX
+2942,164,Kachina Village Eye Care #100,NTH
+2943,164,Kachina Village Eye Care #101,NTH
+2944,164,Kachina Village Eye Care #102,NTH
+2945,164,Kachina Village Eye Care #103,NTH
+2946,164,Kachina Village Eye Care #104,NTH
+2952,166,Gilbert Pharmacy #100,PHX
+2953,166,Gilbert Pharmacy #101,PHX
+2954,166,Gilbert Pharmacy #102,PHX
+2955,166,Gilbert Pharmacy #103,PHX
+2956,166,Gilbert Pharmacy #104,PHX
+2957,166,Gilbert Pharmacy #105,PHX
+2958,166,Gilbert Pharmacy #106,PHX
+2959,167,Queen Creek Boutique #100,PHX
+2960,167,Queen Creek Boutique #101,PHX
+2961,167,Queen Creek Boutique #102,PHX
+2962,167,Queen Creek Boutique #103,PHX
+2963,167,Queen Creek Boutique #104,PHX
+2964,167,Queen Creek Boutique #105,PHX
+2965,167,Queen Creek Boutique #106,PHX
+2966,168,Sonoran Family Dental #100,PHX
+2967,168,Sonoran Family Dental #101,PHX
+2968,168,Sonoran Family Dental #102,PHX
+2969,168,Sonoran Family Dental #103,PHX
+2970,169,Papago Taqueria #100,PHX
+2971,169,Papago Taqueria #101,PHX
+2972,169,Papago Taqueria #102,PHX
+2973,169,Papago Taqueria #103,PHX
+2974,169,Papago Taqueria #104,PHX
+2975,169,Papago Taqueria #105,PHX
+2976,169,Papago Taqueria #106,PHX
+2977,170,Peoria Diner #100,PHX
+2978,170,Peoria Diner #101,PHX
+2979,170,Peoria Diner #102,PHX
+2980,170,Peoria Diner #103,PHX
+2981,170,Peoria Diner #104,PHX
+2982,171,Deer Valley Hardware #100,PHX
+2983,171,Deer Valley Hardware #101,PHX
+2984,171,Deer Valley Hardware #102,PHX
+2985,171,Deer Valley Hardware #103,PHX
+2986,171,Deer Valley Hardware #104,PHX
+2987,171,Deer Valley Hardware #105,PHX
+2988,171,Deer Valley Hardware #106,PHX
+2989,172,Estrella Boutique #100,PHX
+2990,172,Estrella Boutique #101,PHX
+2991,172,Estrella Boutique #102,PHX
+2992,173,Casas Adobes Physical Therapy #100,TUS
+2993,173,Casas Adobes Physical Therapy #101,TUS
+2994,173,Casas Adobes Physical Therapy #102,TUS
+2995,173,Casas Adobes Physical Therapy #103,TUS
+2996,173,Casas Adobes Physical Therapy #104,TUS
+2997,173,Casas Adobes Physical Therapy #105,TUS
+2998,173,Casas Adobes Physical Therapy #106,TUS
+2999,173,Casas Adobes Physical Therapy #107,TUS
+3005,175,Kachina Village Pediatrics #100,NTH
+3006,175,Kachina Village Pediatrics #101,NTH
+3007,175,Kachina Village Pediatrics #102,NTH
+3008,175,Kachina Village Pediatrics #103,NTH
+3009,175,Kachina Village Pediatrics #104,NTH
+3010,175,Kachina Village Pediatrics #105,NTH
+3011,175,Kachina Village Pediatrics #106,NTH
+3012,175,Kachina Village Pediatrics #107,NTH
+3013,176,Green Valley Liquor #100,TUS
+3014,176,Green Valley Liquor #101,TUS
+3015,176,Green Valley Liquor #102,TUS
+3016,176,Green Valley Liquor #103,TUS
+3017,176,Green Valley Liquor #104,TUS
+3018,177,Fountain Hills Furniture #100,PHX
+3019,177,Fountain Hills Furniture #101,PHX
+3020,177,Fountain Hills Furniture #102,PHX
+3021,177,Fountain Hills Furniture #103,PHX
+3022,178,Mesa Veterinary Clinic #100,PHX
+3023,178,Mesa Veterinary Clinic #101,PHX
+3024,178,Mesa Veterinary Clinic #102,PHX
+3028,180,Tempe Hardware #100,PHX
+3029,180,Tempe Hardware #101,PHX
+3030,180,Tempe Hardware #102,PHX
+3031,180,Tempe Hardware #103,PHX
+3032,180,Tempe Hardware #104,PHX
+3033,180,Tempe Hardware #105,PHX
+3034,180,Tempe Hardware #106,PHX
+3035,181,Laveen Pizzeria #100,PHX
+3036,181,Laveen Pizzeria #101,PHX
+3037,182,Glendale Appliance #100,PHX
+3038,182,Glendale Appliance #101,PHX
+3039,182,Glendale Appliance #102,PHX
+3040,182,Glendale Appliance #103,PHX
+3041,182,Glendale Appliance #104,PHX
+3042,182,Glendale Appliance #105,PHX
+3043,182,Glendale Appliance #106,PHX
+3044,183,Desert Ridge Florist #100,PHX
+3045,183,Desert Ridge Florist #101,PHX
+3046,183,Desert Ridge Florist #102,PHX
+3047,183,Desert Ridge Florist #103,PHX
+3048,183,Desert Ridge Florist #104,PHX
+3049,184,Verde Valley Pharmacy #100,NTH
+3050,184,Verde Valley Pharmacy #101,NTH
+3051,184,Verde Valley Pharmacy #102,NTH
+3052,184,Verde Valley Pharmacy #103,NTH
+3053,184,Verde Valley Pharmacy #104,NTH
+3054,184,Verde Valley Pharmacy #105,NTH
+3055,184,Verde Valley Pharmacy #106,NTH
+3056,184,Verde Valley Pharmacy #107,NTH
+3057,185,Chandler Eye Care #100,PHX
+3058,185,Chandler Eye Care #101,PHX
+3059,185,Chandler Eye Care #102,PHX
+3060,186,Paradise Valley Diner #100,PHX
+3061,186,Paradise Valley Diner #101,PHX
+3062,186,Paradise Valley Diner #102,PHX
+3063,186,Paradise Valley Diner #103,PHX
+3064,186,Paradise Valley Diner #104,PHX
+3065,186,Paradise Valley Diner #105,PHX
+3066,187,Gilbert Bistro #100,PHX
+3067,187,Gilbert Bistro #101,PHX
+3068,187,Gilbert Bistro #102,PHX
+3069,187,Gilbert Bistro #103,PHX
+3070,187,Gilbert Bistro #104,PHX
+3071,187,Gilbert Bistro #105,PHX
+3072,188,Kachina Village Liquor #100,NTH
+3073,188,Kachina Village Liquor #101,NTH
+3074,188,Kachina Village Liquor #102,NTH
+3075,189,Sahuarita Family Dental #100,TUS
+3076,189,Sahuarita Family Dental #101,TUS
+3077,189,Sahuarita Family Dental #102,TUS
+3078,190,Oro Valley Florist #100,TUS
+3079,190,Oro Valley Florist #101,TUS
+3080,190,Oro Valley Florist #102,TUS
+3081,190,Oro Valley Florist #103,TUS
+3082,190,Oro Valley Florist #104,TUS
+3083,191,Sabino Furniture #100,TUS
+3084,191,Sabino Furniture #101,TUS
+3085,191,Sabino Furniture #102,TUS
+3086,191,Sabino Furniture #103,TUS
+3087,191,Sabino Furniture #104,TUS
+3088,191,Sabino Furniture #105,TUS
+3089,191,Sabino Furniture #106,TUS
+3090,192,San Tan Valley Florist #100,PHX
+3091,192,San Tan Valley Florist #101,PHX
+3092,192,San Tan Valley Florist #102,PHX
+3093,192,San Tan Valley Florist #103,PHX
+3101,194,Williams Pizzeria #100,NTH
+3102,194,Williams Pizzeria #101,NTH
+3103,194,Williams Pizzeria #102,NTH
+3104,194,Williams Pizzeria #103,NTH
+3105,194,Williams Pizzeria #104,NTH
+3106,194,Williams Pizzeria #105,NTH
+3107,195,Glendale Pharmacy #100,PHX
+3108,195,Glendale Pharmacy #101,PHX
+3109,195,Glendale Pharmacy #102,PHX
+3110,195,Glendale Pharmacy #103,PHX
+3111,195,Glendale Pharmacy #104,PHX
+3112,195,Glendale Pharmacy #105,PHX
+3113,195,Glendale Pharmacy #106,PHX
+3114,196,Glendale Boutique #100,PHX
+3115,196,Glendale Boutique #101,PHX
+3116,196,Glendale Boutique #102,PHX
+3117,196,Glendale Boutique #103,PHX
+3118,196,Glendale Boutique #104,PHX
+3126,198,Superstition Appliance #100,PHX
+3127,198,Superstition Appliance #101,PHX
+3128,198,Superstition Appliance #102,PHX
+3129,198,Superstition Appliance #103,PHX
+3130,198,Superstition Appliance #104,PHX
+3131,199,Laveen Family Dental #100,PHX
+3132,199,Laveen Family Dental #101,PHX
+3133,199,Laveen Family Dental #102,PHX
+3134,199,Laveen Family Dental #103,PHX
+3135,199,Laveen Family Dental #104,PHX
+3136,200,Papago Grill #100,PHX
+3137,200,Papago Grill #101,PHX
+3138,200,Papago Grill #102,PHX
+3139,201,Sonoran Liquor #100,PHX
+3140,201,Sonoran Liquor #101,PHX
+3141,201,Sonoran Liquor #102,PHX
+3142,201,Sonoran Liquor #103,PHX
+3143,201,Sonoran Liquor #104,PHX
+3144,202,Green Valley Physical Therapy #100,TUS
+3145,202,Green Valley Physical Therapy #101,TUS
+3146,202,Green Valley Physical Therapy #102,TUS
+3147,202,Green Valley Physical Therapy #103,TUS
+3148,202,Green Valley Physical Therapy #104,TUS
+3149,202,Green Valley Physical Therapy #105,TUS
+3150,203,Peoria Boutique #100,PHX
+3151,203,Peoria Boutique #101,PHX
+3152,203,Peoria Boutique #102,PHX
+3153,203,Peoria Boutique #103,PHX
+3154,203,Peoria Boutique #104,PHX
+3155,203,Peoria Boutique #105,PHX
+3156,204,Rita Ranch Veterinary Clinic #100,TUS
+3157,204,Rita Ranch Veterinary Clinic #101,TUS
+3158,204,Rita Ranch Veterinary Clinic #102,TUS
+3159,204,Rita Ranch Veterinary Clinic #103,TUS
+3163,206,Cottonwood Family Dental #100,NTH
+3164,206,Cottonwood Family Dental #101,NTH
+3172,208,Ponderosa Physical Therapy #100,NTH
+3173,208,Ponderosa Physical Therapy #101,NTH
+3174,209,Avondale Pediatrics #100,PHX
+3175,209,Avondale Pediatrics #101,PHX
+3176,209,Avondale Pediatrics #102,PHX
+3177,209,Avondale Pediatrics #103,PHX
+3178,209,Avondale Pediatrics #104,PHX
+3179,210,Vail Cafe #100,TUS
+3180,210,Vail Cafe #101,TUS
+3181,210,Vail Cafe #102,TUS
+3182,210,Vail Cafe #103,TUS
+3183,210,Vail Cafe #104,TUS
+3184,210,Vail Cafe #105,TUS
+3185,210,Vail Cafe #106,TUS
+3186,210,Vail Cafe #107,TUS
+3187,211,Superstition Furniture #100,PHX
+3188,211,Superstition Furniture #101,PHX
+3189,211,Superstition Furniture #102,PHX
+3190,211,Superstition Furniture #103,PHX
+3198,213,Mesa Eye Care #100,PHX
+3199,213,Mesa Eye Care #101,PHX
+3200,213,Mesa Eye Care #102,PHX
+3201,213,Mesa Eye Care #103,PHX
+3202,213,Mesa Eye Care #104,PHX
+3203,213,Mesa Eye Care #105,PHX
+3204,213,Mesa Eye Care #106,PHX
+3205,213,Mesa Eye Care #107,PHX
+3206,214,Camp Verde Diner #100,NTH
+3207,214,Camp Verde Diner #101,NTH
+3208,214,Camp Verde Diner #102,NTH
+3209,214,Camp Verde Diner #103,NTH
+3210,214,Camp Verde Diner #104,NTH
+3211,215,Avondale Taqueria #100,PHX
+3212,215,Avondale Taqueria #101,PHX
+3213,215,Avondale Taqueria #102,PHX
+3214,216,Apache Junction Appliance #100,PHX
+3215,216,Apache Junction Appliance #101,PHX
+3216,216,Apache Junction Appliance #102,PHX
+3217,216,Apache Junction Appliance #103,PHX
+3218,216,Apache Junction Appliance #104,PHX
+3221,218,Catalina Foothills Taqueria #100,TUS
+3222,218,Catalina Foothills Taqueria #101,TUS
+3223,218,Catalina Foothills Taqueria #102,TUS
+3224,218,Catalina Foothills Taqueria #103,TUS
+3225,218,Catalina Foothills Taqueria #104,TUS
+3226,218,Catalina Foothills Taqueria #105,TUS
+3227,219,Mesa Diner #100,PHX
+3228,219,Mesa Diner #101,PHX
+3229,219,Mesa Diner #102,PHX
+3230,219,Mesa Diner #103,PHX
+3231,220,Santa Cruz Grill #100,TUS
+3232,220,Santa Cruz Grill #101,TUS
+3233,220,Santa Cruz Grill #102,TUS
+3234,220,Santa Cruz Grill #103,TUS
+3235,220,Santa Cruz Grill #104,TUS
+3236,221,Avondale Boutique #100,PHX
+3237,221,Avondale Boutique #101,PHX
+3238,221,Avondale Boutique #102,PHX
+3239,221,Avondale Boutique #103,PHX
+3240,222,Saguaro Chiropractic #100,PHX
+3241,222,Saguaro Chiropractic #101,PHX
+3242,223,Vail Family Dental #100,TUS
+3243,223,Vail Family Dental #101,TUS
+3244,224,Arcadia Taqueria #100,PHX
+3245,224,Arcadia Taqueria #101,PHX
+3246,224,Arcadia Taqueria #102,PHX
+3247,224,Arcadia Taqueria #103,PHX
+3248,224,Arcadia Taqueria #104,PHX
+3249,224,Arcadia Taqueria #105,PHX
+3255,226,Fountain Hills Physical Therapy #100,PHX
+3256,226,Fountain Hills Physical Therapy #101,PHX
+3257,226,Fountain Hills Physical Therapy #102,PHX
+3258,226,Fountain Hills Physical Therapy #103,PHX
+3259,227,Camp Verde Boutique #100,NTH
+3260,227,Camp Verde Boutique #101,NTH
+3261,227,Camp Verde Boutique #102,NTH
+3262,227,Camp Verde Boutique #103,NTH
+3263,227,Camp Verde Boutique #104,NTH
+3264,227,Camp Verde Boutique #105,NTH
+3265,227,Camp Verde Boutique #106,NTH
+3266,228,Pueblo Pizzeria #100,TUS
+3267,228,Pueblo Pizzeria #101,TUS
+3268,228,Pueblo Pizzeria #102,TUS
+3269,228,Pueblo Pizzeria #103,TUS
+3270,228,Pueblo Pizzeria #104,TUS
+3271,228,Pueblo Pizzeria #105,TUS
+3272,228,Pueblo Pizzeria #106,TUS
+3273,228,Pueblo Pizzeria #107,TUS
+3274,229,Kachina Village Liquor #100,NTH
+3275,229,Kachina Village Liquor #101,NTH
+3276,229,Kachina Village Liquor #102,NTH
+3281,231,Fountain Hills Veterinary Clinic #100,PHX
+3282,231,Fountain Hills Veterinary Clinic #101,PHX
+3283,231,Fountain Hills Veterinary Clinic #102,PHX
+3284,231,Fountain Hills Veterinary Clinic #103,PHX
+3285,231,Fountain Hills Veterinary Clinic #104,PHX
+3286,231,Fountain Hills Veterinary Clinic #105,PHX
+3287,231,Fountain Hills Veterinary Clinic #106,PHX
+3288,232,Goodyear Bakery #100,PHX
+3289,232,Goodyear Bakery #101,PHX
+3290,233,Rita Ranch Bakery #100,TUS
+3291,233,Rita Ranch Bakery #101,TUS
+3292,233,Rita Ranch Bakery #102,TUS
+3293,233,Rita Ranch Bakery #103,TUS
+3294,233,Rita Ranch Bakery #104,TUS
+3295,234,Mogollon Rim Physical Therapy #100,NTH
+3296,234,Mogollon Rim Physical Therapy #101,NTH
+3297,234,Mogollon Rim Physical Therapy #102,NTH
+3298,234,Mogollon Rim Physical Therapy #103,NTH
+3299,234,Mogollon Rim Physical Therapy #104,NTH
+3300,234,Mogollon Rim Physical Therapy #105,NTH
+3301,234,Mogollon Rim Physical Therapy #106,NTH
+3302,234,Mogollon Rim Physical Therapy #107,NTH
+3303,235,Williams Pizzeria #100,NTH
+3304,235,Williams Pizzeria #101,NTH
+3305,235,Williams Pizzeria #102,NTH
+3306,236,Saguaro Hardware #100,PHX
+3307,236,Saguaro Hardware #101,PHX
+3308,236,Saguaro Hardware #102,PHX
+3309,236,Saguaro Hardware #103,PHX
+3318,238,Rita Ranch Chiropractic #100,TUS
+3319,238,Rita Ranch Chiropractic #101,TUS
+3320,238,Rita Ranch Chiropractic #102,TUS
+3321,238,Rita Ranch Chiropractic #103,TUS
+3322,238,Rita Ranch Chiropractic #104,TUS
+3323,238,Rita Ranch Chiropractic #105,TUS
+3324,238,Rita Ranch Chiropractic #106,TUS
+3325,238,Rita Ranch Chiropractic #107,TUS
+3333,240,Peoria Family Dental #100,PHX
+3334,240,Peoria Family Dental #101,PHX
+3335,240,Peoria Family Dental #102,PHX
+3336,240,Peoria Family Dental #103,PHX
+3337,240,Peoria Family Dental #104,PHX
+3338,240,Peoria Family Dental #105,PHX
+3339,240,Peoria Family Dental #106,PHX
+3340,241,San Francisco Peaks Boutique #100,NTH
+3341,241,San Francisco Peaks Boutique #101,NTH
+3342,241,San Francisco Peaks Boutique #102,NTH
+3343,241,San Francisco Peaks Boutique #103,NTH
+3344,241,San Francisco Peaks Boutique #104,NTH
+3349,243,San Tan Valley Liquor #100,PHX
+3350,243,San Tan Valley Liquor #101,PHX
+3351,243,San Tan Valley Liquor #102,PHX
+3352,243,San Tan Valley Liquor #103,PHX
+3353,243,San Tan Valley Liquor #104,PHX
+3354,243,San Tan Valley Liquor #105,PHX
+3355,244,Mogollon Rim Chiropractic #100,NTH
+3356,244,Mogollon Rim Chiropractic #101,NTH
+3357,244,Mogollon Rim Chiropractic #102,NTH
+3358,244,Mogollon Rim Chiropractic #103,NTH
+3359,245,Rita Ranch Pediatrics #100,TUS
+3360,245,Rita Ranch Pediatrics #101,TUS
+3361,245,Rita Ranch Pediatrics #102,TUS
+3362,245,Rita Ranch Pediatrics #103,TUS
+3363,245,Rita Ranch Pediatrics #104,TUS
+3364,246,Peoria Grill #100,PHX
+3365,246,Peoria Grill #101,PHX
+3366,246,Peoria Grill #102,PHX
+3367,246,Peoria Grill #103,PHX
+3368,247,Desert Ridge Bistro #100,PHX
+3369,247,Desert Ridge Bistro #101,PHX
+3370,247,Desert Ridge Bistro #102,PHX
+3371,247,Desert Ridge Bistro #103,PHX
+3372,247,Desert Ridge Bistro #104,PHX
+3373,247,Desert Ridge Bistro #105,PHX
+3374,247,Desert Ridge Bistro #106,PHX
+3375,247,Desert Ridge Bistro #107,PHX
+3376,248,Vail Physical Therapy #100,TUS
+3377,248,Vail Physical Therapy #101,TUS
+3378,248,Vail Physical Therapy #102,TUS
+3379,248,Vail Physical Therapy #103,TUS
+3380,248,Vail Physical Therapy #104,TUS
+3381,248,Vail Physical Therapy #105,TUS
+3382,248,Vail Physical Therapy #106,TUS
+3383,249,Green Valley Physical Therapy #100,TUS
+3384,249,Green Valley Physical Therapy #101,TUS
+3385,250,Fountain Hills Pediatrics #100,PHX
+3386,250,Fountain Hills Pediatrics #101,PHX
+3387,250,Fountain Hills Pediatrics #102,PHX
+3388,250,Fountain Hills Pediatrics #103,PHX
+3389,250,Fountain Hills Pediatrics #104,PHX
+3390,251,Mogollon Rim Cafe #100,NTH
+3391,251,Mogollon Rim Cafe #101,NTH
+3392,251,Mogollon Rim Cafe #102,NTH
+3393,252,Rincon Taqueria #100,TUS
+3394,252,Rincon Taqueria #101,TUS
+3395,252,Rincon Taqueria #102,TUS
+3396,252,Rincon Taqueria #103,TUS
+3397,253,Glendale Appliance #100,PHX
+3398,253,Glendale Appliance #101,PHX
+3399,253,Glendale Appliance #102,PHX
+3400,253,Glendale Appliance #103,PHX
+3401,253,Glendale Appliance #104,PHX
+3402,253,Glendale Appliance #105,PHX
+3403,253,Glendale Appliance #106,PHX
+3404,254,Catalina Foothills Pizzeria #100,TUS
+3405,254,Catalina Foothills Pizzeria #101,TUS
+3406,254,Catalina Foothills Pizzeria #102,TUS
+3407,254,Catalina Foothills Pizzeria #103,TUS
+3408,255,Mountain View Physical Therapy #100,NTH
+3409,255,Mountain View Physical Therapy #101,NTH
+3410,255,Mountain View Physical Therapy #102,NTH
+3411,256,Papago Grill #100,PHX
+3412,256,Papago Grill #101,PHX
+3413,256,Papago Grill #102,PHX
+3414,257,Vail Appliance #100,TUS
+3415,257,Vail Appliance #101,TUS
+3416,257,Vail Appliance #102,TUS
+3417,257,Vail Appliance #103,TUS
+3418,257,Vail Appliance #104,TUS
+3419,258,Laveen Bakery #100,PHX
+3420,258,Laveen Bakery #101,PHX
+3424,260,Deer Valley Furniture #100,PHX
+3425,260,Deer Valley Furniture #101,PHX
+3426,260,Deer Valley Furniture #102,PHX
+3427,261,Rita Ranch Appliance #100,TUS
+3428,261,Rita Ranch Appliance #101,TUS
+3429,261,Rita Ranch Appliance #102,TUS
+3430,261,Rita Ranch Appliance #103,TUS
+3431,261,Rita Ranch Appliance #104,TUS
+3432,262,Verde Valley Appliance #100,NTH
+3433,262,Verde Valley Appliance #101,NTH
+3434,262,Verde Valley Appliance #102,NTH
+3435,262,Verde Valley Appliance #103,NTH
+3436,262,Verde Valley Appliance #104,NTH
+3437,262,Verde Valley Appliance #105,NTH
+3438,262,Verde Valley Appliance #106,NTH
+3439,263,Mountain View Pharmacy #100,NTH
+3440,263,Mountain View Pharmacy #101,NTH
+3441,263,Mountain View Pharmacy #102,NTH
+3442,263,Mountain View Pharmacy #103,NTH
+3443,263,Mountain View Pharmacy #104,NTH
+3444,263,Mountain View Pharmacy #105,NTH
+3445,264,Saguaro Veterinary Clinic #100,PHX
+3446,264,Saguaro Veterinary Clinic #101,PHX
+3447,264,Saguaro Veterinary Clinic #102,PHX
+3448,264,Saguaro Veterinary Clinic #103,PHX
+3449,264,Saguaro Veterinary Clinic #104,PHX
+3450,264,Saguaro Veterinary Clinic #105,PHX
+3454,266,Scottsdale Liquor #100,PHX
+3455,266,Scottsdale Liquor #101,PHX
+3456,266,Scottsdale Liquor #102,PHX
+3457,266,Scottsdale Liquor #103,PHX
+3458,266,Scottsdale Liquor #104,PHX
+3459,266,Scottsdale Liquor #105,PHX
+3460,266,Scottsdale Liquor #106,PHX
+3461,267,Williams Family Dental #100,NTH
+3462,267,Williams Family Dental #101,NTH
+3463,267,Williams Family Dental #102,NTH
+3464,267,Williams Family Dental #103,NTH
+3465,267,Williams Family Dental #104,NTH
+3466,267,Williams Family Dental #105,NTH
+3467,267,Williams Family Dental #106,NTH
+3468,267,Williams Family Dental #107,NTH
+3469,268,Desert Ridge Grill #100,PHX
+3470,268,Desert Ridge Grill #101,PHX
+3471,268,Desert Ridge Grill #102,PHX
+3472,268,Desert Ridge Grill #103,PHX
+3478,270,Apache Junction Florist #100,PHX
+3479,270,Apache Junction Florist #101,PHX
+3480,271,Catalina Foothills Boutique #100,TUS
+3481,271,Catalina Foothills Boutique #101,TUS
+3482,272,Catalina Foothills Chiropractic #100,TUS
+3483,272,Catalina Foothills Chiropractic #101,TUS
+3484,272,Catalina Foothills Chiropractic #102,TUS
+3485,272,Catalina Foothills Chiropractic #103,TUS
+3486,272,Catalina Foothills Chiropractic #104,TUS
+3487,272,Catalina Foothills Chiropractic #105,TUS
+3488,272,Catalina Foothills Chiropractic #106,TUS
+3489,272,Catalina Foothills Chiropractic #107,TUS
+3490,273,Saguaro Appliance #100,PHX
+3491,273,Saguaro Appliance #101,PHX
+3492,273,Saguaro Appliance #102,PHX
+3493,274,Tempe Boutique #100,PHX
+3494,274,Tempe Boutique #101,PHX
+3503,277,Kachina Village Furniture #100,NTH
+3504,277,Kachina Village Furniture #101,NTH
+3505,277,Kachina Village Furniture #102,NTH
+3506,277,Kachina Village Furniture #103,NTH
+3507,277,Kachina Village Furniture #104,NTH
+3508,277,Kachina Village Furniture #105,NTH
+3509,278,Peoria Taqueria #100,PHX
+3510,278,Peoria Taqueria #101,PHX
+3511,278,Peoria Taqueria #102,PHX
+3512,278,Peoria Taqueria #103,PHX
+3513,278,Peoria Taqueria #104,PHX
+3514,278,Peoria Taqueria #105,PHX
+3515,279,Maryvale Bistro #100,PHX
+3516,279,Maryvale Bistro #101,PHX
+3517,279,Maryvale Bistro #102,PHX
+3518,279,Maryvale Bistro #103,PHX
+3519,279,Maryvale Bistro #104,PHX
+3520,279,Maryvale Bistro #105,PHX
+3521,279,Maryvale Bistro #106,PHX
+3522,279,Maryvale Bistro #107,PHX
+3523,280,Scottsdale Bistro #100,PHX
+3524,280,Scottsdale Bistro #101,PHX
+3525,280,Scottsdale Bistro #102,PHX
+3526,280,Scottsdale Bistro #103,PHX
+3527,280,Scottsdale Bistro #104,PHX
+3528,280,Scottsdale Bistro #105,PHX
+3529,280,Scottsdale Bistro #106,PHX
+3530,281,Peoria Appliance #100,PHX
+3531,281,Peoria Appliance #101,PHX
+3532,281,Peoria Appliance #102,PHX
+3533,281,Peoria Appliance #103,PHX
+3534,281,Peoria Appliance #104,PHX
+3535,281,Peoria Appliance #105,PHX
+3536,281,Peoria Appliance #106,PHX
+3544,283,Avondale Eye Care #100,PHX
+3545,283,Avondale Eye Care #101,PHX
+3546,283,Avondale Eye Care #102,PHX
+3547,283,Avondale Eye Care #103,PHX
+3548,283,Avondale Eye Care #104,PHX
+3555,285,Tempe Pediatrics #100,PHX
+3556,285,Tempe Pediatrics #101,PHX
+3557,285,Tempe Pediatrics #102,PHX
+3558,285,Tempe Pediatrics #103,PHX
+3559,286,Catalina Foothills Hardware #100,TUS
+3560,286,Catalina Foothills Hardware #101,TUS
+3561,286,Catalina Foothills Hardware #102,TUS
+3562,286,Catalina Foothills Hardware #103,TUS
+3563,286,Catalina Foothills Hardware #104,TUS
+3564,286,Catalina Foothills Hardware #105,TUS
+3565,286,Catalina Foothills Hardware #106,TUS
+3566,286,Catalina Foothills Hardware #107,TUS
+3567,287,Rita Ranch Hardware #100,TUS
+3568,287,Rita Ranch Hardware #101,TUS
+3569,287,Rita Ranch Hardware #102,TUS
+3570,288,Scottsdale Diner #100,PHX
+3571,288,Scottsdale Diner #101,PHX
+3572,288,Scottsdale Diner #102,PHX
+3573,289,Saguaro Pediatrics #100,PHX
+3574,289,Saguaro Pediatrics #101,PHX
+3575,289,Saguaro Pediatrics #102,PHX
+3576,289,Saguaro Pediatrics #103,PHX
+3577,289,Saguaro Pediatrics #104,PHX
+3578,290,Pueblo Pizzeria #100,TUS
+3579,290,Pueblo Pizzeria #101,TUS
+3580,290,Pueblo Pizzeria #102,TUS
+3581,290,Pueblo Pizzeria #103,TUS
+3582,290,Pueblo Pizzeria #104,TUS
+3583,290,Pueblo Pizzeria #105,TUS
+3584,291,Saguaro Hardware #100,PHX
+3585,291,Saguaro Hardware #101,PHX
+3586,291,Saguaro Hardware #102,PHX
+3587,291,Saguaro Hardware #103,PHX
+3588,291,Saguaro Hardware #104,PHX
+3589,291,Saguaro Hardware #105,PHX
+3590,292,Murphy & White Eye Care,PHX
+3591,293,Jason Jackson Physical Therapy #100,NTH
+3592,293,Jason Jackson Physical Therapy #101,NTH
+3593,294,Warner Street Medical Billing,PHX
+3594,295,Dustin Martinez Diner,TUS
+3595,296,Paradise Valley Bistro #100,PHX
+3596,296,Paradise Valley Bistro #101,PHX
+3597,297,Wilson Insurance Agency,TUS
+3598,298,Lewis & Cook Veterinary Clinic,PHX
+3599,299,Travis Stewart Architects,PHX
+3600,300,Collins & Harris Pediatrics #100,PHX
+3601,300,Collins & Harris Pediatrics #101,PHX
+3602,301,Kolb Street Medical Billing #100,TUS
+3603,301,Kolb Street Medical Billing #101,TUS
+3604,302,Collins Bistro,PHX
+3605,303,Kolb Street Eye Care #100,TUS
+3606,303,Kolb Street Eye Care #101,TUS
+3607,304,Martin & Clark Diner #100,PHX
+3608,304,Martin & Clark Diner #101,PHX
+3609,305,Apache Junction Law Offices #100,PHX
+3610,305,Apache Junction Law Offices #101,PHX
+3611,306,Angela Garcia Engineering,PHX
+3612,307,Taylor & Wilson Veterinary Clinic,TUS
+3613,308,Sedona Bistro,NTH
+3616,310,Ray Street Physical Therapy #100,PHX
+3617,310,Ray Street Physical Therapy #101,PHX
+3618,311,White & Green Boutique,TUS
+3619,312,Murphy & Hill Boutique #100,PHX
+3620,312,Murphy & Hill Boutique #101,PHX
+3621,313,Ponderosa Boutique #100,NTH
+3622,313,Ponderosa Boutique #101,NTH
+3627,316,Brian Scott Pediatrics #100,PHX
+3628,316,Brian Scott Pediatrics #101,PHX
+3629,317,Allen Appliance #100,PHX
+3630,317,Allen Appliance #101,PHX
+3631,318,Route Street Bakery,NTH
+3633,320,Green Appliance #100,TUS
+3634,320,Green Appliance #101,TUS
+3636,322,Maryvale Furniture,PHX
+3637,323,Young Pediatrics #100,PHX
+3638,323,Young Pediatrics #101,PHX
+3639,324,Evans & Green Furniture,TUS
+3640,325,Eric Collins Pediatrics #100,TUS
+3641,325,Eric Collins Pediatrics #101,TUS
+3642,326,Glendale Hardware,PHX
+3645,328,Rita Ranch Architects #100,TUS
+3646,328,Rita Ranch Architects #101,TUS
+3647,329,Wright & Cooper Family Dental,PHX
+3648,330,Kolb Street Diner,TUS
+3649,331,Young Florist #100,TUS
+3650,331,Young Florist #101,TUS
+3653,334,Johnson & Hall Taqueria #100,NTH
+3654,334,Johnson & Hall Taqueria #101,NTH
+3655,335,Garcia Pizzeria,PHX
+3657,337,Avondale Veterinary Clinic #100,PHX
+3658,337,Avondale Veterinary Clinic #101,PHX
+3659,338,Adams Bakery #100,TUS
+3660,338,Adams Bakery #101,TUS
+3661,339,Tyler Garcia Architects #100,PHX
+3662,339,Tyler Garcia Architects #101,PHX
+3663,340,Deer Valley Family Dental,PHX
+3664,341,Gilbert Street Bakery,PHX
+3665,342,Price Engineering #100,PHX
+3666,342,Price Engineering #101,PHX
+3667,343,Chandler Taqueria,PHX
+3668,344,Cooper & Adams Engineering #100,NTH
+3669,344,Cooper & Adams Engineering #101,NTH
+3672,346,Green & Campbell Hardware,TUS
+3673,347,Camelback Street Family Dental,PHX
+3675,349,Lee & Cooper Taqueria #100,PHX
+3676,349,Lee & Cooper Taqueria #101,PHX
+3677,350,Cook & Nelson Physical Therapy,PHX
+3679,352,Goodyear Taqueria #100,PHX
+3680,352,Goodyear Taqueria #101,PHX
+3682,354,Heather Edwards Pediatrics,NTH
+3683,355,Maryvale Taqueria #100,PHX
+3684,355,Maryvale Taqueria #101,PHX
+3687,357,Jose Wilson Accounting #100,NTH
+3688,357,Jose Wilson Accounting #101,NTH
+3689,358,Melissa Taylor Cafe #100,PHX
+3690,358,Melissa Taylor Cafe #101,PHX
+3691,359,Nate Kelly Florist #100,TUS
+3692,359,Nate Kelly Florist #101,TUS
+3693,360,Chris Morris Accounting,TUS
+3694,361,Bell Street Veterinary Clinic #100,PHX
+3695,361,Bell Street Veterinary Clinic #101,PHX
+3698,364,Stewart & Davis Title Company,NTH
+3699,365,Kim Martin Boutique,NTH
+3700,366,Green & Allen Diner #100,PHX
+3701,366,Green & Allen Diner #101,PHX
+3702,367,Ward Family Dental #100,PHX
+3703,367,Ward Family Dental #101,PHX
+3704,368,Linda Cook Eye Care,PHX
+3705,369,Davis & Hughes Veterinary Clinic #100,PHX
+3706,369,Davis & Hughes Veterinary Clinic #101,PHX
+3707,370,Old Pueblo Veterinary Clinic,TUS
+3708,371,Edwards & Thompson Cafe #100,NTH
+3709,371,Edwards & Thompson Cafe #101,NTH
+3711,373,San Francisco Peaks Architects #100,NTH
+3712,373,San Francisco Peaks Architects #101,NTH
+3713,374,Swan Street Eye Care #100,TUS
+3714,374,Swan Street Eye Care #101,TUS
+3715,375,Baseline Street Bakery,PHX
+3716,376,Lisa Stewart Hardware #100,PHX
+3717,376,Lisa Stewart Hardware #101,PHX
+3718,377,Southern Street Bakery #100,PHX
+3719,377,Southern Street Bakery #101,PHX
+3722,379,Wes Roberts Insurance Agency #100,PHX
+3723,379,Wes Roberts Insurance Agency #101,PHX
+3724,380,Garcia & Thomas Boutique,PHX
+3727,382,Daniel Howard Insurance Agency,PHX
+3728,383,Thomas Street Architects,PHX
+3729,384,Ahwatukee Diner #100,PHX
+3730,384,Ahwatukee Diner #101,PHX
+3731,385,Sonoran Bakery,PHX
+3732,386,Sabino Chiropractic,TUS
+3733,387,Valencia Street Law Offices #100,TUS
+3734,387,Valencia Street Law Offices #101,TUS
+3735,388,Main Street Insurance Agency,PHX
+3736,389,Gilbert Street Bakery,PHX
+3737,390,Ponderosa Medical Billing #100,NTH
+3738,390,Ponderosa Medical Billing #101,NTH
+3739,391,Cook Furniture #100,TUS
+3740,391,Cook Furniture #101,TUS
+3741,392,Prescott Valley Diner,NTH
+3742,393,Valencia Street Hardware,TUS
+3743,394,Rita Ranch Architects #100,TUS
+3744,394,Rita Ranch Architects #101,TUS
+3745,395,Tempe Accounting #100,PHX
+3746,395,Tempe Accounting #101,PHX
+3749,397,Cody Allen Family Dental #100,PHX
+3750,397,Cody Allen Family Dental #101,PHX
+3751,398,Nelson Diner #100,PHX
+3752,398,Nelson Diner #101,PHX
+3753,399,Main Street Bakery,PHX
+3754,400,King Physical Therapy,PHX
+3757,402,Cook & Walker Florist,NTH
+3758,403,Broadway Street Accounting #100,TUS
+3759,403,Broadway Street Accounting #101,TUS
+3764,407,Linda Davis Chiropractic,PHX
+3765,408,Coconino Architects #100,NTH
+3766,408,Coconino Architects #101,NTH
+3767,409,Rita Ranch Cafe #100,TUS
+3768,409,Rita Ranch Cafe #101,TUS
+3769,410,Pueblo Pizzeria,TUS
+3772,412,Evans Physical Therapy,TUS
+3773,413,Phillips Liquor #100,TUS
+3774,413,Phillips Liquor #101,TUS
+3775,414,Nelson Bistro,PHX
+3776,415,Val Street Insurance Agency #100,PHX
+3777,415,Val Street Insurance Agency #101,PHX
+3778,416,Evans Bakery #100,PHX
+3779,416,Evans Bakery #101,PHX
+3781,418,Lee & Hall Florist,TUS
+3784,420,Robert Anderson Grill,TUS
+3786,422,Parker Diner,PHX
+3788,424,Reed & Adams Title Company,TUS
+3789,425,Warner Street Family Dental,PHX
+3790,426,Roberts Law Offices #100,PHX
+3791,426,Roberts Law Offices #101,PHX
+3792,427,Casas Adobes Pediatrics,TUS
+3793,428,Amanda Roberts Title Company #100,PHX
+3794,428,Amanda Roberts Title Company #101,PHX
+3795,429,Old Pueblo Medical Billing #100,TUS
+3796,429,Old Pueblo Medical Billing #101,TUS
+3797,430,Verde Valley Cafe #100,NTH
+3798,430,Verde Valley Cafe #101,NTH
+3799,431,Sabino Bakery #100,TUS
+3800,431,Sabino Bakery #101,TUS
+3803,434,Allen & Brown Family Dental,PHX
+3804,435,Lisa Jackson Hardware #100,PHX
+3805,435,Lisa Jackson Hardware #101,PHX
+3806,436,Amanda Allen Eye Care,PHX
+3807,437,King & Lee Veterinary Clinic #100,TUS
+3808,437,King & Lee Veterinary Clinic #101,TUS
+3809,438,Paradise Valley Medical Billing,PHX
+3810,439,Swan Street Veterinary Clinic,TUS
+3811,440,Garcia & Turner Bistro #100,NTH
+3812,440,Garcia & Turner Bistro #101,NTH
+3813,441,Luis King Eye Care,PHX
+3814,442,Wilson Chiropractic #100,TUS
+3815,442,Wilson Chiropractic #101,TUS
+3816,443,McDowell Street Title Company,PHX
+3817,444,Turner & Morris Insurance Agency,PHX
+3818,445,Thomas & Turner Chiropractic #100,PHX
+3819,445,Thomas & Turner Chiropractic #101,PHX
+3820,446,Bell Street Engineering,PHX
+3824,449,Tyler Turner Taqueria,NTH
+3825,450,Patricia Collins Bakery,PHX
+3826,451,Cook & Carter Engineering #100,PHX
+3827,451,Cook & Carter Engineering #101,PHX
+3828,452,Johnson Insurance Agency #100,PHX
+3829,452,Johnson Insurance Agency #101,PHX
+3830,453,Paradise Valley Accounting,PHX
+3831,454,Luis Martin Boutique #100,TUS
+3832,454,Luis Martin Boutique #101,TUS
+3834,456,Carmen Collins Insurance Agency #100,TUS
+3835,456,Carmen Collins Insurance Agency #101,TUS
+3836,457,Butler Street Appliance #100,NTH
+3837,457,Butler Street Appliance #101,NTH
+3838,458,Scottsdale Cafe #100,PHX
+3839,458,Scottsdale Cafe #101,PHX
+3840,459,Carmen Scott Appliance #100,PHX
+3841,459,Carmen Scott Appliance #101,PHX
+3842,460,Linda White Insurance Agency #100,PHX
+3843,460,Linda White Insurance Agency #101,PHX
+3844,461,Queen Creek Taqueria,PHX
+3845,462,University Street Law Offices #100,PHX
+3846,462,University Street Law Offices #101,PHX
+3850,465,Dustin Davis Bakery,PHX
+3853,468,Brown Hardware,PHX
+3854,469,Baker & Cox Appliance,NTH
+3856,471,Fountain Hills Title Company #100,PHX
+3857,471,Fountain Hills Title Company #101,PHX
+3858,472,Tempe Insurance Agency #100,PHX
+3859,472,Tempe Insurance Agency #101,PHX
+3860,473,Davis & Harris Bistro,PHX
+3861,474,Allen Taqueria #100,PHX
+3862,474,Allen Taqueria #101,PHX
+3863,475,Santa Cruz Hardware #100,TUS
+3864,475,Santa Cruz Hardware #101,TUS
+3866,477,Anderson Boutique #100,PHX
+3867,477,Anderson Boutique #101,PHX
+3868,478,Irvington Street Medical Billing,TUS
+3869,479,Main Street Accounting,PHX
+3872,481,Wilson Engineering #100,PHX
+3873,481,Wilson Engineering #101,PHX
+3876,483,Elliot Street Hardware,PHX
+3877,484,Papago Pediatrics #100,PHX
+3878,484,Papago Pediatrics #101,PHX
+3879,485,Carter Insurance Agency #100,PHX
+3880,485,Carter Insurance Agency #101,PHX
+3881,486,Dobson Street Appliance #100,PHX
+3882,486,Dobson Street Appliance #101,PHX
+3883,487,Baker Engineering,PHX
+3884,488,Alicia Ward Engineering,NTH
+3885,489,Thomas & Parker Physical Therapy #100,TUS
+3886,489,Thomas & Parker Physical Therapy #101,TUS
+3887,490,McDowell Street Chiropractic,PHX
+3888,491,Green Insurance Agency,TUS
+3890,493,Miller & Adams Title Company,PHX
+3891,494,Linda Harris Physical Therapy,PHX
+3892,495,Oro Valley Cafe #100,TUS
+3893,495,Oro Valley Cafe #101,TUS
+3894,496,Heather Turner Veterinary Clinic,NTH
+3895,497,Clark & Brown Appliance #100,TUS
+3896,497,Clark & Brown Appliance #101,TUS
+3897,498,Taylor & Hill Appliance,PHX
+3898,499,Superstition Appliance #100,PHX
+3899,499,Superstition Appliance #101,PHX
+3900,500,Main Street Florist #100,TUS
+3901,500,Main Street Florist #101,TUS
+3902,501,Mitchell & Reed Bistro #100,PHX
+3903,501,Mitchell & Reed Bistro #101,PHX
+3904,502,Gina Murphy Taqueria,PHX
+3905,503,Southern Street Bakery #100,PHX
+3906,503,Southern Street Bakery #101,PHX
+3907,504,Turner Bistro #100,PHX
+3908,504,Turner Bistro #101,PHX
+3909,505,Tasha Young Accounting,PHX
+3910,506,Lewis & Edwards Pizzeria,TUS
+3911,507,Thomas Street Furniture,PHX
+3912,508,Alma Street Veterinary Clinic,PHX
+3913,509,Tanya Rogers Furniture #100,PHX
+3914,509,Tanya Rogers Furniture #101,PHX
+3917,511,Alicia Taylor Boutique #100,PHX
+3918,511,Alicia Taylor Boutique #101,PHX
+3919,512,Moore & Scott Grill #100,TUS
+3920,512,Moore & Scott Grill #101,TUS
+3921,513,Thompson Eye Care,PHX
+3922,514,Southern Street Medical Billing #100,PHX
+3923,514,Southern Street Medical Billing #101,PHX
+3924,515,Williams Physical Therapy,NTH
+3925,516,Sedona Engineering,NTH
+3927,518,Catalina Foothills Florist,TUS
+3928,519,Phillips & Turner Insurance Agency #100,TUS
+3929,519,Phillips & Turner Insurance Agency #101,TUS
+3930,520,Jackson Physical Therapy,PHX
+3934,524,Speedway Street Chiropractic #100,TUS
+3935,524,Speedway Street Chiropractic #101,TUS
+3937,526,Melissa Anderson Engineering #100,PHX
+3938,526,Melissa Anderson Engineering #101,PHX
+3939,527,Davis & Thomas Accounting #100,TUS
+3940,527,Davis & Thomas Accounting #101,TUS
+3941,528,Morris Bakery #100,TUS
+3942,528,Morris Bakery #101,TUS
+3943,529,Elliot Street Diner #100,PHX
+3944,529,Elliot Street Diner #101,PHX
+3945,530,Valencia Street Law Offices,TUS
+3946,531,Heather Morris Law Offices,NTH
+3947,532,Irvington Street Hardware,TUS
+3948,533,Ray Street Cafe #100,PHX
+3949,533,Ray Street Cafe #101,PHX
+3953,536,Howard Liquor,PHX
+3954,537,Camelback Street Medical Billing,PHX
+3955,538,Campbell Architects #100,PHX
+3956,538,Campbell Architects #101,PHX
+3957,539,Dustin Campbell Grill #100,PHX
+3958,539,Dustin Campbell Grill #101,PHX
+3959,540,Garcia Hardware #100,PHX
+3960,540,Garcia Hardware #101,PHX
+3961,541,Main Street Architects #100,PHX
+3962,541,Main Street Architects #101,PHX
+3963,542,Kevin Anderson Hardware,NTH
+3965,544,Travis Brown Law Offices,TUS
+3966,545,Walker & Evans Accounting #100,TUS
+3967,545,Walker & Evans Accounting #101,TUS
+3969,547,Morris & Nelson Grill,PHX
+3974,550,Holly Rogers Veterinary Clinic,PHX
+3975,551,Santa Cruz Architects,TUS
+3976,552,Johnson Accounting #100,PHX
+3977,552,Johnson Accounting #101,PHX
+3979,554,Anderson Taqueria #100,PHX
+3980,554,Anderson Taqueria #101,PHX
+3981,555,Thompson Veterinary Clinic #100,TUS
+3982,555,Thompson Veterinary Clinic #101,TUS
+3986,559,Fourth Street Boutique #100,NTH
+3987,559,Fourth Street Boutique #101,NTH
+3988,560,Anderson & Jackson Pharmacy #100,TUS
+3989,560,Anderson & Jackson Pharmacy #101,TUS
+3990,561,Rogers & Parker Chiropractic,PHX
+3991,562,Valencia Street Furniture,TUS
+3994,564,Daniel Walker Accounting #100,NTH
+3995,564,Daniel Walker Accounting #101,NTH
+3999,567,Cook Florist,PHX
+4003,570,Taylor Hardware #100,TUS
+4004,570,Taylor Hardware #101,TUS
+4007,573,Tyler Thompson Title Company,NTH
+4008,574,Mountain View Diner #100,NTH
+4009,574,Mountain View Diner #101,NTH
+4011,576,Mitchell Veterinary Clinic,PHX
+4012,577,Nate Robinson Diner #100,NTH
+4013,577,Nate Robinson Diner #101,NTH
+4014,578,Hill Pharmacy,PHX
+4019,581,Kelly Accounting,PHX
+4020,582,Sonoran Eye Care #100,PHX
+4021,582,Sonoran Eye Care #101,PHX
+4024,584,Superstition Insurance Agency,PHX
+4025,585,Tanque Street Grill,TUS
+4026,586,Ward Appliance,PHX
+4027,587,Cox Hardware #100,TUS
+4028,587,Cox Hardware #101,TUS
+4029,588,Main Street Pharmacy,PHX
+4030,589,Martinez Eye Care,TUS
+4035,592,Maryvale Family Dental,PHX
+4038,594,Carter & Hall Eye Care,PHX
+4039,595,Dustin Jackson Cafe #100,PHX
+4040,595,Dustin Jackson Cafe #101,PHX
+4041,596,Allen Florist #100,NTH
+4042,596,Allen Florist #101,NTH
+4043,597,Cox & Hall Eye Care #100,NTH
+4044,597,Cox & Hall Eye Care #101,NTH
+4046,599,Edwards Law Offices,PHX
+4047,600,University Street Law Offices,PHX
+4048,601,Nate Thomas Cafe,TUS
+4049,602,Phillips & Cooper Bakery,PHX
+4051,604,Bailey & Scott Furniture,PHX
+4052,605,Anderson Veterinary Clinic #100,PHX
+4053,605,Anderson Veterinary Clinic #101,PHX
+4056,607,James Cox Liquor #100,TUS
+4057,607,James Cox Liquor #101,TUS
+4058,608,Superstition Insurance Agency #100,PHX
+4059,608,Superstition Insurance Agency #101,PHX
+4060,609,Shauna Parker Law Offices,NTH
+4062,611,Holly Allen Bakery #100,PHX
+4063,611,Holly Allen Bakery #101,PHX
+4064,612,Kachina Village Florist,NTH
+4065,613,Carmen Carter Florist,PHX
+4066,614,Hill & Scott Appliance #100,PHX
+4067,614,Hill & Scott Appliance #101,PHX
+4068,615,Oro Valley Bistro,TUS
+4069,616,Walker Diner,TUS
+4070,617,Jennifer Turner Chiropractic #100,TUS
+4071,617,Jennifer Turner Chiropractic #101,TUS
+4072,618,Kolb Street Title Company,TUS
+4073,619,Avondale Architects #100,PHX
+4074,619,Avondale Architects #101,PHX
+4077,621,Catalina Foothills Insurance Agency #100,TUS
+4078,621,Catalina Foothills Insurance Agency #101,TUS
+4079,622,Gilbert Street Veterinary Clinic #100,PHX
+4080,622,Gilbert Street Veterinary Clinic #101,PHX
+4081,623,Gilbert Street Liquor #100,PHX
+4082,623,Gilbert Street Liquor #101,PHX
+4083,624,Cottonwood Street Bistro,NTH
+4084,625,Thompson & Cooper Title Company #100,PHX
+4085,625,Thompson & Cooper Title Company #101,PHX
+4088,627,Milton Street Eye Care,NTH
+4089,628,Main Street Eye Care,PHX
+4092,631,Kevin Murphy Title Company,TUS
+4093,632,Karen Edwards Furniture #100,PHX
+4094,632,Karen Edwards Furniture #101,PHX
+4095,633,Cox & Ward Pizzeria #100,PHX
+4096,633,Cox & Ward Pizzeria #101,PHX
+4097,634,Tanya Robinson Eye Care,PHX
+4098,635,Chandler Diner,PHX
+4099,636,Daniel Miller Pizzeria #100,NTH
+4100,636,Daniel Miller Pizzeria #101,NTH
+4101,637,Tyler Nelson Florist,PHX
+4104,639,Oracle Street Pediatrics #100,TUS
+4105,639,Oracle Street Pediatrics #101,TUS
+4106,640,Swan Street Family Dental #100,TUS
+4107,640,Swan Street Family Dental #101,TUS
+4108,641,Miller & Scott Physical Therapy,PHX
+4110,643,Maryvale Bistro,PHX
+4113,645,Alicia Carter Bistro,TUS
+4114,646,Camelback Law Offices #100,PHX
+4115,646,Camelback Law Offices #101,PHX
+4116,647,Tyler Kelly Taqueria,PHX
+4117,648,Apache Junction Taqueria,PHX
+4118,649,Davis & Phillips Veterinary Clinic,TUS
+4123,652,Rincon Appliance,TUS
+4124,653,Deer Valley Law Offices #100,PHX
+4125,653,Deer Valley Law Offices #101,PHX
+4126,654,Green & Brown Family Dental,PHX
+4127,655,Alma Street Florist,PHX
+4128,656,Clark Florist #100,PHX
+4129,656,Clark Florist #101,PHX
+4130,657,Alicia Cooper Insurance Agency #100,PHX
+4131,657,Alicia Cooper Insurance Agency #101,PHX
+4133,659,Cottonwood Street Law Offices #100,NTH
+4134,659,Cottonwood Street Law Offices #101,NTH
+4135,660,Superstition Medical Billing,PHX
+4136,661,Thomas Street Florist #100,PHX
+4137,661,Thomas Street Florist #101,PHX
+4139,663,Route Street Medical Billing,NTH
+4140,664,Green Veterinary Clinic,NTH
+4141,665,Martinez Medical Billing #100,PHX
+4142,665,Martinez Medical Billing #101,PHX
+4143,666,Harris Pediatrics #100,PHX
+4144,666,Harris Pediatrics #101,PHX
+4145,667,Pueblo Boutique,TUS
+4146,668,Parker & Mitchell Boutique #100,TUS
+4147,668,Parker & Mitchell Boutique #101,TUS
+4148,669,Nicole Nelson Hardware #100,PHX
+4149,669,Nicole Nelson Hardware #101,PHX
+4152,671,Howard & Moore Bakery #100,NTH
+4153,671,Howard & Moore Bakery #101,NTH
+4154,672,Gilbert Law Offices,PHX
+4155,1552,Denise Adams Florist #100,PHX
+4158,675,Garcia Pharmacy,PHX
+4159,676,Bailey Boutique #100,NTH
+4160,676,Bailey Boutique #101,NTH
+4163,679,Sahuarita Physical Therapy #100,TUS
+4164,679,Sahuarita Physical Therapy #101,TUS
+4167,681,Karen Scott Taqueria,TUS
+4168,682,Wright Eye Care,NTH
+4171,684,Rita Ranch Chiropractic #100,TUS
+4172,684,Rita Ranch Chiropractic #101,TUS
+4173,685,Patricia Hall Architects,PHX
+4174,686,White Grill #100,PHX
+4175,686,White Grill #101,PHX
+4177,688,Karen Howard Architects #100,PHX
+4178,688,Karen Howard Architects #101,PHX
+4180,690,Nate Moore Engineering #100,TUS
+4181,690,Nate Moore Engineering #101,TUS
+4182,691,Marcus Cooper Family Dental,NTH
+4183,692,Beaver Street Diner,NTH
+4184,693,Main Street Chiropractic,NTH
+4185,694,Deer Valley Liquor,PHX
+4190,697,Anderson Accounting,NTH
+4193,699,Indian Street Title Company #100,PHX
+4194,699,Indian Street Title Company #101,PHX
+4195,700,Mountain View Taqueria,NTH
+4197,702,Papago Medical Billing #100,PHX
+4198,702,Papago Medical Billing #101,PHX
+4199,703,Clark Bistro,TUS
+4204,706,Morris & White Appliance #100,TUS
+4205,706,Morris & White Appliance #101,TUS
+4208,709,Mitchell & Rogers Title Company #100,PHX
+4209,709,Mitchell & Rogers Title Company #101,PHX
+4212,711,Denise Bailey Accounting,NTH
+4215,713,Main Street Family Dental,NTH
+4216,714,Michael Phillips Florist #100,PHX
+4217,714,Michael Phillips Florist #101,PHX
+4218,715,Sonoran Title Company,PHX
+4219,716,James Lee Liquor,PHX
+4220,717,Camelback Family Dental,PHX
+4223,719,Martin & Thompson Liquor,PHX
+4224,720,Hughes Boutique #100,PHX
+4225,720,Hughes Boutique #101,PHX
+4227,722,Thompson & Hall Bistro,TUS
+4230,724,Reed Engineering,NTH
+4231,725,Chris Rogers Bakery,TUS
+4234,727,Thomas & Lee Engineering #100,PHX
+4235,727,Thomas & Lee Engineering #101,PHX
+4236,728,Maria Lee Florist,PHX
+4237,729,Val Street Florist #100,PHX
+4238,729,Val Street Florist #101,PHX
+4239,730,Evans Physical Therapy,NTH
+4240,731,Tanque Verde Bakery #100,TUS
+4241,731,Tanque Verde Bakery #101,TUS
+4242,732,Hall Architects,PHX
+4244,734,Patricia Wilson Liquor #100,TUS
+4245,734,Patricia Wilson Liquor #101,TUS
+4246,735,Wilson Insurance Agency #100,PHX
+4247,735,Wilson Insurance Agency #101,PHX
+4248,736,Taylor Hardware #100,PHX
+4249,736,Taylor Hardware #101,PHX
+4250,737,Brown Veterinary Clinic,PHX
+4251,738,Broadway Street Accounting #100,PHX
+4252,738,Broadway Street Accounting #101,PHX
+4255,740,Parker Grill,PHX
+4256,741,Denise Roberts Veterinary Clinic #100,NTH
+4257,741,Denise Roberts Veterinary Clinic #101,NTH
+4260,743,Young & Davis Physical Therapy,TUS
+4263,745,Alicia Garcia Liquor #100,TUS
+4264,745,Alicia Garcia Liquor #101,TUS
+4265,746,Alicia Lewis Bistro,PHX
+4268,748,Baker & Wright Bakery #100,PHX
+4269,748,Baker & Wright Bakery #101,PHX
+4270,749,Baker & Cook Diner,TUS
+4271,750,Carter Boutique #100,NTH
+4272,750,Carter Boutique #101,NTH
+4273,751,Milton Street Law Offices,NTH
+4274,752,Green Valley Eye Care,TUS
+4277,754,Wes Bailey Veterinary Clinic #100,TUS
+4278,754,Wes Bailey Veterinary Clinic #101,TUS
+4282,757,Harris & Rogers Hardware #100,PHX
+4283,757,Harris & Rogers Hardware #101,PHX
+4285,759,Peoria Pharmacy #100,PHX
+4286,759,Peoria Pharmacy #101,PHX
+4287,760,Broadway Street Liquor #100,PHX
+4288,760,Broadway Street Liquor #101,PHX
+4289,761,Reed & Mitchell Liquor,NTH
+4290,762,Chris Miller Cafe #100,TUS
+4291,762,Chris Miller Cafe #101,TUS
+4292,763,Mesa Grill #100,PHX
+4293,763,Mesa Grill #101,PHX
+4294,764,Shauna Rogers Medical Billing #100,PHX
+4295,764,Shauna Rogers Medical Billing #101,PHX
+4296,765,Lisa Mitchell Taqueria,PHX
+4297,766,Scottsdale Accounting #100,PHX
+4298,766,Scottsdale Accounting #101,PHX
+4299,767,Lee & Evans Boutique,PHX
+4300,768,Ahwatukee Boutique #100,PHX
+4301,768,Ahwatukee Boutique #101,PHX
+4303,770,Oro Valley Physical Therapy,TUS
+4304,771,Kolb Street Pizzeria,TUS
+4305,772,Maryvale Chiropractic,PHX
+4306,773,Martin & Brown Law Offices,PHX
+4307,774,Melissa Jackson Appliance,PHX
+4310,776,Kolb Street Furniture #100,TUS
+4311,776,Kolb Street Furniture #101,TUS
+4313,778,Evans Family Dental #100,PHX
+4314,778,Evans Family Dental #101,PHX
+4315,779,Tanya Clark Eye Care,TUS
+4316,780,Carter Grill,PHX
+4317,781,Catalina Foothills Bakery,TUS
+4318,782,Shea Street Medical Billing,PHX
+4319,783,Karen Lewis Chiropractic #100,PHX
+4320,783,Karen Lewis Chiropractic #101,PHX
+4321,784,Maria Rogers Diner #100,TUS
+4322,784,Maria Rogers Diner #101,TUS
+4325,786,Martin Physical Therapy #100,TUS
+4326,786,Martin Physical Therapy #101,TUS
+4329,788,Robinson Accounting #100,PHX
+4330,788,Robinson Accounting #101,PHX
+4331,789,Glendale Appliance #100,PHX
+4332,789,Glendale Appliance #101,PHX
+4336,792,Hughes & Wright Florist,NTH
+4337,793,Tanya Clark Architects,PHX
+4340,796,Wes Morris Appliance #100,PHX
+4341,796,Wes Morris Appliance #101,PHX
+4342,797,Arcadia Veterinary Clinic #100,PHX
+4343,797,Arcadia Veterinary Clinic #101,PHX
+4344,798,Green Hardware,PHX
+4347,800,Hall & Baker Cafe #100,TUS
+4348,800,Hall & Baker Cafe #101,TUS
+4349,801,Carmen Hughes Engineering,PHX
+4350,802,Morris & Bailey Furniture #100,PHX
+4351,802,Morris & Bailey Furniture #101,PHX
+4352,803,Johnson & Scott Accounting,PHX
+4355,806,Tanque Verde Boutique,TUS
+4356,807,Morris & Stewart Accounting,PHX
+4359,809,White Family Dental #100,PHX
+4360,809,White Family Dental #101,PHX
+4361,810,Roberts Law Offices #100,TUS
+4362,810,Roberts Law Offices #101,TUS
+4364,812,Wes Martinez Pediatrics,TUS
+4366,814,Route Street Insurance Agency,NTH
+4367,815,Speedway Street Pediatrics #100,TUS
+4368,815,Speedway Street Pediatrics #101,TUS
+4369,816,Broadway Street Hardware #100,PHX
+4370,816,Broadway Street Hardware #101,PHX
+4373,818,Broadway Street Pharmacy,TUS
+4374,819,Hall Florist,PHX
+4375,820,Kachina Village Hardware #100,NTH
+4376,820,Kachina Village Hardware #101,NTH
+4377,821,Swan Street Bakery,TUS
+4380,823,Phillips Pharmacy #100,PHX
+4381,823,Phillips Pharmacy #101,PHX
+4382,824,Carter & Wilson Appliance,NTH
+4383,825,Lee Pediatrics,NTH
+4384,826,Indian Street Pizzeria,PHX
+4385,827,Melissa Anderson Furniture #100,PHX
+4386,827,Melissa Anderson Furniture #101,PHX
+4387,828,Scott Engineering #100,PHX
+4388,828,Scott Engineering #101,PHX
+4389,829,Anderson & Lee Taqueria #100,PHX
+4390,829,Anderson & Lee Taqueria #101,PHX
+4391,830,Adams & Miller Bistro #100,PHX
+4392,830,Adams & Miller Bistro #101,PHX
+4393,831,Moore & Allen Florist,PHX
+4394,832,Anderson Diner #100,PHX
+4395,832,Anderson Diner #101,PHX
+4396,833,Goodyear Pediatrics #100,PHX
+4397,833,Goodyear Pediatrics #101,PHX
+4398,834,Avondale Medical Billing,PHX
+4399,835,Lisa Kelly Liquor #100,PHX
+4400,835,Lisa Kelly Liquor #101,PHX
+4401,836,Adams & Brown Accounting #100,PHX
+4402,836,Adams & Brown Accounting #101,PHX
+4403,837,Oracle Street Physical Therapy,TUS
+4404,838,Avondale Florist #100,PHX
+4405,838,Avondale Florist #101,PHX
+4406,839,Roberts Law Offices #100,TUS
+4407,839,Roberts Law Offices #101,TUS
+4408,840,McDowell Street Boutique,PHX
+4409,841,Saguaro Chiropractic #100,PHX
+4410,841,Saguaro Chiropractic #101,PHX
+4411,842,Collins & Scott Physical Therapy,TUS
+4412,843,Mesa Accounting,PHX
+4413,844,Broadway Street Medical Billing #100,PHX
+4414,844,Broadway Street Medical Billing #101,PHX
+4415,845,Baker Florist #100,PHX
+4416,845,Baker Florist #101,PHX
+4417,846,Casas Adobes Pediatrics #100,TUS
+4418,846,Casas Adobes Pediatrics #101,TUS
+4419,847,Young & Clark Liquor #100,TUS
+4420,847,Young & Clark Liquor #101,TUS
+4423,849,Vail Title Company,TUS
+4425,851,Trent Martin Liquor #100,TUS
+4426,851,Trent Martin Liquor #101,TUS
+4427,852,James Roberts Accounting #100,PHX
+4428,852,James Roberts Accounting #101,PHX
+4429,853,Hill & White Bistro,PHX
+4432,855,Price & Taylor Chiropractic #100,PHX
+4433,855,Price & Taylor Chiropractic #101,PHX
+4434,856,Turner & Allen Title Company,TUS
+4435,857,Lisa Nelson Pharmacy,NTH
+4436,858,Papago Florist,PHX
+4438,860,White Physical Therapy #100,PHX
+4439,860,White Physical Therapy #101,PHX
+4440,861,Queen Creek Cafe #100,PHX
+4441,861,Queen Creek Cafe #101,PHX
+4442,862,Kolb Street Physical Therapy #100,TUS
+4443,862,Kolb Street Physical Therapy #101,TUS
+4444,863,Miller Chiropractic #100,PHX
+4445,863,Miller Chiropractic #101,PHX
+4446,864,Apache Junction Medical Billing #100,PHX
+4447,864,Apache Junction Medical Billing #101,PHX
+4449,866,Angela Cooper Furniture,TUS
+4451,868,Nate King Eye Care,PHX
+4452,869,Nelson Engineering #100,TUS
+4453,869,Nelson Engineering #101,TUS
+4454,870,Alma Street Pharmacy,PHX
+4455,871,Sahuarita Medical Billing,TUS
+4456,872,Howard & Lee Engineering,PHX
+4457,873,Vail Veterinary Clinic #100,TUS
+4458,873,Vail Veterinary Clinic #101,TUS
+4459,874,Clark Architects #100,TUS
+4460,874,Clark Architects #101,TUS
+4461,875,University Street Eye Care #100,PHX
+4462,875,University Street Eye Care #101,PHX
+4464,877,Linda Rogers Appliance,TUS
+4466,879,Green & Anderson Grill,PHX
+4471,882,Young & Kelly Architects #100,NTH
+4472,882,Young & Kelly Architects #101,NTH
+4473,883,Miller & Baker Bakery #100,TUS
+4474,883,Miller & Baker Bakery #101,TUS
+4475,884,Ward & Turner Appliance #100,PHX
+4476,884,Ward & Turner Appliance #101,PHX
+4477,885,Tanque Street Physical Therapy #100,TUS
+4478,885,Tanque Street Physical Therapy #101,TUS
+4479,886,Jamal Garcia Physical Therapy #100,PHX
+4480,886,Jamal Garcia Physical Therapy #101,PHX
+4481,887,Price Pediatrics,PHX
+4484,889,Johnson Pediatrics,TUS
+4485,890,Eric Miller Bistro #100,TUS
+4486,890,Eric Miller Bistro #101,TUS
+4487,891,Santa Cruz Liquor #100,TUS
+4488,891,Santa Cruz Liquor #101,TUS
+4489,892,Mountain View Architects,NTH
+4490,893,Robert Bailey Boutique #100,NTH
+4491,893,Robert Bailey Boutique #101,NTH
+4492,894,Rogers Physical Therapy,PHX
+4493,895,Jennifer Morris Title Company,TUS
+4496,897,Shauna Allen Engineering,TUS
+4499,899,Howard & Taylor Liquor #100,PHX
+4500,899,Howard & Taylor Liquor #101,PHX
+4501,900,Andre Wilson Furniture,PHX
+4502,901,Hill Architects,NTH
+4503,902,Parker & Robinson Furniture #100,PHX
+4504,902,Parker & Robinson Furniture #101,PHX
+4505,903,Maryvale Family Dental #100,PHX
+4506,903,Maryvale Family Dental #101,PHX
+4508,905,Hill Architects,PHX
+4509,906,Maria Nelson Family Dental,PHX
+4510,907,Jackson Eye Care #100,TUS
+4511,907,Jackson Eye Care #101,TUS
+4512,908,Carter & Stewart Bistro #100,PHX
+4513,908,Carter & Stewart Bistro #101,PHX
+4514,909,Mitchell Hardware #100,PHX
+4515,909,Mitchell Hardware #101,PHX
+4516,910,Roberts Title Company,NTH
+4517,911,Denise Evans Appliance #100,PHX
+4518,911,Denise Evans Appliance #101,PHX
+4520,913,Jackson & Murphy Boutique #100,NTH
+4521,913,Jackson & Murphy Boutique #101,NTH
+4522,914,Dobson Street Law Offices,PHX
+4523,915,Camp Verde Eye Care #100,NTH
+4524,915,Camp Verde Eye Care #101,NTH
+4525,916,Maria Martinez Appliance,NTH
+4527,918,Ahwatukee Florist #100,PHX
+4528,918,Ahwatukee Florist #101,PHX
+4529,919,Morris & Cooper Architects #100,TUS
+4530,919,Morris & Cooper Architects #101,TUS
+4531,920,Martin & Martin Family Dental,NTH
+4532,921,Miller Appliance,NTH
+4533,922,Ward & Cooper Florist #100,PHX
+4534,922,Ward & Cooper Florist #101,PHX
+4535,923,Valencia Street Furniture,TUS
+4536,924,Tanque Street Appliance,TUS
+4537,925,Hill & Robinson Hardware,PHX
+4540,927,Sabino Cafe #100,TUS
+4541,927,Sabino Cafe #101,TUS
+4544,929,Nate Green Family Dental #100,PHX
+4545,929,Nate Green Family Dental #101,PHX
+4546,930,Kevin Brown Pediatrics #100,PHX
+4547,930,Kevin Brown Pediatrics #101,PHX
+4548,931,Gilbert Street Law Offices,PHX
+4549,932,Sabino Physical Therapy,TUS
+4550,933,Kelly & Turner Eye Care #100,TUS
+4551,933,Kelly & Turner Eye Care #101,TUS
+4552,934,Gilbert Cafe,PHX
+4553,935,Ray Street Eye Care,PHX
+4554,936,Grant Street Hardware #100,TUS
+4555,936,Grant Street Hardware #101,TUS
+4556,937,Thomas & Stewart Appliance,PHX
+4557,938,Paula Garcia Veterinary Clinic,PHX
+4560,940,Speedway Street Appliance #100,TUS
+4561,940,Speedway Street Appliance #101,TUS
+4562,941,Milton Street Liquor #100,NTH
+4563,941,Milton Street Liquor #101,NTH
+4564,942,Derek Taylor Pharmacy,TUS
+4565,943,Daniel Parker Appliance #100,PHX
+4566,943,Daniel Parker Appliance #101,PHX
+4567,944,Alma Street Diner,PHX
+4569,946,Dobson Street Florist #100,PHX
+4570,946,Dobson Street Florist #101,PHX
+4571,947,Nicole Moore Physical Therapy,PHX
+4572,948,Gilbert Street Hardware #100,PHX
+4573,948,Gilbert Street Hardware #101,PHX
+4574,949,Baker & Rogers Law Offices,TUS
+4575,950,Bailey Family Dental #100,PHX
+4576,950,Bailey Family Dental #101,PHX
+4577,951,Old Pueblo Physical Therapy,TUS
+4578,952,Eric Lewis Appliance #100,TUS
+4579,952,Eric Lewis Appliance #101,TUS
+4580,953,Kelly Pediatrics,PHX
+4581,954,King Grill,NTH
+4582,955,Harris & Roberts Florist,PHX
+4583,956,Bailey & Harris Family Dental #100,PHX
+4584,956,Bailey & Harris Family Dental #101,PHX
+4585,957,Speedway Street Furniture,TUS
+4586,958,University Street Chiropractic,PHX
+4587,959,Rita Ranch Liquor,TUS
+4588,960,Baseline Street Pizzeria #100,PHX
+4589,960,Baseline Street Pizzeria #101,PHX
+4590,961,Kelly Veterinary Clinic #100,PHX
+4591,961,Kelly Veterinary Clinic #101,PHX
+4594,963,Warner Street Chiropractic #100,PHX
+4595,963,Warner Street Chiropractic #101,PHX
+4598,965,Angela Young Liquor,PHX
+4599,966,Baseline Street Law Offices #100,PHX
+4600,966,Baseline Street Law Offices #101,PHX
+4601,967,Edwards & Mitchell Cafe,NTH
+4603,969,Shea Street Grill,PHX
+4604,970,Mitchell Cafe #100,PHX
+4605,970,Mitchell Cafe #101,PHX
+4606,971,Anderson & Green Title Company #100,PHX
+4607,971,Anderson & Green Title Company #101,PHX
+4608,972,Thompson Insurance Agency #100,PHX
+4609,972,Thompson Insurance Agency #101,PHX
+4610,973,Ray Street Eye Care,PHX
+4611,974,Bell Street Hardware,PHX
+4612,975,Alma Street Accounting,PHX
+4615,977,Pueblo Cafe,TUS
+4616,978,Thompson Diner,PHX
+4617,979,Adams Boutique,NTH
+4618,980,Scott Pharmacy,NTH
+4621,982,Campbell Hardware #100,PHX
+4622,982,Campbell Hardware #101,PHX
+4624,984,Casas Adobes Diner #100,TUS
+4625,984,Casas Adobes Diner #101,TUS
+4626,985,Tyler Cox Liquor #100,PHX
+4627,985,Tyler Cox Liquor #101,PHX
+4628,986,Santa Cruz Medical Billing,TUS
+4629,987,Moore Engineering #100,PHX
+4630,987,Moore Engineering #101,PHX
+4631,988,Chris Hill Pediatrics,PHX
+4632,989,Green Valley Diner,TUS
+4633,990,Glendale Title Company,PHX
+4636,992,Jose Lee Accounting,PHX
+4639,994,Luis Martinez Bakery #100,TUS
+4640,994,Luis Martinez Bakery #101,TUS
+4643,996,Stewart & Bailey Family Dental #100,TUS
+4644,996,Stewart & Bailey Family Dental #101,TUS
+4645,997,Patricia Cox Bistro,NTH
+4648,999,Megan Martin Pediatrics #100,NTH
+4649,999,Megan Martin Pediatrics #101,NTH
+4650,1000,Eric Jackson Diner #100,PHX
+4651,1000,Eric Jackson Diner #101,PHX
+4652,1001,Cottonwood Architects #100,NTH
+4653,1001,Cottonwood Architects #101,NTH
+4654,1002,Superstition Grill #100,PHX
+4655,1002,Superstition Grill #101,PHX
+4658,1004,Ahwatukee Hardware,PHX
+4659,1005,Vail Chiropractic,TUS
+4660,1006,Allen Pediatrics,TUS
+4661,1007,Lewis Bistro,TUS
+4662,1008,Cox & Cox Family Dental,TUS
+4664,1010,Avondale Pizzeria #100,PHX
+4665,1010,Avondale Pizzeria #101,PHX
+4668,1013,Jennifer Miller Florist #100,PHX
+4669,1013,Jennifer Miller Florist #101,PHX
+4670,1014,Southern Street Family Dental,PHX
+4673,1016,David Davis Liquor,PHX
+4674,1017,Garcia Appliance #100,NTH
+4675,1017,Garcia Appliance #101,NTH
+4676,1018,Davis & Kelly Florist #100,PHX
+4677,1018,Davis & Kelly Florist #101,PHX
+4678,1019,Green Pharmacy,TUS
+4679,1020,Shea Street Cafe #100,PHX
+4680,1020,Shea Street Cafe #101,PHX
+4681,1021,Cottonwood Veterinary Clinic #100,NTH
+4682,1021,Cottonwood Veterinary Clinic #101,NTH
+4683,1022,Sabino Cafe,TUS
+4684,1023,Howard & Thomas Hardware,TUS
+4685,1024,Eric Clark Boutique,PHX
+4686,1025,Daniel Thompson Diner,NTH
+4687,1026,Elliot Street Florist #100,PHX
+4688,1026,Elliot Street Florist #101,PHX
+4689,1027,Morris Engineering,TUS
+4690,1028,Main Street Florist #100,TUS
+4691,1028,Main Street Florist #101,TUS
+4692,1029,Hill & Howard Appliance #100,NTH
+4693,1029,Hill & Howard Appliance #101,NTH
+4697,1032,Broadway Street Cafe,TUS
+4699,1034,Sean Turner Bistro,PHX
+4700,1035,Shea Street Family Dental #100,PHX
+4701,1035,Shea Street Family Dental #101,PHX
+4702,1036,Michael Garcia Insurance Agency #100,TUS
+4703,1036,Michael Garcia Insurance Agency #101,TUS
+4705,1038,Clark & Campbell Grill,PHX
+4706,1039,Luis Clark Insurance Agency,PHX
+4707,1040,Phillips & Parker Title Company #100,PHX
+4708,1040,Phillips & Parker Title Company #101,PHX
+4709,1041,Scottsdale Veterinary Clinic #100,PHX
+4710,1041,Scottsdale Veterinary Clinic #101,PHX
+4711,1042,Ray Murphy Florist #100,TUS
+4712,1042,Ray Murphy Florist #101,TUS
+4713,1043,Brittany Nelson Florist #100,TUS
+4714,1043,Brittany Nelson Florist #101,TUS
+4717,1045,Robinson & Scott Engineering,PHX
+4718,1046,Casas Adobes Bakery,TUS
+4719,1047,Wes Martinez Bakery,TUS
+4720,1048,Valencia Street Physical Therapy,TUS
+4722,1050,Lake Street Boutique #100,NTH
+4723,1050,Lake Street Boutique #101,NTH
+4724,1051,Paradise Valley Bakery,PHX
+4725,1052,Clark & Stewart Liquor #100,PHX
+4726,1052,Clark & Stewart Liquor #101,PHX
+4727,1053,Murphy & Hughes Bistro #100,TUS
+4728,1053,Murphy & Hughes Bistro #101,TUS
+4729,1054,Casas Adobes Hardware,TUS
+4730,1055,Mountain View Cafe #100,NTH
+4731,1055,Mountain View Cafe #101,NTH
+4734,1058,Elliot Street Chiropractic,PHX
+4735,1059,Camelback Street Accounting #100,PHX
+4736,1059,Camelback Street Accounting #101,PHX
+4737,1060,Kelly Diner,TUS
+4739,1062,Broadway Street Insurance Agency,PHX
+4740,1063,Patricia Robinson Title Company,PHX
+4742,1065,Thomas Cafe,PHX
+4743,1066,Arcadia Taqueria #100,PHX
+4744,1066,Arcadia Taqueria #101,PHX
+4745,1067,Robert Murphy Engineering,TUS
+4747,1069,Rita Ranch Florist #100,TUS
+4748,1069,Rita Ranch Florist #101,TUS
+4749,1070,King Cafe #100,PHX
+4750,1070,King Cafe #101,PHX
+4751,1071,Luis White Florist,PHX
+4752,1072,Brittany Murphy Diner #100,NTH
+4753,1072,Brittany Murphy Diner #101,NTH
+4754,1073,James White Furniture,NTH
+4755,1074,Santa Cruz Engineering,TUS
+4756,1075,Nicole Wright Pediatrics,TUS
+4758,1077,Camelback Cafe #100,PHX
+4759,1077,Camelback Cafe #101,PHX
+4760,1078,Wright & Morris Medical Billing,PHX
+4763,1080,Wilson Pediatrics,PHX
+4764,1081,Hill Diner,PHX
+4765,1082,Vail Architects #100,TUS
+4766,1082,Vail Architects #101,TUS
+4767,1083,Power Street Accounting,PHX
+4768,1084,Walker Diner,PHX
+4769,1085,Cooper & Cox Bistro #100,PHX
+4770,1085,Cooper & Cox Bistro #101,PHX
+4779,1091,Pueblo Eye Care,TUS
+4781,1093,Bell Street Hardware #100,PHX
+4782,1093,Bell Street Hardware #101,PHX
+4787,1096,Holly Nelson Pizzeria #100,PHX
+4788,1096,Holly Nelson Pizzeria #101,PHX
+4791,1099,Reed Taqueria #100,PHX
+4792,1099,Reed Taqueria #101,PHX
+4793,1100,Eric Taylor Family Dental #100,PHX
+4794,1100,Eric Taylor Family Dental #101,PHX
+4795,1101,Warner Street Accounting,PHX
+4797,1103,Nelson Bakery,NTH
+4798,1104,Oracle Street Engineering #100,TUS
+4799,1104,Oracle Street Engineering #101,TUS
+4800,1105,Oro Valley Chiropractic,TUS
+4801,1106,Ray Hughes Appliance,NTH
+4802,1107,Carter & Walker Engineering,TUS
+4805,1110,Gina Phillips Veterinary Clinic #100,PHX
+4806,1110,Gina Phillips Veterinary Clinic #101,PHX
+4809,1112,Sedona Chiropractic,NTH
+4811,1114,Collins Chiropractic #100,PHX
+4812,1114,Collins Chiropractic #101,PHX
+4815,1116,Morris Chiropractic #100,NTH
+4816,1116,Morris Chiropractic #101,NTH
+4819,1118,Moore & Thomas Medical Billing,PHX
+4820,1119,Martinez Pediatrics #100,PHX
+4821,1119,Martinez Pediatrics #101,PHX
+4822,1120,Bell Street Engineering,PHX
+4823,1121,Avondale Medical Billing,PHX
+4825,1123,Trent Clark Veterinary Clinic,TUS
+4826,1124,Jamal Adams Bistro #100,PHX
+4827,1124,Jamal Adams Bistro #101,PHX
+4828,1125,Evans Grill #100,NTH
+4829,1125,Evans Grill #101,NTH
+4833,1128,Carmen Stewart Chiropractic,PHX
+4834,1129,Mesa Taqueria #100,PHX
+4835,1129,Mesa Taqueria #101,PHX
+4836,1130,Robinson Accounting,PHX
+4837,1131,Casas Adobes Appliance #100,TUS
+4838,1131,Casas Adobes Appliance #101,TUS
+4839,1132,Dustin Robinson Architects #100,PHX
+4840,1132,Dustin Robinson Architects #101,PHX
+4843,1134,Miller & Lee Family Dental,NTH
+4845,1136,Hughes & Anderson Furniture,TUS
+4847,1138,Nelson & Martin Pizzeria,TUS
+4852,1141,Camp Verde Bakery #100,NTH
+4853,1141,Camp Verde Bakery #101,NTH
+4856,1143,Murphy & Ward Medical Billing #100,TUS
+4857,1143,Murphy & Ward Medical Billing #101,TUS
+4858,1144,Patricia Hughes Grill,NTH
+4859,1145,Howard & Carter Hardware #100,NTH
+4860,1145,Howard & Carter Hardware #101,NTH
+4863,1147,Sean Phillips Chiropractic #100,TUS
+4864,1147,Sean Phillips Chiropractic #101,TUS
+4865,1148,Cooper & Adams Bistro,PHX
+4866,1149,Camelback Pediatrics #100,PHX
+4867,1149,Camelback Pediatrics #101,PHX
+4870,1151,Fountain Hills Eye Care #100,PHX
+4871,1151,Fountain Hills Eye Care #101,PHX
+4872,1152,Vail Pizzeria,TUS
+4873,1153,Shauna Hall Boutique,PHX
+4874,1154,Laveen Hardware #100,PHX
+4875,1154,Laveen Hardware #101,PHX
+4881,1158,Scottsdale Furniture,PHX
+4882,1159,Speedway Street Physical Therapy,TUS
+4883,1160,Scott Bakery #100,PHX
+4884,1160,Scott Bakery #101,PHX
+4886,1162,Santa Cruz Family Dental #100,TUS
+4887,1162,Santa Cruz Family Dental #101,TUS
+4888,1163,Main Street Liquor #100,PHX
+4889,1163,Main Street Liquor #101,PHX
+4890,1164,Anderson Liquor #100,PHX
+4891,1164,Anderson Liquor #101,PHX
+4892,1165,Roberts & Wright Eye Care #100,PHX
+4893,1165,Roberts & Wright Eye Care #101,PHX
+4895,1167,Chandler Bakery #100,PHX
+4896,1167,Chandler Bakery #101,PHX
+4897,1168,Tyler Hall Family Dental,TUS
+4898,1169,Southern Street Engineering #100,PHX
+4899,1169,Southern Street Engineering #101,PHX
+4900,1170,Mitchell & Roberts Medical Billing,TUS
+4901,1171,Reed Family Dental,TUS
+4902,1172,Harris Eye Care #100,NTH
+4903,1172,Harris Eye Care #101,NTH
+4904,1173,Goodyear Physical Therapy #100,PHX
+4905,1173,Goodyear Physical Therapy #101,PHX
+4906,1174,Main Street Architects,TUS
+4907,1175,Cottonwood Street Furniture,NTH
+4908,1176,Parker & Robinson Family Dental #100,TUS
+4909,1176,Parker & Robinson Family Dental #101,TUS
+4910,1177,Angela Davis Boutique,PHX
+4911,1178,Young Veterinary Clinic,PHX
+4912,1179,Chandler Engineering #100,PHX
+4913,1179,Chandler Engineering #101,PHX
+4914,1180,Gina Baker Physical Therapy,PHX
+4915,1181,Fountain Hills Taqueria,PHX
+4916,1182,Baker & Cook Diner #100,NTH
+4917,1182,Baker & Cook Diner #101,NTH
+4918,1183,Megan White Bakery #100,PHX
+4919,1183,Megan White Bakery #101,PHX
+4920,1184,Young Family Dental,TUS
+4921,1185,Cox & Collins Boutique,PHX
+4923,1187,Nicole Allen Liquor #100,PHX
+4924,1187,Nicole Allen Liquor #101,PHX
+4925,1188,Sonoran Title Company #100,PHX
+4926,1188,Sonoran Title Company #101,PHX
+4927,1189,Casas Adobes Liquor,TUS
+4928,1190,Maria Campbell Grill,PHX
+4929,1191,Rachel Turner Law Offices #100,PHX
+4930,1191,Rachel Turner Law Offices #101,PHX
+4932,1193,Val Street Furniture #100,PHX
+4933,1193,Val Street Furniture #101,PHX
+4934,1194,Val Street Grill #100,PHX
+4935,1194,Val Street Grill #101,PHX
+4936,1195,Johnson & Anderson Eye Care #100,PHX
+4937,1195,Johnson & Anderson Eye Care #101,PHX
+4938,1196,Estrella Appliance,PHX
+4939,1555,Allen & Carter Eye Care #100,PHX
+4940,1197,Allen & Carter Eye Care #101,PHX
+4944,1200,Hill & Young Architects,PHX
+4945,1201,Denise Thompson Bakery,PHX
+4946,1202,Baseline Street Bistro #100,PHX
+4947,1202,Baseline Street Bistro #101,PHX
+4948,1203,Kolb Street Boutique,TUS
+4950,1205,Milton Street Physical Therapy,NTH
+4953,1207,Southern Street Florist,PHX
+4954,1208,Oracle Street Family Dental #100,TUS
+4955,1208,Oracle Street Family Dental #101,TUS
+4956,1209,Melissa Thomas Taqueria #100,PHX
+4957,1209,Melissa Thomas Taqueria #101,PHX
+4960,1211,Tempe Bistro,PHX
+4961,1212,Dustin Anderson Pharmacy #100,NTH
+4962,1212,Dustin Anderson Pharmacy #101,NTH
+4964,1214,Lisa Davis Pediatrics #100,NTH
+4965,1214,Lisa Davis Pediatrics #101,NTH
+4966,1215,Dobson Street Title Company,PHX
+4968,1217,Maria Davis Diner,PHX
+4969,1218,Speedway Street Engineering,TUS
+4970,1219,Carter & Young Accounting #100,NTH
+4971,1219,Carter & Young Accounting #101,NTH
+4972,1220,Bailey & Howard Title Company #100,PHX
+4973,1220,Bailey & Howard Title Company #101,PHX
+4975,1222,Gina Collins Physical Therapy,TUS
+4977,1224,Catalina Foothills Pizzeria,TUS
+4978,1225,Indian Street Grill #100,PHX
+4979,1225,Indian Street Grill #101,PHX
+4980,1226,Ray Lee Grill,PHX
+4981,1227,Clark & Evans Physical Therapy #100,PHX
+4982,1227,Clark & Evans Physical Therapy #101,PHX
+4983,1228,Nate Brown Architects #100,PHX
+4984,1228,Nate Brown Architects #101,PHX
+4985,1229,Milton Street Title Company #100,NTH
+4986,1229,Milton Street Title Company #101,NTH
+4987,1230,Stewart & Edwards Furniture,PHX
+4988,1231,Thompson Grill #100,PHX
+4989,1231,Thompson Grill #101,PHX
+4990,1232,Angela Kelly Florist #100,PHX
+4991,1232,Angela Kelly Florist #101,PHX
+4992,1233,Andre Martin Pharmacy,PHX
+4993,1234,Dobson Street Physical Therapy #100,PHX
+4994,1234,Dobson Street Physical Therapy #101,PHX
+4995,1235,Val Street Appliance #100,PHX
+4996,1235,Val Street Appliance #101,PHX
+4997,1236,Price Pizzeria,PHX
+4998,1237,Southern Street Pediatrics #100,PHX
+4999,1237,Southern Street Pediatrics #101,PHX
+5000,1238,Cox & Stewart Cafe #100,TUS
+5001,1238,Cox & Stewart Cafe #101,TUS
+5002,1239,Valencia Street Law Offices #100,TUS
+5003,1239,Valencia Street Law Offices #101,TUS
+5004,1240,Collins & Martinez Architects,PHX
+5005,1241,Patricia Price Hardware #100,PHX
+5006,1241,Patricia Price Hardware #101,PHX
+5007,1242,Mogollon Rim Bistro #100,NTH
+5008,1242,Mogollon Rim Bistro #101,NTH
+5009,1242,Mogollon Rim Bistro #102,NTH
+5010,1242,Mogollon Rim Bistro #103,NTH
+5011,1242,Mogollon Rim Bistro #104,NTH
+5012,1242,Mogollon Rim Bistro #105,NTH
+5013,1242,Mogollon Rim Bistro #106,NTH
+5014,1243,Karen Lee Engineering,PHX
+5015,1244,Green Valley Furniture,TUS
+5016,1245,Apache Junction Pizzeria,PHX
+5017,1246,Walker & Green Insurance Agency,TUS
+5018,1247,Cox & Moore Insurance Agency #100,PHX
+5019,1247,Cox & Moore Insurance Agency #101,PHX
+5029,1250,Coconino Cafe #100,NTH
+5030,1250,Coconino Cafe #101,NTH
+5031,1251,Mesa Pizzeria #100,PHX
+5032,1251,Mesa Pizzeria #101,PHX
+5033,1251,Mesa Pizzeria #102,PHX
+5034,1251,Mesa Pizzeria #103,PHX
+5035,1251,Mesa Pizzeria #104,PHX
+5036,1251,Mesa Pizzeria #105,PHX
+5039,1253,Camelback Appliance #100,PHX
+5040,1253,Camelback Appliance #101,PHX
+5041,1253,Camelback Appliance #102,PHX
+5042,1253,Camelback Appliance #103,PHX
+5043,1253,Camelback Appliance #104,PHX
+5044,1253,Camelback Appliance #105,PHX
+5045,1253,Camelback Appliance #106,PHX
+5046,1254,Alma Street Boutique #100,PHX
+5047,1254,Alma Street Boutique #101,PHX
+5048,1255,Hill & Mitchell Insurance Agency,PHX
+5049,1256,Andre Collins Chiropractic,TUS
+5052,1258,Collins Liquor,TUS
+5056,1261,Sonoran Taqueria #100,PHX
+5057,1261,Sonoran Taqueria #101,PHX
+5058,1261,Sonoran Taqueria #102,PHX
+5059,1261,Sonoran Taqueria #103,PHX
+5060,1261,Sonoran Taqueria #104,PHX
+5061,1261,Sonoran Taqueria #105,PHX
+5062,1261,Sonoran Taqueria #106,PHX
+5063,1261,Sonoran Taqueria #107,PHX
+5064,1262,Valencia Street Liquor #100,TUS
+5065,1262,Valencia Street Liquor #101,TUS
+5066,1263,Coconino Family Dental #100,NTH
+5067,1263,Coconino Family Dental #101,NTH
+5068,1264,Power Street Appliance #100,PHX
+5069,1264,Power Street Appliance #101,PHX
+5070,1265,Kelly & Clark Pizzeria #100,NTH
+5071,1265,Kelly & Clark Pizzeria #101,NTH
+5073,1267,Paradise Valley Veterinary Clinic #100,PHX
+5074,1267,Paradise Valley Veterinary Clinic #101,PHX
+5075,1268,Desert Ridge Boutique #100,PHX
+5076,1268,Desert Ridge Boutique #101,PHX
+5077,1268,Desert Ridge Boutique #102,PHX
+5078,1268,Desert Ridge Boutique #103,PHX
+5079,1269,Price & Johnson Medical Billing,NTH
+5081,1271,Southern Street Medical Billing,PHX
+5084,1273,Vail Pharmacy #100,TUS
+5085,1273,Vail Pharmacy #101,TUS
+5086,1273,Vail Pharmacy #102,TUS
+5087,1273,Vail Pharmacy #103,TUS
+5088,1273,Vail Pharmacy #104,TUS
+5090,1275,Karen Moore Engineering,TUS
+5091,1276,Scottsdale Liquor #100,PHX
+5092,1276,Scottsdale Liquor #101,PHX
+5093,1276,Scottsdale Liquor #102,PHX
+5094,1276,Scottsdale Liquor #103,PHX
+5095,1276,Scottsdale Liquor #104,PHX
+5096,1276,Scottsdale Liquor #105,PHX
+5097,1276,Scottsdale Liquor #106,PHX
+5098,1277,Trent Anderson Accounting,NTH
+5099,1278,Wes Scott Florist,PHX
+5100,1279,Bailey & Anderson Accounting #100,NTH
+5101,1279,Bailey & Anderson Accounting #101,NTH
+5102,1280,King & Turner Taqueria #100,NTH
+5103,1280,King & Turner Taqueria #101,NTH
+5104,1281,Sedona Bakery #100,NTH
+5105,1281,Sedona Bakery #101,NTH
+5106,1281,Sedona Bakery #102,NTH
+5107,1281,Sedona Bakery #103,NTH
+5108,1281,Sedona Bakery #104,NTH
+5109,1282,Clark Accounting,PHX
+5110,1283,Trent Davis Pediatrics #100,PHX
+5111,1283,Trent Davis Pediatrics #101,PHX
+5118,1285,Desert Ridge Plaza,PHX
+5119,1285,Rita Ranch Center,TUS
+5120,1285,Vail Commons,TUS
+5121,1285,Old Pueblo Office Park,TUS
+5122,1285,San Francisco Peaks Medical Building,NTH
+5123,1285,Queen Creek Plaza,PHX
+5124,1285,Apache Junction Center,PHX
+5125,1285,Catalina Foothills Commons,TUS
+5126,1285,Tempe Office Park,PHX
+5127,1286,Elliot Street Medical Billing,PHX
+5130,1288,Harris Diner,PHX
+5131,1289,Andre Morris Pizzeria #100,PHX
+5132,1289,Andre Morris Pizzeria #101,PHX
+5133,1290,Mountain View Pharmacy #100,NTH
+5134,1290,Mountain View Pharmacy #101,NTH
+5135,1291,Ina Street Physical Therapy #100,TUS
+5136,1291,Ina Street Physical Therapy #101,TUS
+5137,1292,Camelback Pizzeria,PHX
+5138,1293,Coconino Plaza,NTH
+5139,1293,Rincon Center,TUS
+5140,1293,Goodyear Commons,PHX
+5141,1293,Avondale Office Park,PHX
+5142,1293,Catalina Foothills Medical Building,TUS
+5143,1293,San Tan Valley Plaza,PHX
+5144,1293,Queen Creek Center,PHX
+5145,1293,Casas Adobes Commons,TUS
+5152,1296,Stewart Title Company #100,NTH
+5153,1296,Stewart Title Company #101,NTH
+5154,1297,Maryvale Plaza,PHX
+5155,1297,Laveen Center,PHX
+5156,1297,Pueblo Commons,TUS
+5157,1297,Sonoran Office Park,PHX
+5158,1297,Green Valley Medical Building,TUS
+5159,1297,Mountain View Plaza,NTH
+5160,1297,Queen Creek Center,PHX
+5161,1297,Tanque Verde Commons,TUS
+5162,1297,Glendale Office Park,PHX
+5163,1297,San Francisco Peaks Medical Building,NTH
+5164,1297,Rita Ranch Plaza,TUS
+5165,1297,Santa Cruz Center,TUS
+5166,1297,San Francisco Peaks Commons,NTH
+5167,1297,Chandler Office Park,PHX
+5168,1297,Sedona Medical Building,NTH
+5169,1297,Saguaro Plaza,PHX
+5170,1297,Glendale Center,PHX
+5171,1297,Papago Commons,PHX
+5172,1298,Sahuarita Diner #100,TUS
+5173,1298,Sahuarita Diner #101,TUS
+5174,1298,Sahuarita Diner #102,TUS
+5175,1298,Sahuarita Diner #103,TUS
+5176,1298,Sahuarita Diner #104,TUS
+5177,1299,Martin Pediatrics #100,PHX
+5178,1299,Martin Pediatrics #101,PHX
+5179,1300,Val Street Pediatrics,PHX
+5180,1301,Sean Taylor Hardware,NTH
+5181,1302,Taylor & Cook Family Dental,PHX
+5201,1306,Dobson Street Furniture #100,PHX
+5202,1306,Dobson Street Furniture #101,PHX
+5203,1307,Miller & Hall Family Dental #100,PHX
+5204,1307,Miller & Hall Family Dental #101,PHX
+5205,1308,Stewart & Cook Liquor,TUS
+5206,1309,Cook Hardware,TUS
+5207,1310,Williams Pediatrics #100,NTH
+5208,1310,Williams Pediatrics #101,NTH
+5209,1310,Williams Pediatrics #102,NTH
+5210,1311,Laveen Pharmacy,PHX
+5211,1312,Elliot Street Bakery #100,PHX
+5212,1312,Elliot Street Bakery #101,PHX
+5213,1313,Johnson & Hill Florist,PHX
+5214,1314,Stewart & Wilson Boutique,PHX
+5215,1315,Cox Chiropractic #100,PHX
+5216,1315,Cox Chiropractic #101,PHX
+5217,1316,Kelly Furniture #100,TUS
+5218,1316,Kelly Furniture #101,TUS
+5219,1317,Moore Physical Therapy,NTH
+5221,1319,King & Morris Chiropractic,TUS
+5222,1320,Power Street Medical Billing #100,PHX
+5223,1320,Power Street Medical Billing #101,PHX
+5224,1321,Eric Collins Physical Therapy,TUS
+5225,1322,Main Street Architects,PHX
+5226,1323,Sedona Eye Care #100,NTH
+5227,1323,Sedona Eye Care #101,NTH
+5228,1323,Sedona Eye Care #102,NTH
+5229,1323,Sedona Eye Care #103,NTH
+5230,1323,Sedona Eye Care #104,NTH
+5231,1323,Sedona Eye Care #105,NTH
+5232,1323,Sedona Eye Care #106,NTH
+5233,1324,Nicole Morris Appliance #100,PHX
+5234,1324,Nicole Morris Appliance #101,PHX
+5235,1325,Jennifer Johnson Chiropractic,NTH
+5236,1326,Catalina Foothills Hardware #100,TUS
+5237,1326,Catalina Foothills Hardware #101,TUS
+5240,1328,Shauna Collins Architects,NTH
+5241,1329,Carter Eye Care #100,PHX
+5242,1329,Carter Eye Care #101,PHX
+5243,1330,Lee & Hall Taqueria,TUS
+5244,1331,Dobson Street Grill,PHX
+5245,1332,Tempe Engineering #100,PHX
+5246,1332,Tempe Engineering #101,PHX
+5247,1333,Sonoran Plaza,PHX
+5248,1333,Verde Valley Center,NTH
+5249,1333,Queen Creek Commons,PHX
+5250,1333,Tempe Office Park,PHX
+5251,1333,Gilbert Medical Building,PHX
+5252,1333,Scottsdale Plaza,PHX
+5253,1333,Desert Ridge Center,PHX
+5254,1333,Papago Commons,PHX
+5255,1333,Desert Ridge Office Park,PHX
+5256,1333,Paradise Valley Medical Building,PHX
+5259,1335,Lewis & Nelson Furniture #100,NTH
+5260,1335,Lewis & Nelson Furniture #101,NTH
+5261,1336,Maryvale Bakery #100,PHX
+5262,1336,Maryvale Bakery #101,PHX
+5263,1336,Maryvale Bakery #102,PHX
+5264,1336,Maryvale Bakery #103,PHX
+5265,1336,Maryvale Bakery #104,PHX
+5266,1336,Maryvale Bakery #105,PHX
+5267,1336,Maryvale Bakery #106,PHX
+5268,1336,Maryvale Bakery #107,PHX
+5270,1338,Old Pueblo Boutique #100,TUS
+5271,1338,Old Pueblo Boutique #101,TUS
+5272,1339,Coconino Bistro,NTH
+5273,1340,Parker Liquor #100,TUS
+5274,1340,Parker Liquor #101,TUS
+5275,1341,Davis & Rogers Veterinary Clinic #100,PHX
+5276,1341,Davis & Rogers Veterinary Clinic #101,PHX
+5277,1342,Evans Pediatrics,PHX
+5278,1343,Collins Diner,PHX
+5279,1344,Andre Hughes Liquor #100,TUS
+5280,1344,Andre Hughes Liquor #101,TUS
+5281,1345,Oro Valley Title Company #100,TUS
+5282,1345,Oro Valley Title Company #101,TUS
+5283,1346,Elliot Street Engineering #100,PHX
+5284,1346,Elliot Street Engineering #101,PHX
+5285,1347,Nelson & Scott Diner,TUS
+5286,1348,Jason Carter Grill #100,PHX
+5287,1348,Jason Carter Grill #101,PHX
+5288,1349,Hall Appliance #100,TUS
+5289,1349,Hall Appliance #101,TUS
+5290,1350,Cox Pharmacy,PHX
+5291,1351,Paradise Valley Plaza,PHX
+5292,1351,Green Valley Center,TUS
+5293,1351,San Francisco Peaks Commons,NTH
+5294,1351,Tempe Office Park,PHX
+5295,1351,Arcadia Medical Building,PHX
+5296,1351,Mogollon Rim Plaza,NTH
+5297,1351,Goodyear Center,PHX
+5298,1351,Santa Cruz Commons,TUS
+5299,1351,Santa Cruz Office Park,TUS
+5300,1351,Verde Valley Medical Building,NTH
+5301,1351,Ahwatukee Plaza,PHX
+5302,1351,Goodyear Center,PHX
+5303,1351,Old Pueblo Commons,TUS
+5304,1351,Mesa Office Park,PHX
+5305,1351,Apache Junction Medical Building,PHX
+5306,1351,Mogollon Rim Plaza,NTH
+5307,1351,Coconino Center,NTH
+5308,1351,Sabino Commons,TUS
+5309,1351,Estrella Office Park,PHX
+5310,1351,Desert Ridge Medical Building,PHX
+5311,1352,Gilbert Cafe #100,PHX
+5312,1352,Gilbert Cafe #101,PHX
+5313,1353,State Street Medical Billing #100,NTH
+5314,1353,State Street Medical Billing #101,NTH
+5315,1354,Shea Street Chiropractic,PHX
+5316,1355,King & Martin Law Offices #100,NTH
+5317,1355,King & Martin Law Offices #101,NTH
+5318,1356,Mountain View Appliance #100,NTH
+5319,1356,Mountain View Appliance #101,NTH
+5321,1358,Turner Boutique #100,TUS
+5322,1358,Turner Boutique #101,TUS
+5323,1359,Elliot Street Diner,PHX
+5324,1360,Thomas & Hughes Pizzeria #100,NTH
+5325,1360,Thomas & Hughes Pizzeria #101,NTH
+5326,1361,Karen Miller Bistro #100,PHX
+5327,1361,Karen Miller Bistro #101,PHX
+5328,1362,Green Valley Diner #100,TUS
+5329,1362,Green Valley Diner #101,TUS
+5330,1362,Green Valley Diner #102,TUS
+5331,1362,Green Valley Diner #103,TUS
+5332,1362,Green Valley Diner #104,TUS
+5333,1363,Estrella Hardware #100,PHX
+5334,1363,Estrella Hardware #101,PHX
+5335,1363,Estrella Hardware #102,PHX
+5336,1364,Mesa Cafe #100,PHX
+5337,1364,Mesa Cafe #101,PHX
+5338,1365,Old Pueblo Veterinary Clinic #100,TUS
+5339,1365,Old Pueblo Veterinary Clinic #101,TUS
+5340,1365,Old Pueblo Veterinary Clinic #102,TUS
+5341,1365,Old Pueblo Veterinary Clinic #103,TUS
+5342,1366,Chandler Pediatrics #100,PHX
+5343,1366,Chandler Pediatrics #101,PHX
+5348,1368,Hill Diner #100,PHX
+5349,1368,Hill Diner #101,PHX
+5350,1369,Tempe Plaza,PHX
+5351,1369,Fountain Hills Center,PHX
+5352,1369,Mogollon Rim Commons,NTH
+5353,1369,Coconino Office Park,NTH
+5354,1369,Camelback Medical Building,PHX
+5355,1369,Old Pueblo Plaza,TUS
+5356,1369,Marana Center,TUS
+5357,1369,Green Valley Commons,TUS
+5358,1369,Verde Valley Office Park,NTH
+5359,1369,Casas Adobes Medical Building,TUS
+5360,1369,Santa Cruz Plaza,TUS
+5361,1370,Davis Insurance Agency,PHX
+5362,1371,Brown Title Company #100,PHX
+5363,1371,Brown Title Company #101,PHX
+5366,1373,Paula Price Boutique,TUS
+5367,1374,Maryvale Pharmacy #100,PHX
+5368,1374,Maryvale Pharmacy #101,PHX
+5369,1374,Maryvale Pharmacy #102,PHX
+5370,1375,Camelback Street Furniture #100,PHX
+5371,1375,Camelback Street Furniture #101,PHX
+5373,1377,Robinson & Walker Accounting #100,PHX
+5374,1377,Robinson & Walker Accounting #101,PHX
+5377,1379,Kelly Grill #100,TUS
+5378,1379,Kelly Grill #101,TUS
+5379,1380,Fountain Hills Pharmacy #100,PHX
+5380,1380,Fountain Hills Pharmacy #101,PHX
+5381,1380,Fountain Hills Pharmacy #102,PHX
+5382,1380,Fountain Hills Pharmacy #103,PHX
+5383,1380,Fountain Hills Pharmacy #104,PHX
+5384,1380,Fountain Hills Pharmacy #105,PHX
+5385,1380,Fountain Hills Pharmacy #106,PHX
+5386,1381,Alma Street Title Company #100,PHX
+5387,1381,Alma Street Title Company #101,PHX
+5388,1382,Papago Family Dental #100,PHX
+5389,1382,Papago Family Dental #101,PHX
+5390,1382,Papago Family Dental #102,PHX
+5391,1382,Papago Family Dental #103,PHX
+5392,1382,Papago Family Dental #104,PHX
+5393,1382,Papago Family Dental #105,PHX
+5394,1382,Papago Family Dental #106,PHX
+5395,1382,Papago Family Dental #107,PHX
+5396,1383,Dobson Street Taqueria,PHX
+5397,1384,Gilbert Chiropractic #100,PHX
+5398,1384,Gilbert Chiropractic #101,PHX
+5399,1384,Gilbert Chiropractic #102,PHX
+5400,1384,Gilbert Chiropractic #103,PHX
+5401,1384,Gilbert Chiropractic #104,PHX
+5402,1384,Gilbert Chiropractic #105,PHX
+5403,1384,Gilbert Chiropractic #106,PHX
+5404,1385,James Howard Medical Billing #100,NTH
+5405,1385,James Howard Medical Billing #101,NTH
+5406,1386,Bailey & Thomas Family Dental,TUS
+5407,1387,Angela Reed Law Offices,PHX
+5408,1388,Estrella Medical Billing,PHX
+5409,1389,King & Cox Pharmacy #100,PHX
+5410,1389,King & Cox Pharmacy #101,PHX
+5411,1390,Scottsdale Liquor #100,PHX
+5412,1390,Scottsdale Liquor #101,PHX
+5413,1390,Scottsdale Liquor #102,PHX
+5414,1391,Collins Veterinary Clinic #100,TUS
+5415,1391,Collins Veterinary Clinic #101,TUS
+5416,1392,Arcadia Plaza,PHX
+5417,1392,Apache Junction Center,PHX
+5418,1392,Glendale Commons,PHX
+5419,1392,Apache Junction Office Park,PHX
+5420,1392,Maryvale Medical Building,PHX
+5421,1392,Goodyear Plaza,PHX
+5422,1393,Fountain Hills Family Dental #100,PHX
+5423,1393,Fountain Hills Family Dental #101,PHX
+5424,1393,Fountain Hills Family Dental #102,PHX
+5425,1393,Fountain Hills Family Dental #103,PHX
+5426,1393,Fountain Hills Family Dental #104,PHX
+5427,1393,Fountain Hills Family Dental #105,PHX
+5428,1393,Fountain Hills Family Dental #106,PHX
+5429,1394,Martin Florist,TUS
+5430,1395,Sonoran Grill #100,PHX
+5431,1395,Sonoran Grill #101,PHX
+5432,1395,Sonoran Grill #102,PHX
+5433,1395,Sonoran Grill #103,PHX
+5434,1395,Sonoran Grill #104,PHX
+5435,1396,Angela Thompson Law Offices,NTH
+5436,1397,Marana Family Dental #100,TUS
+5437,1397,Marana Family Dental #101,TUS
+5438,1397,Marana Family Dental #102,TUS
+5439,1397,Marana Family Dental #103,TUS
+5440,1397,Marana Family Dental #104,TUS
+5441,1397,Marana Family Dental #105,TUS
+5442,1398,Superstition Pizzeria #100,PHX
+5443,1398,Superstition Pizzeria #101,PHX
+5444,1398,Superstition Pizzeria #102,PHX
+5445,1399,Wilson Physical Therapy,TUS
+5446,1400,Broadway Street Furniture,PHX
+5447,1401,Adams & Allen Cafe #100,PHX
+5448,1401,Adams & Allen Cafe #101,PHX
+5449,1402,Green Pizzeria,NTH
+5450,1403,Santa Cruz Plaza,TUS
+5451,1403,Sedona Center,NTH
+5452,1403,Camp Verde Commons,NTH
+5453,1403,Sonoran Office Park,PHX
+5454,1403,Santa Cruz Medical Building,TUS
+5455,1403,San Tan Valley Plaza,PHX
+5456,1403,Prescott Valley Center,NTH
+5457,1403,Chandler Commons,PHX
+5458,1404,Moore Medical Billing,PHX
+5459,1405,Derek Walker Eye Care,TUS
+5461,1407,Heather Murphy Boutique #100,TUS
+5462,1407,Heather Murphy Boutique #101,TUS
+5463,1408,Michael King Physical Therapy #100,TUS
+5464,1408,Michael King Physical Therapy #101,TUS
+5465,1409,Avondale Grill #100,PHX
+5466,1409,Avondale Grill #101,PHX
+5467,1409,Avondale Grill #102,PHX
+5468,1409,Avondale Grill #103,PHX
+5469,1409,Avondale Grill #104,PHX
+5470,1410,Melissa Miller Pediatrics #100,PHX
+5471,1410,Melissa Miller Pediatrics #101,PHX
+5489,1413,Route Street Grill,NTH
+5490,1414,Tempe Boutique #100,PHX
+5491,1414,Tempe Boutique #101,PHX
+5492,1414,Tempe Boutique #102,PHX
+5493,1414,Tempe Boutique #103,PHX
+5494,1415,Phillips & Ward Physical Therapy #100,TUS
+5495,1415,Phillips & Ward Physical Therapy #101,TUS
+5496,1416,Vail Family Dental #100,TUS
+5497,1416,Vail Family Dental #101,TUS
+5498,1416,Vail Family Dental #102,TUS
+5499,1417,Pueblo Diner #100,TUS
+5500,1417,Pueblo Diner #101,TUS
+5501,1417,Pueblo Diner #102,TUS
+5502,1417,Pueblo Diner #103,TUS
+5503,1418,Laveen Accounting #100,PHX
+5504,1418,Laveen Accounting #101,PHX
+5505,1419,Stewart & King Pharmacy,PHX
+5506,1420,Angela Lewis Insurance Agency #100,TUS
+5507,1420,Angela Lewis Insurance Agency #101,TUS
+5508,1421,Robinson Cafe #100,NTH
+5509,1421,Robinson Cafe #101,NTH
+5510,1422,Indian Street Pizzeria,PHX
+5511,1423,Ahwatukee Boutique #100,PHX
+5512,1423,Ahwatukee Boutique #101,PHX
+5513,1423,Ahwatukee Boutique #102,PHX
+5514,1423,Ahwatukee Boutique #103,PHX
+5515,1423,Ahwatukee Boutique #104,PHX
+5516,1423,Ahwatukee Boutique #105,PHX
+5517,1423,Ahwatukee Boutique #106,PHX
+5518,1424,Eric Nelson Pediatrics #100,PHX
+5519,1424,Eric Nelson Pediatrics #101,PHX
+5520,1425,Hill Medical Billing,PHX
+5521,1426,Gilbert Street Title Company,PHX
+5522,1427,Maryvale Boutique #100,PHX
+5523,1427,Maryvale Boutique #101,PHX
+5524,1428,Rogers & Johnson Diner,PHX
+5526,1430,Oro Valley Physical Therapy #100,TUS
+5527,1430,Oro Valley Physical Therapy #101,TUS
+5528,1431,Old Pueblo Taqueria #100,TUS
+5529,1431,Old Pueblo Taqueria #101,TUS
+5530,1431,Old Pueblo Taqueria #102,TUS
+5531,1431,Old Pueblo Taqueria #103,TUS
+5532,1431,Old Pueblo Taqueria #104,TUS
+5533,1431,Old Pueblo Taqueria #105,TUS
+5534,1431,Old Pueblo Taqueria #106,TUS
+5535,1432,Val Street Accounting #100,PHX
+5536,1432,Val Street Accounting #101,PHX
+5537,1433,Collins & Lee Family Dental,PHX
+5538,1434,Sonoran Boutique,PHX
+5541,1436,Warner Street Pharmacy,PHX
+5542,1437,Rincon Pizzeria #100,TUS
+5543,1437,Rincon Pizzeria #101,TUS
+5544,1437,Rincon Pizzeria #102,TUS
+5545,1438,Elliot Street Furniture #100,PHX
+5546,1438,Elliot Street Furniture #101,PHX
+5547,1439,Turner & Campbell Insurance Agency #100,TUS
+5548,1439,Turner & Campbell Insurance Agency #101,TUS
+5549,1440,Brittany Campbell Furniture #100,TUS
+5550,1440,Brittany Campbell Furniture #101,TUS
+5551,1441,Stewart & Evans Bistro #100,PHX
+5552,1441,Stewart & Evans Bistro #101,PHX
+5553,1442,Walker Boutique #100,NTH
+5554,1442,Walker Boutique #101,NTH
+5555,1443,Young Pizzeria,PHX
+5556,1444,University Street Furniture,PHX
+5557,1445,Ward & Parker Florist,NTH
+5558,1446,Harris Eye Care,PHX
+5559,1447,Prescott Valley Taqueria,NTH
+5560,1448,Cook & Green Cafe,PHX
+5561,1449,Cottonwood Street Pizzeria,NTH
+5562,1450,Arcadia Pharmacy #100,PHX
+5563,1450,Arcadia Pharmacy #101,PHX
+5564,1450,Arcadia Pharmacy #102,PHX
+5565,1450,Arcadia Pharmacy #103,PHX
+5566,1450,Arcadia Pharmacy #104,PHX
+5567,1450,Arcadia Pharmacy #105,PHX
+5568,1450,Arcadia Pharmacy #106,PHX
+5569,1450,Arcadia Pharmacy #107,PHX
+5570,1451,Brown & Wilson Architects,NTH
+5571,1452,Nate Young Medical Billing #100,NTH
+5572,1452,Nate Young Medical Billing #101,NTH
+5573,1453,Scott Diner,TUS
+5574,1454,Moore & Young Bistro,PHX
+5575,1455,Gilbert Street Liquor,PHX
+5576,1456,Casas Adobes Chiropractic #100,TUS
+5577,1456,Casas Adobes Chiropractic #101,TUS
+5578,1456,Casas Adobes Chiropractic #102,TUS
+5579,1456,Casas Adobes Chiropractic #103,TUS
+5580,1456,Casas Adobes Chiropractic #104,TUS
+5581,1456,Casas Adobes Chiropractic #105,TUS
+5582,1456,Casas Adobes Chiropractic #106,TUS
+5583,1456,Casas Adobes Chiropractic #107,TUS
+5584,1457,Fourth Street Pizzeria,NTH
+5585,1458,Kelly Chiropractic,PHX
+5586,1459,Angela Bailey Veterinary Clinic,TUS
+5587,1460,Tanque Verde Eye Care #100,TUS
+5588,1460,Tanque Verde Eye Care #101,TUS
+5589,1461,David Hill Hardware,PHX
+5591,1463,Carter Boutique #100,NTH
+5592,1463,Carter Boutique #101,NTH
+5601,1465,Ponderosa Family Dental,NTH
+5602,1466,Price & Campbell Hardware #100,NTH
+5603,1466,Price & Campbell Hardware #101,NTH
+5604,1467,Queen Creek Pharmacy #100,PHX
+5605,1467,Queen Creek Pharmacy #101,PHX
+5606,1467,Queen Creek Pharmacy #102,PHX
+5609,1469,Murphy Eye Care #100,TUS
+5610,1469,Murphy Eye Care #101,TUS
+5611,1470,Jackson & Edwards Diner,TUS
+5612,1471,Johnson & Young Veterinary Clinic #100,PHX
+5613,1471,Johnson & Young Veterinary Clinic #101,PHX
+5614,1472,Baseline Street Physical Therapy,PHX
+5615,1473,Luis Hall Chiropractic,PHX
+5616,1474,Anderson Architects #100,PHX
+5617,1474,Anderson Architects #101,PHX
+5618,1475,Mogollon Rim Law Offices,NTH
+5619,1476,Pueblo Family Dental #100,TUS
+5620,1476,Pueblo Family Dental #101,TUS
+5621,1477,Gilbert Street Hardware,PHX
+5622,1478,Jackson Grill,PHX
+5623,1479,Scott Hardware #100,TUS
+5624,1479,Scott Hardware #101,TUS
+5625,1480,Gilbert Street Diner #100,PHX
+5626,1480,Gilbert Street Diner #101,PHX
+5627,1481,Pueblo Furniture #100,TUS
+5628,1481,Pueblo Furniture #101,TUS
+5629,1482,Shauna Anderson Engineering #100,TUS
+5630,1482,Shauna Anderson Engineering #101,TUS
+5631,1483,Glendale Plaza,PHX
+5632,1483,Peoria Center,PHX
+5633,1483,Papago Commons,PHX
+5634,1483,Peoria Office Park,PHX
+5635,1483,Goodyear Medical Building,PHX
+5636,1483,Rita Ranch Plaza,TUS
+5637,1483,Ahwatukee Center,PHX
+5638,1483,Pueblo Commons,TUS
+5639,1483,Desert Ridge Office Park,PHX
+5640,1483,Gilbert Medical Building,PHX
+5641,1483,Sedona Plaza,NTH
+5642,1483,Coconino Center,NTH
+5643,1483,Cottonwood Commons,NTH
+5644,1483,Prescott Valley Office Park,NTH
+5645,1483,Chandler Medical Building,PHX
+5646,1483,Williams Plaza,NTH
+5647,1483,Sabino Center,TUS
+5648,1483,Gilbert Commons,PHX
+5649,1483,Casas Adobes Office Park,TUS
+5650,1484,Rincon Diner,TUS
+5651,1485,Megan Murphy Law Offices,NTH
+5652,1486,Collins Bistro #100,NTH
+5653,1486,Collins Bistro #101,NTH
+5654,1487,Camelback Street Engineering,PHX
+5655,1488,Paradise Valley Plaza,PHX
+5656,1488,Green Valley Center,TUS
+5657,1488,Glendale Commons,PHX
+5658,1488,Rincon Office Park,TUS
+5659,1488,Sonoran Medical Building,PHX
+5660,1488,Vail Plaza,TUS
+5661,1488,Tanque Verde Center,TUS
+5662,1488,Paradise Valley Commons,PHX
+5663,1488,Sedona Office Park,NTH
+5664,1488,Kachina Village Medical Building,NTH
+5665,1488,Estrella Plaza,PHX
+5666,1488,San Francisco Peaks Center,NTH
+5667,1488,Rita Ranch Commons,TUS
+5668,1488,Fountain Hills Office Park,PHX
+5669,1488,Williams Medical Building,NTH
+5670,1488,Tempe Plaza,PHX
+5671,1488,Peoria Center,PHX
+5672,1489,Rogers & Rogers Furniture #100,PHX
+5673,1489,Rogers & Rogers Furniture #101,PHX
+5674,1490,Estrella Appliance #100,PHX
+5675,1490,Estrella Appliance #101,PHX
+5676,1490,Estrella Appliance #102,PHX
+5677,1490,Estrella Appliance #103,PHX
+5678,1490,Estrella Appliance #104,PHX
+5679,1491,Wilson & Campbell Insurance Agency #100,PHX
+5680,1491,Wilson & Campbell Insurance Agency #101,PHX
+5681,1492,Cottonwood Veterinary Clinic #100,NTH
+5682,1492,Cottonwood Veterinary Clinic #101,NTH
+5683,1492,Cottonwood Veterinary Clinic #102,NTH
+5684,1492,Cottonwood Veterinary Clinic #103,NTH
+5685,1492,Cottonwood Veterinary Clinic #104,NTH
+5686,1492,Cottonwood Veterinary Clinic #105,NTH
+5687,1493,Eric Stewart Grill,NTH
+5688,1494,Saguaro Liquor #100,PHX
+5689,1494,Saguaro Liquor #101,PHX
+5690,1495,Garcia & Cook Accounting,PHX
+5691,1496,Patricia Hall Pharmacy #100,PHX
+5692,1496,Patricia Hall Pharmacy #101,PHX
