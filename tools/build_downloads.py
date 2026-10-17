@@ -84,10 +84,10 @@ def worksheet(item: dict, path: Path, checked: str) -> None:
 
 def flow_text(site: Path, name: str) -> str:
     """A flow diagram partial's text version (the "As text:" part of its comment), for readers who get text."""
-    html = (site / "src/_includes/partials" / f"{name}-flow.njk").read_text()
+    html = (site / "src/_includes/partials" / f"{name}.njk").read_text()
     text = re.search(r"As text[^:]*:\n(.*?)\n-#\}", html, flags=re.S)
     if not text:
-        raise ValueError(f"{name}-flow.njk has no 'As text:' version")
+        raise ValueError(f"{name}.njk has no 'As text:' version")
     return text.group(1).strip()
 
 
@@ -105,7 +105,7 @@ def page_markdown(page: str, item: dict, instructions: str, repo: str, site: Pat
         lambda m: (ROOT / m.group(1) / f"{m.group(2)}.md").read_text().strip(),
         body,
     )
-    body = re.sub(r'\{% include "partials/([\w-]+)-flow\.njk" %\}', lambda m: flow_text(site, m.group(1)), body)
+    body = re.sub(r'\{% include "partials/([\w-]+)\.njk" %\}', lambda m: flow_text(site, m.group(1)), body)
     body = body.replace("{{ playbooks.repo }}", repo)
     body = re.sub(r"</?details>|<summary>.*?</summary>", "", body)
     body = body.replace("](/", "](https://pathmode.com/").replace('="/', '="https://pathmode.com/')
