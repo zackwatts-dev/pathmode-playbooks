@@ -7,14 +7,14 @@ Summit has bought Rimview Mechanical, a small Flagstaff contractor. Rimview's cu
 ## What it does
 
 1. **The AI reads each ticket and copies out what it says, exactly as written:** the location (name and address); each unit mentioned (kind, its number in the tag, make, model, serial, year, refrigerant); work done, and whether it was done per a quote; work recommended, with the quoted amount; and any service agreement (visits a year, annual price, renewal date). It doesn't correct, guess or merge.
-2. **Code checks every value it copied is in the ticket.** A value that isn't is dropped, and a person is told.
+2. **Code checks every value it copied is in the ticket,** including the install year, the refrigerant, the unit's tag and the visits a year. A value that isn't is dropped, and a person is told.
 3. **Code does the rest:**
-   - groups tickets into locations: by address (allowing for a typo), or, for tickets without one, by name when only one location fits;
-   - matches each location to Summit's records: the site by address (or by name, if it never had an address), the customer by the site or by name;
-   - merges each unit's mentions into one record, catching mistyped serial numbers (Summit's own record settles which is right, where it has one) and units that were replaced;
+   - groups tickets into locations: by address (allowing for a typo; the same street address in another town is another place, and a person is told), or, for tickets without one, by name when only one location fits;
+   - matches each location to Summit's records: the site by address and town (or by name, if it never had an address), the customer by the site or by name. Where one side has no town and Summit has that street address in two towns, a person says which;
+   - merges each unit's mentions into one record, catching mistyped serial numbers on the same tag (Summit's own record settles which is right, where it has one) and units that were replaced. Units installed together often have serials one apart, so a near serial on another tag is another unit, and one that could be either of two units goes to a person;
    - works out the commitments: the latest agreement at each location, and quoted work with no later ticket saying it was done per the quote.
 4. **Anything code can't decide goes to a person:** a ticket that could belong to two locations, a serial written two ways equally often, a location that doesn't match any Summit customer.
-5. **Outputs ready to import** once the review list is cleared: locations, equipment, agreements and open quotes. And a dashboard.
+5. **Outputs ready to import** once the review list is cleared: locations, equipment, agreements and open quotes, each row marked ready or with the review items it waits on. And a dashboard.
 
 ## Inputs
 

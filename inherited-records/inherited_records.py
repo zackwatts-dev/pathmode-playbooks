@@ -12,8 +12,8 @@ The AI reads; code decides.
 - Anything code can't decide (a ticket that could be two places, a serial written two ways, a location it can't
   tie to a customer) goes to a person.
 
-Writes out/merge/locations.csv, equipment.csv, agreements.csv and open-quotes.csv (ready to import once a person
-has cleared the review list), out/review.csv, out/dashboard.html and, with the sample, out/score.md.
+Writes out/merge/locations.csv, equipment.csv, agreements.csv and open-quotes.csv (each row ready, or marked with
+the review items it waits on), out/review.csv, out/dashboard.html and, with the sample, out/score.md.
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common.evidence import quote_found  # noqa: E402
+from common.evidence import quote_found, value_in_quote  # noqa: E402
 from common.util import BadAnswer, done, model_for, parse_json, parser, read_csv, write_csv, write_text  # noqa: E402
 
 HERE = Path(__file__).parent
@@ -46,6 +46,10 @@ DATE_FORMATS = ("%m/%d/%y", "%m/%d/%Y", "%Y-%m-%d", "%b %d %Y", "%d-%b-%y")
 SUFFIX = {"street": "st", "st": "st", "road": "rd", "rd": "rd", "avenue": "ave", "ave": "ave", "boulevard": "blvd",
           "blvd": "blvd", "drive": "dr", "dr": "dr"}  # fmt: skip
 NAME_NOISE = {"the", "store", "inc", "llc", "family", "company", "grill", "kitchens", "accounting", "co"}
+TAG_WORDS = {"rtu": ("rtu", "unit"), "split": ("ac", "split", "unit"), "boiler": ("boiler",),
+             "walkin": ("walkin", "wic"), "reachin": ("reachin", "ri")}  # fmt: skip
+# How tickets say how often: "quarterly" is 4 visits a year. Plain "annual" isn't here: it's said of the price too.
+VISIT_WORDS = {"monthly": 12, "quarterly": 4, "semi annual": 2, "semiannual": 2, "twice a year": 2, "once a year": 1}
 
 READ = (
     """You read one job ticket from a small HVAC contractor's old system. Copy out what it says, exactly as
@@ -102,6 +106,14 @@ def addr_key(number, street) -> str | None:
     return f"{str(number).strip()} {' '.join(words)}"
 
 
+def town_key(town) -> str | None:
+    """A town, normalized: case, punctuation, a state and a ZIP code don't count."""
+    words = [w for w in re.sub(r"[^a-z0-9 ]", " ", str(town or "").lower()).split() if not w.isdigit()]
+    if len(words) > 1 and words[-1] == "az":
+        words = words[:-1]
+    return " ".join(words) or None
+
+
 def same_address(a: str, b: str) -> bool:
     """The same street number, and street names that differ by no more than a typo."""
     na, _, sa = a.partition(" ")
@@ -133,15 +145,18 @@ class Records:
     customers: dict[str, dict]
     sites: dict[str, dict]
     by_addr: dict[str, list[str]]
+    towns: dict[str, str | None]  # site -> its town, normalized
     equipment: dict[str, list[dict]]
     makes: list[str]
 
     @classmethod
     def load(cls, folder: Path) -> Records:
         sites = {r["Site ID"]: r for r in read_csv(folder / "summit-sites.csv")}
-        by_addr = defaultdict(list)
+        by_addr, towns = defaultdict(list), {}
         for sid, s in sites.items():
-            m = re.match(r"(\d+) (.*)", s["Address"].split(",")[0])
+            street, _, town = s["Address"].partition(",")
+            towns[sid] = town_key(town)
+            m = re.match(r"(\d+) (.*)", street)
             if m:
                 by_addr[addr_key(m.group(1), m.group(2))].append(sid)
         equipment = defaultdict(list)
@@ -149,7 +164,12 @@ class Records:
             equipment[e["Site ID"]].append(e)
         makes = sorted({e["Make"] for es in equipment.values() for e in es})
         return cls(
-            {r["Customer ID"]: r for r in read_csv(folder / "summit-customers.csv")}, sites, by_addr, equipment, makes
+            {r["Customer ID"]: r for r in read_csv(folder / "summit-customers.csv")},
+            sites,
+            by_addr,
+            towns,
+            equipment,
+            makes,
         )
 
     def make(self, written) -> str | None:
@@ -185,9 +205,7 @@ def read_ticket(t: Ticket, model) -> None:
         raw = model.complete(READ, prompt, max_tokens=1200)
         if raw.count('"location"') > 1:
             raise BadAnswer("the AI gave two different readings; a person reads this one")
-        a = parse_json(raw)
-        if not isinstance(a, dict) or not isinstance(a.get("location"), dict):
-            raise BadAnswer("no location")
+        a = validated(parse_json(raw))
     except Exception as e:  # noqa: BLE001
         t.problems.append(f"couldn't read it: {e}"[:160])
         return
@@ -195,31 +213,94 @@ def read_ticket(t: Ticket, model) -> None:
     check(t, text)
 
 
+# Each list the AI answers with, and the type of each field in it. Text may come back as a number (a serial).
+SHAPE = {
+    "location": {"name": "text", "street_number": "text", "street": "text", "town": "text"},
+    "units": {"family": "text", "number": "int", "make": "text", "model": "text", "serial": "text",
+              "install_year": "int", "refrigerant": "text"},
+    "work_done": {"family": "text", "number": "int", "work": "text", "per_quote": "bool"},
+    "recommended": {"family": "text", "number": "int", "work": "text", "quoted": "text", "evidence": "text"},
+    "agreement": {"visits_per_year": "int", "price": "text", "renews": "text", "evidence": "text"},
+}  # fmt: skip
+
+
+def validated(a) -> dict:
+    """The whole answer's shape, checked once, as it arrives and before anything uses it. A list that came back null
+    is empty; anything else of the wrong shape or type is a bad answer, and the ticket goes to a person."""
+    if not isinstance(a, dict) or not isinstance(a.get("location"), dict):
+        raise BadAnswer("no location")
+    if a.get("agreement") is not None and not isinstance(a["agreement"], dict):
+        raise BadAnswer("the agreement isn't an object")
+    for key in ("units", "work_done", "recommended"):
+        a[key] = [] if a.get(key) is None else a[key]
+        if not isinstance(a[key], list) or not all(isinstance(x, dict) for x in a[key]):
+            raise BadAnswer(f"{key} isn't a list of objects")
+    for key, fields in SHAPE.items():
+        items = a[key] if isinstance(a.get(key), list) else [a[key]] if a.get(key) else []
+        for x in items:
+            for f, kind in fields.items():
+                x[f] = typed(x.get(f), kind, f"{key} {f}")
+    return a
+
+
+def typed(v, kind: str, what: str):
+    if v is None:
+        return None
+    if kind == "text" and isinstance(v, str | int | float) and not isinstance(v, bool):
+        return str(v)
+    if kind == "int" and isinstance(v, int) and not isinstance(v, bool):
+        return v
+    if kind == "bool" and isinstance(v, bool):
+        return v
+    raise BadAnswer(f"{what} isn't {'a number' if kind == 'int' else 'true or false' if kind == 'bool' else 'text'}")
+
+
+def tag_in(family: str, number: int, text: str) -> bool:
+    """The unit's tag is in the ticket: RTU-2, "rtu #2", "AC 1", "unit 2"."""
+    return any(value_in_quote(f"{w}{number}", text) for w in TAG_WORDS.get(family, ()))
+
+
+def visits_in(n: int, quote: str) -> bool:
+    """The visits a year are in the agreement's words: as a number ("4 visits") or a word ("quarterly")."""
+    words = " ".join(re.findall(r"[a-z0-9]+", quote.lower()))
+    return value_in_quote(n, quote) or any(re.search(rf"\b{w}\b", words) and v == n for w, v in VISIT_WORDS.items())
+
+
 def check(t: Ticket, text: str) -> None:
     """Every value the AI copied must be in the ticket. A value that isn't is dropped, and a person is told."""
     flat = squash(text)
     a = t.read
     units = []
-    for u in a.get("units") or []:
-        if not isinstance(u, dict) or u.get("family") not in FAMILIES:
-            t.problems.append(f"a unit with an unknown kind ({u.get('family') if isinstance(u, dict) else u})")
+    for u in a["units"]:
+        if u.get("family") not in FAMILIES:
+            t.problems.append(f"a unit with an unknown kind ({u.get('family')})")
             continue
         for f in ("serial", "model", "make"):
             if u.get(f) and squash(u[f]) not in flat:
                 t.problems.append(f"{f} {u[f]} isn't in the ticket")
                 u[f] = None
+        for f in ("install_year", "refrigerant"):  # R-22 or not decides what a repair costs
+            if u.get(f) is not None and not value_in_quote(u[f], text):
+                t.problems.append(f"{f.replace('_', ' ')} {u[f]} isn't in the ticket")
+                u[f] = None
+        if u.get("number") is not None and not tag_in(u["family"], u["number"], text):
+            t.problems.append(f"unit {u['family']} {u['number']} isn't in the ticket; a person says which unit")
+            continue  # without its tag, a mention could land on the wrong unit
         units.append(u)
     a["units"] = units
     for key in ("work_done", "recommended"):
         kept = []
-        for w in a.get(key) or []:
-            if isinstance(w, dict) and w.get("work") in ("maintenance", "other") and not w.get("family"):
+        for w in a[key]:
+            if w.get("work") in ("maintenance", "other") and not w.get("family"):
                 continue  # routine work on no unit in particular: nothing to record
-            if not isinstance(w, dict) or w.get("work") not in WORK or w.get("family") not in FAMILIES:
+            if w.get("work") not in WORK or w.get("family") not in FAMILIES:
                 t.problems.append(f"{key.replace('_', ' ')} not in the agreed list ({w})"[:160])
                 continue
+            if w.get("number") is not None and not tag_in(w["family"], w["number"], text):
+                t.problems.append(f"{key.replace('_', ' ')} on {w['family']} {w['number']}, which isn't in the ticket")
+                continue
             if key == "recommended":
-                if not quote_found(str(w.get("evidence", "")), text, min_words=2):
+                if not quote_found(str(w.get("evidence") or ""), text, min_words=2):
                     t.problems.append("a recommendation's evidence isn't in the ticket")
                     continue
                 if w.get("quoted") and squash(w["quoted"]) not in flat:
@@ -229,12 +310,16 @@ def check(t: Ticket, text: str) -> None:
         a[key] = kept
     ag = a.get("agreement")
     if ag:
-        ok = isinstance(ag, dict) and quote_found(str(ag.get("evidence", "")), text, min_words=2)
+        evidence = str(ag.get("evidence") or "")
+        ok = quote_found(evidence, text, min_words=2)
         for f in ("price", "renews"):
             ok = ok and bool(ag.get(f)) and squash(ag[f]) in flat
         if not ok:
             t.problems.append("an agreement whose terms aren't all in the ticket")
             a["agreement"] = None
+        elif ag.get("visits_per_year") is not None and not visits_in(ag["visits_per_year"], evidence):
+            t.problems.append(f"{ag['visits_per_year']} visits a year isn't in the agreement's words")
+            ag["visits_per_year"] = None
 
 
 # --- code: locations ----------------------------------------------------------------------------------------------
@@ -244,6 +329,7 @@ def check(t: Ticket, text: str) -> None:
 class Location:
     id: str
     addresses: Counter = field(default_factory=Counter)
+    towns: Counter = field(default_factory=Counter)  # normalized
     names: Counter = field(default_factory=Counter)  # normalized, for matching
     labels: Counter = field(default_factory=Counter)  # as written, for people
     tickets: list[Ticket] = field(default_factory=list)
@@ -251,17 +337,32 @@ class Location:
     customer: str | None = None
     how: str = ""
     problems: list[str] = field(default_factory=list)
+    status: str = ""  # ready, or which review items to settle first
 
     @property
     def name(self) -> str:
         top = self.labels or self.names
         return top.most_common(1)[0][0] if top else ""
 
+    @property
+    def town(self) -> str | None:
+        return self.towns.most_common(1)[0][0] if self.towns else None
+
+
+def at_address(locs: list[Location], key: str, town: str | None, nk: str) -> tuple[list[Location], list[Location]]:
+    """The locations a ticket's address fits, and every location on that street address. The same street address
+    in another town is another place; with no town written, the name, then an exact address, decides."""
+    here = [p for p in locs if any(same_address(k, key) for k in p.addresses)]
+    fits = [p for p in here if not town or not p.towns or town in p.towns]
+    for narrower in ([p for p in fits if nk and nk in p.names], [p for p in fits if key in p.addresses]):
+        if len(fits) > 1 and narrower:
+            fits = narrower
+    return fits, here
+
 
 def group(tickets: list[Ticket], review: list[dict]) -> list[Location]:
     """Tickets with an address group by it. Tickets without one join the location they name, if only one fits."""
     locs: list[Location] = []
-    by_addr: dict[str, Location] = {}
     later = []
     for t in tickets:
         if not t.read:
@@ -271,21 +372,31 @@ def group(tickets: list[Ticket], review: list[dict]) -> list[Location]:
         if not key:
             later.append(t)
             continue
-        if key not in by_addr:
-            like = next((k for k in by_addr if same_address(k, key)), None)
-            if like:
-                by_addr[key] = by_addr[like]
-            else:
-                by_addr[key] = Location(f"R{len(locs) + 1:02d}")
-                locs.append(by_addr[key])
-        place = by_addr[key]
+        town, nk = town_key(loc.get("town")), name_key(loc.get("name"))
+        fits, here = at_address(locs, key, town, nk)
+        if len(fits) > 1:
+            t.problems.append("could be any of " + ", ".join(f"{p.id} ({p.name}, {p.town or 'no town'})" for p in fits))
+            review.append({"what": "ticket", "which": t.id, "why": t.problems[-1], "ticket": t.row["Location"]})
+            continue
+        if fits:
+            place = fits[0]
+        else:
+            place = Location(f"R{len(locs) + 1:02d}")
+            locs.append(place)
+            if here:  # same street address, another town: a different place, or the town written wrong
+                place.problems.append(
+                    f"same street address as {', '.join(f'{p.id} ({p.name}, {p.town})' for p in here)} but in "
+                    f"{town}: a person confirms it's a different place"
+                )
         place.addresses[key] += 1
-        if name_key(loc.get("name")):
-            place.names[name_key(loc.get("name"))] += 1
+        if town:
+            place.towns[town] += 1
+        if nk:
+            place.names[nk] += 1
         place.tickets.append(t)
         place.labels[str(loc.get("name") or "").strip()] += bool(loc.get("name"))
     for t in later:
-        nk = name_key(t.read["location"].get("name"))
+        nk, town = name_key(t.read["location"].get("name")), town_key(t.read["location"].get("town"))
         fits = [p for p in locs if nk in p.names]
         if not fits:
             words = set(nk.split())
@@ -294,14 +405,19 @@ def group(tickets: list[Ticket], review: list[dict]) -> list[Location]:
                 for p in locs
                 if any(words and n and (words <= set(n.split()) or set(n.split()) <= words) for n in p.names)
             ]
+        fits = [p for p in fits if not town or not p.towns or town in p.towns]  # the same name in another town
         label = str(t.read["location"].get("name") or "").strip()
         if len(fits) == 1:
             fits[0].tickets.append(t)
             fits[0].names[nk] += 1
             fits[0].labels[label] += 1
+            if town:
+                fits[0].towns[town] += 1
         elif not fits:
             place = Location(f"R{len(locs) + 1:02d}")
             place.names[nk] += 1
+            if town:
+                place.towns[town] += 1
             place.labels[label] += 1
             place.tickets.append(t)
             locs.append(place)
@@ -318,17 +434,33 @@ def match(p: Location, rec: Records) -> None:
     """Tie a location to your records: the site by its address; the customer by the site, or by name."""
     if p.addresses:
         key = p.addresses.most_common(1)[0][0]
-        found = rec.by_addr.get(key) or [s for k, ss in rec.by_addr.items() if same_address(k, key) for s in ss]
+        on_street = rec.by_addr.get(key) or [s for k, ss in rec.by_addr.items() if same_address(k, key) for s in ss]
+        found = [s for s in on_street if not p.town or not rec.towns[s] or rec.towns[s] == p.town]
         if len(found) > 1:
             found = [s for s in found if name_key(rec.sites[s]["Site"]) in p.names] or found
         if len(found) == 1:
-            p.site = found[0]
-            p.customer = rec.sites[found[0]]["Customer ID"]
+            sid = found[0]
+            elsewhere = [s for s in on_street if rec.towns[s] != rec.towns[sid]]
+            if elsewhere and not (p.town and rec.towns[sid]):  # no town on one side to tell them apart
+                p.problems.append(
+                    f"its address is your site {sid} ({rec.towns[sid] or 'no town'}) and also "
+                    + ", ".join(f"{s} ({rec.towns[s] or 'no town'})" for s in elsewhere)
+                    + "; a person says which"
+                )
+                return
+            p.site = sid
+            p.customer = rec.sites[sid]["Customer ID"]
             p.how = "site, by address"
             return
         if len(found) > 1:
             p.problems.append("its address matches several of your sites")
             return
+        if on_street:  # your site with this street address is in another town
+            p.problems.append(
+                "your site "
+                + ", ".join(f"{s} ({rec.towns[s]})" for s in on_street)
+                + f" has this street address in another town than {p.town}; a person confirms it's a different place"
+            )
     by_name = [sid for sid, x in rec.sites.items() if name_key(x["Site"]) in p.names]
     if not p.addresses and len(by_name) == 1:  # never written with an address, but named like one of your sites
         p.site, p.customer, p.how = by_name[0], rec.sites[by_name[0]]["Customer ID"], "site, by name (no address given)"
@@ -363,10 +495,34 @@ class Unit:
     summit: str | None = None
     corrected: bool = False
     problems: list[str] = field(default_factory=list)
+    tickets: set[str] = field(default_factory=set)  # the tickets that mention it
+    status: str = ""
 
     @property
     def tag(self) -> tuple[str, int]:
         return self.family, self.number or 1
+
+
+def by_serial(units: list[Unit], family: str, number: int | None, serial: str) -> tuple[Unit | None, list[Unit]]:
+    """The unit a written serial belongs to, and the units it might be if that's unclear.
+
+    The same serial is the same unit, even written on another tag (a person is told). A serial one mistyping away
+    is the same unit only on the same tag, or where one side has no number: units installed together often have
+    serials one apart, and RTU-1 and RTU-2 are two units however alike their serials look."""
+    same = [x for x in units if x.family == family and serial in x.serials]
+    if same:
+        u = same[-1]
+        if number is not None and u.number is not None and number != u.number:
+            u.problems.append(f"serial {serial} is written on both {family} {u.number} and {family} {number}")
+        return u, []
+    close = [
+        x
+        for x in units
+        if x.family == family
+        and (number is None or x.number is None or x.number == number)
+        and any(near(serial, s) for s in x.serials)
+    ]
+    return (close[0], []) if len(close) == 1 else (None, close)
 
 
 def units_at(p: Location, rec: Records) -> list[Unit]:
@@ -379,12 +535,8 @@ def units_at(p: Location, rec: Records) -> list[Unit]:
         for m in t.read.get("units", []):
             tag = (m["family"], m.get("number") or 1)
             serial = squash(m.get("serial"))
-            u = None
-            if serial:
-                u = next(
-                    (x for x in units if x.family == m["family"] and any(near(serial, s) for s in x.serials)), None
-                )
-            if u is None:
+            u, unsure = by_serial(units, m["family"], m.get("number"), serial) if serial else (None, [])
+            if u is None and not unsure:
                 live = [x for x in units if x.tag == tag and not x.replaced_on]
                 if not serial:
                     u = live[-1] if live else None
@@ -392,6 +544,14 @@ def units_at(p: Location, rec: Records) -> list[Unit]:
                     u = live[-1]
             if u is None:
                 u = Unit(p.id, m["family"], m.get("number"), first=t.when)
+                if unsure:  # kept as its own unit, never dropped, until a person says
+                    u.problems.append(
+                        f"serial {serial} is one mistyping from "
+                        + " and from ".join(
+                            f"{x.family} {x.number or ''} ({x.serials.most_common(1)[0][0]})" for x in unsure
+                        )
+                        + ": a person says which it is, or that it's another unit"
+                    )
                 if serial:  # a new serial on a tag that already has one: replaced, or a question for a person
                     for old in (x for x in units if x.tag == tag and not x.replaced_on and x.serials):
                         if any(old.first and d and d >= old.first for d in replaced.get(tag, [])):
@@ -401,6 +561,7 @@ def units_at(p: Location, rec: Records) -> list[Unit]:
                 units.append(u)
             if serial:
                 u.serials[serial] += 1
+            u.tickets.add(t.id)
             if m.get("make"):
                 u.makes[rec.make(m["make"])] += 1
             if m.get("model"):
@@ -436,13 +597,16 @@ def promises(p: Location, units: list[Unit]) -> tuple[dict | None, list[dict]]:
     for t in sorted(p.tickets, key=lambda t: t.when or date.min):
         if t.read.get("agreement"):
             a = t.read["agreement"]
+            before = agreement or {}
             agreement = {
                 "location": p.id,
                 # a renewal may not restate the visits
-                "visits a year": a.get("visits_per_year") or (agreement or {}).get("visits a year"),
+                "visits a year": a.get("visits_per_year") or before.get("visits a year"),
                 "annual price": money(a["price"]),
                 "renews": parse_date(a["renews"]),
                 "ticket": t.id,
+                # the tickets its terms come from, so what's in question about them follows it
+                "sources": [t.id] if a.get("visits_per_year") else before.get("sources", []) + [t.id],
             }
         for w in t.read.get("recommended", []):
             recs.append((t, w))
@@ -503,6 +667,9 @@ def process(folder: Path, model) -> Result:
         for p in t.problems:
             review.append({"what": "ticket", "which": t.id, "why": p, "ticket": t.row["Location"]})
     locs = group(tickets, review)
+    of_ticket = defaultdict(list)  # ticket -> its review items (an item is its row number in review.csv)
+    for i, x in enumerate(review, 1):
+        of_ticket[x["which"]].append(i)
     units, agreements, open_quotes = [], [], []
     for p in locs:
         match(p, rec)
@@ -511,18 +678,39 @@ def process(folder: Path, model) -> Result:
         units += us
         agreements += [a] if a else []
         open_quotes += o
-        review += [{"what": "location", "which": p.id, "why": x, "ticket": p.name} for x in p.problems]
-        review += [
-            {"what": "open quote", "which": f"{p.id} {q['ticket']}", "why": q["check"], "ticket": p.name}
-            for q in o
+        mine = ask(review, [{"what": "location", "which": p.id, "why": x, "ticket": p.name} for x in p.problems])
+        p.status = status(mine + [i for t in p.tickets for i in of_ticket[t.id]])
+        quote_items = [
+            ask(review, [{"what": "open quote", "which": f"{p.id} {q['ticket']}", "why": q["check"], "ticket": p.name}])
             if q["check"]
+            else []
+            for q in o
         ]
-        review += [
-            {"what": "unit", "which": f"{p.id} {u.family} {u.number or ''}".strip(), "why": x, "ticket": p.name}
-            for u in us
-            for x in u.problems
-        ]
+        of_serial = defaultdict(list)
+        for u in us:
+            which = f"{p.id} {u.family} {u.number or ''}".strip()
+            mine = ask(review, [{"what": "unit", "which": which, "why": x, "ticket": p.name} for x in u.problems])
+            u.status = status(mine + [i for t in sorted(u.tickets) for i in of_ticket[t]])
+            of_serial[u.serial] += mine
+        for q, mine in zip(o, quote_items, strict=True):
+            q["status"] = status(mine + of_ticket[q["ticket"]] + (of_serial[q["serial"]] if q["serial"] else []))
+        if a:
+            a["status"] = status([i for t in a["sources"] for i in of_ticket[t]])
+    for i, x in enumerate(review, 1):
+        x["item"] = i
     return Result(tickets, locs, units, agreements, open_quotes, review)
+
+
+def ask(review: list[dict], items: list[dict]) -> list[int]:
+    """Put items on the review list; their numbers, for the rows that wait on them."""
+    review += items
+    return list(range(len(review) - len(items) + 1, len(review) + 1))
+
+
+def status(items: list[int]) -> str:
+    """A merge row is ready, or waits on the review items that are about it."""
+    items = sorted(set(items))
+    return "needs review: item " + ", ".join(map(str, items)) if items else "ready"
 
 
 def score(r: Result, folder: Path) -> dict:
@@ -536,11 +724,18 @@ def score(r: Result, folder: Path) -> dict:
             votes[t.location][truth_t[t.id]] += 1
     to_truth = {p: c.most_common(1)[0][0] for p, c in votes.items()}
     grouped = sum(1 for t in r.tickets if t.location and to_truth[t.location] == truth_t[t.id])
-    ok_loc, asked, rows_loc = 0, 0, []
+    ok_loc, asked, split, rows_loc = 0, 0, 0, []
+    biggest = {}  # each true location's biggest found location; any other is a split, not a right answer
+    for p in sorted(r.locations, key=lambda p: -len(p.tickets)):
+        biggest.setdefault(to_truth[p.id], p.id)
     for p in r.locations:
         k = truth_l[to_truth[p.id]]
         site_ok = (p.site or "NEW") == k["Summit site"]
         cust_ok = (p.customer or "NEW") == k["Summit customer"]
+        if biggest[to_truth[p.id]] != p.id:
+            split += bool(p.problems)
+            rows_loc.append((p.id, to_truth[p.id], k["Kind"], False, False))
+            continue
         to_person = site_ok and not p.customer and bool(p.problems)  # unsure, and said so
         ok_loc += site_ok and cust_ok
         asked += to_person and not cust_ok
@@ -587,7 +782,9 @@ def score(r: Result, folder: Path) -> dict:
         f"- Tickets grouped into the right location: {grouped} of {len(truth_t)} ({len(r.locations)} locations found; "
         f"there are {len(truth_l)}).",
         f"- Locations matched to your records: {ok_loc} of {len(r.locations)} right, {asked} sent to a person (their "
-        f"customer is someone you know under another name), {len(r.locations) - ok_loc - asked} wrong.",
+        f"customer is someone you know under another name)"
+        + (f", {split} a second location for a place already found, sent to a person" if split else "")
+        + f", {len(r.locations) - ok_loc - asked - split} wrong.",
         f"- Units with the right serial, match and status: {unit_ok} of {len(truth_u)}; {flagged_u} more sent to a "
         f"person; {len(truth_u) - unit_ok - flagged_u} missed or wrong ({extra_u} extra).",
         f"- Agreements with the right terms: {ag_ok} of {len(truth_a)} ({len(r.agreements)} found).",
@@ -598,6 +795,7 @@ def score(r: Result, folder: Path) -> dict:
         "tickets": len(truth_t),
         "loc_ok": ok_loc,
         "loc_asked": asked,
+        "loc_split": split,
         "locs": len(r.locations),
         "true_locs": len(truth_l),
         "unit_ok": unit_ok,
@@ -630,12 +828,14 @@ def run(folder: Path, model, out: Path, answer_key: bool = True):
                     "address": p.addresses.most_common(1)[0][0] if p.addresses else "",
                     "tickets": len(p.tickets),
                     "your site": p.site or "NEW",
+                    "town": p.town or "",
                     "your customer": p.customer or ("" if p.problems else "NEW"),
                     "how": p.how,
+                    "review": p.status,
                 }
                 for p in r.locations
             ],
-            ["location", "name", "address", "tickets", "your site", "your customer", "how"],
+            ["location", "name", "address", "town", "tickets", "your site", "your customer", "how", "review"],
         ),
         write_csv(
             merge / "equipment.csv",
@@ -651,6 +851,7 @@ def run(folder: Path, model, out: Path, answer_key: bool = True):
                     "refrigerant": u.refrigerant,
                     "your equipment": u.summit or "NEW",
                     "status": "replaced" if u.replaced_on else "active",
+                    "review": u.status,
                 }
                 for u in r.units
             ],
@@ -665,17 +866,20 @@ def run(folder: Path, model, out: Path, answer_key: bool = True):
                 "refrigerant",
                 "your equipment",
                 "status",
+                "review",
             ],
         ),
         write_csv(
-            merge / "agreements.csv", r.agreements, ["location", "visits a year", "annual price", "renews", "ticket"]
+            merge / "agreements.csv",
+            r.agreements,
+            ["location", "visits a year", "annual price", "renews", "ticket", "review"],
         ),
         write_csv(
             merge / "open-quotes.csv",
             r.open_quotes,
-            ["location", "serial", "work", "quoted", "date", "ticket", "evidence", "check"],
+            ["location", "serial", "work", "quoted", "date", "ticket", "evidence", "check", "review"],
         ),
-        write_csv(out / "review.csv", r.review, ["what", "which", "why", "ticket"]),
+        write_csv(out / "review.csv", r.review, ["item", "what", "which", "why", "ticket"]),
     ]
     scored = score(r, folder) if answer_key and (folder / "answer-key").exists() else None
     written.insert(0, write_text(out / "dashboard.html", page(r, rec, model.name, scored)))

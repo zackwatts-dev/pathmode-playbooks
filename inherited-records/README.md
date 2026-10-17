@@ -7,13 +7,13 @@ The full playbook, worked through at Summit Mechanical with a value calculator, 
 ## What it does
 
 - **The AI reads each ticket** and copies out what it says, exactly as written: the location, each unit's details, work done (and whether it was per a quote), work recommended with the quoted amount, and any service agreement. It doesn't correct, guess or merge.
-- **Code checks every value is in the ticket.** One that isn't is dropped, and a person is told.
+- **Code checks every value is in the ticket**, from the serial to the install year, the refrigerant, the unit's tag and the visits a year. One that isn't is dropped, and a person is told.
 - **Code does the rest:**
-  - groups the tickets into locations, by address (allowing for typos) or, without one, by the one location the name fits;
-  - matches each location to your sites and customers;
-  - merges each unit's mentions, catching mistyped serials (your own record settles them where it can) and replaced units;
+  - groups the tickets into locations, by address (allowing for typos; the same street in another town is another place) or, without one, by the one location the name fits;
+  - matches each location to your sites and customers, by street and town;
+  - merges each unit's mentions, catching mistyped serials on the same tag (your own record settles them where it can; RTU-1 and RTU-2 stay two units however alike their serials) and replaced units;
   - works out the latest agreement at each location, and the quotes never done.
-- **A review list** of everything code couldn't decide, and **import files** (`out/merge/`) for once it's cleared. Every CSV is safe to open in a spreadsheet: text that starts like a formula is made inert.
+- **A review list** of everything code couldn't decide, numbered, and **import files** (`out/merge/`) in which every row says `ready` or which review items it waits on. Every CSV is safe to open in a spreadsheet: text that starts like a formula is made inert.
 
 ## What it doesn't do
 
