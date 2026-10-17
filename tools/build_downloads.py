@@ -8,6 +8,7 @@ For every playbook in the site's src/_data/playbooks.json, writes into the site:
 - .../<slug>-cost-worksheet.xlsx: the page's cost calculator as a spreadsheet with live formulas;
 - .../<slug>-for-your-ai.md: the page, the instructions and the code's README in one Markdown file;
 - .../<slug>-summit-files.zip: the playbook's Summit sample data, for a worked example ("sample" set in the JSON);
+- .../<slug>-build-prompt.md: the description to give an AI coding assistant (from <slug>/build-prompt.md, if any);
 - .../<slug>-dashboard.html: the worked example's dashboard, from its recorded run ("dashboard" set in the JSON).
 
 The printable guide (PDF) is made afterwards by the site's scripts/print-playbooks.mjs, from the built page.
@@ -99,6 +100,11 @@ def page_markdown(page: str, item: dict, instructions: str, repo: str, site: Pat
     calc += [f"| {o['label']} | `{o['formula']}` |" for o in item["cost"]["outputs"]]
     body = body.replace('{% include "partials/cost-calculator.njk" %}', "\n".join(calc))
     body = re.sub(r'\{% include "playbooks/[\w-]+-instructions\.md" %\}', lambda _: instructions.strip(), body)
+    body = re.sub(
+        r'\{% include "playbooks/([\w-]+)-build-prompt\.md" %\}',
+        lambda m: (ROOT / m.group(1) / "build-prompt.md").read_text().strip(),
+        body,
+    )
     body = re.sub(r'\{% include "partials/([\w-]+)-flow\.njk" %\}', lambda m: flow_text(site, m.group(1)), body)
     body = body.replace("{{ playbooks.repo }}", repo)
     body = re.sub(r"</?details>|<summary>.*?</summary>", "", body)
@@ -190,6 +196,11 @@ def main() -> None:
         md = page_markdown(page, item, instructions, data["repo"], args.site)
         (out / f"{slug}-for-your-ai.md").write_text(for_your_ai(item, md, instructions, readme, data["checked"]))
         made = "instructions, worksheet, for-your-ai"
+        prompt = folder / "build-prompt.md"
+        if prompt.exists():
+            (args.site / "src/_includes/playbooks" / f"{slug}-build-prompt.md").write_text(prompt.read_text())
+            (out / f"{slug}-build-prompt.md").write_text(prompt.read_text())
+            made += ", build prompt"
         if item.get("dashboard"):
             dashboard(folder, slug, out / f"{slug}-dashboard.html")
             made += ", dashboard"
