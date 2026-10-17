@@ -1,0 +1,12 @@
+Code,Description,Unit,Aliases
+FLT-20252-M13,"Pleated filter 20x25x2, MERV 13",each,20x25x2 MERV 13; 20 x 25 x 2 MERV13
+FLT-16202-M13,"Pleated filter 16x20x2, MERV 13",each,16x20x2 MERV 13; 16 x 20 x 2 MERV13
+FLT-20252-M8,"Pleated filter 20x25x2, MERV 8",each,20x25x2 MERV 8
+RTU-10T,"10-ton packaged rooftop unit, high efficiency",each,10 ton RTU; 10-ton rooftop; ZJ120; 48FC-12
+RTU-5T,"5-ton packaged rooftop unit, high efficiency",each,5 ton RTU; 5-ton rooftop; ZJ060; 48FC-06
+ERV-1200,"Energy recovery ventilator, 1,200 CFM",each,ERV 1200 CFM; energy recovery unit
+THERM-PROG,Programmable thermostat,each,programmable thermostat; T6 Pro; TH6220
+THERM-WIFI,Wi-Fi thermostat,each,wifi thermostat; smart thermostat; T10 Pro
+CURB-ADPT,Curb adapter (fits existing curb),each,curb adapter
+BELT-A42,"V-belt, A42",each,A42 belt; 4L440
+CAP-45-5,"Run capacitor, 45/5 MFD 440V",each,45/5 capacitor; 45+5 MFD

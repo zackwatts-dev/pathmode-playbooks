@@ -4,6 +4,7 @@ Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/):
 
 | Playbook | What the code does | Risk |
 |---|---|---|
+| [Customer RFQ intake](rfq-intake/) | Reads quote requests into a clean list: items matched to your catalog, quantities, deadlines, and what's missing. | Rung 2 |
 | [Inbox triage](inbox-triage/) | Sorts a shared inbox, routes each email and drafts replies. Never sends. | Rung 3 |
 | [Late invoices](late-invoices/) | Separates customers automatic reminders can handle from those who need a person, and drafts the personal follow-ups. | Rung 2 |
 | [Quotes from notes](quotes-from-notes/) | Turns call notes into a draft quote from your price list. Code does the math. | Rung 2 |
@@ -12,7 +13,6 @@ Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/):
 | [Weekly report](weekly-report/) | Calculates the week's numbers, has the model write the summary, checks every number in it. | Rung 2 |
 | [SOPs from walkthroughs](sops-from-walkthroughs/) | Turns a recorded walkthrough into a written procedure. | Rung 2 |
 | [Expense categories](expense-categories/) | Rules first, the model for the rest, a review list for your bookkeeper. | Rung 2 |
-| [Applicant screening](applicant-screening/) | Checks each application against your must-haves with quoted evidence. No ranking. | Rung 2 |
 
 "Rung" is the risk ladder from the [course](https://pathmode.com/resources/course/): 1 chat, 2 works with your files, 3 connected to your systems, 4 takes actions. None of these goes past drafting. A person decides and sends.
 
@@ -22,7 +22,7 @@ The same few rules run through all nine.
 
 - **The model drafts; code checks.** Every script asks the model to quote its evidence or cite its source, then checks in code that the quote is really there, that the numbers are numbers it was given, and that its answer fits what was asked. Anything that fails is flagged for a person, not hidden.
 - **Code does the math and the rules.** Prices, totals, metrics, thresholds and "always ask a person about this" rules are plain Python you can read and change. The model never does arithmetic that matters.
-- **Inputs are data, not instructions.** What the model reads (an email, an application, a customer's question) is marked as data, and the checks that matter most run in code, where a cleverly worded input can't argue with them.
+- **Inputs are data, not instructions.** What the model reads (an email, a quote request, a customer's question) is marked as data, and the checks that matter most run in code, where a cleverly worded input can't argue with them.
 - **Nothing is sent.** Every script reads files (or, for the inbox, a read-only connection) and writes its results to `out/`.
 
 ## Try one
