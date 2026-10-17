@@ -8,15 +8,15 @@
   },
   {
    "file": "0901-1633-replacement-quote.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Glendale Boutique\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Glendale Boutique #101\",\"address\":\"\",\"quote\":\"Glendale Boutique #101\"}],\"units\":[{\"what\":\"Carrier RTU\",\"make\":\"Carrier\",\"model\":\"\",\"serial\":\"308169668\",\"size\":\"\",\"quantity\":1,\"site\":\"Glendale Boutique #101\",\"quote\":\"replacing the Carrier RTU at Glendale Boutique #101, serial 308169668\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Glendale Boutique\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Glendale Boutique #101\",\"address\":\"\",\"quote\":\"Glendale Boutique #101\"}],\"units\":[{\"what\":\"Carrier RTU\",\"make\":\"Carrier\",\"model\":\"\",\"serial\":\"308169668\",\"size\":\"\",\"quantity\":null,\"site\":\"Glendale Boutique #101\",\"quote\":\"the Carrier RTU at Glendale Boutique #101, serial 308169668\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0902-1634-rfq.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Nelson & Martin Pizzeria\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Nelson & Martin Pizzeria\",\"address\":\"184 Ina Rd, Casas Adobes\",\"quote\":\"Nelson & Martin Pizzeria (184 Ina Rd, Casas Adobes)\"}],\"units\":[{\"what\":\"Copeland walk-in\",\"make\":\"Copeland\",\"model\":\"COWA94C\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Nelson & Martin Pizzeria\",\"quote\":\"replacing the Copeland walk-in at Nelson & Martin Pizzeria (184 Ina Rd, Casas Adobes)? It's the model COWA94C\"}],\"quote_due\":\"2025-09-16\",\"due_quote\":\"We need pricing by September 16.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Nelson & Martin Pizzeria\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Nelson & Martin Pizzeria\",\"address\":\"184 Ina Rd, Casas Adobes\",\"quote\":\"Nelson & Martin Pizzeria (184 Ina Rd, Casas Adobes)\"}],\"units\":[{\"what\":\"Copeland walk-in\",\"make\":\"Copeland\",\"model\":\"COWA94C\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Nelson & Martin Pizzeria\",\"quote\":\"replacing the Copeland walk-in at Nelson & Martin Pizzeria (184 Ina Rd, Casas Adobes)? It's the model COWA94C\"}],\"quote_due\":\"2025-09-16\",\"due_quote\":\"We need pricing by September 16\"}\n"
   },
   {
    "file": "0903-0907-replacement-pricing.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"White & Green Boutique\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"White & Green Boutique\",\"address\":\"\",\"quote\":\"replace the RTU on the east side of the roof at White & Green Boutique\"}],\"units\":[{\"what\":\"the RTU on the east side of the roof\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"White & Green Boutique\",\"quote\":\"replace the RTU on the east side of the roof\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\": \"new request\", \"customer\": \"White & Green Boutique\", \"request_type\": \"replace\", \"sites\": [{\"name\": \"White & Green Boutique\", \"address\": \"\", \"quote\": \"replace the RTU on the east side of the roof at White & Green Boutique\"}], \"units\": [{\"what\": \"the RTU on the east side of the roof\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"White & Green Boutique\", \"quote\": \"replace the RTU on the east side of the roof\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0903-1443-quote.eml",
@@ -24,23 +24,23 @@
   },
   {
    "file": "0903-2129-quote-request.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Santa Cruz Property Management\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Chandler Commons\",\"address\":\"\",\"quote\":\"Chandler Commons\"}],\"units\":[{\"what\":\"split system\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Chandler Commons\",\"quote\":\"a new split system\"}],\"quote_due\":\"2025-09-10\",\"due_quote\":\"by 9/10\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Santa Cruz Property Management\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Chandler Commons\",\"address\":\"\",\"quote\":\"Chandler Commons\"}],\"units\":[{\"what\":\"new split system\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Chandler Commons\",\"quote\":\"a new split system for Chandler Commons\"}],\"quote_due\":\"2025-09-10\",\"due_quote\":\"by 9/10\"}\n"
   },
   {
    "file": "0904-0601-need-a-tech.eml",
-   "answer": "{\"kind\":\"service request\",\"customer\":\"Scottsdale Real Estate Group\",\"request_type\":\"repair\",\"sites\":[{\"name\":\"our office\",\"address\":\"\",\"quote\":\"our office\"}],\"units\":[{\"what\":\"AC\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"our office\",\"quote\":\"AC stopped working this morning\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\": \"service request\", \"customer\": \"Scottsdale Real Estate Group\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"our office\", \"address\": \"\", \"quote\": \"send someone out to our office\"}], \"units\": [], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0904-0832-replacement-pricing.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Jason Jackson Physical Therapy\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Jason Jackson Physical Therapy #100\",\"address\":\"\",\"quote\":\"Jason Jackson Physical Therapy #100\"}],\"units\":[{\"what\":\"the RTU in the back\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Jason Jackson Physical Therapy #100\",\"quote\":\"the RTU in the back\"}],\"quote_due\":\"2025-09-18\",\"due_quote\":\"We need pricing by September 18.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Jason Jackson Physical Therapy\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Jason Jackson Physical Therapy #100\",\"address\":\"\",\"quote\":\"Jason Jackson Physical Therapy #100\"}],\"units\":[{\"what\":\"the RTU in the back\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Jason Jackson Physical Therapy #100\",\"quote\":\"replace the RTU in the back at Jason Jackson Physical Therapy #100\"}],\"quote_due\":\"2025-09-18\",\"due_quote\":\"We need pricing by September 18.\"}\n"
   },
   {
    "file": "0904-1559-replacement-quote-dobson-street-title-co.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Dobson Street Title Company\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Dobson Street Title Company\",\"address\":\"8758 Power Rd, Peoria\",\"quote\":\"Dobson Street Title Company (8758 Power Rd, Peoria)\"}],\"units\":[{\"what\":\"Carrier rooftop AC\",\"make\":\"Carrier\",\"model\":\"CART11F\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Dobson Street Title Company\",\"quote\":\"the Carrier rooftop AC\"}],\"quote_due\":\"2025-09-09\",\"due_quote\":\"We need pricing by September 9.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Dobson Street Title Company\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Dobson Street Title Company\",\"address\":\"8758 Power Rd, Peoria\",\"quote\":\"Dobson Street Title Company (8758 Power Rd, Peoria)\"}],\"units\":[{\"what\":\"Carrier rooftop AC\",\"make\":\"Carrier\",\"model\":\"CART11F\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"Dobson Street Title Company\",\"quote\":\"the Carrier rooftop AC at Dobson Street Title Company (8758 Power Rd, Peoria)? It's the model CART11F\"}],\"quote_due\":\"2025-09-09\",\"due_quote\":\"We need pricing by September 9.\"}\n"
   },
   {
    "file": "0904-1845-your-business-qualifies.eml",
-   "answer": "{\"kind\": \"other\", \"customer\": \"\", \"request_type\": \"unclear\", \"sites\": [], \"units\": [], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\":\"other\",\"customer\":\"\",\"request_type\":\"unclear\",\"sites\":[],\"units\":[],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0906-0816-re-replacement-proposal.eml",
@@ -60,11 +60,11 @@
   },
   {
    "file": "0907-0936-itb-casa-grande-clinic-expansion.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Sonoran Ridge Construction\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"Casa Grande Clinic Expansion\",\"address\":\"\",\"quote\":\"Casa Grande Clinic Expansion\"}],\"units\":[],\"quote_due\":\"2025-09-17\",\"due_quote\":\"Bid due 9/17.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Sonoran Ridge Construction\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"Casa Grande Clinic Expansion\",\"address\":\"\",\"quote\":\"Casa Grande Clinic Expansion\"}],\"units\":[],\"quote_due\":\"2025-09-17\",\"due_quote\":\"Bid due 9/17\"}\n"
   },
   {
    "file": "0907-1530-ac-issue.eml",
-   "answer": "{\"kind\": \"service request\", \"customer\": \"Williams Realty Partners\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"our office\", \"address\": \"\", \"quote\": \"our office\"}], \"units\": [{\"what\": \"The unit on the roof\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"our office\", \"quote\": \"The unit on the roof is making a grinding noise\"}], \"quote_due\": \"2025-09-07\", \"due_quote\": \"Today if at all possible.\"}\n"
+   "answer": "{\"kind\": \"service request\", \"customer\": \"Williams Realty Partners\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"our office\", \"address\": \"\", \"quote\": \"send someone out to our office\"}], \"units\": [{\"what\": \"The unit on the roof\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": null, \"site\": \"our office\", \"quote\": \"The unit on the roof is making a grinding noise\"}], \"quote_due\": \"2025-09-07\", \"due_quote\": \"Today if at all possible.\"}\n"
   },
   {
    "file": "0907-1834-re-rfq.eml",
@@ -84,11 +84,11 @@
   },
   {
    "file": "0908-0941-need-a-tech.eml",
-   "answer": "{\"kind\":\"service request\",\"customer\":\"Prescott Valley Unified School District\",\"request_type\":\"repair\",\"sites\":[{\"name\":\"2980 Lake Mary Rd, Mountain View\",\"address\":\"2980 Lake Mary Rd, Mountain View\",\"quote\":\"2980 Lake Mary Rd, Mountain View\"}],\"units\":[],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\": \"service request\", \"customer\": \"Prescott Valley Unified School District\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"2980 Lake Mary Rd, Mountain View\", \"address\": \"2980 Lake Mary Rd, Mountain View\", \"quote\": \"2980 Lake Mary Rd, Mountain View\"}], \"units\": [], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0908-1116-quote.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Laveen Pizzeria\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Laveen Pizzeria #102\",\"address\":\"\",\"quote\":\"Laveen Pizzeria #102\"}],\"units\":[{\"what\":\"Trane unit\",\"make\":\"Trane\",\"model\":\"\",\"serial\":\"159920227\",\"size\":\"\",\"quantity\":1,\"site\":\"Laveen Pizzeria #102\",\"quote\":\"replacement for the Trane unit at Laveen Pizzeria #102, serial 159920227\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\": \"new request\", \"customer\": \"Laveen Pizzeria\", \"request_type\": \"replace\", \"sites\": [{\"name\": \"Laveen Pizzeria #102\", \"address\": \"\", \"quote\": \"Laveen Pizzeria #102\"}], \"units\": [{\"what\": \"Trane unit\", \"make\": \"Trane\", \"model\": \"\", \"serial\": \"159920227\", \"size\": \"\", \"quantity\": 1, \"site\": \"Laveen Pizzeria #102\", \"quote\": \"replacement for the Trane unit at Laveen Pizzeria #102, serial 159920227\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0910-1032-re-replacement-pricing.eml",
@@ -100,11 +100,11 @@
   },
   {
    "file": "0911-0659-new-customer-quote.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Copperline Brewing\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"6820 Baseline Rd\",\"address\":\"6820 Baseline Rd\",\"quote\":\"6820 Baseline Rd\"}],\"units\":[{\"what\":\"reach-in coolers\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":3,\"site\":\"6820 Baseline Rd\",\"quote\":\"three reach-in coolers\"}],\"quote_due\":\"2025-09-12\",\"due_quote\":\"Can we have it by Friday?\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Copperline Brewing\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"6820 Baseline Rd\",\"address\":\"6820 Baseline Rd\",\"quote\":\"our space at 6820 Baseline Rd\"}],\"units\":[{\"what\":\"reach-in coolers\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":3,\"site\":\"6820 Baseline Rd\",\"quote\":\"three reach-in coolers\"}],\"quote_due\":\"2025-09-12\",\"due_quote\":\"by Friday\"}\n"
   },
   {
    "file": "0911-1102-pricing-for-new-rtu.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Phillips & Cooper Bakery\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Phillips & Cooper Bakery\",\"address\":\"9630 Main St, Laveen\",\"quote\":\"Phillips & Cooper Bakery (9630 Main St, Laveen)\"}],\"units\":[{\"what\":\"Lennox RTU\",\"make\":\"Lennox\",\"model\":\"LERT91D\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Phillips & Cooper Bakery\",\"quote\":\"replacing the Lennox RTU at Phillips & Cooper Bakery (9630 Main St, Laveen)? It's the model LERT91D\"}],\"quote_due\":\"2025-09-12\",\"due_quote\":\"Can we have it by Friday?\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Phillips & Cooper Bakery\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Phillips & Cooper Bakery\",\"address\":\"9630 Main St, Laveen\",\"quote\":\"Phillips & Cooper Bakery (9630 Main St, Laveen)\"}],\"units\":[{\"what\":\"Lennox RTU\",\"make\":\"Lennox\",\"model\":\"LERT91D\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Phillips & Cooper Bakery\",\"quote\":\"the Lennox RTU at Phillips & Cooper Bakery (9630 Main St, Laveen)? It's the model LERT91D\"}],\"quote_due\":\"2025-09-12\",\"due_quote\":\"Can we have it by Friday?\"}\n"
   },
   {
    "file": "0911-1512-your-website-is-losing-customers.eml",
@@ -112,7 +112,7 @@
   },
   {
    "file": "0912-0937-go-ahead.eml",
-   "answer": "{\"kind\": \"reply to our quote\", \"customer\": \"\", \"request_type\": \"unclear\", \"sites\": [], \"units\": [], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\":\"reply to our quote\",\"customer\":\"\",\"request_type\":\"unclear\",\"sites\":[],\"units\":[],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0912-1620-rfq.eml",
@@ -120,39 +120,39 @@
   },
   {
    "file": "0912-1649-invitation-to-bid-rita-ranch-medical-off.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Copper State Builders\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Rita Ranch Medical Office\",\"address\":\"\",\"quote\":\"Rita Ranch Medical Office (new construction)\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat (RTU-1)\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"7.5 tons\",\"quantity\":1,\"site\":\"Rita Ranch Medical Office\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",7.5,1\"},{\"what\":\"Packaged rooftop unit, gas heat (RTU-2)\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"5 tons\",\"quantity\":1,\"site\":\"Rita Ranch Medical Office\",\"quote\":\"RTU-2,\\\"Packaged rooftop unit, gas heat\\\",5,1\"}],\"quote_due\":\"2025-09-26\",\"due_quote\":\"Bids are due Friday, September 26 by 2:00 PM\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Copper State Builders\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Rita Ranch Medical Office\",\"address\":\"\",\"quote\":\"Rita Ranch Medical Office (new construction)\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"7.5 tons\",\"quantity\":1,\"site\":\"Rita Ranch Medical Office\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",7.5,1\"},{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"5 tons\",\"quantity\":1,\"site\":\"Rita Ranch Medical Office\",\"quote\":\"RTU-2,\\\"Packaged rooftop unit, gas heat\\\",5,1\"}],\"quote_due\":\"2025-09-26\",\"due_quote\":\"Bids are due Friday, September 26 by 2:00 PM\"}\n"
   },
   {
    "file": "0913-1621-replacement-quote-laveen-bakery-100.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Laveen Bakery\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Laveen Bakery #100\",\"address\":\"2620 Warner Rd\",\"quote\":\"Laveen Bakery #100 (2620 Warner Rd, Deer Valley)\"}],\"units\":[{\"what\":\"Kysor walk-in box\",\"make\":\"Kysor\",\"model\":\"KYWA96E\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Laveen Bakery #100\",\"quote\":\"the Kysor walk-in box at Laveen Bakery #100 (2620 Warner Rd, Deer Valley)? It's the model KYWA96E\"}],\"quote_due\":\"2025-09-19\",\"due_quote\":\"Can we have it by Friday?\"}\n"
+   "answer": "```json\n{\n  \"kind\": \"new request\",\n  \"customer\": \"Laveen Bakery\",\n  \"request_type\": \"replace\",\n  \"sites\": [\n    {\n      \"name\": \"Laveen Bakery #100\",\n      \"address\": \"2620 Warner Rd, Deer Valley\",\n      \"quote\": \"Laveen Bakery #100 (2620 Warner Rd, Deer Valley)\"\n    }\n  ],\n  \"units\": [\n    {\n      \"what\": \"Kysor walk-in box\",\n      \"make\": \"Kysor\",\n      \"model\": \"KYWA96E\",\n      \"serial\": \"\",\n      \"size\": \"\",\n      \"quantity\": null,\n      \"site\": \"Laveen Bakery #100\",\n      \"quote\": \"the Kysor walk-in box at Laveen Bakery #100 (2620 Warner Rd, Deer Valley)? It's the model KYWA96E\"\n    }\n  ],\n  \"quote_due\": \"2025-09-19\",\n  \"due_quote\": \"by Friday\"\n}\n```\n"
   },
   {
    "file": "0915-0737-invitation-to-bid-gilbert-commons-retail.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Sonoran Ridge Construction\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Gilbert Commons Retail, Bldg C\",\"address\":\"\",\"quote\":\"Gilbert Commons Retail, Bldg C (new construction)\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"5 tons\",\"quantity\":1,\"site\":\"Gilbert Commons Retail, Bldg C\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",5,1\"},{\"what\":\"Split system condensing unit\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"3 tons\",\"quantity\":2,\"site\":\"Gilbert Commons Retail, Bldg C\",\"quote\":\"CU-1,Split system condensing unit,3,2\"}],\"quote_due\":\"2025-09-29\",\"due_quote\":\"Bids are due Monday, September 29 by 2:00 PM\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Sonoran Ridge Construction\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Gilbert Commons Retail, Bldg C\",\"address\":\"\",\"quote\":\"Gilbert Commons Retail, Bldg C\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"5\",\"quantity\":1,\"site\":\"Gilbert Commons Retail, Bldg C\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",5,1\"},{\"what\":\"Split system condensing unit\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"3\",\"quantity\":2,\"site\":\"Gilbert Commons Retail, Bldg C\",\"quote\":\"CU-1,Split system condensing unit,3,2\"}],\"quote_due\":\"2025-09-29\",\"due_quote\":\"due Monday, September 29 by 2:00 PM\"}\n"
   },
   {
    "file": "0915-0747-quote-please.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Carter & Wilson Appliance\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Carter & Wilson Appliance\",\"address\":\"\",\"quote\":\"at Carter & Wilson Appliance\"}],\"units\":[{\"what\":\"walk-in box by the loading dock\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Carter & Wilson Appliance\",\"quote\":\"replace the walk-in box by the loading dock\"}],\"quote_due\":\"2025-09-19\",\"due_quote\":\"Can we have it by Friday?\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Carter & Wilson Appliance\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Carter & Wilson Appliance\",\"address\":\"\",\"quote\":\"replace the walk-in box by the loading dock at Carter & Wilson Appliance\"}],\"units\":[{\"what\":\"walk-in box by the loading dock\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"Carter & Wilson Appliance\",\"quote\":\"replace the walk-in box by the loading dock at Carter & Wilson Appliance\"}],\"quote_due\":\"2025-09-19\",\"due_quote\":\"Can we have it by Friday?\"}\n"
   },
   {
    "file": "0915-0849-rfq.eml",
-   "answer": "{\"kind\": \"new request\",\n \"customer\": \"Evans Family Dental\",\n \"request_type\": \"replace\",\n \"sites\": [{\"name\": \"Evans Family Dental #101\", \"address\": \"4223 Main St, Chandler\", \"quote\": \"Evans Family Dental #101 (4223 Main St, Chandler)\"}],\n \"units\": [{\"what\": \"Carrier rooftop unit\", \"make\": \"Carrier\", \"model\": \"\", \"serial\": \"806720437\", \"size\": \"\", \"quantity\": 1, \"site\": \"Evans Family Dental #101\", \"quote\": \"replacing the Carrier rooftop unit\"}],\n \"quote_due\": \"\",\n \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Evans Family Dental\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Evans Family Dental #101\",\"address\":\"4223 Main St, Chandler\",\"quote\":\"Evans Family Dental #101 (4223 Main St, Chandler)\"}],\"units\":[{\"what\":\"Carrier rooftop unit\",\"make\":\"Carrier\",\"model\":\"\",\"serial\":\"806720437\",\"size\":\"\",\"quantity\":1,\"site\":\"Evans Family Dental #101\",\"quote\":\"replacing the Carrier rooftop unit at Evans Family Dental #101 (4223 Main St, Chandler)? It's the serial 806720437\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0915-0851-quote.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Patricia Wilson Liquor\",\"request_type\":\"unclear\",\"sites\":[],\"units\":[{\"what\":\"a couple of units\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"\",\"quote\":\"a couple of units\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Patricia Wilson Liquor\",\"request_type\":\"unclear\",\"sites\":[],\"units\":[],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0915-0932-quote-request.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Old Pueblo Boutique\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Old Pueblo Boutique #100\",\"address\":\"6283 Tanque Verde Rd, Sahuarita\",\"quote\":\"Old Pueblo Boutique #100 (6283 Tanque Verde Rd, Sahuarita)\"}],\"units\":[{\"what\":\"Trane rooftop AC\",\"make\":\"Trane\",\"model\":\"\",\"serial\":\"811289580\",\"size\":\"\",\"quantity\":1,\"site\":\"Old Pueblo Boutique #100\",\"quote\":\"the Trane rooftop AC at Old Pueblo Boutique #100 (6283 Tanque Verde Rd, Sahuarita)? It's the serial 811289580\"}],\"quote_due\":\"2025-09-29\",\"due_quote\":\"We need pricing by September 29.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Old Pueblo Boutique\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Old Pueblo Boutique #100\",\"address\":\"6283 Tanque Verde Rd, Sahuarita\",\"quote\":\"Old Pueblo Boutique #100 (6283 Tanque Verde Rd, Sahuarita)\"}],\"units\":[{\"what\":\"Trane rooftop AC\",\"make\":\"Trane\",\"model\":\"\",\"serial\":\"811289580\",\"size\":\"\",\"quantity\":null,\"site\":\"Old Pueblo Boutique #100\",\"quote\":\"the Trane rooftop AC at Old Pueblo Boutique #100 (6283 Tanque Verde Rd, Sahuarita)? It's the serial 811289580\"}],\"quote_due\":\"2025-09-29\",\"due_quote\":\"We need pricing by September 29\"}\n"
   },
   {
    "file": "0915-1032-invitation-to-bid-chandler-tech-center-p.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Saguaro Commercial Builders\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Chandler Tech Center Phase 2\",\"address\":\"\",\"quote\":\"Chandler Tech Center Phase 2\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"12.5 tons\",\"quantity\":1,\"site\":\"Chandler Tech Center Phase 2\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",12.5,1\"},{\"what\":\"Split system condensing unit\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"3 tons\",\"quantity\":1,\"site\":\"Chandler Tech Center Phase 2\",\"quote\":\"CU-1,Split system condensing unit,3,1\"}],\"quote_due\":\"2025-09-25\",\"due_quote\":\"Bids are due Thursday, September 25 by 2:00 PM\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Saguaro Commercial Builders\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Chandler Tech Center Phase 2\",\"address\":\"\",\"quote\":\"Chandler Tech Center Phase 2\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"12.5\",\"quantity\":1,\"site\":\"Chandler Tech Center Phase 2\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",12.5,1\"},{\"what\":\"Split system condensing unit\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"3\",\"quantity\":1,\"site\":\"Chandler Tech Center Phase 2\",\"quote\":\"CU-1,Split system condensing unit,3,1\"}],\"quote_due\":\"2025-09-25\",\"due_quote\":\"Bids are due Thursday, September 25 by 2:00 PM\"}\n"
   },
   {
    "file": "0915-1639-ac-issue.eml",
-   "answer": "{\"kind\": \"service request\", \"customer\": \"Old Pueblo Commercial Properties\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"Sabino\", \"address\": \"\", \"quote\": \"our Sabino location\"}], \"units\": [{\"what\": \"AC unit that runs nonstop, thermostat reads 87\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": null, \"site\": \"Sabino\", \"quote\": \"Thermostat says 87 and the unit runs nonstop\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\": \"service request\", \"customer\": \"Old Pueblo Commercial Properties\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"Sabino\", \"address\": \"\", \"quote\": \"our Sabino location\"}], \"units\": [], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0915-1945-re-estimate.eml",
@@ -160,7 +160,7 @@
   },
   {
    "file": "0915-2045-urgent-ac-issue.eml",
-   "answer": "{\"kind\": \"service request\", \"customer\": \"avondale holdings\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"3608 main st, santa cruz\", \"address\": \"3608 main st, santa cruz\", \"quote\": \"3608 main st, santa cruz\"}], \"units\": [{\"what\": \"ac\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": null, \"site\": \"3608 main st, santa cruz\", \"quote\": \"ac stopped working this morning\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\": \"service request\", \"customer\": \"avondale holdings\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"3608 main st, santa cruz\", \"address\": \"3608 main st, santa cruz\", \"quote\": \"3608 main st, santa cruz\"}], \"units\": [], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0915-2121-pm-agreement-quote.eml",
@@ -168,7 +168,7 @@
   },
   {
    "file": "0916-1700-quote-request.eml",
-   "answer": "{\"kind\": \"new request\", \"customer\": \"Linda Harris Physical Therapy\", \"request_type\": \"replace\", \"sites\": [], \"units\": [{\"what\": \"new split AC\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"\", \"quote\": \"a new split AC\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Linda Harris Physical Therapy\",\"request_type\":\"replace\",\"sites\":[],\"units\":[{\"what\":\"split AC\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"\",\"quote\":\"a new split AC\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0917-1001-re-quote.eml",
@@ -176,11 +176,11 @@
   },
   {
    "file": "0917-1100-ac-issue.eml",
-   "answer": "{\"kind\": \"service request\", \"customer\": \"Carmen Stewart Chiropractic\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"Chandler location\", \"address\": \"\", \"quote\": \"our Chandler location\"}], \"units\": [{\"what\": \"rooftop units\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"Chandler location\", \"quote\": \"One of the rooftop units isn't cooling\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\": \"service request\", \"customer\": \"Carmen Stewart Chiropractic\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"Chandler location\", \"address\": \"\", \"quote\": \"our Chandler location\"}], \"units\": [{\"what\": \"rooftop unit that isn't cooling\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"Chandler location\", \"quote\": \"One of the rooftop units isn't cooling\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0917-1329-looking-for-a-quote.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Desert Bloom Bakery\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"our space\",\"address\":\"745 Ina Rd\",\"quote\":\"our space at 745 Ina Rd\"}],\"units\":[{\"what\":\"walk-in cooler\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"\",\"quote\":\"a walk-in cooler\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\": \"new request\", \"customer\": \"Desert Bloom Bakery\", \"request_type\": \"new install\", \"sites\": [{\"name\": \"our space at 745 Ina Rd\", \"address\": \"745 Ina Rd\", \"quote\": \"our space at 745 Ina Rd\"}], \"units\": [{\"what\": \"walk-in cooler\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"our space at 745 Ina Rd\", \"quote\": \"a walk-in cooler\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0918-0902-re-replacement-proposal.eml",
@@ -200,27 +200,27 @@
   },
   {
    "file": "0921-1009-quote-request.eml",
-   "answer": "{\"kind\": \"new request\", \"customer\": \"Agave Yoga Studio\", \"request_type\": \"new install\", \"sites\": [{\"name\": \"our space\", \"address\": \"9089 Ray Rd\", \"quote\": \"our space at 9089 Ray Rd\"}], \"units\": [{\"what\": \"new rooftop unit\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"\", \"quote\": \"a new rooftop unit\"}], \"quote_due\": \"2025-09-29\", \"due_quote\": \"We need pricing by September 29.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Agave Yoga Studio\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"our space\",\"address\":\"9089 Ray Rd\",\"quote\":\"our space at 9089 Ray Rd\"}],\"units\":[{\"what\":\"new rooftop unit\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"our space\",\"quote\":\"a new rooftop unit\"}],\"quote_due\":\"2025-09-29\",\"due_quote\":\"We need pricing by September 29\"}\n"
   },
   {
    "file": "0922-0647-quote-request.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"University Street Furniture\",\"request_type\":\"replace\",\"sites\":[],\"units\":[{\"what\":\"a new mini split\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"\",\"quote\":\"a new mini split\"}],\"quote_due\":\"2025-09-29\",\"due_quote\":\"by 9/29\"}\n"
+   "answer": "```json\n{\"kind\":\"new request\",\"customer\":\"University Street Furniture\",\"request_type\":\"replace\",\"sites\":[],\"units\":[{\"what\":\"mini split\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"\",\"quote\":\"a new mini split\"}],\"quote_due\":\"2025-09-29\",\"due_quote\":\"by 9/29\"}\n```\n"
   },
   {
    "file": "0922-1017-itb-peoria-fire-station-9.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Saguaro Commercial Builders\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"Peoria Fire Station 9\",\"address\":\"\",\"quote\":\"Peoria Fire Station 9\"}],\"units\":[],\"quote_due\":\"2025-10-02\",\"due_quote\":\"Bid due 10/2.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Saguaro Commercial Builders\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"Peoria Fire Station 9\",\"address\":\"\",\"quote\":\"Peoria Fire Station 9\"}],\"units\":[],\"quote_due\":\"2025-10-02\",\"due_quote\":\"Bid due 10/2\"}\n"
   },
   {
    "file": "0922-1043-pricing-for-new-rooftop-ac.eml",
-   "answer": "{\"kind\": \"new request\", \"customer\": \"Turner & Allen Title Company\", \"request_type\": \"replace\", \"sites\": [{\"name\": \"Turner & Allen Title Company\", \"address\": \"8388 Valencia Rd, Santa Cruz\", \"quote\": \"Turner & Allen Title Company (8388 Valencia Rd, Santa Cruz)\"}], \"units\": [{\"what\": \"Carrier rooftop AC\", \"make\": \"Carrier\", \"model\": \"CART82B\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"Turner & Allen Title Company\", \"quote\": \"replacing the Carrier rooftop AC at Turner & Allen Title Company\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Turner & Allen Title Company\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Turner & Allen Title Company\",\"address\":\"8388 Valencia Rd, Santa Cruz\",\"quote\":\"Turner & Allen Title Company (8388 Valencia Rd, Santa Cruz)\"}],\"units\":[{\"what\":\"Carrier rooftop AC\",\"make\":\"Carrier\",\"model\":\"CART82B\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Turner & Allen Title Company\",\"quote\":\"replacing the Carrier rooftop AC at Turner & Allen Title Company (8388 Valencia Rd, Santa Cruz)? It's the model CART82B\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0922-1105-replacement-pricing.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"State Street Medical Billing\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"State Street Medical Billing #101\",\"address\":\"\",\"quote\":\"State Street Medical Billing #101\"}],\"units\":[{\"what\":\"reach-in cooler that keeps tripping\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"State Street Medical Billing #101\",\"quote\":\"the reach-in cooler that keeps tripping\"}],\"quote_due\":\"2025-10-02\",\"due_quote\":\"We need pricing by October 2.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"State Street Medical Billing\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"State Street Medical Billing #101\",\"address\":\"\",\"quote\":\"State Street Medical Billing #101\"}],\"units\":[{\"what\":\"reach-in cooler that keeps tripping\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"State Street Medical Billing #101\",\"quote\":\"replace the reach-in cooler that keeps tripping at State Street Medical Billing #101\"}],\"quote_due\":\"2025-10-02\",\"due_quote\":\"We need pricing by October 2.\"}\n"
   },
   {
    "file": "0922-1122-replacement-pricing.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Valencia Street Law Offices\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Valencia Street Law Offices #101\",\"address\":\"\",\"quote\":\"Valencia Street Law Offices #101\"}],\"units\":[{\"what\":\"the RTU on the east side of the roof\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Valencia Street Law Offices #101\",\"quote\":\"the RTU on the east side of the roof\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\": \"new request\", \"customer\": \"Valencia Street Law Offices\", \"request_type\": \"replace\", \"sites\": [{\"name\": \"Valencia Street Law Offices #101\", \"address\": \"\", \"quote\": \"Valencia Street Law Offices #101\"}], \"units\": [{\"what\": \"the RTU on the east side of the roof\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"Valencia Street Law Offices #101\", \"quote\": \"replace the RTU on the east side of the roof\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0922-1134-maintenance-proposal-request.eml",
@@ -228,11 +228,11 @@
   },
   {
    "file": "0922-1158-pricing-for-new-rooftop-unit.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Shea Street Medical Billing\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Shea Street Medical Billing\",\"address\":\"1770 Alma School Rd, Maryvale\",\"quote\":\"Shea Street Medical Billing (1770 Alma School Rd, Maryvale)\"}],\"units\":[{\"what\":\"York rooftop unit\",\"make\":\"York\",\"model\":\"\",\"serial\":\"522696176\",\"size\":\"\",\"quantity\":1,\"site\":\"Shea Street Medical Billing\",\"quote\":\"replacing the York rooftop unit\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\": \"new request\", \"customer\": \"Shea Street Medical Billing\", \"request_type\": \"replace\", \"sites\": [{\"name\": \"Shea Street Medical Billing\", \"address\": \"1770 Alma School Rd, Maryvale\", \"quote\": \"Shea Street Medical Billing (1770 Alma School Rd, Maryvale)\"}], \"units\": [{\"what\": \"York rooftop unit\", \"make\": \"York\", \"model\": \"\", \"serial\": \"522696176\", \"size\": \"\", \"quantity\": 1, \"site\": \"Shea Street Medical Billing\", \"quote\": \"replacing the York rooftop unit at Shea Street Medical Billing (1770 Alma School Rd, Maryvale)? It's the serial 522696176\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
   },
   {
    "file": "0922-2143-replacement-quote-gina-howard-physical-t.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Gina Howard Physical Therapy\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Gina Howard Physical Therapy #101\",\"address\":\"8923 Elliot Rd, San Tan Valley\",\"quote\":\"Gina Howard Physical Therapy #101 (8923 Elliot Rd, San Tan Valley)\"}],\"units\":[{\"what\":\"York rooftop AC\",\"make\":\"York\",\"model\":\"YORT81G\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Gina Howard Physical Therapy #101\",\"quote\":\"replacing the York rooftop AC at Gina Howard Physical Therapy #101 (8923 Elliot Rd, San Tan Valley)? It's the model YORT81G\"}],\"quote_due\":\"2025-09-26\",\"due_quote\":\"Can we have it by Friday?\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Gina Howard Physical Therapy\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Gina Howard Physical Therapy #101\",\"address\":\"8923 Elliot Rd, San Tan Valley\",\"quote\":\"Gina Howard Physical Therapy #101 (8923 Elliot Rd, San Tan Valley)\"}],\"units\":[{\"what\":\"York rooftop AC\",\"make\":\"York\",\"model\":\"YORT81G\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"Gina Howard Physical Therapy #101\",\"quote\":\"the York rooftop AC...It's the model YORT81G\"}],\"quote_due\":\"2025-09-26\",\"due_quote\":\"by Friday\"}\n"
   },
   {
    "file": "0923-0840-pm-agreement-quote.eml",
@@ -248,7 +248,7 @@
   },
   {
    "file": "0923-2123-need-a-quote.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Daniel Miller Pizzeria\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Daniel Miller Pizzeria #101\",\"address\":\"\",\"quote\":\"Daniel Miller Pizzeria #101\"}],\"units\":[{\"what\":\"the rooftop unit that keeps tripping\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Daniel Miller Pizzeria #101\",\"quote\":\"replace the rooftop unit that keeps tripping\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Daniel Miller Pizzeria\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Daniel Miller Pizzeria #101\",\"address\":\"\",\"quote\":\"Daniel Miller Pizzeria #101\"}],\"units\":[{\"what\":\"rooftop unit that keeps tripping\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Daniel Miller Pizzeria #101\",\"quote\":\"replace the rooftop unit that keeps tripping at Daniel Miller Pizzeria #101\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0924-1120-rfq.eml",
@@ -260,27 +260,27 @@
   },
   {
    "file": "0924-1833-repair-request.eml",
-   "answer": "{\"kind\":\"service request\",\"customer\":\"\",\"request_type\":\"repair\",\"sites\":[],\"units\":[{\"what\":\"the unit\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"\",\"quote\":\"the unit runs nonstop\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\":\"service request\",\"customer\":\"\",\"request_type\":\"repair\",\"sites\":[{\"name\":\"the store\",\"address\":\"\",\"quote\":\"send someone out to the store\"}],\"units\":[{\"what\":\"the unit\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"the store\",\"quote\":\"the unit runs nonstop\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0925-0823-need-a-tech.eml",
-   "answer": "{\"kind\": \"service request\", \"customer\": \"Phillips & Ward Physical Therapy\", \"request_type\": \"repair\", \"sites\": [{\"name\": \"the store\", \"address\": \"\", \"quote\": \"the store\"}], \"units\": [{\"what\": \"Cooler\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"the store\", \"quote\": \"Cooler isn't holding temp\"}], \"quote_due\": \"2025-09-25\", \"due_quote\": \"Today if at all possible\"}\n"
+   "answer": "{\"kind\":\"service request\",\"customer\":\"Phillips & Ward Physical Therapy\",\"request_type\":\"repair\",\"sites\":[],\"units\":[{\"what\":\"Cooler\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"\",\"quote\":\"Cooler isn't holding temp\"}],\"quote_due\":\"2025-09-25\",\"due_quote\":\"Today if at all possible\"}\n"
   },
   {
    "file": "0925-1422-quote-request.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"Vail Commons\",\"address\":\"\",\"quote\":\"Vail Commons\"}],\"units\":[{\"what\":\"a new split system\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Vail Commons\",\"quote\":\"a new split system\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Vail Commons\",\"address\":\"\",\"quote\":\"Vail Commons\"}],\"units\":[{\"what\":\"a new split system\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Vail Commons\",\"quote\":\"a new split system\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0925-1534-quote-please.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Southern Street Pizzeria\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Southern Street Pizzeria #101\",\"address\":\"\",\"quote\":\"Southern Street Pizzeria #101\"}],\"units\":[{\"what\":\"the package unit over the kitchen\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Southern Street Pizzeria #101\",\"quote\":\"the package unit over the kitchen\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Southern Street Pizzeria\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Southern Street Pizzeria #101\",\"address\":\"\",\"quote\":\"Southern Street Pizzeria #101\"}],\"units\":[{\"what\":\"package unit over the kitchen\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Southern Street Pizzeria #101\",\"quote\":\"replace the package unit over the kitchen at Southern Street Pizzeria #101\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0929-0607-quote-request.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Jennifer Miller Florist\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Jennifer Miller Florist #100\",\"address\":\"3859 Dobson Rd, Mesa\",\"quote\":\"Jennifer Miller Florist #100 (3859 Dobson Rd, Mesa)\"}],\"units\":[{\"what\":\"Lennox rooftop unit\",\"make\":\"Lennox\",\"model\":\"LERT82B\",\"serial\":\"935094075\",\"size\":\"\",\"quantity\":1,\"site\":\"Jennifer Miller Florist #100\",\"quote\":\"the Lennox rooftop unit at Jennifer Miller Florist #100\"}],\"quote_due\":\"2025-10-06\",\"due_quote\":\"We need pricing by October 6.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Jennifer Miller Florist\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Jennifer Miller Florist #100\",\"address\":\"3859 Dobson Rd, Mesa\",\"quote\":\"Jennifer Miller Florist #100 (3859 Dobson Rd, Mesa)\"}],\"units\":[{\"what\":\"Lennox rooftop unit\",\"make\":\"Lennox\",\"model\":\"LERT82B\",\"serial\":\"935094075\",\"size\":\"\",\"quantity\":1,\"site\":\"Jennifer Miller Florist #100\",\"quote\":\"replacing the Lennox rooftop unit at Jennifer Miller Florist #100 (3859 Dobson Rd, Mesa)? It's the Lennox LERT82B, serial 935094075\"}],\"quote_due\":\"2025-10-06\",\"due_quote\":\"We need pricing by October 6.\"}\n"
   },
   {
    "file": "0929-0655-replacement-quote-maria-martinez-applian.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Maria Martinez Appliance\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Maria Martinez Appliance\",\"address\":\"5362 Cottonwood St, Sedona\",\"quote\":\"Maria Martinez Appliance (5362 Cottonwood St, Sedona)\"}],\"units\":[{\"what\":\"Lennox rooftop AC\",\"make\":\"Lennox\",\"model\":\"LERT29C\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Maria Martinez Appliance\",\"quote\":\"the Lennox rooftop AC\"}],\"quote_due\":\"2025-10-13\",\"due_quote\":\"Please get us a number by 10/13.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Maria Martinez Appliance\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Maria Martinez Appliance\",\"address\":\"5362 Cottonwood St, Sedona\",\"quote\":\"Maria Martinez Appliance (5362 Cottonwood St, Sedona)\"}],\"units\":[{\"what\":\"Lennox rooftop AC\",\"make\":\"Lennox\",\"model\":\"LERT29C\",\"serial\":\"\",\"size\":\"\",\"quantity\":null,\"site\":\"Maria Martinez Appliance\",\"quote\":\"the Lennox rooftop AC at Maria Martinez Appliance (5362 Cottonwood St, Sedona)? It's the model LERT29C\"}],\"quote_due\":\"2025-10-13\",\"due_quote\":\"by 10/13\"}\n"
   },
   {
    "file": "0929-0842-page-1-on-google-guaranteed.eml",
@@ -288,27 +288,27 @@
   },
   {
    "file": "0929-0855-invitation-to-bid-oro-valley-dental-suit.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Mesa Verde Contracting\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Oro Valley Dental Suite TI\",\"address\":\"\",\"quote\":\"Oro Valley Dental Suite TI (new construction)\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"7.5\",\"quantity\":1,\"site\":\"Oro Valley Dental Suite TI\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",7.5,1\"},{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"10\",\"quantity\":1,\"site\":\"Oro Valley Dental Suite TI\",\"quote\":\"RTU-2,\\\"Packaged rooftop unit, gas heat\\\",10,1\"},{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"7.5\",\"quantity\":1,\"site\":\"Oro Valley Dental Suite TI\",\"quote\":\"RTU-3,\\\"Packaged rooftop unit, gas heat\\\",7.5,1\"}],\"quote_due\":\"2025-10-09\",\"due_quote\":\"Bids are due Thursday, October 9 by 2:00 PM\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Mesa Verde Contracting\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Oro Valley Dental Suite TI\",\"address\":\"\",\"quote\":\"Oro Valley Dental Suite TI\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"7.5\",\"quantity\":1,\"site\":\"Oro Valley Dental Suite TI\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",7.5,1\"},{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"10\",\"quantity\":1,\"site\":\"Oro Valley Dental Suite TI\",\"quote\":\"RTU-2,\\\"Packaged rooftop unit, gas heat\\\",10,1\"},{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"7.5\",\"quantity\":1,\"site\":\"Oro Valley Dental Suite TI\",\"quote\":\"RTU-3,\\\"Packaged rooftop unit, gas heat\\\",7.5,1\"}],\"quote_due\":\"2025-10-09\",\"due_quote\":\"Bids are due Thursday, October 9 by 2:00 PM\"}\n"
   },
   {
    "file": "0929-0901-invitation-to-bid-marana-logistics-offic.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Copper State Builders\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Marana Logistics Office\",\"address\":\"\",\"quote\":\"Marana Logistics Office\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"5 tons\",\"quantity\":1,\"site\":\"Marana Logistics Office\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",5,1\"}],\"quote_due\":\"2025-10-06\",\"due_quote\":\"Bids are due Monday, October 6 by 2:00 PM\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Copper State Builders\",\"request_type\":\"new install\",\"sites\":[{\"name\":\"Marana Logistics Office\",\"address\":\"\",\"quote\":\"Marana Logistics Office (new construction)\"}],\"units\":[{\"what\":\"Packaged rooftop unit, gas heat\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"5 tons\",\"quantity\":1,\"site\":\"Marana Logistics Office\",\"quote\":\"RTU-1,\\\"Packaged rooftop unit, gas heat\\\",5,1\"}],\"quote_due\":\"2025-10-06\",\"due_quote\":\"Bids are due Monday, October 6 by 2:00 PM\"}\n"
   },
   {
    "file": "0929-0948-page-1-on-google-guaranteed.eml",
-   "answer": "{\"kind\": \"other\", \"customer\": \"\", \"request_type\": \"unclear\", \"sites\": [], \"units\": [], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\":\"other\",\"customer\":\"\",\"request_type\":\"unclear\",\"sites\":[],\"units\":[],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0929-0957-need-a-quote.eml",
-   "answer": "{\"kind\": \"new request\", \"customer\": \"Young & Davis Physical Therapy\", \"request_type\": \"replace\", \"sites\": [{\"name\": \"Young & Davis Physical Therapy\", \"address\": \"\", \"quote\": \"Young & Davis Physical Therapy\"}], \"units\": [{\"what\": \"rooftop AC on the east side of the roof\", \"make\": \"\", \"model\": \"\", \"serial\": \"\", \"size\": \"\", \"quantity\": 1, \"site\": \"Young & Davis Physical Therapy\", \"quote\": \"the rooftop AC on the east side of the roof\"}], \"quote_due\": \"\", \"due_quote\": \"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Young & Davis Physical Therapy\",\"request_type\":\"replace\",\"sites\":[{\"name\":\"Young & Davis Physical Therapy\",\"address\":\"\",\"quote\":\"Young & Davis Physical Therapy\"}],\"units\":[{\"what\":\"rooftop AC on the east side of the roof\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"\",\"quantity\":1,\"site\":\"Young & Davis Physical Therapy\",\"quote\":\"replace the rooftop AC on the east side of the roof\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0929-1001-quote.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Sonoran Taqueria\",\"request_type\":\"new install\",\"sites\":[],\"units\":[],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Sonoran Taqueria\",\"request_type\":\"unclear\",\"sites\":[],\"units\":[],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0929-1327-new-customer-quote.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Cactus Flats Veterinary\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"9730 Grant Rd\",\"address\":\"9730 Grant Rd\",\"quote\":\"9730 Grant Rd\"}],\"units\":[{\"what\":\"4-ton split systems\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"4-ton\",\"quantity\":2,\"site\":\"9730 Grant Rd\",\"quote\":\"two 4-ton split systems\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Cactus Flats Veterinary\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"9730 Grant Rd\",\"address\":\"9730 Grant Rd\",\"quote\":\"our space at 9730 Grant Rd\"}],\"units\":[{\"what\":\"4-ton split systems\",\"make\":\"\",\"model\":\"\",\"serial\":\"\",\"size\":\"4-ton\",\"quantity\":2,\"site\":\"9730 Grant Rd\",\"quote\":\"two 4-ton split systems\"}],\"quote_due\":\"\",\"due_quote\":\"\"}\n"
   },
   {
    "file": "0929-1349-service-agreement-pricing.eml",
@@ -316,7 +316,7 @@
   },
   {
    "file": "0929-2116-itb-peoria-fire-station-9.eml",
-   "answer": "{\"kind\":\"new request\",\"customer\":\"Mesa Verde Contracting\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"Peoria Fire Station 9\",\"address\":\"\",\"quote\":\"Peoria Fire Station 9\"}],\"units\":[],\"quote_due\":\"2025-10-06\",\"due_quote\":\"Bid due 10/6.\"}\n"
+   "answer": "{\"kind\":\"new request\",\"customer\":\"Mesa Verde Contracting\",\"request_type\":\"unclear\",\"sites\":[{\"name\":\"Peoria Fire Station 9\",\"address\":\"\",\"quote\":\"Peoria Fire Station 9\"}],\"units\":[],\"quote_due\":\"2025-10-06\",\"due_quote\":\"Bid due 10/6\"}\n"
   },
   {
    "file": "0930-0929-your-business-qualifies.eml",

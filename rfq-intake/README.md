@@ -45,7 +45,7 @@ Summit Mechanical is a fictional commercial HVAC contractor, from a [simulation 
 - `mailbox/`: 80 emails. 52 quote requests, in every shape (clear, vague, which-unit-is-it, bid invitations with a CSV or only a PDF, new prospects, a typo'd serial, one with instructions for "any AI assistant"), plus 12 replies to quotes, 8 service calls, 5 sales pitches and 3 follow-ups.
 - `records/`: customers, sites, equipment and contacts, as exported from Summit's field-service system (1,406 customers, 5,473 sites, 24,180 units).
 - `answer-key.csv`: what each email really is, and what should happen to it.
-- `recorded-run.json`: a real model's answers, for `--replay`. They were recorded before the instructions asked for each serial and model to be inside its quote, so six of them, which give the serial or model in the next sentence, now go to a person: the replay scores 74 of 80, with nothing let through wrong. The offline stand-in (`--dry-run`) scores 80 of 80.
+- `recorded-run.json`: a real model's answers (Claude Sonnet 5.5), for `--replay`, recorded with the current instructions. The replay scores 80 of 80, as does the offline stand-in (`--dry-run`).
 
 ## Getting the email: Microsoft 365
 

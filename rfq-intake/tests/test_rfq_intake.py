@@ -141,14 +141,11 @@ def test_the_recorded_run_replays_and_the_two_gaps_it_found_stay_closed(tmp_path
     mails = list(MAILS.values())
     model = rq.Replay(SAMPLE / "recorded-run.json", mails)
     results, _ = rq.run(mails, RECORDS, model, tmp_path, rq.SAMPLE_AS_OF, answer_key=SAMPLE / "answer-key.csv")
-    # These answers were recorded before the instructions asked for each serial and model to be in its quote.
-    # Six of them put the serial or model in the next sentence instead, so those six now go to a person:
-    # stopped, not let through. Nothing is let through wrong.
+    # Recorded with the instructions that ask for each serial, model and quantity to be in its quote, so the
+    # stricter evidence check stops none of them.
     groups = rq.score(results, SAMPLE / "answer-key.csv")["groups"]
-    assert len(groups["right"]) == 74 and not groups["let through, wrong"] and not groups["wrong pile"]
-    stopped = {f.split(":")[0] for f in groups["stopped, needn't have been"]}
+    assert len(groups["right"]) == 80 and not groups["let through, wrong"] and not groups["wrong pile"]
     by = {r.mail.file: r for r in results}
-    assert len(stopped) == 6 and all(any("isn't in the words quoted" in x for x in by[f].reasons) for f in stopped)
     vail = next(f for f in by if "Vail Commons" in MAILS[f].text and KEY[f]["kind"] == "replace, only unit")
     assert by[vail].lines[0].unit is not None
     vague = next(f for f in by if "some new equipment" in MAILS[f].text)
