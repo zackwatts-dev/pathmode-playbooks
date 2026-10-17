@@ -1,11 +1,1907 @@
-Customer,Contact,Email,Invoice,Invoice date,Due date,Amount,Balance
-Desert Palms Plaza,Dana Ortiz,dana.ortiz@desertpalmsplaza.example,88140,2026-05-20,2026-06-19,2480.00,2480.00
-Desert Palms Plaza,Dana Ortiz,dana.ortiz@desertpalmsplaza.example,88202,2026-06-10,2026-07-10,960.00,960.00
-Canyon Offices,Priya Shah,pshah@canyonoffices.example,88213,2026-06-30,2026-07-30,1320.00,1320.00
-Saguaro Retail Group,Tom Becker,tbecker@saguaroretail.example,87655,2026-03-28,2026-04-27,6150.00,6150.00
-Saguaro Retail Group,Tom Becker,tbecker@saguaroretail.example,88011,2026-05-02,2026-06-01,1875.00,1875.00
-Mesa Dental Group,Lisa Grant,lgrant@mesadental.example,88177,2026-06-01,2026-07-01,540.00,540.00
-Lee Family Restaurants,Marcus Lee,marcus@leefamilyrestaurants.example,87990,2026-04-25,2026-05-25,3890.00,1890.00
-Tempe Lofts,Kevin Wu,kwu@tempelofts.example,88150,2026-05-22,2026-06-21,720.00,720.00
-Riverside Medical Group,Accounts Payable,ap@riversidemedical.example,88098,2026-05-12,2026-06-11,4210.00,4210.00
-Valley Unified School District,Accounts Payable,ap@valleyschools.example,88120,2026-05-15,2026-06-14,8400.00,8400.00
+Customer,Contact,Email,Invoice,Invoice date,Due date,Amount,Balance,PO
+Ahwatukee  Property Management,,,AGR-025829,2025-10-21,2025-12-05,575.76,575.76,
+Ahwatukee Asset Management,Brittany Wilson,bwilson@ahwatukeeasset.com,AGR-025510,2025-09-29,2025-11-13,1957.96,1957.96,
+Ahwatukee Asset Management,Brittany Wilson,bwilson@ahwatukeeasset.com,INV-236412,2025-09-17,2025-11-01,383.74,383.74,
+Ahwatukee Asset Management,Brittany Wilson,bwilson@ahwatukeeasset.com,INV-236432,2025-09-18,2025-11-02,1533.94,1533.94,
+Ahwatukee Asset Management,Brittany Wilson,bwilson@ahwatukeeasset.com,INV-236583,2025-09-19,2025-11-03,64.30,64.30,
+Ahwatukee Asset Management,Brittany Wilson,bwilson@ahwatukeeasset.com,INV-239175,2025-10-07,2025-11-21,350.17,350.17,
+Ahwatukee Asset Management,Brittany Wilson,bwilson@ahwatukeeasset.com,INV-240647,2025-10-22,2025-12-06,49.78,49.78,
+Ahwatukee Comm Prop,,,INV-229717,2025-08-09,2025-09-23,599.34,599.34,
+Ahwatukee Comm Prop,,,INV-229780,2025-08-09,2025-09-23,1583.32,1583.32,
+Ahwatukee Comm Prop,,,INV-231759,2025-08-20,2025-10-04,1212.44,1212.44,
+Ahwatukee Comm Prop,,,INV-234279,2025-09-03,2025-10-18,439.83,439.83,
+Ahwatukee Comm Prop,,,INV-240981,2025-10-25,2025-12-09,613.86,613.86,
+Alicia Carter Bistro,Jason Carter,jason.carter@yahoo.com,INV-238435,2025-10-02,2025-11-01,2021.97,2021.97,
+Alicia Garcia Liquor LLC,,,INV-237615,2025-09-26,2025-10-26,519.59,84.50,
+Alicia Garcia Liquor LLC,,,INV-238464,2025-10-02,2025-11-01,758.85,758.85,
+Alicia Garcia Liquor LLC,,,INV-238496,2025-10-02,2025-11-01,5922.91,5922.91,
+Alicia Garcia Liquor LLC,,,INV-241122,2025-10-27,2025-11-26,646.12,646.12,
+Allen Pediatrics,Karen Davis,karen.davis@allenpediatrics.com,AGR-025653,2025-10-06,2025-11-05,1003.58,1003.58,
+Andre Collins Chiropractic Inc,,,INV-228013,2025-07-30,2025-08-29,599.34,599.34,
+Andre Hughes Liquor,Wes Collins,wes.collins@andrehughes.com,INV-237660,2025-09-26,2025-10-26,573.99,119.90,
+Angela Lewis Insurance Agency,Denise Wilson,denise.wilson@outlook.com,AGR-025984,2025-10-30,2025-11-29,1008.52,1008.52,
+Apache Junction Property Management,Travis Phillips,travis.phillips@apachejunction.com,INV-234570,2025-09-05,2025-10-20,469.81,469.81,
+Apache Junction Property Management,Travis Phillips,travis.phillips@apachejunction.com,INV-238116,2025-09-29,2025-11-13,853.13,853.13,
+Apache Junction Property Management,Travis Phillips,travis.phillips@apachejunction.com,INV-241208,2025-10-28,2025-12-12,762.07,762.07,
+ARCADIA ASSET MANAGEMENT,,,AGR-025448,2025-09-26,2025-11-10,376.55,376.55,
+ARCADIA ASSET MANAGEMENT,,,AGR-025740,2025-10-15,2025-11-29,1518.79,1518.79,
+Arcadia Real Estate Group,Tasha Martinez,tasha.martinez@arcadiareal.com,AGR-025602,2025-10-02,2025-11-16,1824.20,1824.20,
+Arcadia Real Estate Group,Tasha Martinez,tasha.martinez@arcadiareal.com,AGR-025809,2025-10-19,2025-12-03,1207.23,1207.23,
+Arcadia Real Estate Group,Tasha Martinez,tasha.martinez@arcadiareal.com,AGR-025930,2025-10-27,2025-12-11,851.83,851.83,
+Arcadia Real Estate Group,Tasha Martinez,tasha.martinez@arcadiareal.com,INV-237915,2025-09-28,2025-11-12,469.81,469.81,
+Arcadia Real Estate Group,Tasha Martinez,tasha.martinez@arcadiareal.com,INV-239521,2025-10-11,2025-11-25,468.87,468.87,
+Arcadia Real Estate Group,Tasha Martinez,tasha.martinez@arcadiareal.com,INV-240054,2025-10-16,2025-11-30,548.63,548.63,
+Arcadia Real Estate Group,Tasha Martinez,tasha.martinez@arcadiareal.com,INV-240815,2025-10-24,2025-12-08,1248.37,1248.37,
+Arcadia Real Estate Group,Tasha Martinez,tasha.martinez@arcadiareal.com,INV-240846,2025-10-24,2025-12-08,705.24,705.24,
+Arcadia Realty Partners,,,INV-237065,2025-09-22,2025-11-06,1190.97,1190.97,PO078000256
+Avondale Asset Management,David Evans,devans@avondaleasset.com,INV-236255,2025-09-16,2025-10-31,49.78,49.78,
+Avondale Asset Management,David Evans,devans@avondaleasset.com,INV-237245,2025-09-23,2025-11-07,78.82,78.82,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,AGR-025174,2025-09-05,2025-10-20,2338.36,2338.36,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,AGR-025944,2025-10-28,2025-12-12,292.29,292.29,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-221506,2025-06-20,2025-08-04,479.71,144.48,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-224774,2025-07-11,2025-08-25,1386.99,456.96,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-226203,2025-07-19,2025-09-02,435.59,435.59,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-226835,2025-07-23,2025-09-06,64.30,64.30,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-229126,2025-08-05,2025-09-19,310.30,310.30,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-230288,2025-08-12,2025-09-26,559.46,559.46,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-230429,2025-08-13,2025-09-27,350.17,66.94,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-230445,2025-08-13,2025-09-27,559.46,559.46,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-230550,2025-08-14,2025-09-28,390.05,390.05,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-231418,2025-08-18,2025-10-02,334.72,334.72,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-233347,2025-08-29,2025-10-13,1264.29,1264.29,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-234168,2025-09-03,2025-10-18,559.46,559.46,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-234471,2025-09-05,2025-10-20,3422.51,3422.51,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-234786,2025-09-06,2025-10-29,49.78,49.78,PO120000757X
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-234924,2025-09-07,2025-10-22,17133.94,17133.94,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-235102,2025-09-08,2025-10-23,3422.51,3422.51,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-235443,2025-09-11,2025-11-01,1052.93,1052.93,PO120000762X
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-235580,2025-09-12,2025-11-07,1300.00,1300.00,PO120000753
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-235931,2025-09-14,2025-10-29,383.74,383.74,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-236157,2025-09-15,2025-10-30,1224.42,1224.42,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-236731,2025-09-20,2025-11-04,479.71,479.71,PO120000757
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-236806,2025-09-20,2025-11-04,613.86,613.86,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-237240,2025-09-23,2025-11-12,500.00,500.00,PO120000762
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-237333,2025-09-24,2025-11-15,1248.37,1248.37,PO120000769X
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-237450,2025-09-25,2025-11-14,550.00,550.00,PO120000761
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-237495,2025-09-25,2025-11-09,705.24,705.24,
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-237653,2025-09-26,2025-11-10,16289.36,16289.36,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-237831,2025-09-27,2025-11-11,64.30,64.30,PO120000765
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-238018,2025-09-29,2025-11-13,500.00,500.00,PO120000760
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-238344,2025-10-01,2025-11-21,1451.71,1451.71,PO120000771X
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-238577,2025-10-03,2025-11-17,1172.57,1172.57,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-238617,2025-10-03,2025-11-24,519.59,519.59,PO120000774X
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-238843,2025-10-05,2025-11-19,500.00,500.00,PO120000764
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-239339,2025-10-09,2025-11-23,49.78,49.78,PO120000769
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-239684,2025-10-12,2025-12-03,1550.00,1550.00,PO120000771
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-240531,2025-10-21,2025-12-16,600.00,600.00,PO120000772
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-240817,2025-10-24,2025-12-08,494.23,494.23,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-240977,2025-10-25,2025-12-16,650.00,650.00,PO120000777
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-241058,2025-10-26,2025-12-10,639.22,639.22,
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-241082,2025-10-26,2025-12-19,900.00,900.00,PO120000776
+AVONDALE HOLDINGS,Chris Rogers,chris.rogers@avondaleholdings.com,INV-241346,2025-10-30,2025-12-23,1000.00,1000.00,PO120000774
+Avondale Holdings,Chris Rogers,chris.rogers@avondaleholdings.com,INV-241421,2025-10-30,2025-12-14,1168.62,1168.62,
+Avondale Realty Partners,Heather Cox,hcox@avondalerealty.com,INV-232184,2025-08-23,2025-10-07,5119.80,5119.80,
+Avondale Realty Partners,Heather Cox,hcox@avondalerealty.com,INV-235467,2025-09-11,2025-10-26,1009.11,1009.11,
+Avondale Realty Partners,Heather Cox,hcox@avondalerealty.com,INV-238467,2025-10-02,2025-11-16,693.62,693.62,
+Bailey  & Thomas Family Dental,,,INV-237067,2025-09-22,2025-10-22,773.37,197.90,
+Bailey  & Thomas Family Dental,,,INV-238165,2025-09-30,2025-10-30,1378.38,1378.38,
+Bailey  & Thomas Family Dental,,,INV-239979,2025-10-15,2025-11-14,5279.31,5279.31,
+Bailey  & Thomas Family Dental,,,INV-240464,2025-10-20,2025-11-19,933.30,933.30,
+Bailey  & Thomas Family Dental,,,INV-241131,2025-10-27,2025-11-26,588.50,588.50,
+Brickhouse Grill,,,AGR-024971,2025-08-24,2025-10-23,2249.54,2249.54,
+Brickhouse Grill,,,AGR-025781,2025-10-17,2025-12-16,1979.79,1979.79,
+Brickhouse Grill,,,AGR-025976,2025-10-30,2025-12-29,297.97,297.97,
+Brickhouse Grill,,,INV-228213,2025-07-31,2025-09-29,64.30,64.30,PO001000700
+Brickhouse Grill,,,INV-228946,2025-08-04,2025-10-21,1550.00,1550.00,PO001000699
+Brickhouse Grill,,,INV-230972,2025-08-16,2025-10-15,705.24,705.24,PO001000705
+Brickhouse Grill,,,INV-231068,2025-08-16,2025-10-15,1900.00,1900.00,PO001000707
+Brickhouse Grill,,,INV-232912,2025-08-27,2025-10-26,383.74,383.74,PO001000712
+Brickhouse Grill,,,INV-235251,2025-09-09,2025-11-08,628.38,628.38,PO001000723
+Brickhouse Grill,,,INV-235432,2025-09-11,2025-11-10,613.86,613.86,PO001000722
+Brickhouse Grill,,,INV-236490,2025-09-18,2025-11-17,64.30,64.30,PO001000725
+Brickhouse Grill,,,INV-238375,2025-10-01,2025-12-08,1212.44,1212.44,PO001000735X
+Brickhouse Grill,,,INV-238497,2025-10-02,2025-12-08,435.59,435.59,PO001000735X
+Bright Smiles Dental Inc,,,AGR-024737,2025-08-05,2025-10-04,2155.14,644.73,
+Bright Smiles Dental Inc,,,AGR-025342,2025-09-18,2025-11-17,5121.11,5121.11,
+Bright Smiles Dental Inc,,,AGR-025350,2025-09-19,2025-11-18,4217.43,4217.43,
+Bright Smiles Dental Inc,,,AGR-025915,2025-10-26,2025-12-25,1866.19,1866.19,
+Bright Smiles Dental Inc,,,INV-222003,2025-06-22,2025-08-28,49.78,4.52,PO021003304X
+Bright Smiles Dental Inc,,,INV-225804,2025-07-17,2025-09-24,900.00,242.58,PO021003324
+Bright Smiles Dental Inc,,,INV-226880,2025-07-23,2025-09-21,435.59,77.84,PO021003346
+Bright Smiles Dental Inc,,,INV-226949,2025-07-24,2025-10-01,646.12,74.02,PO021003384X
+Bright Smiles Dental Inc,,,INV-230713,2025-08-15,2025-10-31,145.20,145.20,PO021003477X
+Bright Smiles Dental Inc,,,INV-231421,2025-08-18,2025-10-17,559.46,65.03,PO021003429
+Bright Smiles Dental Inc,,,INV-232726,2025-08-26,2025-11-02,1200.00,1200.00,PO021003422
+Bright Smiles Dental Inc,,,INV-232736,2025-08-26,2025-10-29,350.17,350.17,PO021003473X
+Bright Smiles Dental Inc,,,INV-232823,2025-08-26,2025-11-01,1000.00,1000.00,PO021003444
+Bright Smiles Dental Inc,,,INV-233940,2025-09-01,2025-11-06,1250.00,1250.00,PO021003452
+Bright Smiles Dental Inc,,,INV-234098,2025-09-02,2025-11-07,1050.00,1050.00,PO021003460
+Bright Smiles Dental Inc,,,INV-234171,2025-09-03,2025-11-09,1032.18,1032.18,PO021003493X
+Bright Smiles Dental Inc,,,INV-234408,2025-09-04,2025-11-03,628.38,628.38,PO021003471
+Bright Smiles Dental Inc,,,INV-234737,2025-09-06,2025-11-05,559.46,559.46,PO021003472
+Bright Smiles Dental Inc,,,INV-234803,2025-09-06,2025-11-05,350.17,350.17,PO021003476
+Bright Smiles Dental Inc,,,INV-234961,2025-09-07,2025-11-11,1400.00,1400.00,PO021003457
+Bright Smiles Dental Inc,,,INV-235356,2025-09-10,2025-11-14,1077.62,1077.62,PO021003507X
+Bright Smiles Dental Inc,,,INV-235357,2025-09-10,2025-11-09,479.71,479.71,PO021003485
+Bright Smiles Dental Inc,,,INV-235431,2025-09-11,2025-11-10,559.46,559.46,PO021003478
+Bright Smiles Dental Inc,,,INV-235724,2025-09-13,2025-11-18,686.00,686.00,PO021003515X
+Bright Smiles Dental Inc,,,INV-235791,2025-09-13,2025-11-12,534.11,534.11,PO021003490
+Bright Smiles Dental Inc,,,INV-235800,2025-09-13,2025-11-23,310.30,310.30,PO021003524X
+Bright Smiles Dental Inc,,,INV-236299,2025-09-16,2025-11-15,639.22,639.22,PO021003498
+Bright Smiles Dental Inc,,,INV-236304,2025-09-16,2025-11-15,49.78,49.78,PO021003499
+Bright Smiles Dental Inc,,,INV-236346,2025-09-17,2025-11-16,613.86,613.86,PO021003496
+Bright Smiles Dental Inc,,,INV-236882,2025-09-21,2025-11-20,350.17,350.17,PO021003501
+Bright Smiles Dental Inc,,,INV-236979,2025-09-21,2025-12-04,750.00,750.00,PO021003509
+Bright Smiles Dental Inc,,,INV-237051,2025-09-22,2025-11-21,519.59,519.59,PO021003504
+Bright Smiles Dental Inc,,,INV-237663,2025-09-26,2025-12-05,3422.51,3422.51,PO021003543X
+Bright Smiles Dental Inc,,,INV-238050,2025-09-29,2025-11-28,145.20,145.20,PO021003521
+Bright Smiles Dental Inc,,,INV-238285,2025-10-01,2025-11-30,383.74,383.74,PO021003522
+Bright Smiles Dental Inc,,,INV-238447,2025-10-02,2025-12-09,4521.64,4521.64,PO021003546X
+Bright Smiles Dental Inc,,,INV-238448,2025-10-02,2025-12-01,390.05,390.05,PO021003524
+Bright Smiles Dental Inc,,,INV-238540,2025-10-03,2025-12-02,270.42,270.42,PO021003517
+Bright Smiles Dental Inc,,,INV-238823,2025-10-04,2025-12-08,758.85,758.85,PO021003546X
+Bright Smiles Dental Inc,,,INV-239002,2025-10-06,2025-12-16,1250.00,1250.00,PO021003515
+Bright Smiles Dental Inc,,,INV-239380,2025-10-10,2025-12-09,435.59,435.59,PO021003533
+Bright Smiles Dental Inc,,,INV-239429,2025-10-10,2025-12-09,750.00,750.00,PO021003539
+Bright Smiles Dental Inc,,,INV-239475,2025-10-11,2025-12-18,750.00,750.00,PO021003530
+Bright Smiles Dental Inc,,,INV-239484,2025-10-11,2025-12-19,4920.41,4920.41,PO021003560X
+Bright Smiles Dental Inc,,,INV-239594,2025-10-12,2025-12-19,1550.00,1550.00,PO021003534
+Bright Smiles Dental Inc,,,INV-239641,2025-10-12,2025-12-11,519.59,519.59,PO021003536
+Bright Smiles Dental Inc,,,INV-239759,2025-10-13,2025-12-12,4650.00,4650.00,PO021003541
+Bright Smiles Dental Inc,,,INV-239864,2025-10-14,2025-12-13,559.46,559.46,PO021003545
+Bright Smiles Dental Inc,,,INV-240548,2025-10-21,2025-12-20,1844.24,1844.24,PO021003540
+Bright Smiles Dental Inc,,,INV-240715,2025-10-23,,1250.00,1250.00,PO021003550
+Bright Smiles Dental Inc,,,INV-240865,2025-10-24,2025-12-23,599.34,599.34,PO021003552
+Bright Smiles Dental Inc,,,INV-241198,2025-10-28,2025-12-27,270.42,270.42,PO021003559
+Bright Smiles Dental Inc,,,INV-241228,2025-10-28,2025-12-27,654.88,654.88,PO021003563
+Bright Smiles Dental Inc,,,INV-241231,2025-10-28,2025-12-27,668.26,668.26,PO021003558
+Bright Smiles Dental Inc,,,INV-241263,2025-10-28,2025-12-27,686.00,686.00,PO021003569
+Bright Smiles Dental Inc,,,INV-241291,2025-10-29,,1800.00,1800.00,PO021003553
+Bright Smiles Dental Inc,,,INV-241323,2025-10-29,2025-12-28,390.05,390.05,PO021003567
+Bright Smiles Dental Inc,,,INV-241417,2025-10-30,,1300.00,1300.00,PO021003568
+Bright Smiles Dental Inc,,,INV-241518,2025-10-31,2025-12-30,64.30,64.30,PO021003564
+Brittany Campbell Furniture LLC,,,INV-237174,2025-09-23,2025-10-23,1252.32,101.16,
+Brittany Campbell Furniture LLC,,,INV-238503,2025-10-02,2025-11-01,893.42,893.42,
+Brittany Nelson Florist Inc,,,INV-219422,2025-06-04,2025-07-04,429.93,429.93,
+Brittany Nelson Florist Inc,,,INV-220429,2025-06-12,2025-07-12,678.84,678.84,
+Brittany Nelson Florist Inc,,,INV-232627,2025-08-25,2025-09-24,5000.16,5000.16,
+Brittany Nelson Florist Inc,,,INV-234656,2025-09-05,2025-10-05,615.01,615.01,
+Brittany Nelson Florist Inc,,,INV-236195,2025-09-16,2025-10-16,1902.34,1902.34,
+Broadway Street Accounting,Nicole Turner,nicole.turner@cox.net,INV-240188,2025-10-17,2025-11-16,588.50,588.50,
+Broadway Street Accounting,Nicole Turner,nicole.turner@cox.net,INV-240329,2025-10-19,2025-11-18,588.50,588.50,
+Broadway Street Cafe Inc,,,INV-239172,2025-10-07,2025-11-06,5757.84,5757.84,
+BurgerBarn,,,AGR-024989,2025-08-25,2025-10-24,584.59,584.59,
+BurgerBarn,,,INV-230187,2025-08-11,2025-10-18,900.00,900.00,PO014001434
+BurgerBarn,,,INV-230299,2025-08-12,2025-11-02,588.50,588.50,PO014001475X
+BurgerBarn,,,INV-232772,2025-08-26,2025-10-25,588.50,588.50,PO014001456
+BurgerBarn,,,INV-234407,2025-09-04,2025-11-12,599.34,599.34,PO014001488X
+BurgerBarn,,,INV-234818,2025-09-06,2025-11-05,4950.00,4950.00,PO014001469
+BurgerBarn,,,INV-235129,2025-09-08,2025-11-07,439.83,439.83,PO014001475
+BurgerBarn,,,INV-236361,2025-09-17,2025-11-28,4750.00,4750.00,PO014001483
+BurgerBarn,,,INV-236465,2025-09-18,2025-11-24,573.99,573.99,PO014001500X
+BurgerBarn,,,INV-237274,2025-09-23,2025-11-29,1450.00,1450.00,PO014001491
+BurgerBarn,,,INV-237617,2025-09-26,2025-12-03,1383.93,1383.93,PO014001508X
+BurgerBarn,,,INV-239073,2025-10-06,2025-12-15,4950.00,4950.00,PO014001504
+BurgerBarn,,,INV-240385,2025-10-19,,653.74,653.74,PO014001524X
+Camelback Ral Estate Group,,,INV-236873,2025-09-21,2025-11-05,439.83,439.83,
+Camelback Ral Estate Group,,,INV-237272,2025-09-23,2025-11-07,4721.02,4721.02,
+Camelback Real Estate Group,Tyler Ward,tward@camelbackreal.com,AGR-025657,2025-10-07,2025-11-21,380.04,380.04,
+Camelback Real Estate Group,Tyler Ward,tward@camelbackreal.com,INV-236098,2025-09-15,2025-10-30,828.70,828.70,
+Camelback Real Estate Group,Tyler Ward,tward@camelbackreal.com,INV-237435,2025-09-25,2025-11-09,468.87,468.87,
+Camp Verde Holdings,,,AGR-025993,2025-10-31,2025-12-15,193.78,193.78,
+Camp Verde Holdings,,,AGR-025995,2025-10-31,2025-12-15,1185.07,1185.07,
+Camp Verde Holdings,,,INV-232852,2025-08-26,2025-10-27,1550.00,1550.00,PO1488000117
+Camp Verde Holdings,,,INV-234965,2025-09-07,2025-10-22,435.59,435.59,PO1488000123
+Camp Verde Holdings,,,INV-237094,2025-09-22,2025-11-06,383.74,383.74,PO1488000135
+Camp Verde Holdings,,,INV-237237,2025-09-23,2025-11-13,1200.00,1200.00,PO1488000134
+Camp Verde Holdings,,,INV-237512,2025-09-25,2025-11-24,383.74,383.74,PO1488000148X
+Camp Verde Holdings,,,INV-237553,2025-09-26,2025-11-22,350.17,350.17,PO1488000146X
+Camp Verde Holdings,,,INV-239071,2025-10-06,2025-11-28,6356.00,6356.00,PO1488000150X
+Camp Verde Holdings,,,INV-239466,2025-10-10,2025-11-24,705.24,705.24,PO1488000146
+Camp Verde Holdings,,,INV-241037,2025-10-26,2025-12-10,19848.96,19848.96,PO1488000141
+Camp Verde Holdings,,,INV-241209,2025-10-28,2025-12-18,1400.00,1400.00,PO1488000149
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-235665,2025-09-12,2025-10-27,559.46,559.46,
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-236610,2025-09-19,2025-11-03,1172.57,1172.57,
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-238466,2025-10-02,2025-11-16,1224.42,1224.42,
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-238709,2025-10-04,2025-11-18,559.46,559.46,
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-239260,2025-10-08,2025-11-22,519.59,519.59,
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-239551,2025-10-11,2025-11-25,573.99,573.99,
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-240160,2025-10-17,2025-12-01,801.94,801.94,
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-241039,2025-10-26,2025-12-10,399.95,399.95,
+Camp Verde Property Management,Karen Cox,karen.cox@campverde.com,INV-241230,2025-10-28,2025-12-12,559.46,559.46,
+Camp Verde Realty Partners,Marcus Thompson,mthompson@campverderealty.com,AGR-025729,2025-10-14,2025-11-28,191.93,191.93,
+Camp Verde Realty Partners,Marcus Thompson,mthompson@campverderealty.com,AGR-025757,2025-10-15,2025-11-29,198.65,198.65,
+Camp Verde Realty Partners,Marcus Thompson,mthompson@campverderealty.com,INV-236279,2025-09-16,2025-10-31,548.63,548.63,
+Carter & Walker Engineering,Andre Cox,andrec52@icloud.com,INV-239001,2025-10-06,2025-11-05,4760.90,4760.90,
+Casas Adobes Chiropractic,Megan Evans,mevans@casasadobes.com,INV-232855,2025-08-26,2025-09-25,519.59,159.36,
+Casas Adobes Chiropractic,Megan Evans,mevans@casasadobes.com,INV-239825,2025-10-14,2025-11-13,390.05,47.52,
+Casas Adobes Chiropractic,Megan Evans,mevans@casasadobes.com,INV-240716,2025-10-23,2025-11-22,599.34,599.34,
+Casas Adobes Chiropractic,Megan Evans,mevans@casasadobes.com,INV-240924,2025-10-25,2025-11-24,435.59,435.59,
+Casas Adobes Chiropractic,Megan Evans,mevans@casasadobes.com,INV-241020,2025-10-26,2025-11-25,49.78,49.78,
+Casas Adobes Chiropractic,Megan Evans,mevans@casasadobes.com,INV-241172,2025-10-27,2025-11-26,176.31,176.31,
+Casas Adobes Comm Prop,,,INV-236977,2025-09-21,2025-11-05,349.24,349.24,
+Casas Adobes Comm Prop,,,INV-238269,2025-10-01,2025-11-15,1503.56,1503.56,
+Casas Adobes Comm Prop,,,INV-239524,2025-10-11,2025-11-25,679.10,679.10,
+Casas Adobes Comm Prop,,,INV-240198,2025-10-17,2025-12-01,439.83,439.83,
+Casas Adobes Diner,Trent Parker,trentp3@cox.net,INV-240493,2025-10-20,2025-11-19,765.75,765.75,
+Casas Adobes Pediatrics,Michael Collins,michaelc29@outlook.com,INV-239810,2025-10-13,2025-11-12,1852.97,1852.97,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,AGR-025965,2025-10-29,2025-11-28,5002.41,5002.41,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,INV-236324,2025-09-17,2025-10-17,454.35,95.19,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,INV-240123,2025-10-17,2025-11-16,694.76,694.76,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,INV-240276,2025-10-18,2025-11-17,145.20,145.20,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,INV-240760,2025-10-24,2025-11-23,469.81,469.81,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,INV-241176,2025-10-27,2025-11-26,1248.37,1248.37,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,INV-241255,2025-10-28,2025-11-27,349.24,349.24,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,INV-241293,2025-10-29,2025-11-28,908.46,908.46,
+Casas Adobes Physical Therapy,Carmen Cook,ccook@casasadobes.com,INV-241458,2025-10-31,2025-11-30,5937.24,5937.24,
+Catalina  Foothills Boutique,,,INV-238633,2025-10-03,2025-11-02,606.24,606.24,
+Catalina  Foothills Boutique,,,INV-239401,2025-10-10,2025-11-09,734.64,734.64,
+Catalina  Foothills Boutique,,,INV-241516,2025-10-31,2025-11-30,606.24,606.24,
+Catalina Foothill Pizzeria,,,AGR-025282,2025-09-13,2025-10-13,741.98,741.98,
+Catalina Foothill Pizzeria,,,INV-236492,2025-09-18,2025-10-25,1503.56,1503.56,PO254000120X
+Catalina Foothill Pizzeria,,,INV-239780,2025-10-13,2025-11-12,539.30,539.30,PO254000121
+Catalina Foothill Pizzeria,,,INV-241314,2025-10-29,2025-11-28,599.34,599.34,PO254000122
+Catalina Foothills Florist,Heather Evans,heathere36@gmail.com,AGR-025937,2025-10-27,2025-11-26,1196.57,1196.57,
+Catalina Foothills Florist,Heather Evans,heathere36@gmail.com,INV-238502,2025-10-02,2025-11-01,588.50,588.50,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,AGR-025399,2025-09-24,2025-10-24,506.26,506.26,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,AGR-025496,2025-09-28,2025-10-28,1580.21,1580.21,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,INV-236945,2025-09-21,2025-10-21,668.26,668.26,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,INV-237326,2025-09-24,2025-10-24,1052.93,1052.93,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,INV-237624,2025-09-26,2025-10-26,628.38,628.38,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,INV-237830,2025-09-27,2025-10-27,881.70,881.70,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,INV-240550,2025-10-21,2025-11-20,654.16,654.16,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,INV-240923,2025-10-25,2025-11-24,1414.31,1414.31,
+Catalina Foothills Hardware,Robert Nelson,rnelson@catalina.com,INV-241061,2025-10-26,2025-11-25,439.83,439.83,
+Catalina Foothills Holdings,Jose Martinez,jose.martinez@catalina.com,INV-230042,2025-08-10,2025-09-24,1623.19,1623.19,
+Catalina Foothills Holdings,Jose Martinez,jose.martinez@catalina.com,INV-235516,2025-09-11,2025-10-26,1184.54,1184.54,
+Catalina Foothills Holdings,Jose Martinez,jose.martinez@catalina.com,INV-241235,2025-10-28,2025-12-12,1304.17,1304.17,
+"Catalina Foothills Insurance Agency, LLC",,,INV-230986,2025-08-16,2025-09-15,1248.37,273.24,
+Catalina Foothills Taqueria,Jose Baker,jbaker@catalina.com,INV-237069,2025-09-22,2025-10-22,599.34,599.34,
+Catalina Foothills Taqueria,Jose Baker,jbaker@catalina.com,INV-237279,2025-09-23,2025-10-23,383.74,43.40,
+Catalina Foothills Taqueria,Jose Baker,jbaker@catalina.com,INV-237756,2025-09-27,2025-10-27,49.78,49.78,
+Catalina Foothills Taqueria,Jose Baker,jbaker@catalina.com,INV-238226,2025-09-30,2025-10-30,758.85,758.85,
+Catalina Foothills Taqueria,Jose Baker,jbaker@catalina.com,INV-240720,2025-10-23,2025-11-22,78.82,78.82,
+Catalina Foothills Taqueria,Jose Baker,jbaker@catalina.com,INV-241130,2025-10-27,2025-11-26,1543.44,1543.44,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,AGR-025179,2025-09-06,2025-10-21,578.18,578.18,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-227552,2025-07-27,2025-09-10,1430.23,1430.23,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-227977,2025-07-30,2025-09-13,599.34,599.34,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-228352,2025-08-01,2025-09-15,1423.80,1423.80,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-229593,2025-08-08,2025-09-22,599.34,599.34,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-230010,2025-08-10,2025-09-24,539.30,539.30,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-232308,2025-08-23,2025-10-07,629.32,629.32,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-233562,2025-08-30,2025-10-14,654.16,654.16,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-234895,2025-09-07,2025-10-22,1013.06,1013.06,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-235049,2025-09-08,2025-10-23,479.71,479.71,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-236315,2025-09-17,2025-11-01,758.85,758.85,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-236774,2025-09-20,2025-11-04,1344.05,1344.05,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-237654,2025-09-26,2025-11-10,1013.06,1013.06,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-239819,2025-10-14,2025-11-28,5598.33,5598.33,
+CHANDLER COMMERCIAL PROPERTIES,Cody Robinson,cody.robinson@chandler.com,INV-240615,2025-10-22,2025-12-06,509.68,509.68,
+Chandler Property Management,James Roberts,james.roberts@chandlerproperty.com,INV-236863,2025-09-20,2025-11-04,429.93,429.93,
+Chandler Property Management,James Roberts,james.roberts@chandlerproperty.com,INV-241289,2025-10-29,2025-12-13,17673.04,17673.04,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,AGR-025718,2025-10-12,2025-11-26,397.30,397.30,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-219314,2025-06-03,2025-07-18,559.46,116.19,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-219387,2025-06-03,2025-07-18,599.34,115.92,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-223566,2025-07-03,2025-08-17,469.81,28.76,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-233770,2025-08-31,2025-10-15,5430.10,5430.10,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-234573,2025-09-05,2025-10-20,1168.62,1168.62,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-236068,2025-09-15,2025-10-30,639.22,639.22,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-236281,2025-09-16,2025-10-31,639.22,639.22,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-238377,2025-10-01,2025-11-15,519.59,519.59,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-238578,2025-10-03,2025-11-17,867.65,867.65,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-239193,2025-10-08,2025-11-22,639.22,639.22,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-239235,2025-10-08,2025-11-22,390.05,390.05,
+Chandler Real Estate Group,Linda Clark,linda.clark@chandlerreal.com,INV-240722,2025-10-23,2025-12-07,399.95,399.95,
+Chris Miller Cafe,Angela Turner,angelat78@gmail.com,INV-238754,2025-10-04,2025-11-03,1052.93,1052.93,
+Chris Miller Cafe,Angela Turner,angelat78@gmail.com,INV-239520,2025-10-11,2025-11-10,798.47,798.47,
+Chris Miller Cafe,Angela Turner,angelat78@gmail.com,INV-240340,2025-10-19,2025-11-18,1537.89,1537.89,
+Chris Miller Cafe,Angela Turner,angelat78@gmail.com,INV-241322,2025-10-29,2025-11-28,734.64,734.64,
+Cinema Plex,,,AGR-024750,2025-08-06,2025-10-05,1157.99,1157.99,
+Cinema Plex,,,INV-223135,2025-06-30,2025-09-03,599.34,105.90,PO019004151X
+Cinema Plex,,,INV-227757,2025-07-28,2025-10-22,1450.00,1450.00,PO019004189
+Cinema Plex,,,INV-227832,2025-07-28,2025-09-26,49.78,49.78,PO019004210
+Cinema Plex,,,INV-228159,2025-07-31,2025-10-08,700.00,700.00,PO019004203
+Cinema Plex,,,INV-228933,2025-08-04,2025-10-03,350.17,350.17,PO019004224
+Cinema Plex,,,INV-229772,2025-08-09,2025-10-21,1128.74,1128.74,PO019004298X
+Cinema Plex,,,INV-230488,2025-08-13,2025-10-16,750.00,750.00,PO019004253
+Cinema Plex,,,INV-230966,2025-08-16,2025-10-26,4481.76,4481.76,PO019004317X
+Cinema Plex,,,INV-231255,2025-08-17,2025-10-27,559.46,559.46,PO019004319X
+Cinema Plex,,,INV-231684,2025-08-20,2025-11-06,900.00,900.00,PO019004269
+Cinema Plex,,,INV-232602,2025-08-25,2025-10-24,390.05,390.05,PO019004288
+Cinema Plex,,,INV-232853,2025-08-26,2025-11-14,800.00,800.00,PO019004292
+Cinema Plex,,,INV-233062,2025-08-28,2025-11-09,500.00,500.00,PO019004296
+Cinema Plex,,,INV-233136,2025-08-28,2025-10-27,429.93,429.93,PO019004301
+Cinema Plex,,,INV-233173,2025-08-29,2025-11-14,1304.17,1304.17,PO019004374X
+Cinema Plex,,,INV-233517,2025-08-30,2025-10-29,49.78,49.78,PO019004309
+Cinema Plex,,,INV-233656,2025-08-31,2025-11-11,559.46,559.46,PO019004368X
+Cinema Plex,,,INV-234006,2025-09-02,2025-11-01,469.81,469.81,PO019004293
+Cinema Plex,,,INV-234097,2025-09-02,2025-11-07,800.00,800.00,PO019004311
+Cinema Plex,,,INV-234209,2025-09-03,2025-11-09,1025.03,1025.03,PO019004359X
+Cinema Plex,,,INV-234353,2025-09-04,2025-11-10,500.00,500.00,PO019004319
+Cinema Plex,,,INV-234514,2025-09-05,2025-11-17,1400.00,1400.00,PO019004312
+Cinema Plex,,,INV-234816,2025-09-06,2025-11-05,844.40,844.40,PO019004323
+Cinema Plex,,,INV-234820,2025-09-06,2025-11-11,600.00,600.00,PO019004327
+Cinema Plex,,,INV-235346,2025-09-10,2025-11-15,360.08,360.08,PO019004376X
+Cinema Plex,,,INV-235510,2025-09-11,2025-11-17,439.83,439.83,PO019004379X
+Cinema Plex,,,INV-235664,2025-09-12,2025-11-11,350.17,350.17,PO019004350
+Cinema Plex,,,INV-235977,2025-09-14,2025-11-21,2050.00,2050.00,PO019004331
+Cinema Plex,,,INV-236022,2025-09-14,2025-11-19,850.00,850.00,PO019004355
+Cinema Plex,,,INV-236164,2025-09-15,2025-11-20,706.01,706.01,PO019004386X
+Cinema Plex,,,INV-236291,2025-09-16,2025-11-15,270.42,270.42,PO019004367
+Cinema Plex,,,INV-236911,2025-09-21,2025-11-20,5355.30,5355.30,PO019004320
+Cinema Plex,,,INV-237176,2025-09-23,2025-11-22,176.31,176.31,PO019004372
+Cinema Plex,,,INV-237556,2025-09-26,2025-12-02,4601.39,4601.39,PO019004418X
+Cinema Plex,,,INV-237888,2025-09-28,2025-12-03,1100.00,1100.00,PO019004382
+Cinema Plex,,,INV-237947,2025-09-28,2025-11-27,4550.00,4550.00,PO019004384
+Cinema Plex,,,INV-238343,2025-10-01,2025-12-07,1328.13,1328.13,PO019004429X
+Cinema Plex,,,INV-238510,2025-10-02,2025-12-10,548.63,548.63,PO019004435X
+Cinema Plex,,,INV-238546,2025-10-03,2025-12-02,5776.35,5776.35,PO019004362
+Cinema Plex,,,INV-238714,2025-10-04,2025-12-11,950.00,950.00,PO019004397
+Cinema Plex,,,INV-239649,2025-10-12,2025-12-11,350.17,350.17,PO019004420
+Cinema Plex,,,INV-239850,2025-10-14,2025-12-18,700.00,700.00,PO019004412
+Cinema Plex,,,INV-240097,2025-10-17,2025-12-25,650.00,650.00,PO019004424
+Cinema Plex,,,INV-240547,2025-10-21,2025-12-29,600.00,600.00,PO019004437
+Cinema Plex,,,INV-240975,2025-10-25,,550.00,550.00,PO019004442
+Cinema Plex,,,INV-241057,2025-10-26,,900.00,900.00,PO019004444
+Cinema Plex,,,INV-241430,2025-10-30,2025-12-29,320.20,320.20,PO019004417
+Clar Architects,,,INV-238689,2025-10-04,2025-11-03,1168.62,1168.62,
+Clar Architects,,,INV-238849,2025-10-05,2025-11-04,519.59,519.59,
+Clar Architects,,,INV-239570,2025-10-11,2025-11-10,5828.87,5828.87,
+Clar Architects,,,INV-240207,2025-10-18,2025-11-17,1013.06,1013.06,
+Clar Architects,,,INV-240594,2025-10-22,2025-11-21,534.11,534.11,
+Clark & Brown Appliance,Marcus Reed,marcusr2@icloud.com,INV-241251,2025-10-28,2025-11-27,1298.63,1298.63,
+Coconino Real Estate Group,Angela White,angela.white@coconinoreal.com,AGR-025670,2025-10-08,2025-11-22,284.29,284.29,
+Coconino Real Estate Group,Angela White,angela.white@coconinoreal.com,INV-236646,2025-09-19,2025-11-03,3422.51,3422.51,
+Coconino Real Estate Group,Angela White,angela.white@coconinoreal.com,INV-237847,2025-09-27,2025-11-11,559.46,559.46,
+Coconino Real Estate Group,Angela White,angela.white@coconinoreal.com,INV-237963,2025-09-28,2025-11-12,350.17,350.17,
+Coconino Real Estate Group,Angela White,angela.white@coconinoreal.com,INV-238154,2025-09-30,2025-11-14,64.30,64.30,
+Coconino Real Estate Group,Angela White,angela.white@coconinoreal.com,INV-239704,2025-10-12,2025-11-26,548.63,548.63,
+Cook Furniture,Alicia King,alicia.king@cox.net,INV-238155,2025-09-30,2025-10-30,1902.34,1902.34,
+Cook Furniture,Alicia King,alicia.king@cox.net,INV-240264,2025-10-18,2025-11-17,534.11,534.11,
+CORNER PHARMACY,,,AGR-025507,2025-09-29,2025-11-28,2099.22,2099.22,
+CORNER PHARMACY,,,AGR-025563,2025-09-30,2025-11-29,2172.69,2172.69,
+CORNER PHARMACY,,,AGR-025569,2025-10-01,2025-11-30,1358.65,1358.65,
+CORNER PHARMACY,,,INV-232739,2025-08-26,2025-11-01,838.35,838.35,PO004001709X
+CORNER PHARMACY,,,INV-233301,2025-08-29,2025-10-28,679.10,679.10,PO004001695
+CORNER PHARMACY,,,INV-233480,2025-08-30,2025-11-07,718.97,718.97,PO004001713X
+CORNER PHARMACY,,,INV-234568,2025-09-05,2025-11-04,509.68,509.68,PO004001702
+CORNER PHARMACY,,,INV-235201,2025-09-09,2025-11-14,798.47,798.47,PO004001721X
+CORNER PHARMACY,,,INV-237204,2025-09-23,2025-11-30,549.68,549.68,PO004001739X
+CORNER PHARMACY,,,INV-237989,2025-09-28,2025-11-27,773.37,773.37,PO004001732
+CORNER PHARMACY,,,INV-238899,2025-10-05,2025-12-04,693.62,693.62,PO004001738
+CORNER PHARMACY,,,INV-238929,2025-10-05,2025-12-17,1100.00,1100.00,PO004001734
+CORNER PHARMACY,,,INV-238931,2025-10-05,2025-12-04,1500.00,1500.00,PO004001737
+CORNER PHARMACY,,,INV-239664,2025-10-12,2025-12-18,694.76,694.76,PO004001748X
+CORNER PHARMACY,,,INV-240186,2025-10-17,2025-12-16,509.68,509.68,PO004001746
+Cottonwood Holdings,,,INV-236067,2025-09-15,2025-11-07,613.86,613.86,PO040000496X
+Crust & Co. Pizza,,,AGR-025048,2025-08-30,2025-10-29,303.76,303.76,
+Crust & Co. Pizza,,,AGR-025629,2025-10-04,2025-12-03,1902.11,1902.11,
+Crust & Co. Pizza,,,INV-226865,2025-07-23,2025-09-30,349.24,92.77,PO025000966X
+Crust & Co. Pizza,,,INV-233943,2025-09-01,2025-11-08,1208.49,1208.49,PO025000994X
+Crust & Co. Pizza,,,INV-234409,2025-09-04,2025-11-16,559.46,559.46,PO025000999X
+Crust & Co. Pizza,,,INV-235983,2025-09-14,2025-11-25,519.59,519.59,PO025001009X
+Crust & Co. Pizza,,,INV-236100,2025-09-15,2025-11-14,49.78,49.78,PO025000995
+Crust & Co. Pizza,,,INV-237049,2025-09-22,2025-11-21,383.74,383.74,PO025000998
+Crust & Co. Pizza,,,INV-238022,2025-09-29,2025-12-06,500.00,500.00,PO025001000
+Crust & Co. Pizza,,,INV-238881,2025-10-05,2025-12-15,479.71,479.71,PO025001018X
+Crust & Co. Pizza,,,INV-239571,2025-10-11,2025-12-20,700.00,700.00,PO025001013
+Crust & Co. Pizza,,,INV-240152,2025-10-17,,1150.00,1150.00,PO025001014
+Crust & Co. Pizza,,,INV-240326,2025-10-19,,679.10,679.10,PO025001025X
+"Davis & Thomas Accounting, Inc.",,,INV-234571,2025-09-05,2025-10-05,733.50,208.97,
+"Davis & Thomas Accounting, Inc.",,,INV-237335,2025-09-24,2025-10-24,1623.19,1623.19,
+Deer Valley Real Estate Group,Angela White,awhite@deervalleyreal.com,INV-229387,2025-08-07,2025-09-29,1600.00,1600.00,PO125000153
+Deer Valley Real Estate Group,Angela White,awhite@deervalleyreal.com,INV-232556,2025-08-25,2025-11-04,1400.00,1400.00,PO125000156
+Deer Valley Real Estate Group,Angela White,awhite@deervalleyreal.com,INV-233521,2025-08-30,2025-10-20,390.05,390.05,PO125000160X
+Deer Valley Real Estate Group,Angela White,awhite@deervalleyreal.com,INV-241193,2025-10-28,2025-12-12,500.00,500.00,PO125000162
+Desert Ridge Realty artners,,,AGR-025432,2025-09-25,2025-11-09,491.87,491.87,
+Desert Ridge Realty artners,,,INV-236491,2025-09-18,2025-11-02,1423.80,1423.80,
+Desert Ridge Realty artners,,,INV-237399,2025-09-24,2025-11-08,1304.17,1304.17,
+Desert Ridge Realty Partners,Luis Taylor,luis.taylor@desertridge.com,AGR-025779,2025-10-17,2025-12-01,192.09,192.09,
+Desert Ridge Realty Partners,Luis Taylor,luis.taylor@desertridge.com,INV-236536,2025-09-18,2025-11-02,519.59,519.59,
+Desert Ridge Realty Partners,Luis Taylor,luis.taylor@desertridge.com,INV-241334,2025-10-29,2025-12-13,1212.44,1212.44,
+Desert Ridge Realty Partners Inc,,,INV-237505,2025-09-25,2025-11-09,435.59,435.59,
+DollrWise,,,AGR-025430,2025-09-25,2025-11-24,1954.30,1954.30,
+DollrWise,,,AGR-025808,2025-10-19,2025-12-18,1278.24,1278.24,
+DollrWise,,,INV-223132,2025-06-30,2025-09-05,800.00,170.81,PO017002756
+DollrWise,,,INV-224647,2025-07-10,2025-09-08,4350.00,1030.93,PO017002777
+DollrWise,,,INV-231344,2025-08-18,2025-10-30,1150.00,1150.00,PO017002843
+DollrWise,,,INV-231521,2025-08-19,2025-10-28,600.00,600.00,PO017002850
+DollrWise,,,INV-231711,2025-08-20,2025-10-30,700.00,700.00,PO017002853
+DollrWise,,,INV-232861,2025-08-26,2025-10-31,550.00,550.00,PO017002877
+DollrWise,,,INV-232880,2025-08-27,2025-11-16,500.00,500.00,PO017002870
+DollrWise,,,INV-232911,2025-08-27,2025-11-01,1250.00,1250.00,PO017002867
+DollrWise,,,INV-233089,2025-08-28,2025-11-06,650.00,650.00,PO017002871
+DollrWise,,,INV-233164,2025-08-28,2025-11-07,725.87,725.87,PO017002912X
+DollrWise,,,INV-233185,2025-08-29,2025-11-20,1179.00,1179.00,PO017002933X
+DollrWise,,,INV-233303,2025-08-29,2025-11-05,500.00,500.00,PO017002884
+DollrWise,,,INV-233469,2025-08-30,2025-10-29,500.00,500.00,PO017002878
+DollrWise,,,INV-233683,2025-08-31,2025-11-06,1052.93,1052.93,PO017002910X
+DollrWise,,,INV-233726,2025-08-31,2025-10-30,1215.69,1215.69,PO017002874
+DollrWise,,,INV-234246,2025-09-03,2025-11-19,1100.00,1100.00,PO017002880
+DollrWise,,,INV-234569,2025-09-05,2025-11-04,500.00,500.00,PO017002896
+DollrWise,,,INV-234822,2025-09-06,2025-11-05,494.23,494.23,PO017002901
+DollrWise,,,INV-234850,2025-09-07,2025-11-21,550.00,550.00,PO017002879
+DollrWise,,,INV-235455,2025-09-11,2025-11-25,600.00,600.00,PO017002904
+DollrWise,,,INV-235699,2025-09-12,2025-11-19,439.83,439.83,PO017002932X
+DollrWise,,,INV-236127,2025-09-15,2025-11-25,758.60,758.60,PO017002943X
+DollrWise,,,INV-236284,2025-09-16,2025-11-25,828.70,828.70,PO017002943X
+DollrWise,,,INV-236388,2025-09-17,2025-11-26,918.11,918.11,PO017002945X
+DollrWise,,,INV-236488,2025-09-18,2025-11-24,800.00,800.00,PO017002909
+DollrWise,,,INV-236708,2025-09-19,2025-11-30,1050.00,1050.00,PO017002914
+DollrWise,,,INV-236843,2025-09-20,2025-11-26,850.00,850.00,PO017002923
+DollrWise,,,INV-237125,2025-09-22,2025-11-21,390.05,390.05,PO017002921
+DollrWise,,,INV-238137,2025-09-30,2025-12-05,1400.00,1400.00,PO017002920
+DollrWise,,,INV-238498,2025-10-02,2025-12-07,1856.91,1856.91,PO017002965X
+DollrWise,,,INV-238530,2025-10-02,2025-12-07,878.23,878.23,PO017002965X
+DollrWise,,,INV-238820,2025-10-04,2025-12-13,550.00,550.00,PO017002947
+DollrWise,,,INV-238934,2025-10-05,2025-12-17,500.00,500.00,PO017002952
+DollrWise,,,INV-238957,2025-10-05,2025-12-04,819.98,819.98,PO017002945
+DollrWise,,,INV-239498,2025-10-11,2025-12-15,1037.74,1037.74,PO017002978X
+DollrWise,,,INV-239686,2025-10-12,2025-12-11,390.05,390.05,PO017002963
+DollrWise,,,INV-239779,2025-10-13,2025-12-12,429.93,429.93,PO017002955
+DollrWise,,,INV-239930,2025-10-15,2025-12-14,479.71,479.71,PO017002958
+DollrWise,,,INV-240016,2025-10-16,2025-12-22,798.47,798.47,PO017002987X
+DollrWise,,,INV-240108,2025-10-17,2025-12-23,575.13,575.13,PO017002989X
+DollrWise,,,INV-240360,2025-10-19,2025-12-18,360.08,360.08,PO017002970
+DollrWise,,,INV-241145,2025-10-27,,700.00,700.00,PO017002985
+DollrWise,,,INV-241250,2025-10-28,,650.00,650.00,PO017002975
+DollrWise,,,INV-241428,2025-10-30,2025-12-29,350.17,350.17,PO017002988
+Dustin Martinez Diner,Daniel Green,danielg86@gmail.com,INV-239553,2025-10-11,2025-11-10,132.75,132.75,
+Dustin Martinez Diner,Daniel Green,danielg86@gmail.com,INV-240532,2025-10-21,2025-11-20,435.59,435.59,
+Dustin Martinez Diner,Daniel Green,danielg86@gmail.com,INV-241233,2025-10-28,2025-11-27,64.30,64.30,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-227512,2025-07-27,2025-08-26,1298.63,1298.63,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-230469,2025-08-13,2025-09-12,693.62,693.62,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-232351,2025-08-23,2025-09-22,734.64,734.64,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-232995,2025-08-27,2025-09-26,519.59,150.95,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-233731,2025-08-31,2025-09-30,615.01,615.01,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-234785,2025-09-06,2025-10-06,390.05,390.05,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-235715,2025-09-12,2025-10-12,1288.25,1288.25,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-236379,2025-09-17,2025-10-17,519.59,519.59,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-236658,2025-09-19,2025-10-19,575.13,575.13,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-236809,2025-09-20,2025-10-20,1175.05,1175.05,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-239550,2025-10-11,2025-11-10,4760.90,4760.90,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-240881,2025-10-25,2025-11-24,479.71,479.71,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-241019,2025-10-26,2025-11-25,575.13,575.13,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-241182,2025-10-28,2025-11-27,5135.89,5135.89,
+Eric Collins Pediatrics,Lisa Evans,lisae25@gmail.com,INV-241229,2025-10-28,2025-11-27,390.05,390.05,
+ERIC COLLINS PHYSICAL THERAPY,Tasha Collins,tashac79@cox.net,AGR-025371,2025-09-21,2025-10-21,295.12,295.12,
+Eric Miller Bistro,Luis Johnson,ljohnson@ericmillerbistro.com,AGR-025603,2025-10-02,2025-11-01,1949.56,1949.56,
+"Estrella Holdings, Inc.",,,INV-236978,2025-09-21,2025-11-05,1184.54,1184.54,
+"Estrella Holdings, Inc.",,,INV-237239,2025-09-23,2025-11-07,628.38,628.38,
+Estrella Property Management,Karen Evans,karen.evans@estrellaproperty.com,INV-235319,2025-09-10,2025-10-25,1224.42,1224.42,
+Estrella Property Management,Karen Evans,karen.evans@estrellaproperty.com,INV-236684,2025-09-19,2025-11-03,1052.93,1052.93,
+Estrella Property Management,Karen Evans,karen.evans@estrellaproperty.com,INV-238115,2025-09-29,2025-11-13,519.59,519.59,
+Estrella Property Management,Karen Evans,karen.evans@estrellaproperty.com,INV-241148,2025-10-27,2025-12-11,559.46,559.46,
+Estrella Property Management,Karen Evans,karen.evans@estrellaproperty.com,INV-241292,2025-10-29,2025-12-13,310.30,310.30,
+"Estrella Property Management, LLC",,,INV-232047,2025-08-22,2025-10-06,19646.24,3998.08,
+"Estrella Property Management, LLC",,,INV-237656,2025-09-26,2025-11-10,454.35,454.35,
+"Estrella Property Management, LLC",,,INV-238228,2025-09-30,2025-11-14,758.85,758.85,
+"Estrella Property Management, LLC",,,INV-238905,2025-10-05,2025-11-19,639.22,639.22,
+"Estrella Property Management, LLC",,,INV-240386,2025-10-19,2025-12-03,613.86,613.86,
+Evans & Green Furniture,Paula Clark,pclark@evansgreen.com,INV-241344,2025-10-29,2025-11-28,758.85,758.85,
+Evans Physical Therapy,Maria Harris,mariah1@gmail.com,INV-237991,2025-09-28,2025-10-28,828.70,828.70,
+FitLife Gyms,,,AGR-025004,2025-08-26,2025-10-25,3325.52,3325.52,
+FitLife Gyms,,,INV-229147,2025-08-05,2025-10-18,700.00,700.00,PO016001843
+FitLife Gyms,,,INV-229504,2025-08-08,2025-10-15,1100.00,1100.00,PO016001839
+FitLife Gyms,,,INV-230218,2025-08-11,2025-10-15,800.00,800.00,PO016001851
+FitLife Gyms,,,INV-230253,2025-08-12,2025-10-19,519.59,519.59,PO016001870X
+FitLife Gyms,,,INV-230734,2025-08-15,2025-10-27,399.95,399.95,PO016001877X
+FitLife Gyms,,,INV-230852,2025-08-15,2025-10-14,4650.00,4650.00,PO016001855
+FitLife Gyms,,,INV-231353,2025-08-18,2025-10-25,706.01,706.01,PO016001876X
+FitLife Gyms,,,INV-231542,2025-08-19,2025-10-22,750.00,750.00,PO016001862
+FitLife Gyms,,,INV-231839,2025-08-21,2025-11-01,599.34,599.34,PO016001881X
+FitLife Gyms,,,INV-232463,2025-08-24,2025-10-29,800.00,800.00,PO016001868
+FitLife Gyms,,,INV-234190,2025-09-03,2025-11-07,500.00,500.00,PO016001876
+FitLife Gyms,,,INV-234352,2025-09-04,2025-11-11,650.00,650.00,PO016001877
+FitLife Gyms,,,INV-234736,2025-09-06,2025-11-12,548.63,548.63,PO016001896X
+FitLife Gyms,,,INV-235083,2025-09-08,2025-11-18,1458.14,1458.14,PO016001901X
+FitLife Gyms,,,INV-235383,2025-09-10,2025-11-17,1822.58,1822.58,PO016001900X
+FitLife Gyms,,,INV-235852,2025-09-13,2025-11-17,550.00,550.00,PO016001885
+FitLife Gyms,,,INV-235978,2025-09-14,2025-11-18,550.00,550.00,PO016001883
+FitLife Gyms,,,INV-236076,2025-09-15,2025-11-20,439.83,439.83,PO016001904X
+FitLife Gyms,,,INV-236277,2025-09-16,2025-11-19,500.00,500.00,PO016001890
+FitLife Gyms,,,INV-236972,2025-09-21,2025-11-30,1200.00,1200.00,PO016001895
+FitLife Gyms,,,INV-237100,2025-09-22,2025-11-26,390.05,390.05,PO016001913X
+FitLife Gyms,,,INV-237347,2025-09-24,2025-12-01,700.00,700.00,PO016001897
+FitLife Gyms,,,INV-237796,2025-09-27,2025-11-26,439.83,439.83,PO016001907
+FitLife Gyms,,,INV-237897,2025-09-28,2025-11-27,350.17,350.17,PO016001904
+FitLife Gyms,,,INV-237912,2025-09-28,2025-12-08,774.52,774.52,PO016001926X
+FitLife Gyms,,,INV-237948,2025-09-28,2025-12-05,500.00,500.00,PO016001906
+FitLife Gyms,,,INV-238342,2025-10-01,2025-12-18,750.00,750.00,PO016001910
+FitLife Gyms,,,INV-238508,2025-10-02,2025-12-07,500.00,500.00,PO016001915
+FitLife Gyms,,,INV-239022,2025-10-06,2025-12-12,950.00,950.00,PO016001916
+FitLife Gyms,,,INV-239295,2025-10-09,2025-12-08,350.17,350.17,PO016001922
+FitLife Gyms,,,INV-239432,2025-10-10,2025-12-09,5000.00,5000.00,PO016001917
+FitLife Gyms,,,INV-239695,2025-10-12,2025-12-11,350.17,350.17,PO016001923
+FitLife Gyms,,,INV-240494,2025-10-21,2025-12-26,1423.80,1423.80,PO016001940X
+FitLife Gyms,,,INV-240514,2025-10-21,,800.00,800.00,PO016001931
+FitLife Gyms,,,INV-240581,2025-10-21,2025-12-20,4600.00,4600.00,PO016001934
+Fountain Hills Holdings,Brittany Ward,bward@fountainhills.com,INV-236541,2025-09-18,2025-11-02,599.34,599.34,
+Fountain Hills Holdings,Brittany Ward,bward@fountainhills.com,INV-237853,2025-09-28,2025-11-12,230.54,230.54,
+Fountain Hills Holdings,Brittany Ward,bward@fountainhills.com,INV-238229,2025-09-30,2025-11-14,1350.48,1350.48,
+Fountain Hills Real Estate Group,,,INV-234754,2025-09-06,2025-10-21,350.17,350.17,PO087000293
+Fresh Plate Kitchens,,,AGR-025156,2025-09-05,2025-11-04,202.50,202.50,
+Fresh Plate Kitchens,,,AGR-025541,2025-09-30,2025-11-29,386.00,386.00,
+Fresh Plate Kitchens,,,INV-231853,2025-08-21,2025-11-07,1224.42,1224.42,PO002001364X
+Fresh Plate Kitchens,,,INV-232052,2025-08-22,2025-10-27,628.38,628.38,PO002001351X
+Fresh Plate Kitchens,,,INV-232105,2025-08-22,2025-10-21,1052.93,1052.93,PO002001331
+Fresh Plate Kitchens,,,INV-233288,2025-08-29,2025-10-28,519.59,519.59,PO002001338
+Fresh Plate Kitchens,,,INV-233382,2025-08-29,2025-11-03,1543.44,1543.44,PO002001358X
+Fresh Plate Kitchens,,,INV-233473,2025-08-30,2025-10-29,988.21,988.21,PO002001336
+Fresh Plate Kitchens,,,INV-233479,2025-08-30,2025-11-03,679.10,679.10,PO002001358X
+Fresh Plate Kitchens,,,INV-233735,2025-08-31,2025-10-30,454.35,454.35,PO002001345
+Fresh Plate Kitchens,,,INV-237062,2025-09-22,2025-12-09,613.86,613.86,PO002001407X
+Fresh Plate Kitchens,,,INV-237398,2025-09-24,2025-11-23,494.23,494.23,PO002001384
+Fresh Plate Kitchens,,,INV-240158,2025-10-17,2025-12-16,1500.00,1500.00,PO002001408
+Fresh Plate Kitchens,,,INV-240159,2025-10-17,2025-12-16,479.71,479.71,PO002001402
+Fresh Plate Kitchens,,,INV-240850,2025-10-24,2025-12-23,519.59,519.59,PO002001413
+Gilbert Comm Prop,,,AGR-024024,2025-06-19,2025-08-03,5623.25,5623.25,
+Gilbert Comm Prop,,,INV-230007,2025-08-10,2025-09-24,718.97,718.97,
+Gilbert Comm Prop,,,INV-230286,2025-08-12,2025-09-26,787.89,787.89,
+Gilbert Comm Prop,,,INV-233354,2025-08-29,2025-10-13,549.56,549.56,
+Gilbert Comm Prop,,,INV-233569,2025-08-30,2025-10-14,519.59,519.59,
+Gilbert Comm Prop,,,INV-239026,2025-10-06,2025-11-20,519.59,519.59,
+Gilbert Comm Prop,,,INV-240506,2025-10-21,2025-12-05,468.87,468.87,
+Gilbert Commercial Properties,Eric Miller,emiller@gilbert.com,AGR-025644,2025-10-05,2025-11-19,1988.14,1988.14,
+Gilbert Commercial Properties,Eric Miller,emiller@gilbert.com,INV-236530,2025-09-18,2025-11-08,1500.00,1500.00,PO062000826
+Gilbert Commercial Properties,Eric Miller,emiller@gilbert.com,INV-237619,2025-09-26,2025-11-29,1503.56,1503.56,PO062000839X
+Gilbert Commercial Properties,Eric Miller,emiller@gilbert.com,INV-238187,2025-09-30,2025-11-14,559.46,559.46,PO062000835
+Gilbert Commercial Properties,Eric Miller,emiller@gilbert.com,INV-240440,2025-10-20,2025-12-04,509.68,509.68,PO062000839
+Gilbert Commercial Properties,Eric Miller,emiller@gilbert.com,INV-240462,2025-10-20,2025-12-04,320.20,320.20,PO062000838
+Goldn Wok,,,AGR-025623,2025-10-04,2025-12-03,595.94,595.94,
+Goldn Wok,,,AGR-025970,2025-10-30,2025-12-29,607.51,607.51,
+Goldn Wok,,,INV-230806,2025-08-15,2025-10-29,893.42,893.42,PO020001205X
+Goldn Wok,,,INV-234170,2025-09-03,2025-11-02,599.34,599.34,PO020001200
+Goldn Wok,,,INV-235442,2025-09-11,2025-11-10,599.34,599.34,PO020001209
+Goldn Wok,,,INV-235666,2025-09-12,2025-11-11,709.07,709.07,PO020001213
+Goldn Wok,,,INV-236848,2025-09-20,2025-11-19,479.71,479.71,PO020001220
+Goldn Wok,,,INV-236912,2025-09-21,2025-11-20,1250.00,1250.00,PO020001189
+Goldn Wok,,,INV-237068,2025-09-22,2025-11-28,748.01,748.01,PO020001229X
+Goldn Wok,,,INV-237381,2025-09-24,2025-11-23,1500.00,1500.00,PO020001192
+Goldn Wok,,,INV-238227,2025-09-30,2025-11-29,383.74,383.74,PO020001227
+Goldn Wok,,,INV-239046,2025-10-06,2025-12-19,1400.00,1400.00,PO020001143
+Goldn Wok,,,INV-239818,2025-10-13,2025-12-19,1200.00,1200.00,PO020001207
+Goldn Wok,,,INV-240849,2025-10-24,2025-12-23,399.95,399.95,PO020001238
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,AGR-025228,2025-09-09,2025-10-24,193.00,193.00,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,AGR-025356,2025-09-20,2025-11-04,380.19,380.19,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-233000,2025-08-27,2025-10-11,718.97,718.97,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-233773,2025-08-31,2025-10-15,383.74,383.74,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-234101,2025-09-02,2025-10-17,469.81,469.81,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-234418,2025-09-04,2025-10-19,64.30,64.30,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-235463,2025-09-11,2025-10-26,708.14,708.14,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-235829,2025-09-13,2025-10-28,509.68,509.68,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-237623,2025-09-26,2025-11-10,908.46,908.46,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-237990,2025-09-28,2025-11-12,49.78,49.78,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-238971,2025-10-06,2025-11-20,1052.93,1052.93,
+Goodyear Realty Partners,Melissa Stewart,mstewart@goodyearrealty.com,INV-240596,2025-10-22,2025-12-06,350.17,350.17,
+Grand Canyon Tire,,,AGR-025233,2025-09-10,2025-11-09,545.21,545.21,
+Grand Canyon Tire,,,AGR-025601,2025-10-02,2025-12-01,4413.98,4413.98,
+Grand Canyon Tire,,,INV-224022,2025-07-06,2025-09-04,765.75,185.07,PO013004396
+Grand Canyon Tire,,,INV-224651,2025-07-10,2025-09-16,1072.06,138.07,PO013004443X
+Grand Canyon Tire,,,INV-231685,2025-08-20,2025-10-19,495.38,171.86,PO013004524
+Grand Canyon Tire,,,INV-231712,2025-08-20,2025-11-04,1600.00,1600.00,PO013004522
+Grand Canyon Tire,,,INV-231862,2025-08-21,2025-11-03,390.05,390.05,PO013004581X
+Grand Canyon Tire,,,INV-232066,2025-08-22,2025-11-09,1657.53,1657.53,PO013004599X
+Grand Canyon Tire,,,INV-233135,2025-08-28,2025-11-06,1048.98,1048.98,PO013004588X
+Grand Canyon Tire,,,INV-233345,2025-08-29,2025-11-02,1543.44,1543.44,PO013004579X
+Grand Canyon Tire,,,INV-234074,2025-09-02,2025-11-01,439.83,439.83,PO013004563
+Grand Canyon Tire,,,INV-234416,2025-09-04,2025-11-03,519.59,519.59,PO013004573
+Grand Canyon Tire,,,INV-234507,2025-09-05,2025-11-04,535.25,535.25,PO013004568
+Grand Canyon Tire,,,INV-234815,2025-09-06,2025-11-05,2093.00,2093.00,PO013004569
+Grand Canyon Tire,,,INV-235131,2025-09-08,2025-11-07,599.34,599.34,PO013004581
+Grand Canyon Tire,,,INV-235266,2025-09-09,2025-11-08,248.91,248.91,PO013004578
+Grand Canyon Tire,,,INV-235393,2025-09-10,2025-11-09,599.34,599.34,PO013004591
+Grand Canyon Tire,,,INV-235988,2025-09-14,2025-11-22,734.64,734.64,PO013004636X
+Grand Canyon Tire,,,INV-236254,2025-09-16,2025-11-15,758.60,758.60,PO013004599
+Grand Canyon Tire,,,INV-236326,2025-09-17,2025-11-16,508.75,508.75,PO013004593
+Grand Canyon Tire,,,INV-236579,2025-09-19,2025-11-26,1000.00,1000.00,PO013004594
+Grand Canyon Tire,,,INV-236650,2025-09-19,2025-11-18,668.26,668.26,PO013004610
+Grand Canyon Tire,,,INV-236916,2025-09-21,2025-12-01,718.72,718.72,PO013004658X
+Grand Canyon Tire,,,INV-237091,2025-09-22,2025-11-21,1750.00,1750.00,PO013004608
+Grand Canyon Tire,,,INV-237298,2025-09-23,2025-11-28,429.93,429.93,PO013004654X
+Grand Canyon Tire,,,INV-237684,2025-09-26,2025-12-03,1350.00,1350.00,PO013004626
+Grand Canyon Tire,,,INV-238094,2025-09-29,2025-11-28,559.46,559.46,PO013004640
+Grand Canyon Tire,,,INV-238786,2025-10-04,2025-12-03,519.59,519.59,PO013004651
+Grand Canyon Tire,,,INV-239136,2025-10-07,2025-12-06,5800.00,5800.00,PO013004644
+Grand Canyon Tire,,,INV-239217,2025-10-08,2025-12-13,1200.00,1200.00,PO013004655
+Grand Canyon Tire,,,INV-239354,2025-10-09,2025-12-18,5190.83,5190.83,PO013004700X
+Grand Canyon Tire,,,INV-239809,2025-10-13,2025-12-23,881.70,881.70,PO013004710X
+Grand Canyon Tire,,,INV-240392,2025-10-19,2025-12-18,599.34,599.34,PO013004680
+Grand Canyon Tire,,,INV-240507,2025-10-21,2025-12-20,534.11,534.11,PO013004666
+Grand Canyon Tire,,,INV-240546,2025-10-21,2025-12-26,415.62,415.62,PO013004716X
+Grand Canyon Tire,,,INV-240569,2025-10-21,2025-12-20,1099.12,1099.12,PO013004689
+Grand Canyon Tire,,,INV-240676,2025-10-23,,918.11,918.11,PO013004730X
+Grand Canyon Tire,,,INV-241227,2025-10-28,2025-12-27,765.75,765.75,PO013004709
+Grand Canyon Tire,,,INV-241521,2025-10-31,,1000.00,1000.00,PO013004688
+"Green & Campbell Hardware, LLC",,,INV-237241,2025-09-23,2025-10-23,534.11,534.11,
+"Green & Campbell Hardware, LLC",,,INV-241419,2025-10-30,2025-11-29,1577.77,1577.77,
+Green Valle Physical Therapy,,,AGR-025429,2025-09-25,2025-10-25,459.63,459.63,
+Green Valle Physical Therapy,,,INV-239135,2025-10-07,2025-11-06,18111.99,18111.99,
+Green Valle Physical Therapy,,,INV-240203,2025-10-18,2025-11-17,390.05,390.05,
+Green Valley Asset Management,,,INV-233907,2025-09-01,2025-11-06,599.34,599.34,PO073000902X
+Green Valley Asset Management,,,INV-235714,2025-09-12,2025-11-09,519.59,519.59,PO073000904X
+Green Valley Asset Management,,,INV-237424,2025-09-25,2025-11-16,383.74,383.74,PO073000911X
+Green Valley Asset Management,,,INV-237846,2025-09-27,2025-11-11,383.74,383.74,PO073000903
+Green Valley Asset Management,,,INV-238206,2025-09-30,2025-11-21,758.85,758.85,PO073000915X
+Green Valley Asset Management,,,INV-238511,2025-10-02,2025-11-16,494.23,494.23,PO073000906
+Green Valley Asset Management,,,INV-238935,2025-10-05,2025-11-29,383.74,383.74,PO073000916X
+Green Valley Asset Management,,,INV-239120,2025-10-07,2025-11-21,49.78,49.78,PO073000909
+Green Valley Asset Management,,,INV-239549,2025-10-11,2025-12-02,1300.00,1300.00,PO073000907
+Green Valley Asset Management,,,INV-239997,2025-10-16,2025-11-30,973.18,973.18,PO073000914
+Green Valley Eye Care,Kim Cox,kimc34@gmail.com,AGR-025883,2025-10-24,2025-11-23,582.33,582.33,
+Green Valley Eye Care,Kim Cox,kimc34@gmail.com,INV-239088,2025-10-07,2025-11-06,78.82,78.82,
+Green Valley iner,,,INV-240359,2025-10-19,2025-11-18,4800.78,4800.78,
+Green Valley iner,,,INV-240412,2025-10-20,2025-11-19,588.50,588.50,
+"Green Valley Liquor, Inc.",,,INV-238156,2025-09-30,2025-10-30,933.30,933.30,
+Green Valley Physical Therapy,David Stewart,dstewart@greenvalley.com,INV-237747,2025-09-27,2025-10-27,439.83,439.83,
+Green Valley Physical Therapy,David Stewart,dstewart@greenvalley.com,INV-239670,2025-10-12,2025-11-11,469.81,469.81,
+Green Valley Physical Therapy,David Stewart,dstewart@greenvalley.com,INV-241065,2025-10-26,2025-11-25,599.34,599.34,
+Green Valley Pizzeria,Marcus Clark,marcus.clark@greenvalley.com,INV-239047,2025-10-06,2025-11-05,4840.65,4840.65,
+Green Valley Realty Partners,Jose Rogers,jrogers@greenvalley.com,AGR-025778,2025-10-17,2025-12-01,1100.20,1100.20,
+Green Valley Realty Partners,Jose Rogers,jrogers@greenvalley.com,INV-234447,2025-09-04,2025-10-19,1617.53,1617.53,
+Green Valley Realty Partners,Jose Rogers,jrogers@greenvalley.com,INV-234481,2025-09-05,2025-10-20,1982.09,1982.09,
+Green Valley Realty Partners,Jose Rogers,jrogers@greenvalley.com,INV-235896,2025-09-14,2025-10-29,1252.32,1252.32,
+Green Valley Realty Partners,Jose Rogers,jrogers@greenvalley.com,INV-236072,2025-09-15,2025-10-30,320.20,320.20,
+Green Valley Realty Partners,Jose Rogers,jrogers@greenvalley.com,INV-239370,2025-10-10,2025-11-24,519.59,519.59,
+Green Valley Realty Partners,Jose Rogers,jrogers@greenvalley.com,INV-240821,2025-10-24,2025-12-08,509.68,509.68,
+GreenLef Grocers,,,AGR-025789,2025-10-18,2025-12-17,568.50,568.50,
+GreenLef Grocers,,,AGR-025815,2025-10-19,2025-12-18,588.40,588.40,
+GreenLef Grocers,,,INV-219319,2025-06-03,2025-08-02,16520.51,3080.68,PO026001059
+GreenLef Grocers,,,INV-222452,2025-06-26,2025-09-04,700.00,43.56,PO026001090
+GreenLef Grocers,,,INV-230380,2025-08-12,2025-10-19,550.00,550.00,PO026001124
+GreenLef Grocers,,,INV-231852,2025-08-21,2025-10-26,550.00,550.00,PO026001132
+GreenLef Grocers,,,INV-232319,2025-08-23,2025-10-22,479.71,479.71,PO026001139
+GreenLef Grocers,,,INV-232826,2025-08-26,2025-10-30,1663.07,1663.07,PO026001155X
+GreenLef Grocers,,,INV-232854,2025-08-26,2025-10-31,867.65,867.65,PO026001158X
+GreenLef Grocers,,,INV-232993,2025-08-27,2025-11-04,653.74,653.74,PO026001160X
+GreenLef Grocers,,,INV-234137,2025-09-02,2025-11-01,500.00,500.00,PO026001150
+GreenLef Grocers,,,INV-234685,2025-09-06,2025-11-12,700.00,700.00,PO026001152
+GreenLef Grocers,,,INV-234694,2025-09-06,2025-11-17,1250.00,1250.00,PO026001148
+GreenLef Grocers,,,INV-234817,2025-09-06,2025-11-05,1400.00,1400.00,PO026001153
+GreenLef Grocers,,,INV-235103,2025-09-08,2025-11-18,650.00,650.00,PO026001155
+GreenLef Grocers,,,INV-235132,2025-09-08,2025-11-12,399.95,399.95,PO026001167X
+GreenLef Grocers,,,INV-235745,2025-09-13,2025-11-30,750.00,750.00,PO026001158
+GreenLef Grocers,,,INV-236652,2025-09-19,2025-11-27,1344.05,1344.05,PO026001182X
+GreenLef Grocers,,,INV-238114,2025-09-29,2025-12-11,650.00,650.00,PO026001175
+GreenLef Grocers,,,INV-238202,2025-09-30,2025-12-05,1200.00,1200.00,PO026001174
+GreenLef Grocers,,,INV-238242,2025-09-30,2025-11-29,310.30,310.30,PO026001176
+GreenLef Grocers,,,INV-238976,2025-10-06,2025-12-05,4650.00,4650.00,PO026001172
+GreenLef Grocers,,,INV-240680,2025-10-23,2025-12-30,700.00,700.00,PO026001182
+GreenLef Grocers,,,INV-240851,2025-10-24,2025-12-23,454.35,454.35,PO026001193
+GreenLef Grocers,,,INV-241177,2025-10-27,,500.00,500.00,PO026001192
+GreenLef Grocers,,,INV-241213,2025-10-28,2025-12-27,350.17,350.17,PO026001190
+Grnt Street Hardware,,,AGR-025679,2025-10-09,2025-11-08,1399.76,1399.76,
+Grnt Street Hardware,,,INV-239497,2025-10-11,2025-11-10,748.01,748.01,
+Grnt Street Hardware,,,INV-239666,2025-10-12,2025-11-11,469.81,469.81,
+Harves Table,,,AGR-025128,2025-09-03,2025-11-02,1845.91,1845.91,
+Harves Table,,,AGR-025202,2025-09-08,2025-11-07,2514.39,2514.39,
+Harves Table,,,AGR-025230,2025-09-09,2025-11-08,2602.39,2602.39,
+Harves Table,,,AGR-025326,2025-09-17,2025-11-16,1971.28,1971.28,
+Harves Table,,,AGR-025407,2025-09-24,2025-11-23,1294.34,1294.34,
+Harves Table,,,AGR-025613,2025-10-03,2025-12-02,1524.67,1524.67,
+Harves Table,,,INV-215671,2025-05-02,2025-07-08,650.00,38.73,PO009002487
+Harves Table,,,INV-219649,2025-06-06,2025-08-05,362.99,113.55,PO009002515
+Harves Table,,,INV-230526,2025-08-13,2025-10-20,934.03,934.03,PO009002636X
+Harves Table,,,INV-231084,2025-08-16,2025-10-15,429.93,86.93,PO009002625
+Harves Table,,,INV-231774,2025-08-21,2025-11-01,933.30,933.30,PO009002660X
+Harves Table,,,INV-231899,2025-08-21,2025-10-30,439.83,439.83,PO009002656X
+Harves Table,,,INV-232460,2025-08-24,2025-11-02,850.00,850.00,PO009002633
+Harves Table,,,INV-233561,2025-08-30,2025-11-07,900.00,900.00,PO009002638
+Harves Table,,,INV-233807,2025-08-31,2025-11-08,429.93,429.93,PO009002677X
+Harves Table,,,INV-233904,2025-09-01,2025-10-31,49.78,49.78,PO009002643
+Harves Table,,,INV-234127,2025-09-02,2025-11-09,550.00,550.00,PO009002646
+Harves Table,,,INV-234167,2025-09-03,2025-11-02,176.31,176.31,PO009002641
+Harves Table,,,INV-234695,2025-09-06,2025-11-20,650.00,650.00,PO009002649
+Harves Table,,,INV-234840,2025-09-06,2025-11-13,1150.00,1150.00,PO009002659
+Harves Table,,,INV-235050,2025-09-08,2025-11-22,435.59,435.59,PO009002689X
+Harves Table,,,INV-235135,2025-09-08,2025-11-07,248.91,248.91,PO009002667
+Harves Table,,,INV-235153,2025-09-09,2025-11-21,1172.57,1172.57,PO009002687X
+Harves Table,,,INV-235250,2025-09-09,2025-11-13,650.00,650.00,PO009002663
+Harves Table,,,INV-236232,2025-09-16,2025-11-15,5079.92,5079.92,PO009002669
+Harves Table,,,INV-236531,2025-09-18,2025-11-26,1304.17,1304.17,PO009002691X
+Harves Table,,,INV-236717,2025-09-20,2025-11-26,653.74,653.74,PO009002691X
+Harves Table,,,INV-236844,2025-09-20,2025-11-26,750.00,750.00,PO009002679
+Harves Table,,,INV-237147,2025-09-22,2025-12-02,1450.00,1450.00,PO009002683
+Harves Table,,,INV-237220,2025-09-23,2025-11-22,390.05,390.05,PO009002681
+Harves Table,,,INV-238166,2025-09-30,2025-12-05,509.68,509.68,PO009002700X
+Harves Table,,,INV-238507,2025-10-02,2025-12-10,653.74,653.74,PO009002704X
+Harves Table,,,INV-239048,2025-10-06,2025-12-05,1218.76,1218.76,PO009002693
+Harves Table,,,INV-239305,2025-10-09,2025-12-23,248.91,248.91,PO009002716X
+Harves Table,,,INV-239667,2025-10-12,2025-12-20,145.20,145.20,PO009002715X
+Harves Table,,,INV-240187,2025-10-17,2025-12-16,500.00,500.00,PO009002703
+Harves Table,,,INV-240442,2025-10-20,2025-12-30,1150.00,1150.00,PO009002699
+Harves Table,,,INV-240485,2025-10-20,2025-12-26,600.00,600.00,PO009002708
+Harves Table,,,INV-240664,2025-10-23,2025-12-28,1350.00,1350.00,PO009002702
+Harves Table,,,INV-240779,2025-10-24,2025-12-23,145.20,145.20,PO009002712
+Hometown Bank,,,AGR-025945,2025-10-28,2025-12-27,863.98,863.98,
+Hometown Bank,,,INV-217273,2025-05-16,2025-07-15,646.12,124.21,PO018002878
+Hometown Bank,,,INV-227587,2025-07-27,2025-09-25,2172.75,2172.75,PO018003000
+Hometown Bank,,,INV-227943,2025-07-29,2025-09-27,5784.98,5784.98,PO018002978
+Hometown Bank,,,INV-231035,2025-08-16,2025-10-15,694.76,694.76,PO018003043
+Hometown Bank,,,INV-231250,2025-08-17,2025-10-28,1200.00,1200.00,PO018003046
+Hometown Bank,,,INV-232000,2025-08-22,2025-10-29,1300.00,1300.00,PO018003053
+Hometown Bank,,,INV-232114,2025-08-22,2025-11-02,1000.00,1000.00,PO018003060
+Hometown Bank,,,INV-232558,2025-08-25,2025-10-24,1100.00,1100.00,PO018003054
+Hometown Bank,,,INV-232628,2025-08-25,2025-11-03,694.76,694.76,PO018003105X
+Hometown Bank,,,INV-232659,2025-08-25,2025-10-30,1050.00,1050.00,PO018003055
+Hometown Bank,,,INV-232773,2025-08-26,2025-10-25,534.11,534.11,PO018003062
+Hometown Bank,,,INV-232879,2025-08-27,2025-11-30,1418.26,1418.26,PO018003158X
+Hometown Bank,,,INV-233210,2025-08-29,2025-10-28,1000.00,1000.00,PO018003065
+Hometown Bank,,,INV-233289,2025-08-29,2025-10-28,548.63,548.63,PO018003075
+Hometown Bank,,,INV-233378,2025-08-29,2025-10-28,646.12,646.12,PO018003083
+Hometown Bank,,,INV-233379,2025-08-29,2025-10-28,49.78,49.78,PO018003084
+Hometown Bank,,,INV-233516,2025-08-30,2025-10-29,679.10,679.10,PO018003078
+Hometown Bank,,,INV-233881,2025-09-01,2025-10-31,320.20,320.20,PO018003077
+Hometown Bank,,,INV-234494,2025-09-05,2025-11-12,399.95,399.95,PO018003118X
+Hometown Bank,,,INV-234651,2025-09-05,2025-11-04,4800.00,4800.00,PO018003094
+Hometown Bank,,,INV-234781,2025-09-06,2025-11-05,628.38,628.38,PO018003103
+Hometown Bank,,,INV-234819,2025-09-06,2025-11-16,1250.00,1250.00,PO018003099
+Hometown Bank,,,INV-234925,2025-09-07,2025-11-06,885.38,885.38,PO018003100
+Hometown Bank,,,INV-235222,2025-09-09,2025-11-17,1550.00,1550.00,PO018003102
+Hometown Bank,,,INV-235293,2025-09-10,2025-11-09,639.22,639.22,PO018003101
+Hometown Bank,,,INV-235361,2025-09-10,2025-11-18,1100.00,1100.00,PO018003105
+Hometown Bank,,,INV-235657,2025-09-12,2025-11-18,774.52,774.52,PO018003127X
+Hometown Bank,,,INV-235878,2025-09-13,2025-11-12,1650.00,1650.00,PO018003110
+Hometown Bank,,,INV-235979,2025-09-14,2025-11-13,1400.00,1400.00,PO018003109
+Hometown Bank,,,INV-236050,2025-09-15,2025-11-14,5350.00,5350.00,PO018003090
+Hometown Bank,,,INV-236096,2025-09-15,2025-11-14,429.93,429.93,PO018003111
+Hometown Bank,,,INV-236376,2025-09-17,2025-11-24,718.72,718.72,PO018003146X
+Hometown Bank,,,INV-236389,2025-09-17,2025-11-27,1218.88,1218.88,PO018003151X
+Hometown Bank,,,INV-236564,2025-09-18,2025-11-17,639.22,639.22,PO018003121
+Hometown Bank,,,INV-236726,2025-09-20,2025-11-29,878.23,878.23,PO018003155X
+Hometown Bank,,,INV-237007,2025-09-21,2025-11-20,654.88,654.88,PO018003125
+Hometown Bank,,,INV-237243,2025-09-23,2025-11-22,495.38,495.38,PO018003124
+Hometown Bank,,,INV-237314,2025-09-24,2025-11-29,1338.51,1338.51,PO018003155X
+Hometown Bank,,,INV-237397,2025-09-24,2025-11-23,176.31,176.31,PO018003130
+Hometown Bank,,,INV-237510,2025-09-25,2025-11-29,878.23,878.23,PO018003155X
+Hometown Bank,,,INV-237511,2025-09-25,2025-11-24,535.25,535.25,PO018003133
+Hometown Bank,,,INV-237891,2025-09-28,2025-12-02,758.60,758.60,PO018003164X
+Hometown Bank,,,INV-237913,2025-09-28,2025-12-05,49.78,49.78,PO018003168X
+Hometown Bank,,,INV-237955,2025-09-28,2025-12-16,599.34,599.34,PO018003184X
+Hometown Bank,,,INV-238388,2025-10-02,2025-12-07,1300.00,1300.00,PO018003123
+Hometown Bank,,,INV-238409,2025-10-02,2025-12-01,694.76,694.76,PO018003141
+Hometown Bank,,,INV-238509,2025-10-02,2025-12-12,613.86,613.86,PO018003176X
+Hometown Bank,,,INV-238875,2025-10-05,2025-12-04,49.78,49.78,PO018003149
+Hometown Bank,,,INV-239173,2025-10-07,2025-12-12,1150.00,1150.00,PO018003159
+Hometown Bank,,,INV-239306,2025-10-09,2025-12-08,4082.98,4082.98,PO018003161
+Hometown Bank,,,INV-239831,2025-10-14,2025-12-20,628.38,628.38,PO018003191X
+Hometown Bank,,,INV-240570,2025-10-21,2025-12-30,1150.00,1150.00,PO018003160
+Hometown Bank,,,INV-240667,2025-10-23,2025-12-22,798.47,798.47,PO018003181
+Hometown Bank,,,INV-240780,2025-10-24,2025-12-23,774.52,774.52,PO018003184
+Hometown Bank,,,INV-240871,2025-10-25,2025-12-24,519.59,519.59,PO018003169
+Hometown Bank,,,INV-241096,2025-10-27,2025-12-26,18553.36,18553.36,PO018003139
+Howard & Thomas Hardware,Brian Jackson,brian.jackson@howardthomas.com,INV-235519,2025-09-11,2025-10-11,1184.54,1184.54,
+Howard & Thomas Hardware,Brian Jackson,brian.jackson@howardthomas.com,INV-237749,2025-09-27,2025-10-27,599.34,599.34,
+Howard & Thomas Hardware,Brian Jackson,brian.jackson@howardthomas.com,INV-238303,2025-10-01,2025-10-31,1064.91,1064.91,
+Howard & Thomas Hardware,Brian Jackson,brian.jackson@howardthomas.com,INV-238576,2025-10-03,2025-11-02,1543.44,1543.44,
+Howard & Thomas Hardware,Brian Jackson,brian.jackson@howardthomas.com,INV-240949,2025-10-25,2025-11-24,1478.91,1478.91,
+Ina Street Physical Therapy,Cody Phillips,codyp39@cox.net,INV-234999,2025-09-07,2025-10-07,559.46,559.46,
+Ina Street Physical Therapy,Cody Phillips,codyp39@cox.net,INV-237148,2025-09-22,2025-10-22,1052.93,1052.93,
+Ina Street Physical Therapy,Cody Phillips,codyp39@cox.net,INV-237563,2025-09-26,2025-10-26,1623.19,1623.19,
+Ina Street Physical Therapy,Cody Phillips,codyp39@cox.net,INV-238756,2025-10-04,2025-11-03,1252.32,1252.32,
+Ina Street Physical Therapy,Cody Phillips,codyp39@cox.net,INV-240952,2025-10-25,2025-11-24,509.68,509.68,
+Irvington Street Hardware,Tanya Mitchell,tanya.mitchell@irvingtonstreet.com,AGR-025684,2025-10-09,2025-11-08,2900.07,2900.07,
+Jackson & Edwards Diner,Brian Green,briang2@gmail.com,INV-237115,2025-09-22,2025-10-22,1383.93,1383.93,
+Jackson & Edwards Diner,Brian Green,briang2@gmail.com,INV-237841,2025-09-27,2025-10-27,548.63,548.63,
+Jackson & Edwards Diner,Brian Green,briang2@gmail.com,INV-241525,2025-10-31,2025-11-30,548.63,548.63,
+James Cox Liquor,Maria Anderson,mariaa81@icloud.com,INV-240653,2025-10-22,2025-11-21,559.46,559.46,
+Jennifer Turner Chiropractic,Alicia Evans,aliciae19@yahoo.com,AGR-025237,2025-09-10,2025-10-10,5946.46,1848.48,
+Jennifer Turner Chiropractic,Alicia Evans,aliciae19@yahoo.com,INV-241385,2025-10-30,2025-11-29,248.91,248.91,
+Karen Moore Engineering,Cody Scott,cody.scott@gmail.com,INV-241171,2025-10-27,2025-11-26,350.17,350.17,
+Kelly  Grill,,,AGR-025554,2025-09-30,2025-10-30,1180.47,1180.47,
+Kidz  Learning Center,,,AGR-025543,2025-09-30,2025-11-29,379.20,379.20,
+King & Lee Veterinary Clinic,Patricia Martin,patricia.martin@cox.net,INV-238628,2025-10-03,2025-11-02,539.30,539.30,
+Kolb  Street Furniture,,,AGR-025955,2025-10-29,2025-11-28,478.36,478.36,
+Kolb  Street Furniture,,,INV-239156,2025-10-07,2025-11-06,519.59,519.59,
+Kolb  Street Physical Therapy,,,INV-231977,2025-08-22,2025-09-21,49.78,6.41,
+Kolb  Street Physical Therapy,,,INV-237410,2025-09-25,2025-10-25,390.05,390.05,
+Kolb  Street Physical Therapy,,,INV-237626,2025-09-26,2025-10-26,290.39,290.39,
+Kolb  Street Physical Therapy,,,INV-239162,2025-10-07,2025-11-06,350.17,350.17,
+Kolb  Street Physical Therapy,,,INV-240382,2025-10-19,2025-11-18,78.82,78.82,
+Kolb Street Diner,Heather Scott,heathers61@yahoo.com,AGR-025988,2025-10-31,2025-11-30,4548.56,4548.56,
+Kolb Street Diner,Heather Scott,heathers61@yahoo.com,INV-238878,2025-10-05,2025-11-04,559.46,559.46,
+Kolb Street Diner,Heather Scott,heathers61@yahoo.com,INV-239457,2025-10-10,2025-11-09,360.08,360.08,
+Kolb Street Diner,Heather Scott,heathers61@yahoo.com,INV-239599,2025-10-12,2025-11-11,429.93,429.93,
+Kolb Street Diner,Heather Scott,heathers61@yahoo.com,INV-239961,2025-10-15,2025-11-14,734.64,734.64,
+Kolb Street Eye Care,Lisa Howard,lisa.howard@yahoo.com,INV-239929,2025-10-15,2025-11-14,439.83,439.83,
+Kolb Street Title Company,Dustin Campbell,dustin.campbell@kolbstreettitle.com,INV-240717,2025-10-23,2025-11-22,559.46,559.46,
+Lee & Hall Florist,Andre Miller,amiller@leehallflorist.com,INV-237189,2025-09-23,2025-10-23,1503.56,1503.56,
+Lee & Hall Florist,Andre Miller,amiller@leehallflorist.com,INV-237275,2025-09-23,2025-10-23,559.46,559.46,
+Lee & Hall Florist,Andre Miller,amiller@leehallflorist.com,INV-238751,2025-10-04,2025-11-03,1573.82,1573.82,
+Lee & Hall Florist,Andre Miller,amiller@leehallflorist.com,INV-240241,2025-10-18,2025-11-17,479.71,479.71,
+Lee & Hall Florist,Andre Miller,amiller@leehallflorist.com,INV-240345,2025-10-19,2025-11-18,1013.06,1013.06,
+Linda  Rogers Appliance,,,INV-238716,2025-10-04,2025-11-03,918.36,918.36,
+Linda  Rogers Appliance,,,INV-239973,2025-10-15,2025-11-14,599.34,599.34,
+Linda  Rogers Appliance,,,INV-241059,2025-10-26,2025-11-25,679.10,679.10,
+LUIS MARTIN BOUTIQUE,Linda Martin,lmartin@luismartin.com,AGR-025631,2025-10-04,2025-11-03,2282.53,2282.53,
+Main  Street Florist,,,AGR-025690,2025-10-10,2025-11-09,202.50,202.50,
+Main  Street Florist,,,INV-235726,2025-09-13,2025-10-13,479.71,479.71,
+Main  Street Florist,,,INV-236489,2025-09-18,2025-10-18,559.46,559.46,
+Main  Street Florist,,,INV-238096,2025-09-29,2025-10-29,310.30,310.30,
+Main  Street Florist,,,INV-239085,2025-10-07,2025-11-06,679.10,679.10,
+Main  Street Florist,,,INV-240467,2025-10-20,2025-11-19,310.30,310.30,
+Main & Vine Outfitters,,,AGR-024278,2025-07-05,2025-09-03,4486.25,387.82,
+Main & Vine Outfitters,,,AGR-025161,2025-09-05,2025-11-04,1512.19,1512.19,
+Main & Vine Outfitters,,,AGR-025475,2025-09-27,2025-11-26,3306.35,3306.35,
+Main & Vine Outfitters,,,AGR-025590,2025-10-01,2025-11-30,4998.05,4998.05,
+Main & Vine Outfitters,,,AGR-025662,2025-10-07,2025-12-06,8761.43,8761.43,
+Main & Vine Outfitters,,,INV-224523,2025-07-09,2025-09-07,575.13,164.75,PO006003946
+Main & Vine Outfitters,,,INV-226794,2025-07-23,2025-09-26,469.81,74.86,PO006004024X
+Main & Vine Outfitters,,,INV-230922,2025-08-16,2025-10-23,4900.00,701.34,PO006004053
+Main & Vine Outfitters,,,INV-231026,2025-08-16,2025-10-15,435.59,435.59,PO006004070
+Main & Vine Outfitters,,,INV-231345,2025-08-18,2025-10-17,575.13,49.63,PO006004067
+Main & Vine Outfitters,,,INV-232311,2025-08-23,2025-10-28,646.12,646.12,PO006004128X
+Main & Vine Outfitters,,,INV-232874,2025-08-27,2025-11-03,1500.00,1500.00,PO006004087
+Main & Vine Outfitters,,,INV-233128,2025-08-28,2025-11-03,1670.22,1670.22,PO006004151X
+Main & Vine Outfitters,,,INV-233165,2025-08-28,2025-10-27,1252.32,1252.32,PO006004114
+Main & Vine Outfitters,,,INV-233590,2025-08-30,2025-10-29,5350.00,5350.00,PO006004100
+Main & Vine Outfitters,,,INV-233624,2025-08-31,2025-10-30,694.76,694.76,PO006004102
+Main & Vine Outfitters,,,INV-233652,2025-08-31,2025-10-30,599.34,599.34,PO006004104
+Main & Vine Outfitters,,,INV-233736,2025-08-31,2025-10-30,733.50,733.50,PO006004120
+Main & Vine Outfitters,,,INV-233821,2025-08-31,2025-10-30,1289.91,1289.91,PO006004122
+Main & Vine Outfitters,,,INV-233877,2025-09-01,2025-10-31,176.31,176.31,PO006004113
+Main & Vine Outfitters,,,INV-234495,2025-09-05,2025-11-14,878.48,878.48,PO006004182X
+Main & Vine Outfitters,,,INV-234515,2025-09-05,2025-11-11,4500.00,4500.00,PO006004121
+Main & Vine Outfitters,,,INV-234734,2025-09-06,2025-11-05,1088.86,1088.86,PO006004128
+Main & Vine Outfitters,,,INV-235130,2025-09-08,2025-11-12,733.50,733.50,PO006004175X
+Main & Vine Outfitters,,,INV-235292,2025-09-10,2025-11-09,508.75,508.75,PO006004135
+Main & Vine Outfitters,,,INV-235309,2025-09-10,2025-11-09,49.78,49.78,PO006004141
+Main & Vine Outfitters,,,INV-235311,2025-09-10,2025-11-15,310.30,310.30,PO006004183X
+Main & Vine Outfitters,,,INV-235321,2025-09-10,2025-11-09,383.74,383.74,PO006004144
+Main & Vine Outfitters,,,INV-235506,2025-09-11,2025-11-15,1500.00,1500.00,PO006004138
+Main & Vine Outfitters,,,INV-235520,2025-09-11,2025-11-10,1304.17,1304.17,PO006004158
+Main & Vine Outfitters,,,INV-235583,2025-09-12,2025-11-11,399.95,399.95,PO006004151
+Main & Vine Outfitters,,,INV-235698,2025-09-12,2025-11-11,1212.44,1212.44,PO006004159
+Main & Vine Outfitters,,,INV-235729,2025-09-13,2025-11-12,549.68,549.68,PO006004134
+Main & Vine Outfitters,,,INV-235828,2025-09-13,2025-11-12,49.78,49.78,PO006004161
+Main & Vine Outfitters,,,INV-235954,2025-09-14,2025-11-13,519.59,519.59,PO006004165
+Main & Vine Outfitters,,,INV-236298,2025-09-16,2025-11-15,4880.53,4880.53,PO006004166
+Main & Vine Outfitters,,,INV-236730,2025-09-20,2025-11-19,176.31,176.31,PO006004173
+Main & Vine Outfitters,,,INV-236862,2025-09-20,2025-11-19,535.25,535.25,PO006004187
+Main & Vine Outfitters,,,INV-236971,2025-09-21,2025-11-20,18987.00,18987.00,PO006004079
+Main & Vine Outfitters,,,INV-236973,2025-09-21,2025-11-20,1694.22,1694.22,PO006004177
+Main & Vine Outfitters,,,INV-236980,2025-09-21,2025-11-20,435.59,435.59,PO006004184
+Main & Vine Outfitters,,,INV-237442,2025-09-25,2025-11-24,549.68,549.68,PO006004188
+Main & Vine Outfitters,,,INV-237509,2025-09-25,2025-11-24,718.72,718.72,PO006004190
+Main & Vine Outfitters,,,INV-237627,2025-09-26,2025-11-25,918.11,918.11,PO006004192
+Main & Vine Outfitters,,,INV-237661,2025-09-26,2025-11-25,718.72,718.72,PO006004196
+Main & Vine Outfitters,,,INV-237827,2025-09-27,2025-12-06,575.13,575.13,PO006004227X
+Main & Vine Outfitters,,,INV-238506,2025-10-02,2025-12-01,718.72,718.72,PO006004208
+Main & Vine Outfitters,,,INV-238885,2025-10-05,2025-12-16,439.83,439.83,PO006004250X
+Main & Vine Outfitters,,,INV-238900,2025-10-05,2025-12-15,1463.68,1463.68,PO006004247X
+Main & Vine Outfitters,,,INV-239074,2025-10-06,2025-12-11,469.81,469.81,PO006004240X
+Main & Vine Outfitters,,,INV-239244,2025-10-08,2025-12-15,4450.00,4450.00,PO006004219
+Main & Vine Outfitters,,,INV-239372,2025-10-10,2025-12-09,694.76,694.76,PO006004215
+Main & Vine Outfitters,,,INV-239473,2025-10-11,2025-12-16,5558.45,5558.45,PO006004250X
+Main & Vine Outfitters,,,INV-239703,2025-10-12,2025-12-11,827.77,827.77,PO006004222
+Main & Vine Outfitters,,,INV-239705,2025-10-12,2025-12-18,559.46,559.46,PO006004255X
+Main & Vine Outfitters,,,INV-239875,2025-10-14,2025-12-13,1304.17,1304.17,PO006004227
+Main & Vine Outfitters,,,INV-239887,2025-10-14,2025-12-13,646.12,646.12,PO006004235
+Main & Vine Outfitters,,,INV-240150,2025-10-17,2025-12-22,798.47,798.47,PO006004260X
+Main & Vine Outfitters,,,INV-240275,2025-10-18,2025-12-17,4950.00,4950.00,PO006004240
+Main & Vine Outfitters,,,INV-240516,2025-10-21,2025-12-20,1252.32,1252.32,PO006004233
+Main & Vine Outfitters,,,INV-240765,2025-10-24,2025-12-23,838.35,838.35,PO006004246
+Main & Vine Outfitters,,,INV-240844,2025-10-24,2025-12-30,1311.33,1311.33,PO006004268X
+Main & Vine Outfitters,,,INV-240880,2025-10-25,2025-12-24,1298.63,1298.63,PO006004245
+Main & Vine Outfitters,,,INV-241418,2025-10-30,2025-12-29,535.25,535.25,PO006004264
+Main & Vine Outfitters,,,INV-241548,2025-10-31,2025-12-30,1184.54,1184.54,PO006004254
+Main Street Florist,Brian King,brian.king@mainstreet.com,INV-238386,2025-10-02,2025-11-01,814.39,814.39,
+Main Street Florist,Brian King,brian.king@mainstreet.com,INV-238817,2025-10-04,2025-11-03,705.24,705.24,
+Main Street Florist,Brian King,brian.king@mainstreet.com,INV-241435,2025-10-30,2025-11-29,435.59,435.59,
+Marana  Commercial Properties,,,INV-228477,2025-08-02,2025-09-16,1184.54,148.41,
+Marana  Commercial Properties,,,INV-236850,2025-09-20,2025-11-04,1742.82,1742.82,
+Marana  Commercial Properties,,,INV-237503,2025-09-25,2025-11-09,559.46,559.46,
+Marana  Commercial Properties,,,INV-239433,2025-10-10,2025-11-24,548.63,548.63,
+Marana Commercial Propertes,,,AGR-025694,2025-10-10,2025-11-24,297.97,297.97,
+Marana Commercial Propertes,,,INV-232169,2025-08-23,2025-10-07,439.83,439.83,
+Marana Commercial Propertes,,,INV-233281,2025-08-29,2025-10-13,588.50,588.50,
+Marana Commercial Propertes,,,INV-235704,2025-09-12,2025-10-27,559.46,559.46,
+Marana Commercial Propertes,,,INV-237826,2025-09-27,2025-11-11,1822.58,1822.58,
+Marana Commercial Propertes,,,INV-237992,2025-09-28,2025-11-12,479.71,479.71,
+Marana Commercial Propertes,,,INV-240279,2025-10-18,2025-12-02,668.26,668.26,
+Marana Commercial Propertes,,,INV-240342,2025-10-19,2025-12-03,708.14,708.14,
+Marana Family Dental LLC,,,INV-238903,2025-10-05,2025-11-04,988.21,988.21,
+Marana Family Dental LLC,,,INV-239981,2025-10-16,2025-11-15,509.68,509.68,
+Martin Forist,,,INV-238419,2025-10-02,2025-11-01,686.00,686.00,
+MESA HOLDINGS,Rachel Brown,rachel.brown@mesaholdings.com,INV-237502,2025-09-25,2025-11-09,479.71,479.71,
+MESA HOLDINGS,Rachel Brown,rachel.brown@mesaholdings.com,INV-237845,2025-09-27,2025-11-11,1294.68,1294.68,
+MESA HOLDINGS,Rachel Brown,rachel.brown@mesaholdings.com,INV-239685,2025-10-12,2025-11-26,706.01,706.01,
+MESA HOLDINGS,Rachel Brown,rachel.brown@mesaholdings.com,INV-239785,2025-10-13,2025-11-27,310.30,310.30,
+MESA HOLDINGS,Rachel Brown,rachel.brown@mesaholdings.com,INV-240239,2025-10-18,2025-12-02,1454.19,1454.19,
+Mesa Real Estate Group,Nate Young,nyoung@mesarealestate.com,AGR-022758,2025-03-25,2025-05-09,1450.39,1450.39,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,AGR-025033,2025-08-29,2025-10-13,1787.83,1787.83,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,AGR-025197,2025-09-07,2025-10-22,574.27,574.27,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,AGR-025675,2025-10-09,2025-11-23,942.73,942.73,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,AGR-025697,2025-10-10,2025-11-24,975.72,975.72,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,INV-235662,2025-09-12,2025-10-27,320.20,320.20,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,INV-236253,2025-09-16,2025-10-31,1292.20,1292.20,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,INV-237313,2025-09-24,2025-11-08,519.59,519.59,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,INV-237500,2025-09-25,2025-11-09,270.42,270.42,
+Mesa Realty Partners,Linda Moore,linda.moore@mesarealty.com,INV-238420,2025-10-02,2025-11-16,559.46,559.46,
+Michael  King Physical Therapy,,,INV-240156,2025-10-17,2025-11-16,1144.66,1144.66,
+Miller & Baker Bakery,Travis Miller,travis.miller@cox.net,AGR-025792,2025-10-18,2025-11-17,481.69,481.69,
+Miller & Baker Bakery,Travis Miller,travis.miller@cox.net,INV-236567,2025-09-18,2025-10-18,1304.17,1304.17,
+Miller & Baker Bakery,Travis Miller,travis.miller@cox.net,INV-239258,2025-10-08,2025-11-07,639.22,639.22,
+Miller & Baker Bakery,Travis Miller,travis.miller@cox.net,INV-240535,2025-10-21,2025-11-20,350.17,350.17,
+Mitchell & Roberts Medical Billing Inc,,,AGR-025881,2025-10-24,2025-11-23,2724.18,2724.18,
+Morris & Cooper Architects,Denise Ward,denisew83@gmail.com,INV-240994,2025-10-26,2025-11-25,508.75,508.75,
+Morris & White Appliance,Nate Green,nate.green@morriswhite.com,INV-233852,2025-09-01,2025-10-01,479.71,479.71,
+Morris & White Appliance,Nate Green,nate.green@morriswhite.com,INV-238790,2025-10-04,2025-11-03,429.93,429.93,
+Morris & White Appliance,Nate Green,nate.green@morriswhite.com,INV-241290,2025-10-29,2025-11-28,4960.29,4960.29,
+Mountain View Real Estate Group LLC,,,INV-234280,2025-09-03,2025-10-18,1013.06,1013.06,
+Mountain View Real Estate Group LLC,,,INV-234508,2025-09-05,2025-10-20,1411.83,1411.83,
+Mountain View Real Estate Group LLC,,,INV-236128,2025-09-15,2025-10-30,878.48,878.48,
+Mountain View Real Estate Group LLC,,,INV-238516,2025-10-02,2025-11-16,1107.85,1107.85,
+Mountain View Real Estate Group LLC,,,INV-239268,2025-10-09,2025-11-23,439.83,439.83,
+Mountain View Real Estate Group LLC,,,INV-239669,2025-10-12,2025-11-26,1368.00,1368.00,
+Mountain View Real Estate Group LLC,,,INV-240623,2025-10-22,2025-12-06,629.32,629.32,
+Murphy  & Ward Medical Billing,,,INV-237758,2025-09-27,2025-10-27,1533.94,1533.94,
+Murphy  & Ward Medical Billing,,,INV-238933,2025-10-05,2025-11-04,1304.17,1304.17,
+Murphy  & Ward Medical Billing,,,INV-241313,2025-10-29,2025-11-28,479.71,479.71,
+Nate Moore Engineering,Denise Miller,denisem76@gmail.com,INV-238117,2025-09-29,2025-10-29,1328.13,1328.13,
+Nelson & Scott Diner,Wes Price,wesp42@cox.net,AGR-025460,2025-09-27,2025-10-27,771.08,771.08,
+"Northstar Dental, Inc.",,,AGR-025173,2025-09-05,2025-11-04,779.45,779.45,
+"Northstar Dental, Inc.",,,AGR-025346,2025-09-19,2025-11-18,561.86,561.86,
+"Northstar Dental, Inc.",,,AGR-025861,2025-10-23,2025-12-22,552.67,552.67,
+"Northstar Dental, Inc.",,,AGR-025886,2025-10-24,2025-12-23,572.01,572.01,
+"Northstar Dental, Inc.",,,INV-230593,2025-08-14,2025-10-26,1423.80,1423.80,PO011001606X
+"Northstar Dental, Inc.",,,INV-232945,2025-08-27,2025-10-26,908.46,908.46,PO011001595
+"Northstar Dental, Inc.",,,INV-233659,2025-08-31,2025-10-30,479.71,479.71,PO011001600
+"Northstar Dental, Inc.",,,INV-233902,2025-09-01,2025-10-31,2163.26,2163.26,PO011001594
+"Northstar Dental, Inc.",,,INV-234106,2025-09-02,2025-11-05,439.83,439.83,PO011001616X
+"Northstar Dental, Inc.",,,INV-234338,2025-09-04,2025-11-03,519.59,519.59,PO011001607
+"Northstar Dental, Inc.",,,INV-235418,2025-09-11,2025-11-10,1344.05,1344.05,PO011001611
+"Northstar Dental, Inc.",,,INV-235513,2025-09-11,2025-11-10,519.59,519.59,PO011001616
+"Northstar Dental, Inc.",,,INV-235923,2025-09-14,2025-12-08,559.46,559.46,PO011001648X
+"Northstar Dental, Inc.",,,INV-236023,2025-09-14,2025-11-20,559.46,559.46,PO011001631X
+"Northstar Dental, Inc.",,,INV-237021,2025-09-21,2025-11-20,1104.78,1104.78,PO011001627
+"Northstar Dental, Inc.",,,INV-237277,2025-09-23,2025-12-05,599.34,599.34,PO011001646X
+"Northstar Dental, Inc.",,,INV-237889,2025-09-28,2025-11-27,479.71,479.71,PO011001629
+"Northstar Dental, Inc.",,,INV-237985,2025-09-28,2025-12-04,1500.00,1500.00,PO011001634
+"Northstar Dental, Inc.",,,INV-239259,2025-10-08,2025-12-07,1052.93,1052.93,PO011001644
+"Northstar Dental, Inc.",,,INV-239972,2025-10-15,2025-12-14,1172.57,1172.57,PO011001651
+"Northstar Dental, Inc.",,,INV-240866,2025-10-24,2025-12-23,573.99,573.99,PO011001655
+"Old Pueblo Commercial Properties, LLC",,,AGR-024398,2025-07-14,2025-08-28,1912.36,247.70,
+"Old Pueblo Commercial Properties, LLC",,,AGR-025361,2025-09-20,2025-11-04,2976.82,2976.82,
+"Old Pueblo Commercial Properties, LLC",,,INV-232108,2025-08-22,2025-10-06,706.01,706.01,
+"Old Pueblo Commercial Properties, LLC",,,INV-232405,2025-08-24,2025-10-08,2021.97,2021.97,
+"Old Pueblo Commercial Properties, LLC",,,INV-234654,2025-09-05,2025-10-20,468.87,468.87,
+"Old Pueblo Commercial Properties, LLC",,,INV-234997,2025-09-07,2025-10-22,669.19,669.19,
+"Old Pueblo Commercial Properties, LLC",,,INV-236690,2025-09-19,2025-11-03,1088.86,1088.86,
+"Old Pueblo Commercial Properties, LLC",,,INV-238625,2025-10-03,2025-11-17,705.24,705.24,
+"Old Pueblo Commercial Properties, LLC",,,INV-238825,2025-10-04,2025-11-18,1128.74,1128.74,
+"Old Pueblo Commercial Properties, LLC",,,INV-240980,2025-10-25,2025-12-09,653.74,653.74,
+Old Pueblo Physical Therapy,Paula Johnson,paula.johnson@outlook.com,INV-225248,2025-07-13,2025-08-12,599.34,599.34,
+Old Pueblo Physical Therapy,Paula Johnson,paula.johnson@outlook.com,INV-227668,2025-07-27,2025-08-26,1013.06,98.77,
+Old Pueblo Physical Therapy,Paula Johnson,paula.johnson@outlook.com,INV-237310,2025-09-24,2025-10-24,706.01,706.01,
+Old Pueblo Physical Therapy,Paula Johnson,paula.johnson@outlook.com,INV-239713,2025-10-13,2025-11-12,534.11,534.11,
+Old Pueblo Physical Therapy,Paula Johnson,paula.johnson@outlook.com,INV-239862,2025-10-14,2025-11-13,588.50,588.50,
+OLD PUEBLO TAQUERIA,Angela Morris,angela.morris@oldpueblo.com,INV-241064,2025-10-26,2025-11-25,748.01,748.01,
+Oracle  Street Pediatrics,,,INV-235990,2025-09-14,2025-10-14,320.20,320.20,
+Oracle  Street Pediatrics,,,INV-236732,2025-09-20,2025-10-20,549.56,549.56,
+Oracle  Street Pediatrics,,,INV-239187,2025-10-08,2025-11-07,1503.56,1503.56,
+Oracle  Street Pediatrics,,,INV-239192,2025-10-08,2025-11-07,1258.75,1258.75,
+Oracle  Street Pediatrics,,,INV-239927,2025-10-15,2025-11-14,758.60,758.60,
+Oracle  Street Pediatrics,,,INV-240443,2025-10-20,2025-11-19,973.18,973.18,
+Oracle  Street Pediatrics,,,INV-240482,2025-10-20,2025-11-19,20470.77,20470.77,
+Oracle  Street Pediatrics,,,INV-240571,2025-10-21,2025-11-20,718.97,718.97,
+Oracle Street Engineering,Jennifer Scott,jscott@oraclestreet.com,INV-238360,2025-10-01,2025-10-31,1494.07,156.11,
+Oracle Street Engineering,Jennifer Scott,jscott@oraclestreet.com,INV-241333,2025-10-29,2025-11-28,479.71,479.71,
+Oracle Street Family Dental,Tyler Lee,tyler.lee@cox.net,INV-240155,2025-10-17,2025-11-16,629.32,629.32,
+Oracle Street Pizeria,,,INV-237687,2025-09-26,2025-10-26,599.34,599.34,
+Oracle Street Pizeria,,,INV-238121,2025-09-29,2025-10-29,429.93,429.93,
+Oracle Street Pizeria,,,INV-238886,2025-10-05,2025-11-04,469.81,469.81,
+Oracle Street Pizeria,,,INV-239051,2025-10-06,2025-11-05,1378.38,1378.38,
+Oracle Street Pizeria,,,INV-239363,2025-10-10,2025-11-09,1378.38,1378.38,
+Oracle Street Pizeria,,,INV-240766,2025-10-24,2025-11-23,548.63,548.63,
+Oro Valley Florist,Eric Thomas,eric.thomas@orovalleyflorist.com,INV-241434,2025-10-30,2025-11-29,549.56,549.56,
+Oro Valley Physical Therapy,Eric Roberts,eroberts@orovalley.com,AGR-025503,2025-09-29,2025-10-29,767.72,767.72,
+Oro Valley Physical Therapy,Eric Roberts,eroberts@orovalley.com,AGR-025550,2025-09-30,2025-10-30,794.59,794.59,
+Oro Valley Physical Therapy,Eric Roberts,eroberts@orovalley.com,INV-229348,2025-08-07,2025-09-13,1300.00,1300.00,PO1430000055
+Oro Valley Physical Therapy,Eric Roberts,eroberts@orovalley.com,INV-232104,2025-08-22,2025-10-27,599.34,599.34,PO1430000066X
+Oro Valley Physical Therapy,Eric Roberts,eroberts@orovalley.com,INV-237795,2025-09-27,2025-10-27,439.83,439.83,PO1430000066
+Oro Valley Physical Therapy,Eric Roberts,eroberts@orovalley.com,INV-238087,2025-09-29,2025-10-29,5923.16,5923.16,PO1430000064
+Oro Valley Physical Therapy,Eric Roberts,eroberts@orovalley.com,INV-241088,2025-10-26,2025-11-25,350.17,350.17,PO1430000067
+Oro Valley Poperty Management,,,INV-237151,2025-09-22,2025-11-06,1104.78,1104.78,
+Oro Valley Poperty Management,,,INV-237168,2025-09-23,2025-11-07,1334.56,1334.56,
+Oro Valley Poperty Management,,,INV-237685,2025-09-26,2025-11-10,494.23,494.23,
+Oro Valley Poperty Management,,,INV-238280,2025-10-01,2025-11-15,1208.49,1208.49,
+Oro Valley Poperty Management,,,INV-240060,2025-10-16,2025-11-30,762.07,762.07,
+Oro Valley Poperty Management,,,INV-240614,2025-10-22,2025-12-06,1107.85,1107.85,
+Oro Valley Poperty Management,,,INV-241206,2025-10-28,2025-12-12,1383.93,1383.93,
+Oro Valley Real Estate Group,Karen Jackson,kjackson@orovalleyreal.com,AGR-023555,2025-05-17,2025-07-01,397.30,397.30,
+Oro Valley Real Estate Group,Karen Jackson,kjackson@orovalleyreal.com,AGR-024855,2025-08-16,2025-09-30,397.30,397.30,
+Oro Valley Real Estate Group,Karen Jackson,kjackson@orovalleyreal.com,AGR-025405,2025-09-24,2025-11-08,552.24,552.24,
+Oro Valley Real Estate Group,Karen Jackson,kjackson@orovalleyreal.com,INV-227728,2025-07-28,2025-09-11,559.46,559.46,
+Oro Valley Real Estate Group,Karen Jackson,kjackson@orovalleyreal.com,INV-227834,2025-07-28,2025-09-11,599.34,599.34,
+Oro Valley Title Company,Heather Phillips,heather.phillips@orovalleytitle.com,INV-224131,2025-07-07,2025-08-06,534.11,89.71,
+Oro Valley Title Company,Heather Phillips,heather.phillips@orovalleytitle.com,INV-235388,2025-09-10,2025-10-10,469.81,469.81,
+Oro Valley Title Company,Heather Phillips,heather.phillips@orovalleytitle.com,INV-237167,2025-09-23,2025-10-23,973.18,973.18,
+Oro Valley Title Company,Heather Phillips,heather.phillips@orovalleytitle.com,INV-237662,2025-09-26,2025-10-26,360.08,360.08,
+Oro Valley Title Company,Heather Phillips,heather.phillips@orovalleytitle.com,INV-240076,2025-10-16,2025-11-15,5509.85,5509.85,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,AGR-025911,2025-10-26,2025-12-10,2443.03,2443.03,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,AGR-025936,2025-10-27,2025-12-11,2528.54,2528.54,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-219923,2025-06-08,2025-07-23,588.50,70.79,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-232232,2025-08-23,2025-10-07,559.46,45.26,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-234740,2025-09-06,2025-10-21,534.11,534.11,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-234784,2025-09-06,2025-10-21,639.22,639.22,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-234960,2025-09-07,2025-10-22,2486.11,2486.11,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-235348,2025-09-10,2025-10-25,519.59,519.59,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-235355,2025-09-10,2025-10-25,733.50,733.50,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-235821,2025-09-13,2025-10-28,5040.04,5040.04,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-236126,2025-09-15,2025-10-30,519.59,519.59,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-236129,2025-09-15,2025-10-30,1383.93,1383.93,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-236276,2025-09-16,2025-10-31,933.30,933.30,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-236323,2025-09-17,2025-11-01,390.05,390.05,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-236597,2025-09-19,2025-11-03,1383.93,1383.93,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-236683,2025-09-19,2025-11-03,390.05,390.05,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-236941,2025-09-21,2025-11-05,1092.81,1092.81,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-237247,2025-09-23,2025-11-07,1224.42,1224.42,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-237514,2025-09-25,2025-11-09,1294.68,1294.68,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-237516,2025-09-25,2025-11-09,519.59,519.59,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-237657,2025-09-26,2025-11-10,390.05,390.05,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-237793,2025-09-27,2025-11-11,708.14,708.14,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-238017,2025-09-29,2025-11-13,17914.88,17914.88,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-238036,2025-09-29,2025-11-13,1052.93,1052.93,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-238345,2025-10-01,2025-11-15,838.61,838.61,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-238632,2025-10-03,2025-11-17,933.30,933.30,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-238822,2025-10-04,2025-11-18,469.81,469.81,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-238884,2025-10-05,2025-11-19,479.71,479.71,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-239106,2025-10-07,2025-11-21,519.59,519.59,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-239368,2025-10-10,2025-11-24,1777.04,1777.04,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-239552,2025-10-11,2025-11-25,390.05,390.05,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-239702,2025-10-12,2025-11-26,19328.22,19328.22,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-239874,2025-10-14,2025-11-28,867.65,867.65,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-240002,2025-10-16,2025-11-30,5478.69,5478.69,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-240093,2025-10-17,2025-12-01,548.63,548.63,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-240109,2025-10-17,2025-12-01,773.37,773.37,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-240278,2025-10-18,2025-12-02,519.59,519.59,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-240384,2025-10-19,2025-12-03,399.95,399.95,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-240719,2025-10-23,2025-12-07,1224.42,1224.42,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-240786,2025-10-24,2025-12-08,390.05,390.05,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-240927,2025-10-25,2025-12-09,494.23,494.23,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-241169,2025-10-27,2025-12-11,18434.52,18434.52,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-241252,2025-10-28,2025-12-12,522.80,522.80,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-241254,2025-10-28,2025-12-12,573.99,573.99,
+Oro Valley Unified School District,Carmen Ward,carmen.ward@orovalleyusd.org,INV-241432,2025-10-30,2025-12-14,2218.29,2218.29,
+Oro Valley Unified School District Inc,,,INV-225571,2025-07-15,2025-08-29,559.46,559.46,
+Oro Valley Unified School District Inc,,,INV-226782,2025-07-22,2025-09-05,479.71,479.71,
+Oro Valley Unified School District Inc,,,INV-230221,2025-08-11,2025-09-25,1128.74,1128.74,
+Oro Valley Unified School District Inc,,,INV-231284,2025-08-17,2025-10-01,310.30,310.30,
+Oro Valley Unified School District Inc,,,INV-232737,2025-08-26,2025-10-10,508.75,508.75,
+Oro Valley Unified School District Inc,,,INV-232881,2025-08-27,2025-10-11,390.05,390.05,
+Oro Valley Unified School District Inc,,,INV-233340,2025-08-29,2025-10-13,6076.86,6076.86,
+Oro Valley Unified School District Inc,,,INV-233778,2025-08-31,2025-10-15,628.38,628.38,
+Oro Valley Unified School District Inc,,,INV-233919,2025-09-01,2025-10-16,350.17,350.17,
+Oro Valley Unified School District Inc,,,INV-234159,2025-09-03,2025-10-18,1304.17,1304.17,
+Oro Valley Unified School District Inc,,,INV-234743,2025-09-06,2025-10-21,559.46,559.46,
+Oro Valley Unified School District Inc,,,INV-234966,2025-09-07,2025-10-22,838.61,838.61,
+Oro Valley Unified School District Inc,,,INV-235133,2025-09-08,2025-10-23,519.59,519.59,
+Oro Valley Unified School District Inc,,,INV-235169,2025-09-09,2025-10-24,2141.60,2141.60,
+Oro Valley Unified School District Inc,,,INV-235444,2025-09-11,2025-10-26,639.22,639.22,
+Oro Valley Unified School District Inc,,,INV-235653,2025-09-12,2025-10-27,6555.39,6555.39,
+Oro Valley Unified School District Inc,,,INV-235700,2025-09-12,2025-10-27,973.18,973.18,
+Oro Valley Unified School District Inc,,,INV-235985,2025-09-14,2025-10-29,519.59,519.59,
+Oro Valley Unified School District Inc,,,INV-236359,2025-09-17,2025-11-01,17401.69,17401.69,
+Oro Valley Unified School District Inc,,,INV-236529,2025-09-18,2025-11-02,5638.20,5638.20,
+Oro Valley Unified School District Inc,,,INV-236772,2025-09-20,2025-11-04,3422.51,3422.51,
+Oro Valley Unified School District Inc,,,INV-236808,2025-09-20,2025-11-04,628.38,628.38,
+Oro Valley Unified School District Inc,,,INV-237404,2025-09-25,2025-11-09,1132.69,1132.69,
+Oro Valley Unified School District Inc,,,INV-237406,2025-09-25,2025-11-09,1822.58,1822.58,
+Oro Valley Unified School District Inc,,,INV-237762,2025-09-27,2025-11-11,599.34,599.34,
+Oro Valley Unified School District Inc,,,INV-237945,2025-09-28,2025-11-12,18217.77,18217.77,
+Oro Valley Unified School District Inc,,,INV-238101,2025-09-29,2025-11-13,390.05,390.05,
+Oro Valley Unified School District Inc,,,INV-238205,2025-09-30,2025-11-14,613.86,613.86,
+Oro Valley Unified School District Inc,,,INV-238568,2025-10-03,2025-11-17,519.59,519.59,
+Oro Valley Unified School District Inc,,,INV-238619,2025-10-03,2025-11-17,1252.32,1252.32,
+Oro Valley Unified School District Inc,,,INV-238620,2025-10-03,2025-11-17,669.19,669.19,
+Oro Valley Unified School District Inc,,,INV-238788,2025-10-04,2025-11-18,508.75,508.75,
+Oro Valley Unified School District Inc,,,INV-238789,2025-10-04,2025-11-18,639.22,639.22,
+Oro Valley Unified School District Inc,,,INV-238936,2025-10-05,2025-11-19,534.11,534.11,
+Oro Valley Unified School District Inc,,,INV-239027,2025-10-06,2025-11-20,1172.57,1172.57,
+Oro Valley Unified School District Inc,,,INV-239076,2025-10-06,2025-11-20,639.22,639.22,
+Oro Valley Unified School District Inc,,,INV-239117,2025-10-07,2025-11-21,639.22,639.22,
+Oro Valley Unified School District Inc,,,INV-239138,2025-10-07,2025-11-21,599.34,599.34,
+Oro Valley Unified School District Inc,,,INV-239257,2025-10-08,2025-11-22,559.46,559.46,
+Oro Valley Unified School District Inc,,,INV-239272,2025-10-09,2025-11-23,809.72,809.72,
+Oro Valley Unified School District Inc,,,INV-239996,2025-10-16,2025-11-30,559.46,559.46,
+Oro Valley Unified School District Inc,,,INV-240816,2025-10-24,2025-12-08,2261.23,2261.23,
+Oro Valley Unified School District Inc,,,INV-241084,2025-10-26,2025-12-10,639.22,639.22,
+Oro Valley Unified School District Inc,,,INV-241523,2025-10-31,2025-12-15,668.26,668.26,
+Paradise Valley Property Managment,,,INV-225567,2025-07-15,2025-08-29,1374.43,162.89,
+Paradise Valley Property Managment,,,INV-232825,2025-08-26,2025-10-10,639.22,156.03,
+Paradise Valley Property Managment,,,INV-236156,2025-09-15,2025-10-30,639.22,639.22,
+Paradise Valley Property Managment,,,INV-236165,2025-09-15,2025-10-30,599.34,599.34,
+Paradise Valley Property Managment,,,INV-236915,2025-09-21,2025-11-05,1104.78,1104.78,
+Paradise Valley Property Managment,,,INV-237008,2025-09-21,2025-11-05,534.11,534.11,
+Paradise Valley Property Managment,,,INV-237953,2025-09-28,2025-11-12,439.83,439.83,
+Paradise Valley Property Managment,,,INV-238398,2025-10-02,2025-11-16,1383.93,1383.93,
+Paradise Valley Property Managment,,,INV-240265,2025-10-18,2025-12-02,642.43,642.43,
+Paradise Valley Property Managment,,,INV-241147,2025-10-27,2025-12-11,1230.85,1230.85,
+Paradise Valley Property Managment,,,INV-241253,2025-10-28,2025-12-12,548.63,548.63,
+PARADISE VALLEY REALTY PARTNERS,Jamal Jackson,jamal.jackson@paradisevalley.com,INV-237214,2025-09-23,2025-11-07,383.74,383.74,
+PASTA FRESCA,,,AGR-025940,2025-10-28,2025-12-27,3271.23,3271.23,
+PASTA FRESCA,,,INV-221881,2025-06-22,2025-08-21,390.05,20.89,PO015003217
+PASTA FRESCA,,,INV-230372,2025-08-12,2025-10-11,270.42,33.28,PO015003315
+PASTA FRESCA,,,INV-231826,2025-08-21,2025-10-27,248.91,248.91,PO015003378X
+PASTA FRESCA,,,INV-232438,2025-08-24,2025-10-23,350.17,350.17,PO015003345
+PASTA FRESCA,,,INV-232768,2025-08-26,2025-10-29,550.00,550.00,PO015003343
+PASTA FRESCA,,,INV-232994,2025-08-27,2025-10-26,479.71,62.25,PO015003357
+PASTA FRESCA,,,INV-232999,2025-08-27,2025-11-08,270.42,270.42,PO015003402X
+PASTA FRESCA,,,INV-233049,2025-08-28,2025-10-27,350.17,350.17,PO015003350
+PASTA FRESCA,,,INV-233302,2025-08-29,2025-10-28,399.95,399.95,PO015003364
+PASTA FRESCA,,,INV-233474,2025-08-30,2025-11-04,435.59,435.59,PO015003394X
+PASTA FRESCA,,,INV-233771,2025-08-31,2025-11-11,550.00,550.00,PO015003370
+PASTA FRESCA,,,INV-233941,2025-09-01,2025-11-15,500.00,500.00,PO015003369
+PASTA FRESCA,,,INV-234337,2025-09-04,2025-11-09,650.00,650.00,PO015003373
+PASTA FRESCA,,,INV-234516,2025-09-05,2025-11-17,700.00,700.00,PO015003378
+PASTA FRESCA,,,INV-234565,2025-09-05,2025-11-04,5552.64,5552.64,PO015003333
+PASTA FRESCA,,,INV-234626,2025-09-05,2025-11-04,64.30,64.30,PO015003390
+PASTA FRESCA,,,INV-234963,2025-09-07,2025-11-12,654.88,654.88,PO015003411X
+PASTA FRESCA,,,INV-234995,2025-09-07,2025-11-12,638.96,638.96,PO015003411X
+PASTA FRESCA,,,INV-235082,2025-09-08,2025-11-07,176.31,176.31,PO015003387
+PASTA FRESCA,,,INV-235308,2025-09-10,2025-11-24,1300.00,1300.00,PO015003380
+PASTA FRESCA,,,INV-235681,2025-09-12,2025-11-18,350.17,350.17,PO015003427X
+PASTA FRESCA,,,INV-235783,2025-09-13,2025-11-18,519.59,519.59,PO015003427X
+PASTA FRESCA,,,INV-236477,2025-09-18,2025-11-23,758.60,758.60,PO015003441X
+PASTA FRESCA,,,INV-236563,2025-09-18,2025-11-17,19539.60,19539.60,PO015003381
+PASTA FRESCA,,,INV-237093,2025-09-22,2025-12-02,1258.75,1258.75,PO015003464X
+PASTA FRESCA,,,INV-237382,2025-09-24,2025-11-29,1411.83,1411.83,PO015003459X
+PASTA FRESCA,,,INV-237610,2025-09-26,2025-11-25,429.93,429.93,PO015003425
+PASTA FRESCA,,,INV-238056,2025-09-29,2025-11-28,390.05,390.05,PO015003434
+PASTA FRESCA,,,INV-238069,2025-09-29,2025-11-28,10705.87,10705.87,PO015003384
+PASTA FRESCA,,,INV-238818,2025-10-04,2025-12-10,750.00,750.00,PO015003450
+PASTA FRESCA,,,INV-238819,2025-10-04,2025-12-08,1100.00,1100.00,PO015003453
+PASTA FRESCA,,,INV-239428,2025-10-10,2025-12-09,16689.60,16689.60,PO015003360
+PASTA FRESCA,,,INV-239436,2025-10-10,2025-12-13,500.00,500.00,PO015003467
+PASTA FRESCA,,,INV-239647,2025-10-12,2025-12-11,310.30,310.30,PO015003463
+PASTA FRESCA,,,INV-240199,2025-10-17,2025-12-22,650.00,650.00,PO015003466
+PASTA FRESCA,,,INV-240261,2025-10-18,2025-12-27,615.01,615.01,PO015003505X
+PASTA FRESCA,,,INV-240358,2025-10-19,2025-12-18,429.93,429.93,PO015003482
+PASTA FRESCA,,,INV-241112,2025-10-27,2025-12-26,5445.01,5445.01,PO015003436
+PASTA FRESCA,,,INV-241376,2025-10-30,,550.00,550.00,PO015003487
+Peoria Holdings,Michael Thomas,mthomas@peoriaholdings.com,INV-235446,2025-09-11,2025-11-03,383.74,383.74,PO053000405X
+Peoria Holdings,Michael Thomas,mthomas@peoriaholdings.com,INV-236158,2025-09-15,2025-11-08,519.59,519.59,PO053000406X
+Peoria Holdings,Michael Thomas,mthomas@peoriaholdings.com,INV-236390,2025-09-17,2025-11-09,709.07,709.07,PO053000406X
+Peoria Holdings,Michael Thomas,mthomas@peoriaholdings.com,INV-237504,2025-09-25,2025-11-15,479.71,479.71,PO053000407X
+Peoria Holdings,Michael Thomas,mthomas@peoriaholdings.com,INV-240847,2025-10-24,2025-12-08,1577.65,1577.65,PO053000410
+Peoria Realty Partners,Brian Wright,brian.wright@peoriarealty.com,AGR-023833,2025-06-05,2025-07-20,760.10,113.08,
+Peoria Realty Partners,Brian Wright,brian.wright@peoriarealty.com,AGR-025458,2025-09-26,2025-11-10,3610.20,3610.20,
+Peoria Realty Partners,Brian Wright,brian.wright@peoriarealty.com,INV-236026,2025-09-14,2025-10-29,435.59,435.59,
+Peoria Realty Partners,Brian Wright,brian.wright@peoriarealty.com,INV-237564,2025-09-26,2025-11-10,469.81,469.81,
+Peoria Realty Partners,Brian Wright,brian.wright@peoriarealty.com,INV-239905,2025-10-15,2025-11-29,669.19,669.19,
+Peoria Realty Partners,Brian Wright,brian.wright@peoriarealty.com,INV-241175,2025-10-27,2025-12-11,78.82,78.82,
+Peoria Realty Partners,Brian Wright,brian.wright@peoriarealty.com,INV-241360,2025-10-30,2025-12-14,539.30,539.30,
+PetPoint Supply,,,AGR-025465,2025-09-27,2025-11-26,564.82,564.82,
+PetPoint Supply,,,AGR-025499,2025-09-28,2025-11-27,584.59,584.59,
+PetPoint Supply,,,AGR-025734,2025-10-14,2025-12-13,401.13,401.13,
+PetPoint Supply,,,INV-223988,2025-07-06,2025-09-04,479.71,118.03,PO007001256
+PetPoint Supply,,,INV-227390,2025-07-26,2025-09-29,679.10,223.16,PO007001281X
+PetPoint Supply,,,INV-233383,2025-08-29,2025-11-03,479.71,479.71,PO007001311X
+PetPoint Supply,,,INV-233604,2025-08-31,2025-11-08,1100.00,1100.00,PO007001287
+PetPoint Supply,,,INV-234248,2025-09-03,2025-11-02,939.62,939.62,PO007001309
+PetPoint Supply,,,INV-234305,2025-09-04,2025-11-03,1650.00,1650.00,PO007001304
+PetPoint Supply,,,INV-236773,2025-09-20,2025-11-27,668.26,668.26,PO007001333X
+PetPoint Supply,,,INV-237273,2025-09-23,2025-11-27,2450.00,2450.00,PO007001320
+PetPoint Supply,,,INV-238706,2025-10-04,2025-12-03,1700.00,1700.00,PO007001330
+PetPoint Supply,,,INV-239340,2025-10-09,2025-12-08,383.74,383.74,PO007001337
+PetPoint Supply,,,INV-240951,2025-10-25,,1048.98,1048.98,PO007001362X
+PetPoint Supply,,,INV-241427,2025-10-30,2025-12-29,539.30,539.30,PO007001351
+Phillips & Turner Inurance Agency,,,INV-230226,2025-08-11,2025-09-10,519.59,519.59,
+Phillips & Turner Inurance Agency,,,INV-236944,2025-09-21,2025-10-21,390.05,390.05,
+Phillips & Turner Inurance Agency,,,INV-237116,2025-09-22,2025-10-22,878.23,878.23,
+Phillips & Turner Inurance Agency,,,INV-237152,2025-09-22,2025-10-22,383.74,383.74,
+Phillips & Turner Inurance Agency,,,INV-237271,2025-09-23,2025-10-23,5522.35,5522.35,
+Phillips & Turner Inurance Agency,,,INV-239118,2025-10-07,2025-11-06,429.93,429.93,
+PONDEROSA REAL ESTATE GROUP,Michael Reed,mreed@ponderosareal.com,AGR-025980,2025-10-30,2025-12-14,298.44,298.44,
+PONDEROSA REAL ESTATE GROUP,Michael Reed,mreed@ponderosareal.com,INV-233617,2025-08-31,2025-10-15,599.34,599.34,
+PONDEROSA REAL ESTATE GROUP,Michael Reed,mreed@ponderosareal.com,INV-234489,2025-09-05,2025-10-20,310.30,310.30,
+Prescott Valley Asset Management,,,INV-235507,2025-09-11,2025-11-02,519.59,519.59,PO074000139X
+Prescott Valley Asset Management,,,INV-236300,2025-09-16,2025-10-31,469.81,469.81,PO074000139
+Prescott Valley Asset Management,,,INV-238158,2025-09-30,2025-11-20,508.75,508.75,PO074000141X
+Prescott Valley Asset Management,,,INV-238241,2025-09-30,2025-11-26,390.05,390.05,PO074000141X
+Pueblo Cafe,Paula Cook,paulac40@gmail.com,INV-241519,2025-10-31,2025-11-30,1454.19,1454.19,
+PUEBLO DINER,Maria Thompson,maria.thompson@pueblodiner.com,INV-240343,2025-10-19,2025-11-18,599.34,599.34,
+Pueblo Pizzeria,Kim Price,kprice@pueblopizzeria.com,AGR-025992,2025-10-31,2025-11-30,607.51,607.51,
+Pueblo Pizzeria,Kim Price,kprice@pueblopizzeria.com,INV-236387,2025-09-17,2025-10-22,600.00,600.00,PO290000193
+Pueblo Pizzeria,Kim Price,kprice@pueblopizzeria.com,INV-238446,2025-10-02,2025-11-06,650.00,650.00,PO290000197
+Pueblo Pizzeria,Kim Price,kprice@pueblopizzeria.com,INV-238626,2025-10-03,2025-11-02,399.95,399.95,PO290000198
+Pueblo Pizzeria,Kim Price,kprice@pueblopizzeria.com,INV-240078,2025-10-16,2025-11-21,1200.00,1200.00,PO290000200
+Pueblo Pizzeria,Kim Price,kprice@pueblopizzeria.com,INV-241232,2025-10-28,2025-11-27,500.00,500.00,PO290000204
+Pueblo Pizzeria Inc,,,AGR-025951,2025-10-29,2025-11-28,182.84,182.84,
+Pueblo Pizzeria Inc,,,INV-238569,2025-10-03,2025-11-02,349.24,349.24,
+Pueblo Pizzeria Inc,,,INV-239338,2025-10-09,2025-11-08,628.38,628.38,
+Pueblo Pizzeria Inc,,,INV-239733,2025-10-13,2025-11-12,1663.07,1663.07,
+Pueblo Pizzeria Inc,,,INV-241083,2025-10-26,2025-11-25,1503.56,1503.56,
+Pueblo Pizzeria Inc,,,INV-241146,2025-10-27,2025-11-26,360.08,360.08,
+Pueblo Real Estate Group,Heather Stewart,heather.stewart@pueblorealestate.com,INV-239928,2025-10-15,2025-11-29,722.19,722.19,
+RAY MURPHY FLORIST,Eric Robinson,erobinson@raymurphyflorist.com,INV-233381,2025-08-29,2025-09-28,509.68,509.68,
+RAY MURPHY FLORIST,Eric Robinson,erobinson@raymurphyflorist.com,INV-234421,2025-09-04,2025-10-04,145.20,145.20,
+RAY MURPHY FLORIST,Eric Robinson,erobinson@raymurphyflorist.com,INV-239645,2025-10-12,2025-11-11,350.17,350.17,
+RAY MURPHY FLORIST,Eric Robinson,erobinson@raymurphyflorist.com,INV-240727,2025-10-23,2025-11-22,602.56,602.56,
+Reed & Adams Title Company,Tyler Taylor,ttaylor@reedadamstitle.com,AGR-025880,2025-10-24,2025-11-23,756.39,756.39,
+Rincon Asset Management,Cody Morris,cmorris@rinconasset.com,AGR-024338,2025-07-09,2025-08-23,714.76,152.65,
+Rincon Asset Management,Cody Morris,cmorris@rinconasset.com,AGR-025669,2025-10-08,2025-11-22,714.76,714.76,
+Rincon Asset Management,Cody Morris,cmorris@rinconasset.com,INV-236609,2025-09-19,2025-11-03,1742.82,1742.82,
+Rincon Asset Management,Cody Morris,cmorris@rinconasset.com,INV-238708,2025-10-04,2025-11-18,718.97,718.97,
+Rincon Asset Management,Cody Morris,cmorris@rinconasset.com,INV-239946,2025-10-15,2025-11-29,49.78,49.78,
+Rincon Asset Management,Cody Morris,cmorris@rinconasset.com,INV-240058,2025-10-16,2025-11-30,508.75,508.75,
+Rincon Asset Management,Cody Morris,cmorris@rinconasset.com,INV-240648,2025-10-22,2025-12-06,49.78,49.78,
+RINCON COMMERCIAL PROPERTIES,Brian Cooper,bcooper@rinconcommercial.com,INV-217730,2025-05-20,2025-07-04,469.81,51.41,
+RINCON COMMERCIAL PROPERTIES,Brian Cooper,bcooper@rinconcommercial.com,INV-229778,2025-08-09,2025-09-23,360.08,103.88,
+RINCON COMMERCIAL PROPERTIES,Brian Cooper,bcooper@rinconcommercial.com,INV-239965,2025-10-15,2025-11-29,270.42,270.42,
+RINCON COMMERCIAL PROPERTIES,Brian Cooper,bcooper@rinconcommercial.com,INV-240059,2025-10-16,2025-11-30,1208.49,1208.49,
+RINCON DINER,Tanya Cox,tanya.cox@gmail.com,INV-238235,2025-09-30,2025-10-30,654.16,654.16,
+RINCON DINER,Tanya Cox,tanya.cox@gmail.com,INV-239023,2025-10-06,2025-11-05,725.87,725.87,
+RINCON DINER,Tanya Cox,tanya.cox@gmail.com,INV-239186,2025-10-08,2025-11-07,646.12,646.12,
+RINCON DINER,Tanya Cox,tanya.cox@gmail.com,INV-239731,2025-10-13,2025-11-12,560.81,560.81,
+RINCON DINER,Tanya Cox,tanya.cox@gmail.com,INV-239984,2025-10-16,2025-11-15,758.60,758.60,
+RINCON DINER,Tanya Cox,tanya.cox@gmail.com,INV-240845,2025-10-24,2025-11-23,1378.38,1378.38,
+RINCON DINER,Tanya Cox,tanya.cox@gmail.com,INV-240848,2025-10-24,2025-11-23,2101.72,2101.72,
+RINCON PHYSICAL THERAPY,,,INV-235156,2025-09-09,2025-10-28,800.00,800.00,PO1522000005
+RINCON PHYSICAL THERAPY,,,INV-237993,2025-09-28,2025-10-28,429.93,429.93,PO1522000008
+Rita  Ranch Hardware,,,AGR-022257,2025-02-19,2025-03-21,772.00,25.44,
+Rita  Ranch Hardware,,,INV-240918,2025-10-25,2025-11-24,17156.83,17156.83,
+Rita Ranch Appliance,Linda Wilson,linda.wilson@ritaranch.com,INV-231855,2025-08-21,2025-09-20,519.59,519.59,
+Rita Ranch Appliance,Linda Wilson,linda.wilson@ritaranch.com,INV-237395,2025-09-24,2025-10-24,519.59,519.59,
+Rita Ranch Appliance,Linda Wilson,linda.wilson@ritaranch.com,INV-238090,2025-09-29,2025-10-29,1144.66,1144.66,
+Rita Ranch Appliance,Linda Wilson,linda.wilson@ritaranch.com,INV-238138,2025-09-30,2025-10-30,310.30,310.30,
+Rita Ranch Appliance,Linda Wilson,linda.wilson@ritaranch.com,INV-240162,2025-10-17,2025-11-16,519.59,519.59,
+Rita Ranch Appliance,Linda Wilson,linda.wilson@ritaranch.com,INV-240820,2025-10-24,2025-11-23,1288.25,1288.25,
+Rita Ranch Architects,Kevin Rogers,kevinr1@cox.net,INV-234138,2025-09-02,2025-10-02,758.85,758.85,
+RITA RANCH ARCHITECTS,Kevin Rogers,kevinr1@cox.net,INV-240976,2025-10-25,2025-11-24,1856.91,1856.91,
+RITA RANCH ARCHITECTS,Kevin Rogers,kevinr1@cox.net,INV-241191,2025-10-28,2025-11-27,5165.80,5165.80,
+Rita Ranch Bakery,Robert Mitchell,rmitchell@ritaranchbakery.com,INV-238189,2025-09-30,2025-10-30,1494.07,1494.07,
+Rita Ranch Bakery,Robert Mitchell,rmitchell@ritaranchbakery.com,INV-238450,2025-10-02,2025-11-01,1013.06,1013.06,
+Rita Ranch Bakery,Robert Mitchell,rmitchell@ritaranchbakery.com,INV-238570,2025-10-03,2025-11-02,320.20,320.20,
+Rita Ranch Bakery,Robert Mitchell,rmitchell@ritaranchbakery.com,INV-238668,2025-10-03,2025-11-02,559.46,559.46,
+Rita Ranch Bakery,Robert Mitchell,rmitchell@ritaranchbakery.com,INV-239640,2025-10-12,2025-11-11,1254.80,1254.80,
+Rita Ranch Bakery,Robert Mitchell,rmitchell@ritaranchbakery.com,INV-239839,2025-10-14,2025-11-13,1288.25,1288.25,
+Rita Ranch Bakery,Robert Mitchell,rmitchell@ritaranchbakery.com,INV-240668,2025-10-23,2025-11-22,1248.37,1248.37,
+Rita Ranch Commercial Properties,Angela Johnson,angela.johnson@ritaranch.com,INV-236466,2025-09-18,2025-11-02,933.30,933.30,
+Rita Ranch Commercial Properties,Angela Johnson,angela.johnson@ritaranch.com,INV-236689,2025-09-19,2025-11-03,479.71,479.71,
+Rita Ranch Commercial Properties,Angela Johnson,angela.johnson@ritaranch.com,INV-237629,2025-09-26,2025-11-10,1092.81,1092.81,
+Rita Ranch Commercial Properties,Angela Johnson,angela.johnson@ritaranch.com,INV-238880,2025-10-05,2025-11-19,310.30,310.30,
+Rita Ranch Commercial Properties,Angela Johnson,angela.johnson@ritaranch.com,INV-238988,2025-10-06,2025-11-20,439.83,439.83,
+Rita Ranch Commercial Properties,Angela Johnson,angela.johnson@ritaranch.com,INV-240822,2025-10-24,2025-12-08,1052.93,1052.93,
+Rita Ranch Commercial Properties,Angela Johnson,angela.johnson@ritaranch.com,INV-240823,2025-10-24,2025-12-08,548.63,548.63,
+Rita Ranch Holdings LLC,,,INV-235787,2025-09-13,2025-10-28,679.10,679.10,
+Rita Ranch Holdings LLC,,,INV-236849,2025-09-20,2025-11-04,1782.70,1782.70,
+Rita Ranch Holdings LLC,,,INV-240063,2025-10-16,2025-11-30,390.05,390.05,
+Rita Ranch Holdings LLC,,,INV-241331,2025-10-29,2025-12-13,469.81,469.81,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-226449,2025-07-20,2025-08-19,588.50,62.76,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-228821,2025-08-03,2025-09-02,519.59,48.40,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-234401,2025-09-04,2025-10-04,1184.54,1184.54,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-235877,2025-09-13,2025-10-13,49.78,49.78,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-236160,2025-09-15,2025-10-15,718.72,718.72,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-236425,2025-09-18,2025-10-18,49.78,49.78,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-237005,2025-09-21,2025-10-21,435.59,435.59,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-237620,2025-09-26,2025-10-26,1368.00,1368.00,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-238157,2025-09-30,2025-10-30,3422.51,3422.51,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-238693,2025-10-04,2025-11-03,435.59,435.59,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-239430,2025-10-10,2025-11-09,145.20,145.20,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-239807,2025-10-13,2025-11-12,5526.46,5526.46,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-240582,2025-10-21,2025-11-20,997.86,997.86,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-240852,2025-10-24,2025-11-23,539.30,539.30,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-241325,2025-10-29,2025-11-28,646.12,646.12,
+Rita Ranch Pediatrics,Brittany Martinez,brittany.martinez@ritaranch.com,INV-241515,2025-10-31,2025-11-30,145.20,145.20,
+Rita Ranch Veterinary Clinic,Tanya Howard,tanya.howard@ritaranch.com,AGR-025769,2025-10-16,2025-11-15,1934.17,1934.17,
+Rita Ranch Veterinary Clinic,Tanya Howard,tanya.howard@ritaranch.com,INV-228117,2025-07-31,2025-08-30,706.01,148.55,
+Rita Ranch Veterinary Clinic,Tanya Howard,tanya.howard@ritaranch.com,INV-236251,2025-09-16,2025-10-16,20149.78,20149.78,
+Roberts Law Offices,Holly Walker,hollyw60@cox.net,INV-240725,2025-10-23,2025-11-22,722.19,722.19,
+Roberts Law Offices,Holly Walker,hollyw60@cox.net,INV-241324,2025-10-29,2025-11-28,646.12,646.12,
+"Sabino Asset Management, Inc.",,,INV-232752,2025-08-26,2025-10-10,1294.68,1294.68,
+"Sabino Asset Management, Inc.",,,INV-234580,2025-09-05,2025-10-20,1132.69,1132.69,
+"Sabino Asset Management, Inc.",,,INV-236805,2025-09-20,2025-11-04,1151.09,1151.09,
+"Sabino Asset Management, Inc.",,,INV-236872,2025-09-21,2025-11-05,1963.88,1963.88,
+"Sabino Asset Management, Inc.",,,INV-236874,2025-09-21,2025-11-05,1184.54,1184.54,
+"Sabino Asset Management, Inc.",,,INV-237154,2025-09-22,2025-11-06,1172.57,1172.57,
+"Sabino Asset Management, Inc.",,,INV-238070,2025-09-29,2025-11-13,1573.82,1573.82,
+"Sabino Asset Management, Inc.",,,INV-239337,2025-10-09,2025-11-23,1184.54,1184.54,
+"Sabino Asset Management, Inc.",,,INV-240240,2025-10-18,2025-12-02,613.86,613.86,
+Sabino Cafe,Maria Mitchell,maria.mitchell@outlook.com,INV-223834,2025-07-05,2025-08-04,1414.31,198.85,
+Sabino Cafe,Maria Mitchell,maria.mitchell@outlook.com,INV-231553,2025-08-19,2025-09-18,350.17,79.09,
+Sabino Cafe,Maria Mitchell,maria.mitchell@outlook.com,INV-239273,2025-10-09,2025-11-08,1344.05,1344.05,
+Sabino Cafe,Maria Mitchell,maria.mitchell@outlook.com,INV-241132,2025-10-27,2025-11-26,588.50,588.50,
+Sabino Cfe,,,INV-240361,2025-10-19,2025-11-18,1383.93,1383.93,
+SABINO COMMERCIAL PROPERTIES,,,INV-235145,2025-09-09,2025-11-02,1172.57,1172.57,PO089000488X
+SABINO COMMERCIAL PROPERTIES,,,INV-239945,2025-10-15,2025-11-29,1684.73,1684.73,PO089000492
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,AGR-025501,2025-09-28,2025-10-28,1104.81,1104.81,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-219518,2025-06-05,2025-07-05,509.68,26.45,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-233481,2025-08-30,2025-09-29,446.73,153.86,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-238120,2025-09-29,2025-10-29,1128.74,1128.74,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-238230,2025-09-30,2025-10-30,733.50,733.50,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-238504,2025-10-02,2025-11-01,679.10,679.10,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-238937,2025-10-05,2025-11-04,973.18,973.18,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-239119,2025-10-07,2025-11-06,798.73,798.73,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-239951,2025-10-15,2025-11-14,176.31,176.31,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-239952,2025-10-15,2025-11-14,669.19,669.19,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-240429,2025-10-20,2025-11-19,1458.14,1458.14,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-240619,2025-10-22,2025-11-21,429.93,429.93,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-240621,2025-10-22,2025-11-21,270.42,270.42,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-241063,2025-10-26,2025-11-25,399.95,399.95,
+Sabino Furniture,Derek White,dwhite@sabinofurniture.com,INV-241197,2025-10-28,2025-11-27,3422.51,3422.51,
+Sabino Physical Therapy,Robert Baker,robert.baker@outlook.com,AGR-025714,2025-10-12,2025-11-11,779.45,779.45,
+Sabino Physical Therapy,Robert Baker,robert.baker@outlook.com,INV-241312,2025-10-29,2025-11-28,429.93,429.93,
+Sabino Property Management,Tanya Murphy,tanya.murphy@sabinoproperty.com,INV-239256,2025-10-08,2025-11-22,508.75,508.75,
+Sabino Property Management,Tanya Murphy,tanya.murphy@sabinoproperty.com,INV-240723,2025-10-23,2025-12-07,559.46,559.46,
+Sabino Real Estate Group,Shauna Wright,swright@sabinorealestate.com,INV-236252,2025-09-16,2025-10-31,1374.43,1374.43,
+Sabino Real Estate Group,Shauna Wright,swright@sabinorealestate.com,INV-238322,2025-10-01,2025-11-15,549.56,549.56,
+Sabino Real Estate Group,Shauna Wright,swright@sabinorealestate.com,INV-238752,2025-10-04,2025-11-18,549.56,549.56,
+Sabino Real Estate Group,Shauna Wright,swright@sabinorealestate.com,INV-239357,2025-10-09,2025-11-23,320.20,320.20,
+Sabino Realty Partners LLC,,,AGR-025285,2025-09-13,2025-10-28,1365.40,1365.40,
+Sabino Realty Partners LLC,,,AGR-025642,2025-10-05,2025-11-19,989.31,989.31,
+Sabino Realty Partners LLC,,,INV-235255,2025-09-09,2025-10-24,947.40,947.40,
+Sabino Realty Partners LLC,,,INV-236598,2025-09-19,2025-11-03,599.34,599.34,
+Sabino Realty Partners LLC,,,INV-236686,2025-09-19,2025-11-03,599.34,599.34,
+Sabino Realty Partners LLC,,,INV-240882,2025-10-25,2025-12-09,705.24,705.24,
+Saguaro  Holdings,,,INV-236439,2025-09-18,2025-11-02,679.10,679.10,
+Saguaro  Holdings,,,INV-236846,2025-09-20,2025-11-04,479.71,479.71,
+Saguaro  Holdings,,,INV-237950,2025-09-28,2025-11-12,349.24,349.24,
+Saguaro  Holdings,,,INV-238449,2025-10-02,2025-11-16,748.01,748.01,
+Saguaro  Holdings,,,INV-238514,2025-10-02,2025-11-16,1184.54,1184.54,
+Saguaro  Holdings,,,INV-239095,2025-10-07,2025-11-21,973.18,973.18,
+Saguaro  Holdings,,,INV-239161,2025-10-07,2025-11-21,310.30,310.30,
+Saguaro  Holdings,,,INV-239369,2025-10-10,2025-11-24,1132.69,1132.69,
+Saguaro  Holdings,,,INV-240056,2025-10-16,2025-11-30,454.35,454.35,
+Saguaro  Holdings,,,INV-240057,2025-10-16,2025-11-30,429.93,429.93,
+Saguaro  Holdings,,,INV-240157,2025-10-17,2025-12-01,1071.34,1071.34,
+Saguaro  Holdings,,,INV-240488,2025-10-20,2025-12-04,639.22,639.22,
+Sahuarita Diner,Andre Green,agreen@sahuaritadiner.com,INV-232515,2025-08-24,2025-09-23,439.83,439.83,
+Sahuarita Diner,Andre Green,agreen@sahuaritadiner.com,INV-234422,2025-09-04,2025-10-04,360.08,360.08,
+Sahuarita Diner,Andre Green,agreen@sahuaritadiner.com,INV-237568,2025-09-26,2025-10-26,1304.17,1304.17,
+Sahuarita Diner,Andre Green,agreen@sahuaritadiner.com,INV-237825,2025-09-27,2025-10-27,5797.72,5797.72,
+Sahuarita Diner,Andre Green,agreen@sahuaritadiner.com,INV-237850,2025-09-28,2025-10-28,1423.80,1423.80,
+Sahuarita Diner,Andre Green,agreen@sahuaritadiner.com,INV-240015,2025-10-16,2025-11-15,4880.53,4880.53,
+Sahuarita Family Dental,Denise Hughes,denise.hughes@sahuaritafamily.com,AGR-025594,2025-10-02,2025-11-01,573.66,573.66,
+Sahuarita Family Dental,Denise Hughes,denise.hughes@sahuaritafamily.com,AGR-025780,2025-10-17,2025-11-16,753.15,753.15,
+Sahuarita Medical Billing,David Parker,david.parker@gmail.com,INV-240161,2025-10-17,2025-11-16,1230.85,1230.85,
+Sahuarita Medical Billing,David Parker,david.parker@gmail.com,INV-240441,2025-10-20,2025-11-19,599.34,599.34,
+Sahuarita Realty Partners Inc,,,INV-236467,2025-09-18,2025-11-02,1344.05,1344.05,
+Sahuarita Realty Partners Inc,,,INV-237213,2025-09-23,2025-11-07,439.83,439.83,
+Sahuarita Realty Partners Inc,,,INV-238167,2025-09-30,2025-11-14,360.08,360.08,
+Sahuarita Realty Partners Inc,,,INV-240718,2025-10-23,2025-12-07,809.72,809.72,
+Sahuarita Realty Partners Inc,,,INV-241355,2025-10-30,2025-12-14,4880.53,4880.53,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,AGR-025899,2025-10-25,2025-12-09,6720.46,6720.46,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-219595,2025-06-05,2025-07-20,508.75,66.10,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-234583,2025-09-05,2025-10-20,1463.68,315.67,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-235790,2025-09-13,2025-10-28,559.46,83.51,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-235952,2025-09-14,2025-10-29,6435.76,6435.76,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-235989,2025-09-14,2025-10-29,469.81,469.81,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-236025,2025-09-14,2025-10-29,1383.93,1383.93,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-236101,2025-09-15,2025-10-30,334.72,334.72,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-236217,2025-09-16,2025-10-31,310.30,310.30,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-236275,2025-09-16,2025-10-31,534.11,534.11,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-236464,2025-09-18,2025-11-02,559.46,559.46,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-236687,2025-09-19,2025-11-03,639.22,639.22,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-237002,2025-09-21,2025-11-05,679.10,679.10,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-237063,2025-09-22,2025-11-06,3422.51,3422.51,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-237114,2025-09-22,2025-11-06,479.71,479.71,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-237278,2025-09-23,2025-11-07,589.44,589.44,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-237799,2025-09-27,2025-11-11,383.74,383.74,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-238093,2025-09-29,2025-11-13,1252.32,1252.32,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-238898,2025-10-05,2025-11-19,1678.30,1678.30,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-239154,2025-10-07,2025-11-21,468.87,468.87,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-239219,2025-10-08,2025-11-22,682.31,682.31,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-239851,2025-10-14,2025-11-28,479.71,479.71,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-240153,2025-10-17,2025-12-01,508.75,508.75,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-240238,2025-10-18,2025-12-02,5040.04,5040.04,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-240818,2025-10-24,2025-12-08,1132.69,1132.69,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-240922,2025-10-25,2025-12-09,350.17,350.17,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-241093,2025-10-26,2025-12-10,439.83,439.83,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-241301,2025-10-29,2025-12-13,1168.62,1168.62,
+Sahuarita Unified School District,Andre Wilson,awilson@sahuaritausd.org,INV-241522,2025-10-31,2025-12-15,1334.56,1334.56,
+San Tan Valley Asset Management,Alicia King,alicia.king@santanvalley.com,INV-236433,2025-09-18,2025-11-02,429.93,429.93,
+San Tan Valley Asset Management,Alicia King,alicia.king@santanvalley.com,INV-236659,2025-09-19,2025-11-03,654.16,654.16,
+San Tan Valley Asset Management,Alicia King,alicia.king@santanvalley.com,INV-237890,2025-09-28,2025-11-12,509.68,509.68,
+San Tan Valley Asset Management,Alicia King,alicia.king@santanvalley.com,INV-240339,2025-10-19,2025-12-03,18274.63,18274.63,
+San Tan Valley Asset Management,Alicia King,alicia.king@santanvalley.com,INV-240395,2025-10-20,2025-12-04,1573.82,1573.82,
+San Tan Valley Asset Management,Alicia King,alicia.king@santanvalley.com,INV-241278,2025-10-29,2025-12-13,1613.70,1613.70,
+Santa Cruz Architects,Sean Bailey,sean.bailey@outlook.com,INV-239155,2025-10-07,2025-11-06,548.63,548.63,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,AGR-025393,2025-09-23,2025-11-07,670.34,670.34,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-222719,2025-06-28,2025-08-12,1304.17,420.78,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-234962,2025-09-07,2025-10-22,1013.06,1013.06,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-235325,2025-09-10,2025-10-25,679.10,679.10,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-236213,2025-09-16,2025-10-31,469.81,469.81,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-237451,2025-09-25,2025-11-09,589.44,589.44,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-238618,2025-10-03,2025-11-17,599.34,599.34,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-238624,2025-10-03,2025-11-17,534.11,534.11,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-239761,2025-10-13,2025-11-27,613.86,613.86,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-241335,2025-10-29,2025-12-13,1184.54,1184.54,
+Santa Cruz Commercial Properties,Tasha Ward,tasha.ward@santacruz.com,INV-241354,2025-10-30,2025-12-14,78.82,78.82,
+Santa Cruz Engineering,Kim Lewis,kiml18@outlook.com,AGR-025948,2025-10-28,2025-11-27,6591.66,6591.66,
+Santa Cruz Family Dental,Melissa Wright,melissaw74@gmail.com,AGR-025154,2025-09-04,2025-10-04,1501.68,1501.68,
+Santa Cruz Family Dental,Melissa Wright,melissaw74@gmail.com,INV-236280,2025-09-16,2025-10-16,1663.07,1663.07,
+Santa Cruz Family Dental,Melissa Wright,melissaw74@gmail.com,INV-236691,2025-09-19,2025-10-19,519.59,519.59,
+Santa Cruz Family Dental,Melissa Wright,melissaw74@gmail.com,INV-237003,2025-09-21,2025-10-21,439.83,439.83,
+Santa Cruz Family Dental,Melissa Wright,melissaw74@gmail.com,INV-239075,2025-10-06,2025-11-05,519.59,519.59,
+Santa Cruz Family Dental,Melissa Wright,melissaw74@gmail.com,INV-239760,2025-10-13,2025-11-12,479.71,479.71,
+Santa Cruz Family Dental,Melissa Wright,melissaw74@gmail.com,INV-239899,2025-10-15,2025-11-14,1804.37,1804.37,
+Santa Cruz Family Dental,Melissa Wright,melissaw74@gmail.com,INV-240741,2025-10-23,2025-11-22,1604.98,1604.98,
+SANTA CRUZ GRILL,Maria Johnson,maria.johnson@santacruzgrill.com,INV-238379,2025-10-01,2025-10-31,559.46,559.46,
+SANTA CRUZ GRILL,Maria Johnson,maria.johnson@santacruzgrill.com,INV-240050,2025-10-16,2025-11-15,762.07,762.07,
+SANTA CRUZ GRILL,Maria Johnson,maria.johnson@santacruzgrill.com,INV-240341,2025-10-19,2025-11-18,439.83,439.83,
+Santa Cruz Hardware,Gina Thomas,gthomas@santacruz.com,INV-235046,2025-09-08,2025-10-08,1334.56,417.36,
+Santa Cruz Hardware,Gina Thomas,gthomas@santacruz.com,INV-238904,2025-10-05,2025-11-04,534.11,534.11,
+SANTA CRUZ LIQUOR,Dustin Hill,dustin.hill@santacruzliquor.com,AGR-025641,2025-10-05,2025-11-04,1691.12,1691.12,
+SANTA CRUZ LIQUOR,Dustin Hill,dustin.hill@santacruzliquor.com,INV-236647,2025-09-19,2025-10-19,49.78,49.78,
+SANTA CRUZ LIQUOR,Dustin Hill,dustin.hill@santacruzliquor.com,INV-238268,2025-10-01,2025-10-31,3422.51,3422.51,
+SANTA CRUZ LIQUOR,Dustin Hill,dustin.hill@santacruzliquor.com,INV-238515,2025-10-02,2025-11-01,383.74,383.74,
+SANTA CRUZ LIQUOR,Dustin Hill,dustin.hill@santacruzliquor.com,INV-239849,2025-10-14,2025-11-13,638.96,638.96,
+SANTA CRUZ LIQUOR,Dustin Hill,dustin.hill@santacruzliquor.com,INV-240262,2025-10-18,2025-11-17,694.76,694.76,
+SANTA CRUZ LIQUOR,Dustin Hill,dustin.hill@santacruzliquor.com,INV-241423,2025-10-30,2025-11-29,559.46,559.46,
+Santa Cruz Medical Billing,Jose Bailey,joseb36@outlook.com,AGR-023557,2025-05-18,2025-06-17,184.25,184.25,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-203378,2024-11-07,2024-12-22,382.05,382.05,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-217302,2025-05-17,2025-07-01,1254.80,1254.80,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-221460,2025-06-19,2025-08-03,599.34,599.34,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-223412,2025-07-02,2025-08-16,494.23,494.23,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-225889,2025-07-17,2025-08-31,1092.81,1092.81,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-230064,2025-08-10,2025-09-24,893.42,893.42,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-230967,2025-08-16,2025-09-30,5159.68,5159.68,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-231098,2025-08-17,2025-10-01,1214.92,1214.92,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-231324,2025-08-18,2025-10-02,548.63,548.63,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-231638,2025-08-20,2025-10-04,706.01,706.01,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-232893,2025-08-27,2025-10-11,5390.22,5390.22,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-234007,2025-09-02,2025-10-17,733.50,733.50,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-234735,2025-09-06,2025-10-21,559.46,559.46,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-235465,2025-09-11,2025-10-26,758.85,758.85,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-236648,2025-09-19,2025-11-03,1052.93,1052.93,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-237755,2025-09-27,2025-11-11,479.71,479.71,
+SCOTTSDALE COMMERCIAL PROPERTIES,Wes Jackson,wjackson@scottsdale.com,INV-239618,2025-10-12,2025-11-26,1139.00,1139.00,
+Scottsdale Real Estate Group,Cody Rogers,cody.rogers@scottsdalereal.com,AGR-025425,2025-09-25,2025-11-09,1412.06,1412.06,
+Scottsdale Real Estate Group,Cody Rogers,cody.rogers@scottsdalereal.com,AGR-025456,2025-09-26,2025-11-10,1461.48,1461.48,
+Scottsdale Real Estate Group,Cody Rogers,cody.rogers@scottsdalereal.com,AGR-025681,2025-10-09,2025-11-23,496.60,496.60,
+Scottsdale Real Estate Group,Cody Rogers,cody.rogers@scottsdalereal.com,INV-236807,2025-09-20,2025-11-04,519.59,519.59,
+Scottsdale Real Estate Group,Cody Rogers,cody.rogers@scottsdalereal.com,INV-241547,2025-10-31,2025-12-15,1168.62,1168.62,
+Sean Phillips Chiropractic,Daniel Mitchell,danielm84@gmail.com,INV-238755,2025-10-04,2025-11-03,1248.37,1248.37,
+Sean Phillips Chiropractic,Daniel Mitchell,danielm84@gmail.com,INV-240293,2025-10-19,2025-11-18,613.86,613.86,
+Sean Phillips Chiropractic,Daniel Mitchell,danielm84@gmail.com,INV-241092,2025-10-26,2025-11-25,548.63,548.63,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,AGR-025666,2025-10-07,2025-11-21,1558.91,1558.91,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,AGR-025885,2025-10-24,2025-12-08,1191.89,1191.89,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-232109,2025-08-22,2025-10-06,653.74,653.74,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-232940,2025-08-27,2025-10-11,479.71,479.71,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-234365,2025-09-04,2025-10-19,1214.92,1214.92,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-235143,2025-09-08,2025-10-23,5438.82,5438.82,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-235512,2025-09-11,2025-10-26,2500.50,2500.50,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-235522,2025-09-11,2025-10-26,973.18,973.18,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-235654,2025-09-12,2025-10-27,1439.04,1439.04,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-236049,2025-09-15,2025-10-30,668.26,668.26,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-237751,2025-09-27,2025-11-11,668.26,668.26,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-238531,2025-10-02,2025-11-16,559.46,559.46,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-238850,2025-10-05,2025-11-19,639.22,639.22,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-239620,2025-10-12,2025-11-26,559.46,559.46,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-240813,2025-10-24,2025-12-08,1414.31,1414.31,
+Sedona Real Estate Group,Andre Turner,andre.turner@sedonarealestate.com,INV-241060,2025-10-26,2025-12-10,1454.19,1454.19,
+Shauna Allen Engineering,Jamal White,jamalw53@yahoo.com,AGR-025544,2025-09-30,2025-10-30,721.95,721.95,
+Shauna Allen Engineering,Jamal White,jamalw53@yahoo.com,INV-235105,2025-09-08,2025-10-08,383.74,383.74,
+Shauna Allen Engineering,Jamal White,jamalw53@yahoo.com,INV-238118,2025-09-29,2025-10-29,435.59,435.59,
+Speedway Street Physical Therapy,Jamal Hill,jamal.hill@yahoo.com,INV-215815,2025-05-04,2025-06-03,390.05,121.79,
+Speedway Street Physical Therapy,Jamal Hill,jamal.hill@yahoo.com,INV-231895,2025-08-21,2025-09-20,5239.43,5239.43,
+Speedway Street Physical Therapy,Jamal Hill,jamal.hill@yahoo.com,INV-237984,2025-09-28,2025-10-28,5079.92,5079.92,
+Speedway Street Physical Therapy,Jamal Hill,jamal.hill@yahoo.com,INV-240328,2025-10-19,2025-11-18,599.34,599.34,
+SpeedyPrint,,,AGR-025330,2025-09-17,2025-11-16,774.03,774.03,
+SpeedyPrint,,,AGR-025471,2025-09-27,2025-11-26,185.92,185.92,
+SpeedyPrint,,,AGR-025752,2025-10-15,2025-12-14,868.50,868.50,
+SpeedyPrint,,,INV-220331,2025-06-11,2025-08-10,439.83,106.41,PO024001299
+SpeedyPrint,,,INV-228954,2025-08-04,2025-10-03,320.20,320.20,PO024001362
+SpeedyPrint,,,INV-230714,2025-08-15,2025-10-14,494.23,494.23,PO024001367
+SpeedyPrint,,,INV-231999,2025-08-22,2025-10-28,1500.00,1500.00,PO024001376
+SpeedyPrint,,,INV-232312,2025-08-23,2025-10-22,599.34,599.34,PO024001382
+SpeedyPrint,,,INV-232699,2025-08-25,2025-10-24,853.13,853.13,PO024001384
+SpeedyPrint,,,INV-233905,2025-09-01,2025-11-13,706.01,706.01,PO024001403X
+SpeedyPrint,,,INV-233942,2025-09-01,2025-10-31,639.22,639.22,PO024001389
+SpeedyPrint,,,INV-234048,2025-09-02,2025-11-17,5868.75,5868.75,PO024001406X
+SpeedyPrint,,,INV-234448,2025-09-04,2025-11-16,573.99,573.99,PO024001405X
+SpeedyPrint,,,INV-235656,2025-09-12,2025-11-19,1150.00,1150.00,PO024001396
+SpeedyPrint,,,INV-236212,2025-09-16,2025-11-20,548.63,548.63,PO024001408X
+SpeedyPrint,,,INV-237188,2025-09-23,2025-11-22,479.71,479.71,PO024001402
+SpeedyPrint,,,INV-237618,2025-09-26,2025-11-25,519.59,519.59,PO024001407
+SpeedyPrint,,,INV-237760,2025-09-27,2025-11-26,853.13,853.13,PO024001409
+SpeedyPrint,,,INV-237956,2025-09-28,2025-11-27,435.59,435.59,PO024001411
+SpeedyPrint,,,INV-238552,2025-10-03,2025-12-13,1150.00,1150.00,PO024001408
+SpeedyPrint,,,INV-238853,2025-10-05,2025-12-04,1044.21,1044.21,PO024001413
+SpeedyPrint,,,INV-240549,2025-10-21,2025-12-20,1600.00,1600.00,PO024001424
+SpeedyPrint,,,INV-241173,2025-10-27,2025-12-26,708.14,708.14,PO024001429
+Stewart  & Bailey Family Dental,,,INV-237032,2025-09-22,2025-10-22,435.59,435.59,
+Stewart  & Bailey Family Dental,,,INV-239366,2025-10-10,2025-11-09,639.22,639.22,
+Sunny Side Diners,,,INV-232629,2025-08-25,2025-10-24,933.30,933.30,PO005000494
+Sunny Side Diners,,,INV-235254,2025-09-09,2025-11-08,639.22,639.22,PO005000505
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,AGR-023368,2025-05-02,2025-06-16,715.77,130.87,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,AGR-025284,2025-09-13,2025-10-28,910.26,910.26,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,AGR-025996,2025-10-31,2025-12-15,715.77,715.77,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-225961,2025-07-18,2025-09-01,429.93,137.07,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-229587,2025-08-08,2025-09-22,693.62,185.68,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-233355,2025-08-29,2025-10-13,1168.62,350.99,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-234686,2025-09-06,2025-10-21,320.20,71.12,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-235351,2025-09-10,2025-10-25,709.07,709.07,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-236709,2025-09-19,2025-11-03,439.83,439.83,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-236974,2025-09-21,2025-11-05,429.93,429.93,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-237792,2025-09-27,2025-11-11,893.00,893.00,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-239683,2025-10-12,2025-11-26,16411.53,16411.53,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-240048,2025-10-16,2025-11-30,1212.44,1212.44,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-240049,2025-10-16,2025-11-30,310.30,310.30,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-240814,2025-10-24,2025-12-08,390.05,390.05,
+SUPERSTITION HOLDINGS,Holly Martin,hmartin@superstition.com,INV-241426,2025-10-30,2025-12-14,534.11,534.11,
+Swan Street Bakery,Derek Campbell,dcampbell@swanstreetbakery.com,AGR-025711,2025-10-12,2025-11-11,1702.38,1702.38,
+Swan Street Family Dental,Shauna Moore,shauna.moore@swanstreetfamily.com,INV-236981,2025-09-21,2025-10-21,693.62,693.62,
+Swan Street Family Dental,Shauna Moore,shauna.moore@swanstreetfamily.com,INV-238902,2025-10-05,2025-11-04,1782.70,1782.70,
+Swan Street Veterinary Clinic,Sean Morris,seanm85@yahoo.com,AGR-025700,2025-10-11,2025-11-10,1601.20,1601.20,
+Swan Street Veterinary Clinic,Sean Morris,seanm85@yahoo.com,AGR-025721,2025-10-12,2025-11-11,1657.24,1657.24,
+Swan Street Veterinary Clinic,Sean Morris,seanm85@yahoo.com,INV-239687,2025-10-12,2025-11-11,599.34,599.34,
+Swan Street Veterinary Clinic,Sean Morris,seanm85@yahoo.com,INV-240998,2025-10-26,2025-11-25,519.59,519.59,
+Taco  Rio,,,AGR-025150,2025-09-04,2025-11-03,5908.66,5908.66,
+Taco  Rio,,,INV-229591,2025-08-08,2025-10-07,500.00,500.00,PO022001616
+Taco  Rio,,,INV-229827,2025-08-09,2025-11-06,1052.93,1052.93,PO022001662X
+Taco  Rio,,,INV-230037,2025-08-10,2025-10-14,650.00,650.00,PO022001619
+Taco  Rio,,,INV-230322,2025-08-12,2025-10-18,700.00,700.00,PO022001620
+Taco  Rio,,,INV-231601,2025-08-19,2025-10-24,1450.00,1450.00,PO022001626
+Taco  Rio,,,INV-232118,2025-08-22,2025-10-30,508.75,508.75,PO022001659X
+Taco  Rio,,,INV-233137,2025-08-28,2025-11-08,573.99,573.99,PO022001664X
+Taco  Rio,,,INV-233290,2025-08-29,2025-10-28,320.20,320.20,PO022001646
+Taco  Rio,,,INV-233391,2025-08-29,2025-11-07,1200.00,1200.00,PO022001649
+Taco  Rio,,,INV-233470,2025-08-30,2025-11-04,439.83,439.83,PO022001662X
+Taco  Rio,,,INV-234440,2025-09-04,2025-11-03,350.17,350.17,PO022001657
+Taco  Rio,,,INV-235081,2025-09-08,2025-11-13,950.00,950.00,PO022001660
+Taco  Rio,,,INV-235249,2025-09-09,2025-11-08,650.00,650.00,PO022001661
+Taco  Rio,,,INV-235277,2025-09-10,2025-11-21,500.00,500.00,PO022001652
+Taco  Rio,,,INV-235410,2025-09-11,2025-11-10,950.00,950.00,PO022001651
+Taco  Rio,,,INV-235885,2025-09-14,2025-11-28,494.23,494.23,PO022001683X
+Taco  Rio,,,INV-236155,2025-09-15,2025-11-21,1500.00,1500.00,PO022001664
+Taco  Rio,,,INV-236411,2025-09-17,2025-11-23,1168.62,1168.62,PO022001676X
+Taco  Rio,,,INV-236476,2025-09-18,2025-11-17,1650.00,1650.00,PO022001665
+Taco  Rio,,,INV-236651,2025-09-19,2025-11-27,500.00,500.00,PO022001670
+Taco  Rio,,,INV-238186,2025-09-30,2025-12-06,500.00,500.00,PO022001676
+Taco  Rio,,,INV-238499,2025-10-02,2025-12-07,429.00,429.00,PO022001689X
+Taco  Rio,,,INV-238750,2025-10-04,2025-12-03,479.71,479.71,PO022001678
+Taco  Rio,,,INV-238787,2025-10-04,2025-12-03,500.00,500.00,PO022001682
+Taco  Rio,,,INV-238791,2025-10-04,2025-12-08,534.11,534.11,PO022001689X
+Taco  Rio,,,INV-240743,2025-10-23,2025-12-28,500.00,500.00,PO022001693
+Taco  Rio,,,INV-240811,2025-10-24,2025-12-23,1099.12,1099.12,PO022001691
+Taco  Rio,,,INV-241038,2025-10-26,,500.00,500.00,PO022001700
+Taco  Rio,,,INV-241449,2025-10-30,,1200.00,1200.00,PO022001694
+Tanque Street Appliance,Andre Lewis,andre.lewis@outlook.com,INV-236069,2025-09-15,2025-10-15,973.18,973.18,
+Tanque Street Appliance,Andre Lewis,andre.lewis@outlook.com,INV-237540,2025-09-25,2025-10-25,599.34,599.34,
+Tanque Street Appliance,Andre Lewis,andre.lewis@outlook.com,INV-238681,2025-10-03,2025-11-02,668.26,668.26,
+Tanque Street Appliance,Andre Lewis,andre.lewis@outlook.com,INV-239619,2025-10-12,2025-11-11,1025.03,1025.03,
+Tanque Verde Bakery,Alicia Hall,alicia.hall@gmail.com,INV-240346,2025-10-19,2025-11-18,1374.43,1374.43,
+Tanque Verde Realty Partners,Paula Clark,paula.clark@tanqueverde.com,AGR-025241,2025-09-11,2025-10-26,1330.65,1330.65,
+Tanque Verde Realty Partners,Paula Clark,paula.clark@tanqueverde.com,INV-234517,2025-09-05,2025-10-20,519.59,519.59,
+Tanque Verde Realty Partners,Paula Clark,paula.clark@tanqueverde.com,INV-235291,2025-09-10,2025-10-25,1344.05,1344.05,
+Tanque Verde Realty Partners,Paula Clark,paula.clark@tanqueverde.com,INV-236109,2025-09-15,2025-10-30,350.17,350.17,
+Tanque Verde Realty Partners,Paula Clark,paula.clark@tanqueverde.com,INV-236845,2025-09-20,2025-11-04,1172.57,1172.57,
+Tanque Verde Realty Partners,Paula Clark,paula.clark@tanqueverde.com,INV-239852,2025-10-14,2025-11-28,1414.31,1414.31,
+Tanya Clark Eye Care,Megan Anderson,megan.anderson@outlook.com,INV-238512,2025-10-02,2025-11-01,706.01,706.01,
+Tanya Clark Eye Care,Megan Anderson,megan.anderson@outlook.com,INV-240921,2025-10-25,2025-11-24,668.26,668.26,
+Tanya Clark Eye Care,Megan Anderson,megan.anderson@outlook.com,INV-241433,2025-10-30,2025-11-29,1374.43,1374.43,
+Taylor & Wilson Veterinary Clinic,Wes Roberts,wesr83@yahoo.com,INV-236584,2025-09-19,2025-10-19,429.93,108.40,
+Taylor & Wilson Veterinary Clinic,Wes Roberts,wesr83@yahoo.com,INV-240086,2025-10-17,2025-11-16,270.42,270.42,
+Taylor & Wilson Veterinary Clinic,Wes Roberts,wesr83@yahoo.com,INV-240721,2025-10-23,2025-11-22,588.50,588.50,
+Taylor Hardware,Angela Turner,aturner@taylorhardware.com,INV-241149,2025-10-27,2025-11-26,429.93,429.93,
+Tempe  Commercial Properties,,,INV-238882,2025-10-05,2025-11-19,933.30,933.30,
+Tempe Commercial Poperties,,,AGR-025863,2025-10-23,2025-12-07,421.63,421.63,
+Tempe Holdings,Heather Jackson,heather.jackson@tempeholdings.com,AGR-025177,2025-09-06,2025-10-21,479.82,479.82,
+Tempe Holdings,Heather Jackson,heather.jackson@tempeholdings.com,AGR-025201,2025-09-07,2025-10-22,496.62,496.62,
+Tempe Holdings,Heather Jackson,heather.jackson@tempeholdings.com,INV-237048,2025-09-22,2025-11-06,19840.69,19840.69,
+Tempe Holdings,Heather Jackson,heather.jackson@tempeholdings.com,INV-237829,2025-09-27,2025-11-11,748.01,748.01,
+Tempe Holdings,Heather Jackson,heather.jackson@tempeholdings.com,INV-238616,2025-10-03,2025-11-17,559.46,559.46,
+Tempe Holdings,Heather Jackson,heather.jackson@tempeholdings.com,INV-240926,2025-10-25,2025-12-09,1773.21,1773.21,
+"Tempe Holdings, Inc.",,,AGR-025489,2025-09-28,2025-11-12,730.06,730.06,
+"Tempe Holdings, Inc.",,,INV-224448,2025-07-09,2025-08-23,933.30,114.80,
+"Tempe Holdings, Inc.",,,INV-235667,2025-09-12,2025-10-27,508.75,508.75,
+"Tempe Holdings, Inc.",,,INV-236071,2025-09-15,2025-10-30,439.83,439.83,
+"Tempe Holdings, Inc.",,,INV-236283,2025-09-16,2025-10-31,479.71,479.71,
+"Tempe Holdings, Inc.",,,INV-237238,2025-09-23,2025-11-07,519.59,519.59,
+"Tempe Holdings, Inc.",,,INV-237501,2025-09-25,2025-11-09,454.35,454.35,
+"Tempe Holdings, Inc.",,,INV-237611,2025-09-26,2025-11-10,390.05,390.05,
+"Tempe Holdings, Inc.",,,INV-237708,2025-09-27,2025-11-11,748.01,748.01,
+"Tempe Holdings, Inc.",,,INV-238252,2025-09-30,2025-11-14,49.78,49.78,
+"Tempe Holdings, Inc.",,,INV-238547,2025-10-03,2025-11-17,49.78,49.78,
+"Tempe Holdings, Inc.",,,INV-239024,2025-10-06,2025-11-20,893.00,893.00,
+"Tempe Holdings, Inc.",,,INV-239476,2025-10-11,2025-11-25,1332.08,1332.08,
+"Tempe Holdings, Inc.",,,INV-239808,2025-10-13,2025-11-27,49.78,49.78,
+"Tempe Holdings, Inc.",,,INV-240812,2025-10-24,2025-12-08,3422.51,3422.51,
+"Tempe Holdings, Inc.",,,INV-241022,2025-10-26,2025-12-10,973.18,973.18,
+The Adams Bakery,,,INV-236130,2025-09-15,2025-10-15,654.88,654.88,
+The Adams Bakery,,,INV-238012,2025-09-29,2025-10-29,654.88,654.88,
+The Adams Bakery,,,INV-238567,2025-10-03,2025-11-02,559.46,559.46,
+The Adams Bakery,,,INV-238897,2025-10-05,2025-11-04,4601.39,4601.39,
+The Adams Bakery,,,INV-238956,2025-10-05,2025-11-04,5881.62,5881.62,
+The Casas Adobes Hardware,,,INV-238091,2025-09-29,2025-10-29,435.59,435.59,
+The Coconino Realty Partners,,,AGR-025466,2025-09-27,2025-11-11,855.42,855.42,
+The Coconino Realty Partners,,,AGR-025500,2025-09-28,2025-11-12,885.36,885.36,
+The Coconino Realty Partners,,,AGR-025929,2025-10-27,2025-12-11,473.35,473.35,
+The Coconino Realty Partners,,,AGR-025947,2025-10-28,2025-12-12,489.92,489.92,
+The Coconino Realty Partners,,,INV-236685,2025-09-19,2025-11-18,519.59,519.59,PO042000694X
+The Coconino Realty Partners,,,INV-237612,2025-09-26,2025-11-10,1150.00,1150.00,PO042000687
+The Coconino Realty Partners,,,INV-238561,2025-10-03,2025-11-22,1374.43,1374.43,PO042000696X
+The Coconino Realty Partners,,,INV-238877,2025-10-05,2025-11-30,1088.86,1088.86,PO042000702X
+The Coconino Realty Partners,,,INV-240919,2025-10-25,2025-12-09,468.87,468.87,PO042000702
+The Coconino Realty Partners,,,INV-241546,2025-10-31,2025-12-15,390.05,390.05,PO042000706
+The Cottonwood Property Management,,,INV-217583,2025-05-19,2025-07-03,383.74,21.25,
+The Cottonwood Property Management,,,INV-230862,2025-08-15,2025-09-29,64.30,8.32,
+The Cottonwood Property Management,,,INV-232465,2025-08-24,2025-10-08,49.78,49.78,
+The Cottonwood Property Management,,,INV-235001,2025-09-07,2025-10-22,548.63,548.63,
+The Cottonwood Property Management,,,INV-235889,2025-09-14,2025-10-29,349.24,349.24,
+The Cottonwood Property Management,,,INV-236274,2025-09-16,2025-10-31,548.63,548.63,
+The Cottonwood Property Management,,,INV-240660,2025-10-23,2025-12-07,64.30,64.30,
+The Cottonwood Property Management,,,INV-240883,2025-10-25,2025-12-09,64.30,64.30,
+The Deer Valley Realty Partners,,,INV-237496,2025-09-25,2025-11-09,559.46,559.46,
+The Deer Valley Realty Partners,,,INV-238500,2025-10-02,2025-11-16,1052.93,1052.93,
+The Goodyear Asset Management,,,INV-214431,2025-04-15,2025-05-30,429.93,429.93,PO072000598
+The Goodyear Asset Management,,,INV-218740,2025-05-29,2025-07-17,1650.00,1650.00,PO072000603
+The Goodyear Asset Management,,,INV-224576,2025-07-10,2025-08-24,479.71,479.71,PO072000618
+The Goodyear Asset Management,,,INV-230890,2025-08-15,2025-09-29,613.86,613.86,PO072000639
+The Goodyear Asset Management,,,INV-232185,2025-08-23,2025-10-16,1250.00,1250.00,PO072000637
+The Goodyear Asset Management,,,INV-232700,2025-08-25,2025-10-09,878.48,878.48,PO072000640
+The Goodyear Asset Management,,,INV-234413,2025-09-04,2025-10-23,709.07,709.07,PO072000648X
+The Goodyear Asset Management,,,INV-235659,2025-09-12,2025-10-27,653.74,653.74,PO072000647
+The Goodyear Asset Management,,,INV-237246,2025-09-23,2025-11-07,613.86,613.86,PO072000651
+The Goodyear Asset Management,,,INV-240767,2025-10-24,2025-12-14,494.23,494.23,PO072000663X
+The Goodyear Asset Management,,,INV-241023,2025-10-26,2025-12-18,1350.00,1350.00,PO072000657
+The Michael Garcia Insurance Agency,,,INV-237400,2025-09-24,2025-10-24,495.38,495.38,
+The Michael Garcia Insurance Agency,,,INV-237954,2025-09-28,2025-10-28,573.99,573.99,
+The Michael Garcia Insurance Agency,,,INV-238097,2025-09-29,2025-10-29,638.96,638.96,
+The Michael Garcia Insurance Agency,,,INV-239971,2025-10-15,2025-11-14,4721.02,4721.02,
+The Michael Garcia Insurance Agency,,,INV-240620,2025-10-22,2025-11-21,469.81,469.81,
+The Nicole Wright Pediatrics,,,INV-241425,2025-10-30,2025-11-29,509.68,509.68,
+The Old Pueblo Holdings,,,INV-235268,2025-09-09,2025-10-24,320.20,320.20,
+The Old Pueblo Holdings,,,INV-235658,2025-09-12,2025-10-27,1543.44,1543.44,
+The Old Pueblo Holdings,,,INV-235924,2025-09-14,2025-10-29,1304.17,1304.17,
+The Old Pueblo Holdings,,,INV-236278,2025-09-16,2025-10-31,1304.17,1304.17,
+The Old Pueblo Holdings,,,INV-238932,2025-10-05,2025-11-19,639.22,639.22,
+The Old Pueblo Holdings,,,INV-239084,2025-10-07,2025-11-21,1092.81,1092.81,
+The Old Pueblo Holdings,,,INV-239523,2025-10-11,2025-11-25,1248.37,1248.37,
+The Old Pueblo Holdings,,,INV-240061,2025-10-16,2025-11-30,519.59,519.59,
+The Old Pueblo Holdings,,,INV-241085,2025-10-26,2025-12-10,1368.00,1368.00,
+The Old Pueblo Medical Billing,,,INV-238958,2025-10-05,2025-11-04,49.78,49.78,
+The Old Pueblo Medical Billing,,,INV-240726,2025-10-23,2025-11-22,78.82,78.82,
+The Oro Valley Bistro,,,INV-238320,2025-10-01,2025-10-31,20020.48,20020.48,
+The Oro Valley Bistro,,,INV-241174,2025-10-27,2025-11-26,1092.81,1092.81,
+The Oro Valley Holdings,,,AGR-025355,2025-09-20,2025-11-04,572.83,572.83,
+The Oro Valley Holdings,,,INV-236537,2025-09-18,2025-11-07,628.38,628.38,PO038001041X
+The Oro Valley Holdings,,,INV-240062,2025-10-16,2025-11-30,668.26,668.26,PO038001044
+The Oro Valley Holdings,,,INV-240344,2025-10-19,2025-12-03,399.95,399.95,PO038001045
+The Oro Valley Holdings,,,INV-241332,2025-10-29,2025-12-13,479.71,479.71,PO038001052
+The Ponderosa Holdings,,,AGR-025901,2025-10-25,2025-12-09,1973.87,1973.87,
+The Ponderosa Holdings,,,INV-235359,2025-09-10,2025-10-25,613.86,613.86,
+The Ponderosa Holdings,,,INV-236571,2025-09-18,2025-11-02,1028.09,1028.09,
+The Ponderosa Holdings,,,INV-236710,2025-09-19,2025-11-03,679.10,679.10,
+The Ponderosa Holdings,,,INV-236940,2025-09-21,2025-11-05,1463.68,1463.68,
+The Ponderosa Holdings,,,INV-238286,2025-10-01,2025-11-15,1733.33,1733.33,
+The Ponderosa Holdings,,,INV-238876,2025-10-05,2025-11-19,1254.80,1254.80,
+The Pueblo Engineering,,,INV-239863,2025-10-14,2025-11-13,49.78,49.78,
+The Pueblo Engineering,,,INV-240583,2025-10-21,2025-11-20,248.91,248.91,
+The Pueblo Engineering,,,INV-240950,2025-10-25,2025-11-24,705.24,705.24,
+The Pueblo Engineering,,,INV-241267,2025-10-28,2025-11-27,145.20,145.20,
+The Pueblo Eye Care,,,AGR-025351,2025-09-19,2025-10-19,1191.89,1191.89,
+The Pueblo Eye Care,,,INV-237986,2025-09-28,2025-10-28,435.59,435.59,
+The QuickLube Express,,,AGR-025062,2025-08-30,2025-10-29,385.13,385.13,
+The QuickLube Express,,,AGR-025081,2025-08-31,2025-10-30,374.22,374.22,
+The QuickLube Express,,,INV-219435,2025-06-04,2025-08-14,1292.20,305.13,PO008000809X
+The QuickLube Express,,,INV-232770,2025-08-26,2025-11-03,1212.44,1212.44,PO008000868X
+The QuickLube Express,,,INV-233846,2025-09-01,2025-10-31,320.20,320.20,PO008000858
+The QuickLube Express,,,INV-234356,2025-09-04,2025-11-03,390.05,390.05,PO008000864
+The QuickLube Express,,,INV-235101,2025-09-08,2025-11-13,4850.00,4850.00,PO008000861
+The QuickLube Express,,,INV-236135,2025-09-15,2025-11-14,1463.68,1463.68,PO008000870
+The QuickLube Express,,,INV-237949,2025-09-28,2025-12-04,599.34,599.34,PO008000882X
+The QuickLube Express,,,INV-239944,2025-10-15,2025-12-14,6586.54,6586.54,PO008000872
+The QuickLube Express,,,INV-241420,2025-10-30,,4850.00,4850.00,PO008000892
+The Rincon Pizzeria,,,AGR-026007,2025-10-31,2025-11-30,3056.12,3056.12,
+The Saguaro Commercial Properties,,,AGR-025312,2025-09-16,2025-10-31,771.69,771.69,
+The Saguaro Commercial Properties,,,INV-235854,2025-09-13,2025-11-03,588.50,588.50,PO127000592X
+The Saguaro Commercial Properties,,,INV-235980,2025-09-14,2025-11-03,469.81,469.81,PO032000808X
+The Saguaro Commercial Properties,,,INV-236305,2025-09-16,2025-10-31,559.46,559.46,PO032000803
+The Saguaro Commercial Properties,,,INV-236347,2025-09-17,2025-11-01,1212.44,1212.44,PO127000588
+The Saguaro Commercial Properties,,,INV-237149,2025-09-22,2025-11-11,559.46,559.46,PO032000812X
+The Saguaro Commercial Properties,,,INV-237828,2025-09-27,2025-11-11,519.59,519.59,PO032000810
+The Saguaro Commercial Properties,,,INV-237951,2025-09-28,2025-11-12,1132.69,1132.69,PO127000594
+The Saguaro Commercial Properties,,,INV-238359,2025-10-01,2025-11-21,1600.00,1600.00,PO032000812
+The Saguaro Commercial Properties,,,INV-238575,2025-10-03,2025-11-25,1100.00,1100.00,PO032000811
+The Saguaro Commercial Properties,,,INV-238824,2025-10-04,2025-11-18,559.46,559.46,PO032000814
+The Saguaro Commercial Properties,,,INV-239435,2025-10-10,2025-11-24,469.81,469.81,PO127000601
+The Saguaro Commercial Properties,,,INV-240083,2025-10-16,2025-11-30,4300.00,4300.00,PO032000818
+The Saguaro Commercial Properties,,,INV-240286,2025-10-18,2025-12-02,6874.41,6874.41,PO032000819
+The Scottsdale Real Estate Group,,,AGR-025874,2025-10-24,2025-12-08,939.11,939.11,
+The Scottsdale Real Estate Group,,,AGR-025903,2025-10-25,2025-12-09,971.98,971.98,
+The Scottsdale Real Estate Group,,,INV-236377,2025-09-17,2025-11-01,49.78,49.78,
+The Scottsdale Real Estate Group,,,INV-236413,2025-09-17,2025-11-01,1172.57,1172.57,
+The Scottsdale Real Estate Group,,,INV-237113,2025-09-22,2025-11-06,1371.95,1371.95,
+The Scottsdale Real Estate Group,,,INV-239025,2025-10-06,2025-11-20,49.78,49.78,
+The Sonoran Holdings,,,AGR-025005,2025-08-26,2025-10-10,2315.99,2315.99,
+The Sonoran Holdings,,,AGR-025960,2025-10-29,2025-12-13,577.10,577.10,
+The Sonoran Holdings,,,INV-232792,2025-08-26,2025-10-10,64.30,64.30,PO099000536
+The Sonoran Holdings,,,INV-235411,2025-09-11,2025-10-26,1325.84,1325.84,PO099000542
+The Sonoran Holdings,,,INV-235543,2025-09-11,2025-10-26,383.74,383.74,PO099000548
+The Sonoran Holdings,,,INV-236225,2025-09-16,2025-10-31,1250.00,1250.00,PO099000545
+The Sonoran Holdings,,,INV-236565,2025-09-18,2025-11-02,588.50,588.50,PO099000554
+The Sonoran Holdings,,,INV-237006,2025-09-21,2025-11-16,439.83,439.83,PO099000565X
+The Sonoran Holdings,,,INV-238378,2025-10-01,2025-11-26,693.62,693.62,PO099000571X
+The Sonoran Holdings,,,INV-238883,2025-10-05,2025-11-19,573.99,573.99,PO099000563
+The Sonoran Holdings,,,INV-239355,2025-10-09,2025-12-15,439.83,439.83,PO099000572X
+The Sonoran Holdings,,,INV-240163,2025-10-17,2025-12-01,705.24,705.24,PO099000570
+The Sonoran Holdings,,,INV-241207,2025-10-28,2025-12-12,49.78,49.78,PO099000571
+The Speedway Street Appliance,,,INV-238037,2025-09-29,2025-10-29,599.34,599.34,
+The Speedway Street Appliance,,,INV-238095,2025-09-29,2025-10-29,969.23,969.23,
+The Speedway Street Appliance,,,INV-240928,2025-10-25,2025-11-24,508.75,508.75,
+The Speedway Street Engineering,,,INV-240381,2025-10-19,2025-11-18,6076.86,6076.86,
+The Vail Family Dental,,,INV-232431,2025-08-24,2025-09-23,853.13,853.13,
+The Vail Family Dental,,,INV-236414,2025-09-17,2025-10-17,508.75,508.75,
+The Vail Family Dental,,,INV-238072,2025-09-29,2025-10-29,469.81,469.81,
+The Vail Holdings,,,INV-235386,2025-09-10,2025-10-25,320.20,320.20,PO048000721
+The Vail Holdings,,,INV-236097,2025-09-15,2025-10-30,64.30,64.30,PO048000723
+The Vail Holdings,,,INV-236360,2025-09-17,2025-11-01,5319.19,5319.19,PO048000722
+The Vail Holdings,,,INV-236478,2025-09-18,2025-11-13,500.00,500.00,PO048000727
+The Vail Holdings,,,INV-238844,2025-10-05,2025-12-06,1150.00,1150.00,PO048000729
+The Vail Holdings,,,INV-240064,2025-10-16,2025-12-06,500.00,500.00,PO048000733
+The Vail Veterinary Clinic,,,INV-230656,2025-08-14,2025-09-13,653.74,207.39,
+The Vail Veterinary Clinic,,,INV-237843,2025-09-27,2025-10-27,320.20,320.20,
+The Vail Veterinary Clinic,,,INV-239707,2025-10-12,2025-11-11,439.83,439.83,
+The Vail Veterinary Clinic,,,INV-241021,2025-10-26,2025-11-25,479.71,479.71,
+Thomas & Parker Physical Terapy,,,INV-239593,2025-10-12,2025-11-11,455.50,455.50,
+Travis Brown Law Offices,Jennifer Thompson,jthompson@travisbrownlaw.com,AGR-025879,2025-10-24,2025-11-23,383.46,383.46,
+Travis Brown Law Offices,Jennifer Thompson,jthompson@travisbrownlaw.com,INV-238879,2025-10-05,2025-11-04,479.71,479.71,
+Travis Brown Law Offices,Jennifer Thompson,jthompson@travisbrownlaw.com,INV-241378,2025-10-30,2025-11-29,429.93,429.93,
+Trent Clark Veterinary Clinic,Patricia Moore,pmoore@trentclark.com,INV-240487,2025-10-20,2025-11-19,1742.82,1742.82,
+Trent Clark Veterinary Clinic,Patricia Moore,pmoore@trentclark.com,INV-240824,2025-10-24,2025-11-23,1813.09,1813.09,
+Trent Martin Liquor LLC,,,INV-233300,2025-08-29,2025-09-28,798.47,798.47,
+Trent Martin Liquor LLC,,,INV-234967,2025-09-07,2025-10-07,653.74,653.74,
+Trent Martin Liquor LLC,,,INV-238251,2025-09-30,2025-10-30,708.14,708.14,
+Trent Martin Liquor LLC,,,INV-238987,2025-10-06,2025-11-05,1423.80,1423.80,
+Trent Martin Liquor LLC,,,INV-239525,2025-10-11,2025-11-10,1583.32,1583.32,
+Turner & AllenTitle Company,,,INV-240714,2025-10-23,2025-11-22,575.13,82.90,
+Turner & Campbell Insurance Agency,Karen Stewart,karens44@outlook.com,INV-240979,2025-10-25,2025-11-24,519.59,519.59,
+Urgent Care Partners,,,AGR-025203,2025-09-08,2025-11-07,856.84,856.84,
+Urgent Care Partners,,,AGR-025231,2025-09-09,2025-11-08,886.83,886.83,
+Urgent Care Partners,,,AGR-025277,2025-09-13,2025-11-12,1503.32,1503.32,
+Urgent Care Partners,,,AGR-025663,2025-10-07,2025-12-06,2283.35,2283.35,
+Urgent Care Partners,,,AGR-025824,2025-10-21,2025-12-20,506.26,506.26,
+Urgent Care Partners,,,AGR-025842,2025-10-22,2025-12-21,575.79,575.79,
+Urgent Care Partners,,,INV-230120,2025-08-11,2025-10-23,1092.81,1092.81,PO012001449X
+Urgent Care Partners,,,INV-233832,2025-09-01,2025-11-06,2000.00,2000.00,PO012001446
+Urgent Care Partners,,,INV-233847,2025-09-01,2025-11-06,534.11,534.11,PO012001463X
+Urgent Care Partners,,,INV-234574,2025-09-05,2025-11-18,559.46,559.46,PO012001471X
+Urgent Care Partners,,,INV-235663,2025-09-12,2025-11-11,439.83,439.83,PO012001462
+Urgent Care Partners,,,INV-235734,2025-09-13,2025-11-12,1139.00,1139.00,PO012001444
+Urgent Care Partners,,,INV-237840,2025-09-27,2025-12-09,4200.00,4200.00,PO012001470
+Urgent Care Partners,,,INV-238667,2025-10-03,2025-12-02,599.34,599.34,PO012001475
+Urgent Care Partners,,,INV-238715,2025-10-04,2025-12-03,479.71,479.71,PO012001472
+Urgent Care Partners,,,INV-239434,2025-10-10,2025-12-09,519.59,519.59,PO012001478
+Urgent Care Partners,,,INV-239456,2025-10-10,2025-12-09,642.43,642.43,PO012001480
+Urgent Care Partners,,,INV-239838,2025-10-14,2025-12-13,639.22,639.22,PO012001477
+Urgent Care Partners,,,INV-240277,2025-10-18,2025-12-30,1350.00,1350.00,PO012001485
+Urgent Care Partners,,,INV-240606,2025-10-22,2025-12-21,559.46,559.46,PO012001483
+Urgent Care Partners,,,INV-240978,2025-10-25,2025-12-24,439.83,439.83,PO012001487
+Urgent Care Partners,,,INV-241424,2025-10-30,2025-12-29,479.71,479.71,PO012001494
+Urgent Care Partners,,,INV-241429,2025-10-30,2025-12-29,78.82,78.82,PO012001497
+Urgent Care Partners,,,INV-241431,2025-10-30,2025-12-29,78.82,78.82,PO012001490
+Vail  Pharmacy,,,INV-238468,2025-10-02,2025-11-01,1383.93,1383.93,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,AGR-026000,2025-10-31,2025-11-30,964.89,964.89,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-218491,2025-05-26,2025-06-25,439.83,106.56,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-232223,2025-08-23,2025-09-22,599.34,599.34,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-235581,2025-09-12,2025-10-12,1494.07,1494.07,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-236099,2025-09-15,2025-10-15,1458.14,1458.14,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-237506,2025-09-25,2025-10-25,646.12,646.12,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-237849,2025-09-27,2025-10-27,1533.94,1533.94,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-239431,2025-10-10,2025-11-09,1378.38,1378.38,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-239499,2025-10-11,2025-11-10,894.15,894.15,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-240484,2025-10-20,2025-11-19,469.81,469.81,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-240925,2025-10-25,2025-11-24,1264.29,1264.29,
+Vail Appliance,Chris Thompson,cthompson@vailappliance.com,INV-241170,2025-10-27,2025-11-26,925.26,925.26,
+Vail Cafe,Luis Brown,luis.brown@vailcafe.com,AGR-025819,2025-10-20,2025-11-19,1291.61,1291.61,
+Vail Cafe,Luis Brown,luis.brown@vailcafe.com,INV-238938,2025-10-05,2025-11-04,549.68,549.68,
+Vail Cafe,Luis Brown,luis.brown@vailcafe.com,INV-239218,2025-10-08,2025-11-07,1144.66,1144.66,
+Vail Cafe,Luis Brown,luis.brown@vailcafe.com,INV-240151,2025-10-17,2025-11-16,429.93,429.93,
+Vail Cafe,Luis Brown,luis.brown@vailcafe.com,INV-240483,2025-10-20,2025-11-19,654.88,654.88,
+Vail Cafe,Luis Brown,luis.brown@vailcafe.com,INV-240515,2025-10-21,2025-11-20,145.20,145.20,
+Vail Chiropractic,Rachel Lewis,rlewis@vailchiropractic.com,INV-236976,2025-09-21,2025-10-21,509.68,509.68,
+Vail Chiropractic,Rachel Lewis,rlewis@vailchiropractic.com,INV-240263,2025-10-18,2025-11-17,439.83,439.83,
+Vail Commercial Properties Inc,,,AGR-025183,2025-09-06,2025-10-21,2471.73,2471.73,
+Vail Commercial Properties Inc,,,INV-235881,2025-09-13,2025-10-28,1663.07,1663.07,
+Vail Commercial Properties Inc,,,INV-235934,2025-09-14,2025-10-29,350.17,350.17,
+Vail Commercial Properties Inc,,,INV-236487,2025-09-18,2025-11-02,5079.92,5079.92,
+Vail Commercial Properties Inc,,,INV-236847,2025-09-20,2025-11-04,1224.42,1224.42,
+Vail Commercial Properties Inc,,,INV-237276,2025-09-23,2025-11-07,1025.03,1025.03,
+Vail Commercial Properties Inc,,,INV-237423,2025-09-25,2025-11-09,383.74,383.74,
+Vail Commercial Properties Inc,,,INV-239216,2025-10-08,2025-11-22,1816.92,1816.92,
+Vail Commercial Properties Inc,,,INV-239342,2025-10-09,2025-11-23,1334.56,1334.56,
+Vail Commercial Properties Inc,,,INV-240819,2025-10-24,2025-12-08,6116.73,6116.73,
+Vail Physical Therapy,Robert Miller,rmiller@vailphysical.com,INV-238501,2025-10-02,2025-11-01,1371.95,1371.95,
+Vail Physical Therapy,Robert Miller,rmiller@vailphysical.com,INV-238665,2025-10-03,2025-11-02,439.83,439.83,
+Vail Physical Therapy,Robert Miller,rmiller@vailphysical.com,INV-240920,2025-10-25,2025-11-24,573.99,573.99,
+Vail Title Company,Brittany Evans,bevans@vailtitlecompany.com,INV-230794,2025-08-15,2025-09-14,64.30,64.30,
+Vail Title Company,Brittany Evans,bevans@vailtitlecompany.com,INV-234366,2025-09-04,2025-10-04,49.78,49.78,
+Vail Title Company,Brittany Evans,bevans@vailtitlecompany.com,INV-238615,2025-10-03,2025-11-02,705.24,705.24,
+Vail Title Company,Brittany Evans,bevans@vailtitlecompany.com,INV-238703,2025-10-04,2025-11-03,78.82,78.82,
+VailArchitects,,,INV-239371,2025-10-10,2025-11-09,1212.44,1212.44,
+Valencia Street Furniture,Maria Taylor,maria.taylor@yahoo.com,INV-238231,2025-09-30,2025-10-30,599.34,599.34,
+Valencia Street Furniture,Maria Taylor,maria.taylor@yahoo.com,INV-240785,2025-10-24,2025-11-23,1976.55,1976.55,
+Valencia Street Hardware,Michael Wilson,michael.wilson@outlook.com,INV-241520,2025-10-31,2025-11-30,390.05,390.05,
+Valencia Street La Offices,,,INV-240622,2025-10-22,2025-11-21,918.36,918.36,
+Valencia Street Law Offices,Nicole Hall,nhall@valenciastreet.com,AGR-025870,2025-10-23,2025-11-22,4217.43,4217.43,
+Valencia Street Liquor,Patricia Edwards,patricia.edwards@icloud.com,INV-238465,2025-10-02,2025-11-01,549.56,549.56,
+Valencia Street Liquor,Patricia Edwards,patricia.edwards@icloud.com,INV-239072,2025-10-06,2025-11-05,5000.16,5000.16,
+Valencia Street Liquor,Patricia Edwards,patricia.edwards@icloud.com,INV-240465,2025-10-20,2025-11-19,479.71,479.71,
+Value Mart Stores,,,AGR-025127,2025-09-03,2025-11-02,4673.18,4673.18,
+Value Mart Stores,,,AGR-025668,2025-10-08,2025-12-07,974.41,974.41,
+Value Mart Stores,,,AGR-025686,2025-10-09,2025-12-08,1008.52,1008.52,
+Value Mart Stores,,,AGR-025746,2025-10-15,2025-12-14,1284.45,1284.45,
+Value Mart Stores,,,AGR-025771,2025-10-16,2025-12-15,1329.41,1329.41,
+Value Mart Stores,,,INV-231824,2025-08-21,2025-11-03,429.93,429.93,PO003004825X
+Value Mart Stores,,,INV-231985,2025-08-22,2025-10-31,1300.00,1300.00,PO003004756
+Value Mart Stores,,,INV-232461,2025-08-24,2025-10-31,5100.00,5100.00,PO003004772
+Value Mart Stores,,,INV-232832,2025-08-26,2025-11-04,820.10,820.10,PO003004827X
+Value Mart Stores,,,INV-232942,2025-08-27,2025-11-04,606.24,606.24,PO003004827X
+Value Mart Stores,,,INV-233299,2025-08-29,2025-11-04,479.71,479.71,PO003004827X
+Value Mart Stores,,,INV-233651,2025-08-31,2025-10-30,765.75,765.75,PO003004787
+Value Mart Stores,,,INV-233948,2025-09-01,2025-10-31,678.84,678.84,PO003004807
+Value Mart Stores,,,INV-233979,2025-09-01,2025-10-31,1218.76,1218.76,PO003004789
+Value Mart Stores,,,INV-234189,2025-09-03,2025-11-11,734.64,734.64,PO003004854X
+Value Mart Stores,,,INV-234277,2025-09-03,2025-11-02,686.00,686.00,PO003004814
+Value Mart Stores,,,INV-234355,2025-09-04,2025-11-03,798.47,798.47,PO003004808
+Value Mart Stores,,,INV-235066,2025-09-08,2025-11-07,838.35,838.35,PO003004816
+Value Mart Stores,,,INV-235170,2025-09-09,2025-11-15,1583.32,1583.32,PO003004867X
+Value Mart Stores,,,INV-235171,2025-09-09,2025-11-15,1048.98,1048.98,PO003004867X
+Value Mart Stores,,,INV-235256,2025-09-09,2025-11-17,494.23,494.23,PO003004871X
+Value Mart Stores,,,INV-235557,2025-09-12,2025-12-08,535.25,535.25,PO003004920X
+Value Mart Stores,,,INV-235661,2025-09-12,2025-11-23,559.46,559.46,PO003004890X
+Value Mart Stores,,,INV-235903,2025-09-14,2025-11-18,1550.00,1550.00,PO003004823
+Value Mart Stores,,,INV-236021,2025-09-14,2025-11-21,5279.31,5279.31,PO003004886X
+Value Mart Stores,,,INV-236125,2025-09-15,2025-11-19,5250.00,5250.00,PO003004825
+Value Mart Stores,,,INV-236362,2025-09-17,2025-11-23,1700.00,1700.00,PO003004845
+Value Mart Stores,,,INV-236711,2025-09-19,2025-11-18,573.99,573.99,PO003004866
+Value Mart Stores,,,INV-237146,2025-09-22,2025-11-21,4500.00,4500.00,PO003004867
+Value Mart Stores,,,INV-237280,2025-09-23,2025-12-02,1577.77,1577.77,PO003004912X
+Value Mart Stores,,,INV-237373,2025-09-24,2025-12-05,1466.75,1466.75,PO003004916X
+Value Mart Stores,,,INV-237415,2025-09-25,2025-11-24,479.71,479.71,PO003004865
+Value Mart Stores,,,INV-238089,2025-09-29,2025-11-28,4650.00,4650.00,PO003004886
+Value Mart Stores,,,INV-238434,2025-10-02,2025-12-01,709.07,709.07,PO003004894
+Value Mart Stores,,,INV-238463,2025-10-02,2025-12-06,1600.00,1600.00,PO003004893
+Value Mart Stores,,,INV-238505,2025-10-02,2025-12-01,566.36,566.36,PO003004899
+Value Mart Stores,,,INV-238532,2025-10-02,2025-12-01,758.60,758.60,PO003004903
+Value Mart Stores,,,INV-238930,2025-10-05,2025-12-11,1950.00,1950.00,PO003004898
+Value Mart Stores,,,INV-239049,2025-10-06,2025-12-05,678.84,678.84,PO003004906
+Value Mart Stores,,,INV-239592,2025-10-12,2025-12-11,599.34,599.34,PO003004905
+Value Mart Stores,,,INV-240357,2025-10-19,2025-12-18,734.64,734.64,PO003004930
+Value Mart Stores,,,INV-240713,2025-10-23,,1300.00,1300.00,PO003004934
+Value Mart Stores,,,INV-240742,2025-10-23,2025-12-28,468.87,468.87,PO003004952X
+Verde Valley Holdings,Nate Ward,nward@verdevalley.com,INV-238669,2025-10-03,2025-11-17,49.78,49.78,
+Verde Valley Holdings,Nate Ward,nward@verdevalley.com,INV-239913,2025-10-15,2025-11-29,494.23,494.23,
+Verde Valley Holdings,Nate Ward,nward@verdevalley.com,INV-240052,2025-10-16,2025-11-30,78.82,78.82,
+Verde Valley Holdings,Nate Ward,nward@verdevalley.com,INV-240101,2025-10-17,2025-12-01,334.72,334.72,
+Verde Valley Holdings,Nate Ward,nward@verdevalley.com,INV-241336,2025-10-29,2025-12-13,399.95,399.95,
+Walker & Evans Accounting,Daniel Scott,dscott@walkerevans.com,INV-239581,2025-10-11,2025-11-10,64.30,64.30,
+Walker & Green Insurance Agency,James Wright,jamesw79@icloud.com,INV-228417,2025-08-01,2025-08-31,599.34,118.06,
+Walker & Green Insurance Agency,James Wright,jamesw79@icloud.com,INV-239153,2025-10-07,2025-11-06,390.05,76.14,
+Walker & Green Insurance Agency,James Wright,jamesw79@icloud.com,INV-241517,2025-10-31,2025-11-30,5319.19,5319.19,
+Walker & Green Insurance Agency,James Wright,jamesw79@icloud.com,INV-241524,2025-10-31,2025-11-30,270.42,270.42,
+Walker Diner,Tyler Collins,tcollins@walkerdiner.com,INV-237614,2025-09-26,2025-10-26,686.00,686.00,
+Wes Martinez Bakery,Robert Green,robertg44@cox.net,INV-237798,2025-09-27,2025-10-27,479.71,479.71,
+Wes Martinez Bakery,Robert Green,robertg44@cox.net,INV-239270,2025-10-09,2025-11-08,439.83,439.83,
+Wes Martinez Bakery,Robert Green,robertg44@cox.net,INV-240327,2025-10-19,2025-11-18,1028.09,1028.09,
+White & Green Boutque,,,INV-235128,2025-09-08,2025-10-08,1013.06,1013.06,
+White & Green Boutque,,,INV-237844,2025-09-27,2025-10-27,758.60,758.60,
+White Eye Care,Eric Turner,eturner@murphywhiteeye.com,INV-233392,2025-08-29,2025-09-28,599.34,599.34,
+White Eye Care,Eric Turner,eturner@murphywhiteeye.com,INV-235088,2025-09-08,2025-10-08,918.11,918.11,
+White Eye Care,Eric Turner,eturner@murphywhiteeye.com,INV-235703,2025-09-12,2025-10-12,606.24,606.24,
+White Eye Care,Eric Turner,eturner@murphywhiteeye.com,INV-237092,2025-09-22,2025-10-22,758.60,758.60,
+White Eye Care,Eric Turner,eturner@murphywhiteeye.com,INV-237577,2025-09-26,2025-10-26,2255.57,2255.57,
+White Eye Care,Eric Turner,eturner@murphywhiteeye.com,INV-238321,2025-10-01,2025-10-31,973.18,973.18,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,AGR-025534,2025-09-30,2025-11-14,1744.06,1744.06,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,AGR-025588,2025-10-01,2025-11-15,1805.10,1805.10,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-234211,2025-09-03,2025-10-18,705.24,705.24,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-234340,2025-09-04,2025-10-19,3422.51,3422.51,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-234627,2025-09-05,2025-10-20,3422.51,3422.51,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-235147,2025-09-09,2025-10-24,1702.95,1702.95,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-236079,2025-09-15,2025-10-30,383.74,383.74,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-238051,2025-09-29,2025-11-13,78.82,78.82,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-238717,2025-10-04,2025-11-18,429.93,429.93,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-240053,2025-10-16,2025-11-30,439.83,439.83,
+WILLIAMS REAL ESTATE GROUP,Nicole Baker,nicole.baker@williamsreal.com,INV-241192,2025-10-28,2025-12-12,4521.64,4521.64,
+Williams Realty Partners,Robert Turner,robert.turner@williamsrealty.com,INV-238560,2025-10-03,2025-11-17,1172.57,1172.57,
+Wilson Pysical Therapy,,,INV-236539,2025-09-18,2025-10-18,479.71,479.71,
+Wilson Pysical Therapy,,,INV-241234,2025-10-28,2025-11-27,933.30,933.30,
+Young Florist,Eric Cox,eric.cox@youngflorist.com,AGR-025659,2025-10-07,2025-11-06,1190.11,1190.11,
+Young Florist,Eric Cox,eric.cox@youngflorist.com,INV-237748,2025-09-27,2025-10-27,1184.54,1184.54,
+Young Florist,Eric Cox,eric.cox@youngflorist.com,INV-238376,2025-10-01,2025-10-31,469.81,469.81,
+Young Florist,Eric Cox,eric.cox@youngflorist.com,INV-238753,2025-10-04,2025-11-03,686.00,686.00,
+Young Florist,Eric Cox,eric.cox@youngflorist.com,INV-241422,2025-10-30,2025-11-29,334.72,334.72,
