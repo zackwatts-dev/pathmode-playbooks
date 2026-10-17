@@ -32,7 +32,7 @@ python3 account-summary/account_summary.py --sample --replay account-summary/sam
 python3 account-summary/account_summary.py --sample --dry-run
 ```
 
-The replay: 11 requests, 7 ready, 2 refused, and 2 for a person: Q05 and Q06, Dana's briefings on two Tucson customers with work at Phoenix and Flagstaff too. They were recorded when her customer briefings counted every branch; her facts are Tucson's only now, so the recorded words don't match them, and the checks say so. A replay with no recorded answer for a request says how many.
+The replay: 11 requests, 8 ready, 2 refused, and 1 for a person: Q05, whose briefing uses a percentage the AI worked out itself and a figure from the customer's own email, neither of them a fact. Q05 and Q06 are Dana's briefings on Tucson customers with work at other branches too; they count Tucson's work only, and say so. A replay with no recorded answer for a request says how many.
 
 `--standard` adds the scheduled run's requests: each branch manager's own branch, for the quarter.
 
