@@ -87,7 +87,7 @@ def dashboard(quotes, negs, model_name: str, scored: dict | None, autonomous: bo
             )
         out.append(
             "<h2>Negotiations</h2><p class='muted'>Offers in order. Code held every line: never below the floor, "
-            "never beyond the estimator's authority, no more than 2% a round, never back up.</p>"
+            "never beyond the estimator's authority, no more than 2% of list a round, never back up.</p>"
         )
         out.append(_table(["Quote", "List", "Offers", "Outcome"], rows))
     if scored:

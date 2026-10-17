@@ -9,19 +9,19 @@ Pricing takes too long, and it's inconsistent. When a technician finds the probl
 **Mode 1: price a repair.** For each technician's diagnosis:
 1. The AI reads the diagnosis and picks the matching task from the flat-rate book, quoting the words.
 2. The AI reads the written sales guidance and picks the clauses that apply to this customer, with a reason each.
-3. Code checks both: the task must exist and fit the unit; every clause's condition must hold (an agreement on file, a recent repair, a school district). A rule the code can see for itself but the AI missed goes to a person.
+3. Code checks both: the task must exist and fit the unit, the quoted words must name its part, and when the job record lists the parts used, the task's part must be one of them; every clause's condition must hold (an agreement on file, a recent repair, a school district). A rule the code can see for itself but the AI missed goes to a person. So does a note for the customer that mentions an amount or makes a promise, and a request with facts code can't read.
 4. Code works out the price: list prices, flat-rate hours, each clause's effect. The AI never writes a number into a price.
 5. Out comes a quote draft for a person to send. Anything that failed a check goes to a person first.
 
 **Mode 2: negotiate a replacement.** For an open replacement quote:
 1. The AI writes each reply to the customer: trade before discounting, small steps, warm and plain.
-2. Code holds the lines: never below the floor (the AI is never told it); never beyond the estimator's 5% authority, even when handing it up (going further is the manager's decision); no more than 2% off in one round; never back up; only concessions the guidance allows; no promises it forbids; no cost or floor in any message; the price in the message must be the offer. A reply that breaks a line is blocked, even if it also asks for a manager.
-3. A customer who tries to instruct the assistant, wants more than the authority allows, or mentions a competitor's price goes to a person.
-4. By default every reply is a draft a person sends. Only with `--autonomous`, in the demo, does it bargain on its own, against simulated buyers.
+2. Code holds the lines: never below the floor (the AI is never told it); never beyond the estimator's 5% authority, even when handing it up (going further is the manager's decision); no more than 2% of the list price off in one round; never back up; only concessions the guidance allows, and anything else that sounds like a promise (a warranty, a guarantee, something free, a date, years of cover) goes to a person; no cost or floor in any message; the message must state the offer and no lower price, and a price in words, a percent or a format code can't read goes to a person. A reply that breaks a line is blocked, even if it also asks for a manager.
+3. A customer who tries to instruct the assistant, claims to speak for Summit or carry its approval, wants more than the authority allows, or mentions a competitor's price goes to a person.
+4. Every reply to a real customer is a draft a person sends: given each quote's thread, it drafts one checked reply. Only with `--autonomous`, in the demo, does it bargain on its own, against simulated buyers.
 
 ## Inputs
 
-The price book (part costs from supplier bills, list prices), labor and trip rates, the flat-rate task book (from hours technicians actually logged), the written sales guidance, repair requests (the customer's facts and the technician's diagnosis), recent repairs to each unit, and open replacement quotes with their list price, cost and floor.
+The price book (part costs from supplier bills, list prices), labor and trip rates, the flat-rate task book (from hours technicians actually logged), the written sales guidance, repair requests (the customer's facts, the technician's diagnosis and, when there is one, the job record's parts used), recent repairs to each unit, open replacement quotes with their list price, cost and floor, and customers' replies to them.
 
 ## What "correct" means
 
