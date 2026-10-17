@@ -6,6 +6,9 @@ Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/):
 |---|---|---|
 | [Customer RFQ intake](rfq-intake/) | Turns a quotes mailbox into a clean list: each request matched to your customers, sites and equipment, checked, and anything doubtful sent to a person. Includes a Microsoft 365 mailbox reader. | Level 3 |
 | [Anomaly alerts](anomaly-alerts/) | Rules, baselines and a machine-learning model find money leaking between systems and the habits behind it; an AI explains the top flags within an alert budget; code checks every explanation. | Level 2 |
+| [Pricing assistant](pricing-assistant/) | Prices repair jobs from your price book and written sales guidance, citing which clause applies; a second mode negotiates replacement quotes, with code holding the floor the AI never sees. | Level 3 |
+| [Customer segments](customer-segments/) | Machine learning groups customers by how they behave and tests each prediction against a one-line rule; an AI names the segments and explains the results, with every number checked. | Level 2 |
+| [Account summary](account-summary/) | A one-page briefing on a customer or a branch from several systems: scope checked in code before anything is gathered, every number calculated from written definitions, every number and quote in the AI's words checked. | Level 2 |
 
 Risk levels: 1 chat only; 2 works with files you give it; 3 reads your email or systems, read-only; 4 takes actions. None of these goes past drafting. A person decides.
 

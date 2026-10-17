@@ -1,0 +1,1407 @@
+Customer ID,Name,Segment,Branch,Terms (days)
+1,Brickhouse Grill,national_chain,Tucson,60
+2,Fresh Plate Kitchens,national_chain,Phoenix,60
+3,Value Mart Stores,national_chain,Flagstaff,60
+4,Corner Pharmacy,national_chain,Tucson,60
+5,Sunny Side Diners,national_chain,Phoenix,60
+6,Main & Vine Outfitters,national_chain,Tucson,60
+7,PetPoint Supply,national_chain,Phoenix,60
+8,QuickLube Express,national_chain,Tucson,60
+9,Harvest Table,national_chain,Phoenix,60
+11,Northstar Dental,national_chain,Flagstaff,60
+12,Urgent Care Partners,national_chain,Phoenix,60
+13,Grand Canyon Tire,national_chain,Phoenix,60
+14,BurgerBarn,national_chain,Phoenix,60
+15,Pasta Fresca,national_chain,Tucson,60
+16,FitLife Gyms,national_chain,Phoenix,60
+17,DollarWise,national_chain,Phoenix,60
+18,Hometown Bank,national_chain,Phoenix,60
+19,Cinema Plex,national_chain,Phoenix,60
+20,Golden Wok,national_chain,Phoenix,60
+21,Bright Smiles Dental,national_chain,Phoenix,60
+22,Taco Rio,national_chain,Flagstaff,60
+23,Desert Sleep Mattress,national_chain,Phoenix,60
+24,SpeedyPrint,national_chain,Phoenix,60
+25,Crust & Co. Pizza,national_chain,Phoenix,60
+26,GreenLeaf Grocers,national_chain,Phoenix,60
+27,Kidz Learning Center,national_chain,Phoenix,60
+28,Pure Barre Fitness,national_chain,Tucson,60
+29,Catalina Foothills Holdings,property_manager,Tucson,45
+30,Paradise Valley Realty Partners,property_manager,Phoenix,45
+31,Tempe Holdings,property_manager,Phoenix,45
+32,Saguaro Commercial Properties,property_manager,Phoenix,45
+33,Estrella Property Management,property_manager,Phoenix,45
+34,Vail Commercial Properties,property_manager,Tucson,45
+35,Peoria Realty Partners,property_manager,Phoenix,45
+36,Mesa Holdings,property_manager,Phoenix,45
+37,Catalina Foothills Realty Partners,property_manager,Tucson,45
+38,Oro Valley Holdings,property_manager,Tucson,45
+39,Old Pueblo Holdings,property_manager,Tucson,45
+40,Cottonwood Holdings,property_manager,Flagstaff,45
+42,Coconino Realty Partners,property_manager,Flagstaff,45
+43,Tempe Commercial Properties,property_manager,Phoenix,45
+44,Rincon Asset Management,property_manager,Tucson,45
+45,Mesa Real Estate Group,property_manager,Phoenix,45
+46,Ahwatukee Asset Management,property_manager,Phoenix,45
+47,Avondale Holdings,property_manager,Phoenix,45
+48,Vail Holdings,property_manager,Tucson,45
+49,Rita Ranch Holdings,property_manager,Tucson,45
+50,Marana Commercial Properties,property_manager,Tucson,45
+51,Desert Ridge Realty Partners,property_manager,Phoenix,45
+52,Scottsdale Realty Partners,property_manager,Phoenix,45
+53,Peoria Holdings,property_manager,Phoenix,45
+54,Superstition Holdings,property_manager,Phoenix,45
+55,Ahwatukee Commercial Properties,property_manager,Phoenix,45
+56,Camelback Real Estate Group,property_manager,Phoenix,45
+57,Saguaro Realty Partners,property_manager,Phoenix,45
+58,Williams Realty Partners,property_manager,Flagstaff,45
+59,Ponderosa Holdings,property_manager,Flagstaff,45
+60,Camp Verde Realty Partners,property_manager,Flagstaff,45
+61,Scottsdale Real Estate Group,property_manager,Phoenix,45
+62,Gilbert Commercial Properties,property_manager,Phoenix,45
+63,Saguaro Holdings,property_manager,Phoenix,45
+64,Fountain Hills Holdings,property_manager,Phoenix,45
+65,San Tan Valley Asset Management,property_manager,Phoenix,45
+66,Sahuarita Realty Partners,property_manager,Tucson,45
+67,Pueblo Real Estate Group,property_manager,Tucson,45
+68,Marana Commercial Properties,property_manager,Tucson,45
+69,Verde Valley Holdings,property_manager,Flagstaff,45
+70,Rincon Realty Partners,property_manager,Tucson,45
+71,Fountain Hills Holdings,property_manager,Phoenix,45
+72,Goodyear Asset Management,property_manager,Phoenix,45
+73,Green Valley Asset Management,property_manager,Tucson,45
+74,Prescott Valley Asset Management,property_manager,Flagstaff,45
+75,Old Pueblo Commercial Properties,property_manager,Tucson,45
+76,Avondale Asset Management,property_manager,Phoenix,45
+77,Goodyear Realty Partners,property_manager,Phoenix,45
+78,Arcadia Realty Partners,property_manager,Phoenix,45
+79,Estrella Holdings,property_manager,Phoenix,45
+80,San Tan Valley Asset Management,property_manager,Phoenix,45
+81,Chandler Real Estate Group,property_manager,Phoenix,45
+82,Rincon Commercial Properties,property_manager,Tucson,45
+83,Estrella Property Management,property_manager,Phoenix,45
+84,Tempe Commercial Properties,property_manager,Phoenix,45
+85,Ahwatukee Property Management,property_manager,Phoenix,45
+86,Paradise Valley Property Management,property_manager,Phoenix,45
+87,Fountain Hills Real Estate Group,property_manager,Phoenix,45
+88,Cottonwood Property Management,property_manager,Flagstaff,45
+89,Sabino Commercial Properties,property_manager,Tucson,45
+90,Oro Valley Property Management,property_manager,Tucson,45
+91,Coconino Real Estate Group,property_manager,Flagstaff,45
+92,Sabino Property Management,property_manager,Tucson,45
+93,Sabino Real Estate Group,property_manager,Tucson,45
+94,Laveen Asset Management,property_manager,Phoenix,45
+95,Tempe Commercial Properties,property_manager,Phoenix,45
+96,Desert Ridge Realty Partners,property_manager,Phoenix,45
+97,Mountain View Real Estate Group,property_manager,Flagstaff,45
+98,Fountain Hills Holdings,property_manager,Phoenix,45
+99,Sonoran Holdings,property_manager,Phoenix,45
+100,Santa Cruz Property Management,property_manager,Tucson,45
+101,Scottsdale Real Estate Group,property_manager,Phoenix,45
+102,Ahwatukee Property Management,property_manager,Phoenix,45
+103,Camelback Real Estate Group,property_manager,Phoenix,45
+104,Desert Ridge Realty Partners,property_manager,Phoenix,45
+105,Arcadia Real Estate Group,property_manager,Phoenix,45
+106,Sedona Real Estate Group,property_manager,Flagstaff,45
+107,Mesa Realty Partners,property_manager,Phoenix,45
+108,Chandler Commercial Properties,property_manager,Phoenix,45
+109,Santa Cruz Realty Partners,property_manager,Tucson,45
+110,Chandler Property Management,property_manager,Phoenix,45
+111,Arcadia Asset Management,property_manager,Phoenix,45
+112,Tempe Holdings,property_manager,Phoenix,45
+113,Oro Valley Real Estate Group,property_manager,Tucson,45
+114,Sabino Asset Management,property_manager,Tucson,45
+115,Gilbert Commercial Properties,property_manager,Phoenix,45
+116,Green Valley Commercial Properties,property_manager,Tucson,45
+117,Camp Verde Property Management,property_manager,Flagstaff,45
+118,Ponderosa Real Estate Group,property_manager,Flagstaff,45
+119,Green Valley Realty Partners,property_manager,Tucson,45
+120,Avondale Holdings,property_manager,Phoenix,45
+121,Casas Adobes Commercial Properties,property_manager,Tucson,45
+122,Casas Adobes Commercial Properties,property_manager,Tucson,45
+123,Scottsdale Commercial Properties,property_manager,Phoenix,45
+124,Apache Junction Property Management,property_manager,Phoenix,45
+125,Deer Valley Real Estate Group,property_manager,Phoenix,45
+126,Deer Valley Realty Partners,property_manager,Phoenix,45
+127,Saguaro Commercial Properties,property_manager,Phoenix,45
+128,Santa Cruz Commercial Properties,property_manager,Tucson,45
+129,Sonoran Realty Partners,property_manager,Phoenix,45
+130,Arcadia Real Estate Group,property_manager,Phoenix,45
+131,Sabino Realty Partners,property_manager,Tucson,45
+132,Tanque Verde Realty Partners,property_manager,Tucson,45
+133,Chandler Commercial Properties,property_manager,Phoenix,45
+134,Goodyear Unified School District,school_district,Phoenix,45
+135,Desert Ridge Unified School District,school_district,Phoenix,45
+136,Prescott Valley Unified School District,school_district,Flagstaff,45
+137,Maryvale Unified School District,school_district,Phoenix,45
+138,Glendale Unified School District,school_district,Phoenix,45
+139,Chandler Unified School District,school_district,Phoenix,45
+140,Scottsdale Unified School District,school_district,Phoenix,45
+141,Cottonwood Unified School District,school_district,Flagstaff,45
+142,Deer Valley Unified School District,school_district,Phoenix,45
+143,Laveen Unified School District,school_district,Phoenix,45
+144,Fountain Hills Unified School District,school_district,Phoenix,45
+145,Oro Valley Unified School District,school_district,Tucson,45
+146,Sedona Unified School District,school_district,Flagstaff,45
+147,Verde Valley Unified School District,school_district,Flagstaff,45
+148,Sonoran Unified School District,school_district,Phoenix,45
+149,Sedona Unified School District,school_district,Flagstaff,45
+150,Goodyear Unified School District,school_district,Phoenix,45
+151,Sedona Unified School District,school_district,Flagstaff,45
+152,Sonoran Unified School District,school_district,Phoenix,45
+153,Oro Valley Unified School District,school_district,Tucson,45
+154,Sahuarita Unified School District,school_district,Tucson,45
+155,Goodyear Unified School District,school_district,Phoenix,45
+156,Mesa Unified School District,school_district,Phoenix,45
+157,Gilbert Unified School District,school_district,Phoenix,45
+158,Oro Valley Unified School District,school_district,Tucson,45
+159,Deer Valley Bakery,regional_chain,Phoenix,30
+160,Desert Ridge Taqueria,regional_chain,Phoenix,30
+161,Green Valley Pizzeria,regional_chain,Tucson,30
+162,Mesa Taqueria,regional_chain,Phoenix,30
+163,San Tan Valley Grill,regional_chain,Phoenix,30
+164,Kachina Village Eye Care,regional_chain,Flagstaff,30
+166,Gilbert Pharmacy,regional_chain,Phoenix,30
+167,Queen Creek Boutique,regional_chain,Phoenix,30
+168,Sonoran Family Dental,regional_chain,Phoenix,30
+169,Papago Taqueria,regional_chain,Phoenix,30
+170,Peoria Diner,regional_chain,Phoenix,30
+171,Deer Valley Hardware,regional_chain,Phoenix,30
+172,Estrella Boutique,regional_chain,Phoenix,30
+173,Casas Adobes Physical Therapy,regional_chain,Tucson,30
+174,Glendale Cafe,regional_chain,Phoenix,30
+175,Kachina Village Pediatrics,regional_chain,Flagstaff,30
+176,Green Valley Liquor,regional_chain,Tucson,30
+177,Fountain Hills Furniture,regional_chain,Phoenix,30
+178,Mesa Veterinary Clinic,regional_chain,Phoenix,30
+180,Tempe Hardware,regional_chain,Phoenix,30
+181,Laveen Pizzeria,regional_chain,Phoenix,30
+182,Glendale Appliance,regional_chain,Phoenix,30
+183,Desert Ridge Florist,regional_chain,Phoenix,30
+184,Verde Valley Pharmacy,regional_chain,Flagstaff,30
+185,Chandler Eye Care,regional_chain,Phoenix,30
+186,Paradise Valley Diner,regional_chain,Phoenix,30
+187,Gilbert Bistro,regional_chain,Phoenix,30
+188,Kachina Village Liquor,regional_chain,Flagstaff,30
+189,Sahuarita Family Dental,regional_chain,Tucson,30
+190,Oro Valley Florist,regional_chain,Tucson,30
+191,Sabino Furniture,regional_chain,Tucson,30
+192,San Tan Valley Florist,regional_chain,Phoenix,30
+194,Williams Pizzeria,regional_chain,Flagstaff,30
+195,Glendale Pharmacy,regional_chain,Phoenix,30
+196,Glendale Boutique,regional_chain,Phoenix,30
+198,Superstition Appliance,regional_chain,Phoenix,30
+199,Laveen Family Dental,regional_chain,Phoenix,30
+200,Papago Grill,regional_chain,Phoenix,30
+201,Sonoran Liquor,regional_chain,Phoenix,30
+202,Green Valley Physical Therapy,regional_chain,Tucson,30
+203,Peoria Boutique,regional_chain,Phoenix,30
+204,Rita Ranch Veterinary Clinic,regional_chain,Tucson,30
+205,Catalina Foothills Bakery,regional_chain,Tucson,30
+206,Cottonwood Family Dental,regional_chain,Flagstaff,30
+207,Catalina Foothills Pharmacy,regional_chain,Tucson,30
+208,Ponderosa Physical Therapy,regional_chain,Flagstaff,30
+209,Avondale Pediatrics,regional_chain,Phoenix,30
+210,Vail Cafe,regional_chain,Tucson,30
+211,Superstition Furniture,regional_chain,Phoenix,30
+212,Sahuarita Hardware,regional_chain,Tucson,30
+213,Mesa Eye Care,regional_chain,Phoenix,30
+214,Camp Verde Diner,regional_chain,Flagstaff,30
+215,Avondale Taqueria,regional_chain,Phoenix,30
+216,Apache Junction Appliance,regional_chain,Phoenix,30
+217,Fountain Hills Pharmacy,regional_chain,Phoenix,30
+218,Catalina Foothills Taqueria,regional_chain,Tucson,30
+219,Mesa Diner,regional_chain,Phoenix,30
+220,Santa Cruz Grill,regional_chain,Tucson,30
+221,Avondale Boutique,regional_chain,Phoenix,30
+222,Saguaro Chiropractic,regional_chain,Phoenix,30
+223,Vail Family Dental,regional_chain,Tucson,30
+224,Arcadia Taqueria,regional_chain,Phoenix,30
+225,Desert Ridge Diner,regional_chain,Phoenix,30
+226,Fountain Hills Physical Therapy,regional_chain,Phoenix,30
+227,Camp Verde Boutique,regional_chain,Flagstaff,30
+228,Pueblo Pizzeria,regional_chain,Tucson,30
+229,Kachina Village Liquor,regional_chain,Flagstaff,30
+231,Fountain Hills Veterinary Clinic,regional_chain,Phoenix,30
+232,Goodyear Bakery,regional_chain,Phoenix,30
+233,Rita Ranch Bakery,regional_chain,Tucson,30
+234,Mogollon Rim Physical Therapy,regional_chain,Flagstaff,30
+235,Williams Pizzeria,regional_chain,Flagstaff,30
+236,Saguaro Hardware,regional_chain,Phoenix,30
+237,Mesa Diner,regional_chain,Phoenix,30
+238,Rita Ranch Chiropractic,regional_chain,Tucson,30
+240,Peoria Family Dental,regional_chain,Phoenix,30
+241,San Francisco Peaks Boutique,regional_chain,Flagstaff,30
+243,San Tan Valley Liquor,regional_chain,Phoenix,30
+244,Mogollon Rim Chiropractic,regional_chain,Flagstaff,30
+245,Rita Ranch Pediatrics,regional_chain,Tucson,30
+246,Peoria Grill,regional_chain,Phoenix,30
+247,Desert Ridge Bistro,regional_chain,Phoenix,30
+248,Vail Physical Therapy,regional_chain,Tucson,30
+249,Green Valley Physical Therapy,regional_chain,Tucson,30
+250,Fountain Hills Pediatrics,regional_chain,Phoenix,30
+251,Mogollon Rim Cafe,regional_chain,Flagstaff,30
+252,Rincon Taqueria,regional_chain,Tucson,30
+253,Glendale Appliance,regional_chain,Phoenix,30
+254,Catalina Foothills Pizzeria,regional_chain,Tucson,30
+255,Mountain View Physical Therapy,regional_chain,Flagstaff,30
+256,Papago Grill,regional_chain,Phoenix,30
+257,Vail Appliance,regional_chain,Tucson,30
+258,Laveen Bakery,regional_chain,Phoenix,30
+260,Deer Valley Furniture,regional_chain,Phoenix,30
+261,Rita Ranch Appliance,regional_chain,Tucson,30
+262,Verde Valley Appliance,regional_chain,Flagstaff,30
+263,Mountain View Pharmacy,regional_chain,Flagstaff,30
+264,Saguaro Veterinary Clinic,regional_chain,Phoenix,30
+265,Sabino Taqueria,regional_chain,Tucson,30
+266,Scottsdale Liquor,regional_chain,Phoenix,30
+267,Williams Family Dental,regional_chain,Flagstaff,30
+268,Desert Ridge Grill,regional_chain,Phoenix,30
+270,Apache Junction Florist,regional_chain,Phoenix,30
+271,Catalina Foothills Boutique,regional_chain,Tucson,30
+273,Saguaro Appliance,regional_chain,Phoenix,30
+274,Tempe Boutique,regional_chain,Phoenix,30
+276,Pueblo Physical Therapy,regional_chain,Tucson,30
+277,Kachina Village Furniture,regional_chain,Flagstaff,30
+278,Peoria Taqueria,regional_chain,Phoenix,30
+279,Maryvale Bistro,regional_chain,Phoenix,30
+280,Scottsdale Bistro,regional_chain,Phoenix,30
+281,Peoria Appliance,regional_chain,Phoenix,30
+282,Ahwatukee Pediatrics,regional_chain,Phoenix,30
+283,Avondale Eye Care,regional_chain,Phoenix,30
+284,Papago Boutique,regional_chain,Phoenix,30
+285,Tempe Pediatrics,regional_chain,Phoenix,30
+286,Catalina Foothills Hardware,regional_chain,Tucson,30
+287,Rita Ranch Hardware,regional_chain,Tucson,30
+288,Scottsdale Diner,regional_chain,Phoenix,30
+289,Saguaro Pediatrics,regional_chain,Phoenix,30
+290,Pueblo Pizzeria,regional_chain,Tucson,30
+291,Saguaro Hardware,regional_chain,Phoenix,30
+292,Murphy & White Eye Care,single_site,Phoenix,30
+293,Jason Jackson Physical Therapy,single_site,Flagstaff,30
+294,Warner Street Medical Billing,single_site,Phoenix,30
+295,Dustin Martinez Diner,single_site,Tucson,30
+296,Paradise Valley Bistro,single_site,Phoenix,30
+299,Travis Stewart Architects,single_site,Phoenix,30
+300,Collins & Harris Pediatrics,single_site,Phoenix,30
+301,Kolb Street Medical Billing,single_site,Tucson,30
+302,Collins Bistro,single_site,Phoenix,30
+303,Kolb Street Eye Care,single_site,Tucson,30
+304,Martin & Clark Diner,single_site,Phoenix,30
+305,Apache Junction Law Offices,single_site,Phoenix,30
+306,Angela Garcia Engineering,single_site,Phoenix,30
+307,Taylor & Wilson Veterinary Clinic,single_site,Tucson,30
+308,Sedona Bistro,single_site,Flagstaff,30
+310,Ray Street Physical Therapy,single_site,Phoenix,30
+311,White & Green Boutique,single_site,Tucson,30
+312,Murphy & Hill Boutique,single_site,Phoenix,30
+313,Ponderosa Boutique,single_site,Flagstaff,30
+314,Lake Street Grill,single_site,Flagstaff,30
+316,Brian Scott Pediatrics,single_site,Phoenix,30
+317,Allen Appliance,single_site,Phoenix,30
+318,Route Street Bakery,single_site,Flagstaff,30
+320,Green Appliance,single_site,Tucson,30
+322,Maryvale Furniture,single_site,Phoenix,30
+323,Young Pediatrics,single_site,Phoenix,30
+324,Evans & Green Furniture,single_site,Tucson,30
+325,Eric Collins Pediatrics,single_site,Tucson,30
+326,Glendale Hardware,single_site,Phoenix,30
+327,Roberts Law Offices,single_site,Phoenix,30
+328,Rita Ranch Architects,single_site,Tucson,30
+329,Wright & Cooper Family Dental,single_site,Phoenix,30
+330,Kolb Street Diner,single_site,Tucson,30
+331,Young Florist,single_site,Tucson,30
+332,Travis Kelly Hardware,single_site,Phoenix,30
+333,Nate Hall Veterinary Clinic,single_site,Flagstaff,30
+334,Johnson & Hall Taqueria,single_site,Flagstaff,30
+335,Garcia Pizzeria,single_site,Phoenix,30
+336,Rincon Boutique,single_site,Tucson,30
+337,Avondale Veterinary Clinic,single_site,Phoenix,30
+338,Adams Bakery,single_site,Tucson,30
+339,Tyler Garcia Architects,single_site,Phoenix,30
+340,Deer Valley Family Dental,single_site,Phoenix,30
+341,Gilbert Street Bakery,single_site,Phoenix,30
+342,Price Engineering,single_site,Phoenix,30
+343,Chandler Taqueria,single_site,Phoenix,30
+344,Cooper & Adams Engineering,single_site,Flagstaff,30
+345,Valencia Street Physical Therapy,single_site,Tucson,30
+346,Green & Campbell Hardware,single_site,Tucson,30
+347,Camelback Street Family Dental,single_site,Phoenix,30
+349,Lee & Cooper Taqueria,single_site,Phoenix,30
+350,Cook & Nelson Physical Therapy,single_site,Phoenix,30
+351,Avondale Diner,single_site,Phoenix,30
+352,Goodyear Taqueria,single_site,Phoenix,30
+354,Heather Edwards Pediatrics,single_site,Flagstaff,30
+355,Maryvale Taqueria,single_site,Phoenix,30
+356,Apache Junction Bakery,single_site,Phoenix,30
+357,Jose Wilson Accounting,single_site,Flagstaff,30
+358,Melissa Taylor Cafe,single_site,Phoenix,30
+359,Nate Kelly Florist,single_site,Tucson,30
+360,Chris Morris Accounting,single_site,Tucson,30
+361,Bell Street Veterinary Clinic,single_site,Phoenix,30
+362,Phillips & Baker Liquor,single_site,Phoenix,30
+363,Clark Cafe,single_site,Tucson,30
+364,Stewart & Davis Title Company,single_site,Flagstaff,30
+365,Kim Martin Boutique,single_site,Flagstaff,30
+366,Green & Allen Diner,single_site,Phoenix,30
+367,Ward Family Dental,single_site,Phoenix,30
+368,Linda Cook Eye Care,single_site,Phoenix,30
+369,Davis & Hughes Veterinary Clinic,single_site,Phoenix,30
+370,Old Pueblo Veterinary Clinic,single_site,Tucson,30
+371,Edwards & Thompson Cafe,single_site,Flagstaff,30
+373,San Francisco Peaks Architects,single_site,Flagstaff,30
+375,Baseline Street Bakery,single_site,Phoenix,30
+376,Lisa Stewart Hardware,single_site,Phoenix,30
+377,Southern Street Bakery,single_site,Phoenix,30
+379,Wes Roberts Insurance Agency,single_site,Phoenix,30
+380,Garcia & Thomas Boutique,single_site,Phoenix,30
+381,Carter Physical Therapy,single_site,Phoenix,30
+382,Daniel Howard Insurance Agency,single_site,Phoenix,30
+383,Thomas Street Architects,single_site,Phoenix,30
+384,Ahwatukee Diner,single_site,Phoenix,30
+385,Sonoran Bakery,single_site,Phoenix,30
+386,Sabino Chiropractic,single_site,Tucson,30
+387,Valencia Street Law Offices,single_site,Tucson,30
+388,Main Street Insurance Agency,single_site,Phoenix,30
+389,Gilbert Street Bakery,single_site,Phoenix,30
+390,Ponderosa Medical Billing,single_site,Flagstaff,30
+391,Cook Furniture,single_site,Tucson,30
+392,Prescott Valley Diner,single_site,Flagstaff,30
+393,Valencia Street Hardware,single_site,Tucson,30
+394,Rita Ranch Architects,single_site,Tucson,30
+395,Tempe Accounting,single_site,Phoenix,30
+397,Cody Allen Family Dental,single_site,Phoenix,30
+398,Nelson Diner,single_site,Phoenix,30
+399,Main Street Bakery,single_site,Phoenix,30
+400,King Physical Therapy,single_site,Phoenix,30
+402,Cook & Walker Florist,single_site,Flagstaff,30
+403,Broadway Street Accounting,single_site,Tucson,30
+404,Morris & King Florist,single_site,Phoenix,30
+406,Garcia & Kelly Medical Billing,single_site,Phoenix,30
+407,Linda Davis Chiropractic,single_site,Phoenix,30
+408,Coconino Architects,single_site,Flagstaff,30
+409,Rita Ranch Cafe,single_site,Tucson,30
+410,Pueblo Pizzeria,single_site,Tucson,30
+412,Evans Physical Therapy,single_site,Tucson,30
+413,Phillips Liquor,single_site,Tucson,30
+414,Nelson Bistro,single_site,Phoenix,30
+415,Val Street Insurance Agency,single_site,Phoenix,30
+416,Evans Bakery,single_site,Phoenix,30
+417,Luis Baker Insurance Agency,single_site,Tucson,30
+418,Lee & Hall Florist,single_site,Tucson,30
+420,Robert Anderson Grill,single_site,Tucson,30
+422,Parker Diner,single_site,Phoenix,30
+423,Derek Cooper Pediatrics,single_site,Flagstaff,30
+424,Reed & Adams Title Company,single_site,Tucson,30
+425,Warner Street Family Dental,single_site,Phoenix,30
+426,Roberts Law Offices,single_site,Phoenix,30
+427,Casas Adobes Pediatrics,single_site,Tucson,30
+428,Amanda Roberts Title Company,single_site,Phoenix,30
+429,Old Pueblo Medical Billing,single_site,Tucson,30
+430,Verde Valley Cafe,single_site,Flagstaff,30
+432,Gina Campbell Taqueria,single_site,Phoenix,30
+433,Johnson & Cook Hardware,single_site,Tucson,30
+434,Allen & Brown Family Dental,single_site,Phoenix,30
+435,Lisa Jackson Hardware,single_site,Phoenix,30
+436,Amanda Allen Eye Care,single_site,Phoenix,30
+437,King & Lee Veterinary Clinic,single_site,Tucson,30
+438,Paradise Valley Medical Billing,single_site,Phoenix,30
+439,Swan Street Veterinary Clinic,single_site,Tucson,30
+440,Garcia & Turner Bistro,single_site,Flagstaff,30
+441,Luis King Eye Care,single_site,Phoenix,30
+442,Wilson Chiropractic,single_site,Tucson,30
+443,McDowell Street Title Company,single_site,Phoenix,30
+444,Turner & Morris Insurance Agency,single_site,Phoenix,30
+445,Thomas & Turner Chiropractic,single_site,Phoenix,30
+446,Bell Street Engineering,single_site,Phoenix,30
+447,Price Physical Therapy,single_site,Phoenix,30
+448,Shauna Turner Title Company,single_site,Phoenix,30
+449,Tyler Turner Taqueria,single_site,Flagstaff,30
+451,Cook & Carter Engineering,single_site,Phoenix,30
+452,Johnson Insurance Agency,single_site,Phoenix,30
+453,Paradise Valley Accounting,single_site,Phoenix,30
+454,Luis Martin Boutique,single_site,Tucson,30
+455,Garcia & Brown Boutique,single_site,Phoenix,30
+456,Carmen Collins Insurance Agency,single_site,Tucson,30
+457,Butler Street Appliance,single_site,Flagstaff,30
+458,Scottsdale Cafe,single_site,Phoenix,30
+459,Carmen Scott Appliance,single_site,Phoenix,30
+460,Linda White Insurance Agency,single_site,Phoenix,30
+461,Queen Creek Taqueria,single_site,Phoenix,30
+462,University Street Law Offices,single_site,Phoenix,30
+463,Cox & Martinez Family Dental,single_site,Phoenix,30
+464,Lee Bakery,single_site,Tucson,30
+465,Dustin Davis Bakery,single_site,Phoenix,30
+466,Campbell Chiropractic,single_site,Flagstaff,30
+467,David Thomas Appliance,single_site,Phoenix,30
+468,Brown Hardware,single_site,Phoenix,30
+469,Baker & Cox Appliance,single_site,Flagstaff,30
+470,Mogollon Rim Title Company,single_site,Flagstaff,30
+471,Fountain Hills Title Company,single_site,Phoenix,30
+472,Tempe Insurance Agency,single_site,Phoenix,30
+473,Davis & Harris Bistro,single_site,Phoenix,30
+474,Allen Taqueria,single_site,Phoenix,30
+475,Santa Cruz Hardware,single_site,Tucson,30
+476,Tyler Ward Boutique,single_site,Tucson,30
+477,Anderson Boutique,single_site,Phoenix,30
+478,Irvington Street Medical Billing,single_site,Tucson,30
+479,Main Street Accounting,single_site,Phoenix,30
+480,Sabino Diner,single_site,Tucson,30
+481,Wilson Engineering,single_site,Phoenix,30
+483,Elliot Street Hardware,single_site,Phoenix,30
+484,Papago Pediatrics,single_site,Phoenix,30
+485,Carter Insurance Agency,single_site,Phoenix,30
+487,Baker Engineering,single_site,Phoenix,30
+488,Alicia Ward Engineering,single_site,Flagstaff,30
+489,Thomas & Parker Physical Therapy,single_site,Tucson,30
+490,McDowell Street Chiropractic,single_site,Phoenix,30
+491,Green Insurance Agency,single_site,Tucson,30
+493,Miller & Adams Title Company,single_site,Phoenix,30
+494,Linda Harris Physical Therapy,single_site,Phoenix,30
+495,Oro Valley Cafe,single_site,Tucson,30
+496,Heather Turner Veterinary Clinic,single_site,Flagstaff,30
+497,Clark & Brown Appliance,single_site,Tucson,30
+498,Taylor & Hill Appliance,single_site,Phoenix,30
+499,Superstition Appliance,single_site,Phoenix,30
+500,Main Street Florist,single_site,Tucson,30
+501,Mitchell & Reed Bistro,single_site,Phoenix,30
+502,Gina Murphy Taqueria,single_site,Phoenix,30
+503,Southern Street Bakery,single_site,Phoenix,30
+504,Turner Bistro,single_site,Phoenix,30
+505,Tasha Young Accounting,single_site,Phoenix,30
+506,Lewis & Edwards Pizzeria,single_site,Tucson,30
+507,Thomas Street Furniture,single_site,Phoenix,30
+508,Alma Street Veterinary Clinic,single_site,Phoenix,30
+510,Taylor Boutique,single_site,Phoenix,30
+511,Alicia Taylor Boutique,single_site,Phoenix,30
+512,Moore & Scott Grill,single_site,Tucson,30
+513,Thompson Eye Care,single_site,Phoenix,30
+514,Southern Street Medical Billing,single_site,Phoenix,30
+515,Williams Physical Therapy,single_site,Flagstaff,30
+516,Sedona Engineering,single_site,Flagstaff,30
+517,Miller & Baker Engineering,single_site,Tucson,30
+518,Catalina Foothills Florist,single_site,Tucson,30
+519,Phillips & Turner Insurance Agency,single_site,Tucson,30
+520,Jackson Physical Therapy,single_site,Phoenix,30
+521,Vail Diner,single_site,Tucson,30
+522,Dustin Lee Bakery,single_site,Phoenix,30
+525,Scott Pediatrics,single_site,Phoenix,30
+526,Melissa Anderson Engineering,single_site,Phoenix,30
+527,Davis & Thomas Accounting,single_site,Tucson,30
+528,Morris Bakery,single_site,Tucson,30
+529,Elliot Street Diner,single_site,Phoenix,30
+530,Valencia Street Law Offices,single_site,Tucson,30
+531,Heather Morris Law Offices,single_site,Flagstaff,30
+532,Irvington Street Hardware,single_site,Tucson,30
+533,Ray Street Cafe,single_site,Phoenix,30
+534,Mogollon Rim Family Dental,single_site,Flagstaff,30
+536,Howard Liquor,single_site,Phoenix,30
+538,Campbell Architects,single_site,Phoenix,30
+539,Dustin Campbell Grill,single_site,Phoenix,30
+540,Garcia Hardware,single_site,Phoenix,30
+541,Main Street Architects,single_site,Phoenix,30
+542,Kevin Anderson Hardware,single_site,Flagstaff,30
+544,Travis Brown Law Offices,single_site,Tucson,30
+545,Walker & Evans Accounting,single_site,Tucson,30
+546,Jamal Miller Family Dental,single_site,Phoenix,30
+547,Morris & Nelson Grill,single_site,Phoenix,30
+548,Hall & King Title Company,single_site,Flagstaff,30
+549,Thompson Grill,single_site,Phoenix,30
+550,Holly Rogers Veterinary Clinic,single_site,Phoenix,30
+552,Johnson Accounting,single_site,Phoenix,30
+554,Anderson Taqueria,single_site,Phoenix,30
+555,Thompson Veterinary Clinic,single_site,Tucson,30
+556,Sabino Boutique,single_site,Tucson,30
+557,Sahuarita Family Dental,single_site,Tucson,30
+558,Valencia Street Veterinary Clinic,single_site,Tucson,30
+559,Fourth Street Boutique,single_site,Flagstaff,30
+560,Anderson & Jackson Pharmacy,single_site,Tucson,30
+561,Rogers & Parker Chiropractic,single_site,Phoenix,30
+562,Valencia Street Furniture,single_site,Tucson,30
+563,Johnson & King Bistro,single_site,Phoenix,30
+564,Daniel Walker Accounting,single_site,Flagstaff,30
+566,Fountain Hills Cafe,single_site,Phoenix,30
+567,Cook Florist,single_site,Phoenix,30
+568,Brown Liquor,single_site,Tucson,30
+570,Taylor Hardware,single_site,Tucson,30
+571,Oracle Street Hardware,single_site,Tucson,30
+573,Tyler Thompson Title Company,single_site,Flagstaff,30
+574,Mountain View Diner,single_site,Flagstaff,30
+575,University Street Chiropractic,single_site,Phoenix,30
+576,Mitchell Veterinary Clinic,single_site,Phoenix,30
+577,Nate Robinson Diner,single_site,Flagstaff,30
+578,Hill Pharmacy,single_site,Phoenix,30
+581,Kelly Accounting,single_site,Phoenix,30
+582,Sonoran Eye Care,single_site,Phoenix,30
+584,Superstition Insurance Agency,single_site,Phoenix,30
+585,Tanque Street Grill,single_site,Tucson,30
+586,Ward Appliance,single_site,Phoenix,30
+587,Cox Hardware,single_site,Tucson,30
+588,Main Street Pharmacy,single_site,Phoenix,30
+589,Martinez Eye Care,single_site,Tucson,30
+591,Roberts Bakery,single_site,Tucson,30
+592,Maryvale Family Dental,single_site,Phoenix,30
+594,Carter & Hall Eye Care,single_site,Phoenix,30
+595,Dustin Jackson Cafe,single_site,Phoenix,30
+596,Allen Florist,single_site,Flagstaff,30
+597,Cox & Hall Eye Care,single_site,Flagstaff,30
+598,Avondale Medical Billing,single_site,Phoenix,30
+599,Edwards Law Offices,single_site,Phoenix,30
+600,University Street Law Offices,single_site,Phoenix,30
+601,Nate Thomas Cafe,single_site,Tucson,30
+602,Phillips & Cooper Bakery,single_site,Phoenix,30
+604,Bailey & Scott Furniture,single_site,Phoenix,30
+605,Anderson Veterinary Clinic,single_site,Phoenix,30
+607,James Cox Liquor,single_site,Tucson,30
+608,Superstition Insurance Agency,single_site,Phoenix,30
+611,Holly Allen Bakery,single_site,Phoenix,30
+613,Carmen Carter Florist,single_site,Phoenix,30
+614,Hill & Scott Appliance,single_site,Phoenix,30
+615,Oro Valley Bistro,single_site,Tucson,30
+616,Walker Diner,single_site,Tucson,30
+617,Jennifer Turner Chiropractic,single_site,Tucson,30
+618,Kolb Street Title Company,single_site,Tucson,30
+619,Avondale Architects,single_site,Phoenix,30
+620,Robinson & White Title Company,single_site,Tucson,30
+621,Catalina Foothills Insurance Agency,single_site,Tucson,30
+622,Gilbert Street Veterinary Clinic,single_site,Phoenix,30
+623,Gilbert Street Liquor,single_site,Phoenix,30
+624,Cottonwood Street Bistro,single_site,Flagstaff,30
+625,Thompson & Cooper Title Company,single_site,Phoenix,30
+627,Milton Street Eye Care,single_site,Flagstaff,30
+628,Main Street Eye Care,single_site,Phoenix,30
+629,Coconino Pharmacy,single_site,Flagstaff,30
+630,Evans & Edwards Architects,single_site,Tucson,30
+631,Kevin Murphy Title Company,single_site,Tucson,30
+632,Karen Edwards Furniture,single_site,Phoenix,30
+633,Cox & Ward Pizzeria,single_site,Phoenix,30
+634,Tanya Robinson Eye Care,single_site,Phoenix,30
+635,Chandler Diner,single_site,Phoenix,30
+636,Daniel Miller Pizzeria,single_site,Flagstaff,30
+637,Tyler Nelson Florist,single_site,Phoenix,30
+638,Peoria Boutique,single_site,Phoenix,30
+639,Oracle Street Pediatrics,single_site,Tucson,30
+640,Swan Street Family Dental,single_site,Tucson,30
+641,Miller & Scott Physical Therapy,single_site,Phoenix,30
+642,Scott Furniture,single_site,Tucson,30
+643,Maryvale Bistro,single_site,Phoenix,30
+645,Alicia Carter Bistro,single_site,Tucson,30
+646,Camelback Law Offices,single_site,Phoenix,30
+647,Tyler Kelly Taqueria,single_site,Phoenix,30
+648,Apache Junction Taqueria,single_site,Phoenix,30
+649,Davis & Phillips Veterinary Clinic,single_site,Tucson,30
+651,McDowell Street Physical Therapy,single_site,Phoenix,30
+652,Rincon Appliance,single_site,Tucson,30
+653,Deer Valley Law Offices,single_site,Phoenix,30
+654,Green & Brown Family Dental,single_site,Phoenix,30
+655,Alma Street Florist,single_site,Phoenix,30
+656,Clark Florist,single_site,Phoenix,30
+657,Alicia Cooper Insurance Agency,single_site,Phoenix,30
+658,Main Street Liquor,single_site,Flagstaff,30
+659,Cottonwood Street Law Offices,single_site,Flagstaff,30
+660,Superstition Medical Billing,single_site,Phoenix,30
+661,Thomas Street Florist,single_site,Phoenix,30
+662,Dobson Street Appliance,single_site,Phoenix,30
+663,Route Street Medical Billing,single_site,Flagstaff,30
+664,Green Veterinary Clinic,single_site,Flagstaff,30
+665,Martinez Medical Billing,single_site,Phoenix,30
+666,Harris Pediatrics,single_site,Phoenix,30
+667,Pueblo Boutique,single_site,Tucson,30
+668,Parker & Mitchell Boutique,single_site,Tucson,30
+669,Nicole Nelson Hardware,single_site,Phoenix,30
+670,Hall Eye Care,single_site,Flagstaff,30
+671,Howard & Moore Bakery,single_site,Flagstaff,30
+672,Gilbert Law Offices,single_site,Phoenix,30
+673,Denise Adams Florist,single_site,Phoenix,30
+674,Papago Architects,single_site,Phoenix,30
+675,Garcia Pharmacy,single_site,Phoenix,30
+676,Bailey Boutique,single_site,Flagstaff,30
+678,Young Medical Billing,single_site,Phoenix,30
+679,Sahuarita Physical Therapy,single_site,Tucson,30
+681,Karen Scott Taqueria,single_site,Tucson,30
+682,Wright Eye Care,single_site,Flagstaff,30
+683,Rachel Wilson Family Dental,single_site,Flagstaff,30
+684,Rita Ranch Chiropractic,single_site,Tucson,30
+685,Patricia Hall Architects,single_site,Phoenix,30
+686,White Grill,single_site,Phoenix,30
+687,State Street Title Company,single_site,Flagstaff,30
+688,Karen Howard Architects,single_site,Phoenix,30
+689,Brian Hill Veterinary Clinic,single_site,Phoenix,30
+690,Nate Moore Engineering,single_site,Tucson,30
+691,Marcus Cooper Family Dental,single_site,Flagstaff,30
+692,Beaver Street Diner,single_site,Flagstaff,30
+693,Main Street Chiropractic,single_site,Flagstaff,30
+694,Deer Valley Liquor,single_site,Phoenix,30
+695,Main Street Law Offices,single_site,Phoenix,30
+696,Melissa Robinson Cafe,single_site,Tucson,30
+697,Anderson Accounting,single_site,Flagstaff,30
+698,Brittany Kelly Florist,single_site,Phoenix,30
+699,Indian Street Title Company,single_site,Phoenix,30
+700,Mountain View Taqueria,single_site,Flagstaff,30
+701,Tanya Kelly Hardware,single_site,Phoenix,30
+702,Papago Medical Billing,single_site,Phoenix,30
+703,Clark Bistro,single_site,Tucson,30
+705,Anderson Boutique,single_site,Phoenix,30
+706,Morris & White Appliance,single_site,Tucson,30
+707,Collins & Wright Chiropractic,single_site,Phoenix,30
+708,Catalina Foothills Pediatrics,single_site,Tucson,30
+709,Mitchell & Rogers Title Company,single_site,Phoenix,30
+710,Taylor & Campbell Taqueria,single_site,Flagstaff,30
+711,Denise Bailey Accounting,single_site,Flagstaff,30
+712,Martinez & Parker Chiropractic,single_site,Phoenix,30
+713,Main Street Family Dental,single_site,Flagstaff,30
+714,Michael Phillips Florist,single_site,Phoenix,30
+715,Sonoran Title Company,single_site,Phoenix,30
+717,Camelback Family Dental,single_site,Phoenix,30
+719,Martin & Thompson Liquor,single_site,Phoenix,30
+720,Hughes Boutique,single_site,Phoenix,30
+721,Vail Physical Therapy,single_site,Tucson,30
+722,Thompson & Hall Bistro,single_site,Tucson,30
+723,Evans Title Company,single_site,Phoenix,30
+724,Reed Engineering,single_site,Flagstaff,30
+725,Chris Rogers Bakery,single_site,Tucson,30
+727,Thomas & Lee Engineering,single_site,Phoenix,30
+728,Maria Lee Florist,single_site,Phoenix,30
+729,Val Street Florist,single_site,Phoenix,30
+730,Evans Physical Therapy,single_site,Flagstaff,30
+731,Tanque Verde Bakery,single_site,Tucson,30
+732,Hall Architects,single_site,Phoenix,30
+733,Irvington Street Law Offices,single_site,Tucson,30
+734,Patricia Wilson Liquor,single_site,Tucson,30
+735,Wilson Insurance Agency,single_site,Phoenix,30
+736,Taylor Hardware,single_site,Phoenix,30
+737,Brown Veterinary Clinic,single_site,Phoenix,30
+738,Broadway Street Accounting,single_site,Phoenix,30
+740,Parker Grill,single_site,Phoenix,30
+741,Denise Roberts Veterinary Clinic,single_site,Flagstaff,30
+743,Young & Davis Physical Therapy,single_site,Tucson,30
+745,Alicia Garcia Liquor,single_site,Tucson,30
+746,Alicia Lewis Bistro,single_site,Phoenix,30
+748,Baker & Wright Bakery,single_site,Phoenix,30
+749,Baker & Cook Diner,single_site,Tucson,30
+750,Carter Boutique,single_site,Flagstaff,30
+751,Milton Street Law Offices,single_site,Flagstaff,30
+752,Green Valley Eye Care,single_site,Tucson,30
+753,Walker Diner,single_site,Flagstaff,30
+754,Wes Bailey Veterinary Clinic,single_site,Tucson,30
+756,Val Street Accounting,single_site,Phoenix,30
+757,Harris & Rogers Hardware,single_site,Phoenix,30
+758,King & Harris Bistro,single_site,Phoenix,30
+759,Peoria Pharmacy,single_site,Phoenix,30
+760,Broadway Street Liquor,single_site,Phoenix,30
+761,Reed & Mitchell Liquor,single_site,Flagstaff,30
+762,Chris Miller Cafe,single_site,Tucson,30
+763,Mesa Grill,single_site,Phoenix,30
+764,Shauna Rogers Medical Billing,single_site,Phoenix,30
+765,Lisa Mitchell Taqueria,single_site,Phoenix,30
+766,Scottsdale Accounting,single_site,Phoenix,30
+767,Lee & Evans Boutique,single_site,Phoenix,30
+768,Ahwatukee Boutique,single_site,Phoenix,30
+770,Oro Valley Physical Therapy,single_site,Tucson,30
+771,Kolb Street Pizzeria,single_site,Tucson,30
+772,Maryvale Chiropractic,single_site,Phoenix,30
+773,Martin & Brown Law Offices,single_site,Phoenix,30
+774,Melissa Jackson Appliance,single_site,Phoenix,30
+775,Andre Garcia Bakery,single_site,Phoenix,30
+776,Kolb Street Furniture,single_site,Tucson,30
+778,Evans Family Dental,single_site,Phoenix,30
+779,Tanya Clark Eye Care,single_site,Tucson,30
+780,Carter Grill,single_site,Phoenix,30
+781,Catalina Foothills Bakery,single_site,Tucson,30
+782,Shea Street Medical Billing,single_site,Phoenix,30
+783,Karen Lewis Chiropractic,single_site,Phoenix,30
+784,Maria Rogers Diner,single_site,Tucson,30
+785,Johnson Physical Therapy,single_site,Tucson,30
+786,Martin Physical Therapy,single_site,Tucson,30
+787,Edwards & Scott Furniture,single_site,Tucson,30
+788,Robinson Accounting,single_site,Phoenix,30
+789,Glendale Appliance,single_site,Phoenix,30
+790,Martin & Allen Boutique,single_site,Flagstaff,30
+792,Hughes & Wright Florist,single_site,Flagstaff,30
+793,Tanya Clark Architects,single_site,Phoenix,30
+795,Broadway Street Chiropractic,single_site,Phoenix,30
+796,Wes Morris Appliance,single_site,Phoenix,30
+797,Arcadia Veterinary Clinic,single_site,Phoenix,30
+798,Green Hardware,single_site,Phoenix,30
+800,Hall & Baker Cafe,single_site,Tucson,30
+801,Carmen Hughes Engineering,single_site,Phoenix,30
+802,Morris & Bailey Furniture,single_site,Phoenix,30
+803,Johnson & Scott Accounting,single_site,Phoenix,30
+805,Saguaro Family Dental,single_site,Phoenix,30
+806,Tanque Verde Boutique,single_site,Tucson,30
+807,Morris & Stewart Accounting,single_site,Phoenix,30
+809,White Family Dental,single_site,Phoenix,30
+810,Roberts Law Offices,single_site,Tucson,30
+812,Wes Martinez Pediatrics,single_site,Tucson,30
+813,Stewart Cafe,single_site,Phoenix,30
+814,Route Street Insurance Agency,single_site,Flagstaff,30
+816,Broadway Street Hardware,single_site,Phoenix,30
+817,Val Street Pizzeria,single_site,Phoenix,30
+818,Broadway Street Pharmacy,single_site,Tucson,30
+819,Hall Florist,single_site,Phoenix,30
+820,Kachina Village Hardware,single_site,Flagstaff,30
+821,Swan Street Bakery,single_site,Tucson,30
+822,Evans Bistro,single_site,Phoenix,30
+823,Phillips Pharmacy,single_site,Phoenix,30
+824,Carter & Wilson Appliance,single_site,Flagstaff,30
+825,Lee Pediatrics,single_site,Flagstaff,30
+826,Indian Street Pizzeria,single_site,Phoenix,30
+827,Melissa Anderson Furniture,single_site,Phoenix,30
+828,Scott Engineering,single_site,Phoenix,30
+829,Anderson & Lee Taqueria,single_site,Phoenix,30
+830,Adams & Miller Bistro,single_site,Phoenix,30
+831,Moore & Allen Florist,single_site,Phoenix,30
+832,Anderson Diner,single_site,Phoenix,30
+833,Goodyear Pediatrics,single_site,Phoenix,30
+834,Avondale Medical Billing,single_site,Phoenix,30
+835,Lisa Kelly Liquor,single_site,Phoenix,30
+836,Adams & Brown Accounting,single_site,Phoenix,30
+837,Oracle Street Physical Therapy,single_site,Tucson,30
+838,Avondale Florist,single_site,Phoenix,30
+839,Roberts Law Offices,single_site,Tucson,30
+840,McDowell Street Boutique,single_site,Phoenix,30
+841,Saguaro Chiropractic,single_site,Phoenix,30
+842,Collins & Scott Physical Therapy,single_site,Tucson,30
+843,Mesa Accounting,single_site,Phoenix,30
+844,Broadway Street Medical Billing,single_site,Phoenix,30
+845,Baker Florist,single_site,Phoenix,30
+846,Casas Adobes Pediatrics,single_site,Tucson,30
+847,Young & Clark Liquor,single_site,Tucson,30
+849,Vail Title Company,single_site,Tucson,30
+850,Goodyear Bistro,single_site,Phoenix,30
+851,Trent Martin Liquor,single_site,Tucson,30
+852,James Roberts Accounting,single_site,Phoenix,30
+853,Hill & White Bistro,single_site,Phoenix,30
+854,Andre Baker Florist,single_site,Tucson,30
+855,Price & Taylor Chiropractic,single_site,Phoenix,30
+856,Turner & Allen Title Company,single_site,Tucson,30
+857,Lisa Nelson Pharmacy,single_site,Flagstaff,30
+858,Papago Florist,single_site,Phoenix,30
+860,White Physical Therapy,single_site,Phoenix,30
+861,Queen Creek Cafe,single_site,Phoenix,30
+862,Kolb Street Physical Therapy,single_site,Tucson,30
+863,Miller Chiropractic,single_site,Phoenix,30
+864,Apache Junction Medical Billing,single_site,Phoenix,30
+865,Sedona Insurance Agency,single_site,Flagstaff,30
+866,Angela Cooper Furniture,single_site,Tucson,30
+867,Sahuarita Engineering,single_site,Tucson,30
+868,Nate King Eye Care,single_site,Phoenix,30
+869,Nelson Engineering,single_site,Tucson,30
+870,Alma Street Pharmacy,single_site,Phoenix,30
+871,Sahuarita Medical Billing,single_site,Tucson,30
+872,Howard & Lee Engineering,single_site,Phoenix,30
+873,Vail Veterinary Clinic,single_site,Tucson,30
+874,Clark Architects,single_site,Tucson,30
+875,University Street Eye Care,single_site,Phoenix,30
+877,Linda Rogers Appliance,single_site,Tucson,30
+878,Anderson Pediatrics,single_site,Phoenix,30
+879,Green & Anderson Grill,single_site,Phoenix,30
+880,Nelson Architects,single_site,Tucson,30
+882,Young & Kelly Architects,single_site,Flagstaff,30
+883,Miller & Baker Bakery,single_site,Tucson,30
+884,Ward & Turner Appliance,single_site,Phoenix,30
+885,Tanque Street Physical Therapy,single_site,Tucson,30
+886,Jamal Garcia Physical Therapy,single_site,Phoenix,30
+887,Price Pediatrics,single_site,Phoenix,30
+888,Davis Medical Billing,single_site,Tucson,30
+889,Johnson Pediatrics,single_site,Tucson,30
+890,Eric Miller Bistro,single_site,Tucson,30
+891,Santa Cruz Liquor,single_site,Tucson,30
+892,Mountain View Architects,single_site,Flagstaff,30
+893,Robert Bailey Boutique,single_site,Flagstaff,30
+894,Rogers Physical Therapy,single_site,Phoenix,30
+895,Jennifer Morris Title Company,single_site,Tucson,30
+896,Kim Rogers Taqueria,single_site,Phoenix,30
+897,Shauna Allen Engineering,single_site,Tucson,30
+898,Southern Street Pizzeria,single_site,Phoenix,30
+899,Howard & Taylor Liquor,single_site,Phoenix,30
+900,Andre Wilson Furniture,single_site,Phoenix,30
+901,Hill Architects,single_site,Flagstaff,30
+902,Parker & Robinson Furniture,single_site,Phoenix,30
+903,Maryvale Family Dental,single_site,Phoenix,30
+904,Roberts & Cooper Grill,single_site,Phoenix,30
+905,Hill Architects,single_site,Phoenix,30
+906,Maria Nelson Family Dental,single_site,Phoenix,30
+907,Jackson Eye Care,single_site,Tucson,30
+910,Roberts Title Company,single_site,Flagstaff,30
+911,Denise Evans Appliance,single_site,Phoenix,30
+912,Lewis & Harris Engineering,single_site,Flagstaff,30
+913,Jackson & Murphy Boutique,single_site,Flagstaff,30
+914,Dobson Street Law Offices,single_site,Phoenix,30
+915,Camp Verde Eye Care,single_site,Flagstaff,30
+916,Maria Martinez Appliance,single_site,Flagstaff,30
+917,Collins & Wilson Taqueria,single_site,Flagstaff,30
+918,Ahwatukee Florist,single_site,Phoenix,30
+919,Morris & Cooper Architects,single_site,Tucson,30
+920,Martin & Martin Family Dental,single_site,Flagstaff,30
+921,Miller Appliance,single_site,Flagstaff,30
+922,Ward & Cooper Florist,single_site,Phoenix,30
+923,Valencia Street Furniture,single_site,Tucson,30
+924,Tanque Street Appliance,single_site,Tucson,30
+925,Hill & Robinson Hardware,single_site,Phoenix,30
+926,Indian Street Boutique,single_site,Phoenix,30
+927,Sabino Cafe,single_site,Tucson,30
+929,Nate Green Family Dental,single_site,Phoenix,30
+930,Kevin Brown Pediatrics,single_site,Phoenix,30
+931,Gilbert Street Law Offices,single_site,Phoenix,30
+932,Sabino Physical Therapy,single_site,Tucson,30
+933,Kelly & Turner Eye Care,single_site,Tucson,30
+934,Gilbert Cafe,single_site,Phoenix,30
+935,Ray Street Eye Care,single_site,Phoenix,30
+936,Grant Street Hardware,single_site,Tucson,30
+937,Thomas & Stewart Appliance,single_site,Phoenix,30
+938,Paula Garcia Veterinary Clinic,single_site,Phoenix,30
+939,Camp Verde Accounting,single_site,Flagstaff,30
+940,Speedway Street Appliance,single_site,Tucson,30
+941,Milton Street Liquor,single_site,Flagstaff,30
+942,Derek Taylor Pharmacy,single_site,Tucson,30
+943,Daniel Parker Appliance,single_site,Phoenix,30
+944,Alma Street Diner,single_site,Phoenix,30
+945,White Boutique,single_site,Tucson,30
+946,Dobson Street Florist,single_site,Phoenix,30
+947,Nicole Moore Physical Therapy,single_site,Phoenix,30
+948,Gilbert Street Hardware,single_site,Phoenix,30
+949,Baker & Rogers Law Offices,single_site,Tucson,30
+950,Bailey Family Dental,single_site,Phoenix,30
+951,Old Pueblo Physical Therapy,single_site,Tucson,30
+952,Eric Lewis Appliance,single_site,Tucson,30
+953,Kelly Pediatrics,single_site,Phoenix,30
+954,King Grill,single_site,Flagstaff,30
+955,Harris & Roberts Florist,single_site,Phoenix,30
+956,Bailey & Harris Family Dental,single_site,Phoenix,30
+957,Speedway Street Furniture,single_site,Tucson,30
+958,University Street Chiropractic,single_site,Phoenix,30
+959,Rita Ranch Liquor,single_site,Tucson,30
+960,Baseline Street Pizzeria,single_site,Phoenix,30
+961,Kelly Veterinary Clinic,single_site,Phoenix,30
+963,Warner Street Chiropractic,single_site,Phoenix,30
+965,Angela Young Liquor,single_site,Phoenix,30
+966,Baseline Street Law Offices,single_site,Phoenix,30
+968,Taylor Architects,single_site,Tucson,30
+969,Shea Street Grill,single_site,Phoenix,30
+970,Mitchell Cafe,single_site,Phoenix,30
+971,Anderson & Green Title Company,single_site,Phoenix,30
+972,Thompson Insurance Agency,single_site,Phoenix,30
+973,Ray Street Eye Care,single_site,Phoenix,30
+974,Bell Street Hardware,single_site,Phoenix,30
+975,Alma Street Accounting,single_site,Phoenix,30
+977,Pueblo Cafe,single_site,Tucson,30
+978,Thompson Diner,single_site,Phoenix,30
+979,Adams Boutique,single_site,Flagstaff,30
+980,Scott Pharmacy,single_site,Flagstaff,30
+981,Harris Title Company,single_site,Phoenix,30
+982,Campbell Hardware,single_site,Phoenix,30
+983,Lewis Pizzeria,single_site,Phoenix,30
+984,Casas Adobes Diner,single_site,Tucson,30
+985,Tyler Cox Liquor,single_site,Phoenix,30
+986,Santa Cruz Medical Billing,single_site,Tucson,30
+987,Moore Engineering,single_site,Phoenix,30
+988,Chris Hill Pediatrics,single_site,Phoenix,30
+989,Green Valley Diner,single_site,Tucson,30
+990,Glendale Title Company,single_site,Phoenix,30
+992,Jose Lee Accounting,single_site,Phoenix,30
+994,Luis Martinez Bakery,single_site,Tucson,30
+996,Stewart & Bailey Family Dental,single_site,Tucson,30
+997,Patricia Cox Bistro,single_site,Flagstaff,30
+999,Megan Martin Pediatrics,single_site,Flagstaff,30
+1000,Eric Jackson Diner,single_site,Phoenix,30
+1001,Cottonwood Architects,single_site,Flagstaff,30
+1002,Superstition Grill,single_site,Phoenix,30
+1003,Martinez & Edwards Engineering,single_site,Phoenix,30
+1004,Ahwatukee Hardware,single_site,Phoenix,30
+1005,Vail Chiropractic,single_site,Tucson,30
+1006,Allen Pediatrics,single_site,Tucson,30
+1007,Lewis Bistro,single_site,Tucson,30
+1008,Cox & Cox Family Dental,single_site,Tucson,30
+1009,Stewart Architects,single_site,Phoenix,30
+1010,Avondale Pizzeria,single_site,Phoenix,30
+1011,Evans Bakery,single_site,Tucson,30
+1013,Jennifer Miller Florist,single_site,Phoenix,30
+1014,Southern Street Family Dental,single_site,Phoenix,30
+1016,David Davis Liquor,single_site,Phoenix,30
+1017,Garcia Appliance,single_site,Flagstaff,30
+1018,Davis & Kelly Florist,single_site,Phoenix,30
+1019,Green Pharmacy,single_site,Tucson,30
+1020,Shea Street Cafe,single_site,Phoenix,30
+1021,Cottonwood Veterinary Clinic,single_site,Flagstaff,30
+1022,Sabino Cafe,single_site,Tucson,30
+1023,Howard & Thomas Hardware,single_site,Tucson,30
+1024,Eric Clark Boutique,single_site,Phoenix,30
+1025,Daniel Thompson Diner,single_site,Flagstaff,30
+1026,Elliot Street Florist,single_site,Phoenix,30
+1027,Morris Engineering,single_site,Tucson,30
+1028,Main Street Florist,single_site,Tucson,30
+1029,Hill & Howard Appliance,single_site,Flagstaff,30
+1031,Howard Family Dental,single_site,Tucson,30
+1032,Broadway Street Cafe,single_site,Tucson,30
+1034,Sean Turner Bistro,single_site,Phoenix,30
+1035,Shea Street Family Dental,single_site,Phoenix,30
+1036,Michael Garcia Insurance Agency,single_site,Tucson,30
+1037,Dobson Street Pediatrics,single_site,Phoenix,30
+1038,Clark & Campbell Grill,single_site,Phoenix,30
+1039,Luis Clark Insurance Agency,single_site,Phoenix,30
+1040,Phillips & Parker Title Company,single_site,Phoenix,30
+1041,Scottsdale Veterinary Clinic,single_site,Phoenix,30
+1042,Ray Murphy Florist,single_site,Tucson,30
+1043,Brittany Nelson Florist,single_site,Tucson,30
+1044,Apache Junction Law Offices,single_site,Phoenix,30
+1045,Robinson & Scott Engineering,single_site,Phoenix,30
+1046,Casas Adobes Bakery,single_site,Tucson,30
+1047,Wes Martinez Bakery,single_site,Tucson,30
+1048,Valencia Street Physical Therapy,single_site,Tucson,30
+1049,Camp Verde Family Dental,single_site,Flagstaff,30
+1050,Lake Street Boutique,single_site,Flagstaff,30
+1051,Paradise Valley Bakery,single_site,Phoenix,30
+1052,Clark & Stewart Liquor,single_site,Phoenix,30
+1053,Murphy & Hughes Bistro,single_site,Tucson,30
+1054,Casas Adobes Hardware,single_site,Tucson,30
+1055,Mountain View Cafe,single_site,Flagstaff,30
+1056,Luis Miller Title Company,single_site,Flagstaff,30
+1058,Elliot Street Chiropractic,single_site,Phoenix,30
+1059,Camelback Street Accounting,single_site,Phoenix,30
+1060,Kelly Diner,single_site,Tucson,30
+1062,Broadway Street Insurance Agency,single_site,Phoenix,30
+1063,Patricia Robinson Title Company,single_site,Phoenix,30
+1064,Kevin Wright Appliance,single_site,Phoenix,30
+1065,Thomas Cafe,single_site,Phoenix,30
+1066,Arcadia Taqueria,single_site,Phoenix,30
+1067,Robert Murphy Engineering,single_site,Tucson,30
+1069,Rita Ranch Florist,single_site,Tucson,30
+1070,King Cafe,single_site,Phoenix,30
+1071,Luis White Florist,single_site,Phoenix,30
+1072,Brittany Murphy Diner,single_site,Flagstaff,30
+1073,James White Furniture,single_site,Flagstaff,30
+1074,Santa Cruz Engineering,single_site,Tucson,30
+1075,Nicole Wright Pediatrics,single_site,Tucson,30
+1076,Cook & Johnson Medical Billing,single_site,Phoenix,30
+1077,Camelback Cafe,single_site,Phoenix,30
+1078,Wright & Morris Medical Billing,single_site,Phoenix,30
+1080,Wilson Pediatrics,single_site,Phoenix,30
+1081,Hill Diner,single_site,Phoenix,30
+1082,Vail Architects,single_site,Tucson,30
+1083,Power Street Accounting,single_site,Phoenix,30
+1084,Walker Diner,single_site,Phoenix,30
+1085,Cooper & Cox Bistro,single_site,Phoenix,30
+1086,Fourth Street Florist,single_site,Flagstaff,30
+1088,Thomas Family Dental,single_site,Flagstaff,30
+1091,Pueblo Eye Care,single_site,Tucson,30
+1092,Adams & Parker Veterinary Clinic,single_site,Phoenix,30
+1093,Bell Street Hardware,single_site,Phoenix,30
+1095,Thomas & Stewart Bakery,single_site,Phoenix,30
+1096,Holly Nelson Pizzeria,single_site,Phoenix,30
+1097,Camelback Architects,single_site,Phoenix,30
+1098,Southern Street Pharmacy,single_site,Phoenix,30
+1099,Reed Taqueria,single_site,Phoenix,30
+1100,Eric Taylor Family Dental,single_site,Phoenix,30
+1101,Warner Street Accounting,single_site,Phoenix,30
+1102,Price & Lee Pizzeria,single_site,Tucson,30
+1103,Nelson Bakery,single_site,Flagstaff,30
+1104,Oracle Street Engineering,single_site,Tucson,30
+1105,Oro Valley Chiropractic,single_site,Tucson,30
+1106,Ray Hughes Appliance,single_site,Flagstaff,30
+1107,Carter & Walker Engineering,single_site,Tucson,30
+1108,Kolb Street Diner,single_site,Tucson,30
+1109,Melissa Martin Physical Therapy,single_site,Phoenix,30
+1110,Gina Phillips Veterinary Clinic,single_site,Phoenix,30
+1112,Sedona Chiropractic,single_site,Flagstaff,30
+1114,Collins Chiropractic,single_site,Phoenix,30
+1115,Kachina Village Insurance Agency,single_site,Flagstaff,30
+1118,Moore & Thomas Medical Billing,single_site,Phoenix,30
+1119,Martinez Pediatrics,single_site,Phoenix,30
+1120,Bell Street Engineering,single_site,Phoenix,30
+1121,Avondale Medical Billing,single_site,Phoenix,30
+1123,Trent Clark Veterinary Clinic,single_site,Tucson,30
+1124,Jamal Adams Bistro,single_site,Phoenix,30
+1125,Evans Grill,single_site,Flagstaff,30
+1126,Clark & Scott Liquor,single_site,Phoenix,30
+1127,University Street Physical Therapy,single_site,Phoenix,30
+1128,Carmen Stewart Chiropractic,single_site,Phoenix,30
+1129,Mesa Taqueria,single_site,Phoenix,30
+1130,Robinson Accounting,single_site,Phoenix,30
+1132,Dustin Robinson Architects,single_site,Phoenix,30
+1133,King & Hughes Grill,single_site,Phoenix,30
+1134,Miller & Lee Family Dental,single_site,Flagstaff,30
+1136,Hughes & Anderson Furniture,single_site,Tucson,30
+1137,Cottonwood Street Pharmacy,single_site,Flagstaff,30
+1138,Nelson & Martin Pizzeria,single_site,Tucson,30
+1140,Turner & Cox Diner,single_site,Flagstaff,30
+1141,Camp Verde Bakery,single_site,Flagstaff,30
+1143,Murphy & Ward Medical Billing,single_site,Tucson,30
+1144,Patricia Hughes Grill,single_site,Flagstaff,30
+1145,Howard & Carter Hardware,single_site,Flagstaff,30
+1147,Sean Phillips Chiropractic,single_site,Tucson,30
+1148,Cooper & Adams Bistro,single_site,Phoenix,30
+1149,Camelback Pediatrics,single_site,Phoenix,30
+1151,Fountain Hills Eye Care,single_site,Phoenix,30
+1152,Vail Pizzeria,single_site,Tucson,30
+1153,Shauna Hall Boutique,single_site,Phoenix,30
+1154,Laveen Hardware,single_site,Phoenix,30
+1158,Scottsdale Furniture,single_site,Phoenix,30
+1159,Speedway Street Physical Therapy,single_site,Tucson,30
+1160,Scott Bakery,single_site,Phoenix,30
+1161,Harris Bistro,single_site,Flagstaff,30
+1162,Santa Cruz Family Dental,single_site,Tucson,30
+1163,Main Street Liquor,single_site,Phoenix,30
+1164,Anderson Liquor,single_site,Phoenix,30
+1165,Roberts & Wright Eye Care,single_site,Phoenix,30
+1167,Chandler Bakery,single_site,Phoenix,30
+1168,Tyler Hall Family Dental,single_site,Tucson,30
+1169,Southern Street Engineering,single_site,Phoenix,30
+1170,Mitchell & Roberts Medical Billing,single_site,Tucson,30
+1171,Reed Family Dental,single_site,Tucson,30
+1172,Harris Eye Care,single_site,Flagstaff,30
+1173,Goodyear Physical Therapy,single_site,Phoenix,30
+1174,Main Street Architects,single_site,Tucson,30
+1175,Cottonwood Street Furniture,single_site,Flagstaff,30
+1176,Parker & Robinson Family Dental,single_site,Tucson,30
+1177,Angela Davis Boutique,single_site,Phoenix,30
+1178,Young Veterinary Clinic,single_site,Phoenix,30
+1179,Chandler Engineering,single_site,Phoenix,30
+1180,Gina Baker Physical Therapy,single_site,Phoenix,30
+1181,Fountain Hills Taqueria,single_site,Phoenix,30
+1182,Baker & Cook Diner,single_site,Flagstaff,30
+1183,Megan White Bakery,single_site,Phoenix,30
+1184,Young Family Dental,single_site,Tucson,30
+1185,Cox & Collins Boutique,single_site,Phoenix,30
+1186,Mesa Grill,single_site,Phoenix,30
+1187,Nicole Allen Liquor,single_site,Phoenix,30
+1188,Sonoran Title Company,single_site,Phoenix,30
+1189,Casas Adobes Liquor,single_site,Tucson,30
+1190,Maria Campbell Grill,single_site,Phoenix,30
+1193,Val Street Furniture,single_site,Phoenix,30
+1194,Val Street Grill,single_site,Phoenix,30
+1195,Johnson & Anderson Eye Care,single_site,Phoenix,30
+1196,Estrella Appliance,single_site,Phoenix,30
+1197,Allen & Carter Eye Care,single_site,Phoenix,30
+1199,Carmen Clark Boutique,single_site,Flagstaff,30
+1200,Hill & Young Architects,single_site,Phoenix,30
+1201,Denise Thompson Bakery,single_site,Phoenix,30
+1202,Baseline Street Bistro,single_site,Phoenix,30
+1203,Kolb Street Boutique,single_site,Tucson,30
+1205,Milton Street Physical Therapy,single_site,Flagstaff,30
+1206,Carter Pizzeria,single_site,Tucson,30
+1207,Southern Street Florist,single_site,Phoenix,30
+1208,Oracle Street Family Dental,single_site,Tucson,30
+1209,Melissa Thomas Taqueria,single_site,Phoenix,30
+1210,Kim Cooper Cafe,single_site,Tucson,30
+1211,Tempe Bistro,single_site,Phoenix,30
+1212,Dustin Anderson Pharmacy,single_site,Flagstaff,30
+1214,Lisa Davis Pediatrics,single_site,Flagstaff,30
+1215,Dobson Street Title Company,single_site,Phoenix,30
+1217,Maria Davis Diner,single_site,Phoenix,30
+1218,Speedway Street Engineering,single_site,Tucson,30
+1219,Carter & Young Accounting,single_site,Flagstaff,30
+1220,Bailey & Howard Title Company,single_site,Phoenix,30
+1222,Gina Collins Physical Therapy,single_site,Tucson,30
+1224,Catalina Foothills Pizzeria,single_site,Tucson,30
+1225,Indian Street Grill,single_site,Phoenix,30
+1226,Ray Lee Grill,single_site,Phoenix,30
+1227,Clark & Evans Physical Therapy,single_site,Phoenix,30
+1228,Nate Brown Architects,single_site,Phoenix,30
+1229,Milton Street Title Company,single_site,Flagstaff,30
+1230,Stewart & Edwards Furniture,single_site,Phoenix,30
+1231,Thompson Grill,single_site,Phoenix,30
+1232,Angela Kelly Florist,single_site,Phoenix,30
+1234,Dobson Street Physical Therapy,single_site,Phoenix,30
+1235,Val Street Appliance,single_site,Phoenix,30
+1236,Price Pizzeria,single_site,Phoenix,30
+1238,Cox & Stewart Cafe,single_site,Tucson,30
+1239,Valencia Street Law Offices,single_site,Tucson,30
+1240,Collins & Martinez Architects,single_site,Phoenix,30
+1241,Patricia Price Hardware,single_site,Phoenix,30
+1242,Mogollon Rim Bistro,regional_chain,Flagstaff,30
+1243,Karen Lee Engineering,single_site,Phoenix,30
+1244,Green Valley Furniture,single_site,Tucson,30
+1245,Apache Junction Pizzeria,single_site,Phoenix,30
+1246,Walker & Green Insurance Agency,single_site,Tucson,30
+1247,Cox & Moore Insurance Agency,single_site,Phoenix,30
+1248,San Tan Valley Hardware,single_site,Phoenix,30
+1249,Santa Cruz Grill,regional_chain,Tucson,30
+1250,Coconino Cafe,regional_chain,Flagstaff,30
+1251,Mesa Pizzeria,regional_chain,Phoenix,30
+1253,Camelback Appliance,regional_chain,Phoenix,30
+1254,Alma Street Boutique,single_site,Phoenix,30
+1255,Hill & Mitchell Insurance Agency,single_site,Phoenix,30
+1256,Andre Collins Chiropractic,single_site,Tucson,30
+1257,Evans Pediatrics,single_site,Phoenix,30
+1258,Collins Liquor,single_site,Tucson,30
+1259,Dobson Street Family Dental,single_site,Phoenix,30
+1260,Nicole Parker Title Company,single_site,Phoenix,30
+1261,Sonoran Taqueria,regional_chain,Phoenix,30
+1262,Valencia Street Liquor,single_site,Tucson,30
+1263,Coconino Family Dental,regional_chain,Flagstaff,30
+1264,Power Street Appliance,single_site,Phoenix,30
+1265,Kelly & Clark Pizzeria,single_site,Flagstaff,30
+1267,Paradise Valley Veterinary Clinic,regional_chain,Phoenix,30
+1268,Desert Ridge Boutique,regional_chain,Phoenix,30
+1269,Price & Johnson Medical Billing,single_site,Flagstaff,30
+1271,Southern Street Medical Billing,single_site,Phoenix,30
+1272,Maryvale Accounting,single_site,Phoenix,30
+1273,Vail Pharmacy,regional_chain,Tucson,30
+1275,Karen Moore Engineering,single_site,Tucson,30
+1276,Scottsdale Liquor,regional_chain,Phoenix,30
+1277,Trent Anderson Accounting,single_site,Flagstaff,30
+1278,Wes Scott Florist,single_site,Phoenix,30
+1279,Bailey & Anderson Accounting,single_site,Flagstaff,30
+1280,King & Turner Taqueria,single_site,Flagstaff,30
+1281,Sedona Bakery,regional_chain,Flagstaff,30
+1282,Clark Accounting,single_site,Phoenix,30
+1283,Trent Davis Pediatrics,single_site,Phoenix,30
+1285,Chandler Real Estate Group,property_manager,Phoenix,45
+1286,Elliot Street Medical Billing,single_site,Phoenix,30
+1287,Garcia Physical Therapy,single_site,Phoenix,30
+1288,Harris Diner,single_site,Phoenix,30
+1289,Andre Morris Pizzeria,single_site,Phoenix,30
+1290,Mountain View Pharmacy,regional_chain,Flagstaff,30
+1291,Ina Street Physical Therapy,single_site,Tucson,30
+1292,Camelback Pizzeria,single_site,Phoenix,30
+1293,Avondale Realty Partners,property_manager,Phoenix,45
+1295,Paradise Valley Grill,regional_chain,Phoenix,30
+1296,Stewart Title Company,single_site,Flagstaff,30
+1297,Ahwatukee Commercial Properties,property_manager,Phoenix,45
+1298,Sahuarita Diner,regional_chain,Tucson,30
+1299,Martin Pediatrics,single_site,Phoenix,30
+1300,Val Street Pediatrics,single_site,Phoenix,30
+1301,Sean Taylor Hardware,single_site,Flagstaff,30
+1302,Taylor & Cook Family Dental,single_site,Phoenix,30
+1304,Vail Commercial Properties,property_manager,Tucson,45
+1305,Edwards & Young Appliance,single_site,Flagstaff,30
+1306,Dobson Street Furniture,single_site,Phoenix,30
+1307,Miller & Hall Family Dental,single_site,Phoenix,30
+1308,Stewart & Cook Liquor,single_site,Tucson,30
+1309,Cook Hardware,single_site,Tucson,30
+1310,Williams Pediatrics,regional_chain,Flagstaff,30
+1311,Laveen Pharmacy,single_site,Phoenix,30
+1312,Elliot Street Bakery,single_site,Phoenix,30
+1313,Johnson & Hill Florist,single_site,Phoenix,30
+1314,Stewart & Wilson Boutique,single_site,Phoenix,30
+1315,Cox Chiropractic,single_site,Phoenix,30
+1316,Kelly Furniture,single_site,Tucson,30
+1317,Moore Physical Therapy,single_site,Flagstaff,30
+1319,King & Morris Chiropractic,single_site,Tucson,30
+1320,Power Street Medical Billing,single_site,Phoenix,30
+1321,Eric Collins Physical Therapy,single_site,Tucson,30
+1322,Main Street Architects,single_site,Phoenix,30
+1323,Sedona Eye Care,regional_chain,Flagstaff,30
+1324,Nicole Morris Appliance,single_site,Phoenix,30
+1325,Jennifer Johnson Chiropractic,single_site,Flagstaff,30
+1326,Catalina Foothills Hardware,regional_chain,Tucson,30
+1327,Kim Morris Veterinary Clinic,single_site,Phoenix,30
+1328,Shauna Collins Architects,single_site,Flagstaff,30
+1329,Carter Eye Care,single_site,Phoenix,30
+1330,Lee & Hall Taqueria,single_site,Tucson,30
+1331,Dobson Street Grill,single_site,Phoenix,30
+1332,Tempe Engineering,single_site,Phoenix,30
+1333,Peoria Holdings,property_manager,Phoenix,45
+1334,Gina Howard Physical Therapy,single_site,Phoenix,30
+1335,Lewis & Nelson Furniture,single_site,Flagstaff,30
+1336,Maryvale Bakery,regional_chain,Phoenix,30
+1337,Oro Valley Bistro,single_site,Tucson,30
+1338,Old Pueblo Boutique,single_site,Tucson,30
+1339,Coconino Bistro,single_site,Flagstaff,30
+1340,Parker Liquor,single_site,Tucson,30
+1341,Davis & Rogers Veterinary Clinic,single_site,Phoenix,30
+1342,Evans Pediatrics,single_site,Phoenix,30
+1343,Collins Diner,single_site,Phoenix,30
+1344,Andre Hughes Liquor,single_site,Tucson,30
+1345,Oro Valley Title Company,single_site,Tucson,30
+1346,Elliot Street Engineering,single_site,Phoenix,30
+1347,Nelson & Scott Diner,single_site,Tucson,30
+1348,Jason Carter Grill,single_site,Phoenix,30
+1349,Hall Appliance,single_site,Tucson,30
+1350,Cox Pharmacy,single_site,Phoenix,30
+1351,Sahuarita Realty Partners,property_manager,Tucson,45
+1352,Gilbert Cafe,regional_chain,Phoenix,30
+1353,State Street Medical Billing,single_site,Flagstaff,30
+1354,Shea Street Chiropractic,single_site,Phoenix,30
+1355,King & Martin Law Offices,single_site,Flagstaff,30
+1356,Mountain View Appliance,single_site,Flagstaff,30
+1358,Turner Boutique,single_site,Tucson,30
+1359,Elliot Street Diner,single_site,Phoenix,30
+1360,Thomas & Hughes Pizzeria,single_site,Flagstaff,30
+1361,Karen Miller Bistro,single_site,Phoenix,30
+1362,Green Valley Diner,regional_chain,Tucson,30
+1363,Estrella Hardware,regional_chain,Phoenix,30
+1364,Mesa Cafe,single_site,Phoenix,30
+1366,Chandler Pediatrics,single_site,Phoenix,30
+1367,Camp Verde Pizzeria,regional_chain,Flagstaff,30
+1368,Hill Diner,single_site,Phoenix,30
+1369,Rita Ranch Commercial Properties,property_manager,Tucson,45
+1370,Davis Insurance Agency,single_site,Phoenix,30
+1371,Brown Title Company,single_site,Phoenix,30
+1374,Maryvale Pharmacy,regional_chain,Phoenix,30
+1375,Camelback Street Furniture,single_site,Phoenix,30
+1379,Kelly Grill,single_site,Tucson,30
+1380,Fountain Hills Pharmacy,regional_chain,Phoenix,30
+1381,Alma Street Title Company,single_site,Phoenix,30
+1382,Papago Family Dental,regional_chain,Phoenix,30
+1383,Dobson Street Taqueria,single_site,Phoenix,30
+1384,Gilbert Chiropractic,regional_chain,Phoenix,30
+1385,James Howard Medical Billing,single_site,Flagstaff,30
+1386,Bailey & Thomas Family Dental,single_site,Tucson,30
+1387,Angela Reed Law Offices,single_site,Phoenix,30
+1388,Estrella Medical Billing,single_site,Phoenix,30
+1389,King & Cox Pharmacy,single_site,Phoenix,30
+1390,Scottsdale Liquor,regional_chain,Phoenix,30
+1392,Deer Valley Property Management,property_manager,Phoenix,45
+1393,Fountain Hills Family Dental,regional_chain,Phoenix,30
+1394,Martin Florist,single_site,Tucson,30
+1395,Sonoran Grill,regional_chain,Phoenix,30
+1396,Angela Thompson Law Offices,single_site,Flagstaff,30
+1397,Marana Family Dental,regional_chain,Tucson,30
+1398,Superstition Pizzeria,regional_chain,Phoenix,30
+1399,Wilson Physical Therapy,single_site,Tucson,30
+1400,Broadway Street Furniture,single_site,Phoenix,30
+1401,Adams & Allen Cafe,single_site,Phoenix,30
+1402,Green Pizzeria,single_site,Flagstaff,30
+1403,Mesa Realty Partners,property_manager,Phoenix,45
+1404,Moore Medical Billing,single_site,Phoenix,30
+1405,Derek Walker Eye Care,single_site,Tucson,30
+1406,Cottonwood Eye Care,single_site,Flagstaff,30
+1407,Heather Murphy Boutique,single_site,Tucson,30
+1408,Michael King Physical Therapy,single_site,Tucson,30
+1409,Avondale Grill,regional_chain,Phoenix,30
+1410,Melissa Miller Pediatrics,single_site,Phoenix,30
+1411,Mogollon Rim Commercial Properties,property_manager,Flagstaff,45
+1412,Rachel Collins Cafe,single_site,Tucson,30
+1413,Route Street Grill,single_site,Flagstaff,30
+1414,Tempe Boutique,regional_chain,Phoenix,30
+1415,Phillips & Ward Physical Therapy,single_site,Tucson,30
+1416,Vail Family Dental,regional_chain,Tucson,30
+1417,Pueblo Diner,regional_chain,Tucson,30
+1418,Laveen Accounting,single_site,Phoenix,30
+1419,Stewart & King Pharmacy,single_site,Phoenix,30
+1420,Angela Lewis Insurance Agency,single_site,Tucson,30
+1421,Robinson Cafe,single_site,Flagstaff,30
+1422,Indian Street Pizzeria,single_site,Phoenix,30
+1423,Ahwatukee Boutique,regional_chain,Phoenix,30
+1424,Eric Nelson Pediatrics,single_site,Phoenix,30
+1425,Hill Medical Billing,single_site,Phoenix,30
+1426,Gilbert Street Title Company,single_site,Phoenix,30
+1427,Maryvale Boutique,single_site,Phoenix,30
+1428,Rogers & Johnson Diner,single_site,Phoenix,30
+1429,Clark & Nelson Insurance Agency,single_site,Flagstaff,30
+1430,Oro Valley Physical Therapy,regional_chain,Tucson,30
+1431,Old Pueblo Taqueria,regional_chain,Tucson,30
+1432,Val Street Accounting,single_site,Phoenix,30
+1433,Collins & Lee Family Dental,single_site,Phoenix,30
+1434,Sonoran Boutique,single_site,Phoenix,30
+1437,Rincon Pizzeria,regional_chain,Tucson,30
+1438,Elliot Street Furniture,single_site,Phoenix,30
+1439,Turner & Campbell Insurance Agency,single_site,Tucson,30
+1440,Brittany Campbell Furniture,single_site,Tucson,30
+1441,Stewart & Evans Bistro,single_site,Phoenix,30
+1442,Walker Boutique,single_site,Flagstaff,30
+1443,Young Pizzeria,single_site,Phoenix,30
+1444,University Street Furniture,single_site,Phoenix,30
+1445,Ward & Parker Florist,single_site,Flagstaff,30
+1446,Harris Eye Care,single_site,Phoenix,30
+1447,Prescott Valley Taqueria,single_site,Flagstaff,30
+1448,Cook & Green Cafe,single_site,Phoenix,30
+1449,Cottonwood Street Pizzeria,single_site,Flagstaff,30
+1450,Arcadia Pharmacy,regional_chain,Phoenix,30
+1451,Brown & Wilson Architects,single_site,Flagstaff,30
+1452,Nate Young Medical Billing,single_site,Flagstaff,30
+1453,Scott Diner,single_site,Tucson,30
+1454,Moore & Young Bistro,single_site,Phoenix,30
+1455,Gilbert Street Liquor,single_site,Phoenix,30
+1456,Casas Adobes Chiropractic,regional_chain,Tucson,30
+1457,Fourth Street Pizzeria,single_site,Flagstaff,30
+1458,Kelly Chiropractic,single_site,Phoenix,30
+1459,Angela Bailey Veterinary Clinic,single_site,Tucson,30
+1460,Tanque Verde Eye Care,single_site,Tucson,30
+1461,David Hill Hardware,single_site,Phoenix,30
+1462,Rincon Taqueria,single_site,Tucson,30
+1463,Carter Boutique,single_site,Flagstaff,30
+1465,Ponderosa Family Dental,single_site,Flagstaff,30
+1466,Price & Campbell Hardware,single_site,Flagstaff,30
+1467,Queen Creek Pharmacy,regional_chain,Phoenix,30
+1468,Shauna Taylor Pizzeria,single_site,Phoenix,30
+1469,Murphy Eye Care,single_site,Tucson,30
+1470,Jackson & Edwards Diner,single_site,Tucson,30
+1471,Johnson & Young Veterinary Clinic,single_site,Phoenix,30
+1472,Baseline Street Physical Therapy,single_site,Phoenix,30
+1473,Luis Hall Chiropractic,single_site,Phoenix,30
+1474,Anderson Architects,single_site,Phoenix,30
+1475,Mogollon Rim Law Offices,single_site,Flagstaff,30
+1476,Pueblo Family Dental,regional_chain,Tucson,30
+1477,Gilbert Street Hardware,single_site,Phoenix,30
+1478,Jackson Grill,single_site,Phoenix,30
+1479,Scott Hardware,single_site,Tucson,30
+1480,Gilbert Street Diner,single_site,Phoenix,30
+1481,Pueblo Furniture,regional_chain,Tucson,30
+1482,Shauna Anderson Engineering,single_site,Tucson,30
+1483,Williams Real Estate Group,property_manager,Flagstaff,45
+1484,Rincon Diner,single_site,Tucson,30
+1485,Megan Murphy Law Offices,single_site,Flagstaff,30
+1486,Collins Bistro,single_site,Flagstaff,30
+1487,Camelback Street Engineering,single_site,Phoenix,30
+1488,Camp Verde Holdings,property_manager,Flagstaff,45
+1489,Rogers & Rogers Furniture,single_site,Phoenix,30
+1490,Estrella Appliance,regional_chain,Phoenix,30
+1491,Wilson & Campbell Insurance Agency,single_site,Phoenix,30
+1492,Cottonwood Veterinary Clinic,regional_chain,Flagstaff,30
+1493,Eric Stewart Grill,single_site,Flagstaff,30
+1494,Saguaro Liquor,regional_chain,Phoenix,30
+1495,Garcia & Cook Accounting,single_site,Phoenix,30
+1496,Patricia Hall Pharmacy,single_site,Phoenix,30
+1497,Southern Street Law Offices,single_site,Phoenix,30
+1498,Green Bakery,single_site,Phoenix,30
+1499,San Francisco Peaks Pizzeria,single_site,Flagstaff,30
+1500,Rogers Hardware,single_site,Tucson,30
+1501,Lisa Price Law Offices,single_site,Phoenix,30
+1502,Verde Valley Engineering,single_site,Flagstaff,30
+1503,Daniel Wright Pediatrics,single_site,Tucson,30
+1504,Kachina Village Grill,regional_chain,Flagstaff,30
+1505,Deer Valley Real Estate Group,property_manager,Phoenix,45
+1506,State Street Medical Billing,single_site,Flagstaff,30
+1507,Maryvale Physical Therapy,single_site,Phoenix,30
+1508,Tempe Taqueria,single_site,Phoenix,30
+1509,Bell Street Engineering,single_site,Phoenix,30
+1510,Nicole Stewart Medical Billing,single_site,Tucson,30
+1511,Wes Hall Pharmacy,single_site,Phoenix,30
+1512,Sabino Cafe,regional_chain,Tucson,30
+1513,Oracle Street Pizzeria,single_site,Tucson,30
+1514,San Tan Valley Insurance Agency,single_site,Phoenix,30
+1515,Roberts & Green Title Company,single_site,Phoenix,30
+1516,Thompson Architects,single_site,Phoenix,30
+1517,McDowell Street Veterinary Clinic,single_site,Phoenix,30
+1518,Warner Street Diner,single_site,Phoenix,30
+1519,Maria Walker Chiropractic,single_site,Phoenix,30
+1520,Denise Harris Taqueria,single_site,Phoenix,30
+1521,Cox & Brown Furniture,single_site,Phoenix,30
+1522,Rincon Physical Therapy,regional_chain,Tucson,30
+1523,Nicole Scott Diner,single_site,Phoenix,30
+1524,Campbell & Cook Grill,single_site,Phoenix,30
+1525,Nate Reed Medical Billing,single_site,Phoenix,30
+1526,Pueblo Engineering,single_site,Tucson,30
+1527,Tanque Street Cafe,single_site,Tucson,30
+1528,Main Street Eye Care,single_site,Flagstaff,30
+1529,Estrella Physical Therapy,regional_chain,Phoenix,30
+1530,Apache Junction Bakery,single_site,Phoenix,30
+1531,Scott Insurance Agency,single_site,Phoenix,30
+1532,Dobson Street Furniture,single_site,Phoenix,30
+1533,Turner & Garcia Veterinary Clinic,single_site,Phoenix,30
+1534,Southern Street Bakery,single_site,Phoenix,30
+1535,Peoria Bistro,regional_chain,Phoenix,30
+1536,White Eye Care,single_site,Tucson,30
+1537,Glendale Eye Care,regional_chain,Phoenix,30
+1538,Shea Street Eye Care,single_site,Phoenix,30
+1539,Scottsdale Asset Management,property_manager,Phoenix,45
+1540,Thomas Street Veterinary Clinic,single_site,Phoenix,30
+1541,Gilbert Grill,regional_chain,Phoenix,30
+1542,Laveen Pizzeria,regional_chain,Phoenix,30
+1543,Lewis Appliance,single_site,Phoenix,30
+1544,Vail Realty Partners,property_manager,Tucson,45
+1545,Reed & Roberts Appliance,single_site,Phoenix,30
+1546,Maryvale Bistro,single_site,Phoenix,30
+1547,Casas Adobes Bakery,single_site,Tucson,30
+1548,Paradise Valley Pharmacy,regional_chain,Phoenix,30
+1549,Paradise  Valley Realty Partners,property_manager,Phoenix,45
+1550,AVONDALE DINER,single_site,Phoenix,30
+1551,Vail Dner,single_site,Tucson,30
+1552,Denise  Adams Florist,single_site,Phoenix,30
+1553,The Arcadia Veterinary Clinic,single_site,Phoenix,30
+1554,The Oro Valley Chiropractic,single_site,Tucson,30
+1555,Allen  & Carter Eye Care,single_site,Phoenix,30
+1556,DOBSON STREET FURNITURE,single_site,Phoenix,30
