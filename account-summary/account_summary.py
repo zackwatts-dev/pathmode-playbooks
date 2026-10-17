@@ -15,9 +15,13 @@ Code does the facts; the AI does the words.
 --quarter 2025Q3 picks the quarter; it's compared with the quarter before and the same quarter a year before.
 The default is the sample's quarter with --sample, otherwise the last quarter that has closed.
 
-Writes out/dashboard.html (the general manager's: everything), out/dashboard-<user>.html (each
-person's own requests only), out/summaries/<request>.md, out/requests.csv and, with the sample,
-out/score.md. Nothing is sent or changed.
+A branch manager's briefing on a customer counts only their branch's jobs and invoices, and says so.
+--standard adds every branch manager's own branch briefing for the quarter, the scheduled run's requests.
+
+Writes one folder per person, out/<user>/, holding only what they may read: dashboard.html, and
+summaries/<request>.md for their own requests (the general manager's holds everything, and requests.csv).
+out/metrics.md has the definitions, out/runs.csv logs each request (who asked, about what, the outcome),
+and, with the sample, out/score.md. Nothing is sent or changed.
 """
 
 from __future__ import annotations
@@ -34,8 +38,18 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common.evidence import NUMBER, numbers_in, quote_found, to_float  # noqa: E402
-from common.util import BadAnswer, done, model_for, parse_json, parser, read_csv, write_csv, write_text  # noqa: E402
+from common.evidence import NUMBER, quote_found, to_float  # noqa: E402
+from common.util import (  # noqa: E402
+    BadAnswer,
+    cell,
+    done,
+    model_for,
+    parse_json,
+    parser,
+    read_csv,
+    write_csv,
+    write_text,
+)
 
 HERE = Path(__file__).parent
 SAMPLE = HERE / "sample-data"
@@ -86,6 +100,11 @@ METRICS = {
 
 def d(s: str) -> date | None:
     return date.fromisoformat(s[:10]) if s else None
+
+
+def safe_id(text: str) -> str:
+    """An ID as it's safe to use as a file or folder name: "../../x" can't write outside the output folder."""
+    return re.sub(r"[^A-Za-z0-9_-]", "_", text.strip())[:64]
 
 
 @dataclass(frozen=True)
@@ -154,7 +173,7 @@ class Data:
     quotes: list[dict]
     emails: dict[str, list[dict]]
     users: dict[str, dict]
-    sites: Counter
+    sites: Counter  # by (customer, branch)
 
     @classmethod
     def load(cls, folder: Path) -> Data:
@@ -173,9 +192,51 @@ class Data:
             paid,
             read_csv(folder / "quotes.csv"),
             emails,
-            {r["User"]: r for r in read_csv(folder / "users.csv")},
-            Counter(r["Customer ID"] for r in read_csv(folder / "sites.csv")),
+            unique(read_csv(folder / "users.csv"), "User", "user"),
+            Counter((r["Customer ID"], r["Branch"]) for r in read_csv(folder / "sites.csv")),
         )
+
+
+def unique(rows: list[dict], column: str, what: str) -> dict[str, dict]:
+    """Rows by their ID. Two rows with the same ID (or IDs that make the same file name) would silently overwrite
+    each other's results, so that stops the run instead."""
+    seen, dupes = {}, []
+    for r in rows:
+        if not r[column] or safe_id(r[column]) in {safe_id(k) for k in seen}:
+            dupes.append(r[column] or "(blank)")
+        seen[r[column]] = r
+    if dupes:
+        raise ValueError(f"each {what} needs its own ID; repeated or blank: {', '.join(dupes)}")
+    return seen
+
+
+def load_requests(folder: Path, data: Data, quarter: Quarter, standard: bool = False) -> list[dict]:
+    """The requests waiting, plus, with standard, every branch manager's own branch for the quarter."""
+    rows = read_csv(folder / "requests.csv") if (folder / "requests.csv").exists() else []
+    if standard:
+        rows += standard_requests(data, quarter)
+    return list(unique(rows, "Request", "request").values())
+
+
+def standard_requests(data: Data, quarter: Quarter) -> list[dict]:
+    """The scheduled run: each branch manager gets their own branch's briefing for the quarter."""
+    return [
+        {"Request": f"{quarter.year}Q{quarter.n}-{uid}", "User": uid, "Kind": "region", "Subject": u["Covers"]}
+        for uid, u in data.users.items()
+        if u["Scope"] == "branch"
+    ]
+
+
+def who(data: Data, user_id: str) -> str:
+    u = data.users.get(user_id)
+    return u["Name"] if u else f"unknown user {user_id}"
+
+
+def branch_only(data: Data, user_id: str, kind: str) -> str | None:
+    """The branch a briefing is limited to: a branch manager asking about a customer sees only the work their
+    branch did for it. Their branch's own customers can have jobs and invoices at other branches."""
+    u = data.users.get(user_id, {})
+    return u.get("Covers") if kind == "customer" and u.get("Scope") == "branch" else None
 
 
 # --- who may see what (checked before anything is gathered) --------------------------------------------------
@@ -209,9 +270,17 @@ def balance_at(inv: dict, data: Data, when: date) -> float:
     return float(inv["Amount"]) - sum(a for p, a in data.paid.get(inv["Invoice"], []) if p and p <= when)
 
 
-def facts(data: Data, kind: str, subject: str, quarter: Quarter) -> dict:
+def facts(
+    data: Data, kind: str, subject: str, quarter: Quarter, branch: str | None = None, gaps: list | None = None
+) -> dict:
+    """The facts for one request. With branch, a customer's jobs, invoices and sites at that branch only (quotes and
+    emails are the customer's, and belong to their home branch, as they do in a branch's own facts). Rows that
+    can't be counted (a repair with no created date) are left out, and said so in gaps."""
+
     def mine(row):
-        return row["Customer ID"] == subject if kind == "customer" else row.get("Branch") == subject
+        if kind != "customer":
+            return row.get("Branch") == subject
+        return row["Customer ID"] == subject and (branch is None or row.get("Branch") == branch)
 
     this, before, year_ago = quarter.span, quarter.prior.span, quarter.last_year.span
     invs = [i for i in data.invoices if mine(i)]
@@ -223,8 +292,11 @@ def facts(data: Data, kind: str, subject: str, quarter: Quarter) -> dict:
     repairs = [j for j in completed if j["Type"] == "repair"]
     later = defaultdict(list)
     for j in jobs:
-        if j["Type"] == "repair" and j["Equipment ID"]:
+        if j["Type"] == "repair" and j["Equipment ID"] and d(j["Created"]):
             later[j["Equipment ID"]].append(d(j["Created"]))
+    timed = [j for j in repairs if d(j["Created"])]
+    if gaps is not None and len(timed) < len(repairs):
+        gaps.append(f"{len(repairs) - len(timed)} repairs have no created date, so days to complete leaves them out")
     fixed = [
         j
         for j in repairs
@@ -244,6 +316,7 @@ def facts(data: Data, kind: str, subject: str, quarter: Quarter) -> dict:
         and within(q["Decided"], this)
     ]
     won = [q for q in decided if q["Status"] == "Accepted"]
+    value_decided = sum(float(q["Amount"]) for q in decided)
     overdue_invs = [i for i in invs if d(i["Due"]) and d(i["Due"]) < this[1] and balance_at(i, data, this[1]) > 0.005]
     f = {
         "revenue": rev3,
@@ -259,18 +332,16 @@ def facts(data: Data, kind: str, subject: str, quarter: Quarter) -> dict:
         },
         "jobs": dict(Counter(j["Type"] for j in completed)) | {"total": len(completed)},
         "first_time_fix": round(len(fixed) / len(repairs) * 100, 1) if repairs else None,
-        "days_to_complete": round(sum((d(j["Completed"]) - d(j["Created"])).days for j in repairs) / len(repairs), 1)
-        if repairs
+        "days_to_complete": round(sum((d(j["Completed"]) - d(j["Created"])).days for j in timed) / len(timed), 1)
+        if timed
         else None,
         "quotes": {
             "decided": len(decided),
             "accepted": len(won),
             "by count": round(len(won) / len(decided) * 100, 1) if decided else None,
-            "value decided": round(sum(float(q["Amount"]) for q in decided), 2),
+            "value decided": round(value_decided, 2),
             "value accepted": round(sum(float(q["Amount"]) for q in won), 2),
-            "by value": round(sum(float(q["Amount"]) for q in won) / sum(float(q["Amount"]) for q in decided) * 100, 1)
-            if decided
-            else None,
+            "by value": round(sum(float(q["Amount"]) for q in won) / value_decided * 100, 1) if value_decided else None,
         },
         "overdue": {
             "balance": round(sum(balance_at(i, data, this[1]) for i in overdue_invs), 2),
@@ -289,9 +360,13 @@ def facts(data: Data, kind: str, subject: str, quarter: Quarter) -> dict:
             "name": c["Name"],
             "segment": c["Segment"].replace("_", " "),
             "branch": c["Branch"],
-            "sites": data.sites[subject],
+            "sites": sum(n for (cid, b), n in data.sites.items() if cid == subject and branch in (None, b)),
             "terms (days)": c["Terms (days)"],
         }
+        if branch:
+            f["customer"]["work counted"] = (
+                f"{branch} branch only: jobs, invoices and sites at other branches are left out"
+            )
     else:
         by3, by_ly = defaultdict(float), defaultdict(float)
         for i in invs:
@@ -362,62 +437,285 @@ class Briefing:
         return "refused" if self.refused else ("needs review" if self.problems else "ready")
 
 
-def numbers_shown(text: str) -> list[float]:
-    """Every number in a piece of text we wrote. Dates and IDs are split so "2025-09-30" isn't read as -30."""
-    return [abs(to_float(n)) for n in numbers_in(re.sub(r"[-/:T]", " ", text))]
+# Each figure has a kind, so "$282 overdue" can't borrow the 282 that's a count of days, and a change has a sign, so
+# "rose 2.0%" can't borrow a fall of 2.0%. A quarter's revenue belongs to its quarter, so years can't be swapped.
+KINDS = {
+    "revenue": "money",
+    "revenue_last_year": "money",
+    "revenue_prior": "money",
+    "amount": "money",
+    "change": "money",
+    "value decided": "money",
+    "value accepted": "money",
+    "balance": "money",
+    "percent": "percent",
+    "first_time_fix": "percent",
+    "by count": "percent",
+    "by value": "percent",
+    "days_to_complete": "days",
+    "oldest days": "days",
+    "terms (days)": "days",
+}
+PERIODS = {"revenue": "this", "revenue_prior": "prior", "revenue_last_year": "last_year"}
+CHANGES = {"revenue_vs_last_year", "revenue_change", "biggest_changes"}
+# The kinds of figure a number may be, by how it's written. A bare number is a count (or days); money needs a $.
+MAY_BE = {
+    "money": {"money"},
+    "percent": {"percent"},
+    "days": {"days"},
+    "scaled": {"money", "count"},  # "5.0M", "101K"
+    "plain": {"count", "days", "plain"},
+}
+MAX_METRICS = 3  # a point that needs more than this isn't one point, and its numbers can't be pinned to one metric
 
 
-def figures(value) -> list[float]:
-    """Every number in a fact, however deeply it's nested ({"overdue": {"balance": ..., "invoices": 3}})."""
+@dataclass(frozen=True)
+class Figure:
+    value: float
+    kind: str  # money, percent, days, count, or plain (a number inside a name or a definition)
+    metric: str
+    change: bool = False  # it has a direction: up or down
+    period: str | None = None  # this, prior or last_year, for a quarter's revenue
+
+
+def figures(metric: str, value, key: str | None = None) -> list[Figure]:
+    """Every number in a fact, however deeply it's nested, with its kind ({"overdue": {"balance": ...}} is money)."""
     if isinstance(value, bool) or value is None:
         return []
     if isinstance(value, int | float):
-        return [abs(float(value))]
+        kind = KINDS.get(key or metric, "count")
+        change = metric in CHANGES and kind != "count"
+        return [Figure(float(value), kind, metric, change, PERIODS.get(metric) if key is None else None)]
     if isinstance(value, dict):
-        return [x for v in value.values() for x in figures(v)]
+        return [x for k, v in value.items() for x in figures(metric, v, k)]
     if isinstance(value, list):
-        return [x for v in value for x in figures(v)]
-    return numbers_shown(str(value))  # text from our own systems, like payment terms of "45"
+        return [x for v in value for x in figures(metric, v, key)]
+    # Text from our own systems: payment terms of "45" are days; a number in a name is only a name.
+    kind = KINDS.get(key or "", "plain")
+    return [Figure(abs(t.value), kind if t.kind in ("plain", kind) else t.kind, metric) for t in tokens(str(value))]
 
 
-def allowed_for(facts: dict, metrics: list[str]) -> list[float]:
-    """The numbers a sentence citing these metrics may use: their values, the values they're worked out from, and
-    the numbers in their definitions ("within 30 days"). Rounded versions count too. Email text never does."""
+def allowed_for(facts: dict, metrics: list[str]) -> list[Figure]:
+    """The figures a sentence citing these metrics may use: their values, the values they're worked out from, and the
+    numbers in their definitions ("within 30 days"). Email text never counts."""
     names = {m for m in metrics if m in facts}
     names |= {i for m in list(names) for i in INPUTS.get(m, ())}
-    allowed = [x for m in names for x in figures(facts[m])]
-    allowed += [x for m in names if m in METRICS for x in numbers_shown(METRICS[m][0])]
-    return allowed + [round(x) for x in allowed] + [round(x, 1) for x in allowed]
+    allowed = [x for m in names for x in figures(m, facts[m])]
+    return allowed + [Figure(t.value, t.kind, m) for m in names if m in METRICS for t in tokens(METRICS[m][0])]
 
 
-SCALE = re.compile(r"(\d[\d,]*(?:\.\d+)?)\s*(k|K|M|million|thousand)\b")
+def families(metrics: list[str]) -> list[str]:
+    """The metrics a point really draws on: a change and the two figures it's worked out from count as one."""
+    inputs = {i for m in metrics for i in INPUTS.get(m, ())}
+    return sorted({m for m in metrics if m not in inputs})
 
 
-def expand(text: str) -> str:
-    """ "$5.0M" and "$117k" become the full numbers, so they can be checked against the facts."""
-    mult = {"k": 1e3, "K": 1e3, "thousand": 1e3, "M": 1e6, "million": 1e6}
-    return SCALE.sub(lambda m: f"{float(m.group(1).replace(',', '')) * mult[m.group(2)]:.0f}", text)
+@dataclass(frozen=True)
+class Token:
+    raw: str
+    value: float
+    kind: str  # money, percent, days, scaled or plain
+    signed: bool  # written with a + or - sign, so the sign must match too
+    start: int
+    end: int
 
 
+PERCENT_WORD = re.compile(r"\s*(?:percent|per cent|percentage points?|points?)\b", re.I)
+DAYS_WORD = re.compile(r"\s*-?\s*days?\b", re.I)
 REFERENCE = re.compile(r"(#|[A-Za-z]-)$")  # what comes just before a number that's part of a name
 
 
-def unsupported(text: str, allowed: list[float], years: set[int]) -> list[str]:
-    """Numbers in the text that aren't one of the allowed values (within 1%, for rounding). Every number counts,
-    small counts like "3 overdue invoices" included. Years count only if they're the quarters being compared, and
-    a number that's part of a name ("unit #106", "a W-9", "INV-221437") isn't a figure, so it's left alone."""
-    text = expand(text)
-    bad = []
+def tokens(text: str) -> list[Token]:
+    """The numbers in a piece of text, each with how it's written. A number that's part of a name ("unit #106",
+    "a W-9", "INV-221437") isn't a figure, and a date's pieces ("2025-09-30") aren't read as -9 or -30."""
+    out = []
     for m in NUMBER.finditer(text):
-        token = m.group()
-        if REFERENCE.search(text[: m.start()]):
+        raw, after = m.group(), text[m.end() :]
+        if REFERENCE.search(text[: m.start()]) or re.match(r"-\d", after):
             continue
-        value = abs(to_float(token))
-        if value.is_integer() and int(value) in years and not re.search(r"[$,%]", token):
-            continue
-        if not any(abs(value - a) <= max(a * 0.01, 0.051) for a in allowed):
-            bad.append(token)
-    return bad
+        if "$" in raw:
+            kind = "money"
+        elif "%" in raw or PERCENT_WORD.match(after):
+            kind = "percent"
+        elif DAYS_WORD.match(after):
+            kind = "days"
+        elif re.search(r"[A-Za-z]", raw):
+            kind = "scaled"
+        else:
+            kind = "plain"
+        out.append(Token(raw, to_float(raw), kind, raw[0] in "-−+", m.start(), m.end()))
+    return out
+
+
+UP = r"rose|rise[sn]?|rising|up|grew|grow(?:s|n|ing)?|increas\w*|higher|gain\w*|jump\w*|climb\w*|above|more"
+DOWN = r"fell|fall(?:s|en|ing)?|down|drop\w*|declin\w*|decreas\w*|lower|los[st]|loss\w*|shr[aiu]nk\w*|slip\w*|dip\w*"
+DOWN += r"|below|less|fewer"
+DIRECTION = re.compile(rf"\b(?:(?P<up>{UP})|(?P<down>{DOWN}))\b", re.I)
+
+
+def direction(text: str, t: Token) -> tuple[str, int] | None:
+    """The direction word that goes with a number: right after it ("2.0% lower"), or else the nearest one before it
+    in the same clause ("fell 2.0%", "a decline of about $100,919"). (word, +1 or -1), or None."""
+    m = DIRECTION.search(" ".join(text[t.end :].split()[:2]))
+    if m:
+        return m.group(), 1 if m["up"] else -1
+    before = re.split(r"[.;()\[\]]", text[: t.start])[-1].split()[-6:]
+    for word in reversed(before):
+        m = DIRECTION.fullmatch(word.strip(",:\"'"))
+        if m and word.lower() not in ("more", "above", "below", "less", "fewer"):
+            return m.group(), 1 if m["up"] else -1
+    return None
+
+
+PERIOD = re.compile(
+    r"\bQ(?P<n>[1-4])(?:\s*(?P<year>\d{4})|(?P<ly>\s+(?:of\s+)?(?:last year|a year (?:before|ago|earlier))))?\b"
+    r"|\b(?P<last_year>last year|a year (?:before|ago|earlier)|same quarter (?:a year before|last year))\b"
+    r"|\b(?P<prior>(?:prior|previous|last) quarter|quarter before)\b"
+    r"|\b(?P<this>this quarter)\b"
+    r"|\b(?:in|for|of|during) (?P<bare>\d{4})\b",
+    re.I,
+)
+COMPARED = re.compile(r"\b(?:from|to|than|against|over|vs|versus|compared|with|on|since|after)\b", re.I)
+ATTACHED = re.compile(r"^[\s,]*(?:(?:in|for|during|at|of|the|a)\s+)*$", re.I)
+
+
+def period_refs(text: str, quarter: Quarter) -> list[tuple[int, int, str]]:
+    """Where the text names one of the three quarters: "Q3 2024", "Q3 last year", "a year before", "the prior
+    quarter". A name that could be more than one of them is "other"."""
+    named = {quarter: "this", quarter.prior: "prior", quarter.last_year: "last_year"}
+    refs = []
+    for m in PERIOD.finditer(text):
+        if m["n"]:
+            n = int(m["n"])
+            if m["ly"]:
+                hits = {"last_year"} if quarter.last_year.n == n else {"other"}
+            else:
+                year = int(m["year"]) if m["year"] else None
+                hits = {p for q, p in named.items() if q.n == n and (year is None or q.year == year)}
+                if year is None and "this" in hits:
+                    hits = {"this"}  # "Q3" on its own is the quarter being summarized
+        elif m["bare"]:
+            hits = {p for q, p in named.items() if q.year == int(m["bare"])}
+        else:
+            hits = {next(k for k in ("last_year", "prior", "this") if m[k])}
+        refs.append((m.start(), m.end(), hits.pop() if len(hits) == 1 else "other"))
+    return refs
+
+
+def period_of(t: Token, text: str, refs, toks: list[Token]) -> str | None:
+    """The quarter a number is said to belong to, or None if the sentence doesn't pin it down. Either a period named
+    right after it ("$114,408 in Q3 last year"), or one named before it with no comparison in between ("In Q3 2024,
+    revenue was $5.1M", but not "over Q3 last year to $113K", where the period is the other side of the comparison)."""
+
+    def between(a, b):
+        return [x for x in toks if a <= x.start < b and not any(s <= x.start < e for s, e, _ in refs)]
+
+    for s, _, p in refs:
+        if s >= t.end and ATTACHED.match(text[t.end : s]):
+            return p
+    for s, e, p in reversed(refs):
+        if e <= t.start:
+            gap, lead = text[e : t.start], " ".join(text[:s].split()[-3:])
+            if len(gap) <= 40 and not between(e, t.start) and not COMPARED.search(gap) and not COMPARED.search(lead):
+                return p
+            return None
+    return None
+
+
+def near(x: float, want: float) -> bool:
+    """Equal, allowing for rounding: to the nearest whole number, to one decimal, or within 1%."""
+    return any(abs(x - w) <= max(abs(w) * 0.01, 0.051) for w in (want, round(want), round(want, 1)))
+
+
+def judge(text: str, t: Token, allowed: list[Figure], toks: list[Token], refs) -> str | None:
+    """None if the number is one of the allowed figures, of the right kind, sign, direction and quarter; otherwise
+    what's wrong with it, the most specific reason first."""
+    same = [f for f in allowed if near(abs(t.value), abs(f.value))]
+    if not same:
+        return "missing"
+    typed = [f for f in same if f.kind in MAY_BE[t.kind]]
+    if not typed:
+        return "kind"
+    said = None if t.signed else direction(text, t)
+
+    def sign_ok(f):
+        if t.signed:
+            return near(t.value, f.value)  # "-2.0%" is a fall, "+2.0%" a rise
+        if f.change and f.value and said:
+            return said[1] * f.value > 0
+        return f.change or near(t.value, f.value)
+
+    signed = [f for f in typed if sign_ok(f)]
+    if not signed:
+        return f"direction:{said[0]}" if said else "sign"
+    period = period_of(t, text, refs, toks)
+    dated = [f for f in signed if not (f.period and period and f.period != period)]
+    return None if dated else f"period:{period}"
+
+
+MULTIPLES = {
+    "doubled": (1.7, 2.3),
+    "tripled": (2.6, 3.4),
+    "quadrupled": (3.5, 4.5),
+    "halved": (0.4, 0.6),
+}
+NONE_OVERDUE = re.compile(
+    r"\b(?:nothing|none|no)\b(?:\s+\w+){0,3}?\s+(?:is\s+|are\s+|was\s+)?(?:overdue|past due|outstanding|owed)\b"
+    r"|\b(?:no|zero)\s+(?:overdue|past-due|outstanding)\b|\bfully paid\b|\bpaid up\b|\ball paid\b",
+    re.I,
+)
+
+
+def word_claims(text: str, facts: dict, metrics: list[str]) -> list[str]:
+    """Claims made in words, not numbers, checked against the facts: "doubled", "nothing is overdue"."""
+    out = []
+    changes = [m for m in ("revenue_vs_last_year", "revenue_change") if m in metrics] or [
+        m for m in ("revenue_vs_last_year", "revenue_change") if m in facts
+    ]
+    ratios = [1 + facts[m]["percent"] / 100 for m in changes if facts.get(m, {}).get("percent") is not None]
+    for word, (lo, hi) in MULTIPLES.items():
+        if re.search(rf"\b{word[:-1]}\w*", text, re.I) and not any(lo <= r <= hi for r in ratios):
+            out.append(f"says '{word}', and no change in the facts it uses is near that")
+    balance = facts.get("overdue", {}).get("balance") or 0
+    if NONE_OVERDUE.search(text) and balance > 0.005:
+        out.append(f"says nothing is overdue, but ${balance:,.2f} is")
+    return out
+
+
+def claims(text: str, everywhere: list[Figure], cited: list[Figure], years: set[int], quarter: Quarter) -> dict:
+    """Every number in the text, judged against every fact and against the facts it cites: what's wrong, by reason."""
+    toks, refs = tokens(text), period_refs(text, quarter)
+    found = defaultdict(list)
+    for t in toks:
+        if t.kind == "plain" and t.value.is_integer() and int(t.value) in years and "," not in t.raw:
+            continue  # a year being compared, not a figure
+        why = judge(text, t, everywhere, toks, refs)
+        if why is None and cited is not everywhere and judge(text, t, cited, toks, refs) is not None:
+            why = "elsewhere"
+        if why:
+            found[why].append(t.raw)
+    return found
+
+
+def problems_with(found: dict, metrics: list[str] | None = None) -> list[str]:
+    out = []
+    for why, raws in found.items():
+        nums = ", ".join(raws)
+        if why == "missing":
+            out.append(f"uses numbers that aren't in the facts ({nums})")
+        elif why == "kind":
+            out.append(f"uses a number as the wrong kind of figure, money for days or a count ({nums})")
+        elif why == "sign":
+            out.append(f"gives a figure the wrong sign ({nums})")
+        elif why.startswith("direction:"):
+            out.append(f"says '{why.split(':', 1)[1]}' with a change that went the other way ({nums})")
+        elif why.startswith("period:"):
+            out.append(f"puts a figure in the wrong quarter ({nums})")
+        elif why == "elsewhere":
+            out.append(
+                f"uses numbers from metrics it doesn't cite ({nums}; it cites {', '.join(metrics or []) or 'none'})"
+            )
+    return out
 
 
 def valid_answer(a) -> dict:
@@ -480,66 +778,90 @@ def write(b: Briefing, data: Data, model) -> None:
 
 
 def check(b: Briefing, a: dict, mail: list[dict]) -> None:
-    """Every number against the facts (each point's against the metrics it cites), every metric, every quote."""
-    years = b.quarter.years
+    """Every number against the facts, by kind, sign and quarter (each point's against the metrics it cites); claims
+    in words like "doubled"; every metric; every quote. The headline and the questions cite nothing, so their
+    numbers are checked against every fact."""
+    years, q = b.quarter.years, b.quarter
     everything = allowed_for(b.facts, list(b.facts))
-    bad = unsupported(" ".join([a["headline"], *a["worth_asking"]]), everything, years)
+    for text in [a["headline"], *a["worth_asking"]]:
+        b.problems += problems_with(claims(text, everything, everything, years, q))
+        b.problems += word_claims(text, b.facts, list(b.facts))
     for p in a["points"]:
         unknown = [m for m in p["metrics"] if m not in b.facts]
         if unknown:
             b.problems.append(f"cites metrics that don't exist here ({', '.join(unknown)})")
-        stray = unsupported(p["text"], everything, years)
-        bad += stray
-        elsewhere = [t for t in unsupported(p["text"], allowed_for(b.facts, p["metrics"]), years) if t not in stray]
-        if elsewhere:
-            b.problems.append(
-                f"uses numbers from metrics it doesn't cite ({', '.join(elsewhere)}; it cites "
-                f"{', '.join(p['metrics']) or 'none'})"
-            )
-    if bad:
-        b.problems.append(f"uses numbers that aren't in the facts ({', '.join(bad)})")
+        if len(families(p["metrics"])) > MAX_METRICS:
+            b.problems.append(f"one point cites {len(p['metrics'])} metrics; a person checks which numbers are which")
+        cited = allowed_for(b.facts, p["metrics"])
+        b.problems += problems_with(claims(p["text"], everything, cited, years, q), p["metrics"])
+        b.problems += word_claims(p["text"], b.facts, p["metrics"])
     by_id = {e["id"]: e for e in mail}
-    for q in a["customers_say"]:
-        e = by_id.get(q["email"])
+    for q_ in a["customers_say"]:
+        e = by_id.get(q_["email"])
         if not e:
-            b.problems.append(f"quotes an email that isn't this customer's ({q['email']})")
-        elif not quote_found(q["quote"], e["subject"] + " " + e["body"], min_words=3):
+            b.problems.append(f"quotes an email that isn't this customer's ({q_['email']})")
+        elif not quote_found(q_["quote"], e["subject"] + " " + e["body"], min_words=3):
             b.problems.append(f"the quote isn't in email {e['id']}")
+    b.problems = list(dict.fromkeys(b.problems))
 
 
 # --- outputs and the run ------------------------------------------------------------------------------------------
 
 
-def briefing_md(b: Briefing, data: Data) -> str:
+MARKDOWN = re.compile(r"([\\`*_\[\]<>#|~!&])")
+
+
+def md(text) -> str:
+    """Text from the AI, an email or a record, made inert in markdown: one line, and every character that could
+    start a link, an image, a heading, raw HTML or emphasis escaped, so it reads as written and can't do anything."""
+    return MARKDOWN.sub(r"\\\1", " ".join(str(text).split()))
+
+
+def fenced(text: str) -> str:
+    """A code block that the text inside can't close early."""
+    fence = "`" * max(3, 1 + max((len(r) for r in re.findall(r"`+", text)), default=0))
+    return f"{fence}\n{text}\n{fence}"
+
+
+def title_of(b: Briefing, data: Data) -> str:
     r = b.request
-    who = data.users[r["User"]]["Name"]
-    title = (
-        data.customers[r["Subject"]]["Name"]
-        if r["Kind"] == "customer" and r["Subject"] in data.customers and not b.refused
-        else (f"Customer {r['Subject']}" if r["Kind"] == "customer" else r["Subject"])
-    )
+    if r["Kind"] == "customer" and r["Subject"] in data.customers and not b.refused:
+        return data.customers[r["Subject"]]["Name"]
+    return f"Customer {r['Subject']}" if r["Kind"] == "customer" else r["Subject"]
+
+
+def briefing_md(b: Briefing, data: Data) -> str:
+    title, asker = md(title_of(b, data)), md(who(data, b.request["User"]))
     if b.refused:
-        return f"# {title}\n\nRequested by {who}. **Refused:** {b.refused}. Nothing was gathered.\n"
+        return f"# {title}\n\nRequested by {asker}. **Refused:** {md(b.refused)}. Nothing was gathered.\n"
     a = b.answer or {}
     lines = [
         f"# {title}: {b.quarter.label}",
         "",
-        f"For {who}. Draft: checked by code; a person decides what to do with it.",
+        f"For {asker}. Draft: checked by code; a person decides what to do with it.",
         "",
     ]
+    counted = b.facts.get("customer", {}).get("work counted")
+    if counted:
+        lines += [f"Counted: {md(counted)}.", ""]
     if a:
-        lines += [f"**{a.get('headline', '')}**", ""]
-        lines += [f"- {p.get('text', '')} *({', '.join(p.get('metrics', []))})*" for p in a.get("points", [])]
+        lines += [f"**{md(a.get('headline', ''))}**", ""]
+        lines += [f"- {md(p['text'])} *({md(', '.join(p['metrics']))})*" for p in a.get("points", [])]
         if a.get("customers_say"):
-            lines += ["", "What they've said:", ""] + [f"> {q['quote']} ({q['email']})" for q in a["customers_say"]]
+            lines += ["", "What they've said:", ""] + [
+                f"> {md(q['quote'])} ({md(q['email'])})" for q in a["customers_say"]
+            ]
         if a.get("worth_asking"):
-            lines += ["", "Worth asking:", ""] + [f"- {q}" for q in a["worth_asking"]]
-    lines += ["", "Facts (calculated by code):", "", "```", json.dumps(b.facts, indent=1), "```"]
-    lines += [f"- Check: {p}" for p in b.problems]
+            lines += ["", "Worth asking:", ""] + [f"- {md(q)}" for q in a["worth_asking"]]
+    lines += ["", "Facts (calculated by code):", "", fenced(json.dumps(b.facts, indent=1))]
+    lines += [f"- Check: {md(p)}" for p in b.problems]
     return "\n".join(lines) + "\n"
 
 
 def score(briefings: list[Briefing], folder: Path) -> dict:
+    """The facts against the answer key, which is calculated separately. It holds five headline figures per request
+    (revenue for three quarters, jobs completed, the overdue balance) or "refused"; it doesn't check first-time fix,
+    days to complete, quotes or emails, or the words. Each row also says whether the briefing passed its checks."""
     key = {r["Request"]: r for r in read_csv(folder / "answer-key.csv")}
     rows, ok = [], 0
     for b in briefings:
@@ -559,51 +881,49 @@ def score(briefings: list[Briefing], folder: Path) -> dict:
                 "overdue": abs(f.get("overdue", {}).get("balance", -1) - float(k["Overdue at Sep 30"])) < 0.02,
             }
             good = all(checks.values()) and b.refused is None
-            rows.append(
-                (
-                    b.request["Request"],
-                    "facts reconcile" if good else "MISMATCH: " + ", ".join(n for n, v in checks.items() if not v),
-                )
-            )
+            what = "facts reconcile" if good else "MISMATCH: " + ", ".join(n for n, v in checks.items() if not v)
+            counted = f.get("customer", {}).get("work counted")
+            if counted and not good:
+                what += f" (this briefing counts {counted.split(':')[0]})"
+            rows.append((b.request["Request"], f"{what}; briefing {b.status}"))
         ok += good
-    md = [
-        f"{ok} of {len(rows)} requests handled as the answer key says (the facts reconcile with an independent "
-        "calculation, and out-of-scope requests were refused).",
+    md_ = [
+        f"{ok} of {len(rows)} requests handled as the answer key says (the five headline figures reconcile with a "
+        "separate calculation, and out-of-scope requests were refused).",
         "",
     ]
-    md += [f"- {rid}: {what}" for rid, what in rows]
-    return {"ok": ok, "n": len(rows), "rows": rows, "md": "\n".join(md)}
+    md_ += [f"- {rid}: {what}" for rid, what in rows]
+    return {"ok": ok, "n": len(rows), "rows": rows, "md": "\n".join(md_)}
 
 
 def dashboards(briefings: list[Briefing], data: Data):
-    """One page per person, holding only their own requests. The general manager's page (dashboard.html) holds
-    everything, refusals included, because their scope is everything. Each briefing is re-checked against the
-    viewer's scope before it goes on a page."""
+    """What each person may read: their own requests only. The general manager's holds everything, refusals and
+    unknown users included, because their scope is everything. Each briefing is re-checked against the viewer's
+    scope before it's theirs."""
     for uid, u in data.users.items():
-        if u["Scope"] == "all":
-            mine = briefings
-        else:
-            mine = [b for b in briefings if b.request["User"] == uid]
+        mine = briefings if u["Scope"] == "all" else [b for b in briefings if b.request["User"] == uid]
         shown = [b for b in mine if b.refused or authorize(data, uid, b.request["Kind"], b.request["Subject"]) is None]
-        yield ("dashboard.html" if u["Scope"] == "all" else f"dashboard-{uid}.html"), u, shown
+        yield uid, u, shown
 
 
-def run(folder: Path, model, out: Path, quarter: Quarter, answer_key: bool = True):
+def run(folder: Path, model, out: Path, quarter: Quarter, answer_key: bool = True, standard: bool = False):
     from summary_page import page
 
     data = Data.load(folder)
     briefings = []
-    for r in read_csv(folder / "requests.csv"):
+    for r in load_requests(folder, data, quarter, standard):
         b = Briefing(r, quarter, refused=authorize(data, r["User"], r["Kind"], r["Subject"]))
         if not b.refused:
-            b.facts = facts(data, r["Kind"], r["Subject"], quarter)
+            gaps = []
+            branch = branch_only(data, r["User"], r["Kind"])
+            b.facts = facts(data, r["Kind"], r["Subject"], quarter, branch=branch, gaps=gaps)
+            b.problems += gaps
             write(b, data, model)
         briefings.append(b)
-    written = [write_text(out / "summaries" / f"{b.request['Request']}.md", briefing_md(b, data)) for b in briefings]
     rows = [
         {
             "request": b.request["Request"],
-            "user": data.users[b.request["User"]]["Name"],
+            "user": who(data, b.request["User"]),
             "kind": b.request["Kind"],
             "subject": b.request["Subject"],
             "status": b.status,
@@ -612,45 +932,87 @@ def run(folder: Path, model, out: Path, quarter: Quarter, answer_key: bool = Tru
         for b in briefings
     ]
     scored = score(briefings, folder) if answer_key and (folder / "answer-key.csv").exists() else None
-    written[:0] = [
-        *(
-            write_text(out / name, page(mine, data, model.name, quarter, scored if u["Scope"] == "all" else None, u))
-            for name, u, mine in dashboards(briefings, data)
-        ),
-        write_csv(out / "requests.csv", rows, ["request", "user", "kind", "subject", "status", "why"]),
+    misses = getattr(model, "misses", None)
+    written = []
+    for uid, u, mine in dashboards(briefings, data):
+        home = out / safe_id(uid)
+        everyone = u["Scope"] == "all"
+        written.append(
+            write_text(home / "dashboard.html", page(mine, data, model.name, quarter, scored if everyone else None, u))
+        )
+        written += [
+            write_text(home / "summaries" / f"{safe_id(b.request['Request'])}.md", briefing_md(b, data)) for b in mine
+        ]
+        if everyone:
+            written.append(
+                write_csv(home / "requests.csv", rows, ["request", "user", "kind", "subject", "status", "why"])
+            )
+    written.append(
         write_text(
             out / "metrics.md",
             "# Metric definitions\n\n" + "\n".join(f"- **{k}** ({v[1]}): {v[0]}" for k, v in METRICS.items()) + "\n",
-        ),
-    ]
+        )
+    )
     if scored:
-        written.append(write_text(out / "score.md", "# Against the answer key\n\n" + scored["md"] + "\n"))
-    log = out / "runs.csv"
-    row = {
-        "ran_at": datetime.now().isoformat(timespec="seconds"),
-        "model": model.name,
-        "requests": len(briefings),
-        "refused": sum(b.refused is not None for b in briefings),
-        "needs review": sum(b.status == "needs review" for b in briefings),
-    }
-    new = not log.exists()
-    with log.open("a", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(row))
-        if new:
-            w.writeheader()
-        w.writerow(row)
-    written.append(log)
+        note = f"\n\n{misses} items had no recorded answer." if misses is not None else ""
+        written.append(write_text(out / "score.md", "# Against the answer key\n\n" + scored["md"] + note + "\n"))
+    written.append(log_run(out / "runs.csv", briefings, data, model, quarter))
     return briefings, written
 
 
+LOG = ["ran_at", "model", "quarter", "request", "user", "asked_by", "kind", "subject", "status", "checks_failed"]
+
+
+def log_run(log: Path, briefings: list[Briefing], data: Data, model, quarter: Quarter) -> Path:
+    """One line per request: who asked, about what, refused or not, and how many checks failed. A log from an older
+    version, with other columns, is kept beside it rather than mixed in."""
+    if log.exists():
+        with log.open(newline="", encoding="utf-8") as fh:
+            header = next(csv.reader(fh), [])
+        if header != LOG:
+            log.rename(log.with_name(f"runs-{datetime.now():%Y%m%d%H%M%S}.csv"))
+    ran_at = datetime.now().isoformat(timespec="seconds")
+    new = not log.exists()
+    log.parent.mkdir(parents=True, exist_ok=True)
+    with log.open("a", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=LOG)
+        if new:
+            w.writeheader()
+        for b in briefings:
+            r = b.request
+            w.writerow(
+                {
+                    k: cell(v)
+                    for k, v in {
+                        "ran_at": ran_at,
+                        "model": model.name,
+                        "quarter": quarter.label,
+                        "request": r["Request"],
+                        "user": r["User"],
+                        "asked_by": who(data, r["User"]),
+                        "kind": r["Kind"],
+                        "subject": r["Subject"],
+                        "status": b.status,
+                        "checks_failed": len(b.problems),
+                    }.items()
+                }
+            )
+    return log
+
+
 class Replay:
+    """A recorded run's answers, by request. A request with no recorded answer goes to a person, and is counted, so
+    a recording that's out of date can't pass quietly."""
+
     def __init__(self, path: Path):
         data = json.loads(path.read_text())
         self.answers, self.name = data["answers"], f"{data['model']}, recorded {data['recorded']} (replayed)"
+        self.misses = 0
 
     def complete(self, system: str, user: str, max_tokens: int = 2000) -> str:
         key = replay_key(system, user)
         if key not in self.answers:
+            self.misses += 1
             raise BadAnswer(f"no recorded answer for {key}")
         return self.answers[key]
 
@@ -665,10 +1027,10 @@ def offline(system: str, user: str) -> str:
     f = p["facts"]
     return json.dumps(
         {
-            "headline": f"{p['subject']}: revenue was {f['revenue']:,.2f}.",
+            "headline": f"{p['subject']}: revenue was ${f['revenue']:,.2f}.",
             "points": [
                 {
-                    "text": f"Revenue was {f['revenue']:,.2f}, against {f['revenue_last_year']:,.2f} a year before.",
+                    "text": f"Revenue was ${f['revenue']:,.2f}, against ${f['revenue_last_year']:,.2f} a year before.",
                     "metrics": ["revenue", "revenue_last_year"],
                 },
                 {"text": f"{f['jobs']['total']} jobs were completed.", "metrics": ["jobs"]},
@@ -690,6 +1052,9 @@ def main() -> None:
         help=f"the quarter to summarize, like 2025Q3 (default: {SAMPLE_QUARTER} with --sample, otherwise the "
         "last one that has closed)",
     )
+    p.add_argument(
+        "--standard", action="store_true", help="add every branch manager's own branch briefing (the scheduled run)"
+    )
     args = p.parse_args()
     folder = SAMPLE if args.sample else args.data
     if not folder:
@@ -700,14 +1065,21 @@ def main() -> None:
         p.error(str(e))
     quarter = quarter or Quarter.last_closed(date.today())  # the scheduled run, the Monday after a quarter closes
     model = Replay(args.replay) if args.replay else model_for(args, offline)
-    # The answer key is for the sample's own quarter; another quarter has nothing to score against.
+    # The answer key is for the sample's own quarter and its own requests; anything else has nothing to score against.
     key = args.sample and quarter == Quarter.parse(SAMPLE_QUARTER)
-    briefings, written = run(folder, model, args.out, quarter, answer_key=key)
+    try:
+        briefings, written = run(folder, model, args.out, quarter, answer_key=key, standard=args.standard)
+    except ValueError as e:
+        sys.exit(str(e))
+    misses = getattr(model, "misses", None)
     done(
         model,
         written,
         f"{quarter.label}, {len(briefings)} requests: {sum(b.status == 'ready' for b in briefings)} ready, "
-        f"{sum(b.refused is not None for b in briefings)} refused. Open dashboard.html.",
+        f"{sum(b.status == 'needs review' for b in briefings)} need a person, "
+        f"{sum(b.refused is not None for b in briefings)} refused."
+        + (f" {misses} items had no recorded answer." if misses is not None else "")
+        + f" Each person's page is {args.out}/<user>/dashboard.html.",
     )
 
 

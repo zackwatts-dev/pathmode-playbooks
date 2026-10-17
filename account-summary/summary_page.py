@@ -22,17 +22,14 @@ def pct(x) -> str:
 
 
 def card(b, data) -> str:
+    from account_summary import title_of
+
     r = b.request
-    who = data.users[r["User"]]
-    title = (
-        data.customers[r["Subject"]]["Name"]
-        if r["Kind"] == "customer" and r["Subject"] in data.customers and not b.refused
-        else (f"Customer {r['Subject']}" if r["Kind"] == "customer" else r["Subject"])
-    )
+    u = data.users.get(r["User"])
+    asker = f"{u['Name']}, {u['Role'].lower()}" if u else f"unknown user {r['User']}"
     head = (
-        f"<h3 style='margin:0'>{_e(title)} <span class='muted' style='font-weight:400'>({_e(r['Kind'])}, "
-        f"{_e(r['Request'])})</span></h3><p class='muted' style='margin:2px 0 8px'>Asked by {_e(who['Name'])}, "
-        f"{_e(who['Role'].lower())}</p>"
+        f"<h3 style='margin:0'>{_e(title_of(b, data))} <span class='muted' style='font-weight:400'>({_e(r['Kind'])}, "
+        f"{_e(r['Request'])})</span></h3><p class='muted' style='margin:2px 0 8px'>Asked by {_e(asker)}</p>"
     )
     if b.refused:
         return (
@@ -55,6 +52,9 @@ def card(b, data) -> str:
     )
     a = b.answer or {}
     body = [f"<p style='margin:0 0 6px'>{strip}</p>"]
+    counted = f.get("customer", {}).get("work counted")
+    if counted:
+        body.append(f"<p class='muted' style='margin:0 0 6px'>Counted: {_e(counted)}.</p>")
     if a:
         body.append(f"<p><b>{_e(a.get('headline', ''))}</b></p><ul>")
         body += [

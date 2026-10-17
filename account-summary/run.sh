@@ -3,6 +3,6 @@
 #   OPENAI_API_KEY, PLAYBOOK_PROVIDER=openai, PLAYBOOK_MODEL  the AI model that writes the briefings
 #   EXPORTS   the quarter's exports (customers, sites, jobs, quotes, invoices, payments, emails), users.csv
 #             and requests.csv
-#   OUT       dashboard.html is the general manager's; dashboard-<user>.html must be readable by that person only
+#   OUT       one folder per person, OUT/<user>/, which must be readable by that person only; OUT/runs.csv is the log
 set -eu
-python3 "$(dirname "$0")/account_summary.py" --data "$EXPORTS" --out "$OUT"
+python3 "$(dirname "$0")/account_summary.py" --data "$EXPORTS" --out "$OUT" --standard

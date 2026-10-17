@@ -7,7 +7,7 @@ Before a customer meeting, a quarterly review or a call about a complaint, a man
 ## What it does
 
 1. **A request:** who's asking, and about what (a customer, or a branch), for a quarter. The quarter sets the dates in code, and the two it's compared with: the quarter before and the same quarter a year before.
-2. **Check who's asking, first.** The general manager sees everything; a branch manager sees their own branch and its customers; an account manager sees only their own accounts. Anything else is refused before any data is gathered.
+2. **Check who's asking, first.** The general manager sees everything; a branch manager sees their own branch and its customers, counting only their branch's work for a customer; an account manager sees only their own accounts. Anything else is refused before any data is gathered.
 3. **Code computes the facts**, from a fixed list of metrics, each with a written definition and an owner:
    - revenue this quarter and last, and the change;
    - jobs completed, by type;
@@ -17,8 +17,8 @@ Before a customer meeting, a quarterly review or a call about a complaint, a man
    - the overdue balance at the quarter's end;
    - for a customer: their emails, and how many were chasing; for a branch: its top customers and biggest changes.
 4. **The AI writes the briefing** from those facts and, for a customer, their recent emails: a headline, four to six points (each naming the metrics it comes from), a few quotes from the customer, and questions worth asking. It never writes a query and never calculates a number.
-5. **Code checks the briefing:** every number must be in the facts (counts included; a number from an email isn't a fact), and a number in a point must belong to a metric the point cites; every metric it cites must exist; every quote must be in that customer's own emails. A briefing that fails a check, or an answer of the wrong shape, goes to a person.
-6. **A dashboard** with every briefing, every refusal, and the metric definitions.
+5. **Code checks the briefing:** every number must be in the facts (counts included; a number from an email isn't a fact), as the right kind of figure (money, a percentage, days, a count), going the right way and in the right quarter; a number in a point must belong to a metric the point cites; words like "doubled" and "nothing is overdue" must fit the facts; every metric it cites must exist; every quote must be in that customer's own emails. A briefing that fails a check, or an answer of the wrong shape, goes to a person.
+6. **A page for each person** with their own briefings and refusals, and the metric definitions. The general manager's holds everything.
 
 ## Inputs
 
@@ -26,16 +26,17 @@ Exports from the field-service system (customers, sites, jobs, quotes), the acco
 
 ## What "correct" means
 
-- The facts reconcile, to the cent, with an independent calculation.
+- The facts reconcile, to the cent, with a separate calculation (in SQL, from the same exports and definitions).
 - Every out-of-scope request is refused, and nothing is gathered for it.
 - Every number in the briefing is one of the facts (rounding allowed); every quote is real.
-- The same question gets the same numbers, whoever asks.
+- The same question gets the same numbers, whoever asks. (A branch manager's question about a customer is about their branch's part of it, and the briefing says so.)
 
 ## Security and privacy
 
 - **Scope is enforced in code, before anything is gathered,** not by asking the AI to hold back.
 - **The AI sees only the facts for the one request,** plus, for a customer, that customer's emails. Never another customer's emails, and no email addresses for a branch summary.
 - **Emails are data.** A customer could write anything, including instructions; the AI is told to ignore them, and its output is checked and escaped.
+- **Each person's briefings are kept apart,** in their own folder, readable by them only.
 - Nothing is sent or changed. A person reads the briefing before using it.
 
 ## How it runs
