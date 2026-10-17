@@ -151,6 +151,9 @@ def for_your_ai(item: dict, page_md: str, instructions: str, readme: str, checke
 # Extra arguments a playbook's replay needs to reproduce the published run. The pricing assistant writes drafts
 # for a person by default; the published run bargained on its own, against simulated buyers only.
 REPLAY_ARGS = {"pricing-assistant": ["--autonomous"]}
+# Where a playbook writes the dashboard to publish, when it isn't dashboard.html: account summary writes one per
+# person, and the published one is the general manager's, who may see everything.
+DASHBOARD = {"account-summary": "U1/dashboard.html"}
 
 
 def dashboard(folder: Path, slug: str, path: Path) -> None:
@@ -164,7 +167,7 @@ def dashboard(folder: Path, slug: str, path: Path) -> None:
             check=True,
             capture_output=True,
         )
-        shutil.copy(Path(tmp) / "dashboard.html", path)
+        shutil.copy(Path(tmp) / DASHBOARD.get(slug, "dashboard.html"), path)
 
 
 def sample_zip(folder: Path, path: Path) -> None:
