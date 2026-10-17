@@ -65,3 +65,22 @@ def test_a_value_must_appear_in_its_quote():
     assert not value_in_quote("4417-632", "serial 4417631, a Carrier")
     assert not value_in_quote("2", "unit 12 is down")
     assert not value_in_quote("", "anything")
+
+
+def test_a_quote_cant_be_stitched_from_scattered_words():
+    from common.evidence import quote_found
+
+    text = "No cooling at the store since Monday. " + "Filler words here. " * 30 + "This is urgent."
+    assert not quote_found("no ... cooling ... urgent", text, min_words=1)
+    assert not quote_found("the part ... is ... in", "Is the part in yet?", min_words=1)
+    assert quote_found("no cooling at the store ... since monday", text)
+    assert not quote_found("since monday ... no cooling at the store", text)
+
+
+def test_money_percents_and_scales_are_always_checked():
+    from common.evidence import unsupported_numbers
+
+    assert unsupported_numbers("We lost $1999 and $3M, about 8% and $5k", [100.0]) == ["$1999", "$3M", "8%", "$5k"]
+    assert unsupported_numbers("about $5k", [5000.0]) == []
+    assert unsupported_numbers("revenue fell -2.0%", [2.0]) == ["-2.0%"]
+    assert unsupported_numbers("3 jobs in 2025", []) == []
