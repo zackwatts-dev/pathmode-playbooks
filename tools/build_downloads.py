@@ -148,13 +148,19 @@ def for_your_ai(item: dict, page_md: str, instructions: str, readme: str, checke
     return "\n".join(parts)
 
 
+# Extra arguments a playbook's replay needs to reproduce the published run. The pricing assistant writes drafts
+# for a person by default; the published run bargained on its own, against simulated buyers only.
+REPLAY_ARGS = {"pricing-assistant": ["--autonomous"]}
+
+
 def dashboard(folder: Path, slug: str, path: Path) -> None:
     """The worked example's dashboard, from replaying the recorded model run on the sample data."""
     with tempfile.TemporaryDirectory() as tmp:
         script = folder / f"{slug.replace('-', '_')}.py"
         replay = folder / "sample-data" / "recorded-run.json"
         subprocess.run(
-            [sys.executable, str(script), "--sample", "--replay", str(replay), "--out", tmp],
+            [sys.executable, str(script), "--sample", "--replay", str(replay), "--out", tmp]
+            + REPLAY_ARGS.get(slug, []),
             check=True,
             capture_output=True,
         )
