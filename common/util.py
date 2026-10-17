@@ -56,12 +56,24 @@ def model_for(args: argparse.Namespace, offline: Callable[[str, str], str]) -> l
         sys.exit(str(e))
 
 
+FORMULA = re.compile(r"^[=+\-@\t\r]")
+NUMBER = re.compile(r"^-?\d[\d,]*(\.\d+)?$")
+
+
+def cell(v):
+    """A value as it's safe to put in a spreadsheet. Text that starts like a formula (=, +, -, @) would run as one
+    when someone opens the file in Excel, so it gets a leading apostrophe. Numbers are left alone."""
+    if isinstance(v, str) and FORMULA.match(v) and not NUMBER.match(v):
+        return "'" + v
+    return v
+
+
 def write_csv(path: Path, rows: list[dict], fields: list[str]) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows({k: cell(v) for k, v in r.items()} for r in rows)
     return path
 
 

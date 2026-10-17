@@ -1,0 +1,323 @@
+Customer ID,Name,Segment
+1,Brickhouse Grill,national chain
+2,Fresh Plate Kitchens,national chain
+3,Value Mart Stores,national chain
+4,Corner Pharmacy,national chain
+5,Sunny Side Diners,national chain
+6,Main & Vine Outfitters,national chain
+7,PetPoint Supply,national chain
+8,QuickLube Express,national chain
+9,Harvest Table,national chain
+11,Northstar Dental,national chain
+12,Urgent Care Partners,national chain
+13,Grand Canyon Tire,national chain
+14,BurgerBarn,national chain
+15,Pasta Fresca,national chain
+16,FitLife Gyms,national chain
+17,DollarWise,national chain
+18,Hometown Bank,national chain
+19,Cinema Plex,national chain
+20,Golden Wok,national chain
+21,Bright Smiles Dental,national chain
+22,Taco Rio,national chain
+23,Desert Sleep Mattress,national chain
+24,SpeedyPrint,national chain
+25,Crust & Co. Pizza,national chain
+26,GreenLeaf Grocers,national chain
+27,Kidz Learning Center,national chain
+28,Pure Barre Fitness,national chain
+29,Catalina Foothills Holdings,property manager
+30,Paradise Valley Realty Partners,property manager
+31,Tempe Holdings,property manager
+32,Saguaro Commercial Properties,property manager
+33,Estrella Property Management,property manager
+34,Vail Commercial Properties,property manager
+35,Peoria Realty Partners,property manager
+38,Oro Valley Holdings,property manager
+40,Cottonwood Holdings,property manager
+42,Coconino Realty Partners,property manager
+43,Tempe Commercial Properties,property manager
+44,Rincon Asset Management,property manager
+45,Mesa Real Estate Group,property manager
+46,Ahwatukee Asset Management,property manager
+47,Avondale Holdings,property manager
+48,Vail Holdings,property manager
+49,Rita Ranch Holdings,property manager
+50,Marana Commercial Properties,property manager
+51,Desert Ridge Realty Partners,property manager
+52,Scottsdale Realty Partners,property manager
+53,Peoria Holdings,property manager
+54,Superstition Holdings,property manager
+55,Ahwatukee Commercial Properties,property manager
+56,Camelback Real Estate Group,property manager
+58,Williams Realty Partners,property manager
+59,Ponderosa Holdings,property manager
+60,Camp Verde Realty Partners,property manager
+61,Scottsdale Real Estate Group,property manager
+62,Gilbert Commercial Properties,property manager
+63,Saguaro Holdings,property manager
+64,Fountain Hills Holdings,property manager
+65,San Tan Valley Asset Management,property manager
+66,Sahuarita Realty Partners,property manager
+67,Pueblo Real Estate Group,property manager
+68,Marana Commercial Properties,property manager
+69,Verde Valley Holdings,property manager
+70,Rincon Realty Partners,property manager
+71,Fountain Hills Holdings,property manager
+72,Goodyear Asset Management,property manager
+73,Green Valley Asset Management,property manager
+75,Old Pueblo Commercial Properties,property manager
+76,Avondale Asset Management,property manager
+77,Goodyear Realty Partners,property manager
+78,Arcadia Realty Partners,property manager
+79,Estrella Holdings,property manager
+80,San Tan Valley Asset Management,property manager
+82,Rincon Commercial Properties,property manager
+84,Tempe Commercial Properties,property manager
+85,Ahwatukee Property Management,property manager
+86,Paradise Valley Property Management,property manager
+87,Fountain Hills Real Estate Group,property manager
+89,Sabino Commercial Properties,property manager
+90,Oro Valley Property Management,property manager
+92,Sabino Property Management,property manager
+93,Sabino Real Estate Group,property manager
+95,Tempe Commercial Properties,property manager
+97,Mountain View Real Estate Group,property manager
+99,Sonoran Holdings,property manager
+100,Santa Cruz Property Management,property manager
+102,Ahwatukee Property Management,property manager
+103,Camelback Real Estate Group,property manager
+105,Arcadia Real Estate Group,property manager
+106,Sedona Real Estate Group,property manager
+107,Mesa Realty Partners,property manager
+108,Chandler Commercial Properties,property manager
+109,Santa Cruz Realty Partners,property manager
+113,Oro Valley Real Estate Group,property manager
+114,Sabino Asset Management,property manager
+115,Gilbert Commercial Properties,property manager
+117,Camp Verde Property Management,property manager
+118,Ponderosa Real Estate Group,property manager
+119,Green Valley Realty Partners,property manager
+120,Avondale Holdings,property manager
+121,Casas Adobes Commercial Properties,property manager
+122,Casas Adobes Commercial Properties,property manager
+124,Apache Junction Property Management,property manager
+127,Saguaro Commercial Properties,property manager
+128,Santa Cruz Commercial Properties,property manager
+130,Arcadia Real Estate Group,property manager
+131,Sabino Realty Partners,property manager
+132,Tanque Verde Realty Partners,property manager
+133,Chandler Commercial Properties,property manager
+136,Prescott Valley Unified School District,school district
+141,Cottonwood Unified School District,school district
+146,Sedona Unified School District,school district
+147,Verde Valley Unified School District,school district
+149,Sedona Unified School District,school district
+151,Sedona Unified School District,school district
+164,Kachina Village Eye Care,regional chain
+175,Kachina Village Pediatrics,regional chain
+184,Verde Valley Pharmacy,regional chain
+188,Kachina Village Liquor,regional chain
+194,Williams Pizzeria,regional chain
+206,Cottonwood Family Dental,regional chain
+208,Ponderosa Physical Therapy,regional chain
+214,Camp Verde Diner,regional chain
+227,Camp Verde Boutique,regional chain
+229,Kachina Village Liquor,regional chain
+234,Mogollon Rim Physical Therapy,regional chain
+235,Williams Pizzeria,regional chain
+241,San Francisco Peaks Boutique,regional chain
+244,Mogollon Rim Chiropractic,regional chain
+251,Mogollon Rim Cafe,regional chain
+255,Mountain View Physical Therapy,regional chain
+262,Verde Valley Appliance,regional chain
+263,Mountain View Pharmacy,regional chain
+267,Williams Family Dental,regional chain
+277,Kachina Village Furniture,regional chain
+293,Jason Jackson Physical Therapy,single site
+308,Sedona Bistro,single site
+313,Ponderosa Boutique,single site
+314,Lake Street Grill,single site
+318,Route Street Bakery,single site
+333,Nate Hall Veterinary Clinic,single site
+334,Johnson & Hall Taqueria,single site
+344,Cooper & Adams Engineering,single site
+354,Heather Edwards Pediatrics,single site
+357,Jose Wilson Accounting,single site
+365,Kim Martin Boutique,single site
+371,Edwards & Thompson Cafe,single site
+373,San Francisco Peaks Architects,single site
+390,Ponderosa Medical Billing,single site
+392,Prescott Valley Diner,single site
+402,Cook & Walker Florist,single site
+408,Coconino Architects,single site
+423,Derek Cooper Pediatrics,single site
+430,Verde Valley Cafe,single site
+440,Garcia & Turner Bistro,single site
+449,Tyler Turner Taqueria,single site
+457,Butler Street Appliance,single site
+466,Campbell Chiropractic,single site
+469,Baker & Cox Appliance,single site
+470,Mogollon Rim Title Company,single site
+488,Alicia Ward Engineering,single site
+496,Heather Turner Veterinary Clinic,single site
+515,Williams Physical Therapy,single site
+531,Heather Morris Law Offices,single site
+534,Mogollon Rim Family Dental,single site
+548,Hall & King Title Company,single site
+559,Fourth Street Boutique,single site
+564,Daniel Walker Accounting,single site
+573,Tyler Thompson Title Company,single site
+574,Mountain View Diner,single site
+577,Nate Robinson Diner,single site
+596,Allen Florist,single site
+597,Cox & Hall Eye Care,single site
+624,Cottonwood Street Bistro,single site
+627,Milton Street Eye Care,single site
+629,Coconino Pharmacy,single site
+636,Daniel Miller Pizzeria,single site
+658,Main Street Liquor,single site
+659,Cottonwood Street Law Offices,single site
+663,Route Street Medical Billing,single site
+664,Green Veterinary Clinic,single site
+670,Hall Eye Care,single site
+671,Howard & Moore Bakery,single site
+676,Bailey Boutique,single site
+682,Wright Eye Care,single site
+683,Rachel Wilson Family Dental,single site
+687,State Street Title Company,single site
+691,Marcus Cooper Family Dental,single site
+692,Beaver Street Diner,single site
+693,Main Street Chiropractic,single site
+700,Mountain View Taqueria,single site
+710,Taylor & Campbell Taqueria,single site
+711,Denise Bailey Accounting,single site
+713,Main Street Family Dental,single site
+724,Reed Engineering,single site
+730,Evans Physical Therapy,single site
+741,Denise Roberts Veterinary Clinic,single site
+750,Carter Boutique,single site
+751,Milton Street Law Offices,single site
+753,Walker Diner,single site
+761,Reed & Mitchell Liquor,single site
+790,Martin & Allen Boutique,single site
+792,Hughes & Wright Florist,single site
+814,Route Street Insurance Agency,single site
+820,Kachina Village Hardware,single site
+824,Carter & Wilson Appliance,single site
+825,Lee Pediatrics,single site
+857,Lisa Nelson Pharmacy,single site
+865,Sedona Insurance Agency,single site
+882,Young & Kelly Architects,single site
+892,Mountain View Architects,single site
+893,Robert Bailey Boutique,single site
+901,Hill Architects,single site
+910,Roberts Title Company,single site
+912,Lewis & Harris Engineering,single site
+913,Jackson & Murphy Boutique,single site
+915,Camp Verde Eye Care,single site
+916,Maria Martinez Appliance,single site
+917,Collins & Wilson Taqueria,single site
+920,Martin & Martin Family Dental,single site
+939,Camp Verde Accounting,single site
+941,Milton Street Liquor,single site
+954,King Grill,single site
+979,Adams Boutique,single site
+980,Scott Pharmacy,single site
+997,Patricia Cox Bistro,single site
+999,Megan Martin Pediatrics,single site
+1001,Cottonwood Architects,single site
+1017,Garcia Appliance,single site
+1021,Cottonwood Veterinary Clinic,single site
+1025,Daniel Thompson Diner,single site
+1029,Hill & Howard Appliance,single site
+1049,Camp Verde Family Dental,single site
+1050,Lake Street Boutique,single site
+1055,Mountain View Cafe,single site
+1056,Luis Miller Title Company,single site
+1072,Brittany Murphy Diner,single site
+1073,James White Furniture,single site
+1086,Fourth Street Florist,single site
+1088,Thomas Family Dental,single site
+1106,Ray Hughes Appliance,single site
+1112,Sedona Chiropractic,single site
+1115,Kachina Village Insurance Agency,single site
+1125,Evans Grill,single site
+1137,Cottonwood Street Pharmacy,single site
+1140,Turner & Cox Diner,single site
+1141,Camp Verde Bakery,single site
+1145,Howard & Carter Hardware,single site
+1161,Harris Bistro,single site
+1172,Harris Eye Care,single site
+1175,Cottonwood Street Furniture,single site
+1182,Baker & Cook Diner,single site
+1199,Carmen Clark Boutique,single site
+1205,Milton Street Physical Therapy,single site
+1212,Dustin Anderson Pharmacy,single site
+1214,Lisa Davis Pediatrics,single site
+1219,Carter & Young Accounting,single site
+1229,Milton Street Title Company,single site
+1242,Mogollon Rim Bistro,regional chain
+1250,Coconino Cafe,regional chain
+1263,Coconino Family Dental,regional chain
+1265,Kelly & Clark Pizzeria,single site
+1269,Price & Johnson Medical Billing,single site
+1277,Trent Anderson Accounting,single site
+1279,Bailey & Anderson Accounting,single site
+1280,King & Turner Taqueria,single site
+1281,Sedona Bakery,regional chain
+1285,Chandler Real Estate Group,property manager
+1290,Mountain View Pharmacy,regional chain
+1293,Avondale Realty Partners,property manager
+1296,Stewart Title Company,single site
+1297,Ahwatukee Commercial Properties,property manager
+1301,Sean Taylor Hardware,single site
+1304,Vail Commercial Properties,property manager
+1305,Edwards & Young Appliance,single site
+1310,Williams Pediatrics,regional chain
+1317,Moore Physical Therapy,single site
+1323,Sedona Eye Care,regional chain
+1325,Jennifer Johnson Chiropractic,single site
+1328,Shauna Collins Architects,single site
+1333,Peoria Holdings,property manager
+1335,Lewis & Nelson Furniture,single site
+1339,Coconino Bistro,single site
+1351,Sahuarita Realty Partners,property manager
+1353,State Street Medical Billing,single site
+1355,King & Martin Law Offices,single site
+1356,Mountain View Appliance,single site
+1360,Thomas & Hughes Pizzeria,single site
+1367,Camp Verde Pizzeria,regional chain
+1369,Rita Ranch Commercial Properties,property manager
+1385,James Howard Medical Billing,single site
+1396,Angela Thompson Law Offices,single site
+1402,Green Pizzeria,single site
+1403,Mesa Realty Partners,property manager
+1406,Cottonwood Eye Care,single site
+1411,Mogollon Rim Commercial Properties,property manager
+1413,Route Street Grill,single site
+1421,Robinson Cafe,single site
+1429,Clark & Nelson Insurance Agency,single site
+1442,Walker Boutique,single site
+1445,Ward & Parker Florist,single site
+1447,Prescott Valley Taqueria,single site
+1449,Cottonwood Street Pizzeria,single site
+1451,Brown & Wilson Architects,single site
+1452,Nate Young Medical Billing,single site
+1457,Fourth Street Pizzeria,single site
+1463,Carter Boutique,single site
+1465,Ponderosa Family Dental,single site
+1466,Price & Campbell Hardware,single site
+1483,Williams Real Estate Group,property manager
+1485,Megan Murphy Law Offices,single site
+1486,Collins Bistro,single site
+1488,Camp Verde Holdings,property manager
+1492,Cottonwood Veterinary Clinic,regional chain
+1493,Eric Stewart Grill,single site
+1499,San Francisco Peaks Pizzeria,single site
+1502,Verde Valley Engineering,single site
+1504,Kachina Village Grill,regional chain
+1505,Deer Valley Real Estate Group,property manager
+1506,State Street Medical Billing,single site
+1528,Main Street Eye Care,single site
+1544,Vail Realty Partners,property manager

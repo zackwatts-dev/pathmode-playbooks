@@ -38,3 +38,13 @@ def test_from_env_explains_what_to_set():
 def test_parse_json_returns_a_list_when_the_list_comes_first():
     assert parse_json('[{"a": 1}, {"a": 2}]') == [{"a": 1}, {"a": 2}]
     assert parse_json('[{"a": 1}]') == [{"a": 1}]
+
+
+def test_csv_cells_that_look_like_formulas_are_made_inert(tmp_path):
+    from common.util import read_csv, write_csv
+
+    rows = [{"a": '=HYPERLINK("http://x.example","click")', "b": "-12.50", "c": "@SUM(A1)", "d": 7, "e": "Cafe"}]
+    path = write_csv(tmp_path / "x.csv", rows, ["a", "b", "c", "d", "e"])
+    got = read_csv(path)[0]
+    assert got["a"].startswith("'=") and got["c"].startswith("'@")
+    assert got["b"] == "-12.50" and got["d"] == "7" and got["e"] == "Cafe"

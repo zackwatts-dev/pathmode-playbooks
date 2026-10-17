@@ -9,6 +9,7 @@ Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/):
 | [Pricing assistant](pricing-assistant/) | Prices repair jobs from your price book and written sales guidance, citing which clause applies; a second mode negotiates replacement quotes, with code holding the floor the AI never sees. | Level 3 |
 | [Customer segments](customer-segments/) | Machine learning groups customers by how they behave and tests each prediction against a one-line rule; an AI names the segments and explains the results, with every number checked. | Level 2 |
 | [Account summary](account-summary/) | A one-page briefing on a customer or a branch from several systems: scope checked in code before anything is gathered, every number calculated from written definitions, every number and quote in the AI's words checked. | Level 2 |
+| [Inherited records](inherited-records/) | Turns an acquired company's job tickets into records you can merge: an AI copies out each ticket, and code checks every value, groups and matches the locations, merges the equipment (settling mistyped serials, retiring replaced units) and finds the agreements and open quotes. | Level 2 |
 
 Risk levels: 1 chat only; 2 works with files you give it; 3 reads your email or systems, read-only; 4 takes actions. None of these goes past drafting. A person decides.
 
