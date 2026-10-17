@@ -1,0 +1,8 @@
+Ann Lee: Okay, so this is how I close out a service ticket and get the invoice out. I do this every afternoon, usually around three, for everything the techs finished that day.
+Ann Lee: First I open the dispatch board and filter to "Completed by tech". Those are the ones the tech has marked done on their tablet but nobody in the office has checked yet.
+Ann Lee: I open each one and check three things. Did the tech add the parts they used? Did they attach a photo of the equipment tag? And is there a customer signature? If any of those is missing I text the tech. I don't invoice it until it's there.
+Ann Lee: Then I check if the customer has a service agreement. It shows as a green badge next to the customer name. If they do, the labor rate is the agreement rate, so I change the rate on the ticket. The system doesn't do that automatically, which is annoying, and people forget.
+Ann Lee: If the customer has a PO, like the school district or Riverside, the PO number has to go in the invoice reference field or they'll reject it. The PO is usually in the ticket notes, or in the email from the customer.
+Ann Lee: Then I click "Create invoice". I read it over, mostly the hours. If the hours look high for the job, like six hours for a filter change, I ask the tech before sending.
+Ann Lee: Then I send it. Portal customers I upload to their portal instead of emailing. There's a list of which customers use a portal on the shared drive, in the billing folder.
+Ann Lee: Last thing, I mark the ticket "Invoiced". If I'm out, Rosa does this, but honestly nobody else really knows the PO thing or the agreement rate thing.

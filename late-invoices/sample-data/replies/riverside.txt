@@ -1,0 +1,5 @@
+From: Accounts Payable <ap@riversidemedical.example>
+Subject: RE: Invoice 88098
+Date: 2026-07-08
+
+Invoice 88098 is in our approval queue. Our standard terms are net 45 and it is scheduled for the July 24 payment run.

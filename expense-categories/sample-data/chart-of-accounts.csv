@@ -1,0 +1,16 @@
+Account,Type,Use for
+Fuel,Expense,Gas and diesel for service vans
+Vehicle repairs,Expense,"Van maintenance, tires, repairs"
+Parts and materials,Cost of goods sold,Parts and refrigerant used on customer jobs
+Tools and small equipment,Expense,Tools under $2500
+Software and subscriptions,Expense,"Field-service software, accounting, phone apps"
+Phone and internet,Expense,Mobile phones and office internet
+Meals,Expense,Business meals (50% deductible; keep who and why)
+Office supplies,Expense,Paper and printer ink
+Advertising,Expense,"Online ads, sponsorships, printed materials"
+Insurance,Expense,"General liability, vehicle, workers' comp"
+Rent,Expense,Office and warehouse rent
+Utilities,Expense,"Electric, water, gas for the office"
+Bank fees,Expense,Bank and card processing fees
+Training,Expense,"Certifications, courses"
+Owner draw,Equity,Personal spending by the owner (not an expense)

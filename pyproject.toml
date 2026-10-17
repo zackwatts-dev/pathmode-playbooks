@@ -1,0 +1,26 @@
+[project]
+name = "pathmode-playbooks"
+version = "0.1.0"
+description = "Working code for the PathMode playbooks: small, tested tools that draft, never send."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+docx = ["python-docx>=1.1"]
+dev = ["pytest>=8", "ruff>=0.6", "openpyxl>=3.1", "python-docx>=1.1"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib -q"
+testpaths = ["."]
+norecursedirs = [".venv", "out", ".git"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.setuptools]
+packages = ["common"]

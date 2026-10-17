@@ -1,0 +1,11 @@
+Customer,Contact,Email,Invoice,Invoice date,Due date,Amount,Balance
+Desert Palms Plaza,Dana Ortiz,dana.ortiz@desertpalmsplaza.example,88140,2026-05-20,2026-06-19,2480.00,2480.00
+Desert Palms Plaza,Dana Ortiz,dana.ortiz@desertpalmsplaza.example,88202,2026-06-10,2026-07-10,960.00,960.00
+Canyon Offices,Priya Shah,pshah@canyonoffices.example,88213,2026-06-30,2026-07-30,1320.00,1320.00
+Saguaro Retail Group,Tom Becker,tbecker@saguaroretail.example,87655,2026-03-28,2026-04-27,6150.00,6150.00
+Saguaro Retail Group,Tom Becker,tbecker@saguaroretail.example,88011,2026-05-02,2026-06-01,1875.00,1875.00
+Mesa Dental Group,Lisa Grant,lgrant@mesadental.example,88177,2026-06-01,2026-07-01,540.00,540.00
+Lee Family Restaurants,Marcus Lee,marcus@leefamilyrestaurants.example,87990,2026-04-25,2026-05-25,3890.00,1890.00
+Tempe Lofts,Kevin Wu,kwu@tempelofts.example,88150,2026-05-22,2026-06-21,720.00,720.00
+Riverside Medical Group,Accounts Payable,ap@riversidemedical.example,88098,2026-05-12,2026-06-11,4210.00,4210.00
+Valley Unified School District,Accounts Payable,ap@valleyschools.example,88120,2026-05-15,2026-06-14,8400.00,8400.00

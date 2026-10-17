@@ -1,0 +1,11 @@
+Code,Description,Unit,Unit price
+RTU-10T,"10-ton packaged rooftop unit, high efficiency",each,14800.00
+RTU-5T,"5-ton packaged rooftop unit, high efficiency",each,8200.00
+CURB-ADPT,Curb adapter (fits existing curb),each,1150.00
+CRANE-HALF,Crane and operator (up to 4 hours),each,2400.00
+LAB-INST,Installation labor,hour,135.00
+ELEC-DISC,Electrical disconnect replacement,each,480.00
+THERM-PROG,Programmable thermostat,each,260.00
+PERMIT,Mechanical permit and inspection,each,650.00
+DISP-OLD,Removal and disposal of old unit,each,425.00
+DUCT-INSP,Duct inspection and report,each,350.00
