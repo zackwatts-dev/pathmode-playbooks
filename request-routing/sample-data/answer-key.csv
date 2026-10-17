@@ -1,0 +1,94 @@
+Request,Queue,Goes to,Urgent,Also,Why it's tricky
+R001,billing,P12,no,,
+R002,triage,P13,no,,
+R003,nte,P01,no,,
+R004,nte,P01,no,,
+R005,warranty,P11,no,nte,an approval that's really a warranty claim
+R006,payroll,P08,no,,
+R007,nte,P02,no,,
+R008,nte,P01,no,,
+R009,payroll,P08,no,,
+R010,nte,P01,no,,
+R011,nte,P04,no,,
+R012,timeoff,P02,no,,
+R013,parts,P06,no,,
+R014,nte,P01,no,,
+R015,nte,P01,no,,
+R016,it,P09,no,,
+R017,it,P09,no,,
+R018,parts,P06,no,,
+R019,safety,P07,yes,,
+R020,timeoff,P04,no,,
+R021,discount,P01,no,,
+R022,safety,P07,yes,parts,in passing
+R023,nte,P01,no,,
+R024,fleet,P10,yes,,unsafe to drive
+R025,warranty,P11,no,,
+R026,triage,P13,no,,
+R027,parts,P06,no,,
+R028,discount,P05,no,,
+R029,parts,P06,no,,
+R030,payroll,P08,no,,names a manager
+R031,parts,P06,no,,
+R032,complaint,P02,no,,the work and the bill
+R033,parts,P06,no,,
+R034,payroll,P08,no,,
+R035,discount,P05,no,,
+R036,it,P09,no,,
+R037,nte,P03,no,,
+R038,nte,P01,no,,
+R039,payroll,P08,no,,
+R040,nte,P03,no,,
+R041,safety,P07,yes,,
+R042,triage,P13,no,,
+R043,billing,P12,no,,
+R044,nte,P02,no,,
+R045,safety,P07,yes,,in passing
+R046,timeoff,P02,no,,
+R047,parts,P06,no,,
+R048,parts,P06,no,,
+R049,discount,P05,no,,
+R050,complaint,P02,no,,the work and the bill
+R051,nte,P01,no,,
+R052,it,P09,no,,
+R053,safety,P07,yes,,in passing
+R054,parts,P06,no,,
+R055,warranty,P11,no,nte,an approval that's really a warranty claim
+R056,fleet,P10,no,,
+R057,complaint,P04,no,,
+R058,nte,P02,no,,
+R059,discount,P01,no,,
+R060,nte,P01,no,,
+R061,warranty,P11,no,,
+R062,discount,P05,no,,
+R063,parts,P06,no,,
+R064,nte,P02,no,,
+R065,parts,P06,no,,
+R066,safety,P07,yes,,
+R067,billing,P12,no,,
+R068,nte,P01,no,,
+R069,fleet,P10,no,,
+R070,it,P09,no,,
+R071,warranty,P11,no,,
+R072,fleet,P10,yes,,unsafe to drive
+R073,parts,P06,no,timeoff,two in one
+R074,timeoff,P03,no,,
+R075,nte,P03,no,,
+R076,fleet,P10,no,,
+R077,discount,P05,no,,
+R078,complaint,P02,no,,
+R079,nte,P02,no,,
+R080,nte,P02,no,,
+R081,nte,P02,no,,at the limit
+R082,nte,P02,no,,
+R083,timeoff,P01,no,,their own request
+R084,complaint,P03,no,,
+R085,billing,P12,no,,
+R086,fleet,P10,yes,it,two in one
+R087,safety,P07,yes,,
+R088,discount,P01,no,,
+R089,discount,P01,no,,tries to steer the router
+R090,nte,P01,no,,their own request
+R091,nte,P01,no,,just over the limit
+R092,discount,P05,no,,
+R093,parts,P06,no,,

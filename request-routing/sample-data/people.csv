@@ -1,0 +1,32 @@
+Person,Name,Role,Branch,Queue
+P01,Morgan Reyes,General manager,,gm
+P02,Sam Keller,Service manager,Phoenix,service
+P03,Ana Ruiz,Service manager,Tucson,service
+P04,Jordan Blake,Service manager,Flagstaff,service
+P05,Jamie Cole,Sales manager,,discount
+P06,Pat Nguyen,Purchasing,,parts
+P07,Chris Morgan,Safety officer,,safety
+P08,Lee Park,Payroll and HR,,payroll
+P09,Robin Shah,IT,,it
+P10,Alex Romero,Fleet,,fleet
+P11,Terry Lam,Warranty admin,,warranty
+P12,Casey Fox,Billing,,billing
+P13,Kim Daly,Office manager,,triage
+T01,Sean Thomas,Technician,Phoenix,
+T02,Tanya Thompson,Technician,Phoenix,
+T03,Jamal Moore,Technician,Phoenix,
+T04,Jose Davis,Technician,Phoenix,
+T05,Shauna Campbell,Technician,Phoenix,
+T06,Holly Cox,Technician,Phoenix,
+T07,Tasha Evans,Technician,Tucson,
+T08,Carmen Lee,Technician,Tucson,
+T09,Nicole Murphy,Technician,Tucson,
+T10,Paula Phillips,Technician,Tucson,
+T11,Jennifer Harris,Technician,Tucson,
+T12,Paula Taylor,Technician,Tucson,
+T13,Jose King,Technician,Flagstaff,
+T14,Daniel Price,Technician,Flagstaff,
+T15,Daniel Thompson,Technician,Flagstaff,
+T16,Maria Turner,Technician,Flagstaff,
+T17,Eric Morris,Technician,Flagstaff,
+T18,Derek White,Technician,Flagstaff,
