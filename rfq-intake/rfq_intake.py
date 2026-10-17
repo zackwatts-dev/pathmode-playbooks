@@ -2,7 +2,7 @@
 
     python rfq-intake/rfq_intake.py --sample --dry-run
     python rfq-intake/rfq_intake.py --sample --replay rfq-intake/sample-data/recorded-run.json
-    python rfq-intake/rfq_intake.py --mailbox mail/ --records records/ --as-of 2025-10-01
+    python rfq-intake/rfq_intake.py --mailbox mail/ --records records/ --remember   # on a schedule
 
 Reads every email in a mailbox folder (.eml files, saved by graph_mailbox.py or any mail export). For each
 one, the model says what kind of email it is and pulls out the customer, site, equipment, quantities and
@@ -230,17 +230,28 @@ class Replay:
         return self.answers[user]
 
 
-def ask(model, mail: Email) -> dict:
+def ask(model, mail: Email, cache: Path | None = None) -> dict:
+    """The model's reading of one email. Each email is read once: a good answer is kept in `cache`, and later
+    runs reuse it, so a scheduled job only pays for new email. The checks still run every time."""
+    saved = cache / f"{mail.file}.json" if cache else None
+    if saved and saved.exists():
+        return json.loads(saved.read_text(encoding="utf-8"))
     answer = parse_json(model.complete(EXTRACT, prompt(mail), max_tokens=3000))
     if not isinstance(answer, dict) or "kind" not in answer:
         raise BadAnswer("the answer has no 'kind'")
+    if saved:
+        write_text(saved, json.dumps(answer))
     return answer
 
 
-def process(mail: Email, model, records: Records) -> Result:
+def is_read(mail: Email, cache: Path | None) -> bool:
+    return bool(cache) and (cache / f"{mail.file}.json").exists()
+
+
+def process(mail: Email, model, records: Records, cache: Path | None = None) -> Result:
     r = Result(mail)
     try:
-        a = ask(model, mail)
+        a = ask(model, mail, cache)
     except Exception as e:  # noqa: BLE001 - any failure here is a dead letter, kept for a person
         r.status, r.reasons = FAILED, [f"couldn't process: {e}"[:200]]
         return r
@@ -544,14 +555,25 @@ def run(
     signature: str = "Summit Mechanical, Estimating",
     answer_key: Path | None = None,
     max_emails: int = 200,
+    remember: bool = False,
 ) -> tuple[list[Result], list[Path]]:
     from dashboard import dashboard
 
     # A ceiling on model calls per run, so a flood of email (or a mistake) can't run up a bill. Emails over
     # the limit aren't dropped: they're listed for a person, and the next run picks them up.
-    results = [process(m, model, records) for m in mails[:max_emails]]
-    for m in mails[max_emails:]:
-        results.append(Result(m, status=FAILED, reasons=[f"over this run's limit of {max_emails} emails: run again"]))
+    # With remember=True, answers are kept in out/answers/, and only new email counts towards the limit.
+    cache = out / "answers" if remember else None
+    results, new = [], 0
+    for m in mails:
+        if is_read(m, cache):
+            results.append(process(m, model, records, cache))
+        elif new < max_emails:
+            new += 1
+            results.append(process(m, model, records, cache))
+        else:
+            results.append(
+                Result(m, status=FAILED, reasons=[f"over this run's limit of {max_emails} emails: run again"])
+            )
     written = []
     for n, r in enumerate((r for r in results if r.status == INFO), 1):
         slug = re.sub(r"[^a-z0-9]+", "-", r.mail.subject.lower()).strip("-")[:40]
@@ -686,7 +708,8 @@ def main() -> None:
     p.add_argument("--answer-key", type=Path, help="CSV of what each email really is, to score the run")
     p.add_argument("--as-of", type=date.fromisoformat, help="date to count days left from (default: today)")
     p.add_argument("--replay", type=Path, help="answers from a recorded run, instead of calling a model")
-    p.add_argument("--max-emails", type=int, default=200, help="most emails to send to the model in one run")
+    p.add_argument("--max-emails", type=int, default=200, help="most new emails to send to the model in one run")
+    p.add_argument("--remember", action="store_true", help="keep each answer in out/answers/ and reuse it next run")
     p.add_argument("--signature", default="Summit Mechanical, Estimating")
     args = p.parse_args()
     if args.sample:
@@ -698,7 +721,9 @@ def main() -> None:
         p.error("choose --sample, or --mailbox and --records")
     mails = read_mailbox(mailbox)
     model = Replay(args.replay, mails) if args.replay else model_for(args, offline)
-    results, written = run(mails, Records.load(records), model, args.out, as_of, args.signature, key, args.max_emails)
+    results, written = run(
+        mails, Records.load(records), model, args.out, as_of, args.signature, key, args.max_emails, args.remember
+    )
     count = {s: sum(r.status == s for r in results) for s in STATUSES}
     done(model, written, ", ".join(f"{n} {s}" for s, n in count.items() if n) + ". Open dashboard.html.")
 

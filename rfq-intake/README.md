@@ -52,6 +52,16 @@ Summit Mechanical is a fictional commercial HVAC contractor, from a [simulation 
 
 On another mail system, anything that saves messages as `.eml` files works.
 
+## Running it for real
+
+`run.sh` is one scheduled run: copy new email out of the mailbox, then sort it and rebuild the dashboard. Schedule it every 15 minutes, for example with cron:
+
+```
+*/15 * * * * /srv/pathmode-playbooks/rfq-intake/run.sh >> /srv/quote-intake/cron.log 2>&1
+```
+
+With `--remember` (which `run.sh` uses), each email is read by the AI once. Its answer is kept in `out/answers/`, later runs reuse it, and only new email costs anything. The checks and matching run again every time, so a fix to the records takes effect on the next run.
+
 ## Before it goes live
 
 The repo covers the email limit, the "couldn't process" list, the run log, the spot checks and the tests. Yours to add: a server or scheduled job you control, the secret in a secret store, access to the outputs limited to the people who need them, deleting saved email on a schedule, and an alert if runs stop or the review pile jumps. Re-run the answer key after any change, including a new model version.

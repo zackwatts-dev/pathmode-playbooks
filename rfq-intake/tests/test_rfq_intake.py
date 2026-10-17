@@ -150,3 +150,13 @@ def test_a_flood_of_email_is_capped_and_kept_and_every_run_is_logged(tmp_path):
     rq.run(mails[:5], RECORDS, OfflineModel(rq.offline), tmp_path, rq.SAMPLE_AS_OF)
     log = read_csv(tmp_path / "runs.csv")
     assert [row["emails"] for row in log] == ["80", "5"]
+
+
+def test_on_a_schedule_each_email_is_read_by_the_ai_once(tmp_path):
+    mails = list(MAILS.values())[:10]
+    first = OfflineModel(rq.offline)
+    rq.run(mails, RECORDS, first, tmp_path, rq.SAMPLE_AS_OF, remember=True)
+    assert len(first.calls) == 10
+    again = OfflineModel(rq.offline)
+    results, _ = rq.run(list(MAILS.values())[:12], RECORDS, again, tmp_path, rq.SAMPLE_AS_OF, remember=True)
+    assert len(again.calls) == 2 and len(results) == 12  # only the two new emails cost anything
