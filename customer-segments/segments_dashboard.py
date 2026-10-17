@@ -1,15 +1,21 @@
-"""The customer-segments dashboard: one HTML page, with a 2D map of the customers. Names are escaped."""
+"""The customer-segments dashboards: one HTML page each, with a 2D map of the customers. Names are escaped.
+
+The team's page names no customers: its map's labels say only the segment. Billing's page adds the named list."""
 
 from __future__ import annotations
 
 from common.page import STYLE, _e, _table
 
+# Words that failed a check aren't shown as if they were ready: a person writes them.
+HELD = "<i class='muted'>Held for a person: the AI's words didn't pass the checks (see above).</i>"
+
 COLORS = ["#3f6b21", "#28507a", "#9a5b00", "#7a2f6b", "#2f7a73", "#8a3a1c", "#5b5b5b"]
 
 
-def scatter(custs, points, names, late_ids) -> str:
+def scatter(custs, points, names, late_ids, show_names: bool = False) -> str:
     """Each customer is a dot, placed by the two directions that separate them most (PCA). Ringed: on the
-    late-payment list."""
+    late-payment list. Only billing's map names the customers: a segment like "slow payers" plus a name says who
+    may pay late."""
     xs, ys = [p[0] for p in points], [p[1] for p in points]
     x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
     w, h, pad = 760, 380, 18
@@ -26,7 +32,7 @@ def scatter(custs, points, names, late_ids) -> str:
         ring = " stroke='#a3281c' stroke-width='2.2' r='6'" if c.id in late_ids else " r='3.2'"
         dots.append(
             f"<circle cx='{sx(a):.1f}' cy='{sy(b):.1f}' fill='{color}' fill-opacity='0.65'{ring}>"
-            f"<title>{_e(c.name)}: {_e(names[c.cluster])}</title></circle>"
+            f"<title>{_e(c.name) + ': ' if show_names else ''}{_e(names[c.cluster])}</title></circle>"
         )
     legend = "".join(
         "<span style='display:inline-flex;align-items:center;gap:6px;margin-right:14px'>"
@@ -44,6 +50,18 @@ def scatter(custs, points, names, late_ids) -> str:
     )
 
 
+def _review_name(p, names) -> str:
+    """A segment in the queue: its number, and the name the AI suggested, for the person to judge."""
+    suggested = (p.get("ai") or {}).get("name")
+    return _e(names.get(p["segment"], "")) + (
+        f"<br><span class='muted'>suggested: {_e(suggested)}</span>" if suggested else ""
+    )
+
+
+def _share(v) -> str:
+    return "n/a" if v is None else f"{v:.0%}"
+
+
 def _num(v) -> str:
     """A test score, or a dash when there was nothing to test it on."""
     return "-" if v is None else f"{v:.2f}"
@@ -58,14 +76,15 @@ def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: s
         ("Customers", f"{len(custs):,}", ""),
         ("Segments found", str(seg["k"]), ""),
         ("Predictions tested", str(len(info)), "ready"),
-        ("Likely to pay late", str(len(top)) if top else "billing only", ""),
+        ("Likely to pay late", (str(len(top)) if top else "no list") if viewer == "billing" else "billing only", ""),
         ("Needs a person", str(len(review)), "review" if review else ""),
     ]
     out = [
         "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,"
         f"initial-scale=1'><title>Customer segments</title><style>{STYLE}</style></head><body><main>",
         "<h1>Customer segments" + (": billing" if viewer == "billing" else "") + "</h1>",
-        f"<p class='muted'>Explanations: {_e(model_name)}. The segments and risk scores come from machine learning; "
+        f"<p class='muted'>Explanations: {_e(model_name)}. The segments come from machine learning, "
+        "and the late-payment ranking from whichever tested best, a model or a one-line rule; "
         "the names and explanations from the AI, with every number checked. Nothing was sent.</p>",
         "<div class='tiles'>"
         + "".join(f"<div class='tile {c}'><b>{_e(n)}</b>{_e(label)}</div>" for label, n, c in tiles)
@@ -74,7 +93,7 @@ def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: s
     if review:
         rows = [
             [
-                _e(getattr(r, "name", None) or names.get(r.get("segment"), "")),
+                _e(r.name) if hasattr(r, "problems") else _review_name(r, names),
                 "<br>".join(_e(p) for p in (r.problems if hasattr(r, "problems") else r["problems"])),
             ]
             for r in review
@@ -84,18 +103,23 @@ def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: s
             "The numbers stand; a person writes the words.</p>" + _table(["Which", "Why"], rows) + "</section>"
         )
     out.append("<h2>The segments</h2>")
-    out.append(scatter(custs, seg["points"], names, {c.id for c in top}))
+    out.append(scatter(custs, seg["points"], names, {c.id for c in top}, show_names=viewer == "billing"))
     rows = []
     for p in profs:
         ai = p.get("ai") or {}
+        words = (
+            HELD
+            if p.get("problems")
+            else _e(ai.get("who", "")) + ("<ul>" + "".join(f"<li>{_e(t)}</li>" for t in ai.get("treat", [])) + "</ul>")
+        )
         rows.append(
             [
                 f"<b>{_e(names[p['segment']])}</b><br><span class='muted'>{p['customers']} customers</span>",
                 f"${p['spend']:,.0f}",
-                f"{p['pays_late']:.0f} days",
-                f"{p['approves']:.0%}",
+                "n/a" if p["pays_late"] is None else f"{p['pays_late']:.0f} days",
+                f"{_share(p['approves'])}<br><span class='muted'>{p['n']['approves']} with decided quotes</span>",
                 f"{p['agreement']:.0%}",
-                _e(ai.get("who", "")) + ("<ul>" + "".join(f"<li>{_e(t)}</li>" for t in ai.get("treat", [])) + "</ul>"),
+                words,
             ]
         )
     out.append(
@@ -103,7 +127,7 @@ def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: s
             [
                 "Segment",
                 "Avg. spend, 12 months",
-                "Pays late",
+                "Days late, last 12 months",
                 "Approves quotes",
                 "Under agreement",
                 "Who they are, and how to treat them",
@@ -136,28 +160,16 @@ def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: s
             "(model / rule / picked at random). The leaving question is only tested: nobody is listed for it.</p>"
         )
         out.append(_table(["Question", "Model", "Rule", "Hits in top 25", "Verdict"], rows))
-    rows = []
-    for c in top if viewer == "billing" else []:
-        ex = c.explanation or {}
-        rows.append(
-            [
-                f"<b>{_e(c.name)}</b><br><span class='muted'>{_e(names[c.cluster])}</span>",
-                f"{c.x['pays_late']:.0f} days",
-                _e(ex.get("why", "")),
-                _e(ex.get("action", "")),
-            ]
-        )
-    out.append(
-        "<h2>Likely to pay late next year</h2><p class='muted'>Ranked by the method that won the test. "
-        "A signal for the billing team, not a verdict.</p>"
-    )
-    out.append(_table(["Customer", "Late last year", "Why", "Next step"], rows, {1}))
+    if viewer == "billing":
+        out.append(late_list(top, info, names))
     if scored:
         out.append("<h2>Against the answer key</h2>")
         out.append(
-            f"<p>Of the top {scored['top']} on the list, <b>{scored['hit']}</b> actually paid more than 20 days late "
-            f"in 2025. Picking "
-            f"{scored['top']} at random would find about {scored['base'] * scored['top']:.1f}.</p>"
+            "<p>No late-payment list, so nothing to score.</p>"
+            if not scored["top"]
+            else f"<p>Of the top {scored['top']} on the list, <b>{scored['hit']}</b> actually paid more than 20 days "
+            f"late in 2025. Picking {scored['top']} at random would find about "
+            f"{scored['base'] * scored['top']:.1f}.</p>"
         )
         rows = [
             [
@@ -175,3 +187,35 @@ def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: s
         )
     out.append("</main></body></html>")
     return "\n".join(out)
+
+
+def late_list(top, info, names) -> str:
+    """Billing's list, or why there isn't one."""
+    late = info["late"]
+    if not top:
+        return (
+            "<h2>Likely to pay late next year</h2><p>No list this time. The test's verdict was "
+            f"<b>{_e(late['verdict'])}</b>, so ranking customers would only look like a prediction.</p>"
+        )
+    how = (
+        "Ranked by the rule (days late on invoices due in the last 12 months), which tested as good as the model."
+        if late["verdict"].startswith("use the rule")
+        else f"Ranked by a model learned from {_e(late['learned_from'])}, which beat the rule in the test."
+    )
+    rows = []
+    for c in top:
+        ex = c.explanation or {}
+        rows.append(
+            [
+                f"<b>{_e(c.name)}</b><br><span class='muted'>{_e(names[c.cluster])}</span>",
+                "n/a" if c.x["pays_late"] is None else f"{c.x['pays_late']:.0f} days",
+                f"{c.late_score:.2f}",
+                HELD if c.problems else _e(ex.get("why", "")),
+                "" if c.problems else _e(ex.get("action", "")),
+            ]
+        )
+    return (
+        f"<h2>Likely to pay late next year</h2><p class='muted'>{how} The score (0 to 1) is for ranking, not a "
+        "probability. A signal for the billing team, not a verdict.</p>"
+        + _table(["Customer", "Days late, last 12 months", "Score", "Why", "Next step"], rows, {1, 2})
+    )
