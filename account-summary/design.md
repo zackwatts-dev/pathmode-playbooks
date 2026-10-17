@@ -6,7 +6,7 @@ Before a customer meeting, a quarterly review or a call about a complaint, a man
 
 ## What it does
 
-1. **A request:** who's asking, and about what (a customer, or a branch), for a quarter.
+1. **A request:** who's asking, and about what (a customer, or a branch), for a quarter. The quarter sets the dates in code, and the two it's compared with: the quarter before and the same quarter a year before.
 2. **Check who's asking, first.** The general manager sees everything; a branch manager sees their own branch and its customers; an account manager sees only their own accounts. Anything else is refused before any data is gathered.
 3. **Code computes the facts**, from a fixed list of metrics, each with a written definition and an owner:
    - revenue this quarter and last, and the change;
@@ -17,7 +17,7 @@ Before a customer meeting, a quarterly review or a call about a complaint, a man
    - the overdue balance at the quarter's end;
    - for a customer: their emails, and how many were chasing; for a branch: its top customers and biggest changes.
 4. **The AI writes the briefing** from those facts and, for a customer, their recent emails: a headline, four to six points (each naming the metrics it comes from), a few quotes from the customer, and questions worth asking. It never writes a query and never calculates a number.
-5. **Code checks the briefing:** every number must be in the facts; every metric it cites must exist; every quote must be in that customer's own emails. A briefing that fails a check goes to a person.
+5. **Code checks the briefing:** every number must be in the facts (counts included; a number from an email isn't a fact), and a number in a point must belong to a metric the point cites; every metric it cites must exist; every quote must be in that customer's own emails. A briefing that fails a check, or an answer of the wrong shape, goes to a person.
 6. **A dashboard** with every briefing, every refusal, and the metric definitions.
 
 ## Inputs

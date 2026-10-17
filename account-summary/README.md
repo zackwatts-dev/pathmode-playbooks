@@ -14,7 +14,7 @@ The full playbook, worked through at Summit Mechanical with a value calculator, 
   - the overdue balance, net of payments and write-offs;
   - the customer's emails and how many were chasing, or, for a branch, its top customers and biggest changes.
 - **The AI writes the briefing:** a headline, four to six points naming the metrics they come from, quotes from the customer's emails, and questions worth asking.
-- **Code checks it:** every number must be one of the facts (rounding allowed, "$5.0M" included); every metric must exist; every quote must be in that customer's own emails. A briefing that fails goes to a person.
+- **Code checks it:** every number must be one of the facts (rounding allowed, "$5.0M" included), small counts like "3 invoices" too, and a number in an email doesn't count; a number in a point must belong to a metric that point cites, so a true figure under the wrong metric is caught; every metric must exist; every quote must be in that customer's own emails. An answer of the wrong shape, or one that fails a check, goes to a person.
 - **One page per person,** holding only their own requests. The general manager's (`dashboard.html`) holds everything, refusals included.
 
 ## What it doesn't do
@@ -30,6 +30,8 @@ python3 account-summary/account_summary.py --sample --replay account-summary/sam
 # The offline stand-in: no model at all
 python3 account-summary/account_summary.py --sample --dry-run
 ```
+
+`--quarter 2025Q3` picks the quarter; it's compared with the quarter before and the same quarter a year before. The default is 2025Q3 with `--sample` (the sample's quarter), and otherwise the last quarter that has closed, which is what the scheduled run in `run.sh` wants.
 
 ## The sample: Summit's Q3 2025
 

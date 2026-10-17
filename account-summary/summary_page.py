@@ -41,8 +41,8 @@ def card(b, data) -> str:
     f = b.facts
     q = f["quotes"]
     nums = [
-        ("Revenue Q3", money(f["revenue"])),
-        ("vs Q3 2024", pct(f["revenue_vs_last_year"]["percent"])),
+        (f"Revenue Q{b.quarter.n}", money(f["revenue"])),
+        (f"vs {b.quarter.last_year.label}", pct(f["revenue_vs_last_year"]["percent"])),
         ("Jobs", f"{f['jobs']['total']:,}"),
         ("First-time fix", "" if f["first_time_fix"] is None else f"{f['first_time_fix']:.0f}%"),
         ("Quotes won (value)", "" if q["by value"] is None else f"{q['by value']:.0f}%"),
@@ -84,7 +84,7 @@ def card(b, data) -> str:
     return f"<div class='{cls}'>{head}{''.join(body)}</div>"
 
 
-def page(briefings, data, model_name, scored=None, viewer=None) -> str:
+def page(briefings, data, model_name, quarter, scored=None, viewer=None) -> str:
     review = [b for b in briefings if b.problems]
     refused = [b for b in briefings if b.refused]
     tiles = [
@@ -98,7 +98,7 @@ def page(briefings, data, model_name, scored=None, viewer=None) -> str:
     out = [
         "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,"
         f"initial-scale=1'><title>Account summaries</title><style>{STYLE}{BRIEF}</style></head><body><main>",
-        "<h1>Account summaries: Q3 2025</h1>",
+        f"<h1>Account summaries: {_e(quarter.label)}</h1>",
         f"<p><b>{_e(viewer['Name'])}</b>, {_e(viewer['Role'].lower())}: "
         + ("everything, including every refusal." if viewer["Scope"] == "all" else "your own requests only.")
         + "</p>"
