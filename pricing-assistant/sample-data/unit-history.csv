@@ -1,0 +1,23 @@
+Request,Date,Earlier repair
+R01,2025-07-31,No cooling / not cooling enough
+R01,2025-08-10,No cooling / not cooling enough
+R02,2025-07-12,Not holding temperature
+R03,2025-07-06,No cooling / not cooling enough
+R03,2025-07-25,No cooling / not cooling enough
+R03,2025-08-07,No cooling / not cooling enough
+R04,2025-07-10,No cooling / not cooling enough
+R04,2025-08-25,No cooling / not cooling enough
+R08,2025-07-19,Not holding temperature
+R10,2025-07-31,No cooling / not cooling enough
+R10,2025-08-09,No cooling / not cooling enough
+R10,2025-08-24,No cooling / not cooling enough (again)
+R11,2025-07-30,No cooling / not cooling enough
+R11,2025-09-15,No cooling / not cooling enough
+R12,2025-09-13,No cooling / not cooling enough
+R13,2025-07-02,No cooling / not cooling enough (again)
+R14,2025-08-11,No cooling / not cooling enough
+R17,2025-08-15,No cooling / not cooling enough
+R17,2025-08-28,No cooling / not cooling enough
+R17,2025-09-11,No cooling / not cooling enough (again)
+R20,2025-07-29,No cooling / not cooling enough
+R20,2025-08-07,No cooling / not cooling enough
