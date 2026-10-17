@@ -9,7 +9,8 @@ The full playbook, worked through at Summit Mechanical with an architecture diag
 - Reads every email in the mailbox and sorts it: a new quote request, a follow-up, a reply to a quote you sent, a service call sent to the wrong address, or something else.
 - For each quote request, the model pulls out the customer, sites, equipment, quantities and deadline, **quoting the words each one came from**.
 - Code then matches all of it to your own records (customers, sites, equipment), exactly or not at all. When two units could fit, it asks the customer instead of guessing.
-- It runs the checks. Anything that fails one goes to the **needs review** queue for a person: quoted words that aren't in the email, equipment that isn't yours, an attachment it can't read, instructions aimed at an AI, a deadline that doesn't make sense, an answer it couldn't use.
+- It runs the checks. Anything that fails one goes to the **needs review** queue for a person: quoted words that aren't in the email, a serial, model or quantity that isn't in the words quoted for it, equipment that isn't yours, an attachment it can't read, an email with no text it can read, instructions aimed at an AI, a deadline that doesn't make sense or has no words from the email behind it, an answer it couldn't use.
+- It reads HTML-only email as text. Logos and signature images (inline, or under 100 KB) are ignored; any other attachment it can't read (a PDF, a spreadsheet, a photo) goes to a person.
 - It writes a dashboard, the lists as spreadsheets, and a drafted question for each request that's missing something.
 - Every run adds a line to `out/runs.csv` (when, which model, how many in each pile). No more than `--max-emails` (default 200) go to the model per run; the rest are listed for a person and picked up next time.
 
@@ -44,11 +45,11 @@ Summit Mechanical is a fictional commercial HVAC contractor, from a [simulation 
 - `mailbox/`: 80 emails. 52 quote requests, in every shape (clear, vague, which-unit-is-it, bid invitations with a CSV or only a PDF, new prospects, a typo'd serial, one with instructions for "any AI assistant"), plus 12 replies to quotes, 8 service calls, 5 sales pitches and 3 follow-ups.
 - `records/`: customers, sites, equipment and contacts, as exported from Summit's field-service system (1,406 customers, 5,473 sites, 24,180 units).
 - `answer-key.csv`: what each email really is, and what should happen to it.
-- `recorded-run.json`: a real model's answers, for `--replay`.
+- `recorded-run.json`: a real model's answers, for `--replay`. They were recorded before the instructions asked for each serial and model to be inside its quote, so six of them, which give the serial or model in the next sentence, now go to a person: the replay scores 74 of 80, with nothing let through wrong. The offline stand-in (`--dry-run`) scores 80 of 80.
 
 ## Getting the email: Microsoft 365
 
-`graph_mailbox.py` copies new email from one Microsoft 365 mailbox into a folder, read-only, using Microsoft Graph. Run it on a schedule, then run `rfq_intake.py` on the folder. The setup (an app registration with *Mail.Read*, limited to the one mailbox) is at the top of the file. It's tested here against a stand-in for Graph, not a live tenant: try it on a test mailbox first.
+`graph_mailbox.py` copies new email from one Microsoft 365 mailbox into a folder, read-only, using Microsoft Graph. Run it on a schedule, then run `rfq_intake.py` on the folder. The setup (an app registration with *Mail.Read*, limited to the one mailbox) is at the top of the file. It picks up from the time of the last message it saved, and remembers the ids saved at that time, so two messages that arrive in the same second are neither skipped nor saved twice. When Graph throttles it (HTTP 429 or 503), it waits as long as Graph asks (up to two minutes) and tries again, up to five times. It's tested here against a stand-in for Graph, not a live tenant: try it on a test mailbox first.
 
 On another mail system, anything that saves messages as `.eml` files works.
 
@@ -60,7 +61,7 @@ On another mail system, anything that saves messages as `.eml` files works.
 */15 * * * * /srv/pathmode-playbooks/rfq-intake/run.sh >> /srv/quote-intake/cron.log 2>&1
 ```
 
-With `--remember` (which `run.sh` uses), each email is read by the AI once. Its answer is kept in `out/answers/`, later runs reuse it, and only new email costs anything. The checks and matching run again every time, so a fix to the records takes effect on the next run.
+With `--remember` (which `run.sh` uses), each email is read by the AI once. Its answer is checked for shape before it's kept in `out/answers/`, later runs reuse it, and only new email costs anything. A kept answer that's damaged or the wrong shape is read again, never trusted. The checks and matching run again every time, so a fix to the records takes effect on the next run.
 
 ## Before it goes live
 

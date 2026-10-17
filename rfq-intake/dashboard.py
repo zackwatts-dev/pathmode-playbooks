@@ -23,7 +23,7 @@ CHECKS = [
 
 
 def dashboard(results, as_of: date, model_name: str, scored: dict | None, audit: list) -> str:
-    from rfq_intake import FAILED, INFO, NOT_RFQ, READY, REVIEW
+    from rfq_intake import FAILED, INFO, NOT_RFQ, READY, REVIEW, long_date
 
     count = Counter(r.status for r in results)
     held = [r for r in results if r.status in (REVIEW, FAILED)]
@@ -38,7 +38,7 @@ def dashboard(results, as_of: date, model_name: str, scored: dict | None, audit:
         f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,"
         f"initial-scale=1'><title>Quotes intake</title><style>{STYLE}</style></head><body><main>",
         "<h1>Quotes mailbox</h1>",
-        f"<p class='muted'>As of {as_of:%B %-d, %Y}. Model: {_e(model_name)}. Nothing was sent, priced or changed.</p>",
+        f"<p class='muted'>As of {long_date(as_of)}. Model: {_e(model_name)}. Nothing was sent, priced or changed.</p>",
         "<div class='tiles'>"
         + "".join(f"<div class='tile {c}'><b>{n}</b>{_e(label)}</div>" for label, n, c in tiles)
         + "</div>",
