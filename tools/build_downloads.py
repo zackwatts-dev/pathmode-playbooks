@@ -115,41 +115,37 @@ def page_markdown(page: str, item: dict, instructions: str, repo: str, site: Pat
 
 
 def for_your_ai(item: dict, page_md: str, instructions: str, readme: str, checked: str) -> str:
-    return "\n".join(
-        [
-            f"# {item['title']}: a PathMode playbook, for your AI",
-            "",
-            "This file holds everything in one PathMode playbook: the page, the assistant instructions, and the README",
-            "for the working code. Load it into ChatGPT, Claude, Gemini or Copilot and ask it to help you apply the",
-            f"playbook to your own business. Page: https://pathmode.com/playbooks/{item['slug']}/. Vendor details "
-            f"checked {checked}; menus change, so check them on screen.",
-            "",
-            f"**The problem:** {item['problem']}",
-            "",
-            f"**The playbook:** {item['summary']}",
-            "",
-            "---",
-            "",
-            page_md,
-            "",
-            "---",
-            "",
-            "# The instructions, to paste into an assistant",
-            "",
-            instructions.strip(),
-            "",
-            "---",
-            "",
-            "# The built version: README",
-            "",
-            readme.strip(),
-            "",
-            "---",
-            "",
-            "From PathMode (https://pathmode.com), by Zack Watts. Free to use and share under CC BY 4.0, with credit.",
-            "",
-        ]
-    )
+    parts = [
+        f"# {item['title']}: a PathMode playbook, for your AI",
+        "",
+        "This file holds everything in one PathMode playbook: the page (with the design and the plan), and the README",
+        "for the working code. Load it into ChatGPT, Claude, Gemini or Copilot and ask it to help you apply the",
+        f"playbook to your own business. Page: https://pathmode.com/playbooks/{item['slug']}/.",
+        "",
+        f"**The problem:** {item['problem']}",
+        "",
+        f"**The playbook:** {item['summary']}",
+        "",
+        "---",
+        "",
+        page_md,
+        "",
+    ]
+    if instructions.strip():
+        parts += ["---", "", "# The instructions, to paste into an assistant", "", instructions.strip(), ""]
+    parts += [
+        "---",
+        "",
+        "# The built version: README",
+        "",
+        readme.strip(),
+        "",
+        "---",
+        "",
+        "From PathMode (https://pathmode.com), by Zack Watts. Free to use and share under CC BY 4.0, with credit.",
+        "",
+    ]
+    return "\n".join(parts)
 
 
 def dashboard(folder: Path, slug: str, path: Path) -> None:
@@ -183,15 +179,16 @@ def main() -> None:
     for item in data["items"]:
         slug = item["slug"]
         folder = ROOT / slug
-        instructions = (folder / "instructions.md").read_text()
+        instructions = (folder / "instructions.md").read_text() if (folder / "instructions.md").exists() else ""
         readme = (folder / "README.md").read_text()
         page = (args.site / "src/playbooks" / f"{slug}.md").read_text()
         out = args.site / "src/assets/downloads/playbooks" / slug
         out.mkdir(parents=True, exist_ok=True)
         include = args.site / "src/_includes/playbooks" / f"{slug}-instructions.md"
         include.parent.mkdir(parents=True, exist_ok=True)
-        include.write_text(instructions)
-        (out / f"{slug}-instructions.md").write_text(instructions)
+        if instructions:
+            include.write_text(instructions)
+            (out / f"{slug}-instructions.md").write_text(instructions)
         worksheet(item, out / f"{slug}-cost-worksheet.xlsx", data["checked"])
         md = page_markdown(page, item, instructions, data["repo"], args.site)
         (out / f"{slug}-for-your-ai.md").write_text(for_your_ai(item, md, instructions, readme, data["checked"]))

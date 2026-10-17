@@ -17,6 +17,8 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: pip install -e ".[dev]"
+      - name: Each playbook's pinned packages, checked by hash
+        run: for r in */requirements.txt; do pip install --require-hashes -r "$r"; done
       - run: ruff check .
       - run: ruff format --check .
       - run: pytest

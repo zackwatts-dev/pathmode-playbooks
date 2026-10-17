@@ -1,41 +1,35 @@
 # PathMode playbooks
 
-Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/): step-by-step fixes for problems most businesses have. Each playbook on the site covers the problem, a cost calculator, the fix that needs no AI (where there is one), no-code setup on ChatGPT, Claude, Gemini and Copilot, and the risks. This repository is the built version: small, readable Python scripts with sample data and tests.
+Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/): worked examples of AI on problems most businesses have. Each playbook works out whether the problem is worth solving, then solves it end to end at Summit Mechanical, a simulated commercial HVAC contractor: the design, the plan an AI wrote from it, the code a coding agent built, an answer key to score it, and a dashboard. This repository is that code, with Summit's sample data.
 
 | Playbook | What the code does | Risk |
 |---|---|---|
-| [Customer RFQ intake](rfq-intake/) | Turns a quotes mailbox into a clean list: each request matched to your customers, sites and equipment, checked, and anything doubtful sent to a person. Includes a Microsoft 365 mailbox reader, a dashboard and an answer key. The worked example the others will follow. | Level 3 |
-| [Inbox triage](inbox-triage/) | Sorts a shared inbox, routes each email and drafts replies. Never sends. | Level 3 |
-| [Late invoices](late-invoices/) | Separates customers automatic reminders can handle from those who need a person, and drafts the personal follow-ups. | Level 2 |
-| [Quotes from notes](quotes-from-notes/) | Turns call notes into a draft quote from your price list. Code does the math. | Level 2 |
-| [Meeting follow-ups](meeting-follow-ups/) | Turns a transcript into decisions, owned tasks and a follow-up email. | Level 2 |
-| [Support replies](support-replies/) | Drafts answers from your own documents, with sources, or says "not covered". | Level 2 |
-| [Weekly report](weekly-report/) | Calculates the week's numbers, has the model write the summary, checks every number in it. | Level 2 |
-| [SOPs from walkthroughs](sops-from-walkthroughs/) | Turns a recorded walkthrough into a written procedure. | Level 2 |
-| [Expense categories](expense-categories/) | Rules first, the model for the rest, a review list for your bookkeeper. | Level 2 |
+| [Customer RFQ intake](rfq-intake/) | Turns a quotes mailbox into a clean list: each request matched to your customers, sites and equipment, checked, and anything doubtful sent to a person. Includes a Microsoft 365 mailbox reader. | Level 3 |
+| [Anomaly alerts](anomaly-alerts/) | Rules, baselines and a machine-learning model find money leaking between systems and the habits behind it; an AI explains the top flags within an alert budget; code checks every explanation. | Level 2 |
 
-Risk levels: 1 chat only; 2 works with files you give it; 3 reads your email or systems, read-only; 4 takes actions. None of these goes past drafting. A person decides and sends.
+Risk levels: 1 chat only; 2 works with files you give it; 3 reads your email or systems, read-only; 4 takes actions. None of these goes past drafting. A person decides.
 
 ## How they're built
 
-The same few rules run through all nine.
+The same few rules run through all of them.
 
-- **The model drafts; code checks.** Every script asks the model to quote its evidence or cite its source, then checks in code that the quote is really there, that the numbers are numbers it was given, and that its answer fits what was asked. Anything that fails is flagged for a person, not hidden.
-- **Code does the math and the rules.** Prices, totals, metrics, thresholds and "always ask a person about this" rules are plain Python you can read and change. The model never does arithmetic that matters.
-- **Inputs are data, not instructions.** What the model reads (an email, a quote request, a customer's question) is marked as data, and the checks that matter most run in code, where a cleverly worded input can't argue with them.
-- **Nothing is sent.** Every script reads files (or, for the inbox, a read-only connection) and writes its results to `out/`.
+- **AI reads and explains; code decides.** The model reads messy input or explains a finding, quoting its evidence. Code checks that the evidence is really there, that the numbers come from the records, and that the answer fits. Anything that fails goes to a person, never silently through.
+- **The right tool for each job.** Rules for what you know, statistics and classic machine learning for detecting and predicting, a language model for reading and writing.
+- **Inputs are data, not instructions.** Emails, notes and messages are marked as data, and the checks that matter run in code, where cleverly worded input can't argue with them.
+- **Every run is scored.** Each playbook has an answer key from the simulation, and a recorded model run you can replay for free.
+- **Nothing is sent.** Every script reads files (or, for a mailbox, a read-only connection) and writes its results to `out/`.
 
 ## Try one
 
-You need Python 3.11 or later. Nothing to install for the scripts themselves.
+You need Python 3.11 or later. Most playbooks use only the standard library; those that use machine learning have a `requirements.txt`, pinned by version and hash (`pip install --require-hashes -r <folder>/requirements.txt`).
 
 ```sh
 git clone https://github.com/zackwatts-dev/pathmode-playbooks
 cd pathmode-playbooks
-python3 inbox-triage/inbox_triage.py --sample --dry-run
+python3 rfq-intake/rfq_intake.py --sample --replay rfq-intake/sample-data/recorded-run.json
 ```
 
-`--dry-run` uses an offline stand-in (simple keyword rules) instead of a model, so you can see the whole pipeline for free. To use a real model, set one of:
+`--replay` repeats a recorded run with a real model's answers, and `--dry-run` uses an offline stand-in, so you can see the whole pipeline for free. To use a real model, set one of:
 
 ```sh
 export ANTHROPIC_API_KEY=...                  # default provider; model claude-sonnet-5-5
@@ -57,11 +51,12 @@ The tests run offline, with scripted model answers, including deliberately wrong
 
 | Path | What |
 |---|---|
-| `common/` | The model client (Anthropic or OpenAI, standard library only), the offline stand-ins, and the evidence and number checks. |
-| `<playbook>/` | The script, `instructions.md` for no-code assistants, sample data, tests and a README. |
-| `tools/build_downloads.py` | Builds each playbook's downloads (instructions, cost worksheet, "for your AI" file) for pathmode.com. |
+| `common/` | The model client (Anthropic or OpenAI, standard library only), the offline stand-ins, the evidence and number checks, and the dashboards' shared look. |
+| `plan-prompt.md` | The planning prompt every playbook's `plan.md` was written from. |
+| `<playbook>/` | The script, `design.md`, the AI-written `plan.md`, sample data with an answer key and a recorded run, tests, `run.sh` and a README. |
+| `tools/build_downloads.py` | Builds each playbook's downloads for pathmode.com. |
 
-The sample data is fictional: Summit Mechanical, a made-up commercial HVAC contractor in the Phoenix area that the PathMode course uses throughout.
+The sample data is fictional: Summit Mechanical, a made-up commercial HVAC contractor in Arizona, from a simulation of the whole business that the PathMode course uses throughout.
 
 ## License
 
