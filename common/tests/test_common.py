@@ -48,3 +48,20 @@ def test_csv_cells_that_look_like_formulas_are_made_inert(tmp_path):
     got = read_csv(path)[0]
     assert got["a"].startswith("'=") and got["c"].startswith("'@")
     assert got["b"] == "-12.50" and got["d"] == "7" and got["e"] == "Cafe"
+
+
+def test_a_quote_matches_whole_words_only():
+    from common.evidence import quote_found
+
+    assert quote_found("the unit", "Is the unit on the roof?", min_words=1)
+    assert not quote_found("unit", "Our community center needs a quote", min_words=1)
+
+
+def test_a_value_must_appear_in_its_quote():
+    from common.evidence import value_in_quote
+
+    assert value_in_quote("RTU-2", "replace rtu 2 on the roof")
+    assert value_in_quote("4417-631", "serial 4417631, a Carrier")
+    assert not value_in_quote("4417-632", "serial 4417631, a Carrier")
+    assert not value_in_quote("2", "unit 12 is down")
+    assert not value_in_quote("", "anything")

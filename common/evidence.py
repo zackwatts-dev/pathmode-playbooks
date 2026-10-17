@@ -26,7 +26,30 @@ def quote_found(quote: str, source: str, min_words: int = 3) -> bool:
     if not pieces or len(" ".join(pieces).split()) < min_words:
         return False
     haystack = normalize(source)
-    return all(p in haystack for p in pieces)
+    return all(re.search(rf"(?<!\w){re.escape(p)}(?!\w)", haystack) for p in pieces)
+
+
+def value_in_quote(value: object, quote: str) -> bool:
+    """True if a value the model extracted (a serial, a tag, a quantity) appears, as whole words, in the quote it
+    gave as evidence. A real quote proves nothing about a value that isn't in it.
+
+    Spaces, dashes, slashes and dots between letters and digits don't count, so "RTU-2" matches "rtu 2" and
+    "4417-631" matches "4417 631". A value written differently (a date reformatted, "three" for "3") doesn't
+    match, and should be checked another way or go to a person.
+    """
+    want = re.sub(r"[^a-z0-9]", "", str(value).lower())
+    if not want:
+        return False
+    tokens = re.findall(r"[a-z0-9]+", str(quote).lower())
+    for i in range(len(tokens)):
+        joined = ""
+        for t in tokens[i:]:
+            joined += t
+            if joined == want:
+                return True
+            if len(joined) >= len(want):
+                break
+    return False
 
 
 NUMBER = re.compile(r"(?<![\w.])[-+]?\$?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?%?")
