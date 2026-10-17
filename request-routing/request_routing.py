@@ -7,15 +7,19 @@ The AI uses judgment; code holds the lines.
 - The AI reads each request against the routing policy (plain words, loose on purpose) and proposes where it goes,
   whether it's urgent, anything else in the same message, and the exact words that decide it.
 - Code checks what it copied is in the request, then holds the lines the policy can't leave to judgment:
-  safety always goes to safety, urgent (the words are in line-words.txt, next to the policy); approval limits on
-  the largest amount or percentage the request itself states, whatever queue the AI chose; nobody approves their
+  safety always goes to safety, urgent (the words are in line-words.txt, next to the policy); both approval limits
+  on the largest amount and percentage the request itself states, whatever queue the AI chose, and a person when
+  code can't read the amount for sure; nobody approves their
   own request (the general manager's go to the owner if people.csv names one, otherwise to the office manager);
   pay is private; anything unsure goes to the office manager. Every time code overrides the AI, it says so.
 - people.csv is checked before anything is routed: every queue needs someone holding it.
 - Each queue has a response time; the dashboard shows what's due first.
 
-Writes out/dashboard.html (the office's view: private requests are counted, never shown), out/payroll.html (payroll's
-own), out/routed.csv, out/overrides.csv and, with the sample, out/score.md. Nothing is sent or approved.
+Writes out/dashboard.html (the office's view: private requests are counted, never shown, except that a private safety
+report is listed under Urgent without its words), out/payroll.html (payroll's own), out/safety.html (the safety
+officer's, for those reports), out/office-manager.html (the office manager's, for private requests she has to
+route), out/routed.csv, out/overrides.csv and, with the sample, out/score.md. Nothing is sent
+or approved.
 """
 
 from __future__ import annotations
@@ -60,13 +64,38 @@ URGENT_HOURS = 2
 WORDS_FILE = "line-words.txt"  # the safety and pay words, next to policy.md; a reviewed change, like the code
 # Words that make a request read as an approval, so an over-limit amount in it can't dodge the limit.
 APPROVAL = re.compile(r"\b(NTE|not[- ]to[- ]exceed|approv\w*|proceed|discount)\b|(%|\bpercent)\s+off\b", re.I)
-# A number as people write money: "$7,900", "5.7k", "7,000", "$1,800.00". A plain number counts only right before
-# "over" or "above", or right after "over (is)": otherwise it's a work order, a van, a date or a year.
-NUMBER = re.compile(r"(?<![\w#.,$-])(\$\s?)?(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?(k\b)?(?![\w,]|\.\d)", re.I)
+# A number as people write money: "$7,900", "5.7k", "7,000", "$1,800.00", "US$6,200", "$1.2M", "6000 dollars". A plain
+# number counts only right before "over" or "above", or right after "over (is)": otherwise it's a work order, a van, a
+# date or a year. "M" counts only after a currency sign: "3M filters" is a brand.
+CURRENCY = r"(?:US\$|CA\$|USD|\$)"
+SCALED = r"(?:k|mm?|thousand|million)\b"
+ONE = rf"({CURRENCY}\s?)?(\d{{1,3}}(?:,\d{{3}})+|\d+)(\.\d+)?(\s?{SCALED})?"
+UNIT = r"(\s?(?:dollars|bucks|usd)\b)?(?![\w,]|\.\d)"
+NUMBER = re.compile(rf"(?<![\w#.,$-]){ONE}{UNIT}", re.I)
+# "$4k-$6k", "3-6k", "$4,000 to $6,000": the upper end is the amount the limit applies to.
+RANGE = re.compile(rf"(?<![\w#.,$-]){ONE}\s*(?:-|–|—|to)\s*{ONE}{UNIT}", re.I)
 BARE_BEFORE = re.compile(r"\s+(over|above)\b", re.I)
 BARE_AFTER = re.compile(r"\b(over|above|increase|by)\s+(is\s+|of\s+)?$", re.I)
 NTE_ITSELF = re.compile(r"\bNTE\s+(of|is)\s+$", re.I)  # "above the NTE of $500": the limit already set, not the ask
 NOT_MONEY = re.compile(r"\s*(miles?|mi|hours?|hrs?|years?|yrs?|days?|degrees|°)\b", re.I)
+# Amounts code can't read for sure, so an approval with one goes to a person rather than passing under the limit:
+# amounts in words ("four thousand", "45 hundred"), a rate or a multiple ("$4,500/mo", "x 12"), several amounts that
+# may add up, and percentages in words.
+_N = (r"(?:a|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|"
+      r"seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|half)")  # fmt: skip
+IN_WORDS = re.compile(
+    rf"\b{_N}(?:[\s-]+(?:{_N}|and))*[\s-]+(?:hundred|thousand|grand|million)\b|\b\d+\s*(?:hundred|grand)\b", re.I
+)
+PERCENT_IN_WORDS = re.compile(rf"\b{_N}(?:[\s-]+{_N})*[\s-]+(?:percent|%)", re.I)
+RATE = re.compile(
+    r"\s*(?:/\s*|per\s+|an?\s+|each\s+|every\s+)(?:mo|month|wk|week|yr|year|day|hr|hour|visit|unit)s?\b"
+    r"|\s*(?:monthly|weekly|yearly|annually|daily|hourly|each|apiece|ea)\b|\s*(?:x|×)\s*\d",
+    re.I,
+)
+TIMES_BEFORE = re.compile(r"\d\s*(?:x|×)\s*$", re.I)
+ADDS_UP = re.compile(r"\b(plus|and|on top of|additional|another|extra|more|labor|parts)\b|\+", re.I)
+NTE_ASK = re.compile(r"\b(NTE|not[- ]to[- ]exceed)\b", re.I)
+DISCOUNT_ASK = re.compile(r"\bdiscount\w*|(%|\bpercent)\s+off\b", re.I)
 PERCENT = re.compile(r"(?<![\w.])(\d+(?:\.\d+)?)\s*(%|percent\b|pct\b)", re.I)
 
 ROUTE = (
@@ -86,26 +115,68 @@ The policy:
 )
 
 
+def value(number: str, scale: str | None) -> float:
+    x = float(number.replace(",", ""))
+    scale = (scale or "").strip().lower()
+    return x * 1e3 if scale in ("k", "thousand") else x * 1e6 if scale in ("m", "mm", "million") else x
+
+
 def money(s) -> float | None:
-    m = re.search(r"\$?\s*(\d[\d,]*(?:\.\d+)?)\s*(k)?", str(s or ""), re.I)
-    if not m:
-        return None
-    x = float(m.group(1).replace(",", ""))
-    return x * 1000 if m.group(2) else x
+    """The amount the AI copied, as written: "$7,900", "5.7k", "US$6,200", "$1.2M", or a range's upper end."""
+    s = str(s or "")
+    if m := RANGE.search(s):
+        return max(value(m.group(2) + (m.group(3) or ""), m.group(4) or m.group(8)),
+                   value(m.group(6) + (m.group(7) or ""), m.group(8)))  # fmt: skip
+    m = re.search(rf"\d[\d,]*(?:\.\d+)?(\s?{SCALED})?", s, re.I)
+    return value(re.match(r"[\d,.]+", m.group(0)).group(0).rstrip(".,"), m.group(1)) if m else None
+
+
+def money_spans(text: str) -> list[tuple[int, int, float]]:
+    """Where the request states a dollar amount, and how much: (start, end, amount)."""
+    found, taken = [], []
+    for m in RANGE.finditer(text):
+        cur1, n1, c1, s1, cur2, n2, c2, s2, unit = m.groups()
+        cur, scaled = cur1 or cur2, s1 or s2
+        if not (cur or scaled or unit) or (scaled.strip().lower().startswith("m") if scaled and not cur else False):
+            continue
+        if not cur and NOT_MONEY.match(text[m.end() :]):
+            continue
+        found.append((m.start(), m.end(), max(value(n1 + (c1 or ""), s1 or s2), value(n2 + (c2 or ""), s2))))
+        taken.append((m.start(), m.end()))
+    for m in NUMBER.finditer(text):
+        if any(a <= m.start() < b for a, b in taken):
+            continue
+        cur, whole, cents, scaled, unit = m.groups()
+        before, after = text[: m.start()], text[m.end() :]
+        if NTE_ITSELF.search(before) or (not cur and NOT_MONEY.match(after)):
+            continue
+        if scaled and scaled.strip().lower().startswith("m") and not cur:
+            continue  # "3M filters", "5m of duct"
+        written_as_money = cur or scaled or unit or "," in whole or cents
+        if written_as_money or BARE_BEFORE.match(after) or BARE_AFTER.search(before):
+            found.append((m.start(), m.end(), value(whole + (cents or ""), scaled)))
+    return sorted(found)
 
 
 def amounts(text: str) -> list[float]:
     """Every dollar amount the request asks about, read by code, so the limit doesn't rest on the AI's choice."""
-    found = []
-    for m in NUMBER.finditer(text):
-        dollar, whole, cents, k = m.groups()
-        before, after = text[: m.start()], text[m.end() :]
-        if NTE_ITSELF.search(before) or (not dollar and NOT_MONEY.match(after)):
-            continue
-        written_as_money = dollar or k or "," in whole or cents
-        if written_as_money or BARE_BEFORE.match(after) or BARE_AFTER.search(before):
-            found.append(money(m.group(0)))
-    return found
+    return [x for _, _, x in money_spans(text)]
+
+
+def amount_doubt(text: str) -> str | None:
+    """Why code can't be sure it read the request's amount, or None. An approval with a doubt goes to a person."""
+    if m := IN_WORDS.search(text):
+        return f'"{m.group(0)}" is an amount in words'
+    if m := PERCENT_IN_WORDS.search(text):
+        return f'"{m.group(0)}" is a percentage in words'
+    spans = money_spans(text)
+    for start, end, _ in spans:
+        if RATE.match(text[end:]) or TIMES_BEFORE.search(text[:start]):
+            return f'"{text[start:end]}" reads as a rate or a multiple, not a total'
+    said = [x for _, _, x in spans]
+    if len(said) > 1 and ADDS_UP.search(text) and max(said) <= NTE_LIMIT < sum(said):
+        return "it states several amounts that may add up to more than the limit"
+    return None
 
 
 def percents(text: str) -> list[float]:
@@ -338,11 +409,16 @@ def hold_safety(r: Request, word: str | None) -> None:
 
 
 def hold_privacy(r: Request, a: dict | None, word: str | None) -> None:
-    r.private = r.queue == "payroll" or (a or {}).get("queue") == "payroll" or bool(word)
+    """Pay is private, and privacy fails safe: code's pay words, or the AI calling it payroll, make a request private.
+    But the AI choosing payroll can't put it there: a request routed to payroll without a pay word goes to the office
+    manager (private, on her own page), so "send it to payroll" in a request can't hide it in payroll."""
+    ai_payroll = (a or {}).get("queue") == "payroll"
+    if ai_payroll and not word and r.queue == "payroll":
+        r.overrides.append("routed to payroll but isn't about pay: the office manager")
+        r.queue = "triage"
+    r.private = bool(word) or ai_payroll
     if r.private and r.queue not in ("payroll", "safety", "triage"):
-        r.overrides.append(
-            f"mentions “{word or 'pay'}”: the office manager checks it's not private before it goes to {r.queue}"
-        )
+        r.overrides.append(f"mentions “{word}”: the office manager checks it's not private before it goes to {r.queue}")
         r.also, r.queue = r.queue, "triage"
     if r.queue == "payroll" and r.also:
         r.overrides.append("payroll is private: the other part has to be asked for separately")
@@ -350,32 +426,63 @@ def hold_privacy(r: Request, a: dict | None, word: str | None) -> None:
 
 
 def hold_limits(r: Request, a: dict | None, holders: Holders) -> None:
-    """Approval limits, on the largest amount or percentage the request itself says, not only the one the AI read.
+    """Approval limits, on the largest amount and percentage the request itself says, not only the one the AI read.
 
-    An approval the AI put in another queue can't dodge the limit: an over-limit amount there goes to the general
-    manager when the request reads as an approval, and to the office manager when it isn't clear that it is one.
+    Both limits are checked whatever the queue: an approval for going over the NTE that also asks for a big discount
+    (or the other way round) goes to the general manager. An approval the AI put in another queue can't dodge the
+    limit: an over-limit amount there goes to the general manager when the request reads as an approval, and to the
+    office manager when it isn't clear that it is one. Private requests are about someone's pay: no limit applies,
+    and their amounts are never repeated.
     """
+    if r.private or r.queue in ("safety", "triage"):
+        return
     text, ai = r.row["Text"], a or {}
     said, pcts = amounts(text), percents(text)
+    over_dollars = [x for x in said if x > NTE_LIMIT] if NTE_ASK.search(text) else []
+    over_pcts = [x for x in pcts if x > DISCOUNT_LIMIT] if DISCOUNT_ASK.search(text) else []
     if r.queue == "nte":
         hold_limit(r, holders, money(ai.get("amount")), said, NTE_LIMIT, "amount")
+        hold_other_limit(r, holders, [f"{x:g}%" for x in over_pcts], "discount")
     elif r.queue == "discount":
         hold_limit(r, holders, money(ai.get("percent")), pcts, DISCOUNT_LIMIT, "percent")
-    elif r.queue not in ("safety", "triage"):
+        hold_other_limit(r, holders, [f"${x:,.0f}" for x in over_dollars], "nte")
+    else:
         over = [f"${x:,.0f}" for x in said if x > NTE_LIMIT] + [f"{x:g}%" for x in pcts if x > DISCOUNT_LIMIT]
-        if not over:
+        if over:
+            approval = bool(APPROVAL.search(text))
+            r.overrides.append(
+                f"says {over[0]}, over a limit, and the AI chose {r.queue}: "
+                + ("an approval over the limit, so the general manager" if approval else "the office manager checks")
+            )
+            r.also = r.also or r.queue
+            if approval:
+                send(r, "nte" if any(x > NTE_LIMIT for x in said) else "discount", holders)
+                r.holder = holders.get("gm") or r.holder
+            else:
+                send(r, "triage", holders)
             return
-        approval = bool(APPROVAL.search(text)) and not r.private
-        r.overrides.append(
-            f"says {over[0]}, over a limit, and the AI chose {r.queue}: "
-            + ("an approval over the limit, so the general manager" if approval else "the office manager checks")
-        )
-        r.also = r.also or r.queue
-        if approval:
-            send(r, "nte" if any(x > NTE_LIMIT for x in said) else "discount", holders)
-            r.holder = holders.get("gm") or r.holder
-        else:
-            send(r, "triage", holders)
+    hold_doubt(r, holders, text)
+
+
+def hold_other_limit(r: Request, holders: Holders, over: list[str], other: str) -> None:
+    """The limit on the other measure: an NTE request that also asks for 25% off, a discount above the NTE."""
+    if not over or r.queue == "triage" or r.holder == holders.get("gm"):
+        return
+    r.overrides.append(f"also says {over[0]}, over the limit for {QUEUES[other].lower()}: the general manager")
+    r.why.append(f"{over[0]} is over a limit: the general manager")
+    r.also = r.also or other
+    r.holder = holders.get("gm") or r.holder
+
+
+def hold_doubt(r: Request, holders: Holders, text: str) -> None:
+    """An approval whose amount code can't read for sure goes to a person, not under the limit by default."""
+    if r.queue == "triage" or r.holder == holders.get("gm"):
+        return
+    if not (r.queue in ("nte", "discount") or APPROVAL.search(text)) or not (doubt := amount_doubt(text)):
+        return
+    r.overrides.append(f"an approval, and {doubt}: the office manager checks the limit")
+    r.also = r.also or r.queue
+    send(r, "triage", holders)
 
 
 def hold_limit(r: Request, holders: Holders, ai: float | None, said: list[float], limit: float, what: str) -> None:
@@ -402,6 +509,9 @@ def hold_self_approval(r: Request, holders: Holders) -> None:
     go to the owner when people.csv names one, and otherwise to the office manager to find someone else."""
     me = r.row["From"]
     if r.holder != me:
+        return
+    if r.queue == "payroll":  # a pay question isn't an approval, and going up would show it to the general manager
+        r.why.append("payroll's own pay question: stays with payroll")
         return
     for up, where in (("gm", "up to the general manager"), ("owner", "the general manager's own goes to the owner")):
         if (pid := holders.get(up)) and pid != me:
@@ -451,7 +561,7 @@ def score(reqs: list[Request], folder: Path) -> dict:
     tricky = [r for r in reqs if key[r.id]["Why it's tricky"]]
     tricky_ok = sum(r.queue == key[r.id]["Queue"] and r.holder == key[r.id]["Goes to"] for r in tricky)
     md = [
-        f"- Routed to the right person: {right} of {len(reqs)}; {asked} sent to the office manager; "
+        f"- Routed to the right person: {right} of {len(reqs)}; {asked} sent to the office manager to route by hand; "
         f"{len(wrong)} wrong{' (' + ', '.join(wrong) + ')' if wrong else ''}.",
         f"- The hard cases: {tricky_ok} of {len(tricky)} right.",
         f"- Urgent requests marked urgent: {caught} of {len(urgent)} ({false_urgent} marked urgent that weren't).",
@@ -462,6 +572,28 @@ def score(reqs: list[Request], folder: Path) -> dict:
             "also_ok": also_ok, "also": len(also), "rows": rows, "md": "\n".join(md)}  # fmt: skip
 
 
+PRIVATE_TEXT = "(private)"
+SAFETY_PRIVATE = "safety report, details with the safety officer"
+DETAIL = re.compile(
+    r"“[^”]*”|\"[^\"]*\"|\$?\d[\d,.]*\s?(?:k\b|%)?", re.I
+)  # amounts and quoted words, out of a shared note
+
+
+def shared_text(r: Request) -> str:
+    """A request's words wherever anyone but payroll (or, for safety, the safety officer) can see them."""
+    if not r.private:
+        return r.row["Text"]
+    return SAFETY_PRIVATE if r.queue == "safety" else PRIVATE_TEXT
+
+
+def shared_why(r: Request) -> list[str]:
+    """How it got there, for the shared files and page. A private request's notes keep code's reasons but lose any
+    amount or quoted word, and the AI's own policy line, which could repeat the request."""
+    if not r.private:
+        return r.why + r.overrides
+    return ["private"] + [DETAIL.sub("…", o) for o in r.overrides]
+
+
 def run(folder: Path, model, out: Path, answer_key: bool = True, now: datetime | None = None):
     from routing_page import page
 
@@ -470,23 +602,48 @@ def run(folder: Path, model, out: Path, answer_key: bool = True, now: datetime |
     scored = score(reqs, folder) if answer_key and (folder / "answer-key.csv").exists() else None
     rows = [{"request": r.id, "received": r.row["Received"], "from": r.sender["Name"], "queue": r.queue,
              "goes to": people.get(r.holder, {}).get("Name", r.holder), "urgent": "yes" if r.urgent else "",
-             "also": r.also or "", "due": r.due.isoformat(timespec="minutes"), "why": "; ".join(r.why + r.overrides),
-             "text": "(private)" if r.private else r.row["Text"]} for r in reqs]  # fmt: skip
+             "also": r.also or "", "due": r.due.isoformat(timespec="minutes"), "why": "; ".join(shared_why(r)),
+             "text": shared_text(r)} for r in reqs]  # fmt: skip
     written = [
         write_text(out / "dashboard.html", page(reqs, people, model.name, now, scored, private=False)),
         write_text(
             out / "payroll.html",
-            page([r for r in reqs if r.private], people, model.name, now, None, private=True),
+            page(
+                [r for r in reqs if r.private and r.queue == "payroll"],
+                people,
+                model.name,
+                now,
+                None,
+                private="payroll",
+            ),
+        ),
+        write_text(
+            out / "office-manager.html",
+            page(
+                [r for r in reqs if r.private and r.queue == "triage"],
+                people,
+                model.name,
+                now,
+                None,
+                private="office manager",
+            ),
+        ),  # fmt: skip
+        write_text(
+            out / "safety.html",
+            page(
+                [r for r in reqs if r.private and r.queue == "safety"], people, model.name, now, None, private="safety"
+            ),
         ),
         write_csv(out / "routed.csv", rows, list(rows[0]) if rows else []),
         write_csv(
             out / "overrides.csv",
-            [{"request": r.id, "override": o} for r in reqs for o in r.overrides],
+            [{"request": r.id, "override": o} for r in reqs for o in (shared_why(r)[1:] if r.private else r.overrides)],
             ["request", "override"],
         ),
     ]
     if scored:
-        written.append(write_text(out / "score.md", "# Against the answer key\n\n" + scored["md"] + "\n"))
+        md = scored["md"] + (f"\n- {model.misses} items had no recorded answer." if hasattr(model, "misses") else "")
+        written.append(write_text(out / "score.md", "# Against the answer key\n\n" + md + "\n"))
     log = out / "runs.csv"
     row = {
         "ran_at": datetime.now().isoformat(timespec="seconds"),
@@ -509,10 +666,12 @@ class Replay:
     def __init__(self, path: Path):
         data = json.loads(path.read_text())
         self.answers, self.name = data["answers"], f"{data['model']}, recorded {data['recorded']} (replayed)"
+        self.misses = 0  # requests the recording has no answer for: they go to a person, and the summary says so
 
     def complete(self, system: str, user: str, max_tokens: int = 2000) -> str:
         key = replay_key(system, user)
         if key not in self.answers:
+            self.misses += 1
             raise BadAnswer(f"no recorded answer for {key}")
         return self.answers[key]
 
@@ -559,13 +718,19 @@ def main() -> None:
         reqs, written = run(folder, model, args.out, answer_key=args.sample)
     except SetupError as e:
         sys.exit(f"Can't route yet: {e}")
-    counts = Counter(r.queue for r in reqs)
-    done(
-        model,
-        written,
-        f"{len(reqs)} requests: {counts['triage']} to the office manager, "
-        f"{sum(r.urgent for r in reqs)} urgent, {sum(len(r.overrides) for r in reqs)} overrides.",
+    done(model, written, summary(reqs, score(reqs, folder) if args.sample else None, getattr(model, "misses", None)))
+
+
+def summary(reqs: list[Request], scored: dict | None = None, misses: int | None = None) -> str:
+    """The console line. "At the office manager" counts everything in her queue, as the dashboard's tile does; with
+    the answer key, it says how many of those belong there and how many are to route by hand, as the score does."""
+    at = Counter(r.queue for r in reqs)["triage"]
+    split = f" ({scored['asked']} to route by hand, {at - scored['asked']} that belong there)" if scored else ""
+    line = (
+        f"{len(reqs)} requests: {at} at the office manager{split}, "
+        f"{sum(r.urgent for r in reqs)} urgent, {sum(len(r.overrides) for r in reqs)} overrides."
     )
+    return line + (f"\n{misses} items had no recorded answer." if misses is not None else "")
 
 
 if __name__ == "__main__":

@@ -10,9 +10,9 @@ Summit's technicians and office staff send internal requests all day, by form, e
 2. **The AI reads each request against the policy** and proposes where it goes, whether it's urgent, any second request in the same message, the amount or percentage asked for (as written), and the exact words that decide it. If it isn't sure, it says so.
 3. **Code checks what the AI copied** is really in the request, and then **holds the lines the policy can't leave to judgment:**
    - anything with a safety word (gas, carbon monoxide, shock, smoke, fire, injury, a fall or near miss) goes to the safety officer, urgent, whatever the AI chose;
-   - approval limits: over $5,000 above a not-to-exceed amount, or a discount over 10%, goes to the general manager;
+   - approval limits: over $5,000 above a not-to-exceed amount, or a discount over 10%, goes to the general manager, both checked whatever the queue; an approval whose amount code can't read for sure goes to the office manager;
    - nobody approves their own request: it goes up a level;
-   - pay and personal matters go to payroll only, and never appear anywhere else;
+   - pay goes to payroll only, and what it says never appears anywhere else (a pay request that's also about safety goes to safety, and is listed on the shared page without its words); code knows pay by its words, so a request the AI sends to payroll without one goes to the office manager, still private, on her own page;
    - a request the AI wasn't sure about, or whose answer failed a check, goes to the office manager.
    Every time code overrides the AI, it records why.
 4. **Each queue has a response time** (an hour for safety, two hours for an approval with a customer waiting, a day or more for the rest), and the dashboard shows what's due first.

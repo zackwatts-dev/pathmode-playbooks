@@ -1,4 +1,6 @@
-"""The request-routing dashboard. The shared view never shows a private request (pay and personal): it counts them."""
+"""The request-routing dashboards. The shared view never shows a private request's words (pay and personal): it
+counts them. A private request that's also about safety is still listed under Urgent, without its words, so the
+office sees that the safety officer has it."""
 
 from __future__ import annotations
 
@@ -7,11 +9,14 @@ from collections import Counter
 from common.page import STYLE, _e, _table
 
 
-def page(reqs, people, model_name, now, scored=None, private=False) -> str:
-    from request_routing import QUEUES
+def page(reqs, people, model_name, now, scored=None, private: str | bool = False) -> str:
+    """private: False for the shared page, or "payroll" / "safety" for the page only that person sees."""
+    from request_routing import QUEUES, shared_text, shared_why
 
-    hidden = [] if private else [r for r in reqs if r.private]
-    shown = reqs if private else [r for r in reqs if not r.private]
+    hidden = [] if private else [r for r in reqs if r.private and r.queue != "safety"]
+    shown = reqs if private else [r for r in reqs if not r.private or r.queue == "safety"]
+    text = (lambda r: r.row["Text"]) if private else shared_text
+    why = (lambda r: r.why + r.overrides + r.problems) if private else (lambda r: shared_why(r) + r.problems)
     late = [r for r in shown if r.due < now]
     urgent = [r for r in shown if r.urgent]
     triage = [r for r in shown if r.queue == "triage"]
@@ -19,7 +24,7 @@ def page(reqs, people, model_name, now, scored=None, private=False) -> str:
     tiles = [
         ("Requests", str(len(reqs)), ""),
         ("Urgent", str(len(urgent)), "review" if urgent else ""),
-        ("For the office manager", str(len(triage)), ""),
+        ("At the office manager", str(len(triage) + sum(r.queue == "triage" for r in hidden)), ""),
         ("Code overrode the AI", str(len(overrides)), ""),
     ]
     if not private:
@@ -30,7 +35,7 @@ def page(reqs, people, model_name, now, scored=None, private=False) -> str:
     out = [
         "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,"
         f"initial-scale=1'><title>Request routing</title><style>{STYLE}</style></head><body><main>",
-        "<h1>Requests: " + ("payroll only" if private else "who has what") + "</h1>",
+        "<h1>Requests: " + (f"{private} only" if private else "who has what") + "</h1>",
         f"<p class='muted'>Routing: {_e(model_name)}, with code holding the lines (safety, approval limits, nobody "
         f"approves their own request, pay is private). As of {_e(now.strftime('%a %b %-d, %-I:%M %p'))}. Nothing was "
         "sent or approved.</p>",
@@ -55,7 +60,7 @@ def page(reqs, people, model_name, now, scored=None, private=False) -> str:
                         _e(r.sender["Name"]),
                         _e(name.get(r.holder, r.holder)),
                         _e(r.received.strftime("%a %-I:%M %p")),
-                        _e(r.row["Text"]),
+                        _e(text(r)),
                     ]
                     for r in urgent
                 ],
@@ -84,7 +89,14 @@ def page(reqs, people, model_name, now, scored=None, private=False) -> str:
             "thought.</p>"
             + _table(
                 ["Request", "What code did", "Request"],
-                [[_e(r.id), "<br>".join(_e(o) for o in r.overrides), _e(r.row["Text"])] for r in overrides],
+                [
+                    [
+                        _e(r.id),
+                        "<br>".join(_e(o) for o in (r.overrides if private or not r.private else shared_why(r)[1:])),
+                        _e(text(r)),
+                    ]
+                    for r in overrides
+                ],  # fmt: skip
             )
         )
     out.append("<h2>Every request</h2>")
@@ -96,8 +108,8 @@ def page(reqs, people, model_name, now, scored=None, private=False) -> str:
             + (f"<br><span class='muted'>also: {_e(QUEUES.get(r.also, r.also))}</span>" if r.also else ""),
             _e(name.get(r.holder, r.holder)),
             ("<span class='soon'>urgent</span><br>" if r.urgent else "") + _e(r.due.strftime("%a %-I:%M %p")),
-            _e(r.row["Text"]),
-            "<br>".join(_e(x) for x in r.why + r.problems),
+            _e(text(r)),
+            "<br>".join(_e(x) for x in why(r)),
         ]
         for r in sorted(shown, key=lambda r: r.due)
     ]

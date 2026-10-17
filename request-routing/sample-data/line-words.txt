@@ -10,25 +10,33 @@
 # Someone could get hurt: always the safety officer, urgent.
 gas
 carbon monoxide
-co alarm
+co (alarm|detector|monitor)s?
 shock(ed)?
 electrocut\w*
-smoke
+smok(e|es|ed|ing|y)
 fire
+flames?
+spark(s|ed|ing)?
+arc(ed|ing)
+arc flash
+burning
 injur\w*
 hurt
-cut (my|his|her)
+cut (my|his|her|him|them|your)\w*
 bleed\w*
 fell
 fall
 near(ly)? (miss|went|fell)
 burn(ed|t)?
+(i|he|she|they|we) slipped
+(slipped|fell|came) (off|from|down) (the |a |his |her |my )?(ladder|roof|lift|steps|stairs)
 
 [safety exceptions]
 gas (card|cards|receipt|receipts|station|stations)
 fire stations?
 smoke detectors? (install|installs|installed|installation|replacement|order)
 (this|next|last|by|until) fall
+spark plugs?
 fall (season|schedule|maintenance|pm|pms|start-up|startups?)
 
 [private]
@@ -47,6 +55,12 @@ salary
 rate
 
 [private exceptions]
+# A customer or a supplier being paid, not someone's own pay. "Won't pay me" and "pay for my ..." still count.
 certificates? of insurance
 insurance certificates?
 flow rate
+(won['’]?t|will not|wouldn['’]?t|refuses? to|refused to|refusing to|not going to|didn['’]?t|doesn['’]?t|hasn['’]?t|haven['’]?t|can['’]?t|cannot) pay(?!\s+(me|my|us|for my|for me)\b)
+pay (the|our|their|this|that|an?) (invoice|bill|supplier|vendor|balance|deposit|quote|sub|subcontractor|permit|fee)s?
+pay (for|on) (the|this|that|their) (job|work|repair|invoice|bill|parts?|unit|visit|service)s?
+paid (the|their|our) (invoice|bill|balance|supplier|vendor)s?
+(invoice|bill|balance)s? (is|was|has been|have been|were|are|got) (not )?paid
