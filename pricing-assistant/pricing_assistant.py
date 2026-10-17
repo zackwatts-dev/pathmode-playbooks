@@ -1,7 +1,8 @@
 """Pricing assistant: price a repair in minutes, and negotiate a replacement within limits.
 
     python pricing-assistant/pricing_assistant.py --sample --dry-run
-    python pricing-assistant/pricing_assistant.py --sample --replay pricing-assistant/sample-data/recorded-run.json
+    python pricing-assistant/pricing_assistant.py --sample --replay pricing-assistant/sample-data/recorded-run.json \
+        --autonomous
 
 Two modes, one rule: the AI reads and writes; code does the math and holds the lines.
 
@@ -15,6 +16,7 @@ lines it can't argue with: never below the floor (which the AI is never told), n
 discount authority, small steps, never back up, never a promise the guidance forbids, never a cost or floor
 number in a message. A blocked message goes to a person. By default every message is a draft for a person to
 send; --autonomous lets it bargain on its own, which this script only does against simulated buyers.
+A reply that breaks a line is blocked even when the assistant also asks for a manager.
 
 Writes out/dashboard.html, out/quotes/ (repair quote drafts), out/quotes.csv, out/negotiations/ (transcripts),
 out/negotiations.csv, out/review-queue.csv, out/summary.md and, with the sample, out/score.md. Nothing is sent.
@@ -38,7 +40,7 @@ from common.util import BadAnswer, done, model_for, parse_json, parser, read_csv
 
 HERE = Path(__file__).parent
 SAMPLE = HERE / "sample-data"
-ESTIMATOR, MANAGER = 0.05, 0.10  # discount authority, from the sales guidance
+ESTIMATOR = 0.05  # the estimator's discount authority, from the sales guidance. More is a manager's call, not code's
 STEP = 0.02  # the most off in one round
 CONCESSIONS = {
     "none",
@@ -105,9 +107,17 @@ CLAUSES = {
     "G6": ("Portal customer over the NTE: increase request needed", lambda r: bool(r["NTE"])),
     "G7": (
         "Old or R-22 unit, repair over $1,500: offer a replacement quote",
-        lambda r: r["Refrigerant"] == "R-22" or (r["Installed"] and date.today().year - int(r["Installed"]) > 15),
+        lambda r: r["Refrigerant"] == "R-22" or (r["Installed"] and age(r) > 15),
     ),
 }
+
+
+def age(r: dict) -> int:
+    """The unit's age on the day of the repair request, not the day the script runs: the same request always
+    gets the same answer."""
+    return date.fromisoformat(r["Date"]).year - int(r["Installed"])
+
+
 NO_DISCOUNT = {"COMP", "R410", "R404"}
 
 PRICE = """You help an estimator at Summit Mechanical, a commercial HVAC contractor, price a repair. You get the
@@ -173,30 +183,53 @@ def price_prompt(r: dict, book: Book) -> str:
     )
 
 
+def price_answer(text: str) -> dict:
+    """The model's pricing answer, checked for shape in one place before anything uses it. A missing or wrong-typed
+    field raises BadAnswer, so the request goes to a person instead of stopping the batch."""
+    a = parse_json(text)
+    if not isinstance(a, dict):
+        raise BadAnswer("not an object")
+    if "task" not in a or not isinstance(a["task"], (str, type(None))):
+        raise BadAnswer("no task")
+    if a["task"] is not None and not isinstance(a.get("task_quote"), str):  # null task: it found no match
+        raise BadAnswer("no task_quote")
+    clauses = a.get("clauses") or []  # null means none chosen
+    if not isinstance(clauses, list):
+        raise BadAnswer("clauses isn't a list")
+    for c in clauses:
+        if not isinstance(c, dict) or not isinstance(c.get("id"), str) or not isinstance(c.get("why", ""), str):
+            raise BadAnswer(f"a clause isn't an id and a reason: {c!r}"[:120])
+    note = a.get("note_for_customer") or ""
+    if not isinstance(note, str):
+        raise BadAnswer("note_for_customer isn't text")
+    return {**a, "task_quote": a.get("task_quote") or "", "clauses": clauses, "note_for_customer": note}
+
+
 def price(r: dict, book: Book, model) -> Quote:
     q = Quote(r)
     try:
-        a = parse_json(model.complete(PRICE, price_prompt(r, book), max_tokens=900))
-        if not isinstance(a, dict) or "task" not in a:
-            raise BadAnswer("no task")
+        a = price_answer(model.complete(PRICE, price_prompt(r, book), max_tokens=900))
     except Exception as e:  # noqa: BLE001 - kept for a person
         q.problems.append(f"couldn't price it: {e}"[:160])
         return q
     q.answer = a
-    task = book.tasks.get(str(a.get("task", "")))
+    if a["task"] is None:
+        q.problems.append("no task in the flat-rate book matches the diagnosis")
+        return q
+    task = book.tasks.get(a["task"])
     if not task:
-        q.problems.append(f"task {a.get('task')!r} isn't in the flat-rate book")
+        q.problems.append(f"task {a['task']!r} isn't in the flat-rate book")
         return q
     if task["Unit type"] != r["Unit type"]:
         q.problems.append(f"task {task['Task']} is for a {task['Unit type']}, but the unit is a {r['Unit type']}")
-    if not quote_found(str(a.get("task_quote", "")), r["Technician's diagnosis"], min_words=2):
+    if not quote_found(a["task_quote"], r["Technician's diagnosis"], min_words=2):
         q.problems.append("the words it quoted for the task aren't in the diagnosis")
     if task["SKU"] in ("R410", "R404") and r["Refrigerant"] and r["Refrigerant"] not in task["Description"].upper():
         q.problems.append(
             f"the unit runs on {r['Refrigerant']}, but the task is {task['Description']}: check the refrigerant"
         )
     q.task = task
-    chosen = [str(c.get("id")) for c in a.get("clauses", []) if isinstance(c, dict)]
+    chosen = [c["id"] for c in a["clauses"]]
     for cid in chosen:
         if cid not in CLAUSES:
             q.problems.append(f"clause {cid} isn't in the guidance")
@@ -209,7 +242,7 @@ def price(r: dict, book: Book, model) -> Quote:
     if r["_recent"] and "G4" not in q.clauses:
         q.flags.append("repaired within the last 30 days; the AI judged it a different problem, so it's billed")
     compute(q, book)
-    q.note = str(a.get("note_for_customer", ""))
+    q.note = a["note_for_customer"]
     if amounts_of_money(q.note):
         q.problems.append("the note for the customer mentions an amount: only the price lines may")
     return q
@@ -315,11 +348,12 @@ class Negotiation:
     problems: list[str] = field(default_factory=list)
 
 
-def allowed_min(n: Negotiation, approved: float = ESTIMATOR) -> float:
-    """The lowest offer code will let through this round. The floor is never shown to the AI."""
+def allowed_min(n: Negotiation) -> float:
+    """The lowest offer code will let through this round. The floor is never shown to the AI. Only the estimator's
+    authority applies, even when the assistant hands it up: going further is for the manager to decide and send."""
     list_price, floor = float(n.quote["List price"]), float(n.quote["Floor"])
     last = n.offers[-1] if n.offers else list_price
-    return round(max(list_price * (1 - approved), last * (1 - STEP), floor), 2)
+    return round(max(list_price * (1 - ESTIMATOR), last * (1 - STEP), floor), 2)
 
 
 def amounts_of_money(text: str) -> list[str]:
@@ -373,9 +407,37 @@ def check_offer(n: Negotiation, a: dict) -> list[str]:
     return problems
 
 
+def offer_answer(text: str) -> dict:
+    """The seller's answer, checked for shape in one place before anything uses it. A missing or wrong-typed field
+    raises BadAnswer, and the conversation goes to a person."""
+    a = parse_json(text)
+    if not isinstance(a, dict):
+        raise BadAnswer("not an object")
+    offer = a.get("offer")
+    if isinstance(offer, bool) or not isinstance(offer, (int, float)):
+        raise BadAnswer(f"no offer price: {offer!r}"[:120])
+    if not isinstance(a.get("message"), str) or not a["message"].strip():
+        raise BadAnswer("no message")
+    concession = a.get("concession") or "none"
+    escalate = a.get("escalate") or False
+    if not isinstance(concession, str) or not isinstance(escalate, bool):
+        raise BadAnswer("concession isn't text, or escalate isn't true or false")
+    return {**a, "offer": float(offer), "concession": concession, "escalate": escalate}
+
+
+def buyer_answer(text: str) -> str:
+    """The simulated buyer's message, checked the same way."""
+    b = parse_json(text)
+    if not isinstance(b, dict) or not isinstance(b.get("message"), str):
+        raise BadAnswer("no message")
+    return b["message"]
+
+
 def negotiate(
-    quote: dict, buyer: dict | None, seller, buyer_model, rounds: int = 6, autonomous: bool = True
+    quote: dict, buyer: dict | None, seller, buyer_model, rounds: int = 6, autonomous: bool = False
 ) -> Negotiation:
+    """By default the first checked reply is a draft for a person. autonomous=True keeps bargaining on its own:
+    only against the simulated buyers."""
     n = Negotiation(quote, buyer)
     first = (
         f"Thanks for considering the replacement of your {quote['Unit']}. Our price is "
@@ -385,11 +447,12 @@ def negotiate(
     n.turns.append({"from": "Summit", "message": first, "offer": n.offers[-1]})
     for rnd in range(1, rounds + 1):
         try:
-            b = parse_json(buyer_model.complete(BUYER.format(style=buyer["Style"]), transcript(n, quote, rnd, "buyer")))
+            said = buyer_answer(
+                buyer_model.complete(BUYER.format(style=buyer["Style"]), transcript(n, quote, rnd, "buyer"))
+            )
         except Exception as e:  # noqa: BLE001 - the simulator failed: stop this conversation, keep it visible
             n.outcome, n.problems = "needs a person", [f"the simulated buyer didn't answer: {e}"[:160]]
             return n
-        said = str(b.get("message", "")) if isinstance(b, dict) else ""
         n.turns.append({"from": "Customer", "message": said})
         if buyer and n.offers[-1] <= float(buyer["Most they'll pay"]) + 0.005 and rnd > 1:
             n.outcome, n.price = "won", n.offers[-1]
@@ -402,30 +465,29 @@ def negotiate(
             )
             return n
         try:
-            a = parse_json(seller.complete(NEGOTIATE, transcript(n, quote, rnd, "seller"), max_tokens=900))
-            if not isinstance(a, dict):
-                raise BadAnswer("not an object")
+            a = offer_answer(seller.complete(NEGOTIATE, transcript(n, quote, rnd, "seller"), max_tokens=900))
         except Exception as e:  # noqa: BLE001
             n.outcome, n.problems = "needs a person", [f"couldn't get a reply: {e}"[:160]]
             return n
+        # The lines win over escalation: a message that breaks one is blocked, never kept as a draft for the manager.
         problems = check_offer(n, a)
-        if a.get("escalate"):
-            n.outcome = "escalated"
-            n.turns.append({"from": "Summit (draft)", "message": str(a.get("message", "")), "offer": a.get("offer")})
-            n.problems.append("the assistant asked for a manager")
-            return n
         if problems:
             n.outcome = "needs a person"
-            n.problems += problems
-            n.turns.append({"from": "Summit (blocked)", "message": str(a.get("message", "")), "offer": a.get("offer")})
+            n.problems += problems + (["the assistant also asked for a manager"] if a["escalate"] else [])
+            n.turns.append({"from": "Summit (blocked)", "message": a["message"], "offer": a["offer"]})
             return n
-        n.offers.append(round(float(a["offer"]), 2))
+        if a["escalate"]:
+            n.outcome = "escalated"
+            n.turns.append({"from": "Summit (draft)", "message": a["message"], "offer": a["offer"]})
+            n.problems.append("the assistant asked for a manager")
+            return n
+        n.offers.append(round(a["offer"], 2))
         n.turns.append(
             {
                 "from": "Summit" if autonomous else "Summit (draft)",
-                "message": str(a["message"]),
+                "message": a["message"],
                 "offer": n.offers[-1],
-                "concession": a.get("concession", "none"),
+                "concession": a["concession"],
             }
         )
         if not autonomous:
@@ -457,6 +519,17 @@ def transcript(n: Negotiation, quote: dict, rnd: int, role: str) -> str:
 
 
 SALES_GUIDANCE_NEGOTIATION = ""  # set from the guidance file at load time: the negotiation section only
+NEGOTIATION_HEADING = "## Replacements and negotiation"
+
+
+def negotiation_guidance(guidance: str) -> str:
+    """The negotiation section of the guidance, and nothing before it. If the heading is renamed, stop: falling back
+    to the whole file would hand the negotiator the repair rules too."""
+    if NEGOTIATION_HEADING not in guidance:
+        raise ValueError(
+            f"the sales guidance has no {NEGOTIATION_HEADING!r} heading: rename it back, or update the code"
+        )
+    return guidance.split(NEGOTIATION_HEADING, 1)[1].strip()
 
 
 # --- scoring, outputs, the run --------------------------------------------------------------------------------
@@ -498,6 +571,9 @@ def score(quotes: list[Quote], negs: list[Negotiation], folder: Path) -> dict:
             )
     won = [n for n in negs if n.outcome == "won"]
     breaches = [n for n in negs if any("FLOOR" in p or "reveals" in p for p in n.problems)]
+    blocked = [
+        n for n in negs if n.outcome == "needs a person" and any(t["from"] == "Summit (blocked)" for t in n.turns)
+    ]
     left = sum(float(n.buyer["Most they'll pay"]) - n.price for n in won if n.buyer)
     md = [f"**Repairs:** right task on {task_ok} of {len(quotes)}; right clauses on {clause_ok} of {len(quotes)}.", ""]
     md += [f"- {m}" for m in misses]
@@ -512,12 +588,18 @@ def score(quotes: list[Quote], negs: list[Negotiation], folder: Path) -> dict:
         "",
         f"**Negotiations:** {len(won)} won, {sum(n.outcome == 'escalated' for n in negs)} sent to a manager, "
         f"{sum(n.outcome == 'needs a person' for n in negs)} stopped by a check, "
-        f"{sum(n.outcome == 'no deal' for n in negs)} no deal.",
+        f"{sum(n.outcome == 'no deal' for n in negs)} no deal"
+        + (
+            f", {drafts} drafts for a person."
+            if (drafts := sum(n.outcome == "draft for a person" for n in negs))
+            else "."
+        ),
         f"- Average price won: {sum(n.price / float(n.quote['List price']) for n in won) / len(won):.1%} of list."
         if won
         else "",
         f"- Left on the table (what they'd have paid, minus what they paid): {money(left)}.",
         f"- Offers below the floor, or messages revealing it, stopped by the checks: {len(breaches)}.",
+        f"- Replies stopped for breaking any line (floor, authority, step, promise, cost, price): {len(blocked)}.",
     ]
     return {
         "task_ok": task_ok,
@@ -528,15 +610,17 @@ def score(quotes: list[Quote], negs: list[Negotiation], folder: Path) -> dict:
         "md": "\n".join(md),
         "won": len(won),
         "left": left,
+        "breaches": len(breaches),
+        "blocked": len(blocked),
     }
 
 
-def run(folder: Path, model, out: Path, buyer_model=None, autonomous: bool = True, answer_key: bool = True):
+def run(folder: Path, model, out: Path, buyer_model=None, autonomous: bool = False, answer_key: bool = True):
     from pricing_dashboard import dashboard
 
     global SALES_GUIDANCE_NEGOTIATION
     book = Book.load(folder)
-    SALES_GUIDANCE_NEGOTIATION = book.guidance.split("## Replacements and negotiation", 1)[-1].strip()
+    SALES_GUIDANCE_NEGOTIATION = negotiation_guidance(book.guidance)
     history = {}
     for h in read_csv(folder / "unit-history.csv"):
         history.setdefault(h["Request"], []).append(h)
@@ -694,14 +778,18 @@ def main() -> None:
     p.add_argument(
         "--negotiate", action="store_true", help="also negotiate the replacement quotes with simulated buyers"
     )
-    p.add_argument("--drafts", action="store_true", help="stop after one drafted reply per negotiation, for a person")
+    p.add_argument(
+        "--autonomous",
+        action="store_true",
+        help="keep bargaining against the simulated buyers (default: stop after one drafted reply, for a person)",
+    )
     args = p.parse_args()
     folder = SAMPLE if args.sample else args.data
     if not folder:
         p.error("choose --sample or --data")
     model = Replay(args.replay) if args.replay else model_for(args, offline)
     buyer = (Replay(args.replay, "buyer") if args.replay else model) if (args.negotiate or args.replay) else None
-    quotes, negs, written = run(folder, model, args.out, buyer, autonomous=not args.drafts, answer_key=args.sample)
+    quotes, negs, written = run(folder, model, args.out, buyer, autonomous=args.autonomous, answer_key=args.sample)
     done(model, written, f"{len(quotes)} repairs priced; {len(negs)} negotiations. Open dashboard.html.")
 
 

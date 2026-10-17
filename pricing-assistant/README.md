@@ -15,25 +15,29 @@ Then code works out the price. The AI never writes a number into a price.
 
 **Negotiate a replacement.** The AI writes each reply, trading before discounting. Code holds the lines:
 - never below the floor (the AI never sees it);
-- never beyond the estimator's 5% authority;
+- never beyond the estimator's 5% authority, even when it hands the deal to a manager (going further is the manager's decision, made by a person);
 - no more than 2% off a round, and never back up;
 - only the concessions the guidance allows, and none of the promises it forbids;
 - no cost or floor in a message, and the price in the message must be the offer.
+
+A reply that breaks any of these is blocked and goes to a person, even if the AI also asked for a manager.
 
 A customer who tries to instruct the assistant, or wants more than the authority allows, goes to a person.
 
 ## What it doesn't do
 
-Send anything. By default every negotiation reply is a draft for a person (`--drafts`). It only bargains on its own against the simulated buyers in `sample-data/buyer-simulator/`.
+Send anything. By default each negotiation stops at its first checked reply, a draft for a person. It only bargains on its own with `--autonomous`, against the simulated buyers in `sample-data/buyer-simulator/`.
 
 ## Try it
 
 ```sh
 # Replay a recorded run: a real model's answers (Claude Sonnet 5.5), for repairs and negotiations, free
-python3 pricing-assistant/pricing_assistant.py --sample --replay pricing-assistant/sample-data/recorded-run.json
+python3 pricing-assistant/pricing_assistant.py --sample --replay pricing-assistant/sample-data/recorded-run.json --autonomous
 
 # The offline stand-in, with simulated negotiations
-python3 pricing-assistant/pricing_assistant.py --sample --dry-run --negotiate
+python3 pricing-assistant/pricing_assistant.py --sample --dry-run --negotiate --autonomous
+
+# Without --autonomous, each negotiation stops at one drafted reply for a person
 ```
 
 Then open `out/dashboard.html`. With the sample, `out/score.md` scores the run against the answer key.

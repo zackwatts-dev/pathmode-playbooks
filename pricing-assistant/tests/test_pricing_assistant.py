@@ -6,7 +6,7 @@ from common.fake import OfflineModel, ScriptedModel
 from common.util import read_csv
 
 BOOK = pa.Book.load(pa.SAMPLE)
-pa.SALES_GUIDANCE_NEGOTIATION = BOOK.guidance.split("## Replacements and negotiation", 1)[-1]
+pa.SALES_GUIDANCE_NEGOTIATION = pa.negotiation_guidance(BOOK.guidance)
 HISTORY = {}
 for h in read_csv(pa.SAMPLE / "unit-history.csv"):
     HISTORY.setdefault(h["Request"], []).append(h)
@@ -128,6 +128,15 @@ def test_drafts_mode_stops_after_one_reply_for_a_person():
     assert n.outcome == "draft for a person" and len(n.offers) == 2
 
 
+def test_negotiation_is_a_draft_for_a_person_unless_asked_to_bargain_alone(tmp_path):
+    buyer = ScriptedModel([json.dumps({"message": "Too much."})])
+    n = pa.negotiate(QUOTES["Q01"], BUYERS["Q01"], OfflineModel(pa.offline), buyer)
+    assert n.outcome == "draft for a person" and n.turns[-1]["from"] == "Summit (draft)"
+    _, negs, _ = pa.run(pa.SAMPLE, OfflineModel(pa.offline), tmp_path, OfflineModel(pa.offline))
+    assert {n.outcome for n in negs} == {"draft for a person"}
+    assert all(t["from"] != "Summit" for n in negs for t in n.turns[1:])  # only the list-price opener is "sent"
+
+
 def test_the_seller_never_sees_the_cost_or_floor():
     quote = QUOTES["Q03"]
     n = pa.Negotiation(quote, None, offers=[float(quote["List price"])])
@@ -138,7 +147,7 @@ def test_the_seller_never_sees_the_cost_or_floor():
 def test_the_recorded_run_replays(tmp_path):
     model = pa.Replay(pa.SAMPLE / "recorded-run.json")
     buyer = pa.Replay(pa.SAMPLE / "recorded-run.json", "buyer")
-    quotes, negs, _ = pa.run(pa.SAMPLE, model, tmp_path, buyer)
+    quotes, negs, _ = pa.run(pa.SAMPLE, model, tmp_path, buyer, autonomous=True)
     assert len(quotes) == 20 and len(negs) == 8
     assert not [n for n in negs if n.price is not None and n.price < float(n.quote["Floor"])]
 
@@ -164,3 +173,93 @@ def test_a_floor_written_any_way_is_caught():
             "message": f"Honestly we can't go much under {written}.",
         }
         assert any("reveals" in p for p in pa.check_offer(n, a)), written
+
+
+def seller_says(rid_quote, message, offer=None, escalate=False, concession="none"):
+    lst = float(QUOTES[rid_quote]["List price"])
+    return json.dumps(
+        {"offer": lst if offer is None else offer, "concession": concession, "message": message, "escalate": escalate}
+    )
+
+
+def test_malformed_repair_answers_go_to_a_person_without_stopping_the_batch():
+    good = json.loads(answer("R05"))
+    bad = [
+        {**good, "clauses": None, "task": 7},
+        {**good, "clauses": "G1"},
+        {**good, "clauses": [{"id": None}]},
+        {**good, "task_quote": None},
+        {**good, "note_for_customer": 300},
+        {k: v for k, v in good.items() if k != "task_quote"},
+        ["not", "an", "object"],
+    ]
+    for a in bad:
+        q = pa.price(REQUESTS["R05"], BOOK, ScriptedModel([json.dumps(a)]))
+        assert q.status == "needs review" and "couldn't price it" in q.problems[0] and q.answer is None, a
+
+
+def test_a_null_task_means_no_match_and_goes_to_a_person():
+    a = {**json.loads(answer("R05")), "task": None, "task_quote": None}
+    q = pa.price(REQUESTS["R05"], BOOK, ScriptedModel([json.dumps(a)]))
+    assert q.status == "needs review" and "no task" in q.problems[0] and q.task is None
+
+
+def test_null_clauses_mean_none_chosen():
+    a = {**json.loads(answer("R05")), "clauses": None, "note_for_customer": None}
+    q = pa.price(REQUESTS["R05"], BOOK, ScriptedModel([json.dumps(a)]))
+    assert q.status == "ready to send" and q.clauses == [] and q.answer["clauses"] == []
+
+
+def test_a_malformed_seller_answer_goes_to_a_person():
+    for a in (
+        {"offer": None, "message": "Hi"},
+        {"offer": True, "message": "Hi"},
+        {"offer": 1.0, "message": None},
+        {"offer": 1.0, "message": "Hi", "escalate": "yes"},
+    ):
+        buyer = ScriptedModel([json.dumps({"message": "Too much."})])
+        n = pa.negotiate(QUOTES["Q01"], BUYERS["Q01"], ScriptedModel([json.dumps(a)]), buyer)
+        assert n.outcome == "needs a person" and "couldn't get a reply" in n.problems[0], a
+
+
+def test_an_escalation_still_reports_the_guard_problems():
+    lst = float(QUOTES["Q07"]["List price"])
+    msg = f"{pa.money(lst)}, with a lifetime warranty. I'll take the rest to my manager."
+    seller = ScriptedModel([seller_says("Q07", msg, escalate=True)])
+    buyer = ScriptedModel([json.dumps({"message": "We need more."})])
+    n = pa.negotiate(QUOTES["Q07"], BUYERS["Q07"], seller, buyer)
+    assert n.outcome == "needs a person" and any("forbids" in p for p in n.problems)
+    assert n.turns[-1]["from"] == "Summit (blocked)"
+
+
+def test_an_escalation_cant_offer_past_the_estimators_authority():
+    lst = float(QUOTES["Q06"]["List price"])
+    offer = round(lst * 0.92, 2)  # within a manager's 10%, beyond the estimator's 5%: the manager decides that
+    seller = ScriptedModel([seller_says("Q06", f"I can do {pa.money(offer)} and ask my manager.", offer, True)])
+    buyer = ScriptedModel([json.dumps({"message": "We need 10% off."})])
+    n = pa.negotiate(QUOTES["Q06"], BUYERS["Q06"], seller, buyer)
+    assert n.outcome == "needs a person" and not any(t["from"] == "Summit (draft)" for t in n.turns)
+
+
+def test_the_score_counts_lines_broken_in_an_escalation():
+    floor = float(QUOTES["Q03"]["Floor"])
+    seller = ScriptedModel([seller_says("Q03", f"{pa.money(floor - 50)}, and I'll ask my manager.", floor - 50, True)])
+    buyer = ScriptedModel([json.dumps({"message": "Lower."})])
+    n = pa.negotiate(QUOTES["Q03"], BUYERS["Q03"], seller, buyer)
+    s = pa.score([], [n], pa.SAMPLE)
+    assert s["breaches"] == 1 and s["blocked"] == 1 and "sent to a manager" in s["md"] and "0 sent" in s["md"]
+
+
+def test_unit_age_is_counted_on_the_requests_date_not_today():
+    r = {**REQUESTS["R18"], "Installed": "2010", "Refrigerant": "R-410A", "Date": "2025-09-25"}
+    assert not pa.CLAUSES["G7"][1](r)  # 15 years old that day: not over 15, whenever this runs
+    assert pa.CLAUSES["G7"][1]({**r, "Date": "2026-01-02"})
+
+
+def test_a_renamed_negotiation_heading_fails_loudly():
+    import pytest
+
+    with pytest.raises(ValueError, match="Replacements and negotiation"):
+        pa.negotiation_guidance(BOOK.guidance.replace("## Replacements and negotiation", "## Replacements"))
+    section = pa.negotiation_guidance(BOOK.guidance)
+    assert "G1" not in section and "Discount authority" in section

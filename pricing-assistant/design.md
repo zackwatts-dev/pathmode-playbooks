@@ -15,9 +15,9 @@ Pricing takes too long, and it's inconsistent. When a technician finds the probl
 
 **Mode 2: negotiate a replacement.** For an open replacement quote:
 1. The AI writes each reply to the customer: trade before discounting, small steps, warm and plain.
-2. Code holds the lines: never below the floor (the AI is never told it); never beyond the estimator's 5% authority; no more than 2% off in one round; never back up; only concessions the guidance allows; no promises it forbids; no cost or floor in any message; the price in the message must be the offer.
+2. Code holds the lines: never below the floor (the AI is never told it); never beyond the estimator's 5% authority, even when handing it up (going further is the manager's decision); no more than 2% off in one round; never back up; only concessions the guidance allows; no promises it forbids; no cost or floor in any message; the price in the message must be the offer. A reply that breaks a line is blocked, even if it also asks for a manager.
 3. A customer who tries to instruct the assistant, wants more than the authority allows, or mentions a competitor's price goes to a person.
-4. By default every reply is a draft a person sends. In the demo, it bargains on its own against simulated buyers.
+4. By default every reply is a draft a person sends. Only with `--autonomous`, in the demo, does it bargain on its own, against simulated buyers.
 
 ## Inputs
 
