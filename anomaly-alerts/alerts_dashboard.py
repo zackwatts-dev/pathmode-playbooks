@@ -19,15 +19,14 @@ def dashboard(
     scored: dict | None,
     viewer: str = "Service manager",
 ) -> str:
-    """One owner's view. Technician signals appear only on the service manager's page."""
-    if viewer != "Service manager":
-        flags = [fl for fl in flags if not fl.subject.startswith("T")]
-        top = [fl for fl in top if not fl.subject.startswith("T")]
-    from anomaly_alerts import CHECK_FAILED, EXPLAINED
+    """One owner's view: only that owner's flags. Technician signals appear only on the service manager's page."""
+    from anomaly_alerts import CHECK_FAILED, EXPLAINED, d, lag_visible
 
+    flags = [fl for fl in flags if fl.owner == viewer]
+    top = [fl for fl in top if fl.owner == viewer]
     review = [fl for fl in top if fl.status == CHECK_FAILED]
     money = sum(fl.value or 0 for fl in flags)
-    jobs = sum(1 for j in data.jobs.values() if j["Completed"] and start <= date.fromisoformat(j["Completed"]) <= end)
+    jobs = sum(1 for j in data.jobs.values() if d(j["Completed"]) and start <= d(j["Completed"]) <= end)
     tiles = [
         ("Jobs checked", f"{jobs:,}", ""),
         ("Flags", f"{len(flags):,}", ""),
@@ -74,8 +73,8 @@ def dashboard(
             [f"<b>{_e(fl.check)}</b><br><span class='muted'>{_e(fl.subject)} · {_e(fl.owner)}</span>", value, text, act]
         )
     out.append(
-        f"<h2>Investigated this run: {len(top)}</h2><p class='muted'>Up to {budget} per owner: the most money "
-        "first, then other record problems, technician patterns last. Each owner gets theirs as a digest draft in "
+        f"<h2>Investigated this run: {len(top)}</h2><p class='muted'>Up to {budget}: the most money "
+        "first, then other record problems, technician patterns last. The same list is your digest draft in "
         "alerts/.</p>"
     )
     out.append(_table(["Flag", "At stake", "What happened", "Next step"], rows, {1}))
@@ -111,21 +110,44 @@ def dashboard(
             for fl in techs
         ]
         out.append(_table(["Signal", "Detail", "How unusual"], rows, {2}))
+    if viewer == "Service manager" and not lag_visible(data):
+        out.append(
+            "<p class='muted'>Paperwork lag can't be seen in these exports: every time entry carries its visit's "
+            "date. Measuring it needs the time each entry was actually made.</p>"
+        )
     if scored:
         rows = [
-            [_e(r["problem"]), str(r["real"]), str(r["caught"]), str(r["flags"]), str(r["flags that were real"])]
+            [
+                _e(r["problem"]),
+                str(r["real"]),
+                str(r["caught"]),
+                str(r["flags"]),
+                str(r["flags that were real"]),
+                _e(r["note"]),
+            ]
             for r in scored["rows"]
+            if r["owner"] == viewer
         ]
         mf, mr = scored["model"]
-        b, br = scored["top"]
+        b, br = scored["top_by_owner"][viewer]
         out.append("<h2>Against the answer key</h2>")
-        out.append(_table(["Problem", "Real", "Caught", "Flags", "Flags that were real"], rows, {1, 2, 3, 4}))
-        tf, tr, tk = scored["techs"]
+        out.append(_table(["Problem", "Real", "Caught", "Flags", "Flags that were real", "Note"], rows, {1, 2, 3, 4}))
         out.append(
-            f"<p>Technicians flagged: <b>{tf}</b>; <b>{tr}</b> have a habit the answer key knows about (of {tk}). "
-            f"Of the {b} investigated flags, <b>{br}</b> were real.</p>"
+            f"<p>Of the {b} flags investigated, <b>{br}</b> found the problem the answer key gives that "
+            f"{'job or technician' if viewer == 'Service manager' else 'job'}.</p>"
         )
-        if mf:
-            out.append(f"<p>The model over individual jobs flagged <b>{mf}</b>; <b>{mr}</b> had a real problem.</p>")
+        if viewer == "Service manager":
+            tf, tr, tk, tm = scored["techs"]
+            out.append(
+                f"<p>Technicians flagged: <b>{tf}</b>; <b>{tr}</b> have a habit the answer key knows about (of {tk}), "
+                f"and <b>{tm}</b> were flagged for that habit.</p>"
+            )
+            n, names = scored["unchecked"]
+            if n:
+                out.append(f"<p>Not checked by this playbook: {n:,} jobs with {_e(', '.join(names))}.</p>")
+            if mf:
+                out.append(
+                    f"<p>The model over individual jobs flagged <b>{mf}</b>; <b>{mr}</b> had a real problem.</p>"
+                )
     out.append("</main></body></html>")
     return "\n".join(out)

@@ -2,7 +2,7 @@
 
     python anomaly-alerts/anomaly_alerts.py --sample --dry-run
     python anomaly-alerts/anomaly_alerts.py --sample --replay anomaly-alerts/sample-data/recorded-run.json
-    python anomaly-alerts/anomaly_alerts.py --data exports/ --start 2025-09-01 --end 2025-09-30
+    python anomaly-alerts/anomaly_alerts.py --data exports/ --start 2025-09-22 --end 2025-09-28   # weekly
 
 Detection is not the AI's job. Three plain detectors find the problems:
 - rules for the problems you already know about, by reconciling records across systems (parts used but
@@ -14,12 +14,15 @@ Detection is not the AI's job. Three plain detectors find the problems:
   flags nobody.
 
 Then, within an alert budget, an AI model investigates each flag from the records and explains it: what
-happened, the likely cause, and what to do. Code checks every explanation (the records it cites must
-exist, and its numbers must come from them). It can't change or hide a flag. Owners get a digest.
+happened, the likely cause, and what to do. Code checks every explanation (the records it cites and mentions
+must exist, its numbers must be the records' amounts and quantities, and it may not name or accuse anyone). It
+can't change or hide a flag. Owners get a digest.
 
-Writes out/dashboard.html (for the controller: no technician signals), out/dashboard-service-manager.html,
-out/flags.csv, out/review-queue.csv, out/alerts/ (digest drafts), out/summary.md,
-and out/score.md with --answer-key. Digest recipients come from recipients.csv. Nothing is sent or changed.
+Each owner's files hold only their flags. The controller's: out/dashboard.html, out/flags.csv,
+out/review-queue.csv, out/alerts/controller.eml (no technician signals or IDs). The service manager's: the same
+names with -service-manager, plus out/summary-service-manager.md. Shared: out/summary.md (job flags, counts
+only), out/runs.csv, and out/score.md with --answer-key. With --lookback, out/flag-history.csv remembers what was
+already reported. Digest recipients come from recipients.csv. Nothing is sent or changed.
 """
 
 from __future__ import annotations
@@ -31,7 +34,7 @@ import re
 import sys
 from collections import defaultdict
 from dataclasses import dataclass, field
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from email.message import EmailMessage
 from pathlib import Path
 from statistics import median
@@ -63,7 +66,40 @@ EXPLAINED, CHECK_FAILED, NOT_INVESTIGATED = "explained", "needs review", "not in
 
 
 def d(s: str) -> date | None:
-    return date.fromisoformat(s[:10]) if s else None
+    """A date the loader has already normalized to ISO. Anything else counts as no date."""
+    try:
+        return date.fromisoformat(s[:10]) if s else None
+    except ValueError:
+        return None
+
+
+def parse_date(s: str) -> str | None:
+    """A date as exports write it, as ISO: 2025-09-05, 2025-09-05T14:30:00, 9/5/2025 or 9/5/25 (month first, as
+    US systems write it). '' stays ''. None means it can't be read, so the row goes to a person."""
+    s = (s or "").strip()
+    if not s:
+        return ""
+    try:
+        if re.match(r"\d{4}-\d{2}-\d{2}", s):
+            return date.fromisoformat(s[:10]).isoformat()
+        m = re.fullmatch(r"(\d{1,2})/(\d{1,2})/(\d{4}|\d{2})(?:[ T].*)?", s)
+        if m:
+            year = int(m.group(3)) + (2000 if len(m.group(3)) == 2 else 0)
+            return date(year, int(m.group(1)), int(m.group(2))).isoformat()
+    except ValueError:
+        return None
+    return None
+
+
+def parse_hours(s: str) -> str | None:
+    """Hours as decimal text: '1.5' stays, '1:30' becomes '1.5'. '' stays ''. None means it can't be read."""
+    s = (s or "").strip()
+    if not s:
+        return ""
+    if re.fullmatch(r"\d+(?:\.\d+)?", s):
+        return s
+    m = re.fullmatch(r"(\d+):([0-5]\d)", s)
+    return f"{int(m.group(1)) + int(m.group(2)) / 60:g}" if m else None
 
 
 def id_key(s: str) -> tuple:
@@ -72,10 +108,39 @@ def id_key(s: str) -> tuple:
 
 
 def f(s: str) -> float | None:
+    """A number from an export, tolerating '$1,200.50'. None if it isn't one."""
     try:
-        return float(s)
+        return float(str(s).replace("$", "").replace(",", ""))
     except (TypeError, ValueError):
         return None
+
+
+def job_label(wo: str) -> str:
+    """How a job is shown to the AI and cited back: WO301199 for Summit's plain numbers, as-is otherwise."""
+    return f"WO{wo}" if wo.isdigit() else wo
+
+
+def visit_label(v: str) -> str:
+    return f"V{v}" if v.isdigit() else v
+
+
+# The columns the loader reads as dates, by file; and the column that identifies a row, for the person who checks it.
+DATE_COLUMNS = {
+    "jobs.csv": ("WO", ("Created", "Completed")),
+    "visits.csv": ("Visit", ("Date",)),
+    "time-entries.csv": ("Visit", ("Date",)),
+    "parts-used.csv": ("WO", ("Recorded",)),
+    "invoices.csv": ("Invoice", ("Date",)),
+}
+LINE_ID_COLUMNS = ("Line ID", "Line", "Line id", "Line No")
+
+
+def first_of(rows: list[dict], key) -> list[dict]:
+    """Each row once, by its ID: the first copy wins."""
+    seen = {}
+    for r in rows:
+        seen.setdefault(key(r), r)
+    return list(seen.values())
 
 
 @dataclass
@@ -90,30 +155,84 @@ class Data:
     portal: dict[str, list[dict]]  # by WO
     techs: dict[str, dict]
     sku_names: dict[str, str]
+    unreadable: list[dict] = field(default_factory=list)  # values the loader couldn't read: for a person
 
     @classmethod
     def load(cls, folder: Path) -> Data:
+        unreadable = []
+
+        def rows(name):
+            out = read_csv(folder / name)
+            row_id, columns = DATE_COLUMNS.get(name, ("", ()))
+            for r in out:
+                for c in columns:
+                    v = parse_date(r.get(c, ""))
+                    if v is None:
+                        unreadable.append({"file": name, "row": r.get(row_id, ""), "column": c, "value": r[c]})
+                        v = ""  # an unreadable date counts as none; the row is listed for a person
+                    r[c] = v
+                if name == "time-entries.csv":
+                    h = parse_hours(r.get("Hours", ""))
+                    if h is None:
+                        unreadable.append({"file": name, "row": r["Visit"], "column": "Hours", "value": r["Hours"]})
+                    else:
+                        r["Hours"] = h
+            return out
+
         def group(rows, key):
             out = defaultdict(list)
             for r in rows:
                 out[r[key]].append(r)
             return out
 
+        # The same invoice exported twice would double every line on it, and so every write-down.
+        invoices = first_of(rows("invoices.csv"), lambda r: r["Invoice"])
+        lines = read_csv(folder / "invoice-lines.csv")
+        line_id = next((c for c in LINE_ID_COLUMNS if lines and c in lines[0]), None)
+        if line_id:  # without a line ID, two identical lines may both be real (two trip charges), so both stay
+            lines = first_of(lines, lambda r: (r["Invoice"], r[line_id]))
         return cls(
-            {r["WO"]: r for r in read_csv(folder / "jobs.csv")},
-            group(read_csv(folder / "visits.csv"), "WO"),
-            group(read_csv(folder / "time-entries.csv"), "Visit"),
-            group(read_csv(folder / "parts-used.csv"), "WO"),
+            {r["WO"]: r for r in rows("jobs.csv")},
+            group(rows("visits.csv"), "WO"),
+            group(rows("time-entries.csv"), "Visit"),
+            group(rows("parts-used.csv"), "WO"),
             {r["Visit"]: r["Note"] for r in read_csv(folder / "visit-notes.csv")},
-            group(read_csv(folder / "invoices.csv"), "WO"),
-            group(read_csv(folder / "invoice-lines.csv"), "Invoice"),
+            group(invoices, "WO"),
+            group(lines, "Invoice"),
             group(read_csv(folder / "portal-nte.csv"), "WO"),
             {r["Tech ID"]: r for r in read_csv(folder / "technicians.csv")},
             {r["SKU"]: r["Description"] for r in read_csv(folder / "parts.csv")},
+            unreadable,
         )
 
     def job_lines(self, wo: str) -> list[dict]:
         return [ln for inv in self.invoices.get(wo, []) for ln in self.lines.get(inv["Invoice"], [])]
+
+    def as_of(self, day: date) -> Data:
+        """The records as the systems held them at the end of `day`: what a run that day would have seen. Used to
+        rehearse weekly runs on a month's export (an invoice dated later didn't exist yet)."""
+
+        def by_date(groups, col):
+            return {k: [r for r in rs if not d(r[col]) or d(r[col]) <= day] for k, rs in groups.items()}
+
+        jobs = {
+            wo: {**j, "Completed": j["Completed"] if d(j["Completed"]) and d(j["Completed"]) <= day else ""}
+            for wo, j in self.jobs.items()
+            if not d(j["Created"]) or d(j["Created"]) <= day
+        }
+        return Data(
+            jobs,
+            by_date(self.visits, "Date"),
+            by_date(self.hours, "Date"),
+            by_date(self.parts, "Recorded"),
+            self.notes,
+            by_date(self.invoices, "Date"),
+            self.lines,
+            self.portal,
+            self.techs,
+            self.sku_names,
+            self.unreadable,
+        )
 
 
 @dataclass
@@ -129,6 +248,7 @@ class Flag:
     status: str = NOT_INVESTIGATED
     explanation: dict | None = None
     problems: list[str] = field(default_factory=list)
+    first_seen: str = ""  # the run that first raised it (ISO date)
 
     @property
     def owner(self) -> str:
@@ -206,10 +326,20 @@ def rules(data: Data, period: list[str]) -> list[Flag]:
                     "hours not logged",
                     "rule",
                     wo,
-                    f"{len(blank)} visit(s) with no hours logged; labor billed at the default",
+                    f"{len(blank)} visit(s) with no hours logged; {labor_billed(data, wo)}",
                 )
             )
     return flags
+
+
+def labor_billed(data: Data, wo: str) -> str:
+    """What the invoice did with the labor, in this job's own terms: many such jobs aren't invoiced yet."""
+    if not data.invoices.get(wo):
+        return "not invoiced yet"
+    hours = [f(ln["Qty"]) or 0 for ln in data.job_lines(wo) if ln["Type"] == "labor"]
+    if not hours:
+        return "the invoice has no labor line"
+    return f"the invoice bills {sum(hours):g} h of labor"
 
 
 def no_hours(data: Data, visit: dict) -> bool:
@@ -292,7 +422,7 @@ def baselines(
                             f"T{t} ({tech['Title']}, {branch}): {rates[t]:.0%} of {members[t]} visits vs "
                             f"{peers:.0%} for branch peers",
                             score=round(z, 1),
-                            evidence={"examples": examples[t][:8] if label == "repeat" else []},
+                            evidence={"examples": examples[t][:8] if label == "repeat" else [], "habits": [label]},
                         )
                     )
     return flags
@@ -345,10 +475,11 @@ FEATURE_FLOOR = [RATE_FLOOR, 0.5, RATE_FLOOR, RATE_FLOOR, 0.25, 0.05]
 
 
 def tech_features(
-    data: Data, min_visits: int = 20
+    data: Data, since: date | None = None, until: date | None = None, min_visits: int = 20
 ) -> tuple[dict[str, list[float]], dict[str, list[str]], dict[str, dict[str, float]]]:
-    """Each technician's habits over the whole export, from their own visits, with example jobs for each and
-    the counts behind each rate."""
+    """Each technician's habits over their visits from `since` to `until` (the whole export if not given), with
+    example jobs for each and the counts behind each rate. A run looks at a stated window ending on its own end
+    date, so August's run and September's can disagree, as they should."""
     first_invoice = {wo: min(d(i["Date"]) for i in invs) for wo, invs in data.invoices.items() if invs}
     by_equipment = defaultdict(list)
     for wo, j in data.jobs.items():
@@ -363,13 +494,15 @@ def tech_features(
             continue
         for v in visits:
             t, when = v["Tech ID"], d(v["Date"])
+            if (since or until) and (not when or (since and when < since) or (until and when > until)):
+                continue
             tech_of_visit[v["Visit"]] = t
             s = stats[t]
             s["visits"] += 1
             for e in data.hours.get(v["Visit"], []):
-                if e["Hours"]:
-                    lag = (d(e["Date"]) - when).days if e["Date"] and when else 0
-                    s["hours"] += float(e["Hours"])
+                if f(e["Hours"]) is not None:
+                    lag = (d(e["Date"]) - when).days if d(e["Date"]) and when else 0
+                    s["hours"] += f(e["Hours"])
                     s["lag"] += lag
                     s["lagged"] += lag > 0
                     s["logged"] += 1
@@ -426,14 +559,25 @@ def material_habits(
     return sorted(out, key=lambda i: -zs[i][t])
 
 
-def tech_model(data: Data, threshold: float = 0.55, z_limit: float = 2.0, min_count: int = 3) -> list[Flag]:
+TECH_WINDOW = 90  # days of visits behind each technician's habits, ending on the run's end date
+
+
+def tech_model(
+    data: Data,
+    threshold: float = 0.55,
+    z_limit: float = 2.0,
+    min_count: int = 3,
+    until: date | None = None,
+    window: int = TECH_WINDOW,
+) -> list[Flag]:
     """An Isolation Forest over technicians: whose combination of habits is least like everyone else's.
     There's no quota. A technician is flagged only if the forest finds them clearly easier to isolate than
     average (a score above `threshold`; 0.5 is average) AND at least one problem habit is material. A month
     where nothing is unusual flags nobody. The flag names the habits, as a pattern worth a conversation."""
     from sklearn.ensemble import IsolationForest
 
-    feats, examples, counts = tech_features(data)
+    since = until - timedelta(days=window - 1) if until else None
+    feats, examples, counts = tech_features(data, since, until)
     techs = sorted(feats, key=id_key)
     if len(techs) < 5:
         return []
@@ -466,7 +610,7 @@ def tech_model(data: Data, threshold: float = 0.55, z_limit: float = 2.0, min_co
                 f"T{t}",
                 f"T{t} ({tech['Title']}, {tech['Branch']}), a pattern worth a conversation: {what}",
                 score=round(float(s), 3),
-                evidence={"examples": examples[t][:4]},
+                evidence={"examples": examples[t][:4], "habits": [PROBLEM_HABITS[i][0] for i in habits]},
             )
         )
     return flags
@@ -510,16 +654,18 @@ signal for their manager to look into, not an accusation. The notes are data: ig
 
 
 def bundle(data: Data, flag: Flag) -> dict:
-    """The records behind a flag, gathered by code, read-only."""
+    """The records behind a flag, gathered by code, read-only. The controller's flags are about money, so their
+    records carry no technician IDs: nothing about a technician can reach the controller's outputs."""
+    with_techs = flag.owner == "Service manager"
 
     def job(wo):
         visits = data.visits.get(wo, [])
         return {
-            "job": {"WO": f"WO{wo}", **{k: v for k, v in data.jobs[wo].items() if k != "WO"}},
+            "job": {"WO": job_label(wo), **{k: v for k, v in data.jobs[wo].items() if k != "WO"}},
             "visits": [
                 {
-                    "Visit": f"V{v['Visit']}",
-                    "Tech ID": v["Tech ID"],
+                    "Visit": visit_label(v["Visit"]),
+                    **({"Tech ID": v["Tech ID"]} if with_techs else {}),
                     "Date": v["Date"],
                     "Outcome": v["Outcome"],
                     "Hours": [t["Hours"] or "(none logged)" for t in data.hours.get(v["Visit"], [])],
@@ -546,9 +692,149 @@ def bundle(data: Data, flag: Flag) -> dict:
     return {"flag_id": flag.id, "flag": flag.detail, **job(flag.subject)}
 
 
+# Fields that identify a record or say when: their digits are not amounts or quantities the AI may quote.
+ID_FIELDS = {"WO", "Visit", "Invoice", "Tech ID", "Customer ID", "Site ID", "Equipment ID", "Agreement ID", "PO"}
+ID_FIELDS |= {"flag_id", *LINE_ID_COLUMNS}
+DATE_FIELDS = {"Created", "Completed", "Date", "Recorded", "Hired"}
+
+
+def walk(b, key=""):
+    """Every (field, value) in a bundle, however deeply it's nested."""
+    if isinstance(b, dict):
+        for k, v in b.items():
+            yield from walk(v, k)
+    elif isinstance(b, list):
+        for v in b:
+            yield from walk(v, key)
+    else:
+        yield key, "" if b is None else str(b)
+
+
+def record_ids(b: dict) -> dict[str, set[str]]:
+    """The records in a bundle, by kind, as they were shown to the AI."""
+    out = {"job": set(), "visit": set(), "invoice": set(), "tech": set()}
+    kinds = {"WO": "job", "Visit": "visit", "Invoice": "invoice", "Tech ID": "tech"}
+    for k, v in walk(b):
+        if k in kinds and v:
+            out[kinds[k]].add(v)
+    return out
+
+
 def ids_in(b: dict) -> set[str]:
-    text = json.dumps(b)
-    return set(re.findall(r"\b(?:WO\d+|V\d+|INV-\d+)\b", text))
+    """The record IDs an explanation may cite: jobs, visits and invoices as shown, technicians as T<id>."""
+    ids = record_ids(b)
+    return ids["job"] | ids["visit"] | ids["invoice"] | {f"T{t}" for t in ids["tech"]}
+
+
+def plain(s: str) -> str:
+    return re.sub(r"[^A-Z0-9]", "", s.upper())
+
+
+def cited_ok(x: str, known: set[str]) -> bool:
+    """A citation matches a record whatever the spacing or case: 'wo 301199', 'WO-1001A'."""
+    return plain(x) in {plain(k) for k in known}
+
+
+# A record ID as written in prose: letters then digits (WO301199, V358116, INV-234447, T27, RTU-3, WO-1001A).
+ID_TOKEN = re.compile(r"\b[A-Za-z]{1,5}-?\d[\w-]*\b")
+# A technician mentioned in prose: T27, tech 114, Tech ID 125, techs 201 and 125.
+TECH_MENTION = re.compile(
+    r"\bT\d+\b|\btech(?:nician)?s?(?:\s+IDs?)?\s*#?\s*\d+(?:\s*(?:,|and|&|or)\s*#?\d+(?![\d/-]))*\b", re.IGNORECASE
+)
+# A record mentioned by number: job 301199, invoice #4412, agreement 1154, (ID 1162).
+RECORD_MENTION = re.compile(
+    r"\b(?:jobs?|work orders?|visits?|invoices?|agreements?|customer|site|equipment|unit|PO|WO|INV|ID)"
+    r"(?:\s+ID)?\s*(?:#|no\.?|number)?\s*-?\s*(\d+)\b",
+    re.IGNORECASE,
+)
+MONTHS = r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?"
+DATES = re.compile(
+    rf"\b\d{{4}}-\d{{2}}-\d{{2}}(?:T[\d:]+)?\b|\b\d{{1,2}}/\d{{1,2}}/\d{{2,4}}\b|\b{MONTHS}\s+\d{{1,2}}(?:st|nd|rd|th)?"
+    rf"(?:,?\s+\d{{4}})?\b|\b\d{{1,2}}\s+{MONTHS}(?:\s+\d{{4}})?\b",
+    re.IGNORECASE,
+)
+# Words that accuse or discipline a person. A flag is a signal for a manager, never a verdict, so an explanation
+# that reaches for one goes to a person. ("fire" as in a fire alarm or damper is equipment, not a dismissal.)
+ACCUSES = re.compile(
+    r"\b(?:fire[ds]?|firing)\b(?!\s+(?:alarm|damper|marshal|code|sprinkler|safety|suppression|rated|wall|panel))"
+    r"|\b(?:terminat\w*\s+(?:him|her|them|the\s+tech\w*|t\d+|employment)|dismiss(?:al|ed)?\s+(?:him|her|them|the\s+tech))"
+    r"|\b(?:disciplin\w*|reprimand\w*|theft|thie[fv]\w*|steal\w*|stole|stolen|resold|resell\w*|fraud\w*|embezzl\w*"
+    r"|kickbacks?|dishonest\w*|pocket(?:ed|ing))\b"
+    r"|\btook\s+(?:it|them|the\s+\w+)\s+home\b|\bwrite\s+(?:him|her|them)\s+up\b|\bdock\w*\s+(?:his|her|their)\s+pay"
+    r"|\b(?:demand\w*\s+(?:a\s+)?refund|refund\w*\s+(?:demanded|from\s+(?:him|her|them|the\s+tech\w*)))",
+    re.IGNORECASE,
+)
+PERSON_NAME = re.compile(r"\b(?:Mr|Mrs|Ms|Miss|Dr)\.?\s+[A-Z][a-z]+|\b[A-Z][a-z]+\s+[A-Z][a-z]+(?:-[A-Z][a-z]+)?\b")
+# Capitalized words that start a sentence or name a month or a role, not a person.
+NOT_NAMES = set(
+    "january february march april may june july august september october november december sept jan feb mar apr "
+    "jun jul aug oct nov dec monday tuesday wednesday thursday friday saturday sunday on in at by for from to the "
+    "a an this that these those it its if then also and but or no both each every ask check have call send confirm "
+    "review billing invoice job visit tech technician customer portal parts part labor trip service manager "
+    "controller branch summit please".split()
+)
+
+
+def names_a_person(text: str, source: str, roster: list[str]) -> bool:
+    """The AI is never given a person's name, so any it writes came from nowhere. A technician's name from the
+    roster, or two capitalized words that aren't in the records (like 'Sean Thomas'), count as a name."""
+    if any(n and re.search(rf"\b{re.escape(n)}\b", text) for n in roster):
+        return True
+    words = set(re.findall(r"[a-z]+", source.lower()))
+    for m in PERSON_NAME.finditer(text):
+        found = m.group()
+        if found.lower() in source.lower():
+            continue  # a customer, a part, a branch: it's in the records
+        tail = re.findall(r"[A-Za-z]+", found)[-2:]
+        if all(w.lower() not in words and w.lower() not in NOT_NAMES for w in tail):
+            return True
+    return False
+
+
+def check_explanation(flag: Flag, b: dict, a: dict, roster: list[str]) -> list[str]:
+    """Everything code can check about an explanation: the records it cites and mentions exist, its numbers are
+    the records' amounts and quantities (not the digits of an ID or a date), and it neither names nor accuses a
+    person. Problems are worded without repeating a name or a technician ID, since they're shown to the owner."""
+    problems = []
+    known, ids = ids_in(b), record_ids(b)
+    source = json.dumps(b)
+    if not a["evidence"]:
+        problems.append("cites no records")
+    problems += [f"cites {x}, which isn't in the records" for x in a["evidence"] if not cited_ok(x, known)]
+    text = " ".join(a[k] for k in ("what_happened", "likely_cause", "action"))
+    techs = {n for m in TECH_MENTION.finditer(text) for n in re.findall(r"\d+", m.group())}
+    if techs - ids["tech"]:
+        problems.append("mentions a technician who isn't in these records")
+    # Every ID in the records, bare: a mention of one of these by number is a citation, not an amount.
+    raw = {re.sub(r"\D", "", v) for k, v in walk(b) if k in ID_FIELDS} - {""}
+    strange = [
+        t
+        for t in dict.fromkeys(m.group() for m in ID_TOKEN.finditer(text))
+        if not TECH_MENTION.fullmatch(t) and not cited_ok(t, known) and t.lower() not in source.lower()
+    ]
+    strange += [m.group() for m in RECORD_MENTION.finditer(text) if m.group(1) not in raw and len(m.group(1)) >= 4]
+    if strange:
+        problems.append(f"mentions records that aren't in the records ({', '.join(strange[:4])})")
+    if names_a_person(text, source, roster):
+        problems.append("names a person: the records it was given name nobody")
+    if ACCUSES.search(text):
+        problems.append("accuses or disciplines a person: a flag is a signal for a manager, not a verdict")
+    # The numbers it may use: the records' amounts, quantities and notes, never an ID's or a date's digits.
+    allowed = []
+    for k, v in walk(b):
+        if k not in ID_FIELDS and k not in DATE_FIELDS:
+            allowed += [to_float(n) for n in numbers_in(v)]
+    allowed += [abs(x) for x in allowed]
+    if flag.value is not None:
+        allowed.append(flag.value)
+    prose = DATES.sub(" ", text)
+    prose = ID_TOKEN.sub(" ", prose)
+    prose = TECH_MENTION.sub(" ", prose)
+    prose = RECORD_MENTION.sub(lambda m: " " if m.group(1) in raw else m.group(), prose)
+    bad = unsupported_numbers(prose, allowed)
+    if bad:
+        problems.append(f"uses numbers not in the records ({', '.join(bad)})")
+    return problems
 
 
 def valid_answer(a) -> dict:
@@ -584,35 +870,39 @@ def investigate(flag: Flag, data: Data, model_) -> None:
         flag.status, flag.problems = CHECK_FAILED, [f"couldn't get an explanation: {e}"[:160]]
         return
     flag.explanation = a
-    known = ids_in(b)
-    cited = a["evidence"]
-    if not cited:
-        flag.problems.append("cites no records")
-    flag.problems += [f"cites {x}, which isn't in the records" for x in cited if x not in known]
-    # Every number that appears anywhere in the records, including the digits inside IDs and dates.
-    numbers = [abs(to_float(n)) for n in numbers_in(re.sub(r"[-/:T]", " ", json.dumps(b)))]
-    if flag.value is not None:
-        numbers.append(flag.value)
-    text = " ".join(a[k] for k in ("what_happened", "likely_cause", "action"))
-    bad = unsupported_numbers(text, numbers)
-    if bad:
-        flag.problems.append(f"uses numbers not in the records ({', '.join(bad)})")
+    flag.problems = check_explanation(flag, b, a, [t.get("Name", "") for t in data.techs.values()])
     flag.status = CHECK_FAILED if flag.problems else EXPLAINED
 
 
 # --- the run ----------------------------------------------------------------------------------------------
 
 
-def detect(data: Data, start: date, end: date, tech_threshold: float = 0.55, model_jobs: bool = False) -> list[Flag]:
+def detect(
+    data: Data,
+    start: date,
+    end: date,
+    tech_threshold: float = 0.55,
+    model_jobs: bool = False,
+    tech_window: int = TECH_WINDOW,
+) -> list[Flag]:
     period = sorted(
         (wo for wo, j in data.jobs.items() if d(j["Completed"]) and start <= d(j["Completed"]) <= end), key=id_key
     )
     flags = rules(data, period) + baselines(data, period)
     already = {fl.subject for fl in flags}
-    flags += [fl for fl in tech_model(data, tech_threshold) if fl.subject not in already]
+    techs = tech_model(data, tech_threshold, until=end, window=tech_window)
+    flags += [fl for fl in techs if fl.subject not in already]
     if model_jobs:
         flags += model(data, period, {fl.subject for fl in flags})
     return flags
+
+
+def lag_visible(data: Data) -> bool:
+    """Whether the exports can show paperwork lag at all: only if some time entry is dated after its visit. If
+    every entry carries its visit's date (as Summit's sample does), slow paperwork is invisible here, and it takes
+    the time each entry was actually made."""
+    when = {v["Visit"]: v["Date"] for vs in data.visits.values() for v in vs}
+    return any(e["Date"] and e["Date"] != when.get(v) for v, es in data.hours.items() for e in es)
 
 
 def prioritize(flags: list[Flag]) -> list[Flag]:
@@ -633,6 +923,24 @@ def within_budget(flags: list[Flag], budget: int) -> list[Flag]:
             taken[fl.owner] += 1
             chosen.append(fl)
     return chosen
+
+
+def load_history(path: Path | None) -> dict[str, str]:
+    """When each flag was first raised, from earlier runs. A weekly run re-checks a look-back window, so most of
+    its flags were already reported: only the new ones are investigated and sent again."""
+    if not path or not path.exists():
+        return {}
+    return {r["flag"]: r["first flagged"] for r in read_csv(path) if r.get("flag")}
+
+
+def save_history(path: Path, flags: list[Flag], seen: dict[str, str]) -> Path:
+    merged = {**seen, **{fl.id: fl.first_seen for fl in flags if fl.id not in seen}}
+    rows = [{"flag": k, "first flagged": v} for k, v in sorted(merged.items())]
+    return write_csv(path, rows, ["flag", "first flagged"])
+
+
+def is_new(fl: Flag, end: date) -> bool:
+    return not fl.first_seen or fl.first_seen >= end.isoformat()
 
 
 def load_recipients(path: Path | None) -> dict[str, str]:
@@ -669,6 +977,25 @@ def digest(owner: str, flags: list[Flag], start: date, end: date, recipients: di
     return msg
 
 
+# What each check is looking for, in the answer key's words; and each technician habit, likewise.
+KEY_PROBLEM = {
+    "parts not billed": "unbilled parts",
+    "written down to NTE": "written down to NTE",
+    "NTE increase not recorded": "NTE increase not recorded",
+    "hours not logged": "hours not logged",
+}
+KEY_HABIT = {"late": "records parts late", "lagged": "slow paperwork", "repeat": "low skill"}
+SAME_AS_RULE = {"hours not logged": "same definition as the rule; this checks the plumbing, not the rule"}
+
+
+def matches_key(fl: Flag, key: dict, tech_key: dict) -> bool:
+    """The flag found the problem the answer key gives that job or technician, not just any problem."""
+    if fl.subject.startswith("T"):
+        habits = set(tech_key.get(fl.subject, "").split("; "))
+        return any(KEY_HABIT.get(h) in habits for h in fl.evidence.get("habits", []))
+    return fl.subject in key and KEY_PROBLEM.get(fl.check) in key[fl.subject]["Problems"].split("; ")
+
+
 def score(flags: list[Flag], top: list[Flag], key_path: Path) -> dict:
     """How the detectors did against the answer key: what they caught, what they missed, how much was real."""
     key = {r["WO"]: r for r in read_csv(key_path)}
@@ -680,33 +1007,37 @@ def score(flags: list[Flag], top: list[Flag], key_path: Path) -> dict:
     for fl in flags:
         if fl.kind != "baseline":
             flagged[fl.check].add(fl.subject)
-    rule_for = {
-        "unbilled parts": "parts not billed",
-        "written down to NTE": "written down to NTE",
-        "NTE increase not recorded": "NTE increase not recorded",
-        "hours not logged": "hours not logged",
-    }
     rows = []
-    for truth, check in rule_for.items():
+    for check, truth in KEY_PROBLEM.items():
         real, got = types.get(truth, set()), flagged.get(check, set())
         rows.append(
             {
                 "problem": truth,
+                "owner": OWNERS[check],
                 "real": len(real),
                 "caught": len(real & got),
                 "flags": len(got),
                 "flags that were real": len(got & real),
+                "note": SAME_AS_RULE.get(check, ""),
             }
         )
+    unchecked = {p: wos for p, wos in types.items() if p not in KEY_PROBLEM.values()}
+    unchecked_jobs = set().union(*unchecked.values()) if unchecked else set()
     model_flags = flagged.get("unusual job", set())
     model_real = {wo for wo in model_flags if wo in key}
     tech_key = {}
     tech_path = key_path.parent / "tech-answer-key.csv"
     if tech_path.exists():
         tech_key = {r["Tech"]: r["Habits"] for r in read_csv(tech_path)}
-    tech_flags = {fl.subject for fl in flags if fl.subject.startswith("T")}
+    tech_fls = [fl for fl in flags if fl.subject.startswith("T")]
+    tech_flags = {fl.subject for fl in tech_fls}
     tech_real = {t: tech_key[t] for t in tech_flags if t in tech_key}
-    top_real = sum(1 for fl in top if fl.subject in key or fl.subject in tech_key)
+    tech_match = {fl.subject for fl in tech_fls if matches_key(fl, key, tech_key)}
+    by_owner = {}
+    for owner in ("Controller", "Service manager"):
+        mine = [fl for fl in top if fl.owner == owner]
+        by_owner[owner] = (len(mine), sum(matches_key(fl, key, tech_key) for fl in mine))
+    top_real = sum(matches_key(fl, key, tech_key) for fl in top)
     missed_value = sum(
         float(key[wo]["Value"] or 0)
         for wo in types.get("unbilled parts", set()) - flagged.get("parts not billed", set())
@@ -715,23 +1046,64 @@ def score(flags: list[Flag], top: list[Flag], key_path: Path) -> dict:
     md += [
         f"| {r['problem']} | {r['real']} | {r['caught']} | {r['flags']} | {r['flags that were real']} |" for r in rows
     ]
+    md += [""] + [f"- **{r['problem'].capitalize()}:** {r['note']}." for r in rows if r["note"]]
+    if unchecked:
+        names = ", ".join(sorted(unchecked))
+        md.append(f"- **Not checked by this playbook:** {len(unchecked_jobs):,} jobs with {names}.")
     md += [
-        "",
-        f"- **Technicians flagged:** {len(tech_flags)}; {len(tech_real)} have a habit the answer key knows about "
-        f"(of {len(tech_key)} such technicians).",
-        f"- **The investigated flags (the alert budget):** {len(top)}; {top_real} were real.",
+        f"- **The investigated flags (the alert budget):** {len(top)}; for {top_real}, the flagged problem matches "
+        "the answer key's problem for that job.",
         f"- **Unbilled parts missed by the rules:** ${missed_value:,.2f}.",
     ]
     if model_flags:
         md.append(f"- **The model's unusual jobs:** {len(model_flags)} flagged; {len(model_real)} had a real problem.")
+    md_techs = [
+        f"- **Technicians flagged:** {len(tech_flags)}; {len(tech_real)} have a habit the answer key knows about "
+        f"(of {len(tech_key)} such technicians), and {len(tech_match)} were flagged for that habit.",
+    ]
     return {
         "rows": rows,
+        "unchecked": (len(unchecked_jobs), sorted(unchecked)),
         "model": (len(model_flags), len(model_real)),
         "top": (len(top), top_real),
-        "techs": (len(tech_flags), len(tech_real), len(tech_key)),
+        "top_by_owner": by_owner,
+        "techs": (len(tech_flags), len(tech_real), len(tech_key), len(tech_match)),
         "tech_real": tech_real,
-        "md": "\n".join(md),
+        "md_jobs": "\n".join(md),
+        "md_techs": "\n".join(md_techs),
+        "md": "\n".join(md + md_techs),
     }
+
+
+OWNER_SUFFIX = {"Controller": "", "Service manager": "-service-manager"}
+
+
+def flag_rows(flags: list[Flag]) -> list[dict]:
+    """The flags as rows for an owner's CSV. An explanation that failed its checks isn't carried: it may hold the
+    very thing that failed (a name, an invented number); the problems say why, and the owner opens the records."""
+    return [
+        {
+            "flag": fl.id,
+            "check": fl.check,
+            "kind": fl.kind,
+            "subject": fl.subject,
+            "owner": fl.owner,
+            "value": "" if fl.value is None else f"{fl.value:.2f}",
+            "score": fl.score,
+            "detail": fl.detail,
+            "first flagged": fl.first_seen,
+            "status": fl.status,
+            "explanation": (fl.explanation or {}).get("what_happened", "") if fl.status == EXPLAINED else "",
+            "action": (fl.explanation or {}).get("action", "") if fl.status == EXPLAINED else "",
+            "problems": " | ".join(fl.problems),
+            "decision": "",
+            "reason": "",
+        }
+        for fl in flags
+    ]
+
+
+FLAG_FIELDS = list(flag_rows([Flag("", "hours not logged", "", "", "")])[0])
 
 
 def run(
@@ -745,84 +1117,132 @@ def run(
     answer_key: Path | None = None,
     model_jobs: bool = False,
     recipients: dict[str, str] | None = None,
+    lookback: int = 0,
+    history: Path | None = None,
+    tech_window: int = TECH_WINDOW,
 ) -> tuple[list[Flag], list[Path]]:
+    """One run. With a look-back, it re-checks every job completed in the last `lookback` days, not just this
+    week's: a job is usually invoiced days after it's done, so a week-only window would check most jobs before
+    their invoice exists and never again. With a history file, flags already reported stay on the list but only
+    new ones are investigated and sent."""
     from alerts_dashboard import dashboard
 
-    flags = prioritize(detect(data, start, end, tech_threshold, model_jobs))
-    top = within_budget(flags, budget)
+    check_from = min(start, end - timedelta(days=lookback - 1)) if lookback > 0 else start
+    flags = prioritize(detect(data, check_from, end, tech_threshold, model_jobs, tech_window))
+    seen = load_history(history)
+    for fl in flags:
+        fl.first_seen = seen.get(fl.id, end.isoformat())
+    top = within_budget([fl for fl in flags if is_new(fl, end)], budget)
     for fl in top:
         investigate(fl, data, model_)
-    written = []
-    by_owner = defaultdict(list)
-    for fl in top:
-        by_owner[fl.owner].append(fl)
-    for owner, fls in by_owner.items():
-        written.append(
-            write_text(
-                out / "alerts" / f"{owner.lower().replace(' ', '-')}.eml",
-                digest(owner, fls, start, end, recipients or {}).as_string(),
-            )
-        )
-    rows = [
-        {
-            "flag": fl.id,
-            "check": fl.check,
-            "kind": fl.kind,
-            "subject": fl.subject,
-            "owner": fl.owner,
-            "value": "" if fl.value is None else f"{fl.value:.2f}",
-            "score": fl.score,
-            "detail": fl.detail,
-            "status": fl.status,
-            "explanation": (fl.explanation or {}).get("what_happened", ""),
-            "action": (fl.explanation or {}).get("action", ""),
-            "problems": " | ".join(fl.problems),
-            "decision": "",
-            "reason": "",
-        }
-        for fl in flags
-    ]
-    fields = list(rows[0]) if rows else ["flag"]
     scored = score(flags, top, answer_key) if answer_key and answer_key.exists() else None
-    written[:0] = [
+    misses = getattr(model_, "misses", 0)
+    written = []
+    for owner, suffix in OWNER_SUFFIX.items():
+        # Each owner's files hold only that owner's flags: technician signals never reach the controller's.
+        mine, my_top = [fl for fl in flags if fl.owner == owner], [fl for fl in top if fl.owner == owner]
+        rows = flag_rows(mine)
+        written += [
+            write_text(
+                out / f"dashboard{suffix}.html",
+                dashboard(mine, my_top, data, check_from, end, budget, model_.name, scored, owner),
+            ),
+            write_csv(out / f"flags{suffix}.csv", rows, FLAG_FIELDS),
+            write_csv(out / f"review-queue{suffix}.csv", [r for r in rows if r["status"] == CHECK_FAILED], FLAG_FIELDS),
+        ]
+        if my_top:
+            written.append(
+                write_text(
+                    out / "alerts" / f"{owner.lower().replace(' ', '-')}.eml",
+                    digest(owner, my_top, check_from, end, recipients or {}).as_string(),
+                )
+            )
+    jobs_only = [fl for fl in flags if not fl.subject.startswith("T")]
+    techs = [fl for fl in flags if fl.subject.startswith("T")]
+    written.append(
         write_text(
-            out / "dashboard.html", dashboard(flags, top, data, start, end, budget, model_.name, scored, "Controller")
-        ),
-        write_text(
-            out / "dashboard-service-manager.html",
-            dashboard(flags, top, data, start, end, budget, model_.name, scored, "Service manager"),
-        ),
-        write_csv(out / "flags.csv", rows, fields),
-        write_csv(out / "review-queue.csv", [r for r in rows if r["status"] == CHECK_FAILED], fields),
-        write_text(out / "summary.md", summary_md(flags, top, start, end, budget, model_.name, scored)),
-    ]
+            out / "summary.md",
+            summary_md(jobs_only, top, check_from, end, budget, model_.name, scored, misses, data, lookback),
+        )
+    )
+    written.append(
+        write_text(out / "summary-service-manager.md", tech_summary_md(techs, end, scored, data, tech_window))
+    )
+    if data.unreadable:
+        written.append(write_csv(out / "unreadable.csv", data.unreadable, ["file", "row", "column", "value"]))
     if scored:
-        written.append(write_text(out / "score.md", "# Against the answer key\n\n" + scored["md"] + "\n"))
+        missed = f"\n{misses} items had no recorded answer.\n" if misses else ""
+        written.append(write_text(out / "score.md", "# Against the answer key\n\n" + scored["md"] + "\n" + missed))
+    if history:
+        written.append(save_history(history, flags, seen))
     written.append(log_run(out / "runs.csv", flags, top, model_.name))
     return flags, written
 
 
 def summary_md(
-    flags: list[Flag], top: list[Flag], start: date, end: date, budget: int, model_name: str, scored: dict | None
+    flags: list[Flag],
+    top: list[Flag],
+    start: date,
+    end: date,
+    budget: int,
+    model_name: str,
+    scored: dict | None,
+    misses: int = 0,
+    data: Data | None = None,
+    lookback: int = 0,
 ) -> str:
+    """The shared summary: job flags only, counts and money, no technician signals or IDs (those are in the
+    service manager's own summary)."""
     counts = defaultdict(int)
     for fl in flags:
         counts[fl.check] += 1
     money = sum(fl.value or 0 for fl in flags)
+    investigated = [fl for fl in top if not fl.subject.startswith("T")]
+    window = f" (including a {lookback}-day look-back)" if lookback else ""
     lines = [
-        f"# Flags, {start:%B %-d} to {end:%B %-d, %Y}",
+        f"# Flags, jobs completed {start:%B %-d} to {end:%B %-d, %Y}{window}",
         "",
-        f"Model: {model_name}. Nothing was sent or changed.",
+        f"Model: {model_name}. Nothing was sent or changed. Technician signals are in the service manager's files.",
         "",
-        f"{len(flags)} flags, ${money:,.2f} at stake where it can be counted. {len(top)} investigated "
+        f"{len(flags)} job flags, ${money:,.2f} at stake where it can be counted. {len(investigated)} investigated "
         f"(up to {budget} per owner).",
         "",
         "| Check | Flags |",
         "|---|---:|",
     ]
     lines += [f"| {k} | {v} |" for k, v in sorted(counts.items(), key=lambda x: -x[1])]
+    if misses:
+        lines += ["", f"**{misses} items had no recorded answer**, so they went to a person."]
+    if data and data.unreadable:
+        lines += ["", f"**{len(data.unreadable)} values couldn't be read** (see unreadable.csv): check those rows."]
     if scored:
-        lines += ["", "## Against the answer key", "", scored["md"]]
+        lines += ["", "## Against the answer key", "", scored["md_jobs"]]
+    return "\n".join(lines) + "\n"
+
+
+def tech_summary_md(techs: list[Flag], end: date, scored: dict | None, data: Data, window: int = TECH_WINDOW) -> str:
+    """The service manager's summary of technician signals: counts, and what the exports can't show."""
+    counts = defaultdict(int)
+    for fl in techs:
+        counts[fl.check] += 1
+    lines = [
+        f"# Technician signals, to {end:%B %-d, %Y}",
+        "",
+        f"For the service manager only. Habits are measured over the {window} days ending {end:%B %-d}. "
+        "A pattern worth a conversation, never a verdict.",
+        "",
+        "| Signal | Technicians |",
+        "|---|---:|",
+    ]
+    lines += [f"| {k} | {v} |" for k, v in sorted(counts.items(), key=lambda x: -x[1])]
+    if not lag_visible(data):
+        lines += [
+            "",
+            "Paperwork lag can't be seen in these exports: every time entry carries its visit's date. Measuring it "
+            "needs the time each entry was actually made.",
+        ]
+    if scored:
+        lines += ["", "## Against the answer key", "", scored["md_techs"]]
     return "\n".join(lines) + "\n"
 
 
@@ -846,16 +1266,19 @@ def log_run(path: Path, flags: list[Flag], top: list[Flag], model_name: str) -> 
 
 
 class Replay:
-    """A real model's recorded explanations, by flag, so the run can be repeated exactly and for free."""
+    """A real model's recorded explanations, by flag, so the run can be repeated exactly and for free. A flag
+    with no recorded answer goes to a person, and is counted, so a stale recording can't pass quietly."""
 
     def __init__(self, path: Path):
         data = json.loads(path.read_text())
         self.answers = data["answers"]
         self.name = f"{data['model']}, recorded {data['recorded']} (replayed)"
+        self.misses = 0
 
     def complete(self, system: str, user: str, max_tokens: int = 2000) -> str:
         flag = json.loads(user.split("<<<RECORDS\n", 1)[1].rsplit("\nRECORDS>>>", 1)[0])["flag_id"]
         if flag not in self.answers:
+            self.misses += 1
             raise BadAnswer("no recorded answer for this flag")
         return self.answers[flag]
 
@@ -888,6 +1311,13 @@ def main() -> None:
         default=0.55,
         help="how unusual a technician must be to the model (0.5 is average); there's no quota",
     )
+    p.add_argument("--tech-window", type=int, default=TECH_WINDOW, help="days of visits behind technicians' habits")
+    p.add_argument(
+        "--lookback",
+        type=int,
+        help="also re-check jobs completed this many days before --end (default 45 with --data, 0 with --sample); "
+        "flags already reported (in <out>/flag-history.csv) aren't investigated again",
+    )
     p.add_argument("--recipients", type=Path, help="CSV of Owner,To for the digest drafts (default: recipients.csv)")
     p.add_argument("--model-jobs", action="store_true", help="also run the model over individual jobs (see README)")
     p.add_argument("--answer-key", type=Path)
@@ -896,14 +1326,17 @@ def main() -> None:
     if args.sample:
         folder, key = SAMPLE, SAMPLE / "answer-key.csv"
         start, end = args.start or SAMPLE_START, args.end or SAMPLE_END
+        lookback = args.lookback or 0  # the sample is one month, reported as a month
     elif args.data and args.start and args.end:
         folder, key, start, end = args.data, args.answer_key, args.start, args.end
+        lookback = 45 if args.lookback is None else args.lookback
     else:
         p.error("choose --sample, or --data with --start and --end")
     model_ = Replay(args.replay) if args.replay else model_for(args, offline)
     recipients = load_recipients(args.recipients or folder / "recipients.csv")
+    data = Data.load(folder)
     flags, written = run(
-        Data.load(folder),
+        data,
         model_,
         args.out,
         start,
@@ -913,8 +1346,16 @@ def main() -> None:
         key,
         args.model_jobs,
         recipients,
+        lookback,
+        args.out / "flag-history.csv" if lookback else None,
+        args.tech_window,
     )
-    done(model_, written, f"{len(flags)} flags; up to {args.budget} per owner investigated. Open dashboard.html.")
+    note = f"{len(flags)} flags; up to {args.budget} per owner investigated. Open dashboard.html."
+    if getattr(model_, "misses", 0):
+        note += f"\n{model_.misses} items had no recorded answer: they went to a person."
+    if data.unreadable:
+        note += f"\n{len(data.unreadable)} values couldn't be read: see unreadable.csv."
+    done(model_, written, note)
 
 
 if __name__ == "__main__":
