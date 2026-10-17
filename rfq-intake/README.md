@@ -1,51 +1,70 @@
 # Customer RFQ intake
 
-Reads incoming quote requests and pulls out the products, quantities, deadlines and missing information. Then it matches each item to your catalog and sorts everything by when the quote is due, so quoting starts from a clean list and no request slips.
+Turns a quotes mailbox into a clean list, the day requests arrive. A model reads each email; plain code checks what it read against your own records, and anything that doesn't check out goes to a person.
 
-The full playbook, with no-code setup on ChatGPT, Claude, Gemini and Copilot, a cost calculator and the risks: **https://pathmode.com/playbooks/rfq-intake/**
+The full playbook, worked through at Summit Mechanical with an architecture diagram and a value calculator: **https://pathmode.com/playbooks/rfq-intake/**
 
 ## What it does
 
-- Reads quote requests saved as .eml, including CSV and text attachments (an equipment schedule, a parts list).
-- Has the model extract the customer, site, quote-due and needed-by dates, and every item with its quantity, quoting the words it came from.
-- Matches each item to your catalog in code: by your code, by a part number or name customers use (the Aliases column), or as a possible match by shared words. Each gets marked exact, alias, possible or no match.
-- Decides in code what's missing, and writes the questions: vague quantities, unmatched items, no site. It drafts a reply asking for them.
-- Flags any item that isn't in the email, and any date that isn't a real date.
-- Sorts requests by quote due date, with days left, and sets aside emails that aren't quote requests.
+- Reads every email in the mailbox and sorts it: a new quote request, a follow-up, a reply to a quote you sent, a service call sent to the wrong address, or something else.
+- For each quote request, the model pulls out the customer, sites, equipment, quantities and deadline, **quoting the words each one came from**.
+- Code then matches all of it to your own records (customers, sites, equipment), exactly or not at all. When two units could fit, it asks the customer instead of guessing.
+- It runs the checks. Anything that fails one goes to the **needs review** queue for a person: quoted words that aren't in the email, equipment that isn't yours, an attachment it can't read, instructions aimed at an AI, a deadline that doesn't make sense, an answer it couldn't use.
+- It writes a dashboard, the lists as spreadsheets, and a drafted question for each request that's missing something.
 
 ## What it doesn't do
 
-- Price anything, or choose products for the customer. Hand the clean list to your quoting tool, or to the [quotes-from-notes](../quotes-from-notes/) playbook.
-- Send the questions. They're drafts.
-- Read PDFs. Convert them to text first, or use a no-code assistant, which reads PDFs.
+Send anything, change the mailbox, or price anything. A person sends every question and writes every quote.
 
-**Rung 2: it reads requests you export. A person checks the list and sends every reply.**
+**Risk: reads one mailbox, read-only. Drafts only.**
 
-## Try it in five minutes
+## Try it
 
 From the repository folder, with Python 3.11 or later and nothing to install:
 
 ```sh
+# Replay a recorded run: the answers a real model (Claude Sonnet 5.5) gave on the sample, free
+python3 rfq-intake/rfq_intake.py --sample --replay rfq-intake/sample-data/recorded-run.json
+
+# The offline stand-in: no model at all. It only knows the sample's phrasings.
 python3 rfq-intake/rfq_intake.py --sample --dry-run
+
+# A real model: an API account whose terms say your data isn't used for training
+export PLAYBOOK_PROVIDER=openai OPENAI_API_KEY=... PLAYBOOK_MODEL=...   # or ANTHROPIC_API_KEY=...
+python3 rfq-intake/rfq_intake.py --sample
 ```
 
-`--dry-run` uses a simple offline stand-in instead of an AI model, so it's free and needs no account. Its answers are deliberately crude; the point is to see the whole pipeline and the checks.
+Then open `out/dashboard.html`. With the sample, `out/score.md` scores the run against the answer key.
 
-Then with a real model: set `ANTHROPIC_API_KEY` (or `PLAYBOOK_PROVIDER=openai`, `OPENAI_API_KEY` and `PLAYBOOK_MODEL`), and run the same command without `--dry-run`. Use an API account or business plan whose terms say your data isn't used for training.
+## The sample: Summit's quotes@ mailbox, September 2025
 
-## Use it on your own data
+Summit Mechanical is a fictional commercial HVAC contractor, from a [simulation of the whole business](https://pathmode.com/community/meetups/understand-the-business/the-practice-business/). The simulation has no incoming quote requests, so `pathmode-corpus/simulation/scripts/playbook_rfq.py` writes them from its real customers, sites and equipment. Everything else in the mailbox is real simulated email.
 
-- **Requests:** `--eml-dir folder/` of saved emails. Most mail programs can save or drag messages out as .eml. A filter that labels everything sent to quotes@ makes this a one-click export.
-- **Catalog:** `--catalog catalog.csv` with Code, Description, Unit, Aliases. Aliases are the other names for each item, separated by semicolons: manufacturer part numbers, sizes written different ways, what customers actually call it. The better your aliases, the more exact matches you get. Every "no match" the tool reports is a candidate alias.
-- `--as-of 2026-07-13` counts days left from a date other than today.
+- `mailbox/`: 80 emails. 52 quote requests, in every shape (clear, vague, which-unit-is-it, bid invitations with a CSV or only a PDF, new prospects, a typo'd serial, one with instructions for "any AI assistant"), plus 12 replies to quotes, 8 service calls, 5 sales pitches and 3 follow-ups.
+- `records/`: customers, sites, equipment and contacts, as exported from Summit's field-service system (1,406 customers, 5,473 sites, 24,180 units).
+- `answer-key.csv`: what each email really is, and what should happen to it.
+- `recorded-run.json`: a real model's answers, for `--replay`.
 
-It writes `out/summary.md`, `out/rfq-log.csv` (one row per request), `out/line-items.csv` (one row per item, ready for a quoting spreadsheet), and `out/questions/*.eml`. Nothing is sent anywhere except the text sent to the model.
+## Getting the email: Microsoft 365
+
+`graph_mailbox.py` copies new email from one Microsoft 365 mailbox into a folder, read-only, using Microsoft Graph. Run it on a schedule, then run `rfq_intake.py` on the folder. The setup (an app registration with *Mail.Read*, limited to the one mailbox) is at the top of the file. It's tested here against a stand-in for Graph, not a live tenant: try it on a test mailbox first.
+
+On another mail system, anything that saves messages as `.eml` files works.
+
+## Use it on your own business
+
+- `--mailbox mail/` (a folder of .eml files) and `--records records/` with `customers.csv` (Customer ID, Name), `sites.csv` (Site ID, Customer ID, Site, Address), `equipment.csv` (Equipment ID, Site ID, Type, Make, Model, Serial, Installed) and `contacts.csv` (Customer ID, Name, Email).
+- If your requests aren't HVAC equipment, change what `EXTRACT` asks the model for, and what `records.py` matches it against. The checks and the piles stay the same.
+- Build your own answer key from a month of real email, labeled by hand. It's the only way to know how often it's right.
 
 ## Files
 
 | File | What |
 |---|---|
-| `rfq_intake.py` | The script. Read it: the matching and the missing-information rules are plain code. |
-| `instructions.md` | The same job as instructions for a no-code assistant (a Project, Gem or agent). |
-| `sample-data/` | Fictional data for Summit Mechanical, a made-up commercial HVAC contractor: five requests and a catalog. |
+| `rfq_intake.py` | Reads the mailbox, asks the model, checks, sorts, and writes the outputs. |
+| `records.py` | Your records, and the matching that has to be exact. |
+| `dashboard.py` | The HTML dashboard. Everything from an email is escaped. |
+| `graph_mailbox.py` | Copies new email out of a Microsoft 365 mailbox, read-only. |
+| `instructions.md` | The same job as instructions for a chat assistant, to try by hand. |
+| `sample-data/` | Summit's mailbox, records, answer key and recorded run. |
 | `tests/` | Tests that run offline: `pytest` from the repository root. |

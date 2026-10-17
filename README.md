@@ -4,17 +4,17 @@ Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/):
 
 | Playbook | What the code does | Risk |
 |---|---|---|
-| [Customer RFQ intake](rfq-intake/) | Reads quote requests into a clean list: items matched to your catalog, quantities, deadlines, and what's missing. | Rung 2 |
-| [Inbox triage](inbox-triage/) | Sorts a shared inbox, routes each email and drafts replies. Never sends. | Rung 3 |
-| [Late invoices](late-invoices/) | Separates customers automatic reminders can handle from those who need a person, and drafts the personal follow-ups. | Rung 2 |
-| [Quotes from notes](quotes-from-notes/) | Turns call notes into a draft quote from your price list. Code does the math. | Rung 2 |
-| [Meeting follow-ups](meeting-follow-ups/) | Turns a transcript into decisions, owned tasks and a follow-up email. | Rung 2 |
-| [Support replies](support-replies/) | Drafts answers from your own documents, with sources, or says "not covered". | Rung 2 |
-| [Weekly report](weekly-report/) | Calculates the week's numbers, has the model write the summary, checks every number in it. | Rung 2 |
-| [SOPs from walkthroughs](sops-from-walkthroughs/) | Turns a recorded walkthrough into a written procedure. | Rung 2 |
-| [Expense categories](expense-categories/) | Rules first, the model for the rest, a review list for your bookkeeper. | Rung 2 |
+| [Customer RFQ intake](rfq-intake/) | Turns a quotes mailbox into a clean list: each request matched to your customers, sites and equipment, checked, and anything doubtful sent to a person. Includes a Microsoft 365 mailbox reader, a dashboard and an answer key. The worked example the others will follow. | Level 3 |
+| [Inbox triage](inbox-triage/) | Sorts a shared inbox, routes each email and drafts replies. Never sends. | Level 3 |
+| [Late invoices](late-invoices/) | Separates customers automatic reminders can handle from those who need a person, and drafts the personal follow-ups. | Level 2 |
+| [Quotes from notes](quotes-from-notes/) | Turns call notes into a draft quote from your price list. Code does the math. | Level 2 |
+| [Meeting follow-ups](meeting-follow-ups/) | Turns a transcript into decisions, owned tasks and a follow-up email. | Level 2 |
+| [Support replies](support-replies/) | Drafts answers from your own documents, with sources, or says "not covered". | Level 2 |
+| [Weekly report](weekly-report/) | Calculates the week's numbers, has the model write the summary, checks every number in it. | Level 2 |
+| [SOPs from walkthroughs](sops-from-walkthroughs/) | Turns a recorded walkthrough into a written procedure. | Level 2 |
+| [Expense categories](expense-categories/) | Rules first, the model for the rest, a review list for your bookkeeper. | Level 2 |
 
-"Rung" is the risk ladder from the [course](https://pathmode.com/resources/course/): 1 chat, 2 works with your files, 3 connected to your systems, 4 takes actions. None of these goes past drafting. A person decides and sends.
+Risk levels: 1 chat only; 2 works with files you give it; 3 reads your email or systems, read-only; 4 takes actions. None of these goes past drafting. A person decides and sends.
 
 ## How they're built
 

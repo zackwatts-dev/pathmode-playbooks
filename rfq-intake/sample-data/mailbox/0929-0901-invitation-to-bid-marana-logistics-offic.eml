@@ -1,0 +1,33 @@
+From: Dana Whitfield <dwhitfield@copperstatebuilders.example>
+To: quotes@summitmech.example
+Subject: Invitation to bid: Marana Logistics Office
+Date: Mon, 29 Sep 2025 09:01:00 -0700
+Message-ID:
+ <179221155618.822330.10843224992167678768@copperstatebuilders.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============5330445140060637203=="
+
+--===============5330445140060637203==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Copper State Builders invites you to bid the HVAC scope for Marana Logistics =
+Office (new construction). The equipment schedule is attached. Bids are due M=
+onday, October 6 by 2:00 PM. Please include startup and one year of labor war=
+ranty.
+
+Dana Whitfield
+Estimator, Copper State Builders
+
+--===============5330445140060637203==
+Content-Type: text/csv; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="equipment-schedule.csv"
+MIME-Version: 1.0
+
+Tag,Description,Tons,Qty
+RTU-1,"Packaged rooftop unit, gas heat",5,1
+
+--===============5330445140060637203==--

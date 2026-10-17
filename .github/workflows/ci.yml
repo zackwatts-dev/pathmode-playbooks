@@ -23,6 +23,6 @@ jobs:
       - name: Every playbook runs on its sample data, offline
         run: |
           for f in */*.py; do
-            case "$f" in common/*|tools/*|*/tests/*) continue;; esac
+            [ "$(basename "$f" .py)" = "$(dirname "$f" | tr - _)" ] || continue  # each folder's main script
             python "$f" --sample --dry-run --out "out/$(dirname "$f")"
           done
