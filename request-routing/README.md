@@ -9,12 +9,12 @@ The full playbook, worked through at Summit Mechanical with a value calculator, 
 - **The policy is a plain-words document** (`sample-data/policy.md`): who handles what, with judgment calls in it.
 - **The AI reads each request against it** and proposes where it goes, whether it's urgent, any second request in the same message, the amount or percentage asked for, and the exact words that decide it. If it isn't sure, it says so.
 - **Code checks what it copied, and holds the lines:**
-  - safety words (gas, carbon monoxide, shock, smoke, fire, injury, a fall or near miss) always go to safety, urgent;
-  - approvals over $5,000 above a not-to-exceed amount, or discounts over 10%, go to the general manager;
-  - nobody approves their own request;
+  - safety words (gas, carbon monoxide, shock, smoke, fire, injury, a fall or near miss) always go to safety, urgent. The words, and a few phrases that only look like them ("gas card", "fire station"), are in `sample-data/line-words.txt`, next to the policy; changing them is a reviewed change, like the code;
+  - approvals over $5,000 above a not-to-exceed amount, or discounts over 10%, go to the general manager. Code reads every amount and percentage in the request itself and applies the limit to the largest, not just to the one the AI picked; and an over-limit amount in a request the AI put in another queue still goes to the general manager (or to the office manager, if it isn't clear it's an approval);
+  - nobody approves their own request: it goes up to the general manager, and the general manager's own go to the owner if `people.csv` names one (Queue `owner`), otherwise to the office manager to find someone else;
   - pay is private: a request that mentions pay is never shown on the shared page, and goes to payroll, or to the office manager to check;
   - anything unsure, or whose answer fails a check, goes to the office manager.
-  Every override is recorded.
+  Every override is recorded. An answer from the AI that isn't the shape asked for goes to the office manager too, and `people.csv` is checked before anything is routed: every queue needs someone holding it.
 - **Response times per queue,** and a dashboard of who has what and what's due first. Payroll has its own page.
 
 ## What it doesn't do
@@ -46,4 +46,4 @@ The answer key has the right queue and person for every request, whether it's ur
 | `design.md` | The design, in plain words. |
 | `plan.md` | The build plan an AI wrote from the design, unedited. |
 | `run.sh` | The run every few minutes. |
-| `sample-data/` | The requests, people, policy, answer key and recorded run. |
+| `sample-data/` | The requests, people, policy, the safety and pay words, answer key and recorded run. |

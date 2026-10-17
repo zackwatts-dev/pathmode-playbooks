@@ -1,0 +1,52 @@
+# The words behind two of the lines code holds, whatever the AI says. Changing this file is a reviewed change, like
+# changing the code: removing a safety word lowers the floor under the AI's judgment.
+#
+# One pattern per line, matched as whole words, ignoring case (a regular expression: "shock(ed)?" means shock or
+# shocked). An exception is a phrase that contains a word from the list but isn't about it ("gas card"); it's
+# ignored, and the rest of the request is still checked, so "gas card ... smelled gas" is still safety.
+# A data folder without this file uses the sample's.
+
+[safety]
+# Someone could get hurt: always the safety officer, urgent.
+gas
+carbon monoxide
+co alarm
+shock(ed)?
+electrocut\w*
+smoke
+fire
+injur\w*
+hurt
+cut (my|his|her)
+bleed\w*
+fell
+fall
+near(ly)? (miss|went|fell)
+burn(ed|t)?
+
+[safety exceptions]
+gas (card|cards|receipt|receipts|station|stations)
+fire stations?
+smoke detectors? (install|installs|installed|installation|replacement|order)
+(this|next|last|by|until) fall
+fall (season|schedule|maintenance|pm|pms|start-up|startups?)
+
+[private]
+# Someone's pay or personal matters: never on the shared page, and only payroll (or the office manager, to check).
+pay
+paid
+paycheck
+check is short
+overtime
+OT
+direct deposit
+insurance
+benefits
+stub
+salary
+rate
+
+[private exceptions]
+certificates? of insurance
+insurance certificates?
+flow rate
