@@ -74,8 +74,9 @@ def dashboard(
             [f"<b>{_e(fl.check)}</b><br><span class='muted'>{_e(fl.subject)} · {_e(fl.owner)}</span>", value, text, act]
         )
     out.append(
-        f"<h2>Investigated this run: {len(top)}</h2><p class='muted'>Up to {budget} per owner: technician patterns "
-        "first, then the most money. Each owner gets theirs as a digest draft in alerts/.</p>"
+        f"<h2>Investigated this run: {len(top)}</h2><p class='muted'>Up to {budget} per owner: the most money "
+        "first, then other record problems, technician patterns last. Each owner gets theirs as a digest draft in "
+        "alerts/.</p>"
     )
     out.append(_table(["Flag", "At stake", "What happened", "Next step"], rows, {1}))
     counts, values, kinds = defaultdict(int), defaultdict(float), {}
@@ -97,8 +98,9 @@ def dashboard(
     techs = [fl for fl in flags if fl.subject.startswith("T")]
     if techs:
         out.append(
-            "<h2>Technician signals</h2><p class='muted'>For the service manager only. A rate well above branch "
-            "peers is a reason to look (training, the jobs they're given, the paperwork), never a verdict.</p>"
+            "<h2>Technician signals</h2><p class='muted'>For the service manager only. A habit well above branch "
+            "peers is a pattern worth a conversation (training, the jobs they're given, the paperwork), never a "
+            "verdict.</p>"
         )
         rows = [
             [

@@ -3,6 +3,7 @@
 # Schedule it after the nightly exports (cron, or a timer job). Settings come from the environment:
 #   OPENAI_API_KEY, PLAYBOOK_PROVIDER=openai, PLAYBOOK_MODEL  the AI model that explains flags
 #   EXPORTS   the folder the systems export to (jobs, visits, time entries, parts, notes, invoices, portal)
+#             (with recipients.csv: Owner,To, the address each owner's digest draft is written to)
 #   OUT       where the dashboard and digests go: only the controller and service manager can open it
 set -eu
 here=$(dirname "$0")

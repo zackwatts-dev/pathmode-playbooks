@@ -11,11 +11,11 @@ Once a week (in the sample, for September 2025), for every completed job:
    - parts recorded on the job that aren't on the invoice;
    - an invoice credited to stay under the NTE;
    - an NTE increase approved in the portal but not in our job;
-   - a visit with no hours logged.
-2. **Baselines** compare each technician with their branch peers, using robust statistics (median and MAD), on repeat visits and missing hours.
-3. **A machine-learning model** (an Isolation Forest) looks across each technician's combination of habits (parts recorded after invoicing, paperwork lag, missing hours, repeat visits, hours and parts per visit) and flags the least typical. This finds patterns nobody wrote a rule for.
-4. **Within an alert budget** (12 flags per owner per week), an AI model investigates each flag. Code gathers the records behind it, read-only. The AI explains what happened, the likely cause and the next step, citing the records. It can't change, rank or dismiss a flag.
-5. **Code checks every explanation:** the records it cites must exist, and every number in it must come from those records. An explanation that fails goes to a person.
+   - a visit with no hours logged (a blank time entry, or no time entry at all).
+2. **Baselines** compare each technician with their branch peers, using robust statistics (median and MAD), on repeat visits and missing hours. A flag also needs a material difference: at least three occurrences, and a rate well above peers in absolute terms, not just in robust units.
+3. **A machine-learning model** (an Isolation Forest) looks across each technician's combination of habits (parts recorded after invoicing, paperwork lag, missing hours, repeat visits, hours and parts per visit) and flags those that are clearly unusual, with no quota: only above a threshold on how unusual they are, and only when a problem habit is material (well above typical, by enough, often enough). A month with nothing unusual flags nobody. This finds patterns nobody wrote a rule for.
+4. **Within an alert budget** (12 flags per owner per week; the most money first, technician patterns last), an AI model investigates each flag. Code gathers the records behind it, read-only. The AI explains what happened, the likely cause and the next step, citing the records. It can't change, rank or dismiss a flag.
+5. **Code checks every explanation:** its shape first (a malformed answer goes to a person), then the records it cites must exist, and every number in it must come from those records. An explanation that fails goes to a person.
 6. Each owner (the controller, the service manager) gets a digest draft. A dashboard shows everything.
 
 The AI is not the detector. Language models are worse at finding anomalies in numbers than simple statistics and classic machine learning, so they only explain.
@@ -29,7 +29,7 @@ Exports from the field-service system (jobs, visits, time entries, parts used, t
 - The answer key defines it, per problem type: how many real problems each check caught, and how many of its flags were real.
 - For the investigated flags: how many were real, and how many explanations passed their checks.
 - A missed problem costs money; a false flag costs a manager's time. The budget caps the second.
-- Technician flags are signals for a manager to look into, never conclusions about a person.
+- Technician flags are a pattern worth a conversation, never conclusions about a person. They come last in each owner's list: money first.
 - Every rule, baseline and model has a test that runs without calling the AI.
 
 ## Security and privacy

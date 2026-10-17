@@ -9,8 +9,9 @@ Detection is not the AI's job. Three plain detectors find the problems:
   not billed; invoices written down to the not-to-exceed amount; increases approved in the customer's
   portal but never recorded; visits with no hours logged);
 - baselines that compare each technician with their branch peers (repeat visits, missing hours);
-- a machine-learning model (an Isolation Forest) for jobs that look unlike the rest, which is how you find
-  the problems you didn't know to look for.
+- a machine-learning model (an Isolation Forest) for technicians whose habits look unlike the rest, which is
+  how you find the problems you didn't know to look for. It has no quota: a month where nobody is unusual
+  flags nobody.
 
 Then, within an alert budget, an AI model investigates each flag from the records and explains it: what
 happened, the likely cause, and what to do. Code checks every explanation (the records it cites must
@@ -18,7 +19,7 @@ exist, and its numbers must come from them). It can't change or hide a flag. Own
 
 Writes out/dashboard.html (for the controller: no technician signals), out/dashboard-service-manager.html,
 out/flags.csv, out/review-queue.csv, out/alerts/ (digest drafts), out/summary.md,
-and out/score.md with --answer-key. Nothing is sent or changed.
+and out/score.md with --answer-key. Digest recipients come from recipients.csv. Nothing is sent or changed.
 """
 
 from __future__ import annotations
@@ -63,6 +64,11 @@ EXPLAINED, CHECK_FAILED, NOT_INVESTIGATED = "explained", "needs review", "not in
 
 def d(s: str) -> date | None:
     return date.fromisoformat(s[:10]) if s else None
+
+
+def id_key(s: str) -> tuple:
+    """Sort IDs the way people read them: WO-99 before WO-100, and plain numbers numerically."""
+    return tuple((0, int(p), "") if p.isdigit() else (1, 0, p.lower()) for p in re.split(r"(\d+)", str(s)) if p)
 
 
 def f(s: str) -> float | None:
@@ -192,7 +198,7 @@ def rules(data: Data, period: list[str]) -> list[Flag]:
                     f"Portal approved ${approved:,.2f}; our job still says ${nte:,.2f}",
                 )
             )
-        blank = [v for v in data.visits.get(wo, []) for t in data.hours.get(v["Visit"], []) if not t["Hours"]]
+        blank = [v for v in data.visits.get(wo, []) if no_hours(data, v)]
         if blank:
             flags.append(
                 Flag(
@@ -206,18 +212,41 @@ def rules(data: Data, period: list[str]) -> list[Flag]:
     return flags
 
 
-def robust_z(values: dict[str, float]) -> dict[str, float]:
-    """How far each value is from the middle, in robust units (median and MAD), so one outlier can't hide others."""
+def no_hours(data: Data, visit: dict) -> bool:
+    """A visit with no hours: a blank time entry, or no time entry at all."""
+    entries = data.hours.get(visit["Visit"], [])
+    return not entries or any(not e["Hours"] for e in entries)
+
+
+def robust_z(values: dict[str, float], floor: float = 0.0) -> dict[str, float]:
+    """How far each value is from the middle, in robust units (median and MAD), so one outlier can't hide others.
+    When most values are the same (say, most technicians have no repeats), the MAD is zero and anyone else would
+    look infinitely unusual. Then the scale falls back to the mean absolute deviation, and never goes below
+    `floor`, the smallest difference that means anything for this measure."""
     xs = list(values.values())
     if len(xs) < 5:
         return {}
     m = median(xs)
-    mad = median(abs(x - m) for x in xs) or 1e-9
-    return {k: (v - m) / (1.4826 * mad) for k, v in values.items()}
+    scale = 1.4826 * median(abs(x - m) for x in xs)
+    if not scale:
+        scale = 1.2533 * sum(abs(x - m) for x in xs) / len(xs)
+    scale = max(scale, floor)
+    if not scale:
+        return {k: 0.0 for k in values}  # everyone is the same: nobody is unusual
+    return {k: (v - m) / scale for k, v in values.items()}
 
 
-def baselines(data: Data, period: list[str], z_limit: float = 3.5, min_visits: int = 15) -> list[Flag]:
-    """Compare each technician with the others in the same branch. Signals for a manager, not accusations."""
+def baselines(
+    data: Data,
+    period: list[str],
+    z_limit: float = 3.5,
+    min_visits: int = 15,
+    min_count: int = 3,
+    min_gap: float = 0.05,
+) -> list[Flag]:
+    """Compare each technician with the others in the same branch. Signals for a manager, not accusations.
+    A flag needs all three: far from peers in robust units, at least `min_count` occurrences, and a rate at least
+    `min_gap` above the branch's (one repeat among peers with none is not a pattern)."""
     by_equipment = defaultdict(list)
     for wo, j in data.jobs.items():
         if j["Equipment ID"]:
@@ -229,7 +258,7 @@ def baselines(data: Data, period: list[str], z_limit: float = 3.5, min_visits: i
         for v in data.visits.get(wo, []):
             t = v["Tech ID"]
             visits[t] += 1
-            blanks[t] += sum(1 for e in data.hours.get(v["Visit"], []) if not e["Hours"])
+            blanks[t] += no_hours(data, v)
             when = d(v["Date"])
             later = [
                 w
@@ -250,10 +279,10 @@ def baselines(data: Data, period: list[str], z_limit: float = 3.5, min_visits: i
             ("missing hours above peers", blanks, "blank"),
         ):
             rates = {t: counts[t] / members[t] for t in members}
-            for t, z in robust_z(rates).items():
-                if z > z_limit:
+            peers = median(rates.values()) if rates else 0.0
+            for t, z in robust_z(rates, floor=RATE_FLOOR).items():
+                if z > z_limit and counts[t] >= min_count and rates[t] - peers >= min_gap:
                     tech = data.techs[t]
-                    peers = median(rates.values())
                     flags.append(
                         Flag(
                             f"F-{label}-T{t}",
@@ -268,6 +297,8 @@ def baselines(data: Data, period: list[str], z_limit: float = 3.5, min_visits: i
                     )
     return flags
 
+
+RATE_FLOOR = 0.02  # two percentage points: the smallest difference in a rate worth measuring in
 
 FEATURES = [
     "labor billed",
@@ -307,10 +338,17 @@ TECH_FEATURES = [
     ("hours per visit", "hours"),
     ("parts per visit", "parts"),
 ]
+# The habits that can be a problem when they're high, with what makes one material: the count behind it and how
+# far above typical it must be. Hours and parts per visit are context (senior technicians take the long jobs).
+PROBLEM_HABITS = {0: ("late", 0.05), 1: ("lagged", 1.0), 2: ("blank", 0.05), 3: ("repeat", 0.05)}
+FEATURE_FLOOR = [RATE_FLOOR, 0.5, RATE_FLOOR, RATE_FLOOR, 0.25, 0.05]
 
 
-def tech_features(data: Data, min_visits: int = 20) -> tuple[dict[str, list[float]], dict[str, list[str]]]:
-    """Each technician's habits over the whole export, from their own visits, with example jobs for each."""
+def tech_features(
+    data: Data, min_visits: int = 20
+) -> tuple[dict[str, list[float]], dict[str, list[str]], dict[str, dict[str, float]]]:
+    """Each technician's habits over the whole export, from their own visits, with example jobs for each and
+    the counts behind each rate."""
     first_invoice = {wo: min(d(i["Date"]) for i in invs) for wo, invs in data.invoices.items() if invs}
     by_equipment = defaultdict(list)
     for wo, j in data.jobs.items():
@@ -330,12 +368,14 @@ def tech_features(data: Data, min_visits: int = 20) -> tuple[dict[str, list[floa
             s["visits"] += 1
             for e in data.hours.get(v["Visit"], []):
                 if e["Hours"]:
+                    lag = (d(e["Date"]) - when).days if e["Date"] and when else 0
                     s["hours"] += float(e["Hours"])
-                    s["lag"] += (d(e["Date"]) - when).days if e["Date"] and when else 0
+                    s["lag"] += lag
+                    s["lagged"] += lag > 0
                     s["logged"] += 1
-                else:
-                    s["blank"] += 1
-                    examples[t].append(wo)
+            if no_hours(data, v):
+                s["blank"] += 1
+                examples[t].append(wo)
             if j["Type"] == "repair":
                 s["repairs"] += 1
                 later = [
@@ -367,33 +407,56 @@ def tech_features(data: Data, min_visits: int = 20) -> tuple[dict[str, list[floa
                 s["hours"] / s["visits"],
                 s["parts"] / s["visits"],
             ]
-    return out, {t: list(dict.fromkeys(examples[t])) for t in out}
+    return out, {t: list(dict.fromkeys(examples[t])) for t in out}, {t: dict(stats[t]) for t in out}
 
 
-def tech_model(data: Data, contamination: float = 0.1) -> list[Flag]:
+def material_habits(
+    t: str, feats: dict, counts: dict, typical: list[float], zs: list[dict], z_limit: float, min_count: int
+) -> list[int]:
+    """The problem habits where this technician is well above typical, by enough, and often enough to talk about.
+    Strongest first. Empty means there's nothing concrete for a conversation, however odd the mix looks."""
+    out = []
+    for i, (count_key, min_gap) in PROBLEM_HABITS.items():
+        if (
+            zs[i].get(t, 0) >= z_limit
+            and feats[t][i] - typical[i] >= min_gap
+            and counts[t].get(count_key, 0) >= min_count
+        ):
+            out.append(i)
+    return sorted(out, key=lambda i: -zs[i][t])
+
+
+def tech_model(data: Data, threshold: float = 0.55, z_limit: float = 2.0, min_count: int = 3) -> list[Flag]:
     """An Isolation Forest over technicians: whose combination of habits is least like everyone else's.
-    The flag says which habits stand out, so the manager knows where to look."""
+    There's no quota. A technician is flagged only if the forest finds them clearly easier to isolate than
+    average (a score above `threshold`; 0.5 is average) AND at least one problem habit is material. A month
+    where nothing is unusual flags nobody. The flag names the habits, as a pattern worth a conversation."""
     from sklearn.ensemble import IsolationForest
 
-    feats, examples = tech_features(data)
-    techs = sorted(feats, key=int)
+    feats, examples, counts = tech_features(data)
+    techs = sorted(feats, key=id_key)
+    if len(techs) < 5:
+        return []
     rows = [feats[t] for t in techs]
-    forest = IsolationForest(n_estimators=300, contamination=contamination, random_state=7).fit(rows)
+    forest = IsolationForest(n_estimators=300, random_state=7).fit(rows)
     scores = -forest.score_samples(rows)
-    cut = sorted(scores, reverse=True)[max(0, int(len(techs) * contamination) - 1)]
     typical = [median(r[i] for r in rows) for i in range(len(TECH_FEATURES))]
-    zs = [robust_z({t: feats[t][i] for t in techs}) for i in range(len(TECH_FEATURES))]
+    zs = [robust_z({t: feats[t][i] for t in techs}, FEATURE_FLOOR[i]) for i in range(len(TECH_FEATURES))]
+
+    def show(i, v):
+        unit = TECH_FEATURES[i][1]
+        return f"{v:.0%}" if unit == "share" else f"{v:.1f} {unit}"
+
     flags = []
     for t, s in zip(techs, scores, strict=True):
-        if s < cut or t not in data.techs:
+        if s < threshold or t not in data.techs:
             continue
-        top = sorted(range(len(TECH_FEATURES)), key=lambda i: -abs(zs[i].get(t, 0)))[:2]
-
-        def show(i, v):
-            unit = TECH_FEATURES[i][1]
-            return f"{v:.0%}" if unit == "share" else f"{v:.1f} {unit}"
-
-        what = "; ".join(f"{TECH_FEATURES[i][0]} {show(i, feats[t][i])} (typical {show(i, typical[i])})" for i in top)
+        habits = material_habits(t, feats, counts, typical, zs, z_limit, min_count)[:2]
+        if not habits:
+            continue
+        what = "; ".join(
+            f"{TECH_FEATURES[i][0]} {show(i, feats[t][i])} (typical {show(i, typical[i])})" for i in habits
+        )
         tech = data.techs[t]
         flags.append(
             Flag(
@@ -401,7 +464,7 @@ def tech_model(data: Data, contamination: float = 0.1) -> list[Flag]:
                 "unusual technician pattern",
                 "model",
                 f"T{t}",
-                f"T{t} ({tech['Title']}, {tech['Branch']}): {what}",
+                f"T{t} ({tech['Title']}, {tech['Branch']}), a pattern worth a conversation: {what}",
                 score=round(float(s), 3),
                 evidence={"examples": examples[t][:4]},
             )
@@ -476,7 +539,7 @@ def bundle(data: Data, flag: Flag) -> dict:
         wos = [e.split(" → ")[0] for e in flag.evidence.get("examples", [])][:4]
         if not wos:
             mine = [wo for wo, vs in data.visits.items() if any(v["Tech ID"] == flag.subject[1:] for v in vs)]
-            wos = sorted(mine, key=int)[-4:]
+            wos = sorted(mine, key=id_key)[-4:]
         # The AI gets the technician's ID, title and branch, never their name: it doesn't need it.
         tech = {k: v for k, v in data.techs[flag.subject[1:]].items() if k != "Name"}
         return {"flag_id": flag.id, "flag": flag.detail, "technician": tech, "example jobs": [job(w) for w in wos]}
@@ -488,20 +551,41 @@ def ids_in(b: dict) -> set[str]:
     return set(re.findall(r"\b(?:WO\d+|V\d+|INV-\d+)\b", text))
 
 
+def valid_answer(a) -> dict:
+    """The one place the model's answer is checked for shape, before anything uses it. A null evidence list
+    counts as no evidence; a wrong type or a missing field is a bad answer, so the flag goes to a person."""
+    if not isinstance(a, dict):
+        raise BadAnswer("the answer isn't a JSON object")
+    for k in ("what_happened", "likely_cause", "action"):
+        if not isinstance(a.get(k), str) or not a[k].strip():
+            raise BadAnswer(f"'{k}' is missing or isn't text")
+    evidence = a.get("evidence")
+    if evidence is None:
+        evidence = []
+    if not isinstance(evidence, list) or not all(isinstance(x, str) for x in evidence):
+        raise BadAnswer("'evidence' isn't a list of record IDs")
+    return {
+        "what_happened": a["what_happened"],
+        "likely_cause": a["likely_cause"],
+        "action": a["action"],
+        "evidence": evidence,
+    }
+
+
 def investigate(flag: Flag, data: Data, model_) -> None:
     b = bundle(data, flag)
     try:
-        a = parse_json(
-            model_.complete(INVESTIGATE, f"<<<RECORDS\n{json.dumps(b, indent=1)}\nRECORDS>>>", max_tokens=1200)
+        a = valid_answer(
+            parse_json(
+                model_.complete(INVESTIGATE, f"<<<RECORDS\n{json.dumps(b, indent=1)}\nRECORDS>>>", max_tokens=1200)
+            )
         )
-        if not isinstance(a, dict) or not a.get("what_happened"):
-            raise BadAnswer("no explanation")
     except Exception as e:  # noqa: BLE001 - any failure leaves the flag standing, for a person
         flag.status, flag.problems = CHECK_FAILED, [f"couldn't get an explanation: {e}"[:160]]
         return
     flag.explanation = a
     known = ids_in(b)
-    cited = [str(x) for x in a.get("evidence", [])]
+    cited = a["evidence"]
     if not cited:
         flag.problems.append("cites no records")
     flag.problems += [f"cites {x}, which isn't in the records" for x in cited if x not in known]
@@ -509,7 +593,7 @@ def investigate(flag: Flag, data: Data, model_) -> None:
     numbers = [abs(to_float(n)) for n in numbers_in(re.sub(r"[-/:T]", " ", json.dumps(b)))]
     if flag.value is not None:
         numbers.append(flag.value)
-    text = " ".join(str(a.get(k, "")) for k in ("what_happened", "likely_cause", "action"))
+    text = " ".join(a[k] for k in ("what_happened", "likely_cause", "action"))
     bad = unsupported_numbers(text, numbers)
     if bad:
         flag.problems.append(f"uses numbers not in the records ({', '.join(bad)})")
@@ -519,21 +603,25 @@ def investigate(flag: Flag, data: Data, model_) -> None:
 # --- the run ----------------------------------------------------------------------------------------------
 
 
-def detect(data: Data, start: date, end: date, contamination: float = 0.1, model_jobs: bool = False) -> list[Flag]:
+def detect(data: Data, start: date, end: date, tech_threshold: float = 0.55, model_jobs: bool = False) -> list[Flag]:
     period = sorted(
-        (wo for wo, j in data.jobs.items() if d(j["Completed"]) and start <= d(j["Completed"]) <= end), key=int
+        (wo for wo, j in data.jobs.items() if d(j["Completed"]) and start <= d(j["Completed"]) <= end), key=id_key
     )
     flags = rules(data, period) + baselines(data, period)
     already = {fl.subject for fl in flags}
-    flags += [fl for fl in tech_model(data, contamination) if fl.subject not in already]
+    flags += [fl for fl in tech_model(data, tech_threshold) if fl.subject not in already]
     if model_jobs:
         flags += model(data, period, {fl.subject for fl in flags})
     return flags
 
 
 def prioritize(flags: list[Flag]) -> list[Flag]:
-    """Within each owner: technician patterns first (strongest signal first), then money, largest first."""
-    return sorted(flags, key=lambda fl: (fl.owner, not fl.subject.startswith("T"), -fl.score, -(fl.value or 0)))
+    """Within each owner: money first, largest first; then the other record problems; people last (strongest
+    signal first). A pattern about a person is a conversation, and shouldn't crowd out recoverable money."""
+    return sorted(
+        flags,
+        key=lambda fl: (fl.owner, fl.subject.startswith("T"), -(fl.value or 0), -fl.score, id_key(fl.subject)),
+    )
 
 
 def within_budget(flags: list[Flag], budget: int) -> list[Flag]:
@@ -547,9 +635,20 @@ def within_budget(flags: list[Flag], budget: int) -> list[Flag]:
     return chosen
 
 
-def digest(owner: str, flags: list[Flag], start: date, end: date) -> EmailMessage:
+def load_recipients(path: Path | None) -> dict[str, str]:
+    """Who gets each owner's digest draft, from a CSV (Owner, To). A setting, not code: each company has its own."""
+    if not path or not path.exists():
+        return {}
+    return {r["Owner"]: r["To"] for r in read_csv(path) if r.get("Owner") and r.get("To")}
+
+
+def digest(owner: str, flags: list[Flag], start: date, end: date, recipients: dict[str, str]) -> EmailMessage:
     msg = EmailMessage()
-    msg["To"] = f"{owner} <{owner.lower().replace(' ', '.')}@summitmech.example>"
+    note = ""
+    if recipients.get(owner):
+        msg["To"] = recipients[owner]
+    else:
+        note = f"(No recipient set for the {owner.lower()}: add one to recipients.csv.)\n\n"
     msg["Subject"] = f"Flags to look at: {len(flags)} ({start:%b %-d}–{end:%b %-d})"
     parts = []
     for fl in flags:
@@ -559,9 +658,13 @@ def digest(owner: str, flags: list[Flag], start: date, end: date) -> EmailMessag
             else "The explanation didn't pass its checks: open the records."
         )
         money = f" (${fl.value:,.2f})" if fl.value else ""
-        parts.append(f"- {fl.check}, {fl.subject}{money}: {why}")
+        person = " A pattern worth a conversation, not a verdict." if fl.subject.startswith("T") else ""
+        parts.append(f"- {fl.check}, {fl.subject}{money}: {why}{person}")
     msg.set_content(
-        "These were flagged this week. Each is a signal to check, not a conclusion.\n\n" + "\n".join(parts) + "\n"
+        note
+        + "These were flagged this week. Each is a signal to check, not a conclusion.\n\n"
+        + "\n".join(parts)
+        + "\n"
     )
     return msg
 
@@ -638,13 +741,14 @@ def run(
     start: date,
     end: date,
     budget: int = 12,
-    contamination: float = 0.1,
+    tech_threshold: float = 0.55,
     answer_key: Path | None = None,
     model_jobs: bool = False,
+    recipients: dict[str, str] | None = None,
 ) -> tuple[list[Flag], list[Path]]:
     from alerts_dashboard import dashboard
 
-    flags = prioritize(detect(data, start, end, contamination, model_jobs))
+    flags = prioritize(detect(data, start, end, tech_threshold, model_jobs))
     top = within_budget(flags, budget)
     for fl in top:
         investigate(fl, data, model_)
@@ -655,7 +759,8 @@ def run(
     for owner, fls in by_owner.items():
         written.append(
             write_text(
-                out / "alerts" / f"{owner.lower().replace(' ', '-')}.eml", digest(owner, fls, start, end).as_string()
+                out / "alerts" / f"{owner.lower().replace(' ', '-')}.eml",
+                digest(owner, fls, start, end, recipients or {}).as_string(),
             )
         )
     rows = [
@@ -777,7 +882,13 @@ def main() -> None:
     p.add_argument("--start", type=date.fromisoformat)
     p.add_argument("--end", type=date.fromisoformat)
     p.add_argument("--budget", type=int, default=12, help="flags to investigate and alert on, per owner per run")
-    p.add_argument("--contamination", type=float, default=0.1, help="share of technicians the model may call unusual")
+    p.add_argument(
+        "--tech-threshold",
+        type=float,
+        default=0.55,
+        help="how unusual a technician must be to the model (0.5 is average); there's no quota",
+    )
+    p.add_argument("--recipients", type=Path, help="CSV of Owner,To for the digest drafts (default: recipients.csv)")
     p.add_argument("--model-jobs", action="store_true", help="also run the model over individual jobs (see README)")
     p.add_argument("--answer-key", type=Path)
     p.add_argument("--replay", type=Path, help="recorded explanations, instead of calling a model")
@@ -790,8 +901,18 @@ def main() -> None:
     else:
         p.error("choose --sample, or --data with --start and --end")
     model_ = Replay(args.replay) if args.replay else model_for(args, offline)
+    recipients = load_recipients(args.recipients or folder / "recipients.csv")
     flags, written = run(
-        Data.load(folder), model_, args.out, start, end, args.budget, args.contamination, key, args.model_jobs
+        Data.load(folder),
+        model_,
+        args.out,
+        start,
+        end,
+        args.budget,
+        args.tech_threshold,
+        key,
+        args.model_jobs,
+        recipients,
     )
     done(model_, written, f"{len(flags)} flags; up to {args.budget} per owner investigated. Open dashboard.html.")
 
