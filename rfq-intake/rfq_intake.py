@@ -13,13 +13,15 @@ deadline, quoting the words each one came from. Code then does everything that h
 - sorts what's ready by how soon the quote is due.
 
 Writes out/dashboard.html, out/requests.csv, out/line-items.csv, out/review-queue.csv, out/summary.md and
-out/questions/ (drafts). With --answer-key, also out/score.md. Nothing is sent, priced or changed.
+out/questions/ (drafts), and adds a line to out/runs.csv. With --answer-key, also out/score.md. Nothing is
+sent, priced or changed.
 
 The sample is Summit Mechanical's quotes@ mailbox for September 2025, from the Summit simulation.
 """
 
 from __future__ import annotations
 
+import csv
 import email
 import email.policy
 import email.utils
@@ -28,7 +30,7 @@ import random
 import re
 import sys
 from dataclasses import dataclass, field
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from email.message import EmailMessage
 from pathlib import Path
 
@@ -541,10 +543,15 @@ def run(
     as_of: date,
     signature: str = "Summit Mechanical, Estimating",
     answer_key: Path | None = None,
+    max_emails: int = 200,
 ) -> tuple[list[Result], list[Path]]:
     from dashboard import dashboard
 
-    results = [process(m, model, records) for m in mails]
+    # A ceiling on model calls per run, so a flood of email (or a mistake) can't run up a bill. Emails over
+    # the limit aren't dropped: they're listed for a person, and the next run picks them up.
+    results = [process(m, model, records) for m in mails[:max_emails]]
+    for m in mails[max_emails:]:
+        results.append(Result(m, status=FAILED, reasons=[f"over this run's limit of {max_emails} emails: run again"]))
     written = []
     for n, r in enumerate((r for r in results if r.status == INFO), 1):
         slug = re.sub(r"[^a-z0-9]+", "-", r.mail.subject.lower()).strip("-")[:40]
@@ -563,7 +570,23 @@ def run(
     ]
     if scored:
         written.append(write_text(out / "score.md", "# Against the answer key\n\n" + scored["md"] + "\n"))
+    written.append(log_run(out / "runs.csv", results, model.name, scored))
     return results, written
+
+
+def log_run(path: Path, results: list[Result], model_name: str, scored: dict | None) -> Path:
+    """One line per run, appended: when it ran, with what, and what came out. Watch it for drift."""
+    row = {"ran_at": datetime.now().isoformat(timespec="seconds"), "model": model_name, "emails": len(results)}
+    row |= {s: sum(r.status == s for r in results) for s in STATUSES}
+    row["score"] = f"{len(scored['groups']['right'])}/{scored['total']}" if scored else ""
+    new = not path.exists()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(row))
+        if new:
+            w.writeheader()
+        w.writerow(row)
+    return path
 
 
 # --- the offline stand-in ---------------------------------------------------------------------------------
@@ -663,6 +686,7 @@ def main() -> None:
     p.add_argument("--answer-key", type=Path, help="CSV of what each email really is, to score the run")
     p.add_argument("--as-of", type=date.fromisoformat, help="date to count days left from (default: today)")
     p.add_argument("--replay", type=Path, help="answers from a recorded run, instead of calling a model")
+    p.add_argument("--max-emails", type=int, default=200, help="most emails to send to the model in one run")
     p.add_argument("--signature", default="Summit Mechanical, Estimating")
     args = p.parse_args()
     if args.sample:
@@ -674,7 +698,7 @@ def main() -> None:
         p.error("choose --sample, or --mailbox and --records")
     mails = read_mailbox(mailbox)
     model = Replay(args.replay, mails) if args.replay else model_for(args, offline)
-    results, written = run(mails, Records.load(records), model, args.out, as_of, args.signature, key)
+    results, written = run(mails, Records.load(records), model, args.out, as_of, args.signature, key, args.max_emails)
     count = {s: sum(r.status == s for r in results) for s in STATUSES}
     done(model, written, ", ".join(f"{n} {s}" for s, n in count.items() if n) + ". Open dashboard.html.")
 

@@ -11,6 +11,7 @@ The full playbook, worked through at Summit Mechanical with an architecture diag
 - Code then matches all of it to your own records (customers, sites, equipment), exactly or not at all. When two units could fit, it asks the customer instead of guessing.
 - It runs the checks. Anything that fails one goes to the **needs review** queue for a person: quoted words that aren't in the email, equipment that isn't yours, an attachment it can't read, instructions aimed at an AI, a deadline that doesn't make sense, an answer it couldn't use.
 - It writes a dashboard, the lists as spreadsheets, and a drafted question for each request that's missing something.
+- Every run adds a line to `out/runs.csv` (when, which model, how many in each pile). No more than `--max-emails` (default 200) go to the model per run; the rest are listed for a person and picked up next time.
 
 ## What it doesn't do
 
@@ -50,6 +51,10 @@ Summit Mechanical is a fictional commercial HVAC contractor, from a [simulation 
 `graph_mailbox.py` copies new email from one Microsoft 365 mailbox into a folder, read-only, using Microsoft Graph. Run it on a schedule, then run `rfq_intake.py` on the folder. The setup (an app registration with *Mail.Read*, limited to the one mailbox) is at the top of the file. It's tested here against a stand-in for Graph, not a live tenant: try it on a test mailbox first.
 
 On another mail system, anything that saves messages as `.eml` files works.
+
+## Before it goes live
+
+The repo covers the email limit, the "couldn't process" list, the run log, the spot checks and the tests. Yours to add: a server or scheduled job you control, the secret in a secret store, access to the outputs limited to the people who need them, deleting saved email on a schedule, and an alert if runs stop or the review pile jumps. Re-run the answer key after any change, including a new model version.
 
 ## Use it on your own business
 

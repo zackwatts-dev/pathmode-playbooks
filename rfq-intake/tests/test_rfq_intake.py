@@ -140,3 +140,13 @@ def test_the_recorded_run_replays_and_the_two_gaps_it_found_stay_closed(tmp_path
     assert by[vail].lines[0].unit is not None
     vague = next(f for f in by if "some new equipment" in MAILS[f].text)
     assert by[vague].status == rq.INFO
+
+
+def test_a_flood_of_email_is_capped_and_kept_and_every_run_is_logged(tmp_path):
+    mails = list(MAILS.values())
+    results, _ = rq.run(mails, RECORDS, OfflineModel(rq.offline), tmp_path, rq.SAMPLE_AS_OF, max_emails=10)
+    over = [r for r in results if r.status == rq.FAILED]
+    assert len(results) == 80 and len(over) == 70 and "limit of 10" in over[0].reasons[0]
+    rq.run(mails[:5], RECORDS, OfflineModel(rq.offline), tmp_path, rq.SAMPLE_AS_OF)
+    log = read_csv(tmp_path / "runs.csv")
+    assert [row["emails"] for row in log] == ["80", "5"]
