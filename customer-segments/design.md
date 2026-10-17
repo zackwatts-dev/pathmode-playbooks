@@ -17,13 +17,15 @@ Summit treats its 1,200 customers by the labels in its system (national chain, p
 3. **Predictions, each tested before it's trusted.** For each question ("who'll pay more than 20 days late next year?", "who'll leave next year?"):
    - a logistic regression is trained on 70% of customers and tested on the other 30%;
    - on the same 30%, it's compared with a one-line rule;
-   - the verdict is the model, the rule, or "not predictable from these records".
+   - the verdict is the model, the rule, or "not predictable from these records";
+   - without an answer key, the examples come from history: features as they stood a year before the cutoff, and what happened in the year after;
+   - only the late-payment question produces a list. "Who'll leave" is tested and reported, and nobody is scored for it.
 4. **The AI explains.** It names each segment, says who's in it and how to treat them, and explains each customer on the late-payment list, using only the numbers it's given. Code checks every number.
 5. **A dashboard:** a 2D map of the customers by segment, the segments with their treatment, the tested predictions with their verdicts, and the late-payment list.
 
 ## Inputs
 
-Exports for two years up to the cutoff: customers, sites, agreements, jobs, quotes, invoices and payments. Answer keys (from the simulation): each customer's hidden behavior, who paid late in 2025, and who left in 2025.
+Exports for two years up to the cutoff: customers, sites, agreements, jobs, quotes, invoices and payments. Answer keys (from the simulation only): each customer's hidden behavior, who paid late in 2025, and who left in 2025. A real company has none, so its predictions learn from the year before.
 
 ## What "correct" means
 

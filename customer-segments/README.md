@@ -18,6 +18,8 @@ The full playbook, worked through at Summit Mechanical with a value calculator, 
   - a logistic regression trained on 70% of customers and tested on the other 30%;
   - compared with a one-line rule on the same customers;
   - the verdict: the model, the rule, or "not predictable from these records".
+  - "who'll leave" is only tested and reported: nobody is listed or scored for it.
+- **The late-payment list:** everyone ranked by their chance of paying more than 20 days late next year, with the method that won. When the model wins on the sample, each customer's score comes from cross-validation, so no customer is scored by a model that saw their outcome.
 - **The AI** names each segment and suggests how to treat it, and explains each customer on the late-payment list, from their numbers only. Code checks every number. The AI never sees names or contact details.
 - **Two dashboards:** segments and the tested predictions for everyone (`dashboard.html`), plus the late-payment list for billing only (`dashboard-billing.html`).
 
@@ -46,7 +48,11 @@ The answer keys come from the simulation's hidden truth, never from the exports:
 - who paid more than 20 days late in 2025;
 - who left in 2025.
 
-In production you'd train each prediction on last year's outcomes, then score this year. The sample uses held-out customers instead, so the answer key can test it.
+## Without an answer key (a real company)
+
+A real company has no answer key, so the predictions learn from history: features as they stood a year before the cutoff, and what happened in the year after (paid more than 20 days late on average; no job or invoice at all, for "left"). They're tested on 30% of last year's customers, and the winner scores this year's. That's the default when there are no answer-key files; `--from-history` does it on the sample too, where the 2025 answer key then only scores the list.
+
+On the sample, learned from 2024, the late-payment rule wins again, and 25 of the top 25 paid more than 20 days late in 2025. "Who'll leave" says "not enough examples": the sample holds only customers still active at the end of 2024, so it has almost no one who left in 2024. A real company's exports include its former customers.
 
 ## Files
 

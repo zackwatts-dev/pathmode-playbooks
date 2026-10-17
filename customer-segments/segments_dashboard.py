@@ -7,8 +7,9 @@ from common.page import STYLE, _e, _table
 COLORS = ["#3f6b21", "#28507a", "#9a5b00", "#7a2f6b", "#2f7a73", "#8a3a1c", "#5b5b5b"]
 
 
-def scatter(custs, points, names, at_risk_ids) -> str:
-    """Each customer is a dot, placed by the two directions that separate them most (PCA). Ringed: at risk."""
+def scatter(custs, points, names, late_ids) -> str:
+    """Each customer is a dot, placed by the two directions that separate them most (PCA). Ringed: on the
+    late-payment list."""
     xs, ys = [p[0] for p in points], [p[1] for p in points]
     x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
     w, h, pad = 760, 380, 18
@@ -22,7 +23,7 @@ def scatter(custs, points, names, at_risk_ids) -> str:
     dots = []
     for c, (a, b) in zip(custs, points, strict=True):
         color = COLORS[c.cluster % len(COLORS)]
-        ring = " stroke='#a3281c' stroke-width='2.2' r='6'" if c.id in at_risk_ids else " r='3.2'"
+        ring = " stroke='#a3281c' stroke-width='2.2' r='6'" if c.id in late_ids else " r='3.2'"
         dots.append(
             f"<circle cx='{sx(a):.1f}' cy='{sy(b):.1f}' fill='{color}' fill-opacity='0.65'{ring}>"
             f"<title>{_e(c.name)}: {_e(names[c.cluster])}</title></circle>"
@@ -38,9 +39,14 @@ def scatter(custs, points, names, at_risk_ids) -> str:
         "border:1px solid var(--line);border-radius:10px' role='img' aria-label='Customers by segment'>"
         f"{''.join(dots)}"
         f"</svg></div><p class='muted'>{legend}"
-        + ("<span style='margin-left:6px'>Ringed in red: likely to pay late next year.</span>" if at_risk_ids else "")
+        + ("<span style='margin-left:6px'>Ringed in red: likely to pay late next year.</span>" if late_ids else "")
         + "</p>"
     )
+
+
+def _num(v) -> str:
+    """A test score, or a dash when there was nothing to test it on."""
+    return "-" if v is None else f"{v:.2f}"
 
 
 def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: str = "all") -> str:
@@ -115,17 +121,19 @@ def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: s
         rows = [
             [
                 _e(p["question"]),
-                f"{p['model_auc']:.2f}",
-                f"{p['rule_auc']:.2f}<br><span class='muted'>{_e(p['baseline'])}</span>",
-                f"{p['model_hits']} / {p['rule_hits']} / {p['base_hits']}",
+                _num(p["model_auc"]),
+                f"{_num(p['rule_auc'])}<br><span class='muted'>{_e(p['baseline'])}</span>",
+                " / ".join(_e(str("-" if p[k] is None else p[k])) for k in ("model_hits", "rule_hits", "base_hits")),
                 f"<b>{_e(p['verdict'])}</b>",
             ]
             for p in info.values()
         ]
+        learned = next(iter(info.values()))["learned_from"]
         out.append(
-            "<h2>Predictions, tested before trusting them</h2><p class='muted'>Each one trained on 70% of customers "
-            "and tested on the other 30%, against a one-line rule. Score: 0.5 is a coin flip, 1.0 is perfect. "
-            "Hits: how many of the top 25 really did it (model / rule / picked at random).</p>"
+            "<h2>Predictions, tested before trusting them</h2><p class='muted'>Learned from "
+            f"{_e(learned)}. Each one trained on 70% of those customers and tested on the other 30%, against a "
+            "one-line rule. Score: 0.5 is a coin flip, 1.0 is perfect. Hits: how many of the top 25 really did it "
+            "(model / rule / picked at random). The leaving question is only tested: nobody is listed for it.</p>"
         )
         out.append(_table(["Question", "Model", "Rule", "Hits in top 25", "Verdict"], rows))
     rows = []
@@ -147,7 +155,8 @@ def dashboard(custs, profs, seg, info, top, names, model_name, scored, viewer: s
     if scored:
         out.append("<h2>Against the answer key</h2>")
         out.append(
-            f"<p>Of the top {scored['top']} on the list, <b>{scored['hit']}</b> actually left in 2025. Picking "
+            f"<p>Of the top {scored['top']} on the list, <b>{scored['hit']}</b> actually paid more than 20 days late "
+            f"in 2025. Picking "
             f"{scored['top']} at random would find about {scored['base'] * scored['top']:.1f}.</p>"
         )
         rows = [
