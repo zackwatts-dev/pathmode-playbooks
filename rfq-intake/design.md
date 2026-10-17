@@ -9,12 +9,12 @@ Quote requests pile up in quotes@, a shared Microsoft 365 mailbox, so we waste h
 For every new email in quotes@:
 1. Decide what kind it is: a new quote request, a follow-up, a reply to a quote we sent, a service request, or something else.
 2. For a quote request, an AI model (OpenAI's API) pulls out the customer, site, equipment, quantities and deadline, quoting the exact words each one came from.
-3. Plain code, not AI, checks every quote really appears in the email, and that each serial, model and quantity is in the words quoted for it, and matches the customer, site and equipment to our records. Exact matches only. If more than one unit could fit, it asks; it never guesses.
+3. Plain code, not AI, checks every quote really appears in the email, and that each serial, model, make, quantity and site name is in the words quoted for it, and each deadline is the date its words give, and matches the customer, site and equipment to our records. Exact matches only. A customer counts only if the sender is on file for them or the email names them; a serial counts only if it's that customer's. If more than one unit could fit, it asks; it never guesses.
 4. It puts the email in one pile:
    - **ready to quote**;
    - **needs info**: a short drafted question for us to send the customer;
-   - **needs review**: it failed a check (a value that isn't in its quote, equipment we don't have, an attachment it can't read, an email with no readable text, instructions aimed at an AI, a deadline that doesn't make sense or has no quote behind it, an answer it couldn't use);
-   - **not a quote request**: where it should go instead.
+   - **needs review**: it failed a check (a value that isn't in its quote, equipment we don't have or that isn't the sender's, a customer the email doesn't name, a "new install" that reads like a replacement, an attachment it can't read, an email with no readable text or too long to read in full, instructions aimed at an AI, a deadline that doesn't make sense or has no quote behind it, a kind we don't sort into, an answer it couldn't use);
+   - **not a quote request**: where it should go instead. One filed as "no action" that mentions a quote, price, bid or serial goes to review instead.
 5. A one-page HTML dashboard: the count in each pile; the needs-review list first, highlighted, with the reason for each; ready requests, soonest deadline first; five ready ones picked at random for a person to spot-check.
 
 It's decision support. People decide what to quote and send everything.
@@ -44,7 +44,7 @@ It's decision support. People decide what to quote and send everything.
 
 - On a schedule, every 15 minutes, on a server we control.
 - At most 200 emails to the AI per run. Anything over the limit is listed for a person and picked up next run.
-- Nothing is silently dropped. If the AI's answer is unusable or the wrong shape, the email is listed as "couldn't process", and the bad answer isn't kept. An email with no text we can read (only a PDF, say) goes to a person rather than to the AI. HTML-only email is read as text; logos and signature images are ignored.
+- Nothing is silently dropped. If the AI's answer is unusable or the wrong shape, the email is listed as "couldn't process", and the bad answer isn't kept. An email with no text we can read (only a PDF, say) goes to a person rather than to the AI. HTML-only email is read as text; signature images (small, and inline or named like image001.png) are ignored, and any other image goes to a person. One email file that can't be read is listed for a person; the run carries on.
 - Every run adds a line to a log: when, which model, how many emails, how many in each pile.
 - Saved email is deleted after 90 days. Only the estimating team can see the output.
 - After any change, including a new model version, re-run the answer key before going live.

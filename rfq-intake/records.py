@@ -9,9 +9,11 @@ from __future__ import annotations
 
 import difflib
 import re
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from common.evidence import value_in_quote
 from common.util import read_csv
 
 FAMILIES = {
@@ -39,6 +41,12 @@ def squash(text: str) -> str:
 
 def name_key(name: str) -> str:
     return squash(re.sub(r"\b(inc|llc|the|co)\b\.?", "", str(name).lower()))
+
+
+def unit_family(equipment_type: str) -> str:
+    """The family of a unit, from your export's Type column. Exports spell it many ways ("rtu", "Rooftop Unit",
+    "Walk-In Cooler"): the same words that sort an email's equipment sort the records, so they can meet."""
+    return family_of(equipment_type) or squash(equipment_type)
 
 
 def family_of(text: str) -> str:
@@ -95,12 +103,30 @@ class Records:
             sites[s.id] = s
             if s.customer in customers:
                 customers[s.customer].sites.append(s)
-        units = {}
+        units, orphans = {}, []
         for r in read_csv(folder / "equipment.csv"):
-            u = Unit(r["Equipment ID"], r["Site ID"], r["Type"], r["Make"], r["Model"], r["Serial"], r["Installed"])
+            u = Unit(
+                r["Equipment ID"],
+                r["Site ID"],
+                unit_family(r["Type"]),
+                r["Make"],
+                r["Model"],
+                r["Serial"],
+                r["Installed"],
+            )
+            if u.site not in sites:
+                # Equipment at a site that isn't in sites.csv can't be tied to a customer, so it can't be matched:
+                # an email quoting its serial reads as "not in our records" and goes to a person.
+                orphans.append(u.id)
+                continue
             units[u.id] = u
-            if u.site in sites:
-                sites[u.site].units.append(u)
+            sites[u.site].units.append(u)
+        if orphans:
+            print(
+                f"warning: {len(orphans)} equipment row(s) name a site that isn't in sites.csv, skipped "
+                f"(e.g. Equipment ID {orphans[0]})",
+                file=sys.stderr,
+            )
         by_email = {r["Email"].lower(): r["Customer ID"] for r in read_csv(folder / "contacts.csv")}
         by_serial = {squash(u.serial): u for u in units.values() if u.serial}
         return cls(customers, sites, units, by_email, by_serial)
@@ -119,8 +145,9 @@ class Records:
         wanted = {squash(name), squash(address)} - {""}
         hits = [s for s in customer.sites if wanted & {squash(s.name), squash(s.address)}]
         if not hits and name:
-            # "Glendale Boutique #101" written with the city after it: still exact on the name part.
-            hits = [s for s in customer.sites if squash(s.name) and squash(s.name) in squash(name + address)]
+            # "Glendale Boutique #101" written with the city after it: still exact on the name part, as whole
+            # words, so "#1001" never matches a site called "#100".
+            hits = [s for s in customer.sites if squash(s.name) and value_in_quote(s.name, f"{name} {address}")]
         return hits[0] if len(hits) == 1 else None
 
     def nearest_serial(self, serial: str, site: Site | None) -> str:

@@ -100,14 +100,15 @@ def new_messages(mailbox: str, bearer: str, since: str, fetch: Fetch = _fetch) -
     return found
 
 
-def save(mailbox: str, bearer: str, out: Path, fetch: Fetch = _fetch, sleep=time.sleep) -> list[Path]:
+def save(mailbox: str, bearer: str, out: Path, fetch: Fetch = _fetch, sleep=time.sleep, since: str = "") -> list[Path]:
     """Save each new message as an .eml file. Remembers the newest time saved (.last-fetched) and the ids saved at
     that time (.last-fetched-ids), so a message that arrived in the same second as the last one isn't skipped,
-    and one already saved isn't saved twice."""
+    and one already saved isn't saved twice. `since` (an ISO time) is where the first run starts; without it,
+    the first run copies the whole inbox. Once .last-fetched exists, it wins."""
     out.mkdir(parents=True, exist_ok=True)
     fetch = patient(fetch, sleep)
     state, ids_file = out / ".last-fetched", out / ".last-fetched-ids"
-    since = state.read_text().strip() if state.exists() else ""
+    since = state.read_text().strip() if state.exists() else since
     seen = set(ids_file.read_text().split()) if since and ids_file.exists() else set()
     saved = []
     for m in new_messages(mailbox, bearer, since, fetch):
@@ -132,12 +133,18 @@ def main() -> None:
     p = argparse.ArgumentParser(description="Copy new email from a Microsoft 365 mailbox into .eml files. Read-only.")
     p.add_argument("--mailbox", required=True, help="the mailbox address, e.g. quotes@yourcompany.com")
     p.add_argument("--to", type=Path, default=Path("mail"), help="folder for the .eml files (default: mail/)")
+    p.add_argument(
+        "--since",
+        default="",
+        help="first run only: copy email received at or after this time, e.g. 2025-09-01T00:00:00Z "
+        "(default: the whole inbox)",
+    )
     args = p.parse_args()
     try:
         env = [os.environ[k] for k in ("MS_TENANT_ID", "MS_CLIENT_ID", "MS_CLIENT_SECRET")]
     except KeyError as e:
         sys.exit(f"Set {e.args[0]} (see the top of this file).")
-    saved = save(args.mailbox, token(*env), args.to)
+    saved = save(args.mailbox, token(*env), args.to, since=args.since)
     print(f"Saved {len(saved)} new message(s) to {args.to}/")
 
 

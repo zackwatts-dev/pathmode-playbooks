@@ -118,6 +118,8 @@ class Email:
     message_id: str = ""
     in_reply_to: str = ""
     readable: bool = True  # False when nothing in it is text we could read: no body, only unread attachments
+    truncated: bool = False  # True when the text was longer than MAX_TEXT and was cut to fit
+    problem: str = ""  # why the file itself couldn't be read, when it couldn't
 
 
 @dataclass
@@ -138,6 +140,7 @@ class Result:
     route: str = ""
     customer: Customer | None = None
     customer_name: str = ""
+    how: str = ""  # how we know the customer: "contact" (the sender is on file) or "name" (named in the email)
     new_customer: bool = False
     request_type: str = ""
     sites: list[Site] = field(default_factory=list)
@@ -198,16 +201,35 @@ def html_to_text(html: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
 
 
-SIGNATURE_IMAGE = 100_000  # bytes: logos and signature images are smaller than this; a photo of a nameplate isn't
+SIGNATURE_IMAGE = 100_000  # bytes: logos and signature images are smaller than this; most photos aren't
+SIGNATURE_NAME = re.compile(r"image\d{3}\.(png|jpe?g|gif)$", re.I)  # what Outlook calls the images in a signature
+TEXT_ATTACHMENTS = (".csv", ".txt", ".tsv")
 
 
 def is_decoration(part) -> bool:
-    """An image that's part of the email's look (a logo, a signature), not something sent for us to read: shown
-    inline, or small. Other attachments (PDFs, spreadsheets, larger photos) still go to a person as unread."""
+    """An image that's part of the email's look (a logo, a signature), not something sent for us to read: under
+    SIGNATURE_IMAGE, and either shown inline in the body or named the way Outlook names signature images. Any
+    other image (a photo of a nameplate, however small; a large inline picture) goes to a person as unread."""
     if part.get_content_maintype() != "image":
         return False
     inline = part.get_content_disposition() == "inline" or bool(part.get("Content-ID"))
-    return inline or len(part.get_payload(decode=True) or b"") < SIGNATURE_IMAGE
+    small = len(part.get_payload(decode=True) or b"") < SIGNATURE_IMAGE
+    return small and (inline or bool(SIGNATURE_NAME.match(part.get_filename() or "")))
+
+
+def part_text(part) -> str:
+    """A part's text, whatever it was sent as. An unknown charset ("unknown-8bit") is read as Latin-1 rather than
+    stopping the run, and a CSV sent as application/vnd.ms-excel is read as text, not as bytes."""
+    raw = part.get_payload(decode=True) or b""
+    try:
+        return raw.decode(part.get_content_charset() or "utf-8", errors="replace")
+    except LookupError:
+        return raw.decode("latin-1")
+
+
+def one_line(value) -> str:
+    """A header as one line: a line break hidden in an encoded subject would break the drafted reply."""
+    return re.sub(r"[\r\n\t]+", " ", str(value or "")).strip()
 
 
 def read_mail(path: Path) -> Email:
@@ -219,13 +241,13 @@ def read_mail(path: Path) -> Email:
             continue
         name, kind = part.get_filename(), part.get_content_type()
         if kind == "text/plain" and not name:
-            body.append(part.get_content())
+            body.append(part_text(part))
         elif kind == "text/html" and not name:
-            html.append(html_to_text(part.get_content()))
+            html.append(html_to_text(part_text(part)))
         elif is_decoration(part):
             continue
-        elif name and name.lower().endswith((".csv", ".txt")):
-            attached.append(f"\n[Attachment: {name}]\n{part.get_content()}")
+        elif name and name.lower().endswith(TEXT_ATTACHMENTS):
+            attached.append(f"\n[Attachment: {name}]\n{part_text(part)}")
         else:
             name = name or f"an unnamed {kind} part"
             unread.append(name)
@@ -238,23 +260,33 @@ def read_mail(path: Path) -> Email:
         received = email.utils.parsedate_to_datetime(str(msg["Date"])).date()
     except (TypeError, ValueError):
         received = None
-    sender_name, sender = email.utils.parseaddr(str(msg.get("From", "")))
+    sender_name, sender = email.utils.parseaddr(one_line(msg.get("From", "")))
+    full = "\n".join([*text, *attached]).strip()
     return Email(
         path.name,
-        sender_name,
-        sender,
-        str(msg.get("Subject", "")),
+        one_line(sender_name),
+        one_line(sender),
+        one_line(msg.get("Subject", "")),
         received,
-        "\n".join([*text, *attached]).strip()[:MAX_TEXT],
+        full[:MAX_TEXT],
         unread,
-        str(msg.get("Message-ID", "")),
-        str(msg.get("In-Reply-To", "")),
+        one_line(msg.get("Message-ID", "")),
+        one_line(msg.get("In-Reply-To", "")),
         readable,
+        truncated=len(full) > MAX_TEXT,
     )
 
 
 def read_mailbox(folder: Path) -> list[Email]:
-    return [read_mail(p) for p in sorted(folder.glob("*.eml"))]
+    """Every email in the folder. A file that can't be read at all is kept, for a person, instead of stopping the
+    run: it would still be there next time, and stop every run after it."""
+    mails = []
+    for p in sorted(folder.glob("*.eml")):
+        try:
+            mails.append(read_mail(p))
+        except Exception as e:  # noqa: BLE001 - one bad file mustn't stop the batch
+            mails.append(Email(p.name, "", "", "", None, "", [], readable=False, problem=f"{type(e).__name__}: {e}"))
+    return mails
 
 
 # --- one email --------------------------------------------------------------------------------------------
@@ -290,11 +322,18 @@ class Replay:
         by_file = {row["file"]: row["answer"] for row in data["answers"]}
         self.answers = {prompt(m): by_file[m.file] for m in mails if m.file in by_file}
         self.name = f"{data['model']}, recorded {data['recorded']} (replayed)"
+        self.misses = 0  # emails asked about that the recording has no answer for: a stale recording shows here
 
     def complete(self, system: str, user: str, max_tokens: int = 2000) -> str:
         if user not in self.answers:
+            self.misses += 1
             raise BadAnswer("no recorded answer for this email")
         return self.answers[user]
+
+
+def misses_line(model) -> str:
+    n = getattr(model, "misses", 0)
+    return f"{n} items had no recorded answer (they're in couldn't process)." if n else ""
 
 
 TEXT_FIELDS = ("customer", "request_type", "quote_due", "due_quote")
@@ -395,9 +434,10 @@ def quantity_in_quote(quantity: float, quote: str) -> bool:
 
 def unsupported(u: dict) -> list[str]:
     """Values the model gave for a unit that aren't in the words it quoted for that unit. A real quote proves
-    nothing about a value that isn't in it, so each of these sends the email to a person."""
+    nothing about a value that isn't in it, so each of these sends the email to a person. The make counts too:
+    it breaks ties between units at a site."""
     quote, bad = u["quote"], []
-    for f in ("serial", "model"):
+    for f in ("serial", "model", "make"):
         if u[f].strip() and not value_in_quote(u[f], quote):
             bad.append(f'{f} {u[f]} isn\'t in the words quoted for it ("{quote[:60]}")')
     qty = number(u["quantity"])
@@ -406,8 +446,58 @@ def unsupported(u: dict) -> list[str]:
     return bad
 
 
+MONTH_ABBR = [
+    m[:3] for m in "january february march april may june july august september october november december".split()
+]
+WEEKDAYS = "monday tuesday wednesday thursday friday saturday sunday".split()
+
+
+def deadline_in_words(due: date, words: str, received: date | None) -> bool:
+    """True if the words quoted for a deadline say this date: its month and day ("September 12", "12 Sept",
+    "9/12"), or a day we can count from when the email arrived ("today", "tomorrow", "by Friday": the next
+    Friday after it was sent). Anything else ("end of the month", a date with the wrong year) isn't proof."""
+    low = words.lower()
+    for m in re.finditer(r"\b([a-z]{3})[a-z]*\.?\s+(\d{1,2})(?:st|nd|rd|th)?\b", low):
+        if m.group(1) in MONTH_ABBR and (MONTH_ABBR.index(m.group(1)) + 1, int(m.group(2))) == (due.month, due.day):
+            return True
+    for m in re.finditer(r"\b(\d{1,2})(?:st|nd|rd|th)?\s+(?:of\s+)?([a-z]{3})[a-z]*\b", low):
+        if m.group(2) in MONTH_ABBR and (MONTH_ABBR.index(m.group(2)) + 1, int(m.group(1))) == (due.month, due.day):
+            return True
+    for m in re.finditer(r"\b(\d{1,2})/(\d{1,2})(?:/(\d{2,4}))?\b", low):
+        year = m.group(3)
+        if (int(m.group(1)), int(m.group(2))) == (due.month, due.day) and (
+            not year or year.endswith(f"{due.year}"[-len(year) :])
+        ):
+            return True
+    if due.isoformat() in low:
+        return True
+    if received is None:
+        return False
+    days = (due - received).days
+    if (re.search(r"\btoday\b", low) and days == 0) or (re.search(r"\btomorrow\b", low) and days == 1):
+        return True
+    return any(
+        re.search(rf"\b{name}\b", low) and due.weekday() == i and 1 <= days <= 7 for i, name in enumerate(WEEKDAYS)
+    )
+
+
+KINDS = ("new request", *ROUTES)
+# Words that make "no action" worth a second look: a quote request filed as "other" would never be answered.
+QUOTE_WORDS = re.compile(
+    r"\b(quotes?|quoted|quoting|pric(?:e|es|ing)|replace\w*|rtus?|rooftop|serial|bids?|rfq|itb|estimates?|proposals?)\b",
+    re.I,
+)
+
+
 def process(mail: Email, model, records: Records, cache: Path | None = None) -> Result:
     r = Result(mail)
+    if mail.problem:
+        r.status, r.reasons = REVIEW, [f"couldn't read the email file ({mail.problem})"[:200] + ": open it yourself"]
+        return r
+    if mail.truncated:
+        # The model would only see the first part, and a schedule cut off at row 463 looks complete.
+        r.status, r.reasons = REVIEW, [f"too long to read in full (over {MAX_TEXT:,} characters): read it yourself"]
+        return r
     if not mail.readable or not mail.text.strip():
         # Nothing to read (an empty body, or only attachments we can't open): a person looks, rather than the
         # model guessing from the subject and the email landing silently in "not a quote request".
@@ -420,32 +510,67 @@ def process(mail: Email, model, records: Records, cache: Path | None = None) -> 
         r.status, r.reasons = FAILED, [f"couldn't process: {e}"[:200]]
         return r
     r.kind = a["kind"].strip().lower()
-    injected = INJECTION.search(mail.text)
+    words = mail.subject + "\n" + mail.text
+    injected = INJECTION.search(words)
     if injected:
         r.reasons.append(f'instructions aimed at an assistant ("{injected.group(0)}"): read it yourself')
+    if r.kind not in KINDS:
+        r.status = REVIEW
+        r.reasons.append(f'the model called it "{a["kind"][:40]}", which isn\'t one of the kinds we sort into')
+        return r
     if r.kind != "new request":
-        r.route = ROUTES.get(r.kind, ROUTES["other"])
+        r.route = ROUTES[r.kind]
+        quoteish = QUOTE_WORDS.search(words)
+        if r.kind == "other" and quoteish:
+            r.reasons.append(f'filed as "no action", but it mentions "{quoteish.group(0)}": check it isn\'t a request')
         if r.kind == "service request" and re.search(
-            r"urgent|asap|no cooling|no heat|stopped working|leak", mail.subject + mail.text, re.I
+            r"urgent|asap|no cooling|no heat|stopped working|leak", words, re.I
         ):
             r.notes.append("urgent: send to dispatch now")
         r.status = REVIEW if r.reasons else NOT_RFQ
         return r
 
     # Evidence: every field the model filled in must be in the email, word for word, and every value it pulled
-    # out (serial, model, quantity) must be in the words it quoted for it.
+    # out (serial, model, make, quantity, site name) must be in the words it quoted for it.
     for item in [*a["sites"], *a["units"]]:
         if not quote_found(item["quote"], mail.text, min_words=MIN_QUOTE_WORDS):
             r.reasons.append(f'the model quoted words that aren\'t in the email ("{item["quote"][:60]}")')
     for u in a["units"]:
         r.reasons += unsupported(u)
+    for s in a["sites"]:
+        for f in ("name", "address"):
+            if s[f].strip() and not value_in_quote(s[f], s["quote"]):
+                r.reasons.append(f'site {f} "{s[f][:60]}" isn\'t in the words quoted for it ("{s["quote"][:60]}")')
     if mail.unread:
         r.reasons.append(f"attachment we couldn't read: {', '.join(mail.unread)}")
 
     r.request_type = a["request_type"].lower()
     r.customer_name = a["customer"]
-    r.customer, how = records.customer_for(mail.sender, r.customer_name)
-    if r.customer and how == "contact" and r.customer_name:
+    match_customer(r, records)
+    match_sites(r, a, records)
+    match_units(r, a, records)
+    match_deadline(r, a)
+
+    if r.reasons:
+        r.status = REVIEW
+    elif r.questions:
+        r.status = INFO
+    return r
+
+
+def match_customer(r: Result, records: Records) -> None:
+    """The customer, only when something backs it: the sender's address is on file for them, or the email itself
+    names them. A name the model gave that the email never says is a guess, and a guess attaches a stranger to
+    a customer's sites and equipment."""
+    mail = r.mail
+    r.customer, r.how = records.customer_for(mail.sender, r.customer_name)
+    named_in_email = bool(r.customer_name.strip()) and value_in_quote(r.customer_name, mail.subject + "\n" + mail.text)
+    if r.how != "contact" and r.customer_name.strip() and not named_in_email:
+        r.reasons.append(
+            f"the customer \"{r.customer_name[:60]}\" isn't named in the email, and the sender isn't on file"
+        )
+        r.customer = None
+    if r.customer and r.how == "contact" and r.customer_name:
         named = [c for c in records.customers.values() if name_key(c.name) == name_key(r.customer_name)]
         if name_key(r.customer_name) == name_key(r.customer.name):
             if len(named) > 1:
@@ -454,9 +579,9 @@ def process(mail: Email, model, records: Records, cache: Path | None = None) -> 
             r.reasons.append(f"the sender is on file for {r.customer.name}, but the email is about {named[0].name}")
     r.new_customer = r.customer is None
 
-    match_sites(r, a, records)
-    match_units(r, a, records)
 
+def match_deadline(r: Result, a: dict) -> None:
+    mail = r.mail
     due = to_date(a["quote_due"])
     if a["quote_due"] and not due:
         r.reasons.append(f"the deadline {a['quote_due']!r} isn't a date")
@@ -465,18 +590,14 @@ def process(mail: Email, model, records: Records, cache: Path | None = None) -> 
         r.reasons.append(f"the deadline ({due}) came with no words from the email to back it")
     elif due and not quote_found(a["due_quote"], mail.text, min_words=MIN_QUOTE_WORDS):
         r.reasons.append("the deadline isn't in the email's words")
+    elif due and not deadline_in_words(due, a["due_quote"], mail.received):
+        r.reasons.append(f'the deadline ({due}) isn\'t the date the email gives ("{a["due_quote"][:60]}")')
     elif due and mail.received and due < mail.received:
         r.reasons.append(f"the deadline ({due}) is before the email arrived")
     else:
         r.quote_due = due
     if not due:
         r.notes.append("no deadline given")
-
-    if r.reasons:
-        r.status = REVIEW
-    elif r.questions:
-        r.status = INFO
-    return r
 
 
 def match_sites(r: Result, a: dict, records: Records) -> None:
@@ -500,9 +621,59 @@ def match_sites(r: Result, a: dict, records: Records) -> None:
         r.questions.append("Which location is this for? Please send the site name or street address.")
 
 
+REPLACE_WORDS = re.compile(r"\b(replac\w*|swap(?:ping)?\s+out|change[- ]?out|the\s+old\s+one|last\s+legs)\b", re.I)
+
+
+def check_serial(r: Result, u: dict, records: Records) -> Unit | None:
+    """The unit a serial names, if it's on file and belongs to the sender's customer. Otherwise a reason for a
+    person: a stranger quoting someone else's serial must not get that customer's equipment."""
+    serial = squash(u.get("serial", ""))
+    if not serial:
+        return None
+    unit = records.by_serial.get(serial)
+    if not unit:
+        r.reasons.append(f"serial {u.get('serial')} isn't in our records{nearest(r, u, records)}")
+        return None
+    owner = records.sites[unit.site].customer
+    if not r.customer:
+        r.reasons.append(f"serial {u.get('serial')} is a customer's equipment, but we can't tell who the sender is")
+    elif owner != r.customer.id:
+        r.reasons.append(f"serial {u.get('serial')} belongs to another customer's equipment")
+    else:
+        return unit
+    return None
+
+
+def nearest(r: Result, u: dict, records: Records) -> str:
+    near = records.nearest_serial(str(u.get("serial")), r.sites[0] if len(r.sites) == 1 else None)
+    return f"; the closest at this site is {near}" if near else ""
+
+
+def check_new_install(r: Result, lines: list[Line], units: list[dict]) -> None:
+    """A new install is quoted from what the email describes, with no unit on file, so it has to fit the email:
+    one that says "replace", gives a serial, or is at a site where we already have that kind of unit is more
+    likely a replacement, and pricing the wrong job is worse than asking."""
+    replace = REPLACE_WORDS.search(r.mail.subject + "\n" + r.mail.text)
+    if replace:
+        r.reasons.append(f'called a new install, but the email says "{" ".join(replace.group(0).split())}"')
+    if any(squash(u.get("serial", "")) for u in units):
+        r.reasons.append("called a new install, but the email gives a serial number")
+    for ln in lines:
+        if ln.site and ln.family and any(x.family == ln.family for x in ln.site.units):
+            word = NAMES.get(ln.family, "unit")
+            r.reasons.append(f"called a new install, but we already have a {word} on file at {ln.site.name}")
+        if not ln.family and not ln.size.strip():
+            r.questions.append(
+                f'What should we quote for "{ln.what or "this"}"? The type of equipment and its size is enough.'
+            )
+
+
 def match_units(r: Result, a: dict, records: Records) -> None:
     units = a["units"]
     if r.request_type == "maintenance agreement":
+        # The agreement is priced per site, but a serial named in it is still checked: it must be ours, and theirs.
+        for u in units:
+            check_serial(r, u, records)
         r.lines = [Line("maintenance agreement", "", 1, site) for site in r.sites]
         return
     if not units and r.request_type in ("unclear", ""):
@@ -513,38 +684,33 @@ def match_units(r: Result, a: dict, records: Records) -> None:
         fam = family_of(" ".join([what, str(u.get("size", ""))])) or family_of(r.mail.text)
         site = r.sites[0] if len(r.sites) == 1 else None
         line = Line(what, fam, number(u.get("quantity")), site, size=str(u.get("size", "")))
-        serial = squash(u.get("serial", ""))
-        if serial:
-            unit = records.by_serial.get(serial)
-            if not unit:
-                near = records.nearest_serial(str(u.get("serial")), line.site)
-                hint = f"; the closest at this site is {near}" if near else ""
-                r.reasons.append(f"serial {u.get('serial')} isn't in our records{hint}")
-            elif r.customer and records.sites[unit.site].customer != r.customer.id:
-                r.reasons.append(f"serial {u.get('serial')} belongs to another customer's equipment")
-            else:
-                line.unit, line.site = unit, records.sites[unit.site]
-                if line.site not in r.sites:
-                    r.sites.append(line.site)
-        elif line.site and r.request_type != "new install":
+        unit = check_serial(r, u, records)
+        if unit:
+            line.unit, line.site = unit, records.sites[unit.site]
+            if line.site not in r.sites:
+                r.sites.append(line.site)
+        elif not squash(u.get("serial", "")) and line.site and r.request_type != "new install":
             pick(r, line, u)
         if line.quantity is None and (r.new_customer or r.request_type == "new install"):
             r.questions.append(f"How many {what or 'units'} do you need?")
         if line.quantity is None and line.unit:
             line.quantity = 1
         r.lines.append(line)
+    if r.request_type == "new install":
+        check_new_install(r, r.lines, units)
     if not r.lines:
         r.questions.append("What would you like us to quote? A short description of the equipment is enough.")
 
 
 def pick(r: Result, line: Line, u: dict) -> None:
-    """Find the unit at the site: by model, then by type if there's only one. Never guess between several."""
+    """Find the unit at the site: by model, then by type if there's only one. Never guess between several. The
+    model and make only count when they're in the words quoted for the unit (process() checks that)."""
     site = line.site
-    model = squash(u.get("model", ""))
+    model = squash(u.get("model", "")) if value_in_quote(u.get("model", ""), u.get("quote", "")) else ""
     same = [x for x in site.units if model and squash(x.model) == model]
     if not same:
         same = [x for x in site.units if x.family == line.family]
-        make = str(u.get("make", "")).lower()
+        make = str(u.get("make", "")).lower() if value_in_quote(u.get("make", ""), u.get("quote", "")) else ""
         if make and len(same) > 1:
             same = [x for x in same if x.make.lower() == make] or same
     word = NAMES.get(line.family, "unit")
@@ -564,10 +730,11 @@ def pick(r: Result, line: Line, u: dict) -> None:
 
 def question_email(r: Result, signature: str) -> EmailMessage:
     msg = EmailMessage()
-    msg["To"] = f"{r.mail.sender_name} <{r.mail.sender}>"
-    msg["Subject"] = "Re: " + r.mail.subject
+    # formataddr quotes the display name, so a name like '"x@evil.example, Pat"' stays one recipient.
+    msg["To"] = email.utils.formataddr((one_line(r.mail.sender_name), one_line(r.mail.sender)))
+    msg["Subject"] = "Re: " + one_line(r.mail.subject)
     if r.mail.message_id:
-        msg["In-Reply-To"] = r.mail.message_id
+        msg["In-Reply-To"] = one_line(r.mail.message_id)
     first = r.mail.sender_name.split()[0] if r.mail.sender_name else "there"
     asks = "\n".join(f"- {q}" for q in dict.fromkeys(r.questions))
     msg.set_content(
@@ -629,7 +796,7 @@ def long_date(d: date) -> str:
     return f"{d:%B} {d.day}, {d.year}"
 
 
-def summary_md(results: list[Result], as_of: date, model_name: str, scored: dict | None) -> str:
+def summary_md(results: list[Result], as_of: date, model_name: str, scored: dict | None, missed: str = "") -> str:
     count = {s: sum(r.status == s for r in results) for s in STATUSES}
     lines = [
         f"# Quotes mailbox, as of {long_date(as_of)}",
@@ -639,6 +806,8 @@ def summary_md(results: list[Result], as_of: date, model_name: str, scored: dict
         f"{len(results)} emails: " + ", ".join(f"{n} {s}" for s, n in count.items() if n) + ".",
         "",
     ]
+    if missed:
+        lines += [missed, ""]
     review = [r for r in results if r.status in (REVIEW, FAILED)]
     if review:
         lines += ["## Needs a person first", ""]
@@ -763,10 +932,11 @@ def run(
         write_csv(out / "requests.csv", rows, fields),
         write_csv(out / "review-queue.csv", [row for row in rows if row["status"] in (REVIEW, FAILED)], fields),
         write_csv(out / "line-items.csv", line_rows(results), LINE_FIELDS),
-        write_text(out / "summary.md", summary_md(results, as_of, model.name, scored)),
+        write_text(out / "summary.md", summary_md(results, as_of, model.name, scored, misses_line(model))),
     ]
     if scored:
-        written.append(write_text(out / "score.md", "# Against the answer key\n\n" + scored["md"] + "\n"))
+        missed = f"\n{misses_line(model)}\n" if misses_line(model) else ""
+        written.append(write_text(out / "score.md", "# Against the answer key\n\n" + scored["md"] + "\n" + missed))
     written.append(log_run(out / "runs.csv", results, model.name, scored))
     return results, written
 
@@ -906,7 +1076,8 @@ def main() -> None:
         mails, Records.load(records), model, args.out, as_of, args.signature, key, args.max_emails, args.remember
     )
     count = {s: sum(r.status == s for r in results) for s in STATUSES}
-    done(model, written, ", ".join(f"{n} {s}" for s, n in count.items() if n) + ". Open dashboard.html.")
+    note = ", ".join(f"{n} {s}" for s, n in count.items() if n) + ". Open dashboard.html."
+    done(model, written, " ".join(x for x in (misses_line(model), note) if x))
 
 
 if __name__ == "__main__":
