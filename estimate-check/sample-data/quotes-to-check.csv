@@ -1,0 +1,328 @@
+quote_id,quote_line_id,prepared_on,customer,estimator,part_number,description,family,material,quantity,est_material,est_outside,unit_price
+22512,31680,2024-04-01,Kessler Industries,Emerson Ickes,KES-22559,clip angle,cut and formed,carbon,17,353.12,0.0,51.64
+22512,31681,2024-04-01,Kessler Industries,Emerson Ickes,KES-38731,mounting plate,cut and formed,carbon,9,177.28,0.0,53.82
+22512,31682,2024-04-01,Kessler Industries,Emerson Ickes,KES-25744,clip angle,cut and formed,carbon,20,138.39,0.0,24.63
+22513,31683,2024-04-01,Kessler Industries,Emerson Ickes,KES-68067,gusset,cut and formed,carbon,70,446.33,0.0,25.97
+22513,31684,2024-04-01,Kessler Industries,Emerson Ickes,KES-84152,clip angle,cut and formed,carbon,21,113.38,0.0,31.0
+22513,31685,2024-04-01,Kessler Industries,Emerson Ickes,KES-88376,control box,sheet-metal enclosure,carbon,13,1048.39,0.0,296.23
+22514,31686,2024-04-01,Hollis Builders LLC,Emerson Ickes,HOL-61150,bushing,precision machined,aluminium,83,2550.36,0.0,102.0
+22514,31687,2024-04-01,Hollis Builders LLC,Emerson Ickes,HOL-53705,gusset,cut and formed,carbon,27,356.42,0.0,44.32
+22514,31688,2024-04-01,Hollis Builders LLC,Emerson Ickes,HOL-59074,guard,sheet-metal enclosure,carbon,25,1267.13,0.0,169.16
+22520,31694,2024-04-02,Dietz Food Equipment Inc.,Emerson Ickes,DIE-80625,clip angle,cut and formed,carbon,15,302.39,0.0,52.42
+22520,31695,2024-04-02,Dietz Food Equipment Inc.,Emerson Ickes,DIE-44446,control box,sheet-metal enclosure,aluminium,7,1158.05,0.0,294.66
+22521,31696,2024-04-02,Nagel Earthmoving Inc.,Emerson Ickes,NAG-98323,cover panel,sheet-metal enclosure,stainless,26,5284.4,0.0,401.65
+22521,31697,2024-04-02,Nagel Earthmoving Inc.,Emerson Ickes,NAG-29721,clip angle,cut and formed,carbon,40,490.77,0.0,45.0
+22521,31698,2024-04-02,Nagel Earthmoving Inc.,Emerson Ickes,NAG-73142,gusset,cut and formed,carbon,36,718.81,0.0,49.78
+22522,31699,2024-04-02,Lehman Earthmoving Inc.,Emerson Ickes,LEH-47994,cover panel,sheet-metal enclosure,carbon,16,2404.59,0.0,339.28
+22522,31700,2024-04-02,Lehman Earthmoving Inc.,Emerson Ickes,LEH-44855,bracket,cut and formed,carbon,35,1127.8,0.0,57.32
+22522,31701,2024-04-02,Lehman Earthmoving Inc.,Emerson Ickes,LEH-49126,bracket,cut and formed,carbon,23,353.43,0.0,34.42
+22523,31702,2024-04-02,Lutz Air Systems Inc.,Emerson Ickes,LUT-82724,gusset,cut and formed,carbon,37,574.27,0.0,42.53
+22524,31703,2024-04-02,Lutz Air Systems Inc.,Emerson Ickes,LUT-72393,bracket,cut and formed,carbon,36,902.04,0.0,50.59
+22524,31704,2024-04-02,Lutz Air Systems Inc.,Emerson Ickes,LUT-37612,gusset,cut and formed,carbon,55,1644.3,0.0,62.08
+22524,31705,2024-04-02,Lutz Air Systems Inc.,Emerson Ickes,LUT-78642,clip angle,cut and formed,carbon,17,172.41,0.0,44.77
+22525,31706,2024-04-03,Graber Industries,Emerson Ickes,GRA-70589,support stand,structural weldment,carbon,1,493.82,294.84,1653.43
+22525,31707,2024-04-03,Graber Industries,Emerson Ickes,GRA-60971,hopper assembly,assembly,carbon,4,1218.68,0.0,1250.14
+22525,31708,2024-04-03,Graber Industries,Emerson Ickes,GRA-59002,gusset,cut and formed,carbon,23,223.55,0.0,47.01
+22526,31709,2024-04-03,Ickes Machine Co.,Emerson Ickes,ICK-54585,mounting plate,cut and formed,carbon,12,215.52,0.0,48.09
+22526,31710,2024-04-03,Ickes Machine Co.,Emerson Ickes,ICK-51435,bracket,cut and formed,carbon,41,521.86,0.0,37.69
+22526,31711,2024-04-03,Ickes Machine Co.,Emerson Ickes,ICK-57474,clip angle,cut and formed,carbon,8,107.67,0.0,62.58
+22527,31712,2024-04-03,Thiel Automation LLC,Emerson Ickes,THI-83087,gusset,cut and formed,carbon,17,587.47,0.0,76.68
+22528,31713,2024-04-03,Schaefer Automation LLC,Emerson Ickes,SCH-62127,spacer,precision machined,carbon,47,654.56,0.0,86.12
+22530,31715,2024-04-03,Lutz Air Systems Inc.,Emerson Ickes,LUT-89839,mounting plate,cut and formed,carbon,70,789.16,0.0,39.64
+22531,31716,2024-04-04,"Stoltz Climate Products, Inc.",Emerson Ickes,STO-47916,mounting plate,cut and formed,carbon,27,232.61,0.0,29.22
+22531,31717,2024-04-04,"Stoltz Climate Products, Inc.",Emerson Ickes,STO-21093,mounting plate,cut and formed,carbon,43,704.83,0.0,36.47
+22531,31718,2024-04-04,"Stoltz Climate Products, Inc.",Emerson Ickes,STO-76424,spacer,precision machined,carbon,107,1342.02,0.0,30.98
+22532,31719,2024-04-04,Kessler Industries,Emerson Ickes,KES-97061,bracket,cut and formed,carbon,35,519.85,0.0,34.52
+22538,31725,2024-04-04,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-33222,clip angle,cut and formed,carbon,67,402.66,0.0,31.15
+22539,31726,2024-04-04,"Weller Tractor Works, Inc.",Emerson Ickes,WEL-39461,machined weldment,machined weldment,carbon,13,2607.04,1556.55,672.33
+22539,31727,2024-04-04,"Weller Tractor Works, Inc.",Emerson Ickes,WEL-35284,clip angle,cut and formed,carbon,20,186.46,0.0,34.58
+22540,31728,2024-04-04,Fisk Ag Equipment Inc.,Wren Stoltz,FIS-57984,platform,structural weldment,carbon,4,1144.03,0.0,960.08
+22540,31729,2024-04-04,Fisk Ag Equipment Inc.,Wren Stoltz,FIS-91772,enclosure,sheet-metal enclosure,carbon,27,1721.82,0.0,137.68
+22541,31730,2024-04-04,Lutz Air Systems Inc.,Noel Stoltz,LUT-77248,clip angle,cut and formed,carbon,6,65.01,0.0,44.27
+22542,31731,2024-04-04,Lutz Air Systems Inc.,Emerson Ickes,LUT-12394,mounting plate,cut and formed,carbon,34,294.63,0.0,33.28
+22542,31732,2024-04-04,Lutz Air Systems Inc.,Emerson Ickes,LUT-31578,enclosure,sheet-metal enclosure,carbon,23,1656.57,0.0,343.07
+22543,31733,2024-04-04,"Oberly Automation, Inc.",Noel Stoltz,OBE-69969,enclosure,sheet-metal enclosure,aluminium,43,10280.49,0.0,434.61
+22544,31734,2024-04-04,Eckert Automation LLC,Noel Stoltz,ECK-22729,clip angle,cut and formed,carbon,41,385.87,0.0,35.28
+22544,31735,2024-04-04,Eckert Automation LLC,Noel Stoltz,ECK-55766,bracket,cut and formed,carbon,45,518.18,0.0,25.66
+22544,31736,2024-04-04,Eckert Automation LLC,Noel Stoltz,ECK-36530,mounting plate,cut and formed,carbon,30,226.4,0.0,27.73
+22545,31737,2024-04-04,Hollis Automation Inc.,Noel Stoltz,HOL-30101,mounting plate,cut and formed,carbon,18,186.81,0.0,30.32
+22546,31738,2024-04-05,Hollis Builders LLC,Emerson Ickes,HOL-48662,mounting plate,cut and formed,carbon,22,217.09,0.0,38.32
+22546,31739,2024-04-05,Hollis Builders LLC,Emerson Ickes,HOL-59102,cart,assembly,carbon,1,363.21,0.0,1206.25
+22546,31740,2024-04-05,Hollis Builders LLC,Emerson Ickes,HOL-82830,mounting plate,cut and formed,carbon,17,200.33,0.0,40.42
+22554,31748,2024-04-05,Schaefer Conveyor Inc.,Emerson Ickes,SCH-59245,control box,sheet-metal enclosure,carbon,7,482.78,0.0,343.37
+22555,31749,2024-04-08,Ruhl Earthmoving Inc.,Emerson Ickes,RUH-40789,flange,precision machined,carbon,75,899.66,0.0,51.6
+22555,31750,2024-04-08,Ruhl Earthmoving Inc.,Emerson Ickes,RUH-78730,clip angle,cut and formed,carbon,26,454.07,0.0,48.07
+22560,31755,2024-04-08,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-96316,support stand,structural weldment,carbon,2,1325.27,0.0,1527.64
+22560,31756,2024-04-08,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-73085,guard,sheet-metal enclosure,carbon,18,2457.85,0.0,368.07
+22561,31757,2024-04-08,Lutz Air Systems Inc.,Emerson Ickes,LUT-68516,shaft,precision machined,carbon,57,666.94,373.42,52.22
+22561,31758,2024-04-08,Lutz Air Systems Inc.,Emerson Ickes,LUT-14138,gusset,cut and formed,carbon,11,110.17,0.0,42.48
+22561,31759,2024-04-08,Lutz Air Systems Inc.,Emerson Ickes,LUT-79440,mounting plate,cut and formed,carbon,13,159.06,0.0,33.88
+22570,31768,2024-04-09,Croft Process Machinery LLC,Emerson Ickes,CRO-58868,clip angle,cut and formed,carbon,27,656.33,0.0,67.6
+22570,31769,2024-04-09,Croft Process Machinery LLC,Emerson Ickes,CRO-60055,mounting plate,cut and formed,carbon,21,419.61,0.0,46.11
+22571,31770,2024-04-09,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-12027,hopper assembly,assembly,carbon,2,615.34,0.0,1214.69
+22571,31771,2024-04-09,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-84010,control box,sheet-metal enclosure,carbon,43,2326.53,0.0,140.88
+22579,31779,2024-04-09,Lutz Air Systems Inc.,Emerson Ickes,LUT-74824,mounting plate,cut and formed,carbon,10,125.24,0.0,48.08
+22580,31780,2024-04-09,Eckert Automation LLC,Emerson Ickes,ECK-99966,shaft,precision machined,aluminium,168,13005.67,0.0,116.25
+22581,31781,2024-04-10,Brandt Automation LLC,Emerson Ickes,BRA-43998,mounting plate,cut and formed,carbon,106,1368.06,0.0,33.32
+22581,31782,2024-04-10,Brandt Automation LLC,Emerson Ickes,BRA-27417,bracket,cut and formed,carbon,37,634.65,0.0,31.37
+22581,31783,2024-04-10,Brandt Automation LLC,Emerson Ickes,BRA-92919,platform,structural weldment,carbon,4,1702.98,0.0,1488.42
+22582,31784,2024-04-10,Eckert Automation LLC,Emerson Ickes,ECK-50097,support stand,structural weldment,carbon,1,599.74,358.08,1650.41
+22582,31785,2024-04-10,Eckert Automation LLC,Emerson Ickes,ECK-53885,gusset,cut and formed,carbon,9,156.55,0.0,69.05
+22582,31786,2024-04-10,Eckert Automation LLC,Emerson Ickes,ECK-94853,skid,structural weldment,carbon,2,1648.44,0.0,1764.88
+22583,31787,2024-04-10,Neff Machine Co.,Emerson Ickes,NEF-86333,gusset,cut and formed,carbon,31,491.76,0.0,53.83
+22583,31788,2024-04-10,Neff Machine Co.,Emerson Ickes,NEF-93943,support stand,structural weldment,carbon,2,787.72,0.0,1602.68
+22584,31789,2024-04-11,"Bechtel Mechanical, Inc.",Emerson Ickes,BEC-47247,gusset,cut and formed,carbon,26,362.96,0.0,43.39
+22584,31790,2024-04-11,"Bechtel Mechanical, Inc.",Emerson Ickes,BEC-48789,clip angle,cut and formed,carbon,9,150.51,0.0,58.97
+22584,31791,2024-04-11,"Bechtel Mechanical, Inc.",Emerson Ickes,BEC-15044,gusset,cut and formed,carbon,18,353.98,0.0,48.17
+22594,31801,2024-04-11,Croft Process Machinery LLC,Emerson Ickes,CRO-53388,mounting plate,cut and formed,carbon,16,361.01,0.0,69.7
+22594,31802,2024-04-11,Croft Process Machinery LLC,Emerson Ickes,CRO-74587,flange,precision machined,carbon,55,987.27,0.0,76.82
+22594,31803,2024-04-11,Croft Process Machinery LLC,Emerson Ickes,CRO-28669,control box,sheet-metal enclosure,aluminium,15,4608.79,0.0,585.1
+22595,31804,2024-04-11,Lutz Air Systems Inc.,Emerson Ickes,LUT-31705,mounting plate,cut and formed,carbon,26,613.95,0.0,41.54
+22595,31805,2024-04-11,Lutz Air Systems Inc.,Emerson Ickes,LUT-55218,clip angle,cut and formed,carbon,72,916.45,0.0,28.26
+22596,31806,2024-04-11,Lutz Air Systems Inc.,Emerson Ickes,LUT-47772,operator station,assembly,carbon,3,1245.6,0.0,1384.5
+22596,31807,2024-04-11,Lutz Air Systems Inc.,Emerson Ickes,LUT-42376,support stand,structural weldment,carbon,6,2066.44,0.0,1547.8
+22596,31808,2024-04-11,Lutz Air Systems Inc.,Emerson Ickes,LUT-43927,support stand,structural weldment,carbon,6,5379.04,0.0,1562.9
+22597,31809,2024-04-12,Eckert Automation LLC,Emerson Ickes,ECK-19729,clip angle,cut and formed,carbon,49,680.48,0.0,58.56
+22597,31810,2024-04-12,Eckert Automation LLC,Emerson Ickes,ECK-64935,pin,precision machined,carbon,129,1993.24,0.0,75.24
+22598,31811,2024-04-12,Schaefer Automation LLC,Emerson Ickes,SCH-52006,platform,structural weldment,carbon,1,225.95,0.0,2049.22
+22598,31812,2024-04-12,Schaefer Automation LLC,Emerson Ickes,SCH-61934,cart,assembly,carbon,4,779.52,0.0,960.7
+22598,31813,2024-04-12,Schaefer Automation LLC,Emerson Ickes,SCH-24234,gusset,cut and formed,carbon,25,275.56,0.0,46.24
+22599,31814,2024-04-12,Kuhn Steel Erectors Inc.,Emerson Ickes,KUH-40496,bracket,cut and formed,carbon,11,87.96,0.0,49.05
+22607,31822,2024-04-15,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-77599,base frame,structural weldment,carbon,7,2936.46,0.0,782.32
+22607,31823,2024-04-15,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-81802,cover panel,sheet-metal enclosure,carbon,26,1660.45,0.0,311.32
+22608,31824,2024-04-15,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-42149,clip angle,cut and formed,carbon,12,183.94,0.0,46.91
+22609,31825,2024-04-16,Lehman Earthmoving Inc.,Emerson Ickes,LEH-95095,mounting plate,cut and formed,carbon,49,282.63,0.0,37.2
+22609,31826,2024-04-16,Lehman Earthmoving Inc.,Emerson Ickes,LEH-46009,bracket,cut and formed,carbon,39,575.34,0.0,24.99
+22610,31827,2024-04-16,"Vogt Steel Erectors, Inc.",Emerson Ickes,VOG-54830,flange,precision machined,carbon,83,935.12,0.0,48.33
+22610,31828,2024-04-16,"Vogt Steel Erectors, Inc.",Emerson Ickes,VOG-48832,clip angle,cut and formed,carbon,14,151.3,0.0,28.35
+22618,31836,2024-04-16,Lutz Air Systems Inc.,Wren Stoltz,LUT-19098,operator station,assembly,carbon,4,670.59,0.0,903.18
+22618,31837,2024-04-16,Lutz Air Systems Inc.,Wren Stoltz,LUT-10764,bracket,cut and formed,carbon,37,647.81,0.0,54.77
+22626,31845,2024-04-16,Croft Process Machinery LLC,Emerson Ickes,CRO-92476,gusset,cut and formed,carbon,32,594.3,0.0,62.59
+22626,31846,2024-04-16,Croft Process Machinery LLC,Emerson Ickes,CRO-42892,gusset,cut and formed,carbon,11,72.27,0.0,49.07
+22627,31847,2024-04-16,"Trimble Process Machinery, Inc.",Noel Stoltz,TRI-89746,mounting plate,cut and formed,carbon,12,135.45,0.0,59.31
+22627,31848,2024-04-16,"Trimble Process Machinery, Inc.",Noel Stoltz,TRI-48289,gusset,cut and formed,carbon,11,155.32,0.0,37.62
+22628,31849,2024-04-16,"Vogt Process Machinery, Inc.",Emerson Ickes,VOG-90801,bracket,cut and formed,carbon,15,117.24,0.0,52.79
+22628,31850,2024-04-16,"Vogt Process Machinery, Inc.",Emerson Ickes,VOG-19574,clip angle,cut and formed,carbon,52,721.95,0.0,49.12
+22628,31851,2024-04-16,"Vogt Process Machinery, Inc.",Emerson Ickes,VOG-32235,bracket,cut and formed,carbon,30,430.12,0.0,48.28
+22636,31859,2024-04-17,Brandt Ag Equipment Inc.,Emerson Ickes,BRA-26477,guard,sheet-metal enclosure,carbon,115,5716.22,0.0,209.75
+22637,31860,2024-04-17,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-97107,clip angle,cut and formed,carbon,38,258.34,0.0,29.9
+22637,31861,2024-04-17,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-32776,platform,structural weldment,carbon,5,984.96,0.0,832.32
+22637,31862,2024-04-17,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-15352,platform,structural weldment,carbon,4,1415.24,0.0,592.84
+22638,31863,2024-04-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-65435,bushing,precision machined,stainless,60,1183.15,0.0,97.36
+22638,31864,2024-04-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-24476,mounting plate,cut and formed,carbon,70,1174.63,0.0,52.14
+22638,31865,2024-04-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-29853,cart,assembly,carbon,3,364.08,0.0,1348.45
+22639,31866,2024-04-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-48455,gearbox mount,machined weldment,carbon,32,4157.08,0.0,751.47
+22639,31867,2024-04-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-64627,gusset,cut and formed,carbon,43,742.01,0.0,46.26
+22639,31868,2024-04-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-74152,clip angle,cut and formed,carbon,16,200.49,0.0,37.09
+22640,31869,2024-04-18,Eckert Automation LLC,Emerson Ickes,ECK-37829,guard,sheet-metal enclosure,carbon,43,2338.68,0.0,185.89
+22640,31870,2024-04-18,Eckert Automation LLC,Emerson Ickes,ECK-43832,skid,structural weldment,carbon,11,3120.06,0.0,1016.08
+22640,31871,2024-04-18,Eckert Automation LLC,Emerson Ickes,ECK-80522,support stand,structural weldment,carbon,4,1067.83,0.0,727.9
+22641,31872,2024-04-18,Schaefer Automation LLC,Emerson Ickes,SCH-31955,clip angle,cut and formed,carbon,51,744.02,0.0,44.98
+22641,31873,2024-04-18,Schaefer Automation LLC,Emerson Ickes,SCH-28982,support stand,structural weldment,carbon,3,790.33,0.0,1566.69
+22642,31874,2024-04-18,Kessler Industries,Emerson Ickes,KES-45939,gusset,cut and formed,carbon,10,98.94,0.0,61.44
+22642,31875,2024-04-18,Kessler Industries,Emerson Ickes,KES-23681,gusset,cut and formed,carbon,37,602.03,0.0,43.85
+22652,31885,2024-04-19,Kessler Ag Equipment Inc.,Emerson Ickes,KES-27736,gusset,cut and formed,carbon,36,361.95,0.0,31.04
+22652,31886,2024-04-19,Kessler Ag Equipment Inc.,Emerson Ickes,KES-55323,mounting plate,cut and formed,carbon,47,744.03,0.0,51.4
+22652,31887,2024-04-19,Kessler Ag Equipment Inc.,Emerson Ickes,KES-80064,gusset,cut and formed,carbon,18,214.45,0.0,37.19
+22653,31888,2024-04-19,Kessler Industries,Emerson Ickes,KES-24366,flange,precision machined,carbon,220,2206.03,0.0,92.36
+22658,31893,2024-04-22,Yoder Industries,Emerson Ickes,YOD-23180,gusset,cut and formed,carbon,15,163.19,0.0,32.44
+22658,31894,2024-04-22,Yoder Industries,Emerson Ickes,YOD-65591,operator station,assembly,carbon,3,830.4,0.0,739.8
+22658,31895,2024-04-22,Yoder Industries,Emerson Ickes,YOD-22796,bracket,cut and formed,carbon,17,398.57,0.0,53.53
+22659,31896,2024-04-22,Brandt Machine Co.,Emerson Ickes,BRA-14591,shaft,precision machined,carbon,95,963.79,0.0,52.76
+22667,31904,2024-04-22,"Stoltz Climate Products, Inc.",Emerson Ickes,STO-17400,clip angle,cut and formed,carbon,14,155.63,0.0,28.17
+22668,31905,2024-04-22,Hollis Builders LLC,Emerson Ickes,HOL-61595,mounting plate,cut and formed,carbon,38,520.28,0.0,50.82
+22668,31906,2024-04-22,Hollis Builders LLC,Emerson Ickes,HOL-69655,clip angle,cut and formed,carbon,12,342.07,0.0,62.71
+22668,31907,2024-04-22,Hollis Builders LLC,Emerson Ickes,HOL-31018,skid,structural weldment,carbon,4,1954.83,0.0,1114.33
+22680,31919,2024-04-23,"Yost Ag Equipment, Inc.",Emerson Ickes,YOS-90967,gearbox mount,machined weldment,carbon,5,1553.98,0.0,1138.45
+22681,31920,2024-04-23,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-57277,gearbox mount,machined weldment,carbon,87,13226.96,0.0,764.41
+22682,31921,2024-04-24,Kessler Ag Equipment Inc.,Emerson Ickes,KES-91913,clip angle,cut and formed,carbon,15,352.35,0.0,53.78
+22682,31922,2024-04-24,Kessler Ag Equipment Inc.,Emerson Ickes,KES-47546,enclosure,sheet-metal enclosure,carbon,91,3808.74,0.0,246.49
+22683,31923,2024-04-24,Hollis Builders LLC,Emerson Ickes,HOL-61399,support stand,structural weldment,carbon,6,1777.66,0.0,1309.33
+22683,31924,2024-04-24,Hollis Builders LLC,Emerson Ickes,HOL-67432,bracket,cut and formed,carbon,25,177.2,0.0,26.5
+22684,31925,2024-04-24,"Croft Construction, Inc.",Emerson Ickes,CRO-73950,mounting plate,cut and formed,carbon,13,338.7,0.0,76.24
+22684,31926,2024-04-24,"Croft Construction, Inc.",Emerson Ickes,CRO-94538,bracket,cut and formed,carbon,15,112.24,0.0,35.12
+22684,31927,2024-04-24,"Croft Construction, Inc.",Emerson Ickes,CRO-50155,hopper assembly,assembly,carbon,4,959.63,0.0,799.03
+22688,31931,2024-04-24,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-74183,gusset,cut and formed,carbon,20,189.84,0.0,39.42
+22689,31932,2024-04-25,Fisk Food Equipment Inc.,Emerson Ickes,FIS-44608,gusset,cut and formed,carbon,21,196.53,0.0,39.99
+22690,31933,2024-04-25,Nagel Earthmoving Inc.,Emerson Ickes,NAG-25910,base frame,structural weldment,carbon,21,7205.02,0.0,1593.88
+22690,31934,2024-04-25,Nagel Earthmoving Inc.,Emerson Ickes,NAG-78482,clip angle,cut and formed,carbon,34,547.36,0.0,36.65
+22691,31935,2024-04-25,Lutz Air Systems Inc.,Emerson Ickes,LUT-53139,pin,precision machined,carbon,93,821.55,459.98,88.21
+22692,31936,2024-04-25,Eckert Automation LLC,Emerson Ickes,ECK-62580,clip angle,cut and formed,carbon,30,244.24,0.0,32.95
+22692,31937,2024-04-25,Eckert Automation LLC,Emerson Ickes,ECK-71670,clip angle,cut and formed,carbon,14,225.41,0.0,57.93
+22692,31938,2024-04-25,Eckert Automation LLC,Emerson Ickes,ECK-59815,hopper assembly,assembly,carbon,5,769.5,0.0,658.47
+22704,31950,2024-04-26,Dietz Air Handling LLC,Emerson Ickes,DIE-72353,base frame,structural weldment,carbon,15,3999.17,0.0,877.08
+22708,31954,2024-04-26,Kessler Ag Equipment Inc.,Emerson Ickes,KES-46249,gusset,cut and formed,carbon,28,652.1,0.0,52.61
+22709,31955,2024-04-26,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-24635,enclosure,sheet-metal enclosure,carbon,10,900.6,0.0,250.19
+22709,31956,2024-04-26,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-21788,mounting plate,cut and formed,carbon,14,260.21,0.0,52.45
+22709,31957,2024-04-26,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-53122,shaft,precision machined,carbon,131,2503.33,0.0,51.03
+22717,31965,2024-04-29,Ziegler Conveyor LLC,Emerson Ickes,ZIE-75890,gusset,cut and formed,carbon,27,262.7,0.0,25.8
+22718,31966,2024-04-29,Bechtel Food Equipment LLC,Emerson Ickes,BEC-46766,guard,sheet-metal enclosure,carbon,79,4604.14,0.0,154.86
+22719,31967,2024-04-29,Eckert Automation LLC,Emerson Ickes,ECK-27306,base frame,structural weldment,carbon,5,1554.9,0.0,961.54
+22719,31968,2024-04-29,Eckert Automation LLC,Emerson Ickes,ECK-35182,cart,assembly,carbon,2,1004.63,0.0,1673.4
+22732,31981,2024-04-30,Lutz Air Systems Inc.,Emerson Ickes,LUT-40516,platform,structural weldment,carbon,4,904.5,540.04,1231.24
+22732,31982,2024-04-30,Lutz Air Systems Inc.,Emerson Ickes,LUT-90871,control box,sheet-metal enclosure,carbon,12,334.23,0.0,131.41
+22733,31983,2024-04-30,Eckert Builders LLC,Emerson Ickes,ECK-45743,pin,precision machined,aluminium,119,3215.23,0.0,76.97
+22733,31984,2024-04-30,Eckert Builders LLC,Emerson Ickes,ECK-99124,gusset,cut and formed,carbon,43,449.87,0.0,31.08
+22747,31998,2024-05-01,Eckert Automation LLC,Emerson Ickes,ECK-23719,clip angle,cut and formed,carbon,30,568.35,0.0,39.21
+22747,31999,2024-05-01,Eckert Automation LLC,Emerson Ickes,ECK-42301,pin,precision machined,carbon,113,477.85,0.0,44.83
+22747,32000,2024-05-01,Eckert Automation LLC,Emerson Ickes,ECK-35422,gusset,cut and formed,carbon,47,326.3,0.0,39.35
+22748,32001,2024-05-01,"Gessner Automation, Inc.",Emerson Ickes,GES-84083,gusset,cut and formed,carbon,38,264.22,0.0,18.93
+22748,32002,2024-05-01,"Gessner Automation, Inc.",Emerson Ickes,GES-46126,skid,structural weldment,carbon,2,558.84,0.0,1012.12
+22748,32003,2024-05-01,"Gessner Automation, Inc.",Emerson Ickes,GES-73884,skid,structural weldment,carbon,5,1366.99,0.0,723.43
+22756,32011,2024-05-02,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-11912,control box,sheet-metal enclosure,stainless,14,1920.35,0.0,349.74
+22756,32012,2024-05-02,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-46721,bracket,cut and formed,carbon,20,127.99,0.0,39.38
+22756,32013,2024-05-02,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-68160,mounting plate,cut and formed,carbon,27,526.6,0.0,59.4
+22763,32020,2024-05-06,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-26538,clip angle,cut and formed,carbon,11,131.84,0.0,35.68
+22763,32021,2024-05-06,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-94556,bushing,precision machined,stainless,112,3538.07,0.0,118.18
+22763,32022,2024-05-06,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-83112,operator station,assembly,carbon,4,1423.42,0.0,1266.73
+22764,32023,2024-05-06,Vance Earthmoving Inc.,Emerson Ickes,VAN-38756,control box,sheet-metal enclosure,carbon,26,1562.72,0.0,195.6
+22764,32024,2024-05-06,Vance Earthmoving Inc.,Emerson Ickes,VAN-19620,bracket,cut and formed,carbon,26,428.4,0.0,47.78
+22765,32025,2024-05-06,Eckert Automation LLC,Emerson Ickes,ECK-80470,mounting plate,cut and formed,carbon,12,155.76,0.0,45.11
+22766,32026,2024-05-06,Vogt Machine Co.,Emerson Ickes,VOG-54876,enclosure,sheet-metal enclosure,carbon,35,1564.68,0.0,151.92
+22766,32027,2024-05-06,Vogt Machine Co.,Emerson Ickes,VOG-35415,enclosure,sheet-metal enclosure,carbon,60,2666.57,0.0,216.63
+22766,32028,2024-05-06,Vogt Machine Co.,Emerson Ickes,VOG-93305,pin,precision machined,carbon,19,174.1,0.0,93.36
+22777,32039,2024-05-07,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-48022,mounting plate,cut and formed,carbon,50,857.76,0.0,36.29
+22777,32040,2024-05-07,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-57124,mounting plate,cut and formed,carbon,76,423.16,0.0,21.52
+22778,32041,2024-05-07,Lutz Air Systems Inc.,Emerson Ickes,LUT-28472,skid,structural weldment,carbon,4,1940.85,0.0,1242.77
+22778,32042,2024-05-07,Lutz Air Systems Inc.,Emerson Ickes,LUT-67743,guard,sheet-metal enclosure,carbon,40,2699.2,0.0,174.65
+22779,32043,2024-05-07,Ziegler Industries,Emerson Ickes,ZIE-38324,mounting plate,cut and formed,carbon,15,138.88,0.0,32.32
+22785,32049,2024-05-07,Lutz Air Systems Inc.,Emerson Ickes,LUT-59621,gusset,cut and formed,carbon,14,266.1,0.0,42.85
+22785,32050,2024-05-07,Lutz Air Systems Inc.,Emerson Ickes,LUT-26698,gusset,cut and formed,carbon,46,517.77,0.0,27.84
+22785,32051,2024-05-07,Lutz Air Systems Inc.,Emerson Ickes,LUT-55689,gusset,cut and formed,carbon,21,251.36,0.0,53.56
+22793,32059,2024-05-08,Dietz Food Equipment Inc.,Emerson Ickes,DIE-94380,skid,structural weldment,carbon,5,1306.13,0.0,744.39
+22794,32060,2024-05-08,Reinholt Implement LLC,Emerson Ickes,REI-70595,skid,structural weldment,carbon,5,2745.21,0.0,1409.19
+22794,32061,2024-05-08,Reinholt Implement LLC,Emerson Ickes,REI-94117,control box,sheet-metal enclosure,carbon,20,622.73,0.0,148.76
+22794,32062,2024-05-08,Reinholt Implement LLC,Emerson Ickes,REI-88280,spacer,precision machined,aluminium,213,8711.68,0.0,93.58
+22795,32063,2024-05-09,Eckert Automation LLC,Emerson Ickes,ECK-36053,skid,structural weldment,carbon,3,1578.48,0.0,1457.04
+22795,32064,2024-05-09,Eckert Automation LLC,Emerson Ickes,ECK-56029,guard,sheet-metal enclosure,stainless,11,2978.42,0.0,438.68
+22795,32065,2024-05-09,Eckert Automation LLC,Emerson Ickes,ECK-56646,skid,structural weldment,carbon,3,2059.85,0.0,1349.79
+22801,32071,2024-05-09,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-91178,bracket,cut and formed,carbon,15,170.29,0.0,47.79
+22801,32072,2024-05-09,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-92523,control box,sheet-metal enclosure,carbon,35,1438.05,0.0,194.63
+22802,32073,2024-05-09,"Trimble Process Machinery, Inc.",Emerson Ickes,TRI-82857,clip angle,cut and formed,carbon,16,133.38,0.0,38.95
+22802,32074,2024-05-09,"Trimble Process Machinery, Inc.",Emerson Ickes,TRI-29044,bracket,cut and formed,carbon,71,1858.84,0.0,47.67
+22802,32075,2024-05-09,"Trimble Process Machinery, Inc.",Emerson Ickes,TRI-59658,enclosure,sheet-metal enclosure,carbon,21,1249.76,0.0,350.99
+22803,32076,2024-05-09,Eckert Automation LLC,Emerson Ickes,ECK-70811,clip angle,cut and formed,carbon,24,186.32,0.0,24.08
+22804,32077,2024-05-13,Eckert Automation LLC,Emerson Ickes,ECK-99989,mounting plate,cut and formed,carbon,23,407.56,0.0,37.98
+22804,32078,2024-05-13,Eckert Automation LLC,Emerson Ickes,ECK-62910,mounting plate,cut and formed,carbon,76,1009.89,0.0,34.03
+22804,32079,2024-05-13,Eckert Automation LLC,Emerson Ickes,ECK-92125,bracket,cut and formed,carbon,40,731.23,0.0,35.25
+22809,32084,2024-05-13,Dietz Packaging Systems Inc.,Wren Stoltz,DIE-17549,gusset,cut and formed,carbon,17,364.36,0.0,64.71
+22809,32085,2024-05-13,Dietz Packaging Systems Inc.,Wren Stoltz,DIE-29297,platform,structural weldment,carbon,2,1281.27,0.0,2352.29
+22809,32086,2024-05-13,Dietz Packaging Systems Inc.,Wren Stoltz,DIE-90554,bracket,cut and formed,carbon,7,85.68,0.0,61.39
+22810,32087,2024-05-13,Croft Process Machinery LLC,Noel Stoltz,CRO-83639,clip angle,cut and formed,carbon,95,1054.07,0.0,27.09
+22810,32088,2024-05-13,Croft Process Machinery LLC,Noel Stoltz,CRO-91018,mounting plate,cut and formed,carbon,34,485.77,0.0,44.34
+22811,32089,2024-05-13,Pfeiffer Tractor Works LLC,Emerson Ickes,PFE-86334,enclosure,sheet-metal enclosure,carbon,32,1799.75,0.0,222.18
+22812,32090,2024-05-14,Eckert Automation LLC,Emerson Ickes,ECK-28878,skid,structural weldment,carbon,10,4712.66,0.0,1642.76
+22812,32091,2024-05-14,Eckert Automation LLC,Emerson Ickes,ECK-41402,guard,sheet-metal enclosure,aluminium,12,1291.4,0.0,200.37
+22823,32102,2024-05-14,"Graber Packaging Systems, Inc.",Wren Stoltz,GRA-66379,gusset,cut and formed,carbon,60,1160.27,0.0,42.67
+22824,32103,2024-05-15,Ruhl Process Machinery LLC,Emerson Ickes,RUH-48946,gearbox mount,machined weldment,carbon,27,5621.43,3412.66,1899.59
+22824,32104,2024-05-15,Ruhl Process Machinery LLC,Emerson Ickes,RUH-12526,gusset,cut and formed,carbon,20,243.22,0.0,43.15
+22824,32105,2024-05-15,Ruhl Process Machinery LLC,Emerson Ickes,RUH-81094,control box,sheet-metal enclosure,carbon,39,1852.5,0.0,146.15
+22825,32106,2024-05-16,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-68681,mounting plate,cut and formed,carbon,47,432.2,0.0,25.98
+22825,32107,2024-05-16,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-77306,support stand,structural weldment,carbon,4,1996.76,0.0,1466.85
+22826,32108,2024-05-16,Lutz Air Systems Inc.,Emerson Ickes,LUT-89782,clip angle,cut and formed,carbon,37,309.59,0.0,45.13
+22826,32109,2024-05-16,Lutz Air Systems Inc.,Emerson Ickes,LUT-37417,gusset,cut and formed,carbon,14,122.24,0.0,53.43
+22827,32110,2024-05-16,Lutz Air Systems Inc.,Emerson Ickes,LUT-56828,enclosure,sheet-metal enclosure,carbon,35,1788.66,0.0,171.54
+22828,32111,2024-05-16,"Dunlap Automation, Inc.",Emerson Ickes,DUN-57828,mounting plate,cut and formed,carbon,13,117.98,0.0,39.56
+22828,32112,2024-05-16,"Dunlap Automation, Inc.",Emerson Ickes,DUN-54219,platform,structural weldment,carbon,10,3196.08,0.0,682.8
+22829,32113,2024-05-16,Eckert Automation LLC,Wren Stoltz,ECK-83442,support stand,structural weldment,carbon,1,341.66,207.41,1515.97
+22829,32114,2024-05-16,Eckert Automation LLC,Wren Stoltz,ECK-79290,mounting plate,cut and formed,carbon,18,345.2,0.0,43.59
+22830,32115,2024-05-16,Eckert Automation LLC,Noel Stoltz,ECK-80009,flange,precision machined,carbon,81,669.62,0.0,18.78
+22839,32124,2024-05-17,Albers Conveyor LLC,Emerson Ickes,ALB-23843,gusset,cut and formed,carbon,22,497.42,0.0,47.28
+22839,32125,2024-05-17,Albers Conveyor LLC,Emerson Ickes,ALB-23776,skid,structural weldment,carbon,7,1456.01,0.0,1381.39
+22839,32126,2024-05-17,Albers Conveyor LLC,Emerson Ickes,ALB-88035,gusset,cut and formed,carbon,8,51.11,0.0,55.94
+22840,32127,2024-05-17,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-88074,clip angle,cut and formed,carbon,28,197.1,0.0,25.41
+22841,32128,2024-05-17,Croft Process Machinery LLC,Emerson Ickes,CRO-75120,spacer,precision machined,aluminium,80,5855.35,715.06,162.6
+22841,32129,2024-05-17,Croft Process Machinery LLC,Emerson Ickes,CRO-89415,mounting plate,cut and formed,carbon,9,98.07,0.0,35.02
+22842,32130,2024-05-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-52781,clip angle,cut and formed,carbon,37,613.83,0.0,50.94
+22842,32131,2024-05-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-60884,bushing,precision machined,carbon,110,1367.88,0.0,94.12
+22842,32132,2024-05-17,Lutz Air Systems Inc.,Emerson Ickes,LUT-17650,bracket,cut and formed,carbon,30,426.51,0.0,51.4
+22843,32133,2024-05-20,Kessler Machine Co.,Emerson Ickes,KES-52956,skid,structural weldment,carbon,6,1368.4,0.0,880.22
+22844,32134,2024-05-20,Eckert Automation LLC,Emerson Ickes,ECK-96829,mounting plate,cut and formed,carbon,8,82.24,0.0,63.81
+22844,32135,2024-05-20,Eckert Automation LLC,Emerson Ickes,ECK-88920,bracket,cut and formed,carbon,21,188.18,0.0,40.98
+22844,32136,2024-05-20,Eckert Automation LLC,Emerson Ickes,ECK-52745,shaft,precision machined,carbon,93,1323.36,0.0,72.46
+22851,32143,2024-05-20,Kessler Ag Equipment Inc.,Wren Stoltz,KES-40061,shaft,precision machined,carbon,362,3952.96,0.0,47.24
+22851,32144,2024-05-20,Kessler Ag Equipment Inc.,Wren Stoltz,KES-11427,control box,sheet-metal enclosure,carbon,27,3715.57,0.0,305.67
+22852,32145,2024-05-20,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-55796,bracket,cut and formed,carbon,25,179.47,0.0,28.73
+22852,32146,2024-05-20,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-73766,platform,structural weldment,carbon,8,2463.46,0.0,1604.98
+22852,32147,2024-05-20,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-74690,hopper assembly,assembly,carbon,3,420.86,0.0,1048.86
+22853,32148,2024-05-20,"Eckert Air Systems, Inc.",Noel Stoltz,ECK-53511,clip angle,cut and formed,carbon,29,307.92,0.0,29.57
+22853,32149,2024-05-20,"Eckert Air Systems, Inc.",Noel Stoltz,ECK-29734,mounting plate,cut and formed,carbon,13,245.05,0.0,60.74
+22854,32150,2024-05-20,Lutz Air Systems Inc.,Wren Stoltz,LUT-38433,clip angle,cut and formed,carbon,26,345.24,0.0,44.08
+22855,32151,2024-05-20,Kessler Industries,Wren Stoltz,KES-15581,clip angle,cut and formed,carbon,32,622.43,0.0,37.17
+22855,32152,2024-05-20,Kessler Industries,Wren Stoltz,KES-12294,mounting plate,cut and formed,carbon,12,209.88,0.0,76.31
+22861,32158,2024-05-21,"Yoder Conveyor, Inc.",Emerson Ickes,YOD-31119,enclosure,sheet-metal enclosure,carbon,13,942.81,0.0,281.69
+22861,32159,2024-05-21,"Yoder Conveyor, Inc.",Emerson Ickes,YOD-63339,platform,structural weldment,carbon,3,1171.1,0.0,1065.0
+22862,32160,2024-05-21,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-16899,base frame,structural weldment,carbon,4,2986.59,1813.1,2151.87
+22862,32161,2024-05-21,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-64617,control box,sheet-metal enclosure,carbon,28,1675.37,0.0,198.3
+22862,32162,2024-05-21,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-73682,gusset,cut and formed,carbon,20,254.3,0.0,45.62
+22863,32163,2024-05-21,"Stoltz Climate Products, Inc.",Emerson Ickes,STO-78659,mounting plate,cut and formed,carbon,5,70.14,0.0,51.61
+22864,32164,2024-05-21,Kessler Industries,Emerson Ickes,KES-96487,mounting plate,cut and formed,carbon,40,700.2,0.0,34.37
+22864,32165,2024-05-21,Kessler Industries,Emerson Ickes,KES-26728,bracket,cut and formed,carbon,27,345.95,0.0,49.91
+22864,32166,2024-05-21,Kessler Industries,Emerson Ickes,KES-30119,clip angle,cut and formed,carbon,23,268.65,0.0,39.14
+22865,32167,2024-05-23,Eckert Automation LLC,Emerson Ickes,ECK-38336,clip angle,cut and formed,carbon,128,1787.98,0.0,36.14
+22865,32168,2024-05-23,Eckert Automation LLC,Emerson Ickes,ECK-30466,base frame,structural weldment,carbon,7,2336.77,1418.61,1543.03
+22865,32169,2024-05-23,Eckert Automation LLC,Emerson Ickes,ECK-85160,mounting plate,cut and formed,carbon,24,287.84,0.0,54.01
+22866,32170,2024-05-23,Eckert Builders LLC,Emerson Ickes,ECK-34892,clip angle,cut and formed,carbon,21,458.37,0.0,65.98
+22866,32171,2024-05-23,Eckert Builders LLC,Emerson Ickes,ECK-74348,bushing,precision machined,carbon,86,469.33,261.9,40.06
+22867,32172,2024-05-23,Hollis Builders LLC,Emerson Ickes,HOL-95817,clip angle,cut and formed,carbon,21,236.86,0.0,36.52
+22867,32173,2024-05-23,Hollis Builders LLC,Emerson Ickes,HOL-13374,mounting plate,cut and formed,carbon,35,754.46,0.0,46.69
+22867,32174,2024-05-23,Hollis Builders LLC,Emerson Ickes,HOL-58561,gusset,cut and formed,carbon,40,721.73,0.0,45.42
+22873,32180,2024-05-23,Croft Process Machinery LLC,Emerson Ickes,CRO-43553,mounting plate,cut and formed,carbon,11,139.11,0.0,28.19
+22874,32181,2024-05-23,Stoltz Food Equipment Inc.,Wren Stoltz,STO-13702,mounting plate,cut and formed,carbon,45,568.85,0.0,26.7
+22875,32182,2024-05-23,"Pfeiffer Process Machinery, Inc.",Noel Stoltz,PFE-11561,mounting plate,cut and formed,carbon,12,74.8,0.0,35.99
+22876,32183,2024-05-23,"Amstutz Automation, Inc.",Emerson Ickes,AMS-79194,bracket,cut and formed,carbon,39,558.56,0.0,48.58
+22876,32184,2024-05-23,"Amstutz Automation, Inc.",Emerson Ickes,AMS-15037,clip angle,cut and formed,carbon,16,142.05,0.0,48.53
+22876,32185,2024-05-23,"Amstutz Automation, Inc.",Emerson Ickes,AMS-97432,gusset,cut and formed,carbon,24,286.76,0.0,69.08
+22877,32186,2024-05-23,"Maurer Material Handling, Inc.",Noel Stoltz,MAU-20679,clip angle,cut and formed,carbon,42,684.44,0.0,32.86
+22877,32187,2024-05-23,"Maurer Material Handling, Inc.",Noel Stoltz,MAU-44472,platform,structural weldment,carbon,6,2996.78,0.0,1010.76
+22878,32188,2024-05-23,Hollis Builders LLC,Wren Stoltz,HOL-64957,cover panel,sheet-metal enclosure,aluminium,51,14843.35,0.0,474.34
+22879,32189,2024-05-23,Hollis Builders LLC,Wren Stoltz,HOL-35841,shaft,precision machined,carbon,41,561.53,0.0,56.11
+22879,32190,2024-05-23,Hollis Builders LLC,Wren Stoltz,HOL-35807,operator station,assembly,carbon,4,707.35,0.0,730.75
+22879,32191,2024-05-23,Hollis Builders LLC,Wren Stoltz,HOL-78722,skid,structural weldment,carbon,4,2570.87,0.0,1189.73
+22880,32192,2024-05-24,Fisk Builders LLC,Emerson Ickes,FIS-51901,gusset,cut and formed,carbon,34,375.8,0.0,31.82
+22880,32193,2024-05-24,Fisk Builders LLC,Emerson Ickes,FIS-66078,operator station,assembly,carbon,3,825.45,0.0,1184.25
+22881,32194,2024-05-24,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-97280,clip angle,cut and formed,carbon,24,222.81,0.0,36.05
+22881,32195,2024-05-24,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-40677,skid,structural weldment,carbon,5,1677.56,0.0,1534.57
+22881,32196,2024-05-24,"Graber Packaging Systems, Inc.",Emerson Ickes,GRA-54989,bracket,cut and formed,carbon,45,567.76,0.0,44.52
+22882,32197,2024-05-24,"Dietz Earthmoving, Inc.",Emerson Ickes,DIE-56167,gusset,cut and formed,carbon,58,1072.95,0.0,39.33
+22882,32198,2024-05-24,"Dietz Earthmoving, Inc.",Emerson Ickes,DIE-17900,bracket,cut and formed,carbon,37,521.56,0.0,37.28
+22883,32199,2024-05-24,Eckert Automation LLC,Emerson Ickes,ECK-69722,clip angle,cut and formed,carbon,22,276.2,0.0,46.61
+22883,32200,2024-05-24,Eckert Automation LLC,Emerson Ickes,ECK-33938,bracket,cut and formed,carbon,45,800.43,0.0,45.19
+22883,32201,2024-05-24,Eckert Automation LLC,Emerson Ickes,ECK-54754,clip angle,cut and formed,carbon,7,128.8,0.0,56.6
+22884,32202,2024-05-24,Eckert Builders LLC,Emerson Ickes,ECK-90209,cover panel,sheet-metal enclosure,aluminium,32,8310.73,0.0,427.38
+22885,32203,2024-05-24,Hollis Builders LLC,Emerson Ickes,HOL-30294,mounting plate,cut and formed,carbon,31,422.37,0.0,47.32
+22885,32204,2024-05-24,Hollis Builders LLC,Emerson Ickes,HOL-80705,control box,sheet-metal enclosure,carbon,32,896.39,0.0,255.03
+22885,32205,2024-05-24,Hollis Builders LLC,Emerson Ickes,HOL-78714,mounting plate,cut and formed,carbon,27,333.11,0.0,64.81
+22890,32210,2024-05-28,Ullman Conveyor Inc.,Emerson Ickes,ULL-56999,platform,structural weldment,carbon,4,2739.75,0.0,1197.94
+22891,32211,2024-05-28,Lutz Air Systems Inc.,Emerson Ickes,LUT-14601,bracket,cut and formed,carbon,13,216.29,0.0,57.37
+22891,32212,2024-05-28,Lutz Air Systems Inc.,Emerson Ickes,LUT-33369,mounting plate,cut and formed,carbon,22,253.75,0.0,49.3
+22892,32213,2024-05-28,Kessler Industries,Emerson Ickes,KES-71357,support stand,structural weldment,carbon,5,1934.05,0.0,847.66
+22893,32214,2024-05-29,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-21475,mounting plate,cut and formed,carbon,70,887.55,0.0,29.95
+22893,32215,2024-05-29,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-22994,clip angle,cut and formed,carbon,32,388.53,0.0,48.11
+22893,32216,2024-05-29,Fisk Ag Equipment Inc.,Emerson Ickes,FIS-29103,platform,structural weldment,carbon,3,2190.12,0.0,1587.77
+22894,32217,2024-05-29,Coburn Tractor Works LLC,Wren Stoltz,COB-36170,support stand,structural weldment,carbon,3,1356.73,0.0,1756.58
+22894,32218,2024-05-29,Coburn Tractor Works LLC,Wren Stoltz,COB-98085,clip angle,cut and formed,carbon,14,148.04,0.0,45.82
+22895,32219,2024-05-29,"Fisk Air Systems, Inc.",Noel Stoltz,FIS-36908,bracket,cut and formed,carbon,40,421.62,0.0,46.32
+22895,32220,2024-05-29,"Fisk Air Systems, Inc.",Noel Stoltz,FIS-74701,base frame,structural weldment,carbon,4,1252.73,0.0,1412.17
+22895,32221,2024-05-29,"Fisk Air Systems, Inc.",Noel Stoltz,FIS-92161,guard,sheet-metal enclosure,carbon,68,4710.95,0.0,186.25
+22905,32231,2024-05-30,Imhoff Food Equipment Inc.,Emerson Ickes,IMH-59022,operator station,assembly,carbon,5,3167.93,0.0,1572.84
+22905,32232,2024-05-30,Imhoff Food Equipment Inc.,Emerson Ickes,IMH-10292,support stand,structural weldment,carbon,5,1070.55,0.0,785.31
+22906,32233,2024-05-30,Thiel Ag Equipment Inc.,Emerson Ickes,THI-46689,mounting plate,cut and formed,carbon,11,171.01,0.0,42.73
+22907,32234,2024-05-30,Eckert Automation LLC,Emerson Ickes,ECK-54268,guard,sheet-metal enclosure,carbon,10,484.81,0.0,166.25
+22907,32235,2024-05-30,Eckert Automation LLC,Emerson Ickes,ECK-21754,clip angle,cut and formed,carbon,24,265.86,0.0,39.94
+22907,32236,2024-05-30,Eckert Automation LLC,Emerson Ickes,ECK-39434,bracket,cut and formed,carbon,112,1580.86,0.0,28.7
+22908,32237,2024-05-30,Brandt Automation LLC,Wren Stoltz,BRA-52654,bracket,cut and formed,carbon,17,155.93,0.0,40.18
+22908,32238,2024-05-30,Brandt Automation LLC,Wren Stoltz,BRA-38860,clip angle,cut and formed,carbon,31,497.6,0.0,47.42
+22908,32239,2024-05-30,Brandt Automation LLC,Wren Stoltz,BRA-53399,flange,precision machined,carbon,73,1159.67,0.0,40.72
+22909,32240,2024-05-31,Eckert Builders LLC,Emerson Ickes,ECK-74076,mounting plate,cut and formed,carbon,97,763.22,0.0,25.32
+22909,32241,2024-05-31,Eckert Builders LLC,Emerson Ickes,ECK-27572,bracket,cut and formed,carbon,14,278.95,0.0,111.08
+22909,32242,2024-05-31,Eckert Builders LLC,Emerson Ickes,ECK-92039,hopper assembly,assembly,carbon,3,473.93,0.0,1265.02
+22913,32246,2024-05-31,"Schaefer Ag Equipment, Inc.",Emerson Ickes,SCH-15982,platform,structural weldment,carbon,1,407.03,0.0,1456.49
+22914,32247,2024-05-31,Hollis Builders LLC,Emerson Ickes,HOL-40114,support stand,structural weldment,carbon,8,3297.72,0.0,995.7
+22914,32248,2024-05-31,Hollis Builders LLC,Emerson Ickes,HOL-97625,gusset,cut and formed,carbon,14,326.05,0.0,64.03
+22914,32249,2024-05-31,Hollis Builders LLC,Emerson Ickes,HOL-30579,base frame,structural weldment,carbon,3,1871.3,0.0,1581.35
+22915,32250,2024-05-31,Eckert Builders LLC,Emerson Ickes,ECK-25421,gusset,cut and formed,carbon,17,332.3,0.0,59.2
+22915,32251,2024-05-31,Eckert Builders LLC,Emerson Ickes,ECK-32750,control box,sheet-metal enclosure,stainless,26,5171.2,0.0,300.68
+22915,32252,2024-05-31,Eckert Builders LLC,Emerson Ickes,ECK-69499,clip angle,cut and formed,carbon,19,248.24,0.0,50.35
+22924,32261,2024-05-31,Imhoff Earthmoving LLC,Emerson Ickes,IMH-33832,mounting plate,cut and formed,carbon,25,293.82,0.0,47.21
+22924,32262,2024-05-31,Imhoff Earthmoving LLC,Emerson Ickes,IMH-91599,operator station,assembly,carbon,4,1355.94,0.0,926.74

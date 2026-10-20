@@ -1,0 +1,6 @@
+{
+  "_owner": "Set by the shop's owner before the first scored run (the plan's question 6). Only a person changes it.",
+  "max_light_marked_fine": 0.2,
+  "max_flagged_but_fine": 0.5,
+  "max_not_enough_history": 0.1
+}

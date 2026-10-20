@@ -7,7 +7,8 @@ For every playbook in the site's src/_data/playbooks.json, writes into the site:
 - src/assets/downloads/playbooks/<slug>/<slug>-instructions.md: the same, to download;
 - .../<slug>-cost-worksheet.xlsx: the page's cost calculator as a spreadsheet with live formulas;
 - .../<slug>-for-your-ai.md: the page, the instructions and the code's README in one Markdown file;
-- .../<slug>-summit-files.zip: the playbook's Summit sample data, for a worked example ("sample" set in the JSON);
+- .../<slug>-<company>-files.zip: the playbook's sample data (Summit unless the item sets `company`),
+  for a worked example ("sample" set in the JSON);
 - .../<slug>-design.md and <slug>-plan.md: a worked example's design and the AI-written build plan, if any;
 - .../<slug>-dashboard.html: the worked example's dashboard, from its recorded run ("dashboard" set in the JSON).
 
@@ -170,12 +171,12 @@ def dashboard(folder: Path, slug: str, path: Path) -> None:
         shutil.copy(Path(tmp) / DASHBOARD.get(slug, "dashboard.html"), path)
 
 
-def sample_zip(folder: Path, path: Path) -> None:
+def sample_zip(folder: Path, path: Path, prefix: str = "summit-files") -> None:
     """The sample files in a fixed order with fixed timestamps, so the zip only changes when they do."""
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
         for f in sorted(folder.rglob("*")):
             if f.is_file():
-                info = zipfile.ZipInfo(str(Path("summit-files") / f.relative_to(folder)), (2025, 1, 1, 0, 0, 0))
+                info = zipfile.ZipInfo(str(Path(prefix) / f.relative_to(folder)), (2025, 1, 1, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED
                 z.writestr(info, f.read_bytes())
 
@@ -212,8 +213,10 @@ def main() -> None:
             dashboard(folder, slug, out / f"{slug}-dashboard.html")
             made += ", dashboard"
         if item.get("sample"):
-            sample_zip(folder / "sample-data", out / f"{slug}-summit-files.zip")
-            made += ", Summit files"
+            company = item.get("company", "Summit")
+            files = f"{company.lower()}-files"
+            sample_zip(folder / "sample-data", out / f"{slug}-{files}.zip", files)
+            made += f", {company} files"
         print(f"{slug}: {made}")
 
 

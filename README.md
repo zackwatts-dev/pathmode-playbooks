@@ -11,6 +11,7 @@ Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/):
 | [Account summary](account-summary/) | A one-page briefing on a customer or a branch from several systems: scope checked in code before anything is gathered, every number calculated from written definitions, every number and quote in the AI's words checked. | Level 2 |
 | [Inherited records](inherited-records/) | Turns an acquired company's job tickets into records you can merge: an AI copies out each ticket, and code checks every value, groups and matches the locations, merges the equipment (settling mistyped serials, retiring replaced units) and finds the agreements and open quotes. | Level 2 |
 | [Request routing](request-routing/) | Routes internal requests by a policy written in plain words: the AI uses judgment, and code holds the lines (safety always first, approval limits, nobody approves their own request, pay stays private). | Level 3 |
+| [Estimate check](estimate-check/) | Before a quote goes out, compares each line's labour with what the first runs of similar parts took, and flags the light ones on the welded families, largest dollar gap first; an AI writes the note to the estimator and code checks every number in it. At Wendlow Fabrication & Machine, a simulated job shop. | Level 2 |
 
 Risk levels: 1 chat only; 2 works with files you give it; 3 reads your email or systems, read-only; 4 takes actions. None of these goes past drafting. A person decides.
 
@@ -60,8 +61,9 @@ The tests run offline, with scripted model answers, including deliberately wrong
 | `plan-prompt.md` | The planning prompt every playbook's `plan.md` was written from. |
 | `<playbook>/` | The script, `design.md`, the AI-written `plan.md`, sample data with an answer key and a recorded run, tests, `run.sh` and a README. |
 | `tools/build_downloads.py` | Builds each playbook's downloads for pathmode.com. |
+| `tools/record.py` | Records a real model's answers on a playbook's sample, for `--replay` (costs API calls). |
 
-The sample data is fictional: Summit Mechanical, a made-up commercial HVAC contractor in Arizona, from a simulation of the whole business that the PathMode course uses throughout.
+The sample data is fictional: Summit Mechanical, a made-up commercial HVAC contractor in Arizona, from a simulation of the whole business that the PathMode course uses throughout. The estimate check's is Wendlow Fabrication & Machine, a made-up job shop in Dayton, from a second simulation.
 
 ## License
 
