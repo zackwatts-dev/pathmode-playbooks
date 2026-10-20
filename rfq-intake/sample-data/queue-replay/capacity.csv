@@ -1,0 +1,86 @@
+date,working_day,estimators,who,absent,estimator_hours,helper_quotes,helpers
+2024-03-01,2077,2,Frankie Trimble (senior); Emerson Ickes (junior),,10.5,0,
+2024-03-04,2078,1,Emerson Ickes (junior),,6.0,0,
+2024-03-05,2079,1,Emerson Ickes (junior),,6.0,0,
+2024-03-06,2080,1,Emerson Ickes (junior),,6.0,0,
+2024-03-07,2081,1,Emerson Ickes (junior),,6.0,0,
+2024-03-08,2082,1,Emerson Ickes (junior),,6.0,0,
+2024-03-11,2083,0,,Emerson Ickes,0.0,0,
+2024-03-12,2084,1,Emerson Ickes (junior),,6.0,0,
+2024-03-13,2085,1,Emerson Ickes (junior),,6.0,0,
+2024-03-14,2086,1,Emerson Ickes (junior),,6.0,0,
+2024-03-15,2087,1,Emerson Ickes (junior),,6.0,0,
+2024-03-18,2088,1,Emerson Ickes (junior),,6.0,0,
+2024-03-19,2089,1,Emerson Ickes (junior),,6.0,10,Noel Stoltz; Wren Stoltz
+2024-03-20,2090,1,Emerson Ickes (junior),,6.0,0,
+2024-03-21,2091,1,Emerson Ickes (junior),,6.0,0,
+2024-03-22,2092,1,Emerson Ickes (junior),,6.0,0,
+2024-03-25,2093,1,Emerson Ickes (junior),,6.0,0,
+2024-03-26,2094,1,Emerson Ickes (junior),,6.0,15,Noel Stoltz; Wren Stoltz
+2024-03-27,2095,1,Emerson Ickes (junior),,6.0,0,
+2024-03-28,2096,1,Emerson Ickes (junior),,6.0,0,
+2024-03-29,2097,1,Emerson Ickes (junior),,6.0,0,
+2024-04-01,2098,1,Emerson Ickes (junior),,6.0,0,
+2024-04-02,2099,1,Emerson Ickes (junior),,6.0,0,
+2024-04-03,2100,1,Emerson Ickes (junior),,6.0,0,
+2024-04-04,2101,1,Emerson Ickes (junior),,6.0,5,Noel Stoltz; Wren Stoltz
+2024-04-05,2102,1,Emerson Ickes (junior),,6.0,0,
+2024-04-08,2103,1,Emerson Ickes (junior),,6.0,0,
+2024-04-09,2104,1,Emerson Ickes (junior),,6.0,0,
+2024-04-10,2105,1,Emerson Ickes (junior),,6.0,0,
+2024-04-11,2106,1,Emerson Ickes (junior),,6.0,0,
+2024-04-12,2107,1,Emerson Ickes (junior),,6.0,0,
+2024-04-15,2108,1,Emerson Ickes (junior),,6.0,0,
+2024-04-16,2109,1,Emerson Ickes (junior),,6.0,12,Noel Stoltz; Wren Stoltz
+2024-04-17,2110,1,Emerson Ickes (junior),,6.0,0,
+2024-04-18,2111,1,Emerson Ickes (junior),,6.0,0,
+2024-04-19,2112,1,Emerson Ickes (junior),,6.0,0,
+2024-04-22,2113,1,Emerson Ickes (junior),,6.0,0,
+2024-04-23,2114,1,Emerson Ickes (junior),,6.0,0,
+2024-04-24,2115,1,Emerson Ickes (junior),,6.0,0,
+2024-04-25,2116,1,Emerson Ickes (junior),,6.0,0,
+2024-04-26,2117,1,Emerson Ickes (junior),,6.0,0,
+2024-04-29,2118,1,Emerson Ickes (junior),,6.0,0,
+2024-04-30,2119,1,Emerson Ickes (junior),,6.0,0,
+2024-05-01,2120,1,Emerson Ickes (junior),,6.0,0,
+2024-05-02,2121,1,Emerson Ickes (junior),,6.0,0,
+2024-05-03,2122,0,,Emerson Ickes,0.0,0,
+2024-05-06,2123,1,Emerson Ickes (junior),,6.0,0,
+2024-05-07,2124,1,Emerson Ickes (junior),,6.0,0,
+2024-05-08,2125,1,Emerson Ickes (junior),,6.0,0,
+2024-05-09,2126,1,Emerson Ickes (junior),,6.0,0,
+2024-05-10,2127,0,,Emerson Ickes,0.0,0,
+2024-05-13,2128,1,Emerson Ickes (junior),,6.0,2,Noel Stoltz; Wren Stoltz
+2024-05-14,2129,1,Emerson Ickes (junior),,6.0,1,Wren Stoltz
+2024-05-15,2130,1,Emerson Ickes (junior),,6.0,0,
+2024-05-16,2131,1,Emerson Ickes (junior),,6.0,8,Noel Stoltz; Wren Stoltz
+2024-05-17,2132,1,Emerson Ickes (junior),,6.0,0,
+2024-05-20,2133,1,Emerson Ickes (junior),,6.0,11,Noel Stoltz; Wren Stoltz
+2024-05-21,2134,1,Emerson Ickes (junior),,6.0,0,
+2024-05-22,2135,0,,Emerson Ickes,0.0,0,
+2024-05-23,2136,1,Emerson Ickes (junior),,6.0,5,Noel Stoltz; Wren Stoltz
+2024-05-24,2137,1,Emerson Ickes (junior),,6.0,0,
+2024-05-28,2138,1,Emerson Ickes (junior),,6.0,0,
+2024-05-29,2139,1,Emerson Ickes (junior),,6.0,6,Noel Stoltz; Wren Stoltz
+2024-05-30,2140,1,Emerson Ickes (junior),,6.0,1,Wren Stoltz
+2024-05-31,2141,1,Emerson Ickes (junior),,6.0,8,Noel Stoltz; Wren Stoltz
+2024-06-03,2142,1,Emerson Ickes (junior),,6.0,0,
+2024-06-04,2143,1,Emerson Ickes (junior),,6.0,0,
+2024-06-05,2144,1,Emerson Ickes (junior),,6.0,7,Noel Stoltz; Wren Stoltz
+2024-06-06,2145,1,Emerson Ickes (junior),,6.0,0,
+2024-06-07,2146,1,Emerson Ickes (junior),,6.0,3,Noel Stoltz; Wren Stoltz
+2024-06-10,2147,1,Emerson Ickes (junior),,6.0,9,Noel Stoltz; Wren Stoltz
+2024-06-11,2148,1,Emerson Ickes (junior),,6.0,9,Noel Stoltz; Wren Stoltz
+2024-06-12,2149,1,Emerson Ickes (junior),,6.0,0,
+2024-06-13,2150,1,Emerson Ickes (junior),,6.0,4,Noel Stoltz; Wren Stoltz
+2024-06-14,2151,1,Emerson Ickes (junior),,6.0,12,Noel Stoltz; Wren Stoltz
+2024-06-17,2152,1,Emerson Ickes (junior),,6.0,0,
+2024-06-18,2153,1,Emerson Ickes (junior),,6.0,0,
+2024-06-19,2154,1,Emerson Ickes (junior),,6.0,0,
+2024-06-20,2155,1,Emerson Ickes (junior),,6.0,0,
+2024-06-21,2156,1,Emerson Ickes (junior),,6.0,0,
+2024-06-24,2157,1,Emerson Ickes (junior),,6.0,0,
+2024-06-25,2158,1,Emerson Ickes (junior),,6.0,0,
+2024-06-26,2159,1,Emerson Ickes (junior),,6.0,0,
+2024-06-27,2160,1,Emerson Ickes (junior),,6.0,0,
+2024-06-28,2161,1,Emerson Ickes (junior),,6.0,8,Noel Stoltz; Wren Stoltz

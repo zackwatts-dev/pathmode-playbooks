@@ -1,35 +1,52 @@
-# Design: quote request intake for Summit Mechanical
+# Design: quote request intake for Wendlow Fabrication & Machine
 
 ## The problem
 
-Quote requests pile up in quotes@, a shared Microsoft 365 mailbox, so we waste hours retyping them, answer late, and let important ones slip through the cracks. About 50 a month arrive, mixed in with replies to our quotes, service calls sent to the wrong address, and sales pitches.
+Requests for quotes arrive in quotes@, a shared Microsoft 365 mailbox, about 100 a month, with drawings attached. Our estimators work them in the order they arrive, key accounts first. When we're short an estimator, the queue backs up, and a buyer who wanted quotes by Thursday decides without ours. In bad months we lose more work to late quotes than to price. The requests are also mixed in with buyers chasing quotes, revised drawings for quotes in progress, awards, and sales pitches, and someone has to sort it all and retype every part number, revision and quantity before pricing can start.
 
 ## What it does
 
 For every new email in quotes@:
-1. Decide what kind it is: a new quote request, a follow-up, a reply to a quote we sent, a service request, or something else.
-2. For a quote request, an AI model (OpenAI's API) pulls out the customer, site, equipment, quantities and deadline, quoting the exact words each one came from.
-3. Plain code, not AI, checks every quote really appears in the email, and that each serial, model, make, quantity and site name is in the words quoted for it, and each deadline is the date its words give, and matches the customer, site and equipment to our records. Exact matches only. A customer counts only if the sender is on file for them or the email names them; a serial counts only if it's that customer's. If more than one unit could fit, it asks; it never guesses.
-4. It puts the email in one pile:
-   - **ready to quote**;
-   - **needs info**: a short drafted question for us to send the customer;
-   - **needs review**: it failed a check (a value that isn't in its quote, equipment we don't have or that isn't the sender's, a customer the email doesn't name, a "new install" that reads like a replacement, an attachment it can't read, an email with no readable text or too long to read in full, instructions aimed at an AI, a deadline that doesn't make sense or has no quote behind it, a kind we don't sort into, an answer it couldn't use);
-   - **not a quote request**: where it should go instead. One filed as "no action" that mentions a quote, price, bid or serial goes to review instead.
-5. A one-page HTML dashboard: the count in each pile; the needs-review list first, highlighted, with the reason for each; ready requests, soonest deadline first; five ready ones picked at random for a person to spot-check.
+1. **Decide what kind it is:** a new request for quote, a buyer chasing one, a revised drawing for an open request, an award or a "no thanks" on a quote we sent, or something else.
+2. **For a request,** an AI model (OpenAI's API) pulls out the customer, each part number with its revision, quantity and requested delivery date, and the date quotes are due if the buyer gives one, quoting the exact words each came from.
+3. **Plain code, not AI, checks it:** every quote really appears in the email, and every value is in the words quoted for it. It matches the sender to a customer on file, each part to the customer's parts (a part we've made before, or a new one), and a chaser or revision to the open request it belongs to. Exact matches only. If more than one could fit, it asks; it never guesses.
+4. **It puts each email in one pile:**
+   - **ready to quote:** everything needed to price it is there;
+   - **needs info:** a quantity or revision is missing, with a short drafted question for us to send;
+   - **needs a person:** it failed a check (a value that isn't in its quote, a sender we can't place, instructions aimed at an AI, an attachment it can't read, an answer it couldn't use);
+   - **not a request:** where it goes instead (a chaser to whoever has the request, a revision attached to its request, an award to sales, a pitch nowhere).
+5. **It puts the ready requests in order** (code): stated due date first, soonest first; then key accounts; then oldest first. A request with no stated due date is given the usual buyer's window, six working days.
+6. **It flags the ones we can't make** (code): from each request's likely quoting time (more lines and weldments take longer) and the estimators' hours this week, it works out when each request in the queue would be quoted. A request that would miss its due date is flagged **at risk**, for a person to decide: tell the buyer now that we can't quote in time, or ask for more time. It never declines anything itself.
+7. **A one-page HTML dashboard:**
+   - the count in each pile;
+   - the needs-a-person list first, highlighted, with the reason for each;
+   - then the at-risk requests;
+   - then the ready queue, in order, with each request's due date and expected finish;
+   - five ready ones picked at random for a person to spot-check.
 
-It's decision support. People decide what to quote and send everything.
+It's decision support. People decide what to quote, what to decline, and send everything.
 
 ## Inputs
 
-- `mailbox/`: one .eml file per email. In production, copied from quotes@ by a separate step.
-- `records/`: customers, sites, equipment and contacts, as CSV, exported nightly from our field-service system.
-- `answer-key.csv`: a month of email, labeled by hand with what should happen to each.
+- **`mailbox/`:** one .eml file per email. In production, copied from quotes@ by a separate step.
+- **`records/`,** exported nightly from our ERP as CSV:
+  - customers, with their tier;
+  - known buyers;
+  - customer parts;
+  - requests still open from before.
+- **The estimators' hours this week:** a small file a person keeps up to date.
+- **`answer-key.csv`:** a month of email, labelled with what should happen to each.
 
 ## What "correct" means
 
-- The answer key defines it. Every run is scored against it.
-- Mistakes aren't equal. **Let through, but wrong** is the worst: a quote goes out on the wrong unit. **Stopped, but needn't have been** costs a person a minute. **Sent to the wrong place** is in between. When in doubt, stop.
-- Every rule above has a test. Tests run without calling the AI, so they're free and repeatable.
+- **The answer key defines it.** Every run is scored against it.
+- **Mistakes aren't equal.**
+  - **Let through, but wrong** is the worst: an estimator prices the wrong revision or quantity.
+  - **Stopped, but needn't have been** costs a person a minute.
+  - **Sent to the wrong place** is in between.
+  - When in doubt, stop.
+- **The order and the at-risk flags** are judged separately, by whether more quotes would have reached buyers before they decided.
+- **Every rule above has a test.** Tests run without calling the AI, so they're free and repeatable.
 
 ## Security
 
@@ -38,13 +55,13 @@ It's decision support. People decide what to quote and send everything.
 - **The AI** gets the email and nothing else: no customer records, no tools. Its answer only counts once code has checked it.
 - **Email is untrusted:** ignore instructions in it, flag emails with instructions aimed at an AI, and escape everything from an email on the dashboard.
 - **No third-party packages:** Python's standard library only.
-- **It never sends email, changes the mailbox, or prices anything.**
+- **What it never does:** send email, change the mailbox, price anything, or decline a request.
 
 ## How it runs
 
-- On a schedule, every 15 minutes, on a server we control.
-- At most 200 emails to the AI per run. Anything over the limit is listed for a person and picked up next run.
-- Nothing is silently dropped. If the AI's answer is unusable or the wrong shape, the email is listed as "couldn't process", and the bad answer isn't kept. An email with no text we can read (only a PDF, say) goes to a person rather than to the AI. HTML-only email is read as text; signature images (small, and inline or named like image001.png) are ignored, and any other image goes to a person. One email file that can't be read is listed for a person; the run carries on.
-- Every run adds a line to a log: when, which model, how many emails, how many in each pile.
-- Saved email is deleted after 90 days. Only the estimating team can see the output.
-- After any change, including a new model version, re-run the answer key before going live.
+- **Schedule:** every 15 minutes, on a server we control.
+- **Limit:** at most 200 emails to the AI per run. Anything over the limit is listed for a person and picked up next run.
+- **Nothing is silently dropped.** An unusable answer is listed as "couldn't process". An email with no readable text goes to a person.
+- **Logging:** every run adds a line to a log: when, which model, how many emails, how many in each pile.
+- **Retention and access:** saved email is deleted after 90 days. Only estimating and sales see the output.
+- **After any change,** including a new model version, re-run the answer key before going live.

@@ -1,0 +1,4 @@
+{
+  "_owner": "Set by a person: the estimator hours a working day to hold back from the forecast for the ERP's annual re-quotes, used only when the records have no requote-hours.csv. The default is 0, because the recommended order gives re-quotes the hours left after new requests. Set it if your estimators price re-quotes first, or at fixed times (Wendlow's April 2024 re-quotes took about 1.6 hours a working day).",
+  "requote_hours_per_day": 0
+}

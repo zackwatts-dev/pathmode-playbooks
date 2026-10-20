@@ -136,7 +136,7 @@ def main() -> None:
     p.add_argument(
         "--since",
         default="",
-        help="first run only: copy email received at or after this time, e.g. 2025-09-01T00:00:00Z "
+        help="first run only: copy email received at or after this time, e.g. 2024-05-01T00:00:00Z "
         "(default: the whole inbox)",
     )
     args = p.parse_args()

@@ -1,0 +1,7 @@
+{
+  "_owner": "Set by Wendlow's owner before the first scored run (the plan's question 2). Only a person changes it.",
+  "_how": "max_let_through_wrong is a count of emails; max_stopped_needlessly is a share of the emails the answer key doesn't stop (ready to quote, or not a request); max_wrong_place is a share of all emails scored.",
+  "max_let_through_wrong": 0,
+  "max_stopped_needlessly": 0.1,
+  "max_wrong_place": 0.05
+}

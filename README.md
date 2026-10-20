@@ -4,7 +4,7 @@ Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/):
 
 | Playbook | What the code does | Risk |
 |---|---|---|
-| [Customer RFQ intake](rfq-intake/) | Turns a quotes mailbox into a clean list: each request matched to your customers, sites and equipment, checked, and anything doubtful sent to a person. Includes a Microsoft 365 mailbox reader. | Level 3 |
+| [Customer RFQ intake](rfq-intake/) | Sorts a quotes mailbox: each request's part numbers, revisions, quantities and dates read with the words they came from and checked, matched to your customers, parts and open requests, and anything doubtful sent to a person; then the ready queue in due-date order, with the requests that would miss their due date flagged at risk. At Wendlow Fabrication & Machine, a simulated job shop. Includes a Microsoft 365 mailbox reader. | Level 3 |
 | [Anomaly alerts](anomaly-alerts/) | Rules, baselines and a machine-learning model find money leaking between systems and the habits behind it; an AI explains the top flags within an alert budget; code checks every explanation. | Level 2 |
 | [Pricing assistant](pricing-assistant/) | Prices repair jobs from your price book and written sales guidance, citing which clause applies; a second mode negotiates replacement quotes, with code holding the floor the AI never sees. | Level 3 |
 | [Customer segments](customer-segments/) | Machine learning groups customers by how they behave and tests each prediction against a one-line rule; an AI names the segments and explains the results, with every number checked. | Level 2 |
@@ -63,7 +63,7 @@ The tests run offline, with scripted model answers, including deliberately wrong
 | `tools/build_downloads.py` | Builds each playbook's downloads for pathmode.com. |
 | `tools/record.py` | Records a real model's answers on a playbook's sample, for `--replay` (costs API calls). |
 
-The sample data is fictional: Summit Mechanical, a made-up commercial HVAC contractor in Arizona, from a simulation of the whole business that the PathMode course uses throughout. The estimate check's is Wendlow Fabrication & Machine, a made-up job shop in Dayton, from a second simulation.
+The sample data is fictional: Summit Mechanical, a made-up commercial HVAC contractor in Arizona, from a simulation of the whole business that the PathMode course uses throughout. The RFQ intake's and the estimate check's is Wendlow Fabrication & Machine, a made-up job shop in Dayton, from a second simulation.
 
 ## License
 
