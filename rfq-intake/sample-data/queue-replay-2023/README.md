@@ -9,8 +9,9 @@ are what actually happened, for comparison with the replay.
 ## rfqs.csv
 
 Every request the estimators had to price: the new-part RFQs and annual re-quotes received 2023-01-02 to
-2023-12-29, plus the queue on the morning of 2023-01-02 (`in_queue_on_start` = 1: received earlier and not yet
-quoted; screened-out RFQs are left out, they were never in the queue).
+2023-12-29, plus those received earlier and not yet quoted on the morning of 2023-01-02 (`in_queue_on_start` = 1 if
+already keyed into the ERP by then, 0 if still unread in quotes@). RFQs screened out in the window are included, with
+outcome `screened out`: they were read and keyed, never priced. Screened-out RFQs from before the window are left out.
 
 - `kind`: `new` (a buyer's RFQ for new parts) or `requote` (the annual price review of a repeat part, raised inside
   Wendlow when it reorders). The engine stops raising re-quotes while the backlog is over 2 weeks,
@@ -18,7 +19,7 @@ quoted; screened-out RFQs are left out, they were never in the queue).
 - `tier`: key, regular or occasional. Key accounts' new RFQs go to the front of the queue; everything else joins
   the back.
 - `stated_due`: the date the buyer's email states, blank for the ~40% that state none and for re-quotes. A
-  labelled stand-in (Assume), the same rule the mailbox uses, drawn per RFQ: 55% at the decision day or the working
+  labeled stand-in (Assume), the same rule the mailbox uses, drawn per RFQ: 55% at the decision day or the working
   day before it; 30% padded, 2-5 working days before the decision; 15% late, 1-3 working days after the decision
   (the buyer awards once enough quotes are in). Never before the RFQ arrived.
 - `stated_due_rule` (truth): which of the three it was (at decision, padded, late), blank where no date is stated.

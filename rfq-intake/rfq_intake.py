@@ -17,9 +17,10 @@ everything that has to be right:
   days after it arrived) and, from the estimators' hours, flags the ones that would be quoted after their due date as
   at risk, to ask the buyer for more time. Every request stays in the queue; nothing is declined.
 
-Writes out/dashboard.html, requests.csv, line-items.csv, queue.csv, review-queue.csv, summary.md and questions/
-(drafts), and adds a line to out/runs.csv. With an answer key, also out/score.md. Nothing is sent, declined or
-priced: a person does all of that.
+Writes out/dashboard.html, requests.csv, line-items.csv, erp-import.csv (the requests ready to quote or waiting on
+an answer, one row per line, for the ERP's RFQ import, so nobody keys them), queue.csv, review-queue.csv, summary.md
+and questions/ (drafts), and adds a line to out/runs.csv. With an answer key, also out/score.md. Nothing is sent,
+declined, priced or written to the ERP: a person does all of that.
 
 The sample is Wendlow Fabrication & Machine's quotes@ mailbox for May 2024, from the Wendlow simulation.
 """
@@ -122,9 +123,12 @@ INJECTION = re.compile(
     r"|note to (any|the|an) (ai|assistant|bot)|(ai|automated) (assistant|system|agent)s? (processing|reading)"
     r"|language model|system prompt|you are (now )?an? (ai|assistant)|mark this (request |rfq |email )?as"
     r"|approve (it |this )?at \d|skip the (review|check)|do not (flag|escalate)"
-    r"|\b(assistant|system)\s*:|ignore previous|\bapprov(e|ed|al)\b|\bdiscount(ed|s)?\b)",
-    re.I,
+    r"|^\s*(assistant|system|user)\s*:|\b(assistant|system)\s*:\s*(approve|mark|ignore|you|set|change|override|treat)"
+    r"|ignore previous|approve (it |this )?(at|with|now)\b"
+    r"|\b(apply|give|grant|take) (a |an |the )?\d+\s*% (off|discount))",
+    re.I | re.M,
 )
+# Ordinary request wording ("PPAP approval", "approved vendor list", "Hydraulic system: 3000 psi") isn't on the list.
 RFQ_WORDS = re.compile(r"\b(rfq|request for quote|quote needed|please quote|pls quote|quote the following)\b", re.I)
 # Words that make a date the date quotes are due: something the buyer wants back (a quote, a bid, pricing, a response,
 # "your number", the RFQ itself) and a deadline word after it within a few words ("by", "due", "no later than",
@@ -1763,6 +1767,37 @@ def line_rows(results: list[Result]) -> list[dict]:
     ]
 
 
+def erp_import_rows(results: list[Result]) -> list[dict]:
+    """One row per line of every new request that's ready to quote or waiting on its answer, in the columns an ERP's
+    RFQ import takes. A person loads the file; nothing here writes to the ERP. A value still to come from the buyer
+    is left blank and named in `missing`."""
+    rows = []
+    for r in results:
+        if r.kind != "new rfq" or r.status not in (READY, INFO) or r.customer is None:
+            continue
+        for n, ln in enumerate(r.lines, 1):
+            rows.append(
+                {
+                    "source_email": r.mail.file,
+                    "customer_id": r.customer.id,
+                    "buyer_name": r.mail.sender_name,
+                    "buyer_email": r.mail.sender,
+                    "received_on": r.mail.received or "",
+                    "quote_due": r.quote_due or "",
+                    "line": n,
+                    "part_number": ln.part,
+                    "revision": ln.revision,
+                    "quantity": "" if ln.quantity is None else ln.quantity,
+                    "requested_date": ln.requested or "",
+                    "description": ln.description,
+                    "new_or_repeat": "new" if ln.status == "new" else "repeat",
+                    "drawings": "; ".join(a for a in r.mail.attachments if _drawing_for(ln.part, [a])),
+                    "missing": "; ".join(q for q in r.questions if ln.part in q) if r.status == INFO else "",
+                }
+            )
+    return rows
+
+
 def queue_rows(plan: Plan | None) -> list[dict]:
     if plan is None:
         return []
@@ -1888,19 +1923,20 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
     - wrong place: the wrong pile among the ones that move it on (a request filed as not a request, the wrong
       route, needs info for one a person must read).
     - stopped needlessly: held (needs info, a person, couldn't process) when the key says it's ready or not a
-      request. Held when the key also holds it counts as right."""
+      request, or sent to a person (or not processed) when the key says it needs only its question. Needs info or a
+      person when the key says a person counts as right: either way a person sees it before anything moves."""
     key = {row["file"]: row for row in read_csv(key_path)}
     file_rfq = {f: k["rfq_id"] for f, k in key.items()}
     groups: dict[str, list[str]] = {g: [] for g in GROUPS}
     incomplete: dict[str, list[str]] = {"asked": [], "to a person": [], "missed": []}
     fields = {f: {"right": 0, "wrong": 0} for f in FIELDS}
-    free = 0  # emails the key doesn't stop: ready, or not a request
+    free = 0  # emails the key doesn't send to a person: ready, not a request, or needs only its question
     for r in results:
         k = key.get(r.mail.file)
         if not k:
             continue
         want, got = k["expected_status"], r.status
-        free += want in (READY, NOT_RFQ)
+        free += want in (READY, NOT_RFQ, INFO)
         tag = f"{r.mail.file}: expected {want}, got {got}"
         if k["kind"] == NEW and r.lines:
             for f, ok in _fields(r, k).items():
@@ -1920,8 +1956,10 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
                 incomplete["asked" if got == INFO else "to a person" if got in HELD else "missed"].append(r.mail.file)
             if got == READY:
                 groups[LET_THROUGH].append(tag)
-            elif got in HELD and not (want == REVIEW and got == INFO):
+            elif want == INFO and got == INFO or want == REVIEW and got in HELD and got != INFO:
                 groups[RIGHT].append(r.mail.file)
+            elif want == INFO and got in HELD:
+                groups[STOPPED].append(f"{tag} ({'; '.join(r.reasons)[:160]})")
             else:
                 groups[WRONG_PLACE].append(tag)
         else:
@@ -1969,7 +2007,8 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
     md += [
         "",
         f"Requests the key says are missing something: {asked} got their question drafted, {to_person} went to a "
-        f"person instead (held, so not a mistake, but no question drafted), {len(incomplete['missed'])} were missed.",
+        f"person instead (counted above as stopped needlessly: no question drafted), "
+        f"{len(incomplete['missed'])} were missed.",
     ]
     md += [f"  - to a person: {x}" for x in incomplete["to a person"]]
     md += [
@@ -2103,6 +2142,7 @@ def run(
         write_csv(out / "requests.csv", rows, fields),
         write_csv(out / "review-queue.csv", [x for x in rows if x["status"] in (REVIEW, FAILED)], fields),
         write_csv(out / "line-items.csv", line_rows(results), LINE_COLUMNS),
+        write_csv(out / "erp-import.csv", erp_import_rows(results), IMPORT_COLUMNS),
         write_csv(out / "queue.csv", queue_rows(plan), QUEUE_COLUMNS),
         write_text(out / "summary.md", summary_md(results, plan, as_of, model.name, scored, missed)),
     ]
@@ -2126,6 +2166,23 @@ LINE_COLUMNS = [
     "requested_date",
     "part",
     "family",
+]
+IMPORT_COLUMNS = [
+    "source_email",
+    "customer_id",
+    "buyer_name",
+    "buyer_email",
+    "received_on",
+    "quote_due",
+    "line",
+    "part_number",
+    "revision",
+    "quantity",
+    "requested_date",
+    "description",
+    "new_or_repeat",
+    "drawings",
+    "missing",
 ]
 QUEUE_COLUMNS = [
     "place",

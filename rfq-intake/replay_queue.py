@@ -3,28 +3,32 @@
     python rfq-intake/replay_queue.py                      # the sample window: writes out/replay/
     python rfq-intake/replay_queue.py --data DIR --out DIR # another window (a folder with rfqs.csv, capacity.csv)
 
-About 4 in 10 of Wendlow's new requests arrive missing something it needs to price them: a revision, a quantity or
-the drawing. Today nobody reads a request until an estimator opens it to price it, so that's when the gap is found
-and the question goes to the buyer, and the request waits for the answer. In a busy week that's days after it
-arrived, and the buyer decides before the quote is ready.
+Wendlow's estimators read quotes@ twice a week, on Mondays and Thursdays, and key each new request into the ERP
+(about ten minutes each, out of the hours they'd otherwise price with). About 4 in 10 requests arrive missing something
+needed to price them: a revision, a quantity or the drawing. Nobody checks for that until an estimator opens the
+request to price it, so the question goes to the buyer days after the request arrived, and the request waits again for
+the answer. Meanwhile the buyer decides.
 
 The model replays every request the estimators had to price in a window (new-part requests and annual re-quotes,
 with the queue as it stood on its first morning), day by day, three ways. In all three, new requests are priced
-first, in the order they came, and the annual re-quotes when no new request is waiting, as Wendlow already does.
+first, in the order they were logged (key accounts at the front), and the annual re-quotes when no new request is
+waiting, as Wendlow already does. Every question costs a quarter hour of an estimator's time to check and send.
 
-today     what Wendlow did. A request missing something is found when it reaches the front; the question goes out
-          that day (a quarter hour of the estimator's time), and the request goes back to the front when the buyer
-          answers.
-ask       every request read the day it arrives, and the question for any that's missing something sent that day,
-          so the answer comes back while the request waits its turn.
-intake    AI intake: ask, and nobody retypes the lines either (a labeled estimate of the minutes saved).
+today     what Wendlow did. Requests are read and keyed on Mondays and Thursdays (a day an estimator is in); one
+          missing something is found when it reaches the front, the question goes out that day, and the request goes
+          back to the front when the buyer answers.
+daily     the same work done by a person every morning, without AI: each request is read and keyed the day it arrives
+          (the same keying minutes), and the question for one missing something goes out then.
+intake    AI intake: every request read the day it arrives and the question drafted that day; the lines come out as an
+          import file for the ERP, so nobody keys them. A person still handles the requests the tool sends to one
+          (keyed by hand) and checks each import row (CHECK_MINUTES).
 
 The model of the work, the same in all three: each request's quoting time is `expected_quote_hours` (the simulation's
 deterministic part) x one calibration factor x 1.3 for weld-family work a junior prices (with the senior in, he
 prices about 3 in 4 of it) x a draw of the simulation's own noise, over 20 seeds. Each day has the estimators' hours
-from capacity.csv, plus two helpers at three hours each on a day the backlog is over two weeks; occasional customers'
-new requests are declined past three weeks. The buyer takes the same `answer_days` to answer whenever the question
-is asked.
+from capacity.csv (before keying), plus two helpers at three hours each on a day the backlog is over two weeks;
+occasional customers' new requests are declined past three weeks. The buyer takes the same `answer_days` to
+answer whenever the question is asked.
 
 The calibration factor is fitted on `today` alone, so the model of the status quo gets as many quotes out on time as
 really did (within 2%); every other way of working runs with the same factor.
@@ -55,12 +59,13 @@ from rfq_intake import JUNIOR_WELD, working_days_after  # noqa: E402
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "sample-data" / "queue-replay"
 
-POLICIES = ("today", "ask", "intake")
+POLICIES = ("today", "daily", "intake")
 NAMES = {
-    "today": "Today: questions asked when a request is opened",
-    "ask": "Every request read on arrival, questions asked the same day",
-    "intake": "AI intake: read on arrival, questions the same day, no retyping",
+    "today": "Today: read and keyed twice a week, questions asked when a request is opened",
+    "daily": "A person reads and keys every request the morning it arrives, and asks then",
+    "intake": "AI intake: read on arrival, questions drafted the same day, an import file instead of keying",
 }
+INTAKE_WEEKDAYS = (0, 3)  # Mondays and Thursdays, as Wendlow reads quotes@ (the simulation's INTAKE_WEEKDAYS)
 HELPERS, HELPER_HOURS = 2, 3.0  # the sales manager and an engineer, past two weeks of backlog
 HELP_WEEKS, TRIAGE_WEEKS = 2, 3
 STANDARD_DAY = 10.5  # backlog weeks are counted against the two-estimator standard, whatever the staffing
@@ -70,10 +75,12 @@ QUESTION_HOURS = 0.25  # an estimator's time to spot the gap and write the quest
 EXTEND = 120  # at most this many extra working days after capacity.csv ends, at its last day's hours
 SEEDS = 20
 
-# Value parameters: labeled, not results.
-TYPING_MINUTES = 10  # estimator minutes saved per new request by not retyping its lines: an estimate
+# Labeled estimates, not results.
+KEYING_MINUTES = 10  # an estimator's minutes to read a request and key it into the ERP (the simulation's own)
+CHECK_MINUTES = 1  # with AI intake, a person's minutes to look over each request's import row
+TO_A_PERSON = 0.08  # with AI intake, the share of new requests sent to a person, keyed by hand (the recorded months)
 REVENUE_PER_WIN = (
-    36_700  # first-year revenue per won new-part quote, every order of its parts in the year after the win:
+    35_800  # first-year revenue per won new-part quote, every order of its parts in the year after the win:
 )
 # Wendlow's records, quotes won 2022-23 (pathmode-corpus simulations/fabricator/scripts/rfq_value_stats.py)
 MARGIN = 0.27  # the middle of the published 22-31% range for job shops (Wendlow's own books run higher)
@@ -95,10 +102,16 @@ class Request:
     at_start: bool = False
     draw: float = 1.0
     pick: float = 1.0
+    screened: bool = False  # read and keyed, but never priced (screened out or declined)
 
     @property
     def requote(self) -> bool:
         return self.kind == "requote"
+
+    @property
+    def priced(self) -> bool:
+        """A new request someone prices: not a re-quote, not screened out."""
+        return not self.requote and not self.screened
 
 
 @dataclass(frozen=True)
@@ -129,8 +142,6 @@ def load(folder: Path) -> tuple[list[Request], dict[str, Truth], list[Day]]:
     requests, truth = [], {}
     with (folder / "rfqs.csv").open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            if row["outcome"] == "screened out":
-                continue
             requests.append(
                 Request(
                     row["rfq_id"],
@@ -143,6 +154,7 @@ def load(folder: Path) -> tuple[list[Request], dict[str, Truth], list[Day]]:
                     row.get("missing") or "",
                     int(row.get("answer_days") or 0),
                     row["in_queue_on_start"] == "1",
+                    screened=row["outcome"] == "screened out",
                 )
             )
             truth[row["rfq_id"]] = Truth(
@@ -181,9 +193,8 @@ def drawn(requests: list[Request], seed: int) -> list[Request]:
     return out
 
 
-def work_hours(r: Request, scale: float, saving: float = 0.0, junior: bool = True) -> float:
-    hours = r.expected_hours * scale * (JUNIOR_WELD if r.weld and junior else 1.0) * r.draw
-    return max(hours - (0.0 if r.requote else saving), 0.0)
+def work_hours(r: Request, scale: float, junior: bool = True) -> float:
+    return r.expected_hours * scale * (JUNIOR_WELD if r.weld and junior else 1.0) * r.draw
 
 
 def days(capacity: list[Day]):
@@ -196,64 +207,91 @@ def days(capacity: list[Day]):
 
 
 def replay(
-    requests: list[Request], capacity: list[Day], policy: str, scale: float = 1.0, typing_minutes: float = 0.0
+    requests: list[Request],
+    capacity: list[Day],
+    policy: str,
+    scale: float = 1.0,
+    keying_minutes: float = KEYING_MINUTES,
 ) -> Outcome:
-    """Day by day: the day's arrivals join the queue, answers that came back rejoin it, then the day's hours are
-    spent on it, front first. No way of working sees a decision date: a Request doesn't have one."""
+    """Day by day: the day's arrivals reach the inbox; on a reading day they're keyed and join the queue; answers
+    that came back rejoin it; then the day's hours go first to the keying and the questions, and the rest to the
+    queue, front first. No way of working sees a decision date: a Request doesn't have one."""
     if policy not in POLICIES:
         raise ValueError(f"policy {policy!r} isn't one of {', '.join(POLICIES)}")
-    early = policy in ("ask", "intake")  # questions asked the day a request arrives
-    new_first = True  # Wendlow prices new requests first, re-quotes when none is waiting
-    saving = typing_minutes / 60 if policy == "intake" else 0.0
-    need = {r.id: work_hours(r, scale, saving) for r in requests}
+    early = policy in ("daily", "intake")  # the question goes out when the request is read
+    per_request = (
+        (TO_A_PERSON * keying_minutes + (1 - TO_A_PERSON) * CHECK_MINUTES) / 60
+        if policy == "intake"
+        else keying_minutes / 60
+    )
+    need = {r.id: work_hours(r, scale) for r in requests if not r.screened}
     spent = dict.fromkeys(need, 0.0)
-    out = Outcome({r.id: None for r in requests if not r.requote})
-    queue: list[Request] = []  # new requests (and, unless new_first, re-quotes), in order
-    requotes: list[Request] = []  # with new_first: the re-quotes, after every new request
-    waiting: dict[str, tuple[date, Request]] = {}  # asked when opened (today, order): back in on the answer
-    ready: dict[str, date] = {}  # asked on arrival (intake, both): workable from the answer
+    out = Outcome({r.id: None for r in requests if r.priced})
+    queue: list[Request] = []  # logged new requests, in order (key accounts at the front)
+    requotes: list[Request] = []  # the re-quotes, after every new request
+    inbox: list[Request] = []  # arrived, not yet read and keyed
+    waiting: dict[str, tuple[date, Request]] = {}  # today: asked when opened, back in on the answer
+    ready: dict[str, date] = {}  # daily, intake: asked when read, workable from the answer
     pending = sorted(requests, key=lambda r: (not r.at_start, r.received, r.id))
-    question_debt = [0.0]
+    debt = [0.0]  # keying and questions owed, paid first thing from the next hours
 
     def backlog_weeks() -> float:
         items = queue + requotes + [r for _, r in waiting.values()]
         return sum(need[r.id] if spent[r.id] > 0 else UNSTARTED for r in items) / STANDARD_DAY / 5
 
+    def reading_day(day: Day) -> bool:
+        if policy == "intake":
+            return True  # the tool reads every morning, whoever is in
+        return day.hours > 0 and (policy == "daily" or day.date.weekday() in INTAKE_WEEKDAYS)
+
     for day in days(capacity):
         while pending and (pending[0].at_start or pending[0].received <= day.date):
             r = pending.pop(0)
-            if r.requote:
-                (requotes if new_first else queue).append(r)
-                continue
-            if r.tier == "occasional" and backlog_weeks() > TRIAGE_WEEKS:
-                out.declined.append(r.id)
-                continue
-            if r.missing and early:
-                out.asked[r.id] = r.received
-                ready[r.id] = working_days_after(r.received, r.answer_days)
-                question_debt[0] += QUESTION_HOURS  # someone still reads the draft and sends it: the same quarter hour
-            queue.append(r)
+            if r.at_start and not r.screened:
+                (requotes if r.requote else queue).append(r)  # already logged before the window
+            elif r.requote:
+                requotes.append(r)  # raised inside the ERP: nothing to read
+            elif not r.at_start:
+                inbox.append(r)
+        if reading_day(day):
+            for r in inbox:
+                debt[0] += per_request
+                if r.screened:
+                    continue
+                if r.tier == "occasional" and backlog_weeks() > TRIAGE_WEEKS:
+                    out.declined.append(r.id)
+                    continue
+                if r.missing and early:
+                    asked = r.received if policy == "intake" else day.date
+                    out.asked[r.id] = asked
+                    ready[r.id] = working_days_after(asked, r.answer_days)
+                    debt[0] += QUESTION_HOURS  # a person reads the drafted question and sends it
+                if r.tier == "key":
+                    queue.insert(0, r)  # as the simulation does: a key account's request goes to the front
+                else:
+                    queue.append(r)
+            inbox.clear()
         for rid, (back, r) in list(waiting.items()):
             if back <= day.date:
                 del waiting[rid]
                 queue.insert(0, r)  # the estimator picks it straight back up
         cap = day.hours
-        paid = min(cap, question_debt[0])  # questions drafted on arrival are sent first thing, from the same hours
+        paid = min(cap, debt[0])
         cap -= paid
-        question_debt[0] -= paid
+        debt[0] -= paid
         if backlog_weeks() > HELP_WEEKS:
             cap += HELPERS * HELPER_HOURS
             out.helper_days += 1
-        cap = _work(queue, cap, day, need, spent, out, waiting, ready, early, scale, saving)
-        _work(requotes, cap, day, need, spent, out, waiting, ready, early, scale, saving)
-        if not queue and not requotes and not pending and not waiting:
+        cap = _work(queue, cap, day, need, spent, out, waiting, ready, early, scale)
+        _work(requotes, cap, day, need, spent, out, waiting, ready, early, scale)
+        if not queue and not requotes and not pending and not waiting and not inbox:
             break
     return out
 
 
-def _work(queue, cap, day, need, spent, out, waiting, ready, early, scale, saving) -> float:
+def _work(queue, cap, day, need, spent, out, waiting, ready, early, scale) -> float:
     """Spend up to `cap` hours on the queue, front first. Today, a request missing something is found when it's
-    opened: the question goes out, and it waits for the answer outside the queue. With intake, a request still
+    opened: the question goes out, and it waits for the answer outside the queue. Read on arrival, a request still
     waiting on its answer is passed over until the answer comes."""
     i = 0
     while cap > 1e-9 and i < len(queue):
@@ -270,7 +308,7 @@ def _work(queue, cap, day, need, spent, out, waiting, ready, early, scale, savin
                 continue
         if spent[r.id] == 0 and r.weld:
             junior = day.junior and not (day.senior and r.pick < SENIOR_WELD_SHARE)
-            need[r.id] = work_hours(r, scale, 0.0 if r.requote else saving, junior)
+            need[r.id] = work_hours(r, scale, junior=junior)
         take = min(cap, need[r.id] - spent[r.id])
         spent[r.id] += take
         cap -= take
@@ -301,13 +339,13 @@ def win_rate(rows: list[dict]) -> float:
     return won / (won + lost) if won + lost else 0.0
 
 
-def calibrate(requests, capacity, truth, seeds=SEEDS, lo=0.3, hi=4.0) -> tuple[float, float]:
+def calibrate(requests, capacity, truth, seeds=SEEDS, lo=0.3, hi=4.0, keying_minutes=KEYING_MINUTES):
     """The factor that makes `today` get as many quotes out on time as Wendlow really did."""
-    target = on_time({r.id: truth[r.id].sent for r in requests if not r.requote}, truth)
+    target = on_time({r.id: truth[r.id].sent for r in requests if r.priced}, truth)
     runs = [drawn(requests, s) for s in range(seeds)]
 
     def mean_today(scale: float) -> float:
-        return statistics.mean(on_time(replay(rs, capacity, "today", scale).sent, truth) for rs in runs)
+        return statistics.mean(on_time(replay(rs, capacity, "today", scale, keying_minutes).sent, truth) for rs in runs)
 
     for _ in range(30):
         mid = (lo + hi) / 2
@@ -319,16 +357,16 @@ def calibrate(requests, capacity, truth, seeds=SEEDS, lo=0.3, hi=4.0) -> tuple[f
     return scale, mean_today(scale)
 
 
-def run(folder: Path = DATA, typing_minutes: float = TYPING_MINUTES, seeds: int = SEEDS) -> dict:
+def run(folder: Path = DATA, keying_minutes: float = KEYING_MINUTES, seeds: int = SEEDS) -> dict:
     requests, truth, capacity = load(folder)
     rows = all_rows(folder)
-    scale, today_mean = calibrate(requests, capacity, truth, seeds)
-    actual = on_time({r.id: truth[r.id].sent for r in requests if not r.requote}, truth)
+    scale, today_mean = calibrate(requests, capacity, truth, seeds, keying_minutes=keying_minutes)
+    actual = on_time({r.id: truth[r.id].sent for r in requests if r.priced}, truth)
     runs = [drawn(requests, s) for s in range(seeds)]
     rate = win_rate(rows)
     res = {}
     for p in POLICIES:
-        outs = [replay(rs, capacity, p, scale, typing_minutes) for rs in runs]
+        outs = [replay(rs, capacity, p, scale, keying_minutes) for rs in runs]
         counts = [on_time(o.sent, truth) for o in outs]
         waits = [
             statistics.mean([(o.asked[r.id] - r.received).days for r in requests if r.id in o.asked] or [0])
@@ -346,7 +384,8 @@ def run(folder: Path = DATA, typing_minutes: float = TYPING_MINUTES, seeds: int 
         res[p]["extra_on_time"] = round(extra, 1)
         res[p]["extra_wins"] = round(extra * rate, 1)
         res[p]["margin_value"] = round(extra * rate * REVENUE_PER_WIN * MARGIN)
-    new = [r for r in requests if not r.requote and not r.at_start]
+    start = capacity[0].date
+    new = [r for r in requests if r.priced and not r.at_start and r.received >= start]
     return {
         "window": [min(r.received for r in new).isoformat(), max(r.received for r in new).isoformat()],
         "new_requests": len(new),
@@ -356,7 +395,9 @@ def run(folder: Path = DATA, typing_minutes: float = TYPING_MINUTES, seeds: int 
         "calibration": {"factor": round(scale, 3), "today_model_on_time": round(today_mean, 1)},
         "win_rate": round(rate, 3),
         "parameters": {
-            "typing_minutes": typing_minutes,
+            "keying_minutes": keying_minutes,
+            "check_minutes": CHECK_MINUTES,
+            "to_a_person": TO_A_PERSON,
             "revenue_per_win": REVENUE_PER_WIN,
             "margin": MARGIN,
             "seeds": seeds,
@@ -395,9 +436,9 @@ def main() -> None:
     ap.add_argument("--data", type=Path, default=DATA)
     ap.add_argument("--out", type=Path, default=Path("out") / "replay")
     ap.add_argument("--seeds", type=int, default=SEEDS)
-    ap.add_argument("--typing-minutes", type=float, default=TYPING_MINUTES)
+    ap.add_argument("--keying-minutes", type=float, default=KEYING_MINUTES)
     args = ap.parse_args()
-    res = run(args.data, args.typing_minutes, args.seeds)
+    res = run(args.data, args.keying_minutes, args.seeds)
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "replay.json").write_text(json.dumps(res, indent=1) + "\n")
     (args.out / "replay.md").write_text(report(res))
