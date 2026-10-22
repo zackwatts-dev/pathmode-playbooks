@@ -1,67 +1,71 @@
 # Anomaly alerts
 
-Finds the problems hiding in a month of jobs (money that leaked between systems, and the habits behind it), explains the top ones, and gives each owner a short list. The AI explains; it doesn't detect.
+A morning brief for every store of a restaurant group: what's leaking (the kitchen, the bar, the register, the cash, the invoices, the timeclock), weeks before the period closes. Code and machine learning find what's unusual; an AI reads the managers' log for each flag, says whether the log explains it (quoting the entry), and otherwise writes a plain explanation and a next step; code checks every answer. Each general manager, the director of operations and the controller get their own list. Nothing here contacts anyone or changes a record.
 
-The full playbook, worked through at Summit Mechanical with a value calculator, the design, the plan an AI wrote from it, and a map of the built system: **https://pathmode.com/playbooks/anomaly-alerts/**
+The full playbook, worked through at Ironbark Tavern & Grill (a simulated twelve-store group) with the design, the plan an AI wrote from it, and the answers to its questions: **https://pathmode.com/playbooks/anomaly-alerts/**
 
 ## What it does
 
-- **Rules** reconcile records across systems: parts used but not billed, invoices credited to stay under the not-to-exceed (NTE) amount, increases approved in a customer's portal but never recorded, visits with no hours (a blank time entry, or none at all).
-- **Baselines** compare each technician with their branch peers, using the median and MAD so one extreme value can't hide the rest. A flag also needs at least three occurrences and a rate at least 5 points above peers, so one repeat in a branch where most have none isn't a pattern.
-- **A machine-learning model** (scikit-learn's Isolation Forest) looks for technicians whose combination of habits, over the 90 days ending on the run's end date (`--tech-window`), is unusual. There's no quota: a technician is flagged only if the model finds them clearly unusual (`--tech-threshold`, 0.55, where 0.5 is average) and at least one problem habit (parts recorded late, slow paperwork, missing hours, repeat visits) is material: well above typical, by enough, at least three times. A month with nothing unusual flags nobody. Each flag is worded as a pattern worth a conversation. Slow paperwork needs the time each entry was made: in the sample every time entry carries its visit's date, so it can't be seen there, and the service manager's summary says so.
-- **An alert budget:** up to 12 flags per owner per run are investigated and sent: the most money first, then other record problems, technician patterns last. Every flag stays on the full list.
-- **An AI investigator** explains each budgeted flag from the records behind it. Technicians appear by ID only, and only in the service manager's flags: the controller's records carry no technician IDs. It can't change, rank or dismiss a flag. Code checks every explanation: its shape first (a malformed answer goes to a person); then every record it cites or mentions must be in the records; its numbers must be the records' amounts and quantities, not the digits of an ID or a date; and it may not name a person or accuse or discipline anyone. An explanation that fails goes to a person, and its text isn't carried into any output.
-- **Each owner gets only their own flags:** a dashboard, a digest draft (addressed from `recipients.csv`: `Owner,To`), a flag list and a review queue. The controller's (`dashboard.html`, `flags.csv`, `review-queue.csv`) have no technician signals or IDs; the service manager's are named `-service-manager`, plus `summary-service-manager.md`. The shared `summary.md` has job-flag counts only. And a run log.
+Each morning (on Mondays, after the Sunday counts, for the week too), looking back 90 days so it knows which flags are already open:
+
+1. **Builds the picture** (code), from the nightly exports, as they stood that morning:
+   - the register, by employee over 28 days: voids after the check printed on cash checks; employee-meal and manager discounts on guest checks of two or more; whole-check comps by who approved them (the office's party package excepted);
+   - each closing manager's cash over/short over 28 days;
+   - every invoice line against that month's price list (or the latest one before it);
+   - punches against the schedule: edited punches that add an hour or more, by who edited them; a store's shifts running longer than its own previous eight weeks, beyond the change at every store, two Mondays running;
+   - each store's weekly actual usage (last count, plus what was delivered, less this count) against theoretical (product mix times recipes), valued at what the last eight weeks' invoices paid.
+2. **Finds what's unusual** (no AI):
+   - **rules** for what's exact: a price over the list, a punch edited to add hours, whole-check comps;
+   - **baselines:** an employee's rate at least 1.2 points of their sales above the group's typical rate, with at least $150 and four occurrences in 28 days; a store's kitchen gap $300 a week over the group's best-run quarter of stores in three of the last four weeks, or $300 a week over its own last eight weeks four weeks running, or one week $1,500 over; the bar the same at $150 a week;
+   - **attribution:** a regression of each bar's weekly gap on each bartender's hours over twelve weeks (non-negative coefficients), naming a bartender whose shifts explain at least $50 a week at twice the store's typical bartender;
+   - a one-week jump that reverses the next week (a miscount) isn't flagged unless it's large.
+3. **Reads** (AI), for each new flag and each flag whose dollars a week have grown by half, by dollars a week, at most six a store and forty in all a morning. The AI gets the flag and its records as of that morning, with employees by id. For a one-off kitchen flag (the only kind one event can explain) it also gets the store's log for those days, with names taken out. It writes a plain explanation and a next step, and says whether the log explains the flag, quoting the entry.
+4. **Checks the answer** (code). It must cite at least one record, every record it cites must exist, and every amount must be one of the records' amounts (not an id or a date). It may not name anyone, accuse, call anything theft or fraud, or state a cause as fact. An explanation by the log is used only if the entry is one it was given, the words it quotes are in that entry and name an event that could account for a kitchen gap (a cooler, an outage, a recount), and the entry isn't addressed to an AI. Anything that fails goes to a person, with the flag, unexplained.
+5. **Writes the briefs:** `briefs/gm-NN.html` for each general manager (register, kitchen, bar and hours at their store), `briefs/director.html` (every store, plus edited punches and any log entry addressed to an AI), `briefs/controller.html` (invoice overcharges and cash), and `dashboard.html` (everything). Also `flags.csv`, a line in `run-log.jsonl`, and with an answer key `score.md` and `score.json`.
 
 ## What it doesn't do
 
-Change anything in any system, send anything, or decide anything about a person. Technician flags are signals for a manager to look into.
+- **It doesn't accuse anyone.** A flag is a pattern worth a look. The tool never contacts anyone, changes a record or disciplines anyone.
+- **It doesn't send anything.** The briefs are files, in folders only their owners can open.
+- **It doesn't let the log excuse a pattern.** Only a one-off kitchen gap can be put down to an event in the log, and only when the words are found there.
+- **It doesn't see deliveries.** Exports show what was invoiced, not what arrived, so a short delivery looks like a kitchen gap.
 
 ## Try it
 
 ```sh
-pip install --require-hashes -r anomaly-alerts/requirements.txt   # scikit-learn, pinned and hash-checked
-
-# Replay a recorded run: a real model's explanations (Claude Sonnet 5.5), free
-python3 anomaly-alerts/anomaly_alerts.py --sample --replay anomaly-alerts/sample-data/recorded-run.json
-
-# The offline stand-in: no model at all
+# No AI: every flag listed, none explained by the log
 python3 anomaly-alerts/anomaly_alerts.py --sample --dry-run
 
-# Also run the model over individual jobs (it flags big installs: unusual, not wrong)
-python3 anomaly-alerts/anomaly_alerts.py --sample --dry-run --model-jobs
+# Replay the recorded run: what a real model (Claude Sonnet 5.5) answered on the sample, free
+python3 anomaly-alerts/anomaly_alerts.py --sample --replay anomaly-alerts/sample-data/recorded-run.json
+
+# A real model
+PLAYBOOK_PROVIDER=openai OPENAI_API_KEY=... PLAYBOOK_MODEL=... python3 anomaly-alerts/anomaly_alerts.py --sample
+
+# The tests (no AI, free)
+python3 -m pytest anomaly-alerts
 ```
 
-Then open `out/dashboard.html` (the controller's) and `out/dashboard-service-manager.html`. With the sample, `out/score.md` scores the run against the answer key. It says what it can't prove: the "hours not logged" answer key uses the rule's own definition, so that row checks the plumbing, not the rule; and callbacks, the largest problem in the answer key, aren't checked by this playbook. An investigated flag counts as real only when its problem matches the answer key's problem for that job (or that technician's habit). A replay that has no recorded answer for a flag sends it to a person and says how many.
+It needs Python 3.11+, numpy and scikit-learn (`pip install -r anomaly-alerts/requirements.txt`, pinned with hashes).
 
-## The sample: Summit's September 2025
+## The sample
 
-From the Summit simulation (`pathmode-corpus/simulation/scripts/playbook_anomaly.py`), with August as history: jobs, visits, time entries, parts used, technicians' notes, invoices and invoice lines, portal NTE records, technicians. `answer-key.csv` (jobs) and `tech-answer-key.csv` (technicians' habits) come from the simulation's hidden truth, never from the exports.
-
-## Running it for real
-
-`run.sh` runs weekly, after the nightly exports. Most jobs are invoiced days after they're done, so a week-only window would check them before their invoice exists and never again. So each run re-checks every job completed in the last 45 days (`--lookback`, the default with `--data`), and `flag-history.csv` in the output folder remembers what was already reported: only new flags are investigated and sent, and the rest stay on the list as still open. Keep the outputs where each owner can open only their own files. Have owners fill in the `decision` and `reason` columns of their `flags*.csv`, and use those marks to tune `--tech-threshold`, the baselines' threshold and `--budget`. Put each owner's address in `recipients.csv` in the exports folder (or pass `--recipients`); the sample's is in `sample-data/`. Re-run the answer key after any change, including a new model version.
+Ironbark Tavern & Grill's fiscal 2024 (January 1 to December 29), twelve weeks of history before it, from a detailed simulation of a twelve-store group in the Kansas City metro (`records/`, about 8 MB zipped). The answer key (`answer-key/`) holds every problem that was running, who or what it involved, when it started, when the group's current way of working stopped it, and its loss by week; and every honest odd day (a cooler failure, a catering order, a snowstorm) and whether the manager wrote it down. One store's log carries an entry addressed to an AI.
 
 ## Before you run this on your own data
 
-- **Your exports won't look like Summit's.** The column names, the job-to-invoice match (by job number) and the "Credit to NTE" line are Summit's; map yours first.
-- **Dates and hours:** ISO dates and timestamps, `9/5/2025` (read month first) and hours as `1.5` or `1:30` are read. Anything else is listed in `unreadable.csv` and counted in the summary, and a job whose completion date can't be read isn't checked until it's fixed.
-- **Amounts:** plain numbers and `$1,200.50` are read. Parentheses for negatives, other currencies and words aren't.
-- **Duplicates:** an invoice exported twice is counted once. Duplicate invoice lines are dropped only if the export has a line ID column; without one, two identical lines both count.
-- **Slow paperwork needs a real entry timestamp.** If your time entries carry the visit's date, as Summit's do, that habit can't be seen.
-- **Weekly runs need the look-back and the history file.** Without them, most unbilled parts are checked before the invoice exists. Keep `flag-history.csv` between runs.
-- **Not covered:** callbacks (repeat work from a misdiagnosis or a temporary fix, the largest problem in Summit's answer key) and parts on jobs that were never invoiced ($8,303 in the sample). Those need rules nobody has written yet.
-- **The thresholds are Summit's.** The baselines' limits, `--tech-threshold`, the 90-day `--tech-window` and the budget were tuned on one simulated month. Tune them with your owners' marks.
-- **The explanation checks are text patterns.** A name, an ID or an accusation written in a way they don't recognize can get through; owners still read every explanation before acting.
+- **Map your exports** to the files in `records/`. Most POS systems export checks, adjustments with approvers, and product mix; most back-office systems export counts, recipes and invoices.
+- **Score it on a period you know,** with the problems you already found as the answer key, before trusting it on one you don't.
+- **Set the thresholds with your managers.** The ones here are tuned to Ironbark's sample and checked on a held-back year; yours will differ.
 
 ## Files
 
-| File | What |
+| File | What it is |
 |---|---|
-| `anomaly_alerts.py` | The detectors, the budget, the investigation and its checks, the outputs. |
-| `alerts_dashboard.py` | One dashboard per owner. |
-| `design.md` | The design, in plain words. |
-| `plan.md` | The build plan an AI wrote from the design, unedited. |
-| `requirements.txt` | scikit-learn and its dependencies, pinned by version and hash (from `requirements.in` with `uv pip compile --generate-hashes`). |
-| `sample-data/` | Summit's exports, answer keys, digest recipients and the recorded run. |
-| `tests/` | Tests that run offline: `pytest` from the repository root. |
+| `anomaly_alerts.py` | The pipeline: exports, detectors, the AI's reading and its checks, scoring |
+| `alerts_dashboard.py` | The briefs and the dashboard |
+| `design.md` | The design, one page |
+| `plan.md` | The plan an AI wrote from it, unedited |
+| `release-thresholds.json` | What counts as good enough, set before the held-back year was run |
+| `tests/` | The rules, the as-of check, the scoring and the checks on the AI's answers, without calling the AI |
+| `sample-data/` | Fiscal 2024: the exports, the answer key and the recorded run |

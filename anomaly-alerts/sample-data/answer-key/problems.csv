@@ -1,0 +1,75 @@
+problem_id,kind,store_id,employee_id,employee_name,job,vendor_id,started_on,status_quo_ended_on,how_it_ended,loss_in_window,loss_in_window_at_cost
+20,over-pour,10,453,Noel Ross,bartender,,2023-01-02,,still running at the end of the window,4966.19,4966.19
+14,over-pour,8,356,Jesse Young,bartender,,2023-01-02,,still running at the end of the window,5626.95,5626.95
+17,over-pour,9,403,Kai Cruz,bartender,,2023-01-02,,still running at the end of the window,3349.26,3349.26
+9,overportion,4,190,Casey Baker,kitchen manager,,2023-01-02,,still running at the end of the window,33015.27,33015.27
+18,over-pour,9,404,Luis Allen,bartender,,2023-01-02,,still running at the end of the window,2445.45,2445.45
+6,over-pour,3,117,Parker Scott,bartender,,2023-01-02,2024-05-20,left,2452.43,2452.43
+19,over-pour,10,451,Kai Ramirez,bartender,,2023-01-02,2024-07-01,left,2205.1,2205.1
+13,over-pour,7,306,Casey Brooks,bartender,,2023-01-02,2024-01-15,left,90.6,90.6
+8,waste,4,190,Casey Baker,kitchen manager,,2023-01-02,,still running at the end of the window,22719.65,22719.65
+7,over-pour,4,164,Glen Powell,bartender,,2023-01-02,,still running at the end of the window,4424.08,4424.08
+28,over-pour,1,661,Quinn Flores,bartender,,2023-03-13,,still running at the end of the window,7517.72,7517.72
+29,over-pour,2,663,Dale Young,bartender,,2023-03-14,,still running at the end of the window,5733.59,5733.59
+30,over-pour,4,672,Jordan Washington,bartender,,2023-03-22,2024-06-17,left,2181.67,2181.67
+31,price creep,,,,,3,2023-03-27,2024-02-03,annual vendor review,3134.35,3134.35
+33,short delivery,9,,,,2,2023-04-03,2024-02-12,driver changed,1178.25,1178.25
+34,overportion,5,692,Logan Russell,kitchen manager,,2023-04-11,,still running at the end of the window,27042.55,27042.55
+38,over-pour,6,752,Quinn Miller,bartender,,2023-06-08,,still running at the end of the window,4174.32,4174.32
+40,ghost hours,7,334,Drew Mendoza,kitchen manager,,2023-06-26,2024-10-07,tip,8988.3,8988.3
+43,overportion,1,779,Emerson Wright,kitchen manager,,2023-07-08,,still running at the end of the window,38319.05,38319.05
+44,over-pour,5,780,Carlos Brooks,bartender,,2023-07-09,2024-04-08,left,1473.07,1473.07
+45,over-pour,11,787,Kiara Turner,bartender,,2023-07-17,,still running at the end of the window,4631.25,4631.25
+47,void theft,5,199,Sofia Davis,server,,2023-07-31,2024-04-20,tip,4781.31,4781.31
+49,over-pour,3,801,Hector Kim,bartender,,2023-08-07,,still running at the end of the window,3658.41,3658.41
+50,void theft,10,756,Kendall Roberts,server,,2023-08-28,,still running at the end of the window,21893.82,21893.82
+52,over-pour,9,841,Sage Williams,bartender,,2023-09-20,2024-04-29,left,936.93,936.93
+53,void theft,11,496,Reese Cruz,server,,2023-09-25,2024-05-20,left,4719.87,4719.87
+54,over-pour,11,860,Jose Rogers,bartender,,2023-10-08,2024-11-04,left,3567.22,3567.22
+55,void theft,5,695,Harper Perez,server,,2023-10-09,2024-03-18,left,1904.28,1904.28
+57,discount abuse,7,300,Kai Martin,server,,2023-10-30,2024-01-29,left,1003.68,1003.68
+58,over-pour,11,900,Gale Gomez,bartender,,2023-11-16,2024-05-19,office visit,1271.02,1271.02
+59,over-pour,7,903,Wren Hill,bartender,,2023-11-19,2024-11-23,caught,4015.7,4015.7
+60,comp abuse,4,191,Morgan Torres,assistant manager,,2023-11-27,2024-04-09,tip,4211.57,1026.93
+61,discount abuse,2,64,Riley Ramirez,server,,2023-12-04,2024-05-25,tip,3916.04,3916.04
+62,discount abuse,2,920,Lane Johnson,server,,2023-12-18,2024-01-22,left,939.63,939.63
+63,cash skim,4,823,Cory Sanchez,assistant manager,,2023-12-25,2024-05-07,tip,785.79,785.79
+64,over-pour,9,950,Jasmine Phillips,bartender,,2024-01-04,,still running at the end of the window,3320.26,3320.26
+65,labor drift,6,958,Marlo Long,general manager,,2024-01-12,2024-02-28,office visit,7708.7,7708.7
+68,over-pour,11,979,Lee Ramirez,bartender,,2024-02-01,2024-05-17,office visit,1535.89,1535.89
+69,void theft,1,882,Robin Mendoza,server,,2024-02-12,2024-08-05,left,4788.04,4788.04
+70,over-pour,5,1001,Brianna Brooks,bartender,,2024-02-15,2024-04-01,left,656.1,656.1
+71,over-pour,5,1040,Riley Mitchell,bartender,,2024-03-18,2024-04-18,office visit,444.69,444.69
+72,waste,8,1058,Avery Parker,kitchen manager,,2024-04-04,,still running at the end of the window,17132.31,17132.31
+73,over-pour,8,1060,Carlos Price,bartender,,2024-04-08,,still running at the end of the window,3966.95,3966.95
+74,free pours,5,922,Diego Miller,bartender,,2024-04-15,2024-05-23,office visit,683.75,118.49
+75,over-pour,5,1074,Cory Ortiz,bartender,,2024-04-22,2024-12-02,left,2614.86,2614.86
+76,over-pour,2,1078,Lee Scott,bartender,,2024-04-24,,still running at the end of the window,1859.38,1859.38
+77,overportion,3,1079,Dakota Sanders,kitchen manager,,2024-04-24,2024-05-20,left,2563.65,2563.65
+23,over-pour,12,546,Ana Ross,bartender,,2024-04-29,,still running at the end of the window,3300.08,3300.08
+25,waste,12,574,Diego Nelson,kitchen manager,,2024-04-29,,still running at the end of the window,16917.45,16917.45
+24,over-pour,12,547,Harper Turner,bartender,,2024-04-29,,still running at the end of the window,3137.92,3137.92
+22,over-pour,12,545,Diego Kim,bartender,,2024-04-29,,still running at the end of the window,1550.53,1550.53
+78,waste,3,1123,Sofia Martinez,kitchen manager,,2024-05-31,2024-11-18,left,12622.73,12622.73
+79,over-pour,11,1126,Dale Mendoza,bartender,,2024-06-06,2024-07-15,left,566.88,566.88
+80,free pours,3,1124,Tasha Morales,bartender,,2024-06-10,,still running at the end of the window,5679.5,1024.05
+81,free pours,10,1179,Andre Phillips,bartender,,2024-08-12,2024-08-19,tip,173.25,24.75
+82,over-pour,9,1217,Kai Howard,bartender,,2024-08-14,2024-09-09,left,176.1,176.1
+84,discount abuse,5,194,Omar Harris,server,,2024-08-19,,still running at the end of the window,3690.32,3690.32
+83,void theft,7,1005,Kiara Morales,server,,2024-08-19,2024-10-28,left,1594.9,1594.9
+86,discount abuse,12,541,Robin Wilson,server,,2024-09-09,2024-11-18,left,1678.18,1678.18
+85,void theft,7,304,Parker Johnson,server,,2024-09-09,2024-10-22,tip,996.34,996.34
+87,over-pour,8,1241,Marlo Taylor,bartender,,2024-09-12,,still running at the end of the window,989.83,989.83
+88,free pours,9,1086,Jose Morales,bartender,,2024-09-16,2024-09-30,left,175.5,33.32
+89,void theft,3,1238,Omar Lopez,server,,2024-09-30,,still running at the end of the window,1687.64,1687.64
+90,over-pour,2,1277,Robin Rogers,bartender,,2024-10-16,,still running at the end of the window,798.02,798.02
+92,overportion,7,1278,Cory Fisher,kitchen manager,,2024-10-16,,still running at the end of the window,7570.32,7570.32
+91,waste,7,1278,Cory Fisher,kitchen manager,,2024-10-16,,still running at the end of the window,5140.97,5140.97
+93,comp abuse,12,576,Glen Diaz,assistant manager,,2024-10-21,2024-12-06,tip,733.75,171.09
+94,void theft,7,903,Wren Hill,bartender,,2024-10-28,2024-11-23,tip,622.96,622.96
+95,comp abuse,4,1072,Hayden Thompson,assistant manager,,2024-10-28,,still running at the end of the window,2057.7,506.07
+96,void theft,9,394,Jesse Hughes,server,,2024-11-11,2024-12-23,left,740.94,740.94
+97,over-pour,11,1317,Frankie Sanchez,bartender,,2024-11-22,,still running at the end of the window,325.79,325.79
+98,cash skim,10,1200,Blair Rivera,assistant manager,,2024-12-02,2024-12-16,left,18.04,18.04
+99,overportion,3,1336,Andre Lewis,kitchen manager,,2024-12-06,,still running at the end of the window,2421.16,2421.16
+100,short delivery,9,,,,2,2024-12-23,,still running at the end of the window,437.65,437.65

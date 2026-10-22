@@ -1,153 +1,163 @@
-"""The anomaly dashboard: one HTML page. Notes and names come from records, so everything is escaped."""
+"""The briefs: one for each general manager (their store), one for the director of operations (the group), one for
+the controller (vendors and cash). Money first; what the log explained, listed separately; what went to a person,
+with why. Everything that came from the exports or the AI is escaped."""
 
 from __future__ import annotations
 
 from collections import defaultdict
-from datetime import date
+from pathlib import Path
 
 from common.page import STYLE, _e, _table
+from common.util import write_text
+
+MORE = """
+.flag{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}
+.flag h3{margin:0 0 4px;font-size:16px}
+.flag .why{color:var(--amber)}
+.quote{color:var(--muted);font-style:italic}
+details{margin:6px 0}
+summary{cursor:pointer}
+"""
 
 
-def dashboard(
-    flags,
-    top,
-    data,
-    start: date,
-    end: date,
-    budget: int,
-    model_name: str,
-    scored: dict | None,
-    viewer: str = "Service manager",
-) -> str:
-    """One owner's view: only that owner's flags. Technician signals appear only on the service manager's page."""
-    from anomaly_alerts import CHECK_FAILED, EXPLAINED, d, lag_visible
+def _m(x: float) -> str:
+    return f"${x:,.0f}"
 
-    flags = [fl for fl in flags if fl.owner == viewer]
-    top = [fl for fl in top if fl.owner == viewer]
-    review = [fl for fl in top if fl.status == CHECK_FAILED]
-    money = sum(fl.value or 0 for fl in flags)
-    jobs = sum(1 for j in data.jobs.values() if d(j["Completed"]) and start <= d(j["Completed"]) <= end)
-    tiles = [
-        ("Jobs checked", f"{jobs:,}", ""),
-        ("Flags", f"{len(flags):,}", ""),
-        ("At stake, where countable", f"${money:,.0f}", "ready"),
-        (f"Investigated ({budget} per owner)", str(len(top)), ""),
-        ("Needs a person", str(len(review)), "review" if review else ""),
-    ]
-    out = [
-        "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,"
-        f"initial-scale=1'><title>Anomaly alerts</title><style>{STYLE}</style></head><body><main>",
-        f"<h1>Anomaly alerts: {_e(viewer.lower())}</h1>",
-        f"<p class='muted'>Jobs completed {start:%B %-d} to {end:%B %-d, %Y}. Explanations: {_e(model_name)}. "
-        "Nothing was sent or changed. Every flag is a signal to check, not a conclusion.</p>",
-        "<div class='tiles'>"
-        + "".join(f"<div class='tile {c}'><b>{_e(n)}</b>{_e(label)}</div>" for label, n, c in tiles)
-        + "</div>",
-    ]
-    if review:
-        rows = [
-            [
-                f"<b>{_e(fl.check)}</b><br><span class='muted'>{_e(fl.subject)}</span>",
-                _e(fl.detail),
-                "<br>".join(_e(p) for p in fl.problems),
-            ]
-            for fl in review
-        ]
-        out.append(
-            "<section class='queue'><h2>Needs a person first</h2><p>The flag stands, but its explanation didn't "
-            "pass the checks. Open the records and decide.</p>"
-            + _table(["Flag", "What was found", "Why the explanation failed"], rows)
-            + "</section>"
-        )
-    rows = []
-    for fl in top:
-        if fl.status == EXPLAINED:
-            ex = fl.explanation
-            cause = f"<br><span class='muted'>Likely cause: {_e(ex.get('likely_cause'))}</span>"
-            text = _e(ex.get("what_happened")) + cause
-            act = _e(ex.get("action"))
-        else:
-            text, act = "<span class='muted'>See above.</span>", ""
-        value = f"${fl.value:,.2f}" if fl.value else ""
-        rows.append(
-            [f"<b>{_e(fl.check)}</b><br><span class='muted'>{_e(fl.subject)} · {_e(fl.owner)}</span>", value, text, act]
-        )
-    out.append(
-        f"<h2>Investigated this run: {len(top)}</h2><p class='muted'>Up to {budget}: the most money "
-        "first, then other record problems, technician patterns last. The same list is your digest draft in "
-        "alerts/.</p>"
-    )
-    out.append(_table(["Flag", "At stake", "What happened", "Next step"], rows, {1}))
-    counts, values, kinds = defaultdict(int), defaultdict(float), {}
-    for fl in flags:
-        counts[fl.check] += 1
-        values[fl.check] += fl.value or 0
-        kinds[fl.check] = fl.kind
-    found_by = {
-        "rule": "a rule (reconciling records)",
-        "baseline": "a baseline (vs. branch peers)",
-        "model": "the model (Isolation Forest)",
-    }
+
+def _who(f, data) -> str:
+    if f.about == "employee":
+        e = data.emp.get(f.subject, {})
+        return f"{e.get('name', f'employee {f.subject}')} ({e.get('job', '')})"
+    if f.about == "vendor":
+        return data.vendor_names.get(f.subject, f"vendor {f.subject}")
+    return data.store_names.get(f.store, f"store {f.store}")
+
+
+def _card(x, data, show_store: bool) -> str:
+    f = x.flag
+    where = f"{_e(data.store_names.get(f.store, ''))} · " if show_store and f.store else ""
+    head = f"<h3>{_e(f.kind.capitalize())}: {_e(_who(f, data))}</h3>"
+    meta = f'<div class="muted">{where}since {_e(f.first.isoformat())} · about {_e(_m(f.dollars_week))} a week</div>'
+    if x.problems:
+        body = f'<p class="why">For a person: {_e("; ".join(x.problems))}</p>'
+    else:
+        body = f"<p>{_e(x.explanation)}</p><p><b>Next:</b> {_e(x.next_step)}</p>"
     rows = [
-        [_e(k), _e(found_by[kinds[k]]), str(n), f"${values[k]:,.0f}" if values[k] else "—"]
-        for k, n in sorted(counts.items(), key=lambda x: -x[1])
+        [
+            _e(r.get("record", "")),
+            _e(r.get("date", "")),
+            _e(_m(r["amount"])) if isinstance(r.get("amount"), (int, float)) else "",
+        ]
+        for r in f.evidence[:12]
     ]
-    out.append("<h2>Every flag, by check</h2>")
-    out.append(_table(["Check", "Found by", "Flags", "At stake"], rows, {2, 3}))
-    techs = [fl for fl in flags if fl.subject.startswith("T")]
-    if techs:
-        out.append(
-            "<h2>Technician signals</h2><p class='muted'>For the service manager only. A habit well above branch "
-            "peers is a pattern worth a conversation (training, the jobs they're given, the paperwork), never a "
-            "verdict.</p>"
-        )
-        rows = [
-            [
-                _e(fl.check),
-                _e(data.techs[fl.subject[1:]]["Name"]) + ", " + _e(fl.detail),
-                f"{fl.score} MADs" if fl.kind == "baseline" else f"score {fl.score}",
-            ]
-            for fl in techs
-        ]
-        out.append(_table(["Signal", "Detail", "How unusual"], rows, {2}))
-    if viewer == "Service manager" and not lag_visible(data):
-        out.append(
-            "<p class='muted'>Paperwork lag can't be seen in these exports: every time entry carries its visit's "
-            "date. Measuring it needs the time each entry was actually made.</p>"
-        )
-    if scored:
-        rows = [
-            [
-                _e(r["problem"]),
-                str(r["real"]),
-                str(r["caught"]),
-                str(r["flags"]),
-                str(r["flags that were real"]),
-                _e(r["note"]),
-            ]
-            for r in scored["rows"]
-            if r["owner"] == viewer
-        ]
-        mf, mr = scored["model"]
-        b, br = scored["top_by_owner"][viewer]
-        out.append("<h2>Against the answer key</h2>")
-        out.append(_table(["Problem", "Real", "Caught", "Flags", "Flags that were real", "Note"], rows, {1, 2, 3, 4}))
-        out.append(
-            f"<p>Of the {b} flags investigated, <b>{br}</b> found the problem the answer key gives that "
-            f"{'job or technician' if viewer == 'Service manager' else 'job'}.</p>"
-        )
-        if viewer == "Service manager":
-            tf, tr, tk, tm = scored["techs"]
-            out.append(
-                f"<p>Technicians flagged: <b>{tf}</b>; <b>{tr}</b> have a habit the answer key knows about (of {tk}), "
-                f"and <b>{tm}</b> were flagged for that habit.</p>"
+    table = _table(["Record", "Date", "Amount"], rows, {2})
+    ev = f"<details><summary>The records ({len(f.evidence)})</summary>{table}</details>"
+    return f'<div class="flag">{head}{meta}{body}{ev}</div>'
+
+
+def _page(title: str, intro: str, readings, data, show_store: bool, missing, injected) -> str:
+    live = sorted([x for x in readings if not x.explained], key=lambda x: -x.flag.dollars_week)
+    explained = [x for x in readings if x.explained]
+    total = sum(x.flag.dollars_week for x in live)
+    warn = f'<p class="bad">Missing exports: {_e(", ".join(missing))}</p>' if missing else ""
+    tiles = (
+        f'<div class="tiles"><div class="tile review"><b>{len(live)}</b>to look at</div>'
+        f'<div class="tile"><b>{_e(_m(total))}</b>a week at stake</div>'
+        f'<div class="tile ready"><b>{len(explained)}</b>explained by the log</div></div>'
+    )
+    cards = "".join(_card(x, data, show_store) for x in live) or "<p>Nothing unusual.</p>"
+    exp = "".join(
+        f"<li>{_e(x.flag.kind)} at {_e(data.store_names.get(x.flag.store, ''))} ({_e(x.flag.first.isoformat())}): "
+        f'<span class="quote">"{_e(x.quote)}"</span></li>'
+        for x in explained
+    )
+    inj = ""
+    if injected:
+        inj = (
+            "<h2>Log entries addressed to an AI</h2><ul>"
+            + "".join(
+                f"<li>{_e(data.store_names.get(int(r['store_id']), ''))}, {_e(r['business_date'])}: "
+                f"{_e(r['text'])}</li>"
+                for r in injected
             )
-            n, names = scored["unchecked"]
-            if n:
-                out.append(f"<p>Not checked by this playbook: {n:,} jobs with {_e(', '.join(names))}.</p>")
-            if mf:
-                out.append(
-                    f"<p>The model over individual jobs flagged <b>{mf}</b>; <b>{mr}</b> had a real problem.</p>"
-                )
-    out.append("</main></body></html>")
-    return "\n".join(out)
+            + "</ul>"
+        )
+    return (
+        "<!doctype html><html lang=en><meta charset=utf-8>"
+        "<meta name=viewport content='width=device-width,initial-scale=1'>"
+        f"<title>{_e(title)}</title><style>{STYLE}{MORE}</style><main><h1>{_e(title)}</h1>"
+        f"<p class=muted>{_e(intro)}</p>{warn}{tiles}<h2>To look at, money first</h2>{cards}"
+        f"<h2>Explained by the log</h2><ul>{exp or '<li>None.</li>'}</ul>{inj}</main>"
+    )
+
+
+def briefs(r, data, out: Path) -> list[Path]:
+    from anomaly_alerts import latest
+
+    r_readings = list(latest(r).values())
+    written = []
+    span = f"{r.start.isoformat()} to {r.end.isoformat()}"
+    by_store = defaultdict(list)
+    for x in r_readings:
+        if x.flag.owner in ("gm", "director") and x.flag.store:
+            by_store[x.flag.store].append(x)
+    for sid, xs in sorted(by_store.items()):
+        name = data.store_names.get(sid, f"store {sid}")
+        written.append(
+            write_text(
+                out / "briefs" / f"gm-{sid:02d}.html",
+                _page(
+                    f"{name}: morning brief",
+                    f"Flags raised {span}. Each is a pattern worth a look, not a conclusion.",
+                    [x for x in xs if x.flag.owner == "gm"],
+                    data,
+                    False,
+                    r.missing,
+                    [],
+                ),
+            )
+        )
+    written.append(
+        write_text(
+            out / "briefs" / "director.html",
+            _page(
+                "Ironbark: the group",
+                f"Every store's flags, {span}, by dollars a week.",
+                [x for x in r_readings if x.flag.owner in ("gm", "director")],
+                data,
+                True,
+                r.missing,
+                r.injected,
+            ),
+        )
+    )
+    ctl = [x for x in r_readings if x.flag.owner == "controller"]
+    written.append(
+        write_text(
+            out / "briefs" / "controller.html",
+            _page(
+                "Vendors and cash",
+                f"Invoice overcharges, short deliveries and deposits, {span}.",
+                ctl,
+                data,
+                True,
+                r.missing,
+                [],
+            ),
+        )
+    )
+    written.append(
+        write_text(
+            out / "dashboard.html",
+            _page(
+                "Ironbark: anomaly briefs",
+                f"Every flag raised {span}, by dollars a week.",
+                r_readings,
+                data,
+                True,
+                r.missing,
+                r.injected,
+            ),
+        )
+    )
+    return written

@@ -1,0 +1,13 @@
+store_id,name,city,opened_on,seats,bar_seats
+1,Plaza,Kansas City,2009-04-01,220,28
+2,Northland,Kansas City,2011-09-01,210,24
+3,Lee's Summit,Lee's Summit,2012-05-01,200,24
+4,Independence,Independence,2013-03-01,190,22
+5,Liberty,Liberty,2014-08-01,180,22
+6,Blue Springs,Blue Springs,2015-10-01,190,22
+7,Overland Park,Overland Park,2016-06-01,230,30
+8,Olathe,Olathe,2017-11-01,200,24
+9,Shawnee,Shawnee,2018-09-01,190,22
+10,Leawood,Leawood,2019-05-01,210,28
+11,Zona Rosa,Kansas City,2021-08-01,200,26
+12,Belton,Belton,2024-05-13,180,22

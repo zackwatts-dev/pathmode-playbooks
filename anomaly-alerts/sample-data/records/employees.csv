@@ -1,0 +1,1058 @@
+employee_id,pos_id,name,store_id,job,hired_on,terminated_on,termination_reason
+2,1002,Aaliyah Kelly,1,server,2022-02-01,2023-10-09,resigned
+3,1003,Imani Thompson,1,server,2022-12-09,2024-02-26,resigned
+4,1004,Cory Lopez,1,server,2022-03-13,2024-07-15,resigned
+5,1005,Toby Baker,1,server,2022-08-11,2024-02-05,resigned
+6,1006,Alex Baker,1,server,2021-11-11,,
+7,1007,Sage Reed,1,server,2022-06-02,2023-10-16,resigned
+10,1010,Riley Torres,1,server,2022-05-13,2024-11-11,resigned
+12,1012,Nia Ramirez,1,server,2022-09-28,2023-11-20,resigned
+13,1013,Glen Turner,1,server,2022-11-21,,
+17,1017,Andre Miller,1,bartender,2022-02-07,2024-08-19,resigned
+20,1020,Carlos Thomas,1,bartender,2022-07-12,2024-01-15,resigned
+22,1022,Jasmine Williams,1,host,2022-09-25,2024-01-08,resigned
+27,1027,Reese Sanchez,1,busser,2022-05-15,2024-06-03,resigned
+30,1030,Jody Reed,1,line cook,2021-01-09,2024-07-01,resigned
+31,1031,Avery Martinez,1,line cook,2022-11-15,2024-05-13,resigned
+32,1032,Morgan Wilson,1,line cook,2021-12-12,,
+34,1034,Marcus Allen,1,line cook,2022-07-08,2024-02-12,resigned
+35,1035,Aaliyah Rogers,1,line cook,2021-11-06,2025-07-21,resigned
+36,1036,Nia Hayes,1,line cook,2022-04-05,2024-03-11,resigned
+37,1037,Remy Ross,1,line cook,2022-09-09,2024-04-08,resigned
+39,1039,Kendall Nelson,1,prep cook,2022-12-27,2024-08-26,resigned
+40,1040,Taylor Hayes,1,prep cook,2021-06-26,2024-02-26,resigned
+41,1041,Lee Young,1,dishwasher,2021-03-01,2025-05-19,resigned
+43,1043,Diego Ward,1,dishwasher,2022-10-14,,
+45,1045,Shay Coleman,1,general manager,2020-10-23,,
+47,1047,Bailey Wright,1,assistant manager,2021-05-11,,
+48,1048,Hector Sanders,1,assistant manager,2022-12-30,2024-06-24,resigned
+49,1049,Maya Martin,2,server,2022-06-08,2023-12-25,resigned
+50,1050,Destiny Gomez,2,server,2022-07-11,2025-12-02,terminated
+52,1052,Brianna Perez,2,server,2020-08-02,2024-01-08,resigned
+54,1054,Juan Wilson,2,server,2022-09-19,2023-11-20,resigned
+55,1055,Skyler Ward,2,server,2022-07-12,,
+56,1056,Jody Johnson,2,server,2022-08-02,2025-05-19,resigned
+57,1057,Wren Price,2,server,2022-08-13,2024-05-13,resigned
+58,1058,Andre Scott,2,server,2021-11-14,,
+59,1059,Mia Harris,2,server,2022-11-15,2023-12-25,resigned
+60,1060,Kerry Thomas,2,server,2022-01-04,2025-06-30,resigned
+64,1064,Riley Ramirez,2,server,2022-12-12,2024-05-25,terminated
+69,1069,Avery Evans,2,bartender,2022-07-03,2024-04-15,resigned
+70,1070,Imani White,2,host,2022-08-15,2024-11-11,resigned
+75,1075,Bailey Coleman,2,busser,2021-01-27,2024-02-19,resigned
+76,1076,Sofia Reed,2,busser,2022-03-21,2023-11-27,resigned
+77,1077,Shay Turner,2,line cook,2022-11-18,2025-04-14,resigned
+78,1078,Rowan Edwards,2,line cook,2021-06-12,2023-11-27,resigned
+79,1079,Imani Mitchell,2,line cook,2022-06-28,2024-06-24,resigned
+81,1081,Marcus Howard,2,line cook,2022-10-18,2025-08-04,resigned
+83,1083,Dakota Sanchez,2,line cook,2022-09-20,,
+86,1086,Destiny Taylor,2,prep cook,2021-11-11,2025-07-28,resigned
+88,1088,Kai Wilson,2,prep cook,2022-12-03,2024-02-12,resigned
+89,1089,Bailey Green,2,dishwasher,2021-01-12,2024-10-21,resigned
+91,1091,Imani Green,2,dishwasher,2020-12-02,,
+94,1094,Reese Turner,2,kitchen manager,2022-10-18,2024-06-24,resigned
+95,1095,Harper Thomas,2,assistant manager,2022-04-08,,
+96,1096,Alex Reyes,2,assistant manager,2022-03-30,2025-05-05,resigned
+97,1097,Bailey Nelson,3,server,2022-04-20,,
+98,1098,Micah Carter,3,server,2022-05-09,,
+99,1099,Logan Ramirez,3,server,2022-09-18,2025-01-13,resigned
+100,1100,Carlos Edwards,3,server,2022-05-29,2025-06-30,resigned
+103,1103,Robin Carter,3,server,2022-03-07,,
+105,1105,Rowan Harris,3,server,2021-09-19,2025-10-20,resigned
+106,1106,Robin Price,3,server,2019-12-08,2024-02-19,resigned
+107,1107,Omar Powell,3,server,2022-05-02,2024-02-26,resigned
+108,1108,Maya Price,3,server,2022-12-31,2024-02-05,resigned
+109,1109,Tre Johnson,3,server,2022-01-06,2024-10-07,resigned
+111,1111,Frankie Perry,3,server,2022-07-29,2024-10-14,resigned
+115,1115,Shay Carter,3,bartender,2022-10-04,2025-05-12,resigned
+117,1117,Parker Scott,3,bartender,2022-12-10,2024-05-20,resigned
+118,1118,Kendall Mitchell,3,host,2022-07-04,2025-09-15,resigned
+119,1119,Emerson Russell,3,host,2022-11-05,2025-04-07,resigned
+120,1120,Mia Hall,3,host,2020-08-18,2024-08-26,resigned
+122,1122,Casey Torres,3,busser,2021-12-20,2024-05-20,resigned
+124,1124,Wren Nguyen,3,busser,2022-11-20,2023-10-16,resigned
+126,1126,Peyton Sullivan,3,line cook,2022-08-12,2025-03-24,resigned
+130,1130,Drew Long,3,line cook,2022-02-25,2024-06-03,resigned
+131,1131,Brianna Coleman,3,line cook,2021-10-15,2024-03-25,resigned
+133,1133,Luis Thompson,3,line cook,2022-07-26,,
+134,1134,Casey Mendoza,3,prep cook,2022-09-26,2025-12-22,resigned
+135,1135,Omar Cruz,3,prep cook,2022-12-19,2024-08-05,resigned
+136,1136,Casey Long,3,prep cook,2022-08-30,2024-10-28,resigned
+138,1138,Kerry Davis,3,dishwasher,2020-09-21,2024-04-01,resigned
+142,1142,Mia Harris,3,kitchen manager,2022-03-16,2024-04-15,resigned
+144,1144,Jordan Kim,3,assistant manager,2022-05-28,2024-06-24,resigned
+145,1145,Riley Gray,4,server,2021-03-09,2023-12-04,resigned
+148,1148,Reese Perez,4,server,2022-12-30,2024-09-16,resigned
+150,1150,Imani Miller,4,server,2022-11-02,,
+151,1151,Peyton Scott,4,server,2022-09-11,2025-10-20,resigned
+152,1152,Ellis Baker,4,server,2022-04-07,2024-10-14,resigned
+153,1153,Sam Diaz,4,server,2022-08-29,2024-02-12,resigned
+154,1154,Shay Moore,4,server,2022-08-19,2023-11-06,resigned
+155,1155,Marlo Mendoza,4,server,2022-07-25,2023-11-20,resigned
+159,1159,Reese Gomez,4,server,2022-10-15,2025-12-08,resigned
+160,1160,Diego Jackson,4,server,2022-06-09,,
+163,1163,Gale Kelly,4,bartender,2022-06-29,2025-03-31,resigned
+164,1164,Glen Powell,4,bartender,2022-12-13,2025-07-14,resigned
+166,1166,Quinn Perez,4,host,2020-06-29,2024-03-11,resigned
+167,1167,Riley Hughes,4,host,2022-10-10,2024-02-05,resigned
+168,1168,Frankie Nelson,4,host,2022-11-06,2025-09-01,resigned
+170,1170,Jasmine Martinez,4,busser,2022-03-02,2025-11-03,resigned
+171,1171,Kendall Carter,4,busser,2020-11-21,2024-04-29,resigned
+173,1173,Malik Kim,4,line cook,2022-12-30,2023-10-16,resigned
+174,1174,Jose James,4,line cook,2022-10-05,2025-05-19,resigned
+175,1175,Remy Young,4,line cook,2022-06-06,,
+176,1176,Peyton Hall,4,line cook,2022-12-06,2024-07-15,resigned
+177,1177,Toby Moore,4,line cook,2022-06-21,2024-12-09,resigned
+178,1178,Emerson Brooks,4,line cook,2020-12-23,2024-07-01,resigned
+180,1180,Riley Stewart,4,line cook,2022-03-16,2025-12-08,resigned
+181,1181,Tatum Coleman,4,line cook,2022-06-15,2024-01-01,resigned
+182,1182,Omar Wright,4,prep cook,2021-09-25,2025-03-24,resigned
+183,1183,Jamie Murphy,4,prep cook,2022-07-19,2024-05-06,resigned
+185,1185,Harper Perry,4,dishwasher,2022-08-07,2024-06-10,resigned
+189,1189,Luis Thomas,4,general manager,2022-12-17,,
+190,1190,Casey Baker,4,kitchen manager,2022-10-13,,
+191,1191,Morgan Torres,4,assistant manager,2022-08-19,2024-04-09,terminated
+193,1193,Riley Miller,5,server,2022-12-21,2025-05-19,resigned
+194,1194,Omar Harris,5,server,2022-11-28,2025-06-27,terminated
+198,1198,Ellis Fisher,5,server,2022-06-21,,
+199,1199,Sofia Davis,5,server,2022-05-05,2024-04-20,terminated
+201,1201,Avery Stewart,5,server,2022-09-17,2024-09-30,resigned
+202,1202,Casey Baker,5,server,2022-02-20,,
+203,1203,Destiny Davis,5,server,2022-06-22,,
+208,1208,Hector Torres,5,server,2021-06-27,2023-10-09,resigned
+210,1210,Jasmine Roberts,5,bartender,2022-07-03,,
+212,1212,Cory Nelson,5,bartender,2022-09-10,2023-11-20,resigned
+213,1213,Gale Sullivan,5,bartender,2022-01-20,2023-10-09,resigned
+214,1214,Andre Moore,5,host,2022-11-15,,
+215,1215,Maya Long,5,host,2022-09-14,2023-10-23,resigned
+219,1219,Jamie Parker,5,busser,2022-09-11,,
+221,1221,Jose Foster,5,line cook,2021-02-03,2024-10-07,resigned
+222,1222,Kendall Evans,5,line cook,2022-08-13,2024-04-15,resigned
+224,1224,Jose Jenkins,5,line cook,2022-09-10,2023-12-11,resigned
+225,1225,Omar Powell,5,line cook,2021-08-08,2025-06-30,resigned
+228,1228,Destiny Hill,5,line cook,2021-06-07,2024-01-22,resigned
+230,1230,Casey Russell,5,prep cook,2022-11-06,2024-02-19,resigned
+231,1231,Peyton Kim,5,prep cook,2022-04-17,2024-01-01,resigned
+232,1232,Avery Mitchell,5,prep cook,2020-08-09,2024-09-23,resigned
+233,1233,Remy Hayes,5,dishwasher,2022-12-08,2023-12-25,resigned
+237,1237,Wren Kelly,5,general manager,2020-05-22,2024-12-16,resigned
+240,1240,Jamie Morales,5,assistant manager,2022-11-07,,
+242,1242,Marlo Young,6,server,2021-12-11,2024-09-23,resigned
+243,1243,Terry Martin,6,server,2022-03-05,2025-02-17,resigned
+244,1244,Andre Foster,6,server,2020-08-14,2023-10-23,resigned
+245,1245,Jordan Torres,6,server,2021-12-11,2023-11-20,resigned
+246,1246,Andre White,6,server,2021-12-01,2023-10-23,resigned
+249,1249,Noel White,6,server,2021-03-18,2024-04-08,resigned
+251,1251,Tasha Jenkins,6,server,2022-05-24,2025-02-03,resigned
+252,1252,Harper Brooks,6,server,2022-10-02,,
+254,1254,Taylor Gomez,6,server,2021-03-08,2024-01-22,resigned
+255,1255,Skyler Phillips,6,server,2022-09-14,2023-11-06,resigned
+256,1256,Sofia Washington,6,server,2022-10-07,2025-08-11,resigned
+260,1260,Blair Miller,6,bartender,2022-07-18,2024-09-23,resigned
+261,1261,Riley White,6,bartender,2021-10-02,,
+263,1263,Parker Lewis,6,host,2022-06-17,2024-07-08,resigned
+264,1264,Andre Moore,6,host,2022-01-20,2025-05-19,resigned
+266,1266,Casey James,6,busser,2022-04-19,2024-06-03,resigned
+267,1267,Ana Sullivan,6,busser,2019-11-29,2023-11-27,resigned
+270,1270,Dale Morales,6,line cook,2021-11-27,2024-06-17,resigned
+272,1272,Carlos Kelly,6,line cook,2022-04-13,2024-02-26,resigned
+273,1273,Andre Powell,6,line cook,2022-10-26,2024-04-01,resigned
+279,1279,Blair Walker,6,prep cook,2019-12-04,2025-03-10,resigned
+280,1280,Noel Lewis,6,prep cook,2021-07-20,,
+281,1281,Sofia Miller,6,dishwasher,2022-12-16,2025-10-27,resigned
+283,1283,Hector Rogers,6,dishwasher,2020-07-11,2024-04-01,resigned
+284,1284,Sofia Williams,6,dishwasher,2022-01-20,2024-08-05,resigned
+285,1285,Aaliyah Garcia,6,general manager,2020-11-17,2023-12-28,terminated
+286,1286,Jesse Stewart,6,kitchen manager,2022-12-14,2024-02-12,resigned
+287,1287,Jamie Baker,6,assistant manager,2020-04-05,2024-04-22,resigned
+288,1288,Toby Jenkins,6,assistant manager,2022-06-26,,
+289,1289,Luis Patel,7,server,2021-06-10,2025-01-13,resigned
+291,1291,Tasha Jenkins,7,server,2022-09-04,,
+292,1292,Noel Coleman,7,server,2022-09-21,2024-02-12,resigned
+293,1293,Carlos Jackson,7,server,2022-01-22,2023-11-27,resigned
+294,1294,Dale Young,7,server,2022-05-30,2025-02-03,resigned
+296,1296,Tasha Roberts,7,server,2022-12-01,2025-09-15,resigned
+298,1298,Jasmine White,7,server,2022-07-01,2025-05-26,resigned
+299,1299,Kai Ramirez,7,server,2022-10-12,2024-03-04,resigned
+300,1300,Kai Martin,7,server,2022-05-07,2024-01-29,resigned
+301,1301,Toby Lewis,7,server,2022-10-06,2025-01-13,resigned
+302,1302,Jamie Thompson,7,server,2022-10-11,,
+304,1304,Parker Johnson,7,server,2022-09-06,2024-10-22,terminated
+306,1306,Casey Brooks,7,bartender,2022-03-19,2024-01-15,resigned
+309,1309,Taylor Lewis,7,bartender,2022-10-25,,
+311,1311,Noel Miller,7,host,2022-11-18,2024-08-19,resigned
+313,1313,Hector Ramirez,7,host,2022-11-19,2024-12-02,resigned
+316,1316,Alex Nelson,7,busser,2022-07-09,2024-09-09,resigned
+318,1318,Jordan Morales,7,line cook,2022-06-20,,
+319,1319,Andre Johnson,7,line cook,2021-10-12,2025-02-03,resigned
+321,1321,Luis Perez,7,line cook,2022-10-21,,
+322,1322,Avery James,7,line cook,2020-03-09,2024-09-02,resigned
+324,1324,Sofia Williams,7,line cook,2022-10-16,2025-02-10,resigned
+326,1326,Cameron Flores,7,prep cook,2022-02-04,,
+327,1327,Parker Davis,7,prep cook,2022-04-30,2024-04-29,resigned
+328,1328,Rowan Perez,7,prep cook,2022-03-01,2025-09-08,resigned
+329,1329,Harper Foster,7,dishwasher,2022-09-14,2024-02-26,resigned
+330,1330,Hector Rogers,7,dishwasher,2022-06-08,2025-07-14,resigned
+331,1331,Jasmine Davis,7,dishwasher,2023-01-01,2023-11-06,resigned
+333,1333,Shay Jenkins,7,general manager,2022-04-28,,
+334,1334,Drew Mendoza,7,kitchen manager,2020-11-25,2024-10-07,terminated
+337,1337,Rowan Moore,8,server,2021-03-14,2025-06-03,terminated
+338,1338,Riley Williams,8,server,2022-12-22,2024-10-14,resigned
+341,1341,Sofia Howard,8,server,2022-11-10,2023-11-27,resigned
+342,1342,Lane Lopez,8,server,2022-08-31,2025-02-10,resigned
+344,1344,Juan Walker,8,server,2021-04-05,2024-07-08,resigned
+345,1345,Cameron Ward,8,server,2022-12-16,2025-10-06,resigned
+347,1347,Nia Parker,8,server,2022-10-12,,
+349,1349,Micah Torres,8,server,2022-03-18,2025-03-10,resigned
+351,1351,Emerson Carter,8,server,2022-05-28,2024-09-23,resigned
+352,1352,Emerson Green,8,server,2021-03-27,2024-11-25,resigned
+353,1353,Ari Johnson,8,bartender,2022-11-10,2024-03-18,resigned
+354,1354,Robin Martin,8,bartender,2022-05-28,2025-06-23,resigned
+355,1355,Frankie Hughes,8,bartender,2022-02-03,2024-09-02,resigned
+356,1356,Jesse Young,8,bartender,2022-10-28,,
+360,1360,Omar Hall,8,host,2021-11-16,,
+361,1361,Cory Stewart,8,host,2022-11-26,,
+363,1363,Blair Jenkins,8,busser,2022-02-07,2023-10-30,resigned
+364,1364,Cameron Martin,8,busser,2022-12-03,,
+367,1367,Dale Foster,8,line cook,2021-01-30,,
+369,1369,Brianna Ramirez,8,line cook,2022-07-30,2024-02-26,resigned
+370,1370,Kai Price,8,line cook,2022-07-25,2024-03-18,resigned
+372,1372,Kendall Harris,8,line cook,2022-03-20,2025-01-20,resigned
+374,1374,Morgan Coleman,8,prep cook,2022-09-26,2024-02-05,resigned
+376,1376,Terry Long,8,prep cook,2022-02-07,2024-04-29,resigned
+380,1380,Malik Davis,8,dishwasher,2022-08-20,2024-06-03,resigned
+382,1382,Drew Kim,8,kitchen manager,2022-08-12,2024-03-25,resigned
+385,1385,Ana Parker,9,server,2022-09-30,2025-03-03,resigned
+386,1386,Dakota Powell,9,server,2021-07-29,,
+387,1387,Reese Jenkins,9,server,2022-04-07,2024-04-01,resigned
+388,1388,Lee Gomez,9,server,2022-05-18,,
+389,1389,Ari Gomez,9,server,2023-01-01,2025-10-27,resigned
+391,1391,Cameron Hall,9,server,2021-09-27,,
+392,1392,Diego Phillips,9,server,2022-02-23,2023-11-06,resigned
+394,1394,Jesse Hughes,9,server,2022-10-21,2024-12-23,resigned
+395,1395,Alex Ramirez,9,server,2022-12-15,2024-05-13,resigned
+397,1397,Quinn Gomez,9,server,2022-10-03,2024-01-08,resigned
+398,1398,Morgan Watson,9,server,2019-11-24,2024-07-08,resigned
+400,1400,Tre Scott,9,server,2021-05-27,2025-04-28,resigned
+403,1403,Kai Cruz,9,bartender,2022-05-14,,
+404,1404,Luis Allen,9,bartender,2021-10-21,2025-05-12,resigned
+405,1405,Malik Russell,9,bartender,2022-12-30,2023-12-25,resigned
+408,1408,Mia Sanders,9,host,2022-07-26,,
+410,1410,Alex James,9,busser,2022-07-09,2024-06-03,resigned
+411,1411,Nia Parker,9,busser,2022-11-21,2024-04-01,resigned
+413,1413,Drew Taylor,9,line cook,2022-12-22,2024-12-09,resigned
+414,1414,Harper Powell,9,line cook,2021-10-11,2023-10-09,resigned
+417,1417,Shay Powell,9,line cook,2022-12-04,2024-01-29,resigned
+419,1419,Kerry Rivera,9,line cook,2022-06-17,2024-10-14,resigned
+424,1424,Emerson Carter,9,prep cook,2021-07-14,2025-10-13,resigned
+425,1425,Jordan Thompson,9,dishwasher,2021-10-05,2025-08-11,resigned
+427,1427,Cameron Sullivan,9,dishwasher,2022-10-05,2024-09-09,resigned
+430,1430,Casey Murphy,9,kitchen manager,2021-02-24,2025-05-05,resigned
+431,1431,Skyler Flores,9,assistant manager,2022-10-23,,
+432,1432,Maya Moore,9,assistant manager,2022-01-05,2025-12-22,resigned
+435,1435,Jamie Martinez,10,server,2022-08-20,2023-11-13,resigned
+436,1436,Casey Perez,10,server,2022-09-18,2024-02-19,resigned
+437,1437,Bailey Phillips,10,server,2022-11-02,2023-11-27,resigned
+439,1439,Nia Ortiz,10,server,2022-10-12,2024-01-01,resigned
+444,1444,Jose Washington,10,server,2022-01-14,2024-07-29,resigned
+445,1445,Morgan Diaz,10,server,2021-12-30,2024-06-24,resigned
+449,1449,Marlo Fisher,10,bartender,2020-06-19,2024-07-01,resigned
+451,1451,Kai Ramirez,10,bartender,2022-08-08,2024-07-01,resigned
+452,1452,Rowan Perez,10,bartender,2022-06-07,,
+453,1453,Noel Ross,10,bartender,2020-02-03,2025-04-28,resigned
+454,1454,Dale Green,10,host,2022-05-17,2024-01-22,resigned
+459,1459,Dakota Wilson,10,busser,2022-10-19,2023-10-23,resigned
+460,1460,Hector Reed,10,busser,2022-06-03,2024-10-14,resigned
+461,1461,Imani Parker,10,line cook,2022-06-27,2023-10-09,resigned
+462,1462,Luis Walker,10,line cook,2022-11-25,2025-12-15,resigned
+463,1463,Kai Watson,10,line cook,2022-02-21,2024-01-22,resigned
+465,1465,Andre Rivera,10,line cook,2022-03-10,2024-06-10,resigned
+466,1466,Logan Evans,10,line cook,2022-10-16,,
+467,1467,Shay Ramirez,10,line cook,2022-07-17,2024-09-30,resigned
+470,1470,Noel Rivera,10,prep cook,2018-10-28,2024-09-02,resigned
+472,1472,Terry Edwards,10,prep cook,2022-08-26,2024-09-16,resigned
+473,1473,Bailey Martinez,10,dishwasher,2022-10-11,2025-11-17,resigned
+474,1474,Cory Davis,10,dishwasher,2022-10-16,2024-02-12,resigned
+476,1476,Ari Diaz,10,dishwasher,2021-07-06,,
+477,1477,Noel Williams,10,general manager,2022-07-26,,
+479,1479,Jose Torres,10,assistant manager,2022-07-30,2024-07-22,resigned
+480,1480,Sam Thomas,10,assistant manager,2022-08-16,2024-06-03,resigned
+482,1482,Carlos Perry,11,server,2022-10-07,2025-05-05,resigned
+484,1484,Jose Stewart,11,server,2022-10-29,2025-02-03,resigned
+485,1485,Jamie Reyes,11,server,2022-10-14,2024-04-22,resigned
+486,1486,Marcus Rogers,11,server,2022-04-27,2025-02-24,resigned
+491,1491,Kendall Moore,11,server,2021-09-24,2024-07-29,resigned
+492,1492,Tasha Reyes,11,server,2020-07-17,2024-03-18,resigned
+493,1493,Alex Evans,11,server,2022-07-19,2025-01-13,resigned
+495,1495,Ari Washington,11,server,2022-12-09,2025-07-14,resigned
+496,1496,Reese Cruz,11,server,2022-05-09,2024-05-20,resigned
+497,1497,Cory Young,11,bartender,2022-09-15,2023-10-30,resigned
+502,1502,Destiny Long,11,host,2022-06-21,2025-06-09,resigned
+506,1506,Aaliyah Wilson,11,busser,2022-11-01,2024-10-14,resigned
+508,1508,Blair Ramirez,11,busser,2022-04-28,2025-10-13,resigned
+509,1509,Dale Allen,11,line cook,2021-05-14,2024-06-17,resigned
+511,1511,Lane Baker,11,line cook,2022-03-22,,
+512,1512,Casey Lewis,11,line cook,2022-09-08,2024-12-23,resigned
+513,1513,Sam Diaz,11,line cook,2022-08-09,2024-09-30,resigned
+517,1517,Brianna Carter,11,line cook,2022-01-07,2023-11-06,resigned
+522,1522,Tasha Flores,11,dishwasher,2022-07-18,2024-10-28,resigned
+524,1524,Micah Perez,11,dishwasher,2017-11-12,,
+525,1525,Kerry Price,11,general manager,2020-08-25,,
+526,1526,Harper Rogers,11,kitchen manager,2022-02-21,,
+529,1529,Hayden Ward,12,server,2024-04-29,2025-04-14,resigned
+530,1530,Tre Sullivan,12,server,2024-04-29,2025-05-26,resigned
+531,1531,Frankie Flores,12,server,2024-04-29,2025-04-14,resigned
+532,1532,Tatum Murphy,12,server,2024-04-29,,
+533,1533,Taylor Ramirez,12,server,2024-04-29,2024-06-03,resigned
+534,1534,Rowan Jenkins,12,server,2024-04-29,2025-07-21,resigned
+535,1535,Carlos Powell,12,server,2024-04-29,2025-09-15,resigned
+536,1536,Ana Foster,12,server,2024-04-29,2024-05-27,resigned
+537,1537,Brianna Hill,12,server,2024-04-29,2024-07-29,resigned
+538,1538,Luis Fisher,12,server,2024-04-29,,
+539,1539,Jasmine Gomez,12,server,2024-04-29,2025-09-01,resigned
+540,1540,Ari Diaz,12,server,2024-04-29,2024-06-24,resigned
+541,1541,Robin Wilson,12,server,2024-04-29,2024-11-18,resigned
+542,1542,Emerson Reed,12,server,2024-04-29,2024-12-09,resigned
+543,1543,Remy Parker,12,server,2024-04-29,2024-08-12,resigned
+544,1544,Jordan Perez,12,server,2024-04-29,,
+545,1545,Diego Kim,12,bartender,2024-04-29,,
+546,1546,Ana Ross,12,bartender,2024-04-29,2025-11-17,resigned
+547,1547,Harper Turner,12,bartender,2024-04-29,,
+548,1548,Taylor Rivera,12,bartender,2024-04-29,,
+549,1549,Frankie Cruz,12,bartender,2024-04-29,2025-04-07,resigned
+550,1550,Rowan Martinez,12,host,2024-04-29,2024-07-01,resigned
+551,1551,Jamie Mendoza,12,host,2024-04-29,,
+552,1552,Kai Nelson,12,host,2024-04-29,2025-07-28,resigned
+553,1553,Alex Green,12,host,2024-04-29,2025-06-09,resigned
+554,1554,Ana Ortiz,12,busser,2024-04-29,,
+555,1555,Terry James,12,busser,2024-04-29,,
+556,1556,Hector Reed,12,busser,2024-04-29,,
+557,1557,Lane Allen,12,line cook,2024-04-29,2025-05-12,resigned
+558,1558,Lee Coleman,12,line cook,2024-04-29,2025-06-02,resigned
+559,1559,Hector Kim,12,line cook,2024-04-29,,
+560,1560,Alex Reed,12,line cook,2024-04-29,2025-06-30,resigned
+561,1561,Tre Rivera,12,line cook,2024-04-29,2024-11-18,resigned
+562,1562,Frankie Wright,12,line cook,2024-04-29,,
+563,1563,Hayden Perez,12,line cook,2024-04-29,,
+564,1564,Omar Thompson,12,line cook,2024-04-29,2024-06-24,resigned
+565,1565,Tatum Green,12,line cook,2024-04-29,,
+566,1566,Bailey Diaz,12,prep cook,2024-04-29,,
+567,1567,Cory Jenkins,12,prep cook,2024-04-29,2025-06-30,resigned
+568,1568,Maya Diaz,12,prep cook,2024-04-29,2025-09-22,resigned
+569,1569,Ellis Johnson,12,dishwasher,2024-04-29,2024-07-15,resigned
+570,1570,Gale Harris,12,dishwasher,2024-04-29,2024-11-18,resigned
+571,1571,Avery Kelly,12,dishwasher,2024-04-29,,
+572,1572,Mia Roberts,12,dishwasher,2024-04-29,2024-12-02,resigned
+573,1573,Ari Thomas,12,general manager,2024-04-29,2025-06-16,resigned
+574,1574,Diego Nelson,12,kitchen manager,2024-04-29,,
+575,1575,Noel Walker,12,assistant manager,2024-04-29,2025-08-04,resigned
+576,1576,Glen Diaz,12,assistant manager,2024-04-29,2024-12-06,terminated
+578,1578,Maya Mitchell,2,bartender,2023-01-11,2023-12-11,resigned
+580,1580,Lane Wilson,11,server,2023-01-14,2024-05-06,resigned
+581,1581,Shay Jackson,9,line cook,2023-01-15,,
+582,1582,Riley Powell,2,server,2023-01-16,2024-01-15,resigned
+583,1583,Logan Brooks,8,dishwasher,2023-01-16,2025-01-20,resigned
+584,1584,Noel Harris,5,assistant manager,2023-01-16,,
+585,1585,Skyler Hill,4,busser,2023-01-17,2024-02-26,resigned
+590,1590,Jamie Gomez,11,server,2023-01-21,,
+591,1591,Micah Parker,6,busser,2023-01-22,2023-11-20,resigned
+592,1592,Dana Ortiz,2,bartender,2023-01-23,2024-05-20,resigned
+593,1593,Kiara Gomez,9,server,2023-01-24,2023-10-16,resigned
+595,1595,Dale Edwards,4,server,2023-01-25,2025-07-21,resigned
+597,1597,Nia James,10,prep cook,2023-01-28,2024-01-29,resigned
+600,1600,Sage Brooks,10,server,2023-01-29,,
+601,1601,Mia Sullivan,1,server,2023-01-30,2024-05-06,resigned
+604,1604,Bailey Turner,8,server,2023-01-30,2024-02-19,resigned
+605,1605,Kiara Sanders,9,host,2023-01-31,,
+607,1607,Juan Thompson,4,server,2023-02-01,2024-07-01,resigned
+608,1608,Ellis Moore,1,busser,2023-02-02,2023-12-11,resigned
+610,1610,Lane Long,9,dishwasher,2023-02-02,2024-04-22,resigned
+612,1612,Noel Walker,6,line cook,2023-02-03,,
+613,1613,Cory Sanchez,7,line cook,2023-02-03,2024-11-04,resigned
+614,1614,Quinn Fisher,3,assistant manager,2023-02-03,2025-05-26,resigned
+616,1616,Frankie Miller,3,dishwasher,2023-02-07,2024-06-10,resigned
+617,1617,Reese Torres,11,bartender,2023-02-07,,
+618,1618,Emerson Price,1,host,2023-02-07,,
+619,1619,Robin Ross,9,server,2023-02-08,2025-09-29,resigned
+620,1620,Rowan Wright,10,server,2023-02-08,2025-11-24,resigned
+621,1621,Kerry Russell,7,host,2023-02-09,,
+623,1623,Carlos Baker,10,server,2023-02-11,2023-12-18,resigned
+624,1624,Nia Thomas,11,prep cook,2023-02-13,2024-05-20,resigned
+625,1625,Jordan Ward,5,line cook,2023-02-13,2025-01-06,resigned
+626,1626,Kiara Lewis,11,host,2023-02-14,2024-01-01,resigned
+629,1629,Dana Morales,2,line cook,2023-02-16,2024-12-16,resigned
+630,1630,Sage Gray,4,prep cook,2023-02-17,2024-08-12,resigned
+631,1631,Omar Parker,8,dishwasher,2023-02-17,2024-06-24,resigned
+633,1633,Malik Reyes,7,bartender,2023-02-18,2023-11-06,resigned
+638,1638,Ari Rogers,9,dishwasher,2023-02-25,2025-03-31,resigned
+641,1641,Avery Allen,8,general manager,2023-03-02,2025-11-17,resigned
+643,1643,Dana Lopez,4,dishwasher,2023-03-04,2023-10-16,resigned
+644,1644,Jody Lopez,2,line cook,2023-03-05,2025-08-04,resigned
+646,1646,Peyton Reed,1,line cook,2023-03-07,2024-01-22,resigned
+650,1650,Bailey Murphy,10,server,2023-03-08,2024-07-22,resigned
+651,1651,Aaliyah Coleman,8,line cook,2023-03-09,,
+652,1652,Cory Rogers,8,assistant manager,2023-03-09,,
+653,1653,Brianna Long,2,dishwasher,2023-03-09,2024-05-06,resigned
+654,1654,Bailey Sanchez,5,dishwasher,2023-03-10,2025-03-17,resigned
+655,1655,Micah Sullivan,9,server,2023-03-10,2024-03-04,resigned
+656,1656,Aaliyah Moore,11,prep cook,2023-03-10,,
+657,1657,Maya Fisher,8,prep cook,2023-03-11,,
+658,1658,Kerry Hill,1,host,2023-03-11,2023-11-13,resigned
+659,1659,Lee Williams,2,server,2023-03-13,,
+661,1661,Quinn Flores,1,bartender,2023-03-13,2025-05-19,resigned
+662,1662,Dana Gomez,4,dishwasher,2023-03-14,,
+663,1663,Dale Young,2,bartender,2023-03-14,,
+664,1664,Parker Johnson,5,line cook,2023-03-15,2023-11-27,resigned
+666,1666,Maya Edwards,6,line cook,2023-03-19,2025-01-20,resigned
+667,1667,Bailey Miller,9,general manager,2023-03-19,2025-12-26,terminated
+669,1669,Marlo Fisher,8,line cook,2023-03-20,2024-03-04,resigned
+670,1670,Alex Phillips,11,server,2023-03-20,2024-02-12,resigned
+671,1671,Wren Nelson,11,line cook,2023-03-21,2025-04-07,resigned
+672,1672,Jordan Washington,4,bartender,2023-03-22,2024-06-17,resigned
+674,1674,Robin White,3,dishwasher,2023-03-26,,
+675,1675,Jamie Moore,8,server,2023-03-27,2024-06-24,resigned
+676,1676,Aaliyah Russell,11,dishwasher,2023-03-28,2024-04-29,resigned
+678,1678,Glen Evans,4,server,2023-03-29,2023-10-09,resigned
+679,1679,Micah Stewart,3,general manager,2023-03-30,2025-03-03,resigned
+680,1680,Glen Ross,5,dishwasher,2023-03-30,2024-02-05,resigned
+681,1681,Taylor Perez,7,line cook,2023-03-30,2025-05-26,resigned
+682,1682,Marcus Coleman,11,server,2023-03-30,,
+683,1683,Sam Kim,1,line cook,2023-03-31,2024-03-18,resigned
+684,1684,Harper Walker,2,general manager,2023-03-31,,
+685,1685,Sam Russell,9,line cook,2023-03-31,,
+686,1686,Jesse Patel,5,host,2023-04-01,,
+688,1688,Sage Long,10,bartender,2023-04-04,2024-07-15,resigned
+689,1689,Remy Coleman,6,bartender,2023-04-04,2025-09-29,resigned
+692,1692,Logan Russell,5,kitchen manager,2023-04-11,,
+693,1693,Logan Russell,6,line cook,2023-04-11,2024-07-15,resigned
+694,1694,Sam Perry,10,server,2023-04-12,2024-07-29,resigned
+695,1695,Harper Perez,5,server,2023-04-13,2024-03-18,resigned
+696,1696,Lee Cruz,2,line cook,2023-04-14,2023-12-04,resigned
+697,1697,Skyler Foster,7,line cook,2023-04-14,,
+698,1698,Robin Williams,6,host,2023-04-15,2023-10-09,resigned
+700,1700,Kendall Roberts,11,line cook,2023-04-16,2024-11-04,resigned
+701,1701,Mia Morales,7,server,2023-04-16,2025-02-24,resigned
+703,1703,Peyton Davis,7,bartender,2023-04-18,2023-12-25,resigned
+704,1704,Skyler Parker,2,prep cook,2023-04-20,2025-12-15,resigned
+705,1705,Nia Price,1,bartender,2023-04-21,,
+706,1706,Kerry Hill,3,server,2023-04-21,2024-11-04,resigned
+708,1708,Nia Garcia,10,busser,2023-04-23,2024-08-05,resigned
+712,1712,Malik Sanders,9,bartender,2023-04-25,2024-04-08,resigned
+713,1713,Lane Sanchez,5,line cook,2023-04-28,2023-12-25,resigned
+714,1714,Harper Cruz,5,host,2023-05-01,2024-04-15,resigned
+715,1715,Jasmine Rivera,11,host,2023-05-01,2024-03-11,resigned
+716,1716,Shay Watson,8,server,2023-05-01,,
+717,1717,Malik Mitchell,4,bartender,2023-05-02,,
+719,1719,Brianna Miller,1,dishwasher,2023-05-03,2023-10-16,resigned
+720,1720,Glen Lewis,8,line cook,2023-05-03,,
+721,1721,Lee Baker,2,host,2023-05-04,,
+722,1722,Remy Perry,8,server,2023-05-07,2023-11-20,resigned
+723,1723,Noel Murphy,4,server,2023-05-07,2023-10-23,resigned
+726,1726,Bailey Phillips,9,prep cook,2023-05-15,2023-12-18,resigned
+730,1730,Andre White,10,line cook,2023-05-22,2024-10-07,resigned
+731,1731,Riley Hill,2,server,2023-05-23,2023-11-13,resigned
+732,1732,Jody Rivera,8,busser,2023-05-23,,
+735,1735,Ana Reed,1,busser,2023-05-24,2025-03-10,resigned
+736,1736,Frankie Green,8,line cook,2023-05-24,2024-02-05,resigned
+737,1737,Kerry Perez,3,server,2023-05-25,,
+738,1738,Kiara Wright,10,line cook,2023-05-25,2025-11-24,resigned
+739,1739,Shay Moore,6,server,2023-05-26,2024-04-08,resigned
+740,1740,Shay Gomez,6,line cook,2023-05-28,2024-03-04,resigned
+742,1742,Aaliyah Miller,11,server,2023-05-29,2025-09-29,resigned
+743,1743,Bailey Green,10,server,2023-05-30,2023-10-09,resigned
+744,1744,Luis Ross,5,server,2023-06-02,2025-01-13,resigned
+745,1745,Kerry Young,5,server,2023-06-02,,
+746,1746,Remy Brooks,9,host,2023-06-04,2025-02-03,resigned
+747,1747,Alex Howard,1,server,2023-06-04,2025-08-18,resigned
+748,1748,Parker Moore,7,bartender,2023-06-05,2024-10-28,resigned
+749,1749,Hayden Jenkins,6,bartender,2023-06-07,2025-01-06,resigned
+750,1750,Reese Rogers,9,prep cook,2023-06-07,2023-11-13,resigned
+752,1752,Quinn Miller,6,bartender,2023-06-08,2025-08-18,resigned
+753,1753,Ellis Nelson,8,host,2023-06-10,2024-03-25,resigned
+755,1755,Kendall Diaz,9,host,2023-06-12,2023-11-06,resigned
+756,1756,Kendall Roberts,10,server,2023-06-15,2025-01-08,terminated
+757,1757,Kai Coleman,5,busser,2023-06-16,2025-05-19,resigned
+758,1758,Carlos Hall,9,line cook,2023-06-17,,
+759,1759,Gale Gray,8,assistant manager,2023-06-18,,
+763,1763,Noel Lopez,8,dishwasher,2023-06-23,2024-03-25,resigned
+764,1764,Hayden Allen,6,host,2023-06-27,,
+765,1765,Luis Brooks,9,line cook,2023-06-28,,
+767,1767,Destiny Flores,10,server,2023-07-01,2025-11-10,resigned
+768,1768,Mia Perez,2,dishwasher,2023-07-02,2025-06-02,resigned
+769,1769,Andre Roberts,7,busser,2023-07-02,2023-12-25,resigned
+770,1770,Omar Lewis,3,bartender,2023-07-03,2024-01-22,resigned
+771,1771,Jose Nguyen,6,server,2023-07-04,2025-02-24,resigned
+772,1772,Morgan Jenkins,6,prep cook,2023-07-04,2024-12-16,resigned
+774,1774,Alex Kelly,5,server,2023-07-04,2023-12-11,resigned
+775,1775,Jordan Lewis,6,server,2023-07-05,,
+777,1777,Dakota Kim,11,server,2023-07-05,,
+778,1778,Frankie Perry,10,host,2023-07-06,2024-07-08,resigned
+779,1779,Emerson Wright,1,kitchen manager,2023-07-08,,
+780,1780,Carlos Brooks,5,bartender,2023-07-09,2024-04-08,resigned
+782,1782,Tasha Nguyen,3,server,2023-07-12,,
+783,1783,Peyton Hayes,11,bartender,2023-07-13,2024-01-15,resigned
+784,1784,Aaliyah Martinez,2,server,2023-07-14,,
+785,1785,Bailey Williams,3,busser,2023-07-15,2024-04-22,resigned
+787,1787,Kiara Turner,11,bartender,2023-07-17,2025-03-24,resigned
+788,1788,Jamie Howard,5,server,2023-07-18,2024-04-08,resigned
+789,1789,Diego Ross,7,busser,2023-07-18,,
+790,1790,Drew Thomas,10,kitchen manager,2023-07-21,2023-12-25,resigned
+791,1791,Rowan Powell,2,server,2023-07-24,2025-04-28,resigned
+793,1793,Bailey Gomez,1,bartender,2023-07-26,2024-09-30,resigned
+794,1794,Imani Hill,10,server,2023-07-27,2023-12-11,resigned
+795,1795,Omar Ross,10,host,2023-07-27,,
+796,1796,Tre Rogers,8,server,2023-07-30,2024-01-08,resigned
+797,1797,Ellis Evans,1,server,2023-07-30,2023-11-13,resigned
+799,1799,Wren Thomas,8,server,2023-08-01,,
+800,1800,Avery Sanders,7,server,2023-08-07,2023-10-09,resigned
+801,1801,Hector Kim,3,bartender,2023-08-07,2025-02-24,resigned
+802,1802,Malik Lopez,4,server,2023-08-08,2024-04-29,resigned
+803,1803,Jose Sanchez,11,line cook,2023-08-08,2024-01-01,resigned
+804,1804,Omar Perry,7,line cook,2023-08-14,2025-01-27,resigned
+805,1805,Glen Foster,1,server,2023-08-16,2023-10-09,resigned
+806,1806,Parker Brooks,10,host,2023-08-17,,
+807,1807,Blair Allen,1,server,2023-08-20,2025-04-14,resigned
+808,1808,Diego Perry,4,line cook,2023-08-21,2023-11-13,resigned
+810,1810,Bailey Miller,1,prep cook,2023-08-23,2024-01-01,resigned
+811,1811,Emerson Wilson,4,bartender,2023-08-23,2023-12-18,resigned
+812,1812,Mia Powell,7,dishwasher,2023-08-24,,
+813,1813,Kiara Wood,11,assistant manager,2023-08-26,2024-03-25,resigned
+814,1814,Shay Ramirez,4,server,2023-08-27,2023-12-04,resigned
+815,1815,Cameron Foster,5,bartender,2023-08-27,2024-01-22,resigned
+816,1816,Marcus Foster,3,server,2023-08-28,,
+817,1817,Jasmine Ross,1,server,2023-08-29,2025-10-06,resigned
+818,1818,Blair Perez,9,busser,2023-08-30,,
+820,1820,Hector Scott,3,line cook,2023-09-01,2024-09-23,resigned
+821,1821,Diego Roberts,1,host,2023-09-04,,
+822,1822,Cory Patel,2,line cook,2023-09-04,2024-08-19,resigned
+823,1823,Cory Sanchez,4,assistant manager,2023-09-05,2024-05-07,terminated
+824,1824,Ari Carter,8,host,2023-09-06,2025-07-07,resigned
+825,1825,Casey Sanchez,9,server,2023-09-06,,
+826,1826,Noel Turner,3,line cook,2023-09-07,2024-04-29,resigned
+827,1827,Hector Edwards,3,bartender,2023-09-08,2023-11-27,resigned
+828,1828,Peyton Powell,5,server,2023-09-08,2023-12-18,resigned
+829,1829,Gale Harris,3,server,2023-09-08,2024-04-29,resigned
+830,1830,Hector Hughes,6,server,2023-09-09,2025-06-09,resigned
+831,1831,Brianna Sullivan,7,assistant manager,2023-09-09,2024-02-05,resigned
+832,1832,Glen Stewart,3,line cook,2023-09-13,,
+833,1833,Carlos Stewart,11,prep cook,2023-09-13,2024-01-01,resigned
+834,1834,Luis Wright,3,line cook,2023-09-13,2023-12-11,resigned
+835,1835,Wren Foster,6,server,2023-09-15,,
+836,1836,Blair Allen,7,assistant manager,2023-09-16,,
+837,1837,Imani Edwards,4,host,2023-09-17,2024-09-30,resigned
+838,1838,Carlos Phillips,10,dishwasher,2023-09-17,2024-01-22,resigned
+839,1839,Luis Jenkins,11,host,2023-09-17,2024-05-06,resigned
+840,1840,Sam Flores,9,line cook,2023-09-18,2025-06-23,resigned
+841,1841,Sage Williams,9,bartender,2023-09-20,2024-04-29,resigned
+842,1842,Kiara Williams,5,server,2023-09-20,,
+843,1843,Jasmine Sanchez,11,server,2023-09-20,2023-10-16,resigned
+844,1844,Nia Ramirez,10,server,2023-09-20,2024-04-01,resigned
+845,1845,Logan Washington,3,line cook,2023-09-21,2023-11-20,resigned
+846,1846,Hayden Hill,6,line cook,2023-09-22,2025-06-16,resigned
+847,1847,Gale Lewis,1,server,2023-09-25,2023-10-30,resigned
+848,1848,Kendall Moore,11,dishwasher,2023-09-25,2024-02-05,resigned
+849,1849,Terry Phillips,5,line cook,2023-09-29,2023-11-20,resigned
+850,1850,Frankie Wood,3,dishwasher,2023-10-01,,
+851,1851,Casey Kim,6,dishwasher,2023-10-02,2024-12-16,resigned
+852,1852,Aaliyah Carter,11,line cook,2023-10-02,2025-12-15,resigned
+853,1853,Ellis Russell,7,server,2023-10-04,2023-10-30,resigned
+854,1854,Marcus Green,6,line cook,2023-10-06,,
+855,1855,Taylor Coleman,7,host,2023-10-07,2025-07-21,resigned
+856,1856,Shay Hayes,3,host,2023-10-08,2024-04-01,resigned
+857,1857,Jasmine Long,8,bartender,2023-10-08,2024-09-02,resigned
+858,1858,Aaliyah Ramirez,10,line cook,2023-10-08,2025-11-03,resigned
+859,1859,Noel James,1,dishwasher,2023-10-08,2024-02-19,resigned
+860,1860,Jose Rogers,11,bartender,2023-10-08,2024-11-04,resigned
+861,1861,Cory Morales,11,busser,2023-10-09,2024-09-23,resigned
+862,1862,Dana Murphy,5,server,2023-10-10,2024-06-03,resigned
+863,1863,Riley Davis,2,host,2023-10-11,2024-01-22,resigned
+864,1864,Robin Rivera,2,host,2023-10-14,2024-10-28,resigned
+865,1865,Ana Sanders,5,dishwasher,2023-10-14,2024-07-01,resigned
+866,1866,Malik Parker,8,line cook,2023-10-15,2024-01-15,resigned
+867,1867,Ellis Long,2,busser,2023-10-15,2024-11-18,resigned
+868,1868,Tre Ross,7,server,2023-10-16,,
+869,1869,Kerry Hill,7,server,2023-10-16,,
+870,1870,Hayden Washington,5,busser,2023-10-17,2025-09-15,resigned
+871,1871,Lee Fisher,5,bartender,2023-10-17,2024-03-11,resigned
+872,1872,Toby Howard,2,bartender,2023-10-19,2024-06-17,resigned
+873,1873,Carlos Lopez,6,host,2023-10-20,2024-06-17,resigned
+874,1874,Sofia Martinez,4,dishwasher,2023-10-21,2025-11-10,resigned
+875,1875,Frankie Wilson,5,server,2023-10-23,2024-06-03,resigned
+876,1876,Rowan Thompson,4,server,2023-10-23,2024-09-30,resigned
+877,1877,Diego Garcia,11,assistant manager,2023-10-25,2024-10-21,resigned
+878,1878,Robin Thompson,10,line cook,2023-10-25,2024-12-30,resigned
+879,1879,Logan Martin,1,server,2023-10-27,,
+880,1880,Emerson Flores,10,server,2023-10-27,2023-12-18,resigned
+881,1881,Quinn Gray,1,server,2023-10-27,,
+882,1882,Robin Mendoza,1,server,2023-10-27,2024-08-05,resigned
+883,1883,Kerry Kelly,11,server,2023-10-30,2023-11-20,resigned
+884,1884,Cameron Garcia,9,line cook,2023-10-31,2025-06-02,resigned
+885,1885,Juan Long,9,server,2023-10-31,2023-12-25,resigned
+886,1886,Noel Wright,4,server,2023-10-31,2023-12-11,resigned
+887,1887,Nia Wilson,3,busser,2023-11-03,2024-09-09,resigned
+888,1888,Ari Hill,4,line cook,2023-11-04,2024-01-29,resigned
+889,1889,Peyton Davis,1,dishwasher,2023-11-04,2023-12-04,resigned
+890,1890,Rowan Taylor,6,server,2023-11-04,2024-04-15,resigned
+891,1891,Maya Walker,4,dishwasher,2023-11-06,2025-12-08,resigned
+892,1892,Drew Young,10,busser,2023-11-09,2025-04-28,resigned
+893,1893,Micah Flores,8,busser,2023-11-13,2024-03-18,resigned
+894,1894,Dakota Wilson,6,server,2023-11-14,2023-12-11,resigned
+895,1895,Dale Evans,6,server,2023-11-14,,
+896,1896,Andre Ramirez,9,host,2023-11-14,2023-12-11,resigned
+897,1897,Micah Hill,5,host,2023-11-15,,
+898,1898,Dale Robinson,1,server,2023-11-15,2025-09-29,resigned
+899,1899,Sam Howard,9,server,2023-11-15,,
+900,1900,Gale Gomez,11,bartender,2023-11-16,2025-04-07,resigned
+901,1901,Cameron Reed,7,server,2023-11-19,2024-01-22,resigned
+902,1902,Sage Kim,7,dishwasher,2023-11-19,2024-01-15,resigned
+903,1903,Wren Hill,7,bartender,2023-11-19,2024-11-23,terminated
+904,1904,Andre Hughes,1,server,2023-11-25,,
+905,1905,Malik Lopez,11,line cook,2023-11-26,2025-02-24,resigned
+906,1906,Ana Foster,10,server,2023-11-26,2024-01-22,resigned
+907,1907,Dakota Brooks,4,server,2023-11-27,2024-02-12,resigned
+908,1908,Malik Thomas,3,line cook,2023-11-28,,
+909,1909,Jamie Perry,9,prep cook,2023-11-30,2025-03-31,resigned
+910,1910,Malik Lewis,11,server,2023-11-30,,
+911,1911,Bailey Wright,1,host,2023-12-01,2024-01-08,resigned
+912,1912,Kai Foster,2,server,2023-12-04,2024-01-29,resigned
+913,1913,Diego Gomez,4,line cook,2023-12-04,2024-01-22,resigned
+914,1914,Drew Rogers,8,server,2023-12-04,2024-03-04,resigned
+915,1915,Terry Diaz,1,server,2023-12-06,2024-01-22,resigned
+916,1916,Mia Walker,8,server,2023-12-06,,
+917,1917,Alex Perry,4,server,2023-12-07,2024-01-08,resigned
+918,1918,Casey Rogers,6,busser,2023-12-07,2024-07-08,resigned
+919,1919,Imani Foster,7,server,2023-12-07,2023-12-25,resigned
+920,1920,Lane Johnson,2,server,2023-12-08,2024-01-22,resigned
+921,1921,Reese Hill,6,server,2023-12-08,2024-04-15,resigned
+922,1922,Diego Miller,5,bartender,2023-12-09,2024-05-23,terminated
+923,1923,Remy Morales,3,bartender,2023-12-09,2024-03-04,resigned
+924,1924,Alex Hill,6,busser,2023-12-13,2024-05-13,resigned
+925,1925,Riley Howard,5,line cook,2023-12-13,2024-07-15,resigned
+926,1926,Marlo Martinez,2,busser,2023-12-13,,
+927,1927,Destiny Sullivan,2,line cook,2023-12-16,2024-11-25,resigned
+928,1928,Imani Thomas,10,server,2023-12-19,2024-02-12,resigned
+929,1929,Ari White,6,server,2023-12-19,2024-06-03,resigned
+930,1930,Mia Howard,5,line cook,2023-12-20,,
+931,1931,Omar Lopez,1,dishwasher,2023-12-20,2024-03-04,resigned
+932,1932,Tre Robinson,4,server,2023-12-22,2024-01-15,resigned
+933,1933,Omar White,4,server,2023-12-22,,
+934,1934,Malik Perry,2,line cook,2023-12-23,2024-05-06,resigned
+935,1935,Parker Robinson,5,line cook,2023-12-23,2025-09-08,resigned
+936,1936,Juan Russell,4,server,2023-12-24,2024-07-08,resigned
+937,1937,Imani Gomez,5,server,2023-12-25,2024-01-29,resigned
+938,1938,Luis Price,9,prep cook,2023-12-25,2025-01-13,resigned
+939,1939,Noel Diaz,10,server,2023-12-28,,
+940,1940,Skyler Kim,3,line cook,2023-12-29,2024-05-13,resigned
+941,1941,Dana Nguyen,5,server,2023-12-30,2024-01-15,resigned
+942,1942,Maya Thomas,2,bartender,2023-12-31,2024-06-03,resigned
+943,1943,Jesse Parker,9,host,2023-12-31,2024-06-17,resigned
+944,1944,Taylor Johnson,1,busser,2024-01-02,2025-09-22,resigned
+945,1945,Nia Walker,4,bartender,2024-01-03,2024-03-18,resigned
+946,1946,Marcus James,2,server,2024-01-03,2025-12-15,resigned
+947,1947,Sam Martin,9,server,2024-01-03,2024-08-12,resigned
+948,1948,Aaliyah Gray,10,server,2024-01-04,2024-02-19,resigned
+949,1949,Dana Parker,10,server,2024-01-04,2024-03-11,resigned
+950,1950,Jasmine Phillips,9,bartender,2024-01-04,,
+951,1951,Tatum Roberts,7,bartender,2024-01-05,,
+952,1952,Micah Martinez,5,dishwasher,2024-01-06,,
+953,1953,Malik Evans,7,busser,2024-01-06,,
+954,1954,Gale Edwards,2,server,2024-01-09,2024-11-11,resigned
+955,1955,Marlo Williams,5,line cook,2024-01-09,,
+956,1956,Jamie Walker,4,line cook,2024-01-11,2024-02-26,resigned
+957,1957,Dakota Taylor,11,line cook,2024-01-11,2024-05-13,resigned
+958,1958,Marlo Long,6,general manager,2024-01-12,,
+959,1959,Gale Davis,10,kitchen manager,2024-01-14,2025-09-29,resigned
+960,1960,Diego White,11,host,2024-01-14,,
+961,1961,Logan Edwards,7,server,2024-01-16,2024-08-19,resigned
+962,1962,Jose Howard,10,server,2024-01-19,2024-04-08,resigned
+963,1963,Remy Rivera,4,server,2024-01-19,,
+964,1964,Frankie Ross,2,server,2024-01-20,,
+965,1965,Remy Mendoza,9,server,2024-01-20,2024-06-10,resigned
+966,1966,Riley Hughes,1,prep cook,2024-01-21,2024-07-22,resigned
+967,1967,Bailey Rivera,11,prep cook,2024-01-23,,
+968,1968,Jordan White,5,prep cook,2024-01-24,2024-07-29,resigned
+969,1969,Jamie Diaz,7,dishwasher,2024-01-25,2025-09-01,resigned
+970,1970,Dana Phillips,8,server,2024-01-26,,
+971,1971,Wren Ortiz,4,server,2024-01-27,2024-04-08,resigned
+972,1972,Bailey Kelly,5,server,2024-01-27,,
+973,1973,Dale Scott,1,host,2024-01-28,2024-11-18,resigned
+974,1974,Diego Rogers,10,host,2024-01-29,2024-08-12,resigned
+975,1975,Wren Brooks,1,host,2024-01-30,,
+976,1976,Kerry Howard,8,line cook,2024-01-30,2024-09-02,resigned
+977,1977,Shay Hall,5,bartender,2024-01-30,2024-02-05,resigned
+978,1978,Ellis Hill,1,bartender,2024-01-31,2024-02-05,resigned
+979,1979,Lee Ramirez,11,bartender,2024-02-01,2024-05-20,resigned
+980,1980,Jamie Cruz,7,bartender,2024-02-02,2024-07-01,resigned
+981,1981,Omar Wilson,10,dishwasher,2024-02-02,2024-09-02,resigned
+982,1982,Logan Fisher,2,server,2024-02-02,,
+983,1983,Peyton Jenkins,6,server,2024-02-04,,
+984,1984,Cory Martin,2,server,2024-02-05,2024-07-01,resigned
+985,1985,Logan Young,2,host,2024-02-06,2024-05-20,resigned
+986,1986,Toby Evans,4,line cook,2024-02-06,2024-11-18,resigned
+987,1987,Gale Parker,1,server,2024-02-06,2024-04-22,resigned
+988,1988,Jasmine Roberts,9,line cook,2024-02-06,,
+989,1989,Cameron Johnson,10,server,2024-02-07,2024-11-11,resigned
+990,1990,Kiara Baker,10,prep cook,2024-02-09,,
+991,1991,Maya Taylor,5,server,2024-02-09,2024-02-19,resigned
+992,1992,Jesse Gray,3,bartender,2024-02-10,2024-02-12,resigned
+993,1993,Nia Williams,4,line cook,2024-02-10,2024-10-07,resigned
+994,1994,Tatum Russell,2,server,2024-02-10,2024-09-16,resigned
+995,1995,Micah Robinson,7,server,2024-02-11,2024-08-05,resigned
+996,1996,Micah Gray,10,line cook,2024-02-12,,
+997,1997,Juan Thomas,4,host,2024-02-12,2024-02-26,resigned
+998,1998,Kendall Robinson,5,line cook,2024-02-13,2024-06-10,resigned
+999,1999,Luis Thompson,1,line cook,2024-02-13,,
+1000,2000,Frankie Diaz,7,server,2024-02-14,,
+1001,2001,Brianna Brooks,5,bartender,2024-02-15,2024-04-01,resigned
+1002,2002,Jose Long,3,server,2024-02-16,2024-09-30,resigned
+1003,2003,Jesse Diaz,8,prep cook,2024-02-22,2024-05-27,resigned
+1004,2004,Hayden Martin,1,server,2024-02-23,2024-08-05,resigned
+1005,2005,Kiara Morales,7,server,2024-02-23,2024-10-28,resigned
+1006,2006,Skyler Powell,10,dishwasher,2024-02-23,2025-11-10,resigned
+1007,2007,Luis Long,5,dishwasher,2024-02-24,2025-11-17,resigned
+1008,2008,Destiny Williams,8,line cook,2024-02-24,2025-12-08,resigned
+1009,2009,Aaliyah Johnson,4,server,2024-02-25,2025-08-04,resigned
+1010,2010,Dana Turner,11,dishwasher,2024-02-27,2025-05-05,resigned
+1011,2011,Jesse Scott,1,bartender,2024-02-27,,
+1012,2012,Brianna Hall,10,server,2024-02-27,,
+1013,2013,Dana Nelson,7,assistant manager,2024-02-28,2024-10-07,resigned
+1014,2014,Wren Harris,5,server,2024-03-01,2024-08-12,resigned
+1015,2015,Dakota Long,2,prep cook,2024-03-02,2024-07-22,resigned
+1016,2016,Tatum Powell,4,server,2024-03-03,2025-03-17,resigned
+1017,2017,Luis Ramirez,6,kitchen manager,2024-03-04,,
+1018,2018,Kiara Reyes,5,prep cook,2024-03-04,,
+1019,2019,Lane Davis,10,server,2024-03-04,2024-04-15,resigned
+1020,2020,Bailey Morales,3,server,2024-03-04,2025-09-01,resigned
+1021,2021,Marlo Sanders,8,line cook,2024-03-04,2024-07-29,resigned
+1022,2022,Peyton Thomas,11,server,2024-03-05,,
+1023,2023,Tasha Brooks,3,bartender,2024-03-05,,
+1024,2024,Diego Torres,3,server,2024-03-05,2024-08-19,resigned
+1025,2025,Marcus Nguyen,7,dishwasher,2024-03-05,2024-06-24,resigned
+1026,2026,Dakota Perez,1,line cook,2024-03-06,,
+1027,2027,Skyler White,2,busser,2024-03-06,,
+1028,2028,Skyler Jackson,8,server,2024-03-07,2024-04-08,resigned
+1029,2029,Remy Nguyen,1,prep cook,2024-03-07,2024-03-11,resigned
+1030,2030,Reese Nelson,10,server,2024-03-08,,
+1031,2031,Malik Rivera,4,busser,2024-03-08,,
+1032,2032,Riley Perez,6,line cook,2024-03-10,2024-04-15,resigned
+1033,2033,Aaliyah Green,1,dishwasher,2024-03-12,,
+1034,2034,Kai Jackson,8,line cook,2024-03-12,2024-11-18,resigned
+1035,2035,Kai Patel,3,bartender,2024-03-13,2025-07-14,resigned
+1036,2036,Glen Williams,1,server,2024-03-14,2024-03-18,resigned
+1037,2037,Quinn Taylor,9,server,2024-03-14,2025-02-17,resigned
+1038,2038,Nia Baker,4,line cook,2024-03-16,2024-03-25,resigned
+1039,2039,Tasha Wilson,4,host,2024-03-18,,
+1040,2040,Riley Mitchell,5,bartender,2024-03-18,2025-09-22,resigned
+1041,2041,Shay Baker,10,server,2024-03-18,,
+1042,2042,Carlos Williams,1,dishwasher,2024-03-19,2024-06-10,resigned
+1043,2043,Marcus Ortiz,8,server,2024-03-21,,
+1044,2044,Wren Powell,6,line cook,2024-03-22,,
+1045,2045,Micah Scott,1,server,2024-03-25,2025-07-28,resigned
+1046,2046,Tre Martinez,7,server,2024-03-26,2025-05-12,resigned
+1047,2047,Robin Moore,4,host,2024-03-27,,
+1048,2048,Ari Young,1,prep cook,2024-03-29,2025-06-02,resigned
+1049,2049,Ellis Johnson,8,busser,2024-03-29,2025-09-15,resigned
+1050,2050,Glen Reyes,1,line cook,2024-03-30,2024-09-09,resigned
+1051,2051,Tasha Carter,5,server,2024-04-01,2024-07-15,resigned
+1052,2052,Destiny Gomez,11,assistant manager,2024-04-01,,
+1053,2053,Kiara Sanchez,1,line cook,2024-04-02,2024-10-07,resigned
+1054,2054,Jody Nguyen,4,bartender,2024-04-02,2025-03-30,terminated
+1055,2055,Aaliyah Davis,11,host,2024-04-03,2024-04-29,resigned
+1056,2056,Wren Hall,3,line cook,2024-04-03,2024-04-08,resigned
+1057,2057,Ari Powell,8,line cook,2024-04-04,2024-11-18,resigned
+1058,2058,Avery Parker,8,kitchen manager,2024-04-04,,
+1059,2059,Logan Turner,8,dishwasher,2024-04-07,,
+1060,2060,Carlos Price,8,bartender,2024-04-08,2025-11-03,resigned
+1061,2061,Taylor Ramirez,11,server,2024-04-09,2024-07-01,resigned
+1062,2062,Bailey White,4,line cook,2024-04-10,2024-05-06,resigned
+1063,2063,Lane Nguyen,10,server,2024-04-10,,
+1064,2064,Jody Diaz,9,server,2024-04-11,2024-06-10,resigned
+1065,2065,Alex Howard,9,busser,2024-04-11,2024-09-16,resigned
+1066,2066,Ana Ramirez,3,dishwasher,2024-04-13,,
+1067,2067,Skyler James,6,line cook,2024-04-15,2024-06-24,resigned
+1068,2068,Rowan Jenkins,3,host,2024-04-15,,
+1069,2069,Gale Torres,5,server,2024-04-16,2025-10-20,resigned
+1070,2070,Toby Parker,10,server,2024-04-16,,
+1071,2071,Cameron Walker,8,host,2024-04-17,2024-10-28,resigned
+1072,2072,Hayden Thompson,4,assistant manager,2024-04-20,2025-04-08,terminated
+1073,2073,Wren Evans,6,server,2024-04-21,,
+1074,2074,Cory Ortiz,5,bartender,2024-04-22,2024-12-02,resigned
+1075,2075,Juan Carter,6,server,2024-04-22,2025-09-29,resigned
+1076,2076,Luis Harris,6,dishwasher,2024-04-23,2024-07-15,resigned
+1077,2077,Quinn Wright,5,bartender,2024-04-24,,
+1078,2078,Lee Scott,2,bartender,2024-04-24,,
+1079,2079,Dakota Sanders,3,kitchen manager,2024-04-24,2024-05-20,resigned
+1080,2080,Jasmine Diaz,5,host,2024-04-24,2024-07-01,resigned
+1081,2081,Jody Jackson,10,server,2024-04-24,2024-05-27,resigned
+1082,2082,Ari Martin,3,line cook,2024-04-26,,
+1083,2083,Jamie James,4,server,2024-04-27,2025-12-22,resigned
+1084,2084,Skyler Hughes,8,server,2024-04-27,,
+1085,2085,Ari Robinson,1,line cook,2024-04-30,2024-05-13,resigned
+1086,2086,Jose Morales,9,bartender,2024-04-30,2024-09-30,resigned
+1087,2087,Riley Sanders,5,line cook,2024-04-30,2024-11-11,resigned
+1088,2088,Sam Perez,6,assistant manager,2024-04-30,,
+1089,2089,Emerson Edwards,6,server,2024-05-01,2024-06-24,resigned
+1090,2090,Tatum Davis,6,server,2024-05-05,2025-01-06,resigned
+1091,2091,Terry Thomas,6,line cook,2024-05-05,2024-05-27,resigned
+1092,2092,Cameron Patel,11,server,2024-05-05,,
+1093,2093,Omar Coleman,1,server,2024-05-06,,
+1094,2094,Mia Flores,8,prep cook,2024-05-07,2025-09-22,resigned
+1095,2095,Dakota Sanchez,3,busser,2024-05-08,,
+1096,2096,Hector Kelly,5,server,2024-05-12,,
+1097,2097,Sage James,4,server,2024-05-12,2025-02-03,resigned
+1098,2098,Tatum Miller,3,server,2024-05-12,2024-07-08,resigned
+1099,2099,Logan Wood,11,host,2024-05-13,,
+1100,2100,Malik Long,1,server,2024-05-13,2024-07-22,resigned
+1101,2101,Dakota Coleman,9,dishwasher,2024-05-14,2025-04-14,resigned
+1102,2102,Tatum Foster,7,prep cook,2024-05-15,,
+1103,2103,Lane Washington,4,busser,2024-05-17,2024-09-09,resigned
+1104,2104,Parker Reyes,11,dishwasher,2024-05-19,2025-04-07,resigned
+1105,2105,Morgan Harris,4,prep cook,2024-05-20,,
+1106,2106,Tatum Taylor,11,host,2024-05-20,,
+1107,2107,Jasmine Green,2,line cook,2024-05-20,2024-06-03,resigned
+1108,2108,Carlos Roberts,4,line cook,2024-05-20,2024-09-30,resigned
+1109,2109,Jesse Reyes,3,line cook,2024-05-21,2025-10-27,resigned
+1110,2110,Jamie Williams,9,bartender,2024-05-22,2024-08-05,resigned
+1111,2111,Jamie Turner,9,server,2024-05-22,2024-07-08,resigned
+1112,2112,Dana Coleman,1,line cook,2024-05-23,2024-07-01,resigned
+1113,2113,Marlo Hall,2,dishwasher,2024-05-26,,
+1114,2114,Dana Taylor,3,line cook,2024-05-26,,
+1115,2115,Kai Russell,6,busser,2024-05-27,2025-06-30,resigned
+1116,2116,Wren Rivera,1,line cook,2024-05-28,2024-12-23,resigned
+1117,2117,Dakota Nguyen,11,server,2024-05-28,,
+1118,2118,Kai Miller,11,server,2024-05-29,,
+1119,2119,Lee Hughes,4,assistant manager,2024-05-30,2025-03-17,resigned
+1120,2120,Sam Hall,2,server,2024-05-30,2025-09-01,resigned
+1121,2121,Cameron Ross,11,prep cook,2024-05-31,,
+1122,2122,Mia Sanders,2,host,2024-05-31,2025-03-10,resigned
+1123,2123,Sofia Martinez,3,kitchen manager,2024-05-31,2024-11-18,resigned
+1124,2124,Tasha Morales,3,bartender,2024-06-02,2025-05-24,terminated
+1125,2125,Maya James,11,line cook,2024-06-04,,
+1126,2126,Dale Mendoza,11,bartender,2024-06-06,2024-07-15,resigned
+1127,2127,Skyler Scott,2,server,2024-06-06,2024-10-14,resigned
+1128,2128,Shay Lewis,6,line cook,2024-06-06,,
+1129,2129,Kiara James,2,bartender,2024-06-07,2024-07-29,resigned
+1130,2130,Robin Hall,12,server,2024-06-07,2024-10-14,resigned
+1131,2131,Andre Washington,3,busser,2024-06-10,2024-10-28,resigned
+1132,2132,Tatum Allen,2,line cook,2024-06-10,2024-10-21,resigned
+1133,2133,Cory Garcia,8,prep cook,2024-06-12,2025-01-27,resigned
+1134,2134,Aaliyah Davis,6,busser,2024-06-13,2025-02-03,resigned
+1135,2135,Kiara Scott,5,bartender,2024-06-14,,
+1136,2136,Remy Howard,6,server,2024-06-15,2025-10-20,resigned
+1137,2137,Lee Carter,10,assistant manager,2024-06-16,,
+1138,2138,Drew Baker,12,server,2024-06-16,2024-12-02,resigned
+1139,2139,Peyton Reed,10,server,2024-06-18,2025-06-16,resigned
+1140,2140,Hector Diaz,2,bartender,2024-06-18,2025-06-02,resigned
+1141,2141,Jody Johnson,5,server,2024-06-19,2025-06-16,resigned
+1142,2142,Lane Gray,1,busser,2024-06-21,2024-08-26,resigned
+1143,2143,Jody Watson,10,line cook,2024-06-21,2024-08-12,resigned
+1144,2144,Emerson Diaz,9,busser,2024-06-22,2025-04-07,resigned
+1145,2145,Tasha Harris,4,dishwasher,2024-06-22,,
+1146,2146,Carlos Carter,3,line cook,2024-06-23,2025-02-17,resigned
+1147,2147,Alex Scott,8,dishwasher,2024-06-24,,
+1148,2148,Dana Howard,5,line cook,2024-06-24,,
+1149,2149,Jordan Ortiz,1,dishwasher,2024-06-24,2024-08-12,resigned
+1150,2150,Taylor Young,9,server,2024-06-24,2025-03-31,resigned
+1151,2151,Riley Scott,2,bartender,2024-06-24,2024-07-29,resigned
+1152,2152,Robin Kim,5,server,2024-06-25,2025-09-01,resigned
+1153,2153,Reese Stewart,9,server,2024-06-26,,
+1154,2154,Omar Young,6,line cook,2024-06-26,,
+1155,2155,Remy Coleman,3,dishwasher,2024-06-27,2025-02-24,resigned
+1156,2156,Sam Rivera,11,line cook,2024-06-27,,
+1157,2157,Kiara Wilson,4,bartender,2024-06-30,2024-11-25,resigned
+1158,2158,Jordan Diaz,9,host,2024-07-01,,
+1159,2159,Luis Williams,8,server,2024-07-02,,
+1160,2160,Kiara Cruz,3,assistant manager,2024-07-03,,
+1161,2161,Taylor Harris,6,host,2024-07-05,2024-07-15,resigned
+1162,2162,Tasha Rogers,2,kitchen manager,2024-07-07,,
+1163,2163,Drew Perez,2,line cook,2024-07-08,2024-08-05,resigned
+1164,2164,Imani Wright,6,line cook,2024-07-08,,
+1165,2165,Jose Martin,10,bartender,2024-07-08,2025-11-10,resigned
+1166,2166,Carlos Fisher,1,line cook,2024-07-08,2024-12-09,resigned
+1167,2167,Micah Perry,4,line cook,2024-07-09,2025-09-01,resigned
+1168,2168,Kendall Sanchez,4,server,2024-07-09,2024-08-26,resigned
+1169,2169,Emerson Gomez,6,server,2024-07-11,,
+1170,2170,Tre Baker,10,server,2024-07-12,2025-09-08,resigned
+1171,2171,Casey Gray,12,server,2024-07-12,2024-09-09,resigned
+1172,2172,Lane Robinson,1,line cook,2024-07-13,,
+1173,2173,Andre Stewart,1,assistant manager,2024-07-14,,
+1174,2174,Jesse Rivera,12,line cook,2024-07-14,2024-07-29,resigned
+1175,2175,Morgan Jackson,7,dishwasher,2024-07-14,2025-02-03,resigned
+1176,2176,Aaliyah Howard,8,dishwasher,2024-07-15,2025-03-31,resigned
+1177,2177,Morgan Reed,12,host,2024-07-15,,
+1178,2178,Toby Kim,2,server,2024-07-17,2024-09-23,resigned
+1179,2179,Andre Phillips,10,bartender,2024-07-18,2024-08-19,terminated
+1180,2180,Tatum Perry,5,dishwasher,2024-07-18,2025-01-20,resigned
+1181,2181,Destiny Jackson,6,host,2024-07-18,2024-12-30,resigned
+1182,2182,Kerry Jackson,8,server,2024-07-18,2025-04-14,resigned
+1183,2183,Micah Long,7,bartender,2024-07-20,,
+1184,2184,Toby Flores,11,server,2024-07-20,,
+1185,2185,Cameron Kim,4,server,2024-07-21,2025-05-05,resigned
+1186,2186,Noel Carter,6,busser,2024-07-22,2025-09-29,resigned
+1187,2187,Luis Miller,10,bartender,2024-07-22,2024-08-05,resigned
+1188,2188,Riley Ortiz,6,line cook,2024-07-22,2024-12-09,resigned
+1189,2189,Hayden Mendoza,9,server,2024-07-23,,
+1190,2190,Marcus Rivera,5,host,2024-07-24,2024-11-04,resigned
+1191,2191,Wren Sullivan,5,line cook,2024-07-24,2024-07-29,resigned
+1192,2192,Jose Wright,12,dishwasher,2024-07-26,2024-12-16,resigned
+1193,2193,Kendall Martin,9,server,2024-07-27,,
+1194,2194,Marcus Brooks,6,host,2024-07-27,,
+1195,2195,Logan Miller,10,host,2024-07-28,,
+1196,2196,Juan Wilson,3,server,2024-07-28,2025-09-08,resigned
+1197,2197,Parker Martinez,1,server,2024-08-01,2025-09-08,resigned
+1198,2198,Avery Gray,6,dishwasher,2024-08-05,2025-06-23,resigned
+1199,2199,Lane Lewis,11,bartender,2024-08-05,2025-11-03,resigned
+1200,2200,Blair Rivera,10,assistant manager,2024-08-05,2024-12-16,resigned
+1201,2201,Jody Gomez,5,prep cook,2024-08-05,,
+1202,2202,Dale Roberts,2,bartender,2024-08-05,2025-04-14,resigned
+1203,2203,Dakota Patel,5,server,2024-08-06,,
+1204,2204,Sam Brooks,1,prep cook,2024-08-06,,
+1205,2205,Andre Flores,11,server,2024-08-06,2024-09-02,resigned
+1206,2206,Terry Ross,4,line cook,2024-08-07,2025-08-04,resigned
+1207,2207,Avery Reed,2,prep cook,2024-08-07,2024-10-21,resigned
+1208,2208,Jesse Sullivan,12,server,2024-08-07,,
+1209,2209,Bailey Carter,1,server,2024-08-09,2024-09-23,resigned
+1210,2210,Skyler Diaz,1,server,2024-08-12,2025-12-15,resigned
+1211,2211,Cory Hall,7,server,2024-08-12,2025-03-31,resigned
+1212,2212,Hector Martin,10,bartender,2024-08-12,2025-11-03,resigned
+1213,2213,Ari Green,3,prep cook,2024-08-13,2024-11-04,resigned
+1214,2214,Wren Hughes,2,line cook,2024-08-13,2025-03-24,resigned
+1215,2215,Diego Brooks,10,server,2024-08-14,,
+1216,2216,Taylor Lewis,12,line cook,2024-08-14,2024-09-02,resigned
+1217,2217,Kai Howard,9,bartender,2024-08-14,2024-09-09,resigned
+1218,2218,Harper Green,10,server,2024-08-15,2024-09-30,resigned
+1219,2219,Taylor Jenkins,6,dishwasher,2024-08-15,2025-06-30,resigned
+1220,2220,Jesse Hall,10,server,2024-08-16,,
+1221,2221,Jordan Carter,2,bartender,2024-08-16,2024-10-07,resigned
+1222,2222,Marlo James,10,busser,2024-08-16,2025-03-10,resigned
+1223,2223,Alex Carter,8,line cook,2024-08-19,,
+1224,2224,Drew Turner,1,server,2024-08-19,2024-09-09,resigned
+1225,2225,Jasmine Nelson,1,dishwasher,2024-08-20,2025-03-31,resigned
+1226,2226,Blair Ross,5,line cook,2024-08-21,,
+1227,2227,Harper Nelson,12,server,2024-08-21,2024-12-30,resigned
+1228,2228,Ari Patel,10,host,2024-08-24,,
+1229,2229,Maya Ortiz,2,line cook,2024-08-26,2025-06-16,resigned
+1230,2230,Shay Mendoza,10,line cook,2024-08-27,2025-02-17,resigned
+1231,2231,Kai Allen,5,server,2024-08-28,2024-11-04,resigned
+1232,2232,Jamie Murphy,7,host,2024-09-01,,
+1233,2233,Parker Johnson,10,bartender,2024-09-01,2024-11-04,resigned
+1234,2234,Alex Howard,4,prep cook,2024-09-03,,
+1235,2235,Skyler Reyes,9,server,2024-09-04,2025-09-29,resigned
+1236,2236,Cory Lewis,1,bartender,2024-09-06,,
+1237,2237,Ellis Jenkins,7,server,2024-09-06,,
+1238,2238,Omar Lopez,3,server,2024-09-06,2025-01-29,terminated
+1239,2239,Toby Rogers,8,line cook,2024-09-10,2025-06-23,resigned
+1240,2240,Riley Ortiz,3,host,2024-09-12,2024-12-09,resigned
+1241,2241,Marlo Taylor,8,bartender,2024-09-12,2025-04-28,resigned
+1242,2242,Hayden Brooks,8,bartender,2024-09-13,,
+1243,2243,Malik Nguyen,10,prep cook,2024-09-14,2025-03-31,resigned
+1244,2244,Taylor Rogers,1,prep cook,2024-09-15,2024-11-25,resigned
+1245,2245,Jordan Garcia,4,server,2024-09-16,2025-09-29,resigned
+1246,2246,Mia Johnson,10,dishwasher,2024-09-16,2025-04-28,resigned
+1247,2247,Morgan Russell,1,busser,2024-09-17,,
+1248,2248,Harper Jackson,7,line cook,2024-09-20,2025-02-03,resigned
+1249,2249,Micah Powell,12,line cook,2024-09-20,2025-03-10,resigned
+1250,2250,Diego Martinez,3,busser,2024-09-21,2024-10-07,resigned
+1251,2251,Skyler Gray,1,server,2024-09-21,,
+1252,2252,Juan Roberts,12,server,2024-09-22,,
+1253,2253,Harper Roberts,7,busser,2024-09-23,,
+1254,2254,Destiny Garcia,4,busser,2024-09-23,2024-12-09,resigned
+1255,2255,Jesse Wright,11,server,2024-09-24,2025-01-13,resigned
+1256,2256,Micah Walker,1,line cook,2024-09-24,2025-01-20,resigned
+1257,2257,Gale Washington,9,dishwasher,2024-09-25,2025-02-03,resigned
+1258,2258,Logan Reyes,9,bartender,2024-09-26,2025-07-07,resigned
+1259,2259,Reese Gomez,10,prep cook,2024-09-28,2025-01-06,resigned
+1260,2260,Cameron Ross,2,server,2024-09-29,2025-06-09,resigned
+1261,2261,Andre Torres,3,line cook,2024-10-01,2025-05-26,resigned
+1262,2262,Dakota Hayes,1,server,2024-10-01,2025-12-22,resigned
+1263,2263,Hayden Gomez,2,server,2024-10-04,2025-05-26,resigned
+1264,2264,Hayden Sanchez,4,server,2024-10-07,2024-11-04,resigned
+1265,2265,Andre Hall,11,busser,2024-10-08,,
+1266,2266,Avery Watson,4,server,2024-10-08,2024-12-23,resigned
+1267,2267,Lee Hughes,9,busser,2024-10-09,2024-11-18,resigned
+1268,2268,Emerson Wright,8,server,2024-10-10,2024-11-18,resigned
+1269,2269,Andre Rogers,9,bartender,2024-10-10,2025-07-18,terminated
+1270,2270,Imani Perez,4,line cook,2024-10-10,2025-01-13,resigned
+1271,2271,Lane Kelly,5,server,2024-10-11,2025-09-29,resigned
+1272,2272,Dana Cruz,5,prep cook,2024-10-12,2024-10-14,resigned
+1273,2273,Dakota Kelly,3,server,2024-10-12,2025-05-19,resigned
+1274,2274,Hayden Williams,6,bartender,2024-10-14,2025-04-07,resigned
+1275,2275,Imani James,6,server,2024-10-16,2025-02-10,resigned
+1276,2276,Cory Jenkins,1,bartender,2024-10-16,,
+1277,2277,Robin Rogers,2,bartender,2024-10-16,,
+1278,2278,Cory Fisher,7,kitchen manager,2024-10-16,,
+1279,2279,Skyler Turner,11,line cook,2024-10-17,,
+1280,2280,Blair Hall,4,host,2024-10-17,2025-12-01,resigned
+1281,2281,Morgan Ramirez,1,line cook,2024-10-18,2025-05-12,resigned
+1282,2282,Casey Nguyen,3,busser,2024-10-18,,
+1283,2283,Frankie Nguyen,4,line cook,2024-10-20,,
+1284,2284,Parker Baker,10,line cook,2024-10-21,2024-11-11,resigned
+1285,2285,Harper Torres,10,server,2024-10-21,,
+1286,2286,Tre Sanchez,2,server,2024-10-22,,
+1287,2287,Ellis Lewis,5,prep cook,2024-10-22,2025-02-17,resigned
+1288,2288,Parker Evans,7,assistant manager,2024-10-23,,
+1289,2289,Kendall Mitchell,3,server,2024-10-24,,
+1290,2290,Tatum Walker,10,line cook,2024-10-25,,
+1291,2291,Shay Brooks,9,line cook,2024-10-25,,
+1292,2292,Jesse Russell,3,server,2024-10-26,2025-06-30,resigned
+1293,2293,Imani Lewis,12,server,2024-10-26,,
+1294,2294,Cameron Johnson,5,line cook,2024-10-27,2024-12-30,resigned
+1295,2295,Reese Lopez,2,prep cook,2024-10-28,2025-05-12,resigned
+1296,2296,Toby Murphy,8,server,2024-10-29,,
+1297,2297,Sofia Coleman,10,busser,2024-10-31,2025-09-01,resigned
+1298,2298,Bailey Russell,11,busser,2024-11-01,2025-06-16,resigned
+1299,2299,Nia Wood,8,host,2024-11-04,2025-10-27,resigned
+1300,2300,Tatum Howard,4,server,2024-11-05,2025-02-24,resigned
+1301,2301,Remy Hayes,2,line cook,2024-11-05,2024-12-16,resigned
+1302,2302,Tre Wright,11,assistant manager,2024-11-06,2025-07-14,resigned
+1303,2303,Micah Nguyen,2,host,2024-11-06,2025-04-21,resigned
+1304,2304,Ana Morales,3,busser,2024-11-08,2025-01-06,resigned
+1305,2305,Peyton Scott,7,server,2024-11-11,,
+1306,2306,Parker Patel,3,prep cook,2024-11-11,2025-12-08,resigned
+1307,2307,Cameron Evans,3,prep cook,2024-11-12,,
+1308,2308,Taylor Price,2,dishwasher,2024-11-13,2025-02-17,resigned
+1309,2309,Avery Reyes,11,dishwasher,2024-11-13,2025-05-26,resigned
+1310,2310,Morgan Walker,11,line cook,2024-11-14,2025-12-01,resigned
+1311,2311,Marlo Cruz,5,host,2024-11-15,2025-04-07,resigned
+1312,2312,Skyler Harris,10,bartender,2024-11-15,,
+1313,2313,Diego Garcia,7,bartender,2024-11-17,,
+1314,2314,Parker Allen,7,server,2024-11-17,2025-06-16,resigned
+1315,2315,Dale Hughes,5,server,2024-11-18,,
+1316,2316,Rowan Murphy,5,line cook,2024-11-21,,
+1317,2317,Frankie Sanchez,11,bartender,2024-11-22,2025-01-06,resigned
+1318,2318,Riley Brooks,4,server,2024-11-23,,
+1319,2319,Lee Russell,3,server,2024-11-24,2025-10-27,resigned
+1320,2320,Peyton Torres,10,line cook,2024-11-24,2024-12-09,resigned
+1321,2321,Skyler Hall,2,host,2024-11-25,2025-06-09,resigned
+1322,2322,Ari Long,7,line cook,2024-11-27,2025-12-15,resigned
+1323,2323,Sofia Russell,8,server,2024-11-27,2025-02-10,resigned
+1324,2324,Glen Ortiz,12,line cook,2024-11-29,2025-01-13,resigned
+1325,2325,Nia Watson,12,dishwasher,2024-11-29,,
+1326,2326,Dana Fisher,9,busser,2024-11-29,,
+1327,2327,Remy Cruz,1,server,2024-11-30,2025-06-30,resigned
+1328,2328,Jody Baker,1,host,2024-11-30,2025-04-28,resigned
+1329,2329,Casey Torres,2,server,2024-12-01,,
+1330,2330,Sage Nelson,2,busser,2024-12-02,2025-08-04,resigned
+1331,2331,Mia Walker,4,bartender,2024-12-02,,
+1332,2332,Quinn Perry,10,server,2024-12-03,2025-01-27,resigned
+1333,2333,Imani Ward,4,line cook,2024-12-03,2025-06-30,resigned
+1334,2334,Parker Reyes,8,server,2024-12-03,,
+1335,2335,Bailey Russell,12,server,2024-12-05,2025-03-17,resigned
+1336,2336,Andre Lewis,3,kitchen manager,2024-12-06,,
+1337,2337,Dale Johnson,8,line cook,2024-12-07,2025-09-08,resigned
+1338,2338,Jasmine Reed,7,bartender,2024-12-08,,
+1339,2339,Parker White,8,line cook,2024-12-11,,
+1340,2340,Lee Turner,7,host,2024-12-11,2025-11-03,resigned
+1341,2341,Sage Stewart,5,bartender,2024-12-11,2025-07-07,resigned
+1342,2342,Carlos Torres,2,line cook,2024-12-13,2024-12-16,resigned
+1343,2343,Aaliyah Carter,12,server,2024-12-13,,
+1344,2344,Omar Ward,1,prep cook,2024-12-16,2025-01-27,resigned
+1345,2345,Glen Patel,4,line cook,2024-12-19,2025-03-31,resigned
+1346,2346,Dale Walker,12,dishwasher,2024-12-20,,
+1347,2347,Nia Nguyen,6,line cook,2024-12-21,,
+1348,2348,Kiara Turner,3,host,2024-12-21,,
+1349,2349,Harper Perry,2,line cook,2024-12-23,2025-01-06,resigned
+1350,2350,Andre Washington,12,assistant manager,2024-12-26,,
+1351,2351,Jose Turner,4,busser,2024-12-26,2025-01-06,resigned
+1352,2352,Jody Foster,2,line cook,2024-12-28,2024-12-30,resigned
+1353,2353,Sage Powell,9,line cook,2024-12-29,,

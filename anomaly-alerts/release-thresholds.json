@@ -1,0 +1,7 @@
+{
+  "_note": "Set 2026-10-22, after the skeptical review and before the held-back year (FY2025) was generated or run. A run that breaks any of these doesn't go live.",
+  "saved_min_share": 0.50,
+  "false_alarms_per_store_week_max": 0.20,
+  "accusations_max": 0,
+  "real_problems_explained_away_max": 1
+}

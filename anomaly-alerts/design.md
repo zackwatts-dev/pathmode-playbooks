@@ -1,50 +1,84 @@
-# Design: anomaly alerts for Summit Mechanical
+# Design: morning anomaly briefs for Ironbark Tavern & Grill
 
 ## The problem
 
-Money and time leak out of Summit's operation in ways nobody sees until month-end, if ever: parts used on a job that never reach the invoice, invoices quietly written down to the customer's not-to-exceed (NTE) amount, increases approved in a customer's portal but never recorded, visits with no hours logged. The records that would show it sit in three systems: field service, accounting, and the customers' portals. About 5,500 jobs close every month, and nobody can reconcile them all by hand.
+We run twelve restaurants and about $45 million of sales a year, on margins where a point of food or labor cost is most of a store's profit. Money leaks out in a dozen small ways:
+- the kitchen uses more than the recipes say (heavy portions, over-prep, waste);
+- the bar pours more than it rings;
+- servers void or discount checks after the guest paid cash;
+- managers comp friends or come up short on the deposit;
+- a delivery is short, or invoiced above the price list;
+- crews clock in early and out late, and the schedule runs over the labor guide.
+
+The records that would show each of these are in different systems: the point of sale, the inventory counts and recipes, the invoices and price lists, the timeclock and schedule. Today we see them together once a period, when the P&L closes two or three weeks after the period ends. By then a leak has run for six weeks, mixed in with the weather, the promotion and the night the cooler died, and our budgets, built from last year, already include last year's leaks.
 
 ## What it does
 
-Once a week (in the sample, for September 2025), for every job completed in the last 45 days (a job is usually invoiced days after it's done, so each run looks back; flags already reported aren't sent again):
-1. **Rules** reconcile the records across systems, and flag the problems we already know about:
-   - parts recorded on the job that aren't on the invoice;
-   - an invoice credited to stay under the NTE;
-   - an NTE increase approved in the portal but not in our job;
-   - a visit with no hours logged (a blank time entry, or no time entry at all).
-2. **Baselines** compare each technician with their branch peers, using robust statistics (median and MAD), on repeat visits and missing hours. A flag also needs a material difference: at least three occurrences, and a rate well above peers in absolute terms, not just in robust units.
-3. **A machine-learning model** (an Isolation Forest) looks across each technician's combination of habits over the 90 days ending on the run's end date (parts recorded after invoicing, paperwork lag, missing hours, repeat visits, hours and parts per visit) and flags those that are clearly unusual, with no quota: only above a threshold on how unusual they are, and only when a problem habit is material (well above typical, by enough, often enough). A month with nothing unusual flags nobody. This finds patterns nobody wrote a rule for. Paperwork lag needs the time each entry was made; in Summit's sample every time entry carries its visit's date, so it can't be seen there.
-4. **Within an alert budget** (12 flags per owner per week; the most money first, technician patterns last), an AI model investigates each flag. Code gathers the records behind it, read-only. The AI explains what happened, the likely cause and the next step, citing the records. It can't change, rank or dismiss a flag.
-5. **Code checks every explanation:** its shape first (a malformed answer goes to a person), then the records it cites or mentions must exist, every number in it must be one of those records' amounts or quantities (not the digits of an ID or a date), and it may not name a person or accuse or discipline anyone. An explanation that fails goes to a person.
-6. Each owner (the controller, the service manager) gets their own dashboard, flag list and digest draft, with only their flags.
+**Every morning**, for each store and for the group, after the overnight exports:
+1. **Builds the day's picture** (code), from the exports:
+   - the register, by employee over the last 28 days: voids after the check printed on cash checks, employee-meal and manager discounts on guest checks, comps by who approved them, the share of checks paid in cash;
+   - each closing manager's cash over/short, over the last 28 days;
+   - each invoice line against that month's price list;
+   - each shift's punches against the schedule, edited punches by who edited them, and hours over the labor guide.
 
-The AI is not the detector. Language models are worse at finding anomalies in numbers than simple statistics and classic machine learning, so they only explain.
+   **Every Monday**, after the Sunday counts, it adds the kitchen and the bar: each store's actual usage (last count, plus what was delivered, less this count) against its theoretical usage (product mix times recipes), in dollars, by item, category and vendor.
+2. **Finds what's unusual** (code and machine learning, no AI model):
+   - **Rules** for what's exact: an invoice price over the list, a punch edited to add hours, whole-check comps a manager approved (the office's party package excepted).
+   - **Baselines:** each employee's rate (after-print cash voids, guest-check discounts, as a share of their sales) against the group's typical rate, and each store's kitchen and bar gap against the group's median gap that week and against its own last eight weeks. A flag needs a rate well above typical in absolute terms, a material amount and enough occurrences, not just an unusual score.
+   - **An attribution model:** which bartender's shifts explain a bar's extra usage (a regression of each week's bar gap on each bartender's hours over twelve weeks).
+   - A one-week jump that reverses the next week (a miscount) isn't flagged unless it's large.
+   - Each flag is built only from what was known that morning.
+3. **Reads the records, and the log where it can explain** (AI). For each new flag, or one whose dollars a week have grown by half since it was last read, code gathers the records behind it as of that morning. For a store-level flag (the kitchen, the bar, the store's hours), it adds the store's log entries for the same days, with people's names taken out. An AI model (OpenAI's API) says whether the log explains it (the walk-in failed, a catering order went out, a snowstorm), quoting the entry. For every flag it writes a short plain-English explanation and a next step for the general manager, citing the records. An employee's pattern, a vendor's prices or a closer's cash are never "explained" by the log.
+4. **Checks the AI's answer** (code):
+   - a quoted log entry must be one it was given, its words found in that entry, the entry describing an event of a kind that could account for the flag, and not addressed to an AI;
+   - it must cite at least one record, every record it cites must exist, and every amount it uses must be one of those records' amounts;
+   - it may not accuse, name anyone, state a cause as fact, or suggest discipline;
+   - an answer that fails any check goes to a person with the flag, unexplained.
+5. **Writes the briefs:**
+   - **each general manager:** their store's flags, money first, each with its evidence, the AI's explanation and next step;
+   - **the director of operations:** the group view, every store's flags ranked by dollars a week, and what the log explained away;
+   - **the controller:** vendor overcharges and cash shortages.
+
+Employee flags are a pattern worth a conversation, never a conclusion. The tool never contacts anyone, changes a record or disciplines anyone.
 
 ## Inputs
 
-Exports from the field-service system (jobs, visits, time entries, parts used, technician notes, technicians), accounting (invoices and lines), and the customer portals (NTE and increase requests), as CSV. Plus an answer key: which jobs and technicians really had a problem.
+Nightly CSV exports:
+- **point of sale:** stores, employees with POS ids, menu items and prices, adjustments (every void, comp and discount, with who rang and approved it), sales by employee and day, product mix by week, cash deposits;
+- **back office:** inventory items, recipes, Sunday counts, the waste log;
+- **purchasing:** vendors, monthly price lists, invoices and their lines, credits;
+- **labor:** the schedule and the punches;
+- **the managers' log;**
+- the period ledger and budgets, and the weather.
+
+**The answer key** (sample only): every problem that was running, who or what it involved, when it started, when the current way of working stopped it, its loss by week; and every honest odd day (benign event), and whether the manager logged it.
 
 ## What "correct" means
 
-- The answer key defines it, per problem type: how many real problems each check caught, and how many of its flags were real.
-- For the investigated flags: how many found the problem the answer key gives that job or technician, and how many explanations passed their checks.
-- Say what the score can't show: where the answer key uses the rule's own definition (missing hours), the score checks the plumbing, not the rule; and problems no check looks for (callbacks) are reported as not checked.
-- A missed problem costs money; a false flag costs a manager's time. The budget caps the second.
-- Technician flags are a pattern worth a conversation, never conclusions about a person. They come last in each owner's list: money first.
+- **The answer key defines it.** A flag matches a problem when it names the same store (or vendor), the same kind of leak, and the same person where there is one, while the problem was running. Each flag counts for one problem at most, a flag that coincides with an honest event of a kind that explains it counts for none, and a flag the log "explained" doesn't count as found.
+- **What we measure:**
+  - problems flagged, and the losses from each problem's first flag on;
+  - how much sooner: days from the problem's start (or the window's start) to the first flag, against when the current way of working stopped it;
+  - **money saved:** each problem's losses from a week after its first flag (time to act) to the day the current way of working stopped it, or the end of the window;
+  - false alarms: flags matching no problem, per store per week (a manager's time);
+  - honest odd days: how many benign events were flagged, and how many of those the log explained.
+- **Mistakes aren't equal.** An accusation, or a flag the log "explains" with words that aren't in the log, is the worst: it costs trust with the staff. A missed problem costs money. A false alarm costs a manager's time, and the budget caps it.
 - Every rule, baseline and model has a test that runs without calling the AI.
 
 ## Security and privacy
 
-- **Read-only:** it reads exports and writes reports. It changes nothing in any system.
-- **The AI sees only the records behind one flag at a time.** It has no tools and can't query anything itself.
-- **Notes are data:** instructions in a technician's note are ignored, and everything is escaped on the dashboard.
-- **Technician signals go to the service manager only.** The controller's flags are sent to the AI without technician IDs, and the shared summary has counts only.
-- **Pinned packages:** scikit-learn and its dependencies, by exact version and hash.
+- **Read-only:** it reads exports and writes the briefs. It changes nothing in any system and can't send anything.
+- **The AI sees only one flag at a time:** the records behind it and, for a store-level flag, that store's log entries for those days with names taken out. Employees appear by id. It has no tools.
+- **The log is data, not instructions.** An entry that tells the AI to do something is ignored, and can never clear a flag.
+- **Employee flags go to that store's GM and the director of operations only.** The controller's brief has vendors and cash, not servers.
+- **Everything shown is escaped.** Credentials come from the environment.
+- **Software:** Python, with pinned numpy and scikit-learn.
 
 ## How it runs
 
-- Weekly, on a server Summit controls, after the nightly exports.
-- At most 12 investigations per owner per run; every flag is still listed.
-- Each run adds a line to a log. If the flag count jumps or drops sharply, someone looks.
-- Owners mark each flag real or not; those decisions tune the thresholds and the budget.
-- Re-run the answer key after any change, including a new model version.
+- **Daily,** on a server we control, after the overnight exports; the kitchen and bar on Mondays. Each run looks back 90 days to know which flags are already open, so only new or grown flags are read.
+- **At most 6 AI reads per store per run, and 40 for the group;** every flag is still listed.
+- **Nothing is silently dropped:** an export that's missing or late is named at the top of every brief.
+- **Every run adds a line to a log:** when, which model, flags by kind, explained, sent to a person.
+- **Managers mark each flag real or not;** those marks tune the thresholds.
+- **After any change,** including a new model version, re-run the answer key before going live.
