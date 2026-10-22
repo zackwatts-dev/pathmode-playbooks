@@ -101,7 +101,11 @@ def test_an_amendment_changes_only_the_tier_it_names():
         {"amends": {"tier": 2, "threshold": 2e6}},
     )
     (t,) = sa.resolve([amend, base])
-    assert t.get("tiers") == [[1e6, 1.0], [2e6, 2.0]] and t.get("retroactive") is True and t.doc == "b.pdf"
+    assert (
+        t.get("tiers") == [[1e6, 1.0], [2e6, 2.0]]
+        and t.get("retroactive") is True
+        and t.doc == "a.pdf, as amended by b.pdf"
+    )
 
 
 def test_a_statement_line_can_quote_the_label_with_the_amount_on_the_same_row():
@@ -182,7 +186,9 @@ def write(path: Path, rows: list[dict]):
 def folder(tmp_path):
     r = tmp_path / "records"
     r.mkdir(parents=True)
-    (r / "program.json").write_text('{"program_year": 2025, "prior_year": 2024, "stock_as_of": "2025-12-31"}')
+    (r / "program.json").write_text(
+        '{"program_year": 2025, "prior_year": 2024, "stock_as_of": "2025-12-31", "as_of": "2026-03-16"}'
+    )
     write(
         r / "suppliers.csv",
         [
@@ -347,6 +353,15 @@ def test_if_the_locations_arent_settled_the_rebate_goes_to_a_person(folder):
     assert [o.action for o in sa.owed_for(rec, "Acme", [t], st, {"eligible locations"})] == [sa.PERSON]
 
 
+def test_co_op_past_its_claim_date_goes_to_a_person(folder):
+    rec = sa.Records.load(folder)
+    rec.marketing = [{"supplier": "Acme", "amount": "100000"}]
+    open_ = sa.Term("Acme", "co-op", "a.pdf", "", "q", {"rate": 1.0, "reimburse": 50, "claim_by": "2026-04-30"})
+    closed = sa.Term("Acme", "co-op", "a.pdf", "", "q", {"rate": 1.0, "reimburse": 50, "claim_by": "2026-01-31"})
+    assert [o.action for o in sa.owed_for(rec, "Acme", [open_], None)] == [sa.CLAIM]
+    assert [o.action for o in sa.owed_for(rec, "Acme", [closed], None)] == [sa.PERSON]
+
+
 def test_what_the_statement_paid_is_set_against_what_was_earned(folder):
     rec = sa.Records.load(folder)
     t = sa.Term("Acme", "volume tiers", "a.pdf", "", "q", {"tiers": [[1e6, 1.0], [2e6, 2.0]], "retroactive": True})
@@ -424,3 +439,14 @@ def test_a_word_hyphenated_across_a_line_break_is_one_word_again(monkeypatch):
     pages = sa.pdf_pages(Path("x.pdf"))
     assert pages == ["trade shows, co-branded advertising", "page two"]
     assert sa.quote_found("trade shows, co-branded advertising", pages[0])
+
+
+def test_a_letter_that_concedes_an_open_deadline_is_replaced_by_code():
+    t = sa.Term("Acme", "co-op", "a.pdf", "", "Claims must be submitted by April 30", {})
+    o = sa.Owed("Acme", "co-op", 1000.0, 0.0, sa.CLAIM, "$1,000.00 due", t, {"claim_by": "2026-04-30"})
+    text = "Dear Acme, the April 30 date has passed, but we ask for $1,000.00 as a courtesy. Purchasing"
+    (lt,), _ = sa.write_letters([o], ScriptedModel([text]), today="2026-03-16")
+    assert lt.by == "code" and "deadline" in lt.why
+    m = ScriptedModel(["Dear Acme, we ask for $1,000.00, due by April 30. Purchasing"])
+    (ok,), _ = sa.write_letters([o], m, today="2026-03-16")
+    assert ok.by == "model" and sa.payload_of(m.calls[0][1])["today"] == "2026-03-16"

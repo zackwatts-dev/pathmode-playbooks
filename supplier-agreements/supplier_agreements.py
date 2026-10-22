@@ -138,6 +138,7 @@ class Records:
     year: str = "2025"
     prior: str = "2024"
     stock_as_of: str = "2025-12-31"
+    as_of: str = "2026-03-16"  # the day of the run: a claim window closed before it can't be claimed by code
 
     @classmethod
     def load(cls, folder: Path) -> Records:
@@ -160,6 +161,7 @@ class Records:
             year=str(program["program_year"]),
             prior=str(program["prior_year"]),
             stock_as_of=program["stock_as_of"],
+            as_of=program.get("as_of", ""),
         )
 
     def invoices(self, supplier: str, year: str) -> list[dict]:
@@ -385,7 +387,7 @@ def resolve(terms: list[Term]) -> list[Term]:
             keep[(t.supplier, t.kind)] = Term(
                 t.supplier,
                 t.kind,
-                t.doc,
+                f"{base.doc}, as amended by {t.doc}",
                 t.doc_date,
                 base.quote + " ... " + t.quote,
                 dict(base.t, tiers=tiers, amended_by=t.doc),
@@ -559,13 +561,14 @@ def owed_for(
         spend = sum(float(m["amount"]) for m in rec.marketing if m["supplier"] == supplier)
         claimed = sum(float(x["claimed"]) for x in rec.coop_claims if x["supplier"] == supplier)
         due = min(accrued, spend * float(c.get("reimburse") or 50) / 100)
+        closed = bool(c.get("claim_by")) and bool(rec.as_of) and str(c.get("claim_by")) < rec.as_of
         out.append(
             Owed(
                 supplier,
                 "co-op",
                 round(due, 2),
                 round(min(claimed, accrued), 2),
-                CLAIM,
+                PERSON if closed else CLAIM,  # past the claim date: a person asks for an exception, or lets it go
                 f"{money(accrued)} accrued; {money(spend)} of marketing spend; {money(claimed)} claimed; "
                 f"claims close {c.get('claim_by') or 'see the agreement'}",
                 c,
@@ -622,8 +625,9 @@ def owed_for(
                 round(room, 2),
                 0.0,
                 RETURN,
-                f"allowance {money(allowance)}, {money(used)} used; {money(value)} of stock received in the "
-                f"last 18 months and unsold all year; {fee:g}% restocking fee",
+                f"allowance {money(allowance)}, {money(used)} used, so {money(max(0.0, allowance - used))} unused; "
+                f"{money(value)} of stock within the age limit and unsold all year; returnable "
+                f"{money(max(0.0, min(allowance - used, value)))}, less the {fee:g}% restocking fee",
                 r,
                 {
                     "allowance": round(allowance, 2),
@@ -641,12 +645,14 @@ def owed_for(
 LETTER_SYSTEM = """You write short, polite claim letters from a distributor's purchasing team to a supplier \
 they value. Use only the facts and numbers in the evidence; don't add any. Plain text, under 220 words, no \
 subject line, signed "Purchasing, Hartwell Supply Co.". Ask for a credit (or a return authorization, for stock \
-rotation) and quote the term each claim rests on."""
+rotation) and quote the term each claim rests on. The evidence gives today's date: a deadline on or after it \
+hasn't passed, so never say it has, and never suggest a claim is late or a favour when it's within its window."""
 
 
-def letter_prompt(supplier: str, items: list[Owed]) -> str:
+def letter_prompt(supplier: str, items: list[Owed], today: str = "") -> str:
     ev = {
         "supplier": supplier,
+        "today": today,
         "claims": [
             {
                 "term": o.kind,
@@ -656,6 +662,7 @@ def letter_prompt(supplier: str, items: list[Owed]) -> str:
                 "how_worked_out": o.how,
                 "earned": o.earned,
                 "already_paid_or_claimed": o.paid,
+                **({"deadline": o.records["claim_by"]} if o.records.get("claim_by") else {}),
             }
             for o in items
         ],
@@ -670,6 +677,15 @@ def allowed_numbers(user: str) -> list[float]:
         vals += [to_float(t) for t in numbers_in(c["quote"] + " " + c["how_worked_out"])]
     vals.append(sum(c["amount_due"] for c in payload_of(user)["claims"]))
     return vals
+
+
+PASSED = ("has passed", "have passed", "expired", "is late", "past the deadline", "as a courtesy", "missed the")
+
+
+def says_deadline_passed(text: str, items: list[Owed], today: str) -> bool:
+    """A letter mustn't concede a deadline that's still open: that would talk the supplier out of paying."""
+    open_ = [o for o in items if o.records.get("claim_by") and today and str(o.records["claim_by"]) >= today]
+    return bool(open_) and any(p in text.lower() for p in PASSED)
 
 
 def code_letter(supplier: str, items: list[Owed]) -> str:
@@ -699,7 +715,7 @@ class Letter:
     why: str = ""
 
 
-def write_letters(claims: list[Owed], model, cap: int = MAX_LETTERS) -> tuple[list[Letter], list[str]]:
+def write_letters(claims: list[Owed], model, cap: int = MAX_LETTERS, today: str = "") -> tuple[list[Letter], list[str]]:
     by_supplier: dict[str, list[Owed]] = defaultdict(list)
     for o in claims:
         by_supplier[o.supplier].append(o)
@@ -712,13 +728,16 @@ def write_letters(claims: list[Owed], model, cap: int = MAX_LETTERS) -> tuple[li
                 over.append(s)
             letters.append(Letter(s, code_letter(s, items), "code", "over the letter cap" if model else "no model"))
             continue
-        user = letter_prompt(s, items)
+        user = letter_prompt(s, items, today)
         try:
             text = model.complete(LETTER_SYSTEM, user, 1200).strip()
         except (llm.ModelError, BadAnswer) as e:
             letters.append(Letter(s, code_letter(s, items), "code", f"model call failed ({e})"[:120]))
             continue
         bad = unsupported_numbers(text, allowed_numbers(user))
+        if not bad and says_deadline_passed(text, items, today):
+            letters.append(Letter(s, code_letter(s, items), "code", "says a deadline has passed when it hasn't"))
+            continue
         if bad or not text:
             letters.append(Letter(s, code_letter(s, items), "code", "numbers not in the evidence: " + ", ".join(bad)))
         else:
@@ -805,17 +824,29 @@ def run(
         owed += owed_for(rec, s, t, st, unsettled)
     claims = [o for o in owed if o.gap >= 1 and o.action != PERSON]
     for o in owed:
-        if o.action == PERSON:
+        if o.action == PERSON and o.kind == "co-op":
             people.append(
                 Person(
                     o.supplier,
                     o.kind,
-                    f"earned {money(o.earned)} by our records; with no statement read, what was paid is unknown",
+                    f"{money(o.gap)} unclaimed, but the claim window closed "
+                    f"{o.records.get('claim_by')}: ask for an exception, or let it go",
                     o.term.quote,
                     o.term.doc,
                 )
             )
-    letters, over_letters = write_letters(claims, model, max_letters)
+        elif o.action == PERSON:
+            people.append(
+                Person(
+                    o.supplier,
+                    o.kind,
+                    f"earned {money(o.earned)} by our records, but what was paid or what counts isn't settled (no "
+                    "statement read, or a term it depends on went to a person): decide before claiming",
+                    o.term.quote,
+                    o.term.doc,
+                )
+            )
+    letters, over_letters = write_letters(claims, model, max_letters, rec.as_of)
     misses = getattr(model, "misses", 0) - misses_before
     name = model.name if model is not None else "none (no model: every document goes to a person)"
     r = Run(name, terms, owed, people, letters, statements, suppliers, None, misses, over + over_letters)

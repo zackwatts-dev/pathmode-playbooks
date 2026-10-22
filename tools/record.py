@@ -31,14 +31,18 @@ from common import llm  # noqa: E402
 class Recording:
     """Passes each call to the real model and keeps the answer by the playbook's replay key."""
 
-    def __init__(self, inner, key):
+    def __init__(self, inner, key, keep: dict[str, str] | None = None):
         self.inner, self.key, self.name = inner, key, inner.name
+        self.keep = keep or {}  # answers already recorded for exactly these inputs (--keep): reused, not re-asked
         self.answers: dict[str, str] = {}
         self.failed: list[str] = []
 
     def complete(self, system: str, user: str, max_tokens: int = 2000) -> str:
         k = self.key(system, user)
         if k in self.answers:  # asked again (a playbook that runs the sample two ways): the same answer, no new call
+            return self.answers[k]
+        if k in self.keep:  # recorded before, for the very same inputs (the key fingerprints them)
+            self.answers[k] = self.keep[k]
             return self.answers[k]
         try:
             answer = self.inner.complete(system, user, max_tokens)
@@ -84,6 +88,9 @@ def main() -> None:
     p.add_argument("slug", help="the playbook's folder, e.g. estimate-check")
     p.add_argument("extra", nargs="*", help="extra arguments for the playbook's main(), after --")
     p.add_argument("--cli", action="store_true", help="call Claude Sonnet 5.5 through the claude command line")
+    p.add_argument(
+        "--keep", action="store_true", help="reuse recorded answers whose inputs haven't changed; ask only the rest"
+    )
     args = p.parse_args()
     folder, module = load(args.slug)
     if not hasattr(module, "replay_key"):
@@ -92,7 +99,9 @@ def main() -> None:
         inner = ClaudeCLI() if args.cli else llm.from_env()
     except llm.ModelError as e:
         raise SystemExit(str(e)) from e
-    model = Recording(inner, module.replay_key)
+    path = folder / "sample-data" / "recorded-run.json"
+    keep = json.loads(path.read_text())["answers"] if args.keep and path.exists() else {}
+    model = Recording(inner, module.replay_key, keep)
     with tempfile.TemporaryDirectory() as out:
         if hasattr(module, "sample_run"):
             module.sample_run(model, Path(out))
@@ -100,7 +109,6 @@ def main() -> None:
             module.model_for = lambda *_: model
             sys.argv = [module.__file__, "--sample", "--out", out, *args.extra]
             module.main()
-    path = folder / "sample-data" / "recorded-run.json"
     data = {"model": inner.name, "recorded": date.today().isoformat(), "answers": dict(sorted(model.answers.items()))}
     path.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Recorded {len(model.answers)} answers from {inner.name} to {path.relative_to(ROOT)}.")

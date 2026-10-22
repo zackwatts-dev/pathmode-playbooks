@@ -23,7 +23,9 @@ HOLDOUT = ROOT / "supplier-agreements" / "holdout-2024"
 
 def main() -> None:
     inner = record.ClaudeCLI()
-    model = record.Recording(inner, sa.replay_key)
+    path = HOLDOUT / "recorded-run.json"
+    keep = json.loads(path.read_text())["answers"] if "--keep" in sys.argv and path.exists() else {}
+    model = record.Recording(inner, sa.replay_key, keep)
     with tempfile.TemporaryDirectory() as out:
         sa.run(HOLDOUT, model, Path(out), HOLDOUT / "answer-key" / "entitlements-key.csv")
     data = {"model": inner.name, "recorded": date.today().isoformat(), "answers": dict(sorted(model.answers.items()))}
