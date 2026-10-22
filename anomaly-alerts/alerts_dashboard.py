@@ -35,9 +35,11 @@ def _who(f, data) -> str:
 
 def _card(x, data, show_store: bool) -> str:
     f = x.flag
+    seen = next((r for r in f.reads if r.day == x.day), f.reads[0] if f.reads else None)  # the read it explains
+    evidence, dollars = (seen.evidence, seen.dollars_week) if seen else (f.evidence, f.dollars_week)
     where = f"{_e(data.store_names.get(f.store, ''))} · " if show_store and f.store else ""
     head = f"<h3>{_e(f.kind.capitalize())}: {_e(_who(f, data))}</h3>"
-    meta = f'<div class="muted">{where}since {_e(f.first.isoformat())} · about {_e(_m(f.dollars_week))} a week</div>'
+    meta = f'<div class="muted">{where}since {_e(f.first.isoformat())} · about {_e(_m(dollars))} a week</div>'
     if not x.read:
         body = f'<p class="muted">{_e("; ".join(x.problems))}</p>'
     elif x.problems:
@@ -50,10 +52,10 @@ def _card(x, data, show_store: bool) -> str:
             _e(r.get("date", "")),
             _e(_m(r["amount"])) if isinstance(r.get("amount"), (int, float)) else "",
         ]
-        for r in f.evidence[:12]
+        for r in evidence
     ]
     table = _table(["Record", "Date", "Amount"], rows, {2})
-    ev = f"<details><summary>The records ({len(f.evidence)})</summary>{table}</details>"
+    ev = f"<details><summary>The records ({len(evidence)})</summary>{table}</details>"
     return f'<div class="flag">{head}{meta}{body}{ev}</div>'
 
 
