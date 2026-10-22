@@ -1,7 +1,7 @@
-"""Record a real model on RFQ intake's held-back months (holdout-2024-06/, holdout-2024-07/), the way tools/record.py
+"""Record a real model on RFQ intake's held-back months (holdout-2024-09/, holdout-2024-10/), the way tools/record.py
 records the sample. The thresholds in release-thresholds.json were set before these months were first run.
 
-    python tools/record_holdout_rfq.py 2024-06 [--keep]     # through the claude command line (Claude Sonnet 5.5)
+    python tools/record_holdout_rfq.py 2024-09 [--keep]     # through the claude command line (Claude Sonnet 5.5)
 """
 
 from __future__ import annotations

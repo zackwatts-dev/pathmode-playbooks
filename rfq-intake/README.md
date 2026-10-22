@@ -62,21 +62,20 @@ Wendlow Fabrication & Machine is a fictional job shop, from a simulation of the 
 - **`records/`:** as exported the morning of May 1: 377 customers with their tier and domain (38 domains shared by sister companies, some named alike down to a comma), 7,372 known buyers, 22,457 customer parts with descriptions, the 10 RFQs still open from April, and the estimators' quoting hours for May (5.28 a working day each, after the time that goes to other work: one junior estimator to May 10, two from May 13, none on May 7).
 - **`answer-key.csv`:** what each email is and what should happen to it, with every value, and how each request really ended (truth, named so).
 - **`queue-replay/`** (2024), **`queue-replay-2023/`**, **`queue-replay-2025/`:** the inputs for the separate queue replay (below), a full year each.
-- **`../holdout-2024-06/`, `../holdout-2024-07/`, `../holdout-2024-08/`:** three more months of the same mailbox, each with its records, answer key and recorded run.
+- **`../holdout-2024-09/`, `../holdout-2024-10/`:** two later months of the same mailbox, held back, each with its records, answer key, recorded run and its own wording of a note aimed at an AI.
 - **`forecast.json`** (beside the script, not in `sample-data/`): the re-quote hours a day to hold back, 0 by default (April 2024's re-quotes took about 1.6 hours a working day, if your estimators price re-quotes first).
 
 ### Results: the recorded runs (Claude Sonnet 5.5)
 
-Each month scored against its own answer key. May is the sample and June was used while building the checks; July and August were held back, and scored once, with the code final, against the thresholds in `release-thresholds.json`, set before the first run. A request the key says needs only its question, sent to a person instead, counts as stopped needlessly.
+Each month scored against its own answer key. May is the sample. September and October were held back: generated after the code was frozen (commit ae3c477), each with a note aimed at an AI worded unlike any earlier month's, recorded and scored once against the thresholds in `release-thresholds.json`. A request the key says needs only its question, sent to a person instead, counts as stopped needlessly; a question that asks for the wrong thing counts as the wrong place.
 
-| Month | Emails | Right | Let through, but wrong | Stopped, but needn't have been |
-|---|---|---|---|---|
-| May (the sample) | 136 | 134 | 0 | 2 |
-| June | 130 | 125 | 0 | 5 |
-| July, held back | 126 | 122 | 0 | 4 |
-| August, held back | 151 | 143 | 0 | 8 |
+| Month | Emails | Right | Let through, but wrong | Wrong place | Stopped, but needn't have been |
+|---|---|---|---|---|---|
+| May (the sample) | 136 | 134 | 0 | 0 | 2 |
+| September, held back | 110 | 108 | 0 | 1 | 1 |
+| October, held back | 164 | 157 | 0 | 0 | 7 |
 
-Of the 145 requests the keys say are missing something, 137 got their question drafted and 8 went to a person (the score reports both). The stops are mostly a part number on file for a sister company (held for a person; the key would let it through), a delivery date the reading missed, a buyer chasing a request with no open record, and two malformed model answers. Everything to a person (the baseline) gets right only the few emails a month that need one.
+Of the 102 requests the keys say are missing something, 98 got their question drafted the day they arrived and 4 went to a person. One September question asked for a part number when the drawing was what was missing. The stops: a part number on file for a sister company (held for a person; the key would let it through), a buyer chasing a request with no open record, and three October requests whose quantities sat in a layout the checks couldn't tie to their part. Both held-back notes aimed at an AI went to a person: September's by the check in code, October's by the model's own flag, which the code check missed. Everything to a person (the baseline) gets right only the few emails a month that need one.
 
 ### Results: the offline stand-in, not a model
 
@@ -84,21 +83,21 @@ From `--dry-run`: regular expressions for the sample's phrasings, a test of the 
 
 ## The queue replay: a model, not a measurement
 
-`replay_queue.py` asks what reading every request on arrival is worth. Wendlow's estimators read quotes@ and key each new request into the ERP on Mondays and Thursdays (about 10 minutes a request, a labeled estimate, out of their pricing hours). About 4 in 10 requests arrive missing a revision, a quantity or the drawing; the gap is found when an estimator opens the request, the question goes out then, and the request waits for the answer. The replay runs every request the estimators had to price in a window (new requests first, annual re-quotes with the hours left, as Wendlow does), day by day, three ways, over 20 seeds of the simulation's noise:
+`replay_queue.py` asks what reading every request on arrival is worth. Wendlow's estimators read quotes@ and key each new request into the ERP on Mondays and Thursdays (both the twice-weekly reading and the 10 minutes a request are estimates in the simulation, not records). About 4 in 10 requests arrive missing a revision, a quantity or the drawing; the gap is found when an estimator opens the request, the question goes out then, and the request waits for the answer. The replay runs every request the estimators had to price in a window (new requests first, annual re-quotes with the hours left, as Wendlow does), day by day, three ways, over 20 seeds of the simulation's noise:
 
 - **today:** read and keyed twice a week; the question goes out when the request is opened.
 - **daily:** a person reads and keys every request the morning it arrives (the same 10 minutes), and asks then. No AI.
-- **intake:** AI reads every request the day it arrives and drafts the question; the lines go to the ERP as an import file. A person still keys the ones the tool sends to a person (8%) and spends a minute looking over each import row.
+- **intake:** AI reads every request the day it arrives and drafts the question; the lines go to the ERP as an import file. The requests the tool sends to a person (8%) are read and keyed by hand the next morning someone is in, and a person spends a minute looking over each import row.
 
-Every way of working pays the same quarter hour to check and send each question. One calibration factor on the quoting time is fitted on `today` alone, to each window's actual on-time count. A quote is on time if it went out by the buyer's true decision date, which only the scoring sees. A won quote is worth $35,800 of first-year revenue (every order of its parts in the year after the win, Wendlow's records for 2022–23: `pathmode-corpus/simulations/fabricator/scripts/rfq_value_stats.py`) × 27% margin, at the window's on-time win rate.
+Every way of working pays the same quarter hour to check and send each question, sent on a day someone is in. One calibration factor on the quoting time is fitted on `today` alone, to each window's actual on-time count. A quote is on time if it went out by the buyer's true decision date, which only the scoring sees. A won quote is worth $35,800 of first-year revenue (every order of its parts in the year after the win, Wendlow's records for 2022–23: `pathmode-corpus/simulations/fabricator/scripts/rfq_value_stats.py`) × 27% margin, at the window's on-time win rate.
 
 | Year | Lost to late quotes | More on time: daily | More on time: intake | Extra wins: intake | First-year margin: intake |
 |---|---|---|---|---|---|
-| 2023 | 293 | 100 | 138 | 48 | $467,000 |
-| 2024 | 210 | 100 | 118 | 44 | $426,000 |
-| 2025 (to Nov 26) | 195 | 113 | 131 | 53 | $514,000 |
+| 2023 | 293 | 100 | 135 | 47 | $454,000 |
+| 2024 | 210 | 100 | 122 | 46 | $441,000 |
+| 2025 (to Nov 26) | 195 | 113 | 129 | 53 | $508,000 |
 
-Today the question goes out about three days after the request arrived. Most of intake's gain is timing: with `--keying-minutes 0` (no keying cost at all), intake still gets 81 more quotes out on time in 2024; at 5 minutes, 99; at 10, 118. `--data` runs each year's folder; the defaults reproduce the 2024 row.
+Today the question goes out about three days after the request arrived. Most of intake's gain is timing: with `--keying-minutes 0` (no keying cost at all), intake still gets 82 more quotes out on time in 2024; at 5 minutes, 103; at 10, 122. `--data` runs each year's folder; the defaults reproduce the 2024 row.
 
 **Limits of the model.** A late quote made on time is assumed to win at the average on-time rate. A buyer is assumed to take as long to answer a question asked on day one as one asked on day three. The person reading every morning is assumed to catch every gap. And a won part's later years aren't counted: in Wendlow's records a part won in 2017–19 brought in 2.89 times its first year's revenue over its life.
 

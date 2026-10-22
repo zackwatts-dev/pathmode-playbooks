@@ -1,0 +1,111 @@
+file,kind,expected_status,route,customer_id,rfq_id,part_numbers,revisions,quantities,requested_dates,quote_due,outcome,note,missing
+0903-0930-rfq-4071.eml,new rfq,needs info,estimating,6,21071,LUT-60060;LUT-27112,A;A,87;28,2024-09-17;2024-09-24,,lost late,no drawing attached,drawing
+0903-1139-request-for-quote-kes-86800.eml,new rfq,needs info,estimating,2,21070,KES-86800,A,,2024-09-17,2024-09-19,won,no quantity for KES-86800,quantity
+0903-1158-pricing-request-gra-55416.eml,new rfq,needs a person,estimating,7,21069,GRA-55416,A,33,2024-10-15,2024-09-09,screened out,domain shared by 2 customers and the email doesn't name the company: a person must say which,
+0904-0732-re-pricing-request-wel-81063.eml,chaser,not an rfq,estimating,44,21034,WEL-81063;WEL-64806,,,,,won,"RFQ received 2024-08-27, still unquoted on 2024-09-04; domain shared by 3 customers: the email names the company",
+0904-0803-request-for-quote-eck-71264.eml,new rfq,ready to quote,estimating,8,21078,ECK-71264;ECK-87579;ECK-75695,A;A;A,3;2;14,2024-10-23;2024-10-09;2024-10-23,2024-09-26,lost,,
+0904-1548-rfq-4077.eml,new rfq,ready to quote,estimating,216,21077,NEF-58926;NEF-18850;NEF-81146,A;A;A,3;50;21,2024-10-16;2024-10-16;2024-10-02,2024-09-12,lost,,
+0904-1548-re-rfq-attached.eml,chaser,not an rfq,estimating,225,21036,OBE-90514;OBE-85401;OBE-96866,,,,,lost late,"RFQ received 2024-08-27, still unquoted on 2024-09-04",
+0904-1550-re-wendlow-quote-20232-for-eck-28496.eml,award,not an rfq,sales,8,21055,ECK-28496,,,,,won,award on quote 20232; customer PO PO-99277,
+0905-1012-re-quote-needed-eck-13957-rev-a.eml,chaser,not an rfq,estimating,8,21024,ECK-13957,,,,,lost late,"RFQ received 2024-08-26, still unquoted on 2024-09-05",
+0905-1040-pricing-request-hol-92472.eml,new rfq,ready to quote,estimating,1,21090,HOL-92472,A,35,2024-10-17,,lost,domain shared by 3 customers: the email names the company,
+0905-1259-request-for-quote-rei-32074.eml,new rfq,needs info,estimating,284,21088,REI-32074,,3,2024-10-24,2024-09-18,lost late,"no revision stated, and the attachments don't carry one",revision
+0905-1318-re-rfq-4053.eml,chaser,not an rfq,estimating,8,21053,ECK-64068;ECK-78081;ECK-84811,,,,,lost late,"RFQ received 2024-08-29, still unquoted on 2024-09-05",
+0905-1346-re-rfq-4023.eml,chaser,not an rfq,estimating,26,21023,PFE-78109;PFE-66547,,,,,lost late,"RFQ received 2024-08-26, still unquoted on 2024-09-05",
+0905-1521-quote-needed-vog-57690-rev-a.eml,new rfq,ready to quote,estimating,311,21089,VOG-57690,A,80,2024-10-31,,lost,,
+0905-1527-re-wendlow-quote-20215-for-har-83871.eml,lost reply,not an rfq,sales,209,20999,HAR-83871,,,,,lost,lost on quote 20215; domain shared by 3 customers: the email names the company,
+0905-1542-rfq-attached.eml,new rfq,needs info,estimating,12,21091,ECK-77342,,42,2024-10-17,,lost,"no revision stated, and the attachments don't carry one",revision
+0905-1628-rfq-attached.eml,new rfq,ready to quote,estimating,12,21092,ECK-57949;ECK-22416;ECK-61864,A;A;A,2;9;12,2024-10-17;2024-10-31;2024-09-19,,lost late,,
+0906-1231-rfq-attached.eml,new rfq,ready to quote,estimating,6,21100,LUT-93783,A,4,2024-09-20,2024-09-11,no award,,
+0906-1259-pricing-request-leh-20320.eml,new rfq,needs info,estimating,307,21099,LEH-20320,A,,2024-10-18,,no award,no quantity for LEH-20320,quantity
+0909-0734-quote-needed-lut-62531-rev-a.eml,new rfq,ready to quote,estimating,6,21114,LUT-62531,A,9,2024-10-14,,won,,
+0909-1133-re-pricing-request-gra-95747.eml,chaser,not an rfq,estimating,7,21042,GRA-95747,,,,,screened out,"RFQ received 2024-08-28, still unquoted on 2024-09-09; domain shared by 2 customers: the email names the company",
+0909-1156-re-wendlow-quote-20258-for-wen-49884.eml,lost reply,not an rfq,sales,347,21051,WEN-49884;WEN-62071,,,,,lost,lost on quote 20258; domain shared by 2 customers: the email names the company,
+0909-1416-rfq-4112.eml,new rfq,needs info,estimating,51,21112,SCH-48407,A,68,2024-09-23,,won,no drawing attached,drawing
+0909-1742-rfq-attached.eml,new rfq,ready to quote,estimating,2,21113,KES-64776,A,34,2024-10-14,,won,,
+0910-1214-rfq-4121.eml,new rfq,ready to quote,estimating,53,21121,ZIE-43211,A,9,2024-11-05,2024-09-13,lost,,
+0910-1412-pricing-request-eck-24742.eml,new rfq,ready to quote,estimating,12,21122,ECK-24742;ECK-19312,A;A,34;11,2024-10-22;2024-10-29,,lost,,
+0910-1428-rfq-attached.eml,new rfq,needs info,estimating,195,21120,ECK-27074;ECK-87316,,282;17,2024-10-22;2024-10-01,,lost late,"no revision stated, and the attachments don't carry one",revision
+0910-1550-re-request-for-quote-kes-86800.eml,chaser,not an rfq,estimating,2,21070,KES-86800,,,,,won,"RFQ received 2024-09-03, still unquoted on 2024-09-10",
+0911-0745-request-for-quote-fis-46003.eml,new rfq,needs info,estimating,4,21131,FIS-46003,A,,2024-09-25,,won,no quantity for FIS-46003,quantity
+0911-0832-leh-20320-rev-b.eml,revision,not an rfq,estimating,307,21099,LEH-20320,B,,,,no award,replaces rev A on open RFQ 21099: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+0911-0909-request-for-quote-vog-13505.eml,new rfq,needs a person,estimating,60,21129,VOG-13505;VOG-53310;VOG-91416,A;A;A,8;29;25,2024-11-06;2024-09-25;2024-10-16,2024-09-18,won,domain shared by 3 customers and the email doesn't name the company: a person must say which,
+0911-0948-re-wendlow-quote-20275-for-lut-62531.eml,award,not an rfq,sales,6,21114,LUT-62531,,,,,won,award on quote 20275; customer PO PO-99846,
+0911-1704-pricing-request-imh-99532.eml,new rfq,needs info,estimating,10,21130,IMH-99532,A,,2024-10-16,,lost late,no quantity for IMH-99532,quantity
+0911-1712-rfq-attached.eml,new rfq,needs info,estimating,8,21132,ECK-11448;ECK-77879;ECK-68134,,34;26;61,2024-10-02;2024-10-30;2024-10-02,2024-09-20,won,"no revision stated, and the attachments don't carry one",revision
+0911-1737-request-for-quote-eck-39326.eml,new rfq,needs a person,estimating,12,21133,ECK-39326,A,13,2024-10-30,,lost,prompt injection: a person must read it,
+0912-0705-quote-needed-obe-64190-rev-a.eml,new rfq,ready to quote,estimating,283,21141,OBE-64190;OBE-87639,A;A,5;73,2024-10-31;2024-10-31,,won,,
+0912-0918-quote-needed-lut-42022-rev-a.eml,new rfq,needs a person,estimating,6,21140,LUT-42022;LUT-78214;LUT-14692,A;A;A,19;11;12,2024-11-07;2024-10-03;2024-09-26,,screened out,LUT-14692 is on file as a guard but the email says skid: the simulation reused the number for a new part,
+0912-1032-re-rfq-attached.eml,chaser,not an rfq,estimating,28,21062,HOL-98504;HOL-89255;HOL-27289,,,,,lost late,"RFQ received 2024-08-30, still unquoted on 2024-09-12; domain shared by 3 customers: the email names the company",
+0912-1240-rfq-attached.eml,new rfq,ready to quote,estimating,8,21143,ECK-96707;ECK-43631;ECK-40369,A;A;A,33;31;22,2024-10-24;2024-10-10;2024-10-03,,lost,,
+0912-1550-re-pricing-request-imh-99532.eml,revision,not an rfq,estimating,10,21130,IMH-99532,B,,,,lost late,replaces rev A on open RFQ 21130: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+0912-1713-quote-needed-yod-18351.eml,new rfq,needs info,estimating,316,21142,YOD-18351,,15,2024-10-31,2024-09-17,won,"no revision stated, and the attachments don't carry one",revision
+0913-0758-pricing-request-pfe-35607.eml,new rfq,needs info,estimating,26,21156,PFE-35607,A,,2024-10-18,,lost,no quantity for PFE-35607,quantity
+0913-0937-pricing-request-wel-90251.eml,new rfq,ready to quote,estimating,44,21154,WEL-90251;WEL-35935;WEL-98018,A;A;A,29;54;7,2024-10-25;2024-10-18;2024-10-11,2024-09-16,won,domain shared by 3 customers: the email names the company,
+0913-1215-re-request-for-quote-rei-32074.eml,chaser,not an rfq,estimating,284,21088,REI-32074,,,,,lost late,"RFQ received 2024-09-05, still unquoted on 2024-09-13",
+0913-1258-re-wendlow-quote-20266-for-ick-65606.eml,award,not an rfq,sales,18,21060,ICK-65606,,,,,won,award on quote 20266; customer PO 4589730,
+0913-1349-request-for-quote-lut-58569.eml,new rfq,ready to quote,estimating,6,21155,LUT-58569;LUT-27459,A;A,12;124,2024-11-01;2024-10-11,2024-09-20,lost,,
+0913-1355-updated-drawing-eck-43631.eml,revision,not an rfq,estimating,8,21143,ECK-43631,B,,,,lost,replaces rev A on open RFQ 21143: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+0913-1520-re-wendlow-quote-20150-for-rei-86827.eml,award,not an rfq,sales,364,20953,REI-86827;REI-12288,,,,,won,award on quote 20150; customer PO PO-22559,
+0913-1529-quote-needed-fis-99622-rev-a.eml,new rfq,ready to quote,estimating,87,21153,FIS-99622;FIS-91189,A;A,12;4,2024-10-04;2024-09-27,2024-09-19,lost,,
+0916-0700-quote-needed-hol-91691.eml,new rfq,needs info,estimating,1,21166,HOL-91691;HOL-94704,,35;30,2024-11-11;2024-10-28,,won,"no revision stated, and the attachments don't carry one; domain shared by 3 customers: the email names the company",revision
+0916-0726-quote-needed-bec-76143-rev-a.eml,new rfq,ready to quote,estimating,187,21167,BEC-76143;BEC-66902;BEC-36647,A;A;A,4;5;27,2024-10-21;2024-09-30;2024-09-30,,lost late,,
+0916-1052-request-for-quote-eck-39387.eml,new rfq,ready to quote,estimating,8,21165,ECK-39387;ECK-13018,A;A,12;20,2024-09-30;2024-10-14,2024-09-20,no award,,
+0916-1058-pricing-request-kes-85098.eml,new rfq,ready to quote,estimating,2,21163,KES-85098;KES-49617,A;A,8;2,2024-09-30;2024-10-07,2024-09-16,won,,
+0916-1210-re-pricing-request-gra-55416.eml,chaser,not an rfq,estimating,7,21069,GRA-55416,,,,,screened out,"RFQ received 2024-09-03, still unquoted on 2024-09-16; domain shared by 2 customers: the email names the company",
+0916-1513-quote-needed-vog-57515-rev-a.eml,new rfq,ready to quote,estimating,5,21164,VOG-57515,A,27,2024-10-21,,lost,,
+0917-0802-quote-needed-van-42750-rev-a.eml,new rfq,ready to quote,estimating,41,21176,VAN-42750;VAN-65583,A;A,52;46,2024-10-08;2024-10-22,2024-09-19,lost,,
+0917-0838-bec-66902-rev-b.eml,revision,not an rfq,estimating,187,21167,BEC-66902,B,,,,lost late,replaces rev A on open RFQ 21167: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+0917-0853-pricing-request-cro-77214.eml,new rfq,ready to quote,estimating,9,21175,CRO-77214;CRO-33543;CRO-54443,A;A;A,43;33;171,2024-10-15;2024-11-05;2024-10-08,2024-09-26,lost,,
+0917-1219-rfq-attached.eml,new rfq,ready to quote,estimating,1,21177,HOL-54692;HOL-52084,A;A,39;8,2024-10-08;2024-11-05,2024-09-25,won,domain shared by 3 customers: the email names the company,
+0917-1326-ship-date.eml,other,not an rfq,sales,5,20658,VOG-43825,,,,,won,order status question sent to quotes@,
+0917-1327-request-for-quote-imh-58127.eml,new rfq,ready to quote,estimating,10,21174,IMH-58127;IMH-61072,A;A,8;16,2024-10-01;2024-10-15,,lost,,
+0917-1605-updated-drawing-pfe-35607.eml,revision,not an rfq,estimating,26,21156,PFE-35607,B,,,,lost,replaces rev A on open RFQ 21156: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+0918-0758-quote-needed-yos-39452-rev-a.eml,new rfq,ready to quote,estimating,208,21186,YOS-39452,A,19,2024-10-09,2024-09-25,lost,,
+0918-1150-re-quote-needed-lut-42022-rev-a.eml,chaser,not an rfq,estimating,6,21140,LUT-42022;LUT-78214;LUT-14692,,,,,screened out,"RFQ received 2024-09-12, still unquoted on 2024-09-18",
+0918-1230-pricing-request-yod-44420.eml,new rfq,ready to quote,estimating,159,21185,YOD-44420,A,11,2024-11-06,2024-09-20,lost,,
+0918-1338-re-rfq-attached.eml,chaser,not an rfq,estimating,8,21132,ECK-11448;ECK-77879;ECK-68134,,,,,won,"RFQ received 2024-09-11, still unquoted on 2024-09-18",
+0919-0819-rfq-attached.eml,new rfq,ready to quote,estimating,2,21194,KES-43820;KES-71834,A;A,12;12,2024-10-31;2024-10-03,2024-10-14,lost,,
+0919-1021-quote-needed-lut-94331-rev-a.eml,new rfq,ready to quote,estimating,6,21195,LUT-94331;LUT-76897,A;A,52;8,2024-10-03;2024-10-03,2024-09-23,lost,,
+0919-1250-re-wendlow-quote-20194-for-imh-49931.eml,lost reply,not an rfq,sales,10,20929,IMH-49931;IMH-13965;IMH-94691,,,,,lost,lost on quote 20194,
+0919-1335-20-off-carbide-end-mills-through-9-30.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+0919-1422-rfq-4193.eml,new rfq,needs info,estimating,282,21193,ULL-24016,,31,2024-10-24,,lost late,"no revision stated, and the attachments don't carry one",revision
+0919-1527-request-for-quote-sto-48469.eml,new rfq,needs info,estimating,3,21196,STO-48469;STO-21595;STO-49688,A;A;A,24;10;,2024-11-07;2024-10-10;2024-10-17,2024-09-27,lost late,no quantity for STO-49688,quantity
+0919-1624-rfq-attached.eml,new rfq,ready to quote,estimating,31,21197,KUH-85668;KUH-76153,A;A,13;22,2024-11-14;2024-10-17,,no award,,
+0919-1702-quote-needed-gra-20397-rev-a.eml,new rfq,ready to quote,estimating,7,21192,GRA-20397;GRA-65398,A;A,22;31,2024-11-07;2024-10-10,2024-10-01,lost,domain shared by 2 customers: the email names the company,
+0920-0825-re-wendlow-quote-20350-for-fis-99622.eml,lost reply,not an rfq,sales,87,21153,FIS-99622;FIS-91189,,,,,lost,lost on quote 20350,
+0920-0919-rfq-4202.eml,new rfq,ready to quote,estimating,7,21202,GRA-66646;GRA-63072,A;A,33;19,2024-11-08;2024-11-15,,lost,domain shared by 2 customers: the email names the company,
+0920-1018-pricing-request-kes-99418.eml,new rfq,needs info,estimating,11,21205,KES-99418;KES-91553,,26;7,2024-10-04;2024-10-25,2024-10-02,lost,"no revision stated, and the attachments don't carry one",revision
+0920-1154-re-pricing-request-pfe-35607.eml,chaser,not an rfq,estimating,26,21156,PFE-35607,,,,,lost,"RFQ received 2024-09-13, still unquoted on 2024-09-20",
+0920-1513-rfq-attached.eml,new rfq,ready to quote,estimating,4,21203,FIS-85032,A,32,2024-10-25,,lost,,
+0920-1714-rfq-4204.eml,new rfq,ready to quote,estimating,24,21204,VAN-69789;VAN-13339,A;A,5;4,2024-11-08;2024-10-18,,won,domain shared by 2 customers: the email names the company,
+0923-0724-quote-needed-lut-93103-rev-a.eml,new rfq,ready to quote,estimating,6,21212,LUT-93103;LUT-78632,A;A,4;1,2024-10-14;2024-10-21,,won,,
+0923-0831-still-quoting-from-spreadsheets.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+0923-1510-re-wendlow-quote-20340-for-vog-13505.eml,award,not an rfq,sales,60,21129,VOG-13505;VOG-53310;VOG-91416,,,,,won,award on quote 20340; customer PO PO-74443; domain shared by 3 customers: the email names the company,
+0923-1553-quote-needed-mau-30727-rev-a.eml,new rfq,ready to quote,estimating,318,21213,MAU-30727,A,4,2024-10-28,2024-09-26,won,,
+0924-0710-fab-notes-september-2024.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+0924-0823-re-wendlow-quote-20389-for-eck-11448.eml,award,not an rfq,sales,8,21132,ECK-11448;ECK-77879;ECK-68134,,,,,won,award on quote 20389; customer PO PO-70204,
+0924-0900-ship-date.eml,other,not an rfq,sales,244,20896,VOG-25985,,,,,won,order status question sent to quotes@; domain shared by 2 customers: the email names the company,
+0924-1221-rfq-4222.eml,new rfq,needs info,estimating,135,21222,BEC-92447;BEC-30862;BEC-72769,A;A;A,4;16;29,2024-10-08;2024-11-12;2024-10-08,,lost late,no drawing attached,drawing
+0924-1616-request-for-quote-fis-78874.eml,new rfq,ready to quote,estimating,4,21221,FIS-78874;FIS-88713,A;A,27;63,2024-11-19;2024-10-22,2024-10-01,lost,,
+0925-0821-quote-needed-hol-58061-rev-a.eml,new rfq,needs a person,estimating,1,21231,HOL-58061;HOL-62051,A;A,;38,2024-11-20;2024-11-20,2024-10-01,screened out,no quantity for HOL-58061; HOL-62051 is on file as a base frame but the email says gusset: the simulation reused the number for a new part; domain shared by 3 customers: the email names the company,
+0925-1022-quote-needed-van-53053-rev-a.eml,new rfq,needs info,estimating,33,21230,VAN-53053;VAN-49053;VAN-45510,A;A;A,;10;62,2024-10-23;2024-10-09;2024-10-16,2024-10-01,lost,no quantity for VAN-53053,quantity
+0926-0809-rfq-4244.eml,new rfq,needs a person,estimating,6,21244,LUT-52760;LUT-44908,,25;52,2024-11-21;2024-11-21,,lost late,"no revision stated, and the attachments don't carry one; LUT-52760 is on file as a bracket but the email says gusset: the simulation reused the number for a new part",
+0926-0811-rfq-attached.eml,new rfq,ready to quote,estimating,3,21242,STO-90500;STO-32915,A;A,16;41,2024-10-24;2024-11-14,2024-10-10,lost,,
+0926-0817-rfq-attached.eml,new rfq,needs info,estimating,7,21240,GRA-76540;GRA-80697,,6;32,2024-10-31;2024-10-10,2024-10-07,lost,"no revision stated, and the attachments don't carry one; domain shared by 2 customers: the email names the company",revision
+0926-1030-re-wendlow-quote-20401-for-lut-93103.eml,award,not an rfq,sales,6,21212,LUT-93103;LUT-78632,,,,,won,award on quote 20401; customer PO PO-96803,
+0926-1130-pricing-request-gra-27650.eml,new rfq,ready to quote,estimating,7,21241,GRA-27650;GRA-58259,A;A,25;5,2024-11-07;2024-11-21,,lost,domain shared by 2 customers: the email names the company,
+0926-1353-rfq-attached.eml,new rfq,ready to quote,estimating,6,21245,LUT-82519;LUT-21714;LUT-66740,A;A;A,8;24;65,2024-11-21;2024-10-31;2024-10-10,,lost,,
+0926-1523-rfq-attached.eml,new rfq,needs a person,estimating,8,21246,ECK-74307,A,,2024-11-21,2024-10-04,lost,no quantity for ECK-74307; ECK-74307 is on file as a mounting plate but the email says skid: the simulation reused the number for a new part,
+0926-1709-rfq-attached.eml,new rfq,needs info,estimating,6,21243,LUT-98726;LUT-12726,,16;6,2024-10-24;2024-10-17,2024-09-30,lost,"no revision stated, and the attachments don't carry one",revision
+0926-1752-september-plate-and-sheet-pricing.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+0927-0804-re-wendlow-quote-20402-for-mau-30727.eml,award,not an rfq,sales,318,21213,MAU-30727,,,,,won,award on quote 20402; customer PO PO-81183,
+0927-0943-pricing-request-kes-22118.eml,new rfq,needs info,estimating,2,21249,KES-22118;KES-35707,A;A,33;14,2024-11-15;2024-11-08,2024-10-07,lost,no drawing attached,drawing
+0927-0949-rfq-4250.eml,new rfq,ready to quote,estimating,1,21250,HOL-20712,A,35,2024-11-01,2024-10-10,lost,domain shared by 3 customers: the email names the company,
+0927-1235-new-zinc-nickel-line-now-running.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+0930-0912-quote-needed-ull-81964-rev-a.eml,new rfq,ready to quote,estimating,129,21257,ULL-81964,A,24,2024-11-11,2024-10-11,lost,,
+0930-0924-pricing-request-sto-79162.eml,new rfq,ready to quote,estimating,3,21260,STO-79162,A,21,2024-10-14,2024-10-11,won,,
+0930-1129-rfq-4256.eml,new rfq,needs info,estimating,9,21256,CRO-31069,,11,2024-11-04,,lost late,"no revision stated, and the attachments don't carry one",revision
+0930-1351-rfq-4259.eml,new rfq,needs info,estimating,6,21259,LUT-12150,,63,2024-10-28,2024-10-04,lost,"no revision stated, and the attachments don't carry one",revision
+0930-1532-rfq-4258.eml,new rfq,ready to quote,estimating,4,21258,FIS-77892;FIS-55065;FIS-58036,A;A;A,61;27;4,2024-10-28;2024-11-11;2024-11-25,2024-10-07,lost,,
+0930-1548-quote-needed-lut-26522-rev-a.eml,new rfq,ready to quote,estimating,375,21261,LUT-26522,A,16,2024-11-11,2024-10-02,won,domain shared by 2 customers: the email names the company,
