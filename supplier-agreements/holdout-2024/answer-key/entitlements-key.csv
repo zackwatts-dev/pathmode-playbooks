@@ -1,0 +1,13 @@
+supplier,term,earned,paid_or_claimed,gap,cause,action
+Ashland Climate,volume tiers,868630.85,675601.77,193029.08,"statement applies the original third tier, not the amended $36,500,000 threshold (Amendment 1, June 2024)",claim from the supplier
+Ashland Climate,co-op,386058.15,284138.8,101919.35,"co-op accrued $386,058; claims filed for $284,139; eligible marketing spend $887,934; claims close 2025-01-31",claim from the supplier
+Ashland Climate,freight prepaid,9550.26,0.0,9550.26,"freight billed and paid on 73 orders at or above $5,000",claim from the supplier
+Northstar HVAC,volume tiers,131096.62,104283.59,26813.03,"statement leaves out Pittsburgh and Louisville, added as eligible locations by notice in March 2024",claim from the supplier
+Northstar HVAC,growth,9426.09,0.0,9426.09,the same two branches missing from the growth base,claim from the supplier
+Vantel,stock rotation,85050.26,0.0,85050.26,"rotation allowance $250,684 (5% of 2023 purchases), $36,319 used, $94,500 of its equipment received in the last 18 months and unsold all year; 10% restocking fee",return stock
+Brightwater Systems,volume tiers,86887.07,21887.07,65000.0,statement works the tiers out incrementally; the program says the rate reached applies from the first dollar,claim from the supplier
+Granite Coil,growth,2446.78,0.0,2446.78,"growth rebate not on the statement: 2024 net purchases $1,783,044 against $1,660,705 in 2023",claim from the supplier
+Westerly Thermostats,freight prepaid,2584.9,0.0,2584.9,"freight billed and paid on 19 orders at or above $1,000",claim from the supplier
+Westerly Thermostats,stock rotation,1289.72,0.0,1289.72,"rotation allowance $206,468 (5% of 2023 purchases), $0 used, $1,290 of its stock unsold all year",return stock
+Solway Refrigeration Parts,freight prepaid,1366.0,0.0,1366.0,"freight billed and paid on 8 orders at or above $1,500",claim from the supplier
+Thistle Ventilation,informal promise,16675.92,0.0,16675.92,"a rep's email promises an extra 1% over $1,600,000; the program sheet says nothing of it",to a person
