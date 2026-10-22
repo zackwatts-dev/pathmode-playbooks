@@ -54,18 +54,18 @@ def dashboard(r) -> str:
     ]
     kinds = _table(["Kind", "Due"], [[_e(k), _m(v)] for k, v in sorted(by_kind.items(), key=lambda kv: -kv[1])], {1})
     deadlines = [
-        [_e(o.supplier), _e(o.kind), _e(o.records.get("claim_by") or "December 31 (return window)"), _m(o.gap)]
+        [_e(o.supplier), _e(o.kind), _e(o.records.get("claim_by") or "none in the terms"), _m(o.gap)]
         for o in claims
-        if o.kind in ("co-op", "stock rotation")
+        if o.records.get("claim_by")
     ]
     people = [
         [_e(p.supplier), _e(p.what), _e(p.reason), f'<span class="quote">{_e(_cut(p.passage))}</span>']
         for p in r.people
     ]
+    by = {"model": "opening and closing by the AI, every figure by code", "code": "written by code"}
     letters = "".join(
-        f"<details><summary>{_e(lt.supplier)} "
-        f"<span class='muted'>({'drafted by the AI, every number checked' if lt.by == 'model' else 'written by code'}"
-        f")</span></summary><div class='letter'>{_e(lt.text)}</div></details>"
+        f"<details><summary>{_e(lt.supplier)} <span class='muted'>({by.get(lt.by, lt.by)})</span></summary>"
+        f"<div class='letter'>{_e(lt.text)}</div></details>"
         for lt in r.letters
     )
     score = ""

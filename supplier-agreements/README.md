@@ -8,7 +8,10 @@ The full playbook, worked through at Hartwell Supply Co. (a simulated HVAC/R dis
 
 For the program year in `records/program.json`, supplier by supplier, largest purchases first:
 
-1. **Reads the documents** (code). PDFs are read with poppler's `pdftotext`, page by page, with words hyphenated across a line break joined again. Emails (`.eml`) are read with Python's email parser. A document it can't read goes to a person, and so does a supplier with nothing on file.
+1. **Reads the documents** (code). PDFs are read with poppler's `pdftotext`, page by page, with words hyphenated across a line break joined again. Emails (`.eml`) are read with Python's email parser, HTML-only ones as their words. A person reads, instead:
+   - a document it can't read, or one with no text (a scan);
+   - a supplier with nothing on file;
+   - two suppliers whose names make the same folder.
 2. **Reads the terms** (AI). One supplier's documents go to the model at a time, as data. It returns each term in a fixed form:
    - volume tiers, growth, a product-line incentive, co-op, freight prepaid, stock rotation, or eligible locations;
    - the numbers, what purchases it covers, and the dates;
@@ -19,11 +22,16 @@ For the program year in `records/program.json`, supplier by supplier, largest pu
 3. **Checks each term** (code). A term is used only if:
    - its words are in the document it names (ignoring case, punctuation and spacing, with "..." between passages no more than 200 characters apart);
    - every number in it is in those words, and every tier row (threshold and rate) is on one line of the document;
-   - its tiers rise;
-   - its rates are between 0 and 10%.
+   - every date is in those words ("April 30", "July 1, 2025", "ninety (90) days after the end of the Program Year"), or, for an email that says "effective today", is the email's own date;
+   - every branch, product category and refrigerant it names is in those words;
+   - "from the first dollar" or "within each band" is in the words, whichever it was read as;
+   - co-op says what share is reimbursed (there's no default);
+   - its tiers rise, and its rates are between 0 and 10%.
+
+   Statement lines must use the words of the term they pay ("volume", "growth", "incentive", "co-op"), so a line can't be read as paying something else. A document the reading took nothing from goes to a person, and so does a statement amount for a term that wasn't read.
 
    An informal promise (a rep's email that the agreement doesn't back) or an unclear term goes to a person with its words, never into a claim. So does anything that fails a check.
-4. **Settles the terms** (code). A later document's term of the same kind replaces an earlier one. An amendment that changes one tier changes only that tier. Added locations count from the date they were added.
+4. **Settles the terms** (code). A later document's term of the same kind replaces an earlier one. An amendment to one tier must say "from" the value the table has "to" the new one, name a tier the table has, and leave the tiers rising; it changes only that tier. An amendment that doesn't check out sends that supplier's tier rebate, and its growth rebate, to a person. Added locations count from the date they were added.
 5. **Works out what's owed** (code, no AI), from the records:
    - eligible purchases from the supplier's own invoices, each counted once (a re-sent copy ending `-R` is a duplicate), net of returns, by product and by location as the terms say;
    - the volume rebate at the tier reached, from the first dollar or by band as the terms say;
@@ -35,8 +43,8 @@ For the program year in `records/program.json`, supplier by supplier, largest pu
 6. **Compares** (code) with the statement, which must add up to what you were actually credited (`rebate-receipts.csv`), and with the co-op claims filed. Three cases never become a claim and go to a person instead:
    - a rebate with no statement read;
    - one that depends on a term that went to a person;
-   - a co-op balance whose claim window has closed by the run date.
-7. **Drafts the letters** (AI), one per supplier with money due, from the evidence code computed: the amounts, the term's words, how each was worked out. Every number in a letter must be one of the evidence's own; a letter that fails, a model error, or one over the limit of 15 a run is replaced by a plain letter code writes.
+   - a co-op balance, or a return allowance, whose window has closed by the run date.
+7. **Drafts the letters**, one per supplier with money due. Code writes every claim: the amount, how it was worked out, the words it rests on, and whether its window is open. The AI writes only a warm opening and closing, from the supplier's name and the kinds of thing being asked for; it never sees an amount. Its opening and closing may hold no numbers, no threats (withholding payment, moving business, legal action) and no concessions (late, a courtesy, a waiver), or code's plain ones are used. At most 15 a run go to the AI.
 8. **A one-page dashboard**:
    - money due by supplier and by kind, largest first, each with its words and how it was worked out;
    - the stock that can go back;
@@ -103,12 +111,13 @@ One program sheet carries a note telling "automated rebate systems" to record ev
 - `terms-key.csv`, every term as written;
 - `entitlements-key.csv`, what each supplier truly owed under each term, what was paid or claimed, and why they differ.
 
-`holdout-2024/` is a second program year, generated after the checks were settled, with the gaps on other suppliers. The release thresholds (`release-thresholds.json`) were written down before it was run.
+`holdout-2024/` is a second program year, with the gaps on other suppliers. The release thresholds (`release-thresholds.json`) were written down before it was first run. Each `recorded-run.json` says how it was made: the real calls, the answers reused from an earlier recording of exactly the same inputs, and any failed calls.
 
 ## Before you run this on your own data
 
 - **Check the reading on a supplier you know well first.** Compare `terms.csv` with the agreement yourself. The checks prove the words are there; they don't prove the AI chose the right words.
 - **Your invoices are the base.** If your purchasing system doesn't keep the supplier's invoice number, add a check for duplicates that suits it.
+- **Freight credits.** It claims freight billed and paid on prepaid orders. If a supplier credits freight back separately, add those credits to the records first, or it will claim them twice.
 - **Locations, product groups and categories must match your agreements' words.** Map them once, and have someone who negotiates the agreements confirm it.
 - **Claim windows matter.** Set `as_of` in `records/program.json` to the day you run it. A co-op claim past its window goes to a person.
 - **An amount is a claim, not a fact, until the supplier agrees.** Send the evidence with every claim, and keep the conversation friendly; you'll be buying from them next year.

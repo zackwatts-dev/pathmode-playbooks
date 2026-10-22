@@ -88,26 +88,6 @@ def test_a_number_that_isnt_in_the_quote_goes_to_a_person():
     assert isinstance(got, sa.Person) and "2500" in got.reason
 
 
-def test_an_amendment_changes_only_the_tier_it_names():
-    base = sa.Term(
-        "Acme", "volume tiers", "a.pdf", "2024-12-09", "q", {"tiers": [[1e6, 1.0], [3e6, 2.0]], "retroactive": True}
-    )
-    amend = sa.Term(
-        "Acme",
-        "volume tiers",
-        "b.pdf",
-        "2025-06-16",
-        "reduced to $2,000,000",
-        {"amends": {"tier": 2, "threshold": 2e6}},
-    )
-    (t,) = sa.resolve([amend, base])
-    assert (
-        t.get("tiers") == [[1e6, 1.0], [2e6, 2.0]]
-        and t.get("retroactive") is True
-        and t.doc == "a.pdf, as amended by b.pdf"
-    )
-
-
 def test_a_statement_line_can_quote_the_label_with_the_amount_on_the_same_row():
     st = {
         "doc": "acme-2025-rebate-statement.pdf",
@@ -161,17 +141,6 @@ def test_a_statement_must_add_up_to_what_we_were_credited():
     }
     assert isinstance(sa.check_statement("Acme", st, docs(), 25000.0), sa.Statement)
     assert isinstance(sa.check_statement("Acme", st, docs(), 24000.0), sa.Person)
-
-
-def test_a_later_document_replaces_an_earlier_term_of_the_same_kind():
-    old = sa.Term("Acme", "volume tiers", "a.pdf", "2024-12-09", "q", {"tiers": [[1, 1]]})
-    new = sa.Term("Acme", "volume tiers", "b.pdf", "2025-06-16", "q", {"tiers": [[1, 2]]})
-    extra = sa.Term("Acme", "line incentive", "b.pdf", "2025-06-16", "q", {"rate": 1.5})
-    got = sa.resolve([new, old, extra])
-    assert [t.doc for t in got if t.kind == "volume tiers"] == ["b.pdf"] and extra in got
-
-
-# --- the records ----------------------------------------------------------------------------------------------------
 
 
 def write(path: Path, rows: list[dict]):
@@ -373,26 +342,6 @@ def test_what_the_statement_paid_is_set_against_what_was_earned(folder):
 # --- letters, the run, the page -------------------------------------------------------------------------------------
 
 
-def owed(gap=25000.0):
-    t = sa.Term("Acme", "volume tiers", "a.pdf", "", "$2,000,000 or more 2.00%", {})
-    return sa.Owed("Acme", "volume tiers", 50000.0, 50000.0 - gap, sa.CLAIM, "$2,500,000.00 reaches 2.00%", t)
-
-
-def test_a_letter_with_a_number_not_in_the_evidence_is_replaced_by_code():
-    good = "Dear Acme, we believe $25,000.00 is due under the 2.00% tier. Purchasing, Hartwell Supply Co."
-    bad = "Dear Acme, we believe $31,000.00 is due. Purchasing, Hartwell Supply Co."
-    (lg,), _ = sa.write_letters([owed()], ScriptedModel([good]))
-    (lb,), _ = sa.write_letters([owed()], ScriptedModel([bad]))
-    assert lg.by == "model" and lb.by == "code" and "$31,000.00" in lb.why
-
-
-def test_letters_over_the_cap_are_written_by_code():
-    a, b = owed(), owed()
-    b.supplier = "Bolt"
-    letters, over = sa.write_letters([a, b], ScriptedModel(["Dear Acme, $25,000.00. Purchasing"]), cap=1)
-    assert [lt.by for lt in letters] == ["model", "code"] and over == ["Bolt"]
-
-
 def test_the_dashboard_escapes_everything_from_a_document():
     t = sa.Term("<script>x</script>", "volume tiers", "a.pdf", "", '" onmouseover="x', {})
     o = sa.Owed("<script>x</script>", "volume tiers", 10.0, 0.0, sa.CLAIM, "<b>how</b>", t)
@@ -441,12 +390,252 @@ def test_a_word_hyphenated_across_a_line_break_is_one_word_again(monkeypatch):
     assert sa.quote_found("trade shows, co-branded advertising", pages[0])
 
 
-def test_a_letter_that_concedes_an_open_deadline_is_replaced_by_code():
+# --- amendments, and settling the terms ---------------------------------------------------------------------------
+
+
+def base_tiers():
+    return sa.Term(
+        "Acme", "volume tiers", "a.pdf", "2024-12-09", "q", {"tiers": [[1e6, 1.0], [3e6, 2.0]], "retroactive": True}
+    )
+
+
+def amendment(quote="the second tier is reduced from $3,000,000 to $2,000,000", **amends):
+    return sa.Term(
+        "Acme", "volume tiers", "b.pdf", "2025-06-16", quote, {"amends": amends or {"tier": 2, "threshold": 2e6}}
+    )
+
+
+def test_an_amendment_changes_only_the_tier_it_names():
+    (t,), people = sa.resolve([amendment(), base_tiers()])
+    assert not people and t.get("tiers") == [[1e6, 1.0], [2e6, 2.0]] and t.get("retroactive") is True
+    assert t.doc == "a.pdf, as amended by b.pdf"
+
+
+def test_an_amendment_must_say_from_the_old_value_to_the_new():
+    for quote in ("the second tier is now $2,000,000", "raised from $2,000,000 to $3,000,000"):
+        terms, people = sa.resolve([amendment(quote), base_tiers()])
+        assert not terms and people and "don't say" in people[0].reason
+
+
+def test_an_amendment_to_a_tier_that_isnt_there_goes_to_a_person():
+    terms, people = sa.resolve([amendment(tier=9, threshold=2e6), base_tiers()])
+    assert not terms and "tier 9" in people[0].reason
+
+
+def test_an_amendment_that_unorders_the_tiers_goes_to_a_person():
+    terms, people = sa.resolve([amendment("reduced from $3,000,000 to $500,000", tier=2, threshold=5e5), base_tiers()])
+    assert not terms and "don't rise" in people[0].reason
+
+
+def test_an_amendment_with_no_table_goes_to_a_person():
+    terms, people = sa.resolve([amendment()])
+    assert not terms and "wasn't read" in people[0].reason
+
+
+def test_a_later_document_replaces_an_earlier_term_of_the_same_kind():
+    old = sa.Term("Acme", "volume tiers", "a.pdf", "2024-12-09", "q", {"tiers": [[1, 1]]})
+    new = sa.Term("Acme", "volume tiers", "b.pdf", "2025-06-16", "q", {"tiers": [[1, 2]]})
+    extra = sa.Term("Acme", "line incentive", "b.pdf", "2025-06-16", "q", {"rate": 1.5})
+    got, _ = sa.resolve([new, old, extra])
+    assert [t.doc for t in got if t.kind == "volume tiers"] == ["b.pdf"] and extra in got
+
+
+def test_an_unsettled_table_sends_the_rebate_and_growth_to_a_person(folder):
+    rec = sa.Records.load(folder)
+    t = sa.Term("Acme", "volume tiers", "a.pdf", "", "q", {"tiers": [[1e6, 1.0]], "retroactive": True})
+    g = sa.Term("Acme", "growth", "a.pdf", "", "q", {"rate": 1.0})
+    st = sa.Statement(25000.0, {"volume tiers": 25000.0}, [], "s.pdf")
+    got = sa.owed_for(rec, "Acme", [t, g], st, {"volume tiers"})
+    assert [o.action for o in got] == [sa.PERSON, sa.PERSON]
+
+
+# --- what the AI can and can't get past ---------------------------------------------------------------------------
+
+
+def test_from_the_first_dollar_or_by_band_must_be_in_the_words():
+    t = tier_term(quote="$1,000,000 or more 1.00% ... $2,000,000 or more 2.00%")
+    got = sa.check_term("Acme", t, docs())
+    assert isinstance(got, sa.Person) and "first dollar" in got.reason
+    banded = {"x.pdf": sa.Doc("x.pdf", ["Each rate applies only within its tier band.\n$1,000,000 or more 1.00%"])}
+    t = {
+        "kind": "volume tiers",
+        "doc": "x.pdf",
+        "quote": "Each rate applies only within its tier band.",
+        "tiers": [[1000000, 1.0]],
+        "retroactive": True,
+    }
+    assert isinstance(sa.check_term("Acme", t, banded), sa.Person)
+    t["retroactive"] = False
+    assert isinstance(sa.check_term("Acme", t, banded), sa.Term)
+
+
+def test_dates_places_and_products_must_be_in_the_words():
+    doc = {
+        "p.pdf": sa.Doc(
+            "p.pdf",
+            ["Pittsburgh and Louisville are added from March 3, 2025. Co-op claims close April 30. Equipment only."],
+        )
+    }
+    added = {
+        "kind": "eligible locations",
+        "doc": "p.pdf",
+        "quote": "Pittsburgh and Louisville are added from March 3, 2025",
+        "added_locations": ["Pittsburgh", "Louisville"],
+        "from": "2025-03-03",
+    }
+    assert isinstance(sa.check_term("Acme", added, doc), sa.Term)
+    assert isinstance(sa.check_term("Acme", dict(added, **{"from": "2025-01-01"}), doc), sa.Person)
+    assert isinstance(sa.check_term("Acme", dict(added, added_locations=["Dayton"]), doc), sa.Person)
+    assert isinstance(sa.check_term("Acme", {k: v for k, v in added.items() if k != "from"}, doc), sa.Person)
+    covers = {
+        "kind": "freight prepaid",
+        "doc": "p.pdf",
+        "quote": "Co-op claims close April 30.",
+        "min_order": 0,
+        "covers": {"refrigerant": "R-454B"},
+    }
+    got = sa.check_term("Acme", covers, doc)  # the document never mentions R-454B
+    assert isinstance(got, sa.Person) and "R-454B" in got.reason
+    covers["covers"] = {"category": "equipment"}  # in the document if not the quote: a definition, say
+    assert isinstance(sa.check_term("Acme", covers, doc), sa.Term)
+
+
+def test_an_emails_effective_today_is_the_emails_date():
+    doc = {
+        "e.eml": sa.Doc(
+            "e.eml",
+            [
+                "From: rep\nDate: Mon, 03 Mar 2025 09:14:00 -0500\n\nPittsburgh and "
+                "Louisville are added as eligible locations effective today."
+            ],
+        )
+    }
+    t = {
+        "kind": "eligible locations",
+        "doc": "e.eml",
+        "quote": "Pittsburgh and Louisville are added as eligible locations effective today",
+        "added_locations": ["Pittsburgh", "Louisville"],
+        "from": "2025-03-03",
+    }
+    assert isinstance(sa.check_term("Acme", t, doc), sa.Term)
+    assert isinstance(sa.check_term("Acme", dict(t, **{"from": "2025-03-10"}), doc), sa.Person)
+
+
+def test_co_op_with_no_reimbursement_share_goes_to_a_person():
+    doc = {"c.pdf": sa.Doc("c.pdf", ["The Distributor accrues co-op funds at 1.0% of Eligible Purchases."])}
+    t = {"kind": "co-op", "doc": "c.pdf", "quote": "accrues co-op funds at 1.0% of Eligible Purchases", "rate": 1.0}
+    assert isinstance(sa.check_term("Acme", t, doc), sa.Person)
+
+
+def test_a_statement_line_cant_be_read_as_paying_another_term():
+    two = {
+        "s.pdf": sa.Doc(
+            "s.pdf",
+            [
+                "Volume rebate, equipment $44,000,000 at 1.75%    $770,000.00\n"
+                "R-454B transition incentive, $19,000,000 at 1.50%    $285,000.00"
+            ],
+            True,
+        )
+    }
+    swapped = {
+        "doc": "s.pdf",
+        "lines": [
+            {"kind": "line incentive", "amount": 770000, "quote": "Volume rebate, equipment $44,000,000 at 1.75%"},
+            {"kind": "volume tiers", "amount": 285000, "quote": "R-454B transition incentive, $19,000,000 at 1.50%"},
+        ],
+    }
+    got = sa.check_statement("Acme", swapped, two, 1055000.0)
+    assert isinstance(got, sa.Person) and "its words say" in got.reason
+
+
+def test_a_document_nothing_was_read_from_goes_to_a_person():
+    m = ScriptedModel([json.dumps({"terms": [], "statement": None})])
+    _, _, people = sa.read_supplier("Acme", list(docs().values()), m, 0.0)
+    assert any(p.what == "acme-agreement.pdf" and "nothing was read" in p.reason for p in people)
+
+
+def test_a_scan_with_no_text_goes_to_a_person(tmp_path, monkeypatch):
+    d = tmp_path / "agreements" / "acme"
+    d.mkdir(parents=True)
+    (d / "scan.pdf").write_bytes(b"%PDF")
+    monkeypatch.setattr(sa, "pdf_pages", lambda p: [""])
+    docs_, people = sa.load_docs(tmp_path, ["Acme"])
+    assert docs_["Acme"] == [] and "no text" in people[0].reason
+
+
+def test_rotation_past_its_request_date_goes_to_a_person(folder):
+    rec = sa.Records.load(folder)
+    terms = {"allowance": 10, "restocking_fee": 10, "age_limit_months": 18}
+    open_ = sa.Term("Acme", "stock rotation", "a.pdf", "", "q", dict(terms, request_by="2026-03-31"))
+    closed = sa.Term("Acme", "stock rotation", "a.pdf", "", "q", dict(terms, request_by="2025-12-31"))
+    assert [o.action for o in sa.owed_for(rec, "Acme", [open_], None)] == [sa.RETURN]
+    assert [o.action for o in sa.owed_for(rec, "Acme", [closed], None)] == [sa.PERSON]
+
+
+def test_a_rejected_co_op_claim_isnt_counted_as_claimed(folder):
+    rec = sa.Records.load(folder)
+    rec.marketing = [{"supplier": "Acme", "date": "2025-04-01", "amount": "100000"}]
+    rec.coop_claims = [{"supplier": "Acme", "claimed": "10000", "status": "rejected"}]
+    t = sa.Term("Acme", "co-op", "a.pdf", "", "q", {"rate": 1.0, "reimburse": 50, "claim_by": "2026-04-30"})
+    (o,) = sa.owed_for(rec, "Acme", [t], None)
+    assert o.paid == 0.0
+
+
+def test_a_supplier_listed_twice_is_worked_out_once(folder):
+    path = folder / "records" / "suppliers.csv"
+    rows = list(csv.DictReader(path.open()))
+    write(path, rows + rows)
+    assert len(sa.Records.load(folder).suppliers) == 1
+
+
+# --- the letters ----------------------------------------------------------------------------------------------------
+
+
+def owed(gap=25000.0):
+    t = sa.Term("Acme", "volume tiers", "a.pdf", "", "$2,000,000 or more 2.00%", {})
+    return sa.Owed("Acme", "volume tiers", 50000.0, 50000.0 - gap, sa.CLAIM, "$2,500,000.00 reaches 2.00%", t)
+
+
+def letter(opening, closing="Thank you for your help."):
+    return json.dumps({"opening": opening, "closing": closing})
+
+
+def test_code_writes_every_figure_and_the_ai_only_the_courtesy():
+    m = ScriptedModel([letter("Thank you for a good year together.")])
+    (lt,), _ = sa.write_letters([owed()], m)
+    assert lt.by == "model" and "Thank you for a good year together." in lt.text
+    assert "we ask for a credit of $25,000.00" in lt.text and "$50,000.00" not in lt.text
+    assert "25000" not in m.calls[0][1] and "amount" not in m.calls[0][1]  # the AI never sees an amount
+
+
+def test_an_opening_or_closing_with_a_number_threat_or_concession_is_replaced():
+    for bad in (
+        "We ask for two percent more than 2%.",
+        "Otherwise we will move our volume to a competitor.",
+        "We know the window has passed.",
+        "We'd ask for this as a courtesy.",
+    ):
+        (lt,), _ = sa.write_letters([owed()], ScriptedModel([letter(bad)]))
+        assert lt.by == "code", bad
+
+
+def test_letters_over_the_cap_are_written_by_code():
+    a, b = owed(), owed()
+    b.supplier = "Bolt"
+    letters, over = sa.write_letters([a, b], ScriptedModel([letter("Thank you for a good year.")]), cap=1)
+    assert [lt.by for lt in letters] == ["model", "code"] and over == ["Bolt"]
+
+
+def test_an_open_window_is_said_to_be_open():
     t = sa.Term("Acme", "co-op", "a.pdf", "", "Claims must be submitted by April 30", {})
     o = sa.Owed("Acme", "co-op", 1000.0, 0.0, sa.CLAIM, "$1,000.00 due", t, {"claim_by": "2026-04-30"})
-    text = "Dear Acme, the April 30 date has passed, but we ask for $1,000.00 as a courtesy. Purchasing"
-    (lt,), _ = sa.write_letters([o], ScriptedModel([text]), today="2026-03-16")
-    assert lt.by == "code" and "deadline" in lt.why
-    m = ScriptedModel(["Dear Acme, we ask for $1,000.00, due by April 30. Purchasing"])
-    (ok,), _ = sa.write_letters([o], m, today="2026-03-16")
-    assert ok.by == "model" and sa.payload_of(m.calls[0][1])["today"] == "2026-03-16"
+    (lt,), _ = sa.write_letters([o], ScriptedModel([letter("Thank you.")]), today="2026-03-16")
+    assert "within the window, which closes 2026-04-30" in lt.text
+
+
+def test_the_scorer_counts_a_second_claim_for_the_same_term_as_wrong(tmp_path):
+    key = tmp_path / "key.csv"
+    write(key, [{"supplier": "Acme", "term": "volume tiers", "gap": "25000", "action": sa.CLAIM}])
+    r = sa.Run("m", [], [owed(), owed()], [], [], {}, ["Acme"])
+    assert sa.score(r, key)["n"]["wrong claim"] == 1

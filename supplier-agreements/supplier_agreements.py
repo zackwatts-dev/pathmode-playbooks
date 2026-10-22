@@ -14,6 +14,7 @@ import csv
 import email
 import email.policy
 import hashlib
+import html
 import json
 import re
 import subprocess
@@ -27,7 +28,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from common import llm  # noqa: E402
-from common.evidence import numbers_in, quote_found, to_float, unsupported_numbers  # noqa: E402
+from common.evidence import NUMBER, numbers_in, quote_found, to_float  # noqa: E402
 from common.fake import OfflineModel  # noqa: E402
 from common.util import BadAnswer, parse_json, read_csv, write_csv, write_text  # noqa: E402
 
@@ -81,8 +82,11 @@ def pdf_pages(path: Path) -> list[str]:
 def eml_text(path: Path) -> str:
     msg = email.message_from_bytes(path.read_bytes(), policy=email.policy.default)
     head = "\n".join(f"{h}: {msg[h]}" for h in ("From", "To", "Date", "Subject") if msg[h])
-    body = msg.get_body(preferencelist=("plain",))
-    return head + "\n\n" + (body.get_content() if body else "")
+    body = msg.get_body(preferencelist=("plain", "html"))
+    text = body.get_content() if body else ""
+    if body is not None and body.get_content_type() == "text/html":
+        text = html.unescape(re.sub(r"<[^>]+>", " ", text))  # an HTML-only email: its words, without the markup
+    return head + "\n\n" + text
 
 
 @dataclass
@@ -94,12 +98,19 @@ class Person:
     reason: str
     passage: str = ""
     doc: str = ""
+    informal: bool = False  # a promise outside the agreement: it doesn't unsettle the agreed terms
 
 
 def load_docs(folder: Path, suppliers: list[str]) -> tuple[dict[str, list[Doc]], list[Person]]:
     docs: dict[str, list[Doc]] = {}
     people: list[Person] = []
+    seen: dict[str, str] = {}
     for name in suppliers:
+        if slug(name) in seen:  # two suppliers whose names make the same folder: neither can be told apart
+            people.append(Person(name, "documents", f"shares a folder name with {seen[slug(name)]}: file them apart"))
+            docs[name] = []
+            continue
+        seen[slug(name)] = name
         d = folder / "agreements" / slug(name)
         found = []
         for path in sorted(d.glob("*")) if d.is_dir() else []:
@@ -113,8 +124,11 @@ def load_docs(folder: Path, suppliers: list[str]) -> tuple[dict[str, list[Doc]],
             except (subprocess.SubprocessError, OSError, ValueError) as e:
                 people.append(Person(name, path.name, f"couldn't read the document ({type(e).__name__})"))
                 continue
+            if not "".join(pages).strip():  # a scan, or an email with no words: nothing to check a reading against
+                people.append(Person(name, path.name, "no text could be read from it (a scan?): a person reads it"))
+                continue
             found.append(Doc(path.name, pages, statement="rebate-statement" in path.name))
-        if not found:
+        if not found and not any(p.supplier == name for p in people):
             people.append(Person(name, "documents", "no agreement or statement on file"))
         docs[name] = found
     return docs, people
@@ -148,7 +162,7 @@ class Records:
         for row in read_csv(r / "supplier-bill-lines.csv"):
             lines[row["bill_id"]].append(row)
         return cls(
-            suppliers=read_csv(r / "suppliers.csv"),
+            suppliers=list({row["name"]: row for row in read_csv(r / "suppliers.csv")}.values()),  # once each
             pos={p["po_id"]: p for p in read_csv(r / "purchase-orders.csv")},
             bills=read_csv(r / "supplier-bills.csv"),
             lines=lines,
@@ -263,6 +277,61 @@ def numbers_of(t: dict) -> list[float]:
     return out
 
 
+MONTHS = [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december",
+]
+FIRST_DOLLAR = ("first dollar", "every dollar", "all eligible purchases", "all purchases", "all your", "on all")
+BY_BAND = ("within its", "within each", "band", "only within")
+
+
+def iso(value) -> bool:
+    return isinstance(value, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", value) is not None
+
+
+def days_after_year_end(value: str, text: str) -> bool:
+    """True if the text gives the date as a number of days after the end of the year: "within ninety (90) days
+    after the end of the Program Year" for March 31."""
+    if not iso(value):
+        return False
+    from datetime import date
+
+    d = date(int(value[:4]), int(value[5:7]), int(value[8:10]))
+    days = (d - date(d.year - 1, 12, 31)).days
+    return any(int(n) == days for n in re.findall(r"\((\d+)\) days|\b(\d+) days", text) for n in n if n)
+
+
+def date_in(value: str, text: str) -> bool:
+    """True if the date (YYYY-MM-DD) is written in the text: "April 30", "April 30, 2026", "30 Apr 2026",
+    "4/30/2026" or "2026-04-30". A month and day without a year count: agreements say "by April 30 following"."""
+    if not iso(value):
+        return False
+    y, m, d = int(value[:4]), int(value[5:7]), int(value[8:10])
+    low = " ".join(text.lower().split())
+    month = MONTHS[m - 1]
+    pats = [rf"\b{month} {d}\b", rf"\b{d} {month[:3]}\w*\b", rf"\b{month[:3]}\.? {d}\b", rf"\b{m}/{d}/{y}\b", value]
+    return any(re.search(p_, low) for p_ in pats)
+
+
+def email_date(text: str) -> str:
+    """The date an email was sent, from its Date header, as YYYY-MM-DD."""
+    m = re.search(r"^Date: .*?(\d{1,2}) (\w{3}) (\d{4})", text, re.MULTILINE)
+    if not m:
+        return ""
+    mon = [x[:3] for x in MONTHS].index(m.group(2).lower()) + 1
+    return f"{m.group(3)}-{mon:02d}-{int(m.group(1)):02d}"
+
+
 def on_one_line(values: list[float], text: str) -> bool:
     """True if some line of the document shows every one of the values: a row of a table."""
     return any(all(in_quote(v, line) for v in values) for line in text.splitlines())
@@ -284,7 +353,9 @@ def check_term(supplier: str, t: dict, docs: dict[str, Doc]) -> Term | Person:
     kind, name, quote = t.get("kind"), str(t.get("doc", "")), str(t.get("quote", ""))
     what = f"{kind or 'term'} ({name or 'no document'})"
     if t.get("informal"):
-        return Person(supplier, what, "promised outside the agreement: decide whether to hold them to it", quote, name)
+        return Person(
+            supplier, what, "promised outside the agreement: decide whether to hold them to it", quote, name, True
+        )
     if t.get("unclear"):
         return Person(supplier, what, "the AI couldn't tell what it means: " + str(t.get("note", "")), quote, name)
     if kind not in KINDS:
@@ -309,7 +380,38 @@ def check_term(supplier: str, t: dict, docs: dict[str, Doc]) -> Term | Person:
             quote,
             name,
         )
+    low = " ".join(quote.lower().split())
+    for k in ("from", "claim_by", "request_by"):
+        v = t.get(k)
+        if v in (None, ""):
+            continue
+        said_today = (
+            name.endswith(".eml")
+            and v == email_date(doc.text)
+            and any(w in low for w in ("today", "immediately", "effective now"))
+        )
+        if not (date_in(str(v), quote) or said_today or days_after_year_end(str(v), quote)):
+            return Person(supplier, what, f"the date {v} isn't in the quoted words", quote, name)
+    if t.get("added_locations") and not t.get("from"):
+        return Person(supplier, what, "locations added with no date they start counting", quote, name)
+    for k in ("locations", "added_locations"):
+        missing_places = [b for b in t.get(k) or [] if str(b).lower() not in low]
+        if missing_places:
+            return Person(
+                supplier, what, "places not in the quoted words: " + ", ".join(map(str, missing_places)), quote, name
+            )
+    covers = t.get("covers") or {}
+    for k in ("category", "refrigerant"):
+        # Often in a definition elsewhere in the same document ("Eligible Purchases means ... Equipment").
+        if covers.get(k) and str(covers[k]).lower() not in " ".join(doc.text.lower().split()):
+            return Person(supplier, what, f"says it covers {covers[k]}, but the document doesn't", quote, name)
+    if kind == "co-op" and t.get("reimburse") in (None, ""):
+        return Person(supplier, what, "doesn't say what share of the cost is reimbursed", quote, name)
+    if t.get("doc_date") not in (None, "") and not iso(t.get("doc_date")):
+        return Person(supplier, what, f"an unreadable document date ({t.get('doc_date')!r})", quote, name)
     if kind == "volume tiers" and t.get("amends"):
+        if not iso(t.get("doc_date")):
+            return Person(supplier, what, "an amendment with no date: can't tell what it replaces", quote, name)
         return Term(supplier, kind, name, str(t.get("doc_date", "")), quote, t)
     if kind == "volume tiers":
         if not tiers or any(
@@ -318,10 +420,23 @@ def check_term(supplier: str, t: dict, docs: dict[str, Doc]) -> Term | Person:
             return Person(supplier, what, "the tiers don't rise", quote, name)
         if t.get("retroactive") not in (True, False):
             return Person(supplier, what, "doesn't say whether the rate applies from the first dollar", quote, name)
+        words = FIRST_DOLLAR if t.get("retroactive") else BY_BAND
+        if not any(w in low for w in words):
+            how = "from the first dollar" if t.get("retroactive") else "within each band"
+            return Person(supplier, what, f"read as paying {how}, but the quoted words don't say so", quote, name)
     rates = [float(r) for _t, r in tiers] + [float(t[k]) for k in ("rate", "allowance") if t.get(k) is not None]
     if any(not 0 < r <= MAX_RATE for r in rates):
         return Person(supplier, what, f"a rate outside 0 to {MAX_RATE:g}%", quote, name)
-    return Term(supplier, kind, name, str(t.get("doc_date", "")), quote, t)
+    return Term(supplier, kind, name, str(t.get("doc_date") or ""), quote, t)
+
+
+# The words a statement line has to use for the term it pays: a line can't be read as paying something else.
+LINE_WORDS = {
+    "volume tiers": ("volume", "tier"),
+    "growth": ("growth",),
+    "line incentive": ("incentive",),
+    "co-op": ("co-op", "cooperative"),
+}
 
 
 @dataclass
@@ -343,6 +458,17 @@ def check_statement(supplier: str, s: dict | None, docs: dict[str, Doc], credite
     by_kind: dict[str, float] = defaultdict(float)
     for ln in s.get("lines") or []:
         q = str(ln.get("quote", ""))
+        kind = str(ln.get("kind"))
+        said = [k for k, words in LINE_WORDS.items() if any(w in q.lower() for w in words)]
+        if said != [kind]:
+            return Person(
+                supplier,
+                "statement",
+                f"a line read as {kind}, but its words say "
+                + (", ".join(said) if said else "nothing about what it pays"),
+                q,
+                doc.name,
+            )
         if not any(
             in_quote(float(ln["amount"]), line) and quote_found(q, line, min_words=2) for line in doc.text.splitlines()
         ):
@@ -365,25 +491,28 @@ def check_statement(supplier: str, s: dict | None, docs: dict[str, Doc], credite
     return Statement(credited, dict(by_kind), list(s.get("lines") or []), doc.name)
 
 
-def resolve(terms: list[Term]) -> list[Term]:
+def resolve(terms: list[Term]) -> tuple[list[Term], list[Person]]:
     """A later document's term of the same kind replaces an earlier one, except for terms that add to each other
-    (line incentives, added locations)."""
+    (line incentives, added locations). An amendment to one tier must say "from" the value the table has "to" the
+    new one; one that doesn't, or that leaves the table out of order, goes to a person with the table it was
+    meant to change, so nothing is worked out on a guess."""
     keep: dict[tuple, Term] = {}
-    out = []
-    for t in sorted(terms, key=lambda t: (t.doc_date, t.doc)):
+    out, people = [], []
+    for t in sorted(terms, key=lambda t: (t.doc_date or "0000", t.doc)):
         if t.kind in ("line incentive", "eligible locations"):
             out.append(t)
-        elif t.get("amends") and (t.supplier, t.kind) in keep:
-            # A change to one tier of the table already read: the rest of the table stands.
-            base = keep[(t.supplier, t.kind)]
+        elif t.get("amends"):
+            base = keep.get((t.supplier, t.kind))
+            why = amendment_problem(base, t)
+            if why:
+                people.append(Person(t.supplier, f"{t.kind} ({t.doc})", why, t.quote, t.doc))
+                keep.pop((t.supplier, t.kind), None)  # the table isn't settled: nothing is worked out from it
+                continue
             tiers = [list(r) for r in base.get("tiers")]
-            ch = t.get("amends")
-            i = int(ch.get("tier", 0)) - 1
-            if 0 <= i < len(tiers):
-                if ch.get("threshold") is not None:
-                    tiers[i][0] = float(ch["threshold"])
-                if ch.get("rate") is not None:
-                    tiers[i][1] = float(ch["rate"])
+            ch, i = t.get("amends"), int(t.get("amends")["tier"]) - 1
+            for k, j in (("threshold", 0), ("rate", 1)):
+                if ch.get(k) is not None:
+                    tiers[i][j] = float(ch[k])
             keep[(t.supplier, t.kind)] = Term(
                 t.supplier,
                 t.kind,
@@ -392,9 +521,51 @@ def resolve(terms: list[Term]) -> list[Term]:
                 base.quote + " ... " + t.quote,
                 dict(base.t, tiers=tiers, amended_by=t.doc),
             )
-        elif not t.get("amends"):
+        else:
             keep[(t.supplier, t.kind)] = t
-    return out + list(keep.values())
+    return out + list(keep.values()), people
+
+
+def first_at(value: float, text: str) -> int:
+    for m in NUMBER.finditer(text):
+        try:
+            if abs(to_float(m.group()) - value) <= max(abs(value) * 1e-9, 1e-9):
+                return m.start()
+        except ValueError:
+            continue
+    return -1
+
+
+def amendment_problem(base: Term | None, t: Term) -> str:
+    """Why an amendment can't be applied to the table it changes, or "" if it can."""
+    if base is None:
+        return "an amendment to a tier table that wasn't read"
+    ch = t.get("amends") or {}
+    tiers = base.get("tiers") or []
+    try:
+        i = int(ch.get("tier")) - 1
+    except (TypeError, ValueError):
+        return "an amendment that doesn't say which tier"
+    if not 0 <= i < len(tiers):
+        return f"an amendment to tier {i + 1}, but the table has {len(tiers)}"
+    changed = False
+    for k, j in (("threshold", 0), ("rate", 1)):
+        if ch.get(k) is None:
+            continue
+        old, new = float(tiers[i][j]), float(ch[k])
+        a, b = first_at(old, t.quote), first_at(new, t.quote)
+        if old == new or a < 0 or b < 0 or a > b:
+            return f"the amendment's words don't say the {k} changes from {old:,.10g} to {new:,.10g}"
+        changed = True
+    if not changed:
+        return "an amendment that changes nothing"
+    after = [list(r) for r in tiers]
+    for k, j in (("threshold", 0), ("rate", 1)):
+        if ch.get(k) is not None:
+            after[i][j] = float(ch[k])
+    if any(float(b[0]) <= float(a[0]) or float(b[1]) <= float(a[1]) for a, b in zip(after, after[1:], strict=False)):
+        return "after the amendment, the tiers don't rise"
+    return ""
 
 
 # --- what each supplier owes (code, no AI) -------------------------------------------------------------------------
@@ -506,7 +677,7 @@ def owed_for(
         locations = {b: f"{rec.year}-01-01" for b in (vol.get("locations") or listed[-1].get("locations"))}
         for add in by.get("eligible locations", []):
             for b in add.get("added_locations") or []:
-                locations[b] = add.get("from") or add.doc_date or f"{rec.year}-01-01"
+                locations[b] = add.get("from") or f"{rec.year}-01-01"
     out: list[Owed] = []
     if vol:
         base, n = led.net(rec.year, vol.get("covers"), locations)
@@ -558,8 +729,16 @@ def owed_for(
     for c in by.get("co-op", []):
         base, _ = led.net(rec.year, c.get("covers"))
         accrued = base * float(c.get("rate")) / 100
-        spend = sum(float(m["amount"]) for m in rec.marketing if m["supplier"] == supplier)
-        claimed = sum(float(x["claimed"]) for x in rec.coop_claims if x["supplier"] == supplier)
+        spend = sum(
+            float(m["amount"])
+            for m in rec.marketing
+            if m["supplier"] == supplier and str(m.get("date", rec.year))[:4] == rec.year
+        )
+        claimed = sum(
+            float(x["claimed"])
+            for x in rec.coop_claims
+            if x["supplier"] == supplier and str(x.get("status", "paid")).lower() in ("paid", "approved", "submitted")
+        )
         due = min(accrued, spend * float(c.get("reimburse") or 50) / 100)
         closed = bool(c.get("claim_by")) and bool(rec.as_of) and str(c.get("claim_by")) < rec.as_of
         out.append(
@@ -618,13 +797,15 @@ def owed_for(
         value = sum(float(s["qty"]) * float(s["unit_cost"]) for s in dead)
         fee = float(r.get("restocking_fee") or 0)
         room = max(0.0, min(allowance - used, value)) * (1 - fee / 100)
+        by_date = str(r.get("request_by") or "")
+        closed = bool(by_date) and bool(rec.as_of) and by_date < rec.as_of
         out.append(
             Owed(
                 supplier,
                 "stock rotation",
                 round(room, 2),
                 0.0,
-                RETURN,
+                PERSON if closed else RETURN,  # past the request date: a person asks, or lets it go
                 f"allowance {money(allowance)}, {money(used)} used, so {money(max(0.0, allowance - used))} unused; "
                 f"{money(value)} of stock within the age limit and unsold all year; returnable "
                 f"{money(max(0.0, min(allowance - used, value)))}, less the {fee:g}% restocking fee",
@@ -634,77 +815,118 @@ def owed_for(
                     "used": round(used, 2),
                     "unsold": round(value, 2),
                     "items": len(dead),
+                    "claim_by": by_date or None,
                 },
             )
         )
+    for o in out:
+        # A kind that went to a person (an amendment that didn't check out, say) is never worked out on a guess,
+        # and nor is growth, which stands on the same purchases as the tiers.
+        if o.kind in unsettled or (o.kind == "growth" and "volume tiers" in unsettled):
+            o.action = PERSON
     return out
 
 
 # --- the claim letters (AI, checked by code) -----------------------------------------------------------------------
 
-LETTER_SYSTEM = """You write short, polite claim letters from a distributor's purchasing team to a supplier \
-they value. Use only the facts and numbers in the evidence; don't add any. Plain text, under 220 words, no \
-subject line, signed "Purchasing, Hartwell Supply Co.". Ask for a credit (or a return authorization, for stock \
-rotation) and quote the term each claim rests on. The evidence gives today's date: a deadline on or after it \
-hasn't passed, so never say it has, and never suggest a claim is late or a favour when it's within its window."""
+LETTER_SYSTEM = """You write the opening and closing of a claim letter from a distributor's purchasing team to \
+a supplier they value and will keep buying from. Code writes everything in between: every claim, amount, date and \
+quotation. So yours must contain no numbers, no dates, no amounts and no quotations. Be warm, brief and plain. \
+Never threaten (withholding payment, moving business, legal action), never concede anything (that a claim is \
+late, a favour, or open to waiver), and never promise anything. Return JSON only: {"opening": one or two \
+sentences, "closing": one or two sentences}."""
+
+# Words the opening and closing may not use: a threat, a concession, or a promise isn't theirs to make.
+NOT_IN_A_LETTER = (
+    "withhold",
+    "competitor",
+    "elsewhere",
+    "legal",
+    "lawyer",
+    "attorney",
+    "terminate",
+    "cancel",
+    "court",
+    "sue",
+    "demand",
+    "expire",
+    "passed",
+    "late",
+    "courtesy",
+    "goodwill",
+    "waive",
+    "exception",
+    "favor",
+    "favour",
+    "penalt",
+    "dispute",
+    "guarantee",
+    "promise",
+)
 
 
 def letter_prompt(supplier: str, items: list[Owed], today: str = "") -> str:
+    """What the AI sees for a letter's opening and closing: who it's to, and what kinds of thing we're asking for.
+    No amounts: those are code's."""
     ev = {
         "supplier": supplier,
-        "today": today,
-        "claims": [
-            {
-                "term": o.kind,
-                "amount_due": round(o.gap, 2),
-                "agreement": o.term.doc,
-                "quote": o.term.quote,
-                "how_worked_out": o.how,
-                "earned": o.earned,
-                "already_paid_or_claimed": o.paid,
-                **({"deadline": o.records["claim_by"]} if o.records.get("claim_by") else {}),
-            }
-            for o in items
-        ],
+        "asking_for": sorted({"a return authorization" if o.action == RETURN else "a credit" for o in items}),
+        "about": sorted({o.kind for o in items}),
     }
-    return "The evidence, as data:\n" + json.dumps(ev, ensure_ascii=False)
+    return "The letter, as data:\n" + json.dumps(ev, ensure_ascii=False)
 
 
-def allowed_numbers(user: str) -> list[float]:
-    vals = []
-    for c in payload_of(user)["claims"]:
-        vals += [c["amount_due"], c["earned"], c["already_paid_or_claimed"]]
-        vals += [to_float(t) for t in numbers_in(c["quote"] + " " + c["how_worked_out"])]
-    vals.append(sum(c["amount_due"] for c in payload_of(user)["claims"]))
-    return vals
+def letter_problem(part: str) -> str:
+    low = part.lower()
+    if not part.strip():
+        return "empty"
+    if re.search(r"\d", part):
+        return "a number in it"
+    if len(part) > 400:
+        return "too long"
+    bad = [w for w in NOT_IN_A_LETTER if re.search(rf"\b{re.escape(w)}", low)]
+    return f"words it may not use: {', '.join(bad)}" if bad else ""
 
 
-PASSED = ("has passed", "have passed", "expired", "is late", "past the deadline", "as a courtesy", "missed the")
+def claim_lines(items: list[Owed]) -> list[str]:
+    """The body of a letter: every claim, its amount, how it was worked out and the words it rests on. Code only."""
+    lines = []
+    for n, o in enumerate(items, 1):
+        ask = "a return authorization for" if o.action == RETURN else "a credit of"
+        lines.append(f"{n}. {o.kind.capitalize()}: we ask for {ask} {money(o.gap)}. {o.how}.")
+        lines.append(f'   {o.term.doc} says: "{" ".join(o.term.quote.split())[:400]}"')
+        if o.records.get("claim_by"):
+            lines.append(f"   This is within the window, which closes {o.records['claim_by']}.")
+        lines.append("")
+    if len(items) > 1:
+        lines.append(f"In all, {money(sum(o.gap for o in items))}. The records behind each figure are attached.")
+    else:
+        lines.append("The records behind the figure are attached.")
+    return lines
 
 
-def says_deadline_passed(text: str, items: list[Owed], today: str) -> bool:
-    """A letter mustn't concede a deadline that's still open: that would talk the supplier out of paying."""
-    open_ = [o for o in items if o.records.get("claim_by") and today and str(o.records["claim_by"]) >= today]
-    return bool(open_) and any(p in text.lower() for p in PASSED)
+OPENING = "Reviewing our program year against our records, we found the following, and would be grateful for your help."
+CLOSING = "Please let us know if anything differs from your records, and thank you."
+
+
+def assemble(supplier: str, items: list[Owed], opening: str = OPENING, closing: str = CLOSING) -> str:
+    return "\n".join(
+        [
+            f"Dear {supplier} team,",
+            "",
+            opening,
+            "",
+            *claim_lines(items),
+            "",
+            closing,
+            "",
+            "Purchasing, Hartwell Supply Co.",
+        ]
+    )
 
 
 def code_letter(supplier: str, items: list[Owed]) -> str:
-    lines = [
-        f"Dear {supplier} team,",
-        "",
-        "Reviewing our program year against our records, we believe the following is due to Hartwell Supply Co.:",
-        "",
-    ]
-    for o in items:
-        lines.append(f'- {o.kind}: {money(o.gap)}. {o.how}. Per {o.term.doc}: "{o.term.quote[:160]}"')
-    lines += [
-        "",
-        f"In total {money(sum(o.gap for o in items))}. Could you confirm, and issue a credit memo (or a "
-        "return authorization for the stock)? The records are attached.",
-        "",
-        "Purchasing, Hartwell Supply Co.",
-    ]
-    return "\n".join(lines)
+    return assemble(supplier, items)
 
 
 @dataclass
@@ -716,6 +938,8 @@ class Letter:
 
 
 def write_letters(claims: list[Owed], model, cap: int = MAX_LETTERS, today: str = "") -> tuple[list[Letter], list[str]]:
+    """One letter per supplier with money due. Code writes every claim and figure; the AI only writes a warm opening
+    and closing, which may hold no numbers, threats or concessions, or code's plain ones are used."""
     by_supplier: dict[str, list[Owed]] = defaultdict(list)
     for o in claims:
         by_supplier[o.supplier].append(o)
@@ -730,18 +954,16 @@ def write_letters(claims: list[Owed], model, cap: int = MAX_LETTERS, today: str 
             continue
         user = letter_prompt(s, items, today)
         try:
-            text = model.complete(LETTER_SYSTEM, user, 1200).strip()
-        except (llm.ModelError, BadAnswer) as e:
-            letters.append(Letter(s, code_letter(s, items), "code", f"model call failed ({e})"[:120]))
+            ans = parse_json(model.complete(LETTER_SYSTEM, user, 400))
+            opening, closing = str(ans["opening"]).strip(), str(ans["closing"]).strip()
+        except (llm.ModelError, BadAnswer, KeyError, TypeError) as e:
+            letters.append(Letter(s, code_letter(s, items), "code", f"no usable answer ({type(e).__name__})"))
             continue
-        bad = unsupported_numbers(text, allowed_numbers(user))
-        if not bad and says_deadline_passed(text, items, today):
-            letters.append(Letter(s, code_letter(s, items), "code", "says a deadline has passed when it hasn't"))
-            continue
-        if bad or not text:
-            letters.append(Letter(s, code_letter(s, items), "code", "numbers not in the evidence: " + ", ".join(bad)))
+        why = letter_problem(opening) or letter_problem(closing)
+        if why:
+            letters.append(Letter(s, code_letter(s, items), "code", f"the AI's opening or closing had {why}"))
         else:
-            letters.append(Letter(s, text, "model"))
+            letters.append(Letter(s, assemble(s, items, opening, closing), "model"))
     return letters, over
 
 
@@ -786,7 +1008,27 @@ def read_supplier(
     if isinstance(st, Person):
         people.append(st)
         st = None
-    return resolve(terms), st, people
+    terms, unsettled = resolve(terms)
+    people += unsettled
+    # Nothing silently dropped: a document the reading took nothing from is read by a person.
+    cited = {t.doc for t in terms} | {t.get("amended_by") for t in terms} | {p_.doc for p_ in people}
+    for d in docs:
+        if not d.statement and d.name not in cited:
+            people.append(Person(supplier, d.name, "nothing was read from this document: a person checks it"))
+    # Every amount on the statement has to pay a term we read.
+    if st:
+        for kind, amount in st.by_kind.items():
+            if amount and kind not in {t.kind for t in terms}:
+                people.append(
+                    Person(
+                        supplier,
+                        "statement",
+                        f"pays {money(amount)} of {kind}, a term not read from the agreements",
+                        "",
+                        st.doc,
+                    )
+                )
+    return terms, st, people
 
 
 def run(
@@ -820,7 +1062,7 @@ def run(
             statements[s] = st
         elif t:
             people.append(Person(s, "statement", "worked out without a statement: what was paid is unknown"))
-        unsettled = {p_.what.split(" (")[0] for p_ in p if p_.supplier == s}
+        unsettled = {p_.what.split(" (")[0] for p_ in p if p_.supplier == s and not p_.informal}
         owed += owed_for(rec, s, t, st, unsettled)
     claims = [o for o in owed if o.gap >= 1 and o.action != PERSON]
     for o in owed:
@@ -883,9 +1125,9 @@ def write_outputs(r: Run, out: Path, dashboard) -> list[Path]:
         for t in r.terms
     ]
     people = [p.__dict__ for p in r.people]
+    by = {"model": "Opening and closing by the AI; every claim and figure by code", "code": "Written by code"}
     letters = [
-        f"## {lt.supplier}\n\n_Written by {'the AI, checked by code' if lt.by == 'model' else 'code'}"
-        f"{': ' + lt.why if lt.why else ''}._\n\n{lt.text}\n"
+        f"## {lt.supplier}\n\n_{by.get(lt.by, lt.by)}{': ' + lt.why if lt.why else ''}._\n\n```text\n{lt.text}\n```\n"
         for lt in r.letters
     ]
     due = sum(o.gap for o in r.claims if o.action == CLAIM)
@@ -943,7 +1185,13 @@ def score(r: Run, key: Path) -> dict:
     """Right, to a person, or wrong. A claim the key doesn't support is the worst mistake; money missed is next."""
     rows = read_csv(key)
     want = {(k["supplier"], k["term"]): k for k in rows}
-    found = {(o.supplier, o.kind): o for o in r.claims}
+    found: dict[tuple, Owed] = {}
+    extra: list[Owed] = []
+    for o in r.claims:
+        if (o.supplier, o.kind) in found:
+            extra.append(o)  # a second claim for the same supplier and term is a wrong claim, not a quiet overwrite
+        else:
+            found[(o.supplier, o.kind)] = o
     person_suppliers = {p.supplier for p in r.people}
     out = []
     n = {"right": 0, "to a person": 0, "wrong claim": 0, "missed": 0}
@@ -970,6 +1218,9 @@ def score(r: Run, key: Path) -> dict:
         if (s, term) not in want:
             n["wrong claim"] += 1
             out.append((s, term, 0.0, o.gap, "wrong claim"))
+    for o in extra:
+        n["wrong claim"] += 1
+        out.append((o.supplier, o.kind, 0.0, o.gap, "wrong claim (a second claim for the same term)"))
     key_total = sum(float(k["gap"]) for k in rows if k["action"] != PERSON)
     found_total = sum(
         o.gap for o in r.claims if (o.supplier, o.kind) in want and want[(o.supplier, o.kind)]["action"] != PERSON
@@ -1013,16 +1264,10 @@ def replay_key(system: str, user: str) -> str:
 
 
 def offline(system: str, user: str) -> str:
-    """No AI: reads nothing (so every agreement goes to a person) and writes a plain letter."""
+    """No AI: reads nothing (so every agreement goes to a person), and the letters keep code's plain opening."""
     if system.startswith(TERMS_HEAD):
         return json.dumps({"terms": [], "statement": None})
-    p = payload_of(user)
-    return code_letter_from(p)
-
-
-def code_letter_from(p: dict) -> str:
-    items = "\n".join(f"- {c['term']}: {money(c['amount_due'])}." for c in p["claims"])
-    return f"Dear {p['supplier']} team,\n\nWe believe the following is due:\n{items}\n\nPurchasing, Hartwell Supply Co."
+    return json.dumps({"opening": OPENING, "closing": CLOSING})
 
 
 def sample_run(model, out: Path) -> tuple[Run, list[Path]]:

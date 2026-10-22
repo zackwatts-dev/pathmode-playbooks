@@ -36,6 +36,8 @@ class Recording:
         self.keep = keep or {}  # answers already recorded for exactly these inputs (--keep): reused, not re-asked
         self.answers: dict[str, str] = {}
         self.failed: list[str] = []
+        self.calls = 0  # real calls made in this recording
+        self.reused = 0  # answers kept from an earlier recording of exactly the same inputs
 
     def complete(self, system: str, user: str, max_tokens: int = 2000) -> str:
         k = self.key(system, user)
@@ -43,7 +45,9 @@ class Recording:
             return self.answers[k]
         if k in self.keep:  # recorded before, for the very same inputs (the key fingerprints them)
             self.answers[k] = self.keep[k]
+            self.reused += 1
             return self.answers[k]
+        self.calls += 1
         try:
             answer = self.inner.complete(system, user, max_tokens)
         except Exception:
@@ -109,7 +113,15 @@ def main() -> None:
             module.model_for = lambda *_: model
             sys.argv = [module.__file__, "--sample", "--out", out, *args.extra]
             module.main()
-    data = {"model": inner.name, "recorded": date.today().isoformat(), "answers": dict(sorted(model.answers.items()))}
+    data = {
+        "model": inner.name,
+        "recorded": date.today().isoformat(),
+        # How this recording was made, so a cherry-picked one can't pass for a first try.
+        "calls": model.calls,
+        "reused_from_earlier_recording": model.reused,
+        "failed_calls": len(model.failed),
+        "answers": dict(sorted(model.answers.items())),
+    }
     path.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Recorded {len(model.answers)} answers from {inner.name} to {path.relative_to(ROOT)}.")
     if model.failed:

@@ -10,7 +10,7 @@ Northstar HVAC,volume tiers,"{'base': 'purchases by eligible locations (Schedule
 Northstar HVAC,eligible locations,"{'added': ['Pittsburgh', 'Louisville'], 'per': 'section 4.2 notice'}",northstar-hvac-locations-email.eml,2025-03-03,no
 Northstar HVAC,growth,"{'rate': 1.0, 'over': 'total 2024 net purchases'}",northstar-hvac-program-2025.pdf,2025-01-01,no
 Vantel,volume tiers,"{'base': 'all purchases, net of returns', 'tiers': [(2700000.0, 1.0), (4700000.0, 1.5), (6100000.0, 2.0)], 'retroactive': False}",vantel-distributor-agreement.pdf,2025-01-01,no
-Vantel,stock rotation,"{'allowance': 5.0, 'of': 'prior-year purchases', 'restocking_fee': 10.0, 'age_limit_months': 18}",vantel-distributor-agreement.pdf,2025-01-01,no
+Vantel,stock rotation,"{'allowance': 5.0, 'of': 'prior-year purchases', 'restocking_fee': 10.0, 'age_limit_months': 18, 'request_by': '2026-03-31'}",vantel-distributor-agreement.pdf,2025-01-01,no
 Westerly Thermostats,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(2700000.0, 1.5)], 'retroactive': True}",westerly-thermostats-program-sheet-2025.pdf,2025-01-01,no
 Westerly Thermostats,growth,"{'rate': 2.0, 'over': '2024 net purchases'}",westerly-thermostats-program-sheet-2025.pdf,2025-01-01,no
 Garnet Hose & Fittings,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1700000.0, 1.0), (3100000.0, 1.5)], 'retroactive': True}",garnet-hose-fittings-program-sheet-2025.pdf,2025-01-01,no
@@ -21,7 +21,7 @@ Merriam Electrical Supply,volume tiers,"{'base': 'purchases, net of returns', 't
 Merriam Electrical Supply,informal promise,"{'rate': 1.0, 'if_over': 2700000.0, 'said': 'an extra point on the year'}",merriam-electrical-supply-rep-email.eml,2025-01-01,yes
 Pell Capacitor Co.,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1500000.0, 1.5)], 'retroactive': True}",pell-capacitor-co-terms-and-conditions-2025.pdf,2025-01-01,no
 Pell Capacitor Co.,freight prepaid,{'min_order': 1000.0},pell-capacitor-co-terms-and-conditions-2025.pdf,2025-01-01,no
-Pell Capacitor Co.,stock rotation,"{'allowance': 5.0, 'of': 'prior-year purchases', 'restocking_fee': 0}",pell-capacitor-co-terms-and-conditions-2025.pdf,2025-01-01,no
+Pell Capacitor Co.,stock rotation,"{'allowance': 5.0, 'of': 'prior-year purchases', 'restocking_fee': 0, 'request_by': '2026-03-31'}",pell-capacitor-co-terms-and-conditions-2025.pdf,2025-01-01,no
 Solway Refrigeration Parts,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1100000.0, 0.75), (1800000.0, 1.25)], 'retroactive': True}",solway-refrigeration-parts-terms-and-conditions-2025.pdf,2025-01-01,no
 Granite Coil,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1000000.0, 1.0), (1800000.0, 1.5)], 'retroactive': True}",granite-coil-program-sheet-2025.pdf,2025-01-01,no
 Granite Coil,growth,"{'rate': 1.0, 'over': '2024 net purchases'}",granite-coil-program-sheet-2025.pdf,2025-01-01,no

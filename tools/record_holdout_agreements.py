@@ -28,7 +28,14 @@ def main() -> None:
     model = record.Recording(inner, sa.replay_key, keep)
     with tempfile.TemporaryDirectory() as out:
         sa.run(HOLDOUT, model, Path(out), HOLDOUT / "answer-key" / "entitlements-key.csv")
-    data = {"model": inner.name, "recorded": date.today().isoformat(), "answers": dict(sorted(model.answers.items()))}
+    data = {
+        "model": inner.name,
+        "recorded": date.today().isoformat(),
+        "calls": model.calls,
+        "reused_from_earlier_recording": model.reused,
+        "failed_calls": len(model.failed),
+        "answers": dict(sorted(model.answers.items())),
+    }
     (HOLDOUT / "recorded-run.json").write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n")
     print(f"Recorded {len(model.answers)} answers to {HOLDOUT.name}/recorded-run.json.")
     if model.failed:
