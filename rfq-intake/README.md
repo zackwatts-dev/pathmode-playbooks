@@ -75,7 +75,7 @@ Each month scored against its own answer key. May is the sample. September and O
 | September, held back | 110 | 108 | 0 | 1 | 1 |
 | October, held back | 164 | 157 | 0 | 0 | 7 |
 
-Of the 102 requests the keys say are missing something, 98 got their question drafted the day they arrived and 4 went to a person. One September question asked for a part number when the drawing was what was missing. The stops: a part number on file for a sister company (held for a person; the key would let it through), a buyer chasing a request with no open record, and three October requests whose quantities sat in a layout the checks couldn't tie to their part. Both held-back notes aimed at an AI went to a person: September's by the check in code, October's by the model's own flag, which the code check missed. Everything to a person (the baseline) gets right only the few emails a month that need one.
+Of the 102 requests the keys say need only a question, 97 got the right one the day they arrived, one September request got a question for its part number but not its drawing, and 4 went to a person. The stops: part numbers also on file for a different customer with a similar name (held for a person; the key would let them through), buyers chasing a request with no open record, and three October requests whose quantities sat in a layout the checks couldn't tie to their part. All three notes aimed at an AI went to a person: the model flagged each, and the check in code also caught May's and September's (written by the same team as the check) but missed October's. Everything to a person (the baseline) gets right only the few emails a month that need one.
 
 ### Results: the offline stand-in, not a model
 
