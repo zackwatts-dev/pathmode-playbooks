@@ -38,7 +38,9 @@ def _card(x, data, show_store: bool) -> str:
     where = f"{_e(data.store_names.get(f.store, ''))} · " if show_store and f.store else ""
     head = f"<h3>{_e(f.kind.capitalize())}: {_e(_who(f, data))}</h3>"
     meta = f'<div class="muted">{where}since {_e(f.first.isoformat())} · about {_e(_m(f.dollars_week))} a week</div>'
-    if x.problems:
+    if not x.read:
+        body = f'<p class="muted">{_e("; ".join(x.problems))}</p>'
+    elif x.problems:
         body = f'<p class="why">For a person: {_e("; ".join(x.problems))}</p>'
     else:
         body = f"<p>{_e(x.explanation)}</p><p><b>Next:</b> {_e(x.next_step)}</p>"
@@ -58,11 +60,11 @@ def _card(x, data, show_store: bool) -> str:
 def _page(title: str, intro: str, readings, data, show_store: bool, missing, injected) -> str:
     live = sorted([x for x in readings if not x.explained], key=lambda x: -x.flag.dollars_week)
     explained = [x for x in readings if x.explained]
-    total = sum(x.flag.dollars_week for x in live)
+    person = sum(1 for x in live if x.read and x.problems)
     warn = f'<p class="bad">Missing exports: {_e(", ".join(missing))}</p>' if missing else ""
     tiles = (
         f'<div class="tiles"><div class="tile review"><b>{len(live)}</b>to look at</div>'
-        f'<div class="tile"><b>{_e(_m(total))}</b>a week at stake</div>'
+        f'<div class="tile"><b>{person}</b>for a person</div>'
         f'<div class="tile ready"><b>{len(explained)}</b>explained by the log</div></div>'
     )
     cards = "".join(_card(x, data, show_store) for x in live) or "<p>Nothing unusual.</p>"
