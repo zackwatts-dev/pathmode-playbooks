@@ -1,0 +1,3073 @@
+period,store_id,account,amount
+2024-P11,1,beverage cost,-10617.37
+2024-P11,1,beverage sales,45201.74
+2024-P11,1,cash over/short,1.68
+2024-P11,1,comps (memo),3778.75
+2024-P11,1,credit card fees,-8309.67
+2024-P11,1,discounts (memo),6779.36
+2024-P11,1,food cost,-84916.68
+2024-P11,1,food sales,289535.52
+2024-P11,1,hourly wages,-83913.51
+2024-P11,1,management salaries,-18926.54
+2024-P11,1,marketing,-6694.75
+2024-P11,1,payroll taxes and benefits,-13772.86
+2024-P11,1,rent and occupancy,-16605.47
+2024-P11,1,repairs and maintenance,-4064.39
+2024-P11,1,supplies,-10247.38
+2024-P11,1,utilities,-12775.98
+2024-P11,2,beverage cost,-9431.28
+2024-P11,2,beverage sales,38811.34
+2024-P11,2,cash over/short,-9.03
+2024-P11,2,comps (memo),3308.0
+2024-P11,2,credit card fees,-7095.41
+2024-P11,2,discounts (memo),5918.06
+2024-P11,2,food cost,-70732.08
+2024-P11,2,food sales,247225.35
+2024-P11,2,hourly wages,-79297.98
+2024-P11,2,management salaries,-17882.8
+2024-P11,2,marketing,-5720.73
+2024-P11,2,payroll taxes and benefits,-13014.65
+2024-P11,2,rent and occupancy,-13837.89
+2024-P11,2,repairs and maintenance,-6065.2
+2024-P11,2,supplies,-8983.34
+2024-P11,2,utilities,-10846.99
+2024-P11,3,beverage cost,-9653.92
+2024-P11,3,beverage sales,42737.38
+2024-P11,3,cash over/short,53.83
+2024-P11,3,comps (memo),3341.5
+2024-P11,3,credit card fees,-7640.1
+2024-P11,3,discounts (memo),6291.84
+2024-P11,3,food cost,-78497.56
+2024-P11,3,food sales,267606.95
+2024-P11,3,hourly wages,-83218.08
+2024-P11,3,management salaries,-17470.86
+2024-P11,3,marketing,-6206.89
+2024-P11,3,payroll taxes and benefits,-13346.99
+2024-P11,3,rent and occupancy,-14529.78
+2024-P11,3,repairs and maintenance,-4880.04
+2024-P11,3,supplies,-8943.45
+2024-P11,3,utilities,-8364.94
+2024-P11,4,beverage cost,-8038.18
+2024-P11,4,beverage sales,35805.86
+2024-P11,4,cash over/short,-2.27
+2024-P11,4,comps (memo),3030.5
+2024-P11,4,credit card fees,-6581.72
+2024-P11,4,discounts (memo),5296.86
+2024-P11,4,food cost,-70578.48
+2024-P11,4,food sales,229299.48
+2024-P11,4,hourly wages,-75942.45
+2024-P11,4,management salaries,-18414.71
+2024-P11,4,marketing,-5302.11
+2024-P11,4,payroll taxes and benefits,-12773.2
+2024-P11,4,rent and occupancy,-12454.1
+2024-P11,4,repairs and maintenance,-4999.04
+2024-P11,4,supplies,-8145.24
+2024-P11,4,utilities,-9282.96
+2024-P11,5,beverage cost,-7579.43
+2024-P11,5,beverage sales,34033.97
+2024-P11,5,cash over/short,-6.71
+2024-P11,5,comps (memo),2776.5
+2024-P11,5,credit card fees,-6215.28
+2024-P11,5,discounts (memo),5649.64
+2024-P11,5,food cost,-65242.96
+2024-P11,5,food sales,219297.39
+2024-P11,5,hourly wages,-75632.8
+2024-P11,5,management salaries,-17700.32
+2024-P11,5,marketing,-5066.63
+2024-P11,5,payroll taxes and benefits,-12567.68
+2024-P11,5,rent and occupancy,-12177.34
+2024-P11,5,repairs and maintenance,-1990.64
+2024-P11,5,supplies,-7233.43
+2024-P11,5,utilities,-7400.4
+2024-P11,6,beverage cost,-8359.29
+2024-P11,6,beverage sales,37087.76
+2024-P11,6,cash over/short,-51.33
+2024-P11,6,comps (memo),3500.25
+2024-P11,6,credit card fees,-6629.28
+2024-P11,6,discounts (memo),5911.11
+2024-P11,6,food cost,-65607.17
+2024-P11,6,food sales,231414.25
+2024-P11,6,hourly wages,-79559.93
+2024-P11,6,management salaries,-18569.67
+2024-P11,6,marketing,-5370.04
+2024-P11,6,payroll taxes and benefits,-13208.31
+2024-P11,6,rent and occupancy,-12730.86
+2024-P11,6,repairs and maintenance,-2551.41
+2024-P11,6,supplies,-8267.33
+2024-P11,6,utilities,-8923.62
+2024-P11,7,beverage cost,-10843.75
+2024-P11,7,beverage sales,46915.79
+2024-P11,7,cash over/short,-18.94
+2024-P11,7,comps (memo),3551.5
+2024-P11,7,credit card fees,-8238.27
+2024-P11,7,discounts (memo),7026.98
+2024-P11,7,food cost,-85433.95
+2024-P11,7,food sales,286973.33
+2024-P11,7,hourly wages,-71628.48
+2024-P11,7,management salaries,-16721.46
+2024-P11,7,marketing,-6677.78
+2024-P11,7,payroll taxes and benefits,-11892.28
+2024-P11,7,rent and occupancy,-15913.57
+2024-P11,7,repairs and maintenance,-3552.95
+2024-P11,7,supplies,-9986.38
+2024-P11,7,utilities,-13182.67
+2024-P11,8,beverage cost,-9240.38
+2024-P11,8,beverage sales,38612.14
+2024-P11,8,cash over/short,-57.14
+2024-P11,8,comps (memo),3138.5
+2024-P11,8,credit card fees,-7304.17
+2024-P11,8,discounts (memo),6432.68
+2024-P11,8,food cost,-75312.07
+2024-P11,8,food sales,253290.8
+2024-P11,8,hourly wages,-70952.56
+2024-P11,8,management salaries,-18632.82
+2024-P11,8,marketing,-5838.06
+2024-P11,8,payroll taxes and benefits,-12276.66
+2024-P11,8,rent and occupancy,-13561.13
+2024-P11,8,repairs and maintenance,-5356.97
+2024-P11,8,supplies,-9634.21
+2024-P11,8,utilities,-9878.97
+2024-P11,9,beverage cost,-9232.3
+2024-P11,9,beverage sales,39635.84
+2024-P11,9,cash over/short,51.7
+2024-P11,9,comps (memo),3085.0
+2024-P11,9,credit card fees,-7054.51
+2024-P11,9,discounts (memo),5966.2
+2024-P11,9,food cost,-71233.31
+2024-P11,9,food sales,244551.61
+2024-P11,9,hourly wages,-66374.48
+2024-P11,9,management salaries,-18641.95
+2024-P11,9,marketing,-5683.75
+2024-P11,9,payroll taxes and benefits,-11775.26
+2024-P11,9,rent and occupancy,-13146.0
+2024-P11,9,repairs and maintenance,-6471.66
+2024-P11,9,supplies,-8629.08
+2024-P11,9,utilities,-10462.37
+2024-P11,10,beverage cost,-9568.41
+2024-P11,10,beverage sales,41952.85
+2024-P11,10,cash over/short,1.06
+2024-P11,10,comps (memo),3251.5
+2024-P11,10,credit card fees,-7611.89
+2024-P11,10,discounts (memo),6432.96
+2024-P11,10,food cost,-79684.84
+2024-P11,10,food sales,269583.81
+2024-P11,10,hourly wages,-64966.23
+2024-P11,10,management salaries,-18131.08
+2024-P11,10,marketing,-6230.73
+2024-P11,10,payroll taxes and benefits,-11497.74
+2024-P11,10,rent and occupancy,-15221.68
+2024-P11,10,repairs and maintenance,-5866.77
+2024-P11,10,supplies,-9135.56
+2024-P11,10,utilities,-11565.69
+2024-P11,11,beverage cost,-8554.7
+2024-P11,11,beverage sales,35942.61
+2024-P11,11,cash over/short,14.12
+2024-P11,11,comps (memo),2350.75
+2024-P11,11,credit card fees,-6899.77
+2024-P11,11,discounts (memo),5993.31
+2024-P11,11,food cost,-68505.88
+2024-P11,11,food sales,236417.18
+2024-P11,11,hourly wages,-79469.62
+2024-P11,11,management salaries,-16722.22
+2024-P11,11,marketing,-5447.2
+2024-P11,11,payroll taxes and benefits,-12754.99
+2024-P11,11,rent and occupancy,-13422.75
+2024-P11,11,repairs and maintenance,-4771.65
+2024-P11,11,supplies,-7630.88
+2024-P11,11,utilities,-8124.5
+2024-P11,12,beverage cost,-8435.24
+2024-P11,12,beverage sales,35293.73
+2024-P11,12,cash over/short,-33.47
+2024-P11,12,comps (memo),3393.5
+2024-P11,12,credit card fees,-6237.27
+2024-P11,12,discounts (memo),6564.12
+2024-P11,12,food cost,-65689.62
+2024-P11,12,food sales,215815.27
+2024-P11,12,hourly wages,-77583.44
+2024-P11,12,management salaries,-18007.63
+2024-P11,12,marketing,-5022.18
+2024-P11,12,payroll taxes and benefits,-12856.01
+2024-P11,12,rent and occupancy,-11762.21
+2024-P11,12,repairs and maintenance,-6421.55
+2024-P11,12,supplies,-7732.79
+2024-P11,12,utilities,-7371.5
+2024-P12,1,beverage cost,-10255.67
+2024-P12,1,beverage sales,44086.71
+2024-P12,1,cash over/short,-8.12
+2024-P12,1,comps (memo),3424.25
+2024-P12,1,credit card fees,-8156.57
+2024-P12,1,discounts (memo),6618.14
+2024-P12,1,food cost,-84110.1
+2024-P12,1,food sales,281730.45
+2024-P12,1,hourly wages,-82963.67
+2024-P12,1,management salaries,-18998.7
+2024-P12,1,marketing,-6516.34
+2024-P12,1,payroll taxes and benefits,-13685.69
+2024-P12,1,rent and occupancy,-16605.47
+2024-P12,1,repairs and maintenance,-6593.91
+2024-P12,1,supplies,-9260.11
+2024-P12,1,utilities,-12278.0
+2024-P12,2,beverage cost,-9392.05
+2024-P12,2,beverage sales,39306.64
+2024-P12,2,cash over/short,-20.14
+2024-P12,2,comps (memo),2575.5
+2024-P12,2,credit card fees,-7091.04
+2024-P12,2,discounts (memo),5518.78
+2024-P12,2,food cost,-71757.03
+2024-P12,2,food sales,245528.33
+2024-P12,2,hourly wages,-74435.58
+2024-P12,2,management salaries,-17950.98
+2024-P12,2,marketing,-5696.7
+2024-P12,2,payroll taxes and benefits,-12496.15
+2024-P12,2,rent and occupancy,-13837.89
+2024-P12,2,repairs and maintenance,-4734.74
+2024-P12,2,supplies,-8781.08
+2024-P12,2,utilities,-9978.81
+2024-P12,3,beverage cost,-9365.13
+2024-P12,3,beverage sales,40114.08
+2024-P12,3,cash over/short,-26.97
+2024-P12,3,comps (memo),3424.0
+2024-P12,3,credit card fees,-7346.52
+2024-P12,3,discounts (memo),6749.34
+2024-P12,3,food cost,-77429.08
+2024-P12,3,food sales,258393.71
+2024-P12,3,hourly wages,-77997.73
+2024-P12,3,management salaries,-15247.26
+2024-P12,3,marketing,-5970.16
+2024-P12,3,payroll taxes and benefits,-12239.09
+2024-P12,3,rent and occupancy,-14529.78
+2024-P12,3,repairs and maintenance,-8764.61
+2024-P12,3,supplies,-8815.5
+2024-P12,3,utilities,-11312.92
+2024-P12,4,beverage cost,-7497.86
+2024-P12,4,beverage sales,33362.29
+2024-P12,4,cash over/short,8.62
+2024-P12,4,comps (memo),3514.75
+2024-P12,4,credit card fees,-6277.5
+2024-P12,4,discounts (memo),5604.2
+2024-P12,4,food cost,-67316.2
+2024-P12,4,food sales,216972.68
+2024-P12,4,hourly wages,-72428.14
+2024-P12,4,management salaries,-18484.91
+2024-P12,4,marketing,-5006.7
+2024-P12,4,payroll taxes and benefits,-12403.47
+2024-P12,4,rent and occupancy,-12454.1
+2024-P12,4,repairs and maintenance,-3788.06
+2024-P12,4,supplies,-7804.3
+2024-P12,4,utilities,-7323.08
+2024-P12,5,beverage cost,-7840.88
+2024-P12,5,beverage sales,35643.48
+2024-P12,5,cash over/short,10.21
+2024-P12,5,comps (memo),3457.5
+2024-P12,5,credit card fees,-6218.45
+2024-P12,5,discounts (memo),6977.04
+2024-P12,5,food cost,-66870.78
+2024-P12,5,food sales,217868.35
+2024-P12,5,hourly wages,-72327.88
+2024-P12,5,management salaries,-17767.8
+2024-P12,5,marketing,-5070.24
+2024-P12,5,payroll taxes and benefits,-12220.34
+2024-P12,5,rent and occupancy,-12177.34
+2024-P12,5,repairs and maintenance,-5217.3
+2024-P12,5,supplies,-8433.41
+2024-P12,5,utilities,-7607.57
+2024-P12,6,beverage cost,-8274.08
+2024-P12,6,beverage sales,36143.17
+2024-P12,6,cash over/short,-32.84
+2024-P12,6,comps (memo),3321.0
+2024-P12,6,credit card fees,-6463.28
+2024-P12,6,discounts (memo),5945.14
+2024-P12,6,food cost,-64881.65
+2024-P12,6,food sales,223265.52
+2024-P12,6,hourly wages,-76449.02
+2024-P12,6,management salaries,-18640.47
+2024-P12,6,marketing,-5188.17
+2024-P12,6,payroll taxes and benefits,-12883.1
+2024-P12,6,rent and occupancy,-12730.86
+2024-P12,6,repairs and maintenance,-5619.59
+2024-P12,6,supplies,-7813.74
+2024-P12,6,utilities,-8156.29
+2024-P12,7,beverage cost,-9716.6
+2024-P12,7,beverage sales,43047.88
+2024-P12,7,cash over/short,4.39
+2024-P12,7,comps (memo),4201.75
+2024-P12,7,credit card fees,-7934.66
+2024-P12,7,discounts (memo),6849.56
+2024-P12,7,food cost,-85543.6
+2024-P12,7,food sales,275429.42
+2024-P12,7,hourly wages,-65225.85
+2024-P12,7,management salaries,-18818.52
+2024-P12,7,marketing,-6369.55
+2024-P12,7,payroll taxes and benefits,-11691.29
+2024-P12,7,rent and occupancy,-15913.57
+2024-P12,7,repairs and maintenance,-3999.95
+2024-P12,7,supplies,-9910.71
+2024-P12,7,utilities,-9583.88
+2024-P12,8,beverage cost,-8696.92
+2024-P12,8,beverage sales,36532.13
+2024-P12,8,cash over/short,-26.98
+2024-P12,8,comps (memo),2507.0
+2024-P12,8,credit card fees,-6574.39
+2024-P12,8,discounts (memo),5709.87
+2024-P12,8,food cost,-68672.48
+2024-P12,8,food sales,230360.3
+2024-P12,8,hourly wages,-61907.1
+2024-P12,8,management salaries,-18703.86
+2024-P12,8,marketing,-5337.85
+2024-P12,8,payroll taxes and benefits,-11298.71
+2024-P12,8,rent and occupancy,-13561.13
+2024-P12,8,repairs and maintenance,-3648.3
+2024-P12,8,supplies,-7932.27
+2024-P12,8,utilities,-7195.98
+2024-P12,9,beverage cost,-8240.27
+2024-P12,9,beverage sales,35239.57
+2024-P12,9,cash over/short,-65.66
+2024-P12,9,comps (memo),2695.0
+2024-P12,9,credit card fees,-6581.35
+2024-P12,9,discounts (memo),5137.0
+2024-P12,9,food cost,-67316.18
+2024-P12,9,food sales,227926.97
+2024-P12,9,hourly wages,-65280.63
+2024-P12,9,management salaries,-18713.03
+2024-P12,9,marketing,-5263.33
+2024-P12,9,payroll taxes and benefits,-11671.99
+2024-P12,9,rent and occupancy,-13146.0
+2024-P12,9,repairs and maintenance,-4502.37
+2024-P12,9,supplies,-7840.83
+2024-P12,9,utilities,-7760.0
+2024-P12,10,beverage cost,-8964.52
+2024-P12,10,beverage sales,39442.86
+2024-P12,10,cash over/short,33.0
+2024-P12,10,comps (memo),3396.75
+2024-P12,10,credit card fees,-7277.98
+2024-P12,10,discounts (memo),6362.09
+2024-P12,10,food cost,-77077.78
+2024-P12,10,food sales,256626.49
+2024-P12,10,hourly wages,-66600.33
+2024-P12,10,management salaries,-18200.21
+2024-P12,10,marketing,-5921.39
+2024-P12,10,payroll taxes and benefits,-11694.09
+2024-P12,10,rent and occupancy,-15221.68
+2024-P12,10,repairs and maintenance,-7853.23
+2024-P12,10,supplies,-6977.36
+2024-P12,10,utilities,-9352.04
+2024-P12,11,beverage cost,-7113.35
+2024-P12,11,beverage sales,31921.29
+2024-P12,11,cash over/short,-20.06
+2024-P12,11,comps (memo),2414.5
+2024-P12,11,credit card fees,-5932.47
+2024-P12,11,discounts (memo),5385.3
+2024-P12,11,food cost,-60832.08
+2024-P12,11,food sales,205784.5
+2024-P12,11,hourly wages,-72373.63
+2024-P12,11,management salaries,-18976.27
+2024-P12,11,marketing,-4754.12
+2024-P12,11,payroll taxes and benefits,-12515.4
+2024-P12,11,rent and occupancy,-13422.75
+2024-P12,11,repairs and maintenance,-2147.69
+2024-P12,11,supplies,-7148.03
+2024-P12,11,utilities,-6733.29
+2024-P12,12,beverage cost,-7631.88
+2024-P12,12,beverage sales,31621.67
+2024-P12,12,cash over/short,-15.73
+2024-P12,12,comps (memo),2819.75
+2024-P12,12,credit card fees,-5731.27
+2024-P12,12,discounts (memo),5247.27
+2024-P12,12,food cost,-63570.97
+2024-P12,12,food sales,204990.07
+2024-P12,12,hourly wages,-70614.06
+2024-P12,12,management salaries,-18076.28
+2024-P12,12,marketing,-4732.23
+2024-P12,12,payroll taxes and benefits,-12105.86
+2024-P12,12,rent and occupancy,-11762.21
+2024-P12,12,repairs and maintenance,-2829.37
+2024-P12,12,supplies,-7138.78
+2024-P12,12,utilities,-7821.09
+2024-P13,1,beverage cost,-10281.63
+2024-P13,1,beverage sales,44992.49
+2024-P13,1,cash over/short,-92.26
+2024-P13,1,comps (memo),3324.0
+2024-P13,1,credit card fees,-8374.86
+2024-P13,1,discounts (memo),6812.48
+2024-P13,1,food cost,-89831.59
+2024-P13,1,food sales,290216.78
+2024-P13,1,hourly wages,-80591.14
+2024-P13,1,management salaries,-19032.65
+2024-P13,1,marketing,-6704.19
+2024-P13,1,payroll taxes and benefits,-13432.86
+2024-P13,1,rent and occupancy,-16605.47
+2024-P13,1,repairs and maintenance,-4193.2
+2024-P13,1,supplies,-11030.51
+2024-P13,1,utilities,-10203.62
+2024-P13,2,beverage cost,-9191.17
+2024-P13,2,beverage sales,38075.15
+2024-P13,2,cash over/short,-16.55
+2024-P13,2,comps (memo),2735.5
+2024-P13,2,credit card fees,-7031.49
+2024-P13,2,discounts (memo),6146.06
+2024-P13,2,food cost,-70265.24
+2024-P13,2,food sales,240974.04
+2024-P13,2,hourly wages,-68994.27
+2024-P13,2,management salaries,-17983.06
+2024-P13,2,marketing,-5580.98
+2024-P13,2,payroll taxes and benefits,-11905.3
+2024-P13,2,rent and occupancy,-13837.89
+2024-P13,2,repairs and maintenance,-5839.81
+2024-P13,2,supplies,-8895.14
+2024-P13,2,utilities,-9299.2
+2024-P13,3,beverage cost,-9134.82
+2024-P13,3,beverage sales,39848.4
+2024-P13,3,cash over/short,8.92
+2024-P13,3,comps (memo),3237.5
+2024-P13,3,credit card fees,-7379.89
+2024-P13,3,discounts (memo),6182.38
+2024-P13,3,food cost,-77412.09
+2024-P13,3,food sales,255483.04
+2024-P13,3,hourly wages,-80152.11
+2024-P13,3,management salaries,-17536.22
+2024-P13,3,marketing,-5906.63
+2024-P13,3,payroll taxes and benefits,-13025.43
+2024-P13,3,rent and occupancy,-14529.78
+2024-P13,3,repairs and maintenance,-6309.83
+2024-P13,3,supplies,-8327.62
+2024-P13,3,utilities,-8829.31
+2024-P13,4,beverage cost,-7633.77
+2024-P13,4,beverage sales,34107.2
+2024-P13,4,cash over/short,-56.22
+2024-P13,4,comps (memo),3575.7
+2024-P13,4,credit card fees,-6273.92
+2024-P13,4,discounts (memo),5682.3
+2024-P13,4,food cost,-66345.75
+2024-P13,4,food sales,214228.8
+2024-P13,4,hourly wages,-71621.21
+2024-P13,4,management salaries,-18517.95
+2024-P13,4,marketing,-4966.72
+2024-P13,4,payroll taxes and benefits,-12322.64
+2024-P13,4,rent and occupancy,-12454.1
+2024-P13,4,repairs and maintenance,-2205.0
+2024-P13,4,supplies,-7912.9
+2024-P13,4,utilities,-7395.96
+2024-P13,5,beverage cost,-7340.53
+2024-P13,5,beverage sales,33850.18
+2024-P13,5,cash over/short,-42.8
+2024-P13,5,comps (memo),2912.5
+2024-P13,5,credit card fees,-6104.52
+2024-P13,5,discounts (memo),6449.9
+2024-P13,5,food cost,-63604.91
+2024-P13,5,food sales,210690.69
+2024-P13,5,hourly wages,-74077.19
+2024-P13,5,management salaries,-14989.34
+2024-P13,5,marketing,-4890.82
+2024-P13,5,payroll taxes and benefits,-11745.93
+2024-P13,5,rent and occupancy,-12177.34
+2024-P13,5,repairs and maintenance,-3018.94
+2024-P13,5,supplies,-7489.55
+2024-P13,5,utilities,-7957.07
+2024-P13,6,beverage cost,-7326.55
+2024-P13,6,beverage sales,32494.92
+2024-P13,6,cash over/short,-3.63
+2024-P13,6,comps (memo),2374.25
+2024-P13,6,credit card fees,-6241.97
+2024-P13,6,discounts (memo),5189.16
+2024-P13,6,food cost,-64864.97
+2024-P13,6,food sales,217554.12
+2024-P13,6,hourly wages,-74224.48
+2024-P13,6,management salaries,-18673.78
+2024-P13,6,marketing,-5000.98
+2024-P13,6,payroll taxes and benefits,-12646.4
+2024-P13,6,rent and occupancy,-12730.86
+2024-P13,6,repairs and maintenance,-3822.34
+2024-P13,6,supplies,-7111.74
+2024-P13,6,utilities,-9002.56
+2024-P13,7,beverage cost,-9245.56
+2024-P13,7,beverage sales,42670.27
+2024-P13,7,cash over/short,-25.6
+2024-P13,7,comps (memo),3461.25
+2024-P13,7,credit card fees,-8214.3
+2024-P13,7,discounts (memo),6465.48
+2024-P13,7,food cost,-90072.73
+2024-P13,7,food sales,284257.84
+2024-P13,7,hourly wages,-68834.31
+2024-P13,7,management salaries,-18852.16
+2024-P13,7,marketing,-6538.56
+2024-P13,7,payroll taxes and benefits,-12096.29
+2024-P13,7,rent and occupancy,-15913.57
+2024-P13,7,repairs and maintenance,-4794.53
+2024-P13,7,supplies,-10388.89
+2024-P13,7,utilities,-11226.85
+2024-P13,8,beverage cost,-9913.12
+2024-P13,8,beverage sales,39989.27
+2024-P13,8,cash over/short,39.48
+2024-P13,8,comps (memo),3442.0
+2024-P13,8,credit card fees,-7029.4
+2024-P13,8,discounts (memo),5551.14
+2024-P13,8,food cost,-72807.83
+2024-P13,8,food sales,241298.47
+2024-P13,8,hourly wages,-63392.64
+2024-P13,8,management salaries,-18737.29
+2024-P13,8,marketing,-5625.75
+2024-P13,8,payroll taxes and benefits,-11470.14
+2024-P13,8,rent and occupancy,-13561.13
+2024-P13,8,repairs and maintenance,-3590.13
+2024-P13,8,supplies,-8401.22
+2024-P13,8,utilities,-10451.37
+2024-P13,9,beverage cost,-8285.92
+2024-P13,9,beverage sales,35093.13
+2024-P13,9,cash over/short,5.77
+2024-P13,9,comps (memo),2962.75
+2024-P13,9,credit card fees,-6287.28
+2024-P13,9,discounts (memo),5744.48
+2024-P13,9,food cost,-64959.17
+2024-P13,9,food sales,219333.21
+2024-P13,9,hourly wages,-63234.49
+2024-P13,9,management salaries,-18746.47
+2024-P13,9,marketing,-5088.53
+2024-P13,9,payroll taxes and benefits,-11454.95
+2024-P13,9,rent and occupancy,-13146.0
+2024-P13,9,repairs and maintenance,-2691.18
+2024-P13,9,supplies,-7862.3
+2024-P13,9,utilities,-8815.99
+2024-P13,10,beverage cost,-8975.3
+2024-P13,10,beverage sales,39596.85
+2024-P13,10,cash over/short,-2.6
+2024-P13,10,comps (memo),3290.0
+2024-P13,10,credit card fees,-7392.93
+2024-P13,10,discounts (memo),5866.89
+2024-P13,10,food cost,-76437.1
+2024-P13,10,food sales,256039.21
+2024-P13,10,hourly wages,-64903.52
+2024-P13,10,management salaries,-16166.24
+2024-P13,10,marketing,-5912.72
+2024-P13,10,payroll taxes and benefits,-11019.28
+2024-P13,10,rent and occupancy,-15221.68
+2024-P13,10,repairs and maintenance,-3406.22
+2024-P13,10,supplies,-9076.15
+2024-P13,10,utilities,-10196.24
+2024-P13,11,beverage cost,-7629.61
+2024-P13,11,beverage sales,32222.74
+2024-P13,11,cash over/short,-13.64
+2024-P13,11,comps (memo),2652.5
+2024-P13,11,credit card fees,-5866.58
+2024-P13,11,discounts (memo),5038.27
+2024-P13,11,food cost,-61308.48
+2024-P13,11,food sales,202350.74
+2024-P13,11,hourly wages,-73154.88
+2024-P13,11,management salaries,-19010.19
+2024-P13,11,marketing,-4691.47
+2024-P13,11,payroll taxes and benefits,-12609.48
+2024-P13,11,rent and occupancy,-13422.75
+2024-P13,11,repairs and maintenance,-2302.55
+2024-P13,11,supplies,-6876.32
+2024-P13,11,utilities,-7200.5
+2024-P13,12,beverage cost,-7903.21
+2024-P13,12,beverage sales,33422.56
+2024-P13,12,cash over/short,27.86
+2024-P13,12,comps (memo),2516.5
+2024-P13,12,credit card fees,-6089.9
+2024-P13,12,discounts (memo),5337.56
+2024-P13,12,food cost,-63959.56
+2024-P13,12,food sales,207255.76
+2024-P13,12,hourly wages,-73464.73
+2024-P13,12,management salaries,-18215.51
+2024-P13,12,marketing,-4813.57
+2024-P13,12,payroll taxes and benefits,-12452.84
+2024-P13,12,rent and occupancy,-11762.21
+2024-P13,12,repairs and maintenance,-3213.83
+2024-P13,12,supplies,-7650.38
+2024-P13,12,utilities,-7166.65
+2025-P01,1,beverage cost,-9456.12
+2025-P01,1,beverage sales,39783.48
+2025-P01,1,cash over/short,-2.15
+2025-P01,1,comps (memo),3377.5
+2025-P01,1,credit card fees,-7360.14
+2025-P01,1,discounts (memo),6230.87
+2025-P01,1,food cost,-78810.07
+2025-P01,1,food sales,256674.65
+2025-P01,1,hourly wages,-81898.36
+2025-P01,1,management salaries,-19100.56
+2025-P01,1,marketing,-5929.16
+2025-P01,1,payroll taxes and benefits,-13592.96
+2025-P01,1,rent and occupancy,-16605.47
+2025-P01,1,repairs and maintenance,-5799.88
+2025-P01,1,supplies,-8733.77
+2025-P01,1,utilities,-9595.9
+2025-P01,2,beverage cost,-7811.09
+2025-P01,2,beverage sales,33019.34
+2025-P01,2,cash over/short,-32.97
+2025-P01,2,comps (memo),2528.5
+2025-P01,2,credit card fees,-6068.45
+2025-P01,2,discounts (memo),5419.25
+2025-P01,2,food cost,-61728.48
+2025-P01,2,food sales,211732.54
+2025-P01,2,hourly wages,-70343.08
+2025-P01,2,management salaries,-18047.23
+2025-P01,2,marketing,-4895.04
+2025-P01,2,payroll taxes and benefits,-12069.07
+2025-P01,2,rent and occupancy,-13837.89
+2025-P01,2,repairs and maintenance,-3400.7
+2025-P01,2,supplies,-7299.38
+2025-P01,2,utilities,-7566.66
+2025-P01,3,beverage cost,-8141.33
+2025-P01,3,beverage sales,35092.88
+2025-P01,3,cash over/short,25.4
+2025-P01,3,comps (memo),2677.25
+2025-P01,3,credit card fees,-6389.64
+2025-P01,3,discounts (memo),5889.98
+2025-P01,3,food cost,-66685.1
+2025-P01,3,food sales,219305.19
+2025-P01,3,hourly wages,-80650.28
+2025-P01,3,management salaries,-17598.8
+2025-P01,3,marketing,-5087.96
+2025-P01,3,payroll taxes and benefits,-13095.24
+2025-P01,3,rent and occupancy,-14529.78
+2025-P01,3,repairs and maintenance,-4155.57
+2025-P01,3,supplies,-8122.81
+2025-P01,3,utilities,-8628.24
+2025-P01,4,beverage cost,-7338.27
+2025-P01,4,beverage sales,31848.62
+2025-P01,4,cash over/short,-15.46
+2025-P01,4,comps (memo),3550.5
+2025-P01,4,credit card fees,-5682.85
+2025-P01,4,discounts (memo),5284.68
+2025-P01,4,food cost,-63487.83
+2025-P01,4,food sales,196100.58
+2025-P01,4,hourly wages,-76776.9
+2025-P01,4,management salaries,-18584.03
+2025-P01,4,marketing,-4558.98
+2025-P01,4,payroll taxes and benefits,-12905.63
+2025-P01,4,rent and occupancy,-12454.1
+2025-P01,4,repairs and maintenance,-2310.28
+2025-P01,4,supplies,-6302.7
+2025-P01,4,utilities,-7876.22
+2025-P01,5,beverage cost,-6573.77
+2025-P01,5,beverage sales,29552.7
+2025-P01,5,cash over/short,-20.2
+2025-P01,5,comps (memo),2118.0
+2025-P01,5,credit card fees,-5327.56
+2025-P01,5,discounts (memo),5835.28
+2025-P01,5,food cost,-55003.01
+2025-P01,5,food sales,182925.65
+2025-P01,5,hourly wages,-75251.92
+2025-P01,5,management salaries,-18238.83
+2025-P01,5,marketing,-4249.57
+2025-P01,5,payroll taxes and benefits,-12655.03
+2025-P01,5,rent and occupancy,-12177.34
+2025-P01,5,repairs and maintenance,-2071.26
+2025-P01,5,supplies,-5698.81
+2025-P01,5,utilities,-7764.55
+2025-P01,6,beverage cost,-6693.01
+2025-P01,6,beverage sales,29947.34
+2025-P01,6,cash over/short,32.73
+2025-P01,6,comps (memo),2654.5
+2025-P01,6,credit card fees,-5797.63
+2025-P01,6,discounts (memo),4955.79
+2025-P01,6,food cost,-57924.67
+2025-P01,6,food sales,199147.12
+2025-P01,6,hourly wages,-76520.98
+2025-P01,6,management salaries,-18740.41
+2025-P01,6,marketing,-4581.89
+2025-P01,6,payroll taxes and benefits,-12915.01
+2025-P01,6,rent and occupancy,-12730.86
+2025-P01,6,repairs and maintenance,-2751.34
+2025-P01,6,supplies,-6440.39
+2025-P01,6,utilities,-7513.76
+2025-P01,7,beverage cost,-8579.24
+2025-P01,7,beverage sales,39304.04
+2025-P01,7,cash over/short,-33.93
+2025-P01,7,comps (memo),3190.5
+2025-P01,7,credit card fees,-7074.8
+2025-P01,7,discounts (memo),5630.56
+2025-P01,7,food cost,-74604.48
+2025-P01,7,food sales,243833.77
+2025-P01,7,hourly wages,-70516.53
+2025-P01,7,management salaries,-18919.43
+2025-P01,7,marketing,-5662.76
+2025-P01,7,payroll taxes and benefits,-12297.48
+2025-P01,7,rent and occupancy,-15913.57
+2025-P01,7,repairs and maintenance,-4028.53
+2025-P01,7,supplies,-8165.02
+2025-P01,7,utilities,-7226.39
+2025-P01,8,beverage cost,-7730.38
+2025-P01,8,beverage sales,32340.71
+2025-P01,8,cash over/short,42.48
+2025-P01,8,comps (memo),2346.5
+2025-P01,8,credit card fees,-6087.02
+2025-P01,8,discounts (memo),5401.79
+2025-P01,8,food cost,-64124.52
+2025-P01,8,food sales,213449.92
+2025-P01,8,hourly wages,-66198.02
+2025-P01,8,management salaries,-18804.15
+2025-P01,8,marketing,-4915.81
+2025-P01,8,payroll taxes and benefits,-11794.78
+2025-P01,8,rent and occupancy,-13561.13
+2025-P01,8,repairs and maintenance,-4385.26
+2025-P01,8,supplies,-7105.16
+2025-P01,8,utilities,-7636.61
+2025-P01,9,beverage cost,-7598.23
+2025-P01,9,beverage sales,32409.85
+2025-P01,9,cash over/short,-3.41
+2025-P01,9,comps (memo),2254.5
+2025-P01,9,credit card fees,-5703.35
+2025-P01,9,discounts (memo),4961.75
+2025-P01,9,food cost,-59183.5
+2025-P01,9,food sales,198324.65
+2025-P01,9,hourly wages,-66741.07
+2025-P01,9,management salaries,-18813.36
+2025-P01,9,marketing,-4614.69
+2025-P01,9,payroll taxes and benefits,-11856.73
+2025-P01,9,rent and occupancy,-13146.0
+2025-P01,9,repairs and maintenance,-4608.04
+2025-P01,9,supplies,-6721.32
+2025-P01,9,utilities,-6963.25
+2025-P01,10,beverage cost,-8617.71
+2025-P01,10,beverage sales,38212.1
+2025-P01,10,cash over/short,57.45
+2025-P01,10,comps (memo),3254.0
+2025-P01,10,credit card fees,-6762.16
+2025-P01,10,discounts (memo),6037.55
+2025-P01,10,food cost,-69580.76
+2025-P01,10,food sales,234279.35
+2025-P01,10,hourly wages,-68301.18
+2025-P01,10,management salaries,-18343.28
+2025-P01,10,marketing,-5449.83
+2025-P01,10,payroll taxes and benefits,-11915.52
+2025-P01,10,rent and occupancy,-15221.68
+2025-P01,10,repairs and maintenance,-4442.86
+2025-P01,10,supplies,-8797.19
+2025-P01,10,utilities,-8952.26
+2025-P01,11,beverage cost,-7745.01
+2025-P01,11,beverage sales,34578.78
+2025-P01,11,cash over/short,36.43
+2025-P01,11,comps (memo),2479.25
+2025-P01,11,credit card fees,-6040.4
+2025-P01,11,discounts (memo),5447.89
+2025-P01,11,food cost,-61715.44
+2025-P01,11,food sales,211145.43
+2025-P01,11,hourly wages,-75365.72
+2025-P01,11,management salaries,-19078.02
+2025-P01,11,marketing,-4914.48
+2025-P01,11,payroll taxes and benefits,-12868.95
+2025-P01,11,rent and occupancy,-13422.75
+2025-P01,11,repairs and maintenance,-2904.62
+2025-P01,11,supplies,-7356.7
+2025-P01,11,utilities,-7481.76
+2025-P01,12,beverage cost,-6466.3
+2025-P01,12,beverage sales,26897.61
+2025-P01,12,cash over/short,-27.4
+2025-P01,12,comps (memo),2081.25
+2025-P01,12,credit card fees,-4910.63
+2025-P01,12,discounts (memo),4615.5
+2025-P01,12,food cost,-52544.21
+2025-P01,12,food sales,171375.13
+2025-P01,12,hourly wages,-73691.91
+2025-P01,12,management salaries,-18387.82
+2025-P01,12,marketing,-3965.45
+2025-P01,12,payroll taxes and benefits,-12519.19
+2025-P01,12,rent and occupancy,-11762.21
+2025-P01,12,repairs and maintenance,-3187.81
+2025-P01,12,supplies,-6402.8
+2025-P01,12,utilities,-6314.19
+2025-P02,1,beverage cost,-9671.47
+2025-P02,1,beverage sales,43223.22
+2025-P02,1,cash over/short,60.15
+2025-P02,1,comps (memo),3990.75
+2025-P02,1,credit card fees,-8331.66
+2025-P02,1,discounts (memo),6791.23
+2025-P02,1,food cost,-84647.88
+2025-P02,1,food sales,292907.23
+2025-P02,1,hourly wages,-86828.65
+2025-P02,1,management salaries,-19168.48
+2025-P02,1,marketing,-6722.61
+2025-P02,1,payroll taxes and benefits,-14151.59
+2025-P02,1,rent and occupancy,-16605.47
+2025-P02,1,repairs and maintenance,-5945.67
+2025-P02,1,supplies,-10297.56
+2025-P02,1,utilities,-9933.99
+2025-P02,2,beverage cost,-8825.05
+2025-P02,2,beverage sales,36730.52
+2025-P02,2,cash over/short,47.12
+2025-P02,2,comps (memo),3316.0
+2025-P02,2,credit card fees,-7105.9
+2025-P02,2,discounts (memo),6147.69
+2025-P02,2,food cost,-68294.23
+2025-P02,2,food sales,243740.92
+2025-P02,2,hourly wages,-76287.64
+2025-P02,2,management salaries,-18111.4
+2025-P02,2,marketing,-5609.43
+2025-P02,2,payroll taxes and benefits,-12738.38
+2025-P02,2,rent and occupancy,-13837.89
+2025-P02,2,repairs and maintenance,-5603.37
+2025-P02,2,supplies,-8255.39
+2025-P02,2,utilities,-7733.24
+2025-P02,3,beverage cost,-8879.36
+2025-P02,3,beverage sales,38234.78
+2025-P02,3,cash over/short,-14.95
+2025-P02,3,comps (memo),3166.75
+2025-P02,3,credit card fees,-7154.12
+2025-P02,3,discounts (memo),6143.84
+2025-P02,3,food cost,-73155.12
+2025-P02,3,food sales,249586.5
+2025-P02,3,hourly wages,-80628.36
+2025-P02,3,management salaries,-17661.37
+2025-P02,3,marketing,-5756.43
+2025-P02,3,payroll taxes and benefits,-13107.85
+2025-P02,3,rent and occupancy,-14529.78
+2025-P02,3,repairs and maintenance,-3915.95
+2025-P02,3,supplies,-8858.48
+2025-P02,3,utilities,-10798.34
+2025-P02,4,beverage cost,-7339.69
+2025-P02,4,beverage sales,32600.47
+2025-P02,4,cash over/short,-45.55
+2025-P02,4,comps (memo),4173.0
+2025-P02,4,credit card fees,-6135.46
+2025-P02,4,discounts (memo),4715.15
+2025-P02,4,food cost,-64355.21
+2025-P02,4,food sales,215107.89
+2025-P02,4,hourly wages,-76996.34
+2025-P02,4,management salaries,-18650.1
+2025-P02,4,marketing,-4954.17
+2025-P02,4,payroll taxes and benefits,-12945.62
+2025-P02,4,rent and occupancy,-12454.1
+2025-P02,4,repairs and maintenance,-3869.52
+2025-P02,4,supplies,-6185.06
+2025-P02,4,utilities,-7229.99
+2025-P02,5,beverage cost,-6835.06
+2025-P02,5,beverage sales,31199.1
+2025-P02,5,cash over/short,-12.83
+2025-P02,5,comps (memo),2453.25
+2025-P02,5,credit card fees,-5840.9
+2025-P02,5,discounts (memo),6366.66
+2025-P02,5,food cost,-60782.06
+2025-P02,5,food sales,206350.47
+2025-P02,5,hourly wages,-79095.0
+2025-P02,5,management salaries,-18303.68
+2025-P02,5,marketing,-4750.99
+2025-P02,5,payroll taxes and benefits,-13093.33
+2025-P02,5,rent and occupancy,-12177.34
+2025-P02,5,repairs and maintenance,-4175.84
+2025-P02,5,supplies,-7247.61
+2025-P02,5,utilities,-9664.3
+2025-P02,6,beverage cost,-8051.05
+2025-P02,6,beverage sales,33881.98
+2025-P02,6,cash over/short,13.13
+2025-P02,6,comps (memo),3059.0
+2025-P02,6,credit card fees,-6445.35
+2025-P02,6,discounts (memo),5240.34
+2025-P02,6,food cost,-62899.08
+2025-P02,6,food sales,225395.05
+2025-P02,6,hourly wages,-76577.31
+2025-P02,6,management salaries,-18807.05
+2025-P02,6,marketing,-5185.54
+2025-P02,6,payroll taxes and benefits,-12937.19
+2025-P02,6,rent and occupancy,-12730.86
+2025-P02,6,repairs and maintenance,-6627.72
+2025-P02,6,supplies,-7881.64
+2025-P02,6,utilities,-8788.67
+2025-P02,7,beverage cost,-9152.98
+2025-P02,7,beverage sales,41680.34
+2025-P02,7,cash over/short,-29.43
+2025-P02,7,comps (memo),3492.5
+2025-P02,7,credit card fees,-7862.84
+2025-P02,7,discounts (memo),6636.56
+2025-P02,7,food cost,-78985.42
+2025-P02,7,food sales,273880.61
+2025-P02,7,hourly wages,-59340.69
+2025-P02,7,management salaries,-18986.7
+2025-P02,7,marketing,-6311.22
+2025-P02,7,payroll taxes and benefits,-11084.28
+2025-P02,7,rent and occupancy,-15913.57
+2025-P02,7,repairs and maintenance,-2983.2
+2025-P02,7,supplies,-9068.08
+2025-P02,7,utilities,-10417.05
+2025-P02,8,beverage cost,-8348.96
+2025-P02,8,beverage sales,36218.02
+2025-P02,8,cash over/short,26.58
+2025-P02,8,comps (memo),3339.25
+2025-P02,8,credit card fees,-6861.93
+2025-P02,8,discounts (memo),5371.97
+2025-P02,8,food cost,-69167.84
+2025-P02,8,food sales,237177.53
+2025-P02,8,hourly wages,-66312.16
+2025-P02,8,management salaries,-18871.01
+2025-P02,8,marketing,-5467.91
+2025-P02,8,payroll taxes and benefits,-11823.38
+2025-P02,8,rent and occupancy,-13561.13
+2025-P02,8,repairs and maintenance,-4585.73
+2025-P02,8,supplies,-9111.08
+2025-P02,8,utilities,-9681.66
+2025-P02,9,beverage cost,-8423.2
+2025-P02,9,beverage sales,35672.69
+2025-P02,9,cash over/short,13.61
+2025-P02,9,comps (memo),3346.25
+2025-P02,9,credit card fees,-6564.29
+2025-P02,9,discounts (memo),5477.13
+2025-P02,9,food cost,-67941.16
+2025-P02,9,food sales,230007.43
+2025-P02,9,hourly wages,-65322.24
+2025-P02,9,management salaries,-18880.26
+2025-P02,9,marketing,-5313.6
+2025-P02,9,payroll taxes and benefits,-11716.71
+2025-P02,9,rent and occupancy,-13146.0
+2025-P02,9,repairs and maintenance,-4834.07
+2025-P02,9,supplies,-9142.64
+2025-P02,9,utilities,-8233.02
+2025-P02,10,beverage cost,-9078.86
+2025-P02,10,beverage sales,40018.71
+2025-P02,10,cash over/short,16.69
+2025-P02,10,comps (memo),3596.25
+2025-P02,10,credit card fees,-7466.72
+2025-P02,10,discounts (memo),6277.99
+2025-P02,10,food cost,-76405.55
+2025-P02,10,food sales,264550.24
+2025-P02,10,hourly wages,-66761.52
+2025-P02,10,management salaries,-18408.5
+2025-P02,10,marketing,-6091.38
+2025-P02,10,payroll taxes and benefits,-11761.81
+2025-P02,10,rent and occupancy,-15221.68
+2025-P02,10,repairs and maintenance,-5507.11
+2025-P02,10,supplies,-7386.25
+2025-P02,10,utilities,-9465.76
+2025-P02,11,beverage cost,-7770.02
+2025-P02,11,beverage sales,34565.58
+2025-P02,11,cash over/short,43.44
+2025-P02,11,comps (memo),2572.25
+2025-P02,11,credit card fees,-6515.86
+2025-P02,11,discounts (memo),5371.04
+2025-P02,11,food cost,-64179.48
+2025-P02,11,food sales,226744.51
+2025-P02,11,hourly wages,-81588.62
+2025-P02,11,management salaries,-19145.85
+2025-P02,11,marketing,-5226.2
+2025-P02,11,payroll taxes and benefits,-13569.75
+2025-P02,11,rent and occupancy,-13422.75
+2025-P02,11,repairs and maintenance,-3045.41
+2025-P02,11,supplies,-7781.25
+2025-P02,11,utilities,-7885.22
+2025-P02,12,beverage cost,-7815.83
+2025-P02,12,beverage sales,33055.91
+2025-P02,12,cash over/short,52.99
+2025-P02,12,comps (memo),3299.25
+2025-P02,12,credit card fees,-5886.0
+2025-P02,12,discounts (memo),4722.88
+2025-P02,12,food cost,-61376.73
+2025-P02,12,food sales,206006.51
+2025-P02,12,hourly wages,-76857.61
+2025-P02,12,management salaries,-18453.19
+2025-P02,12,marketing,-4781.25
+2025-P02,12,payroll taxes and benefits,-12883.1
+2025-P02,12,rent and occupancy,-11762.21
+2025-P02,12,repairs and maintenance,-2067.7
+2025-P02,12,supplies,-6349.49
+2025-P02,12,utilities,-8860.14
+2025-P03,1,beverage cost,-10746.26
+2025-P03,1,beverage sales,46965.76
+2025-P03,1,cash over/short,-26.0
+2025-P03,1,comps (memo),3646.0
+2025-P03,1,credit card fees,-8865.84
+2025-P03,1,discounts (memo),6542.76
+2025-P03,1,food cost,-89524.36
+2025-P03,1,food sales,308618.11
+2025-P03,1,hourly wages,-88358.03
+2025-P03,1,management salaries,-19295.82
+2025-P03,1,marketing,-7111.68
+2025-P03,1,payroll taxes and benefits,-14350.38
+2025-P03,1,rent and occupancy,-16605.47
+2025-P03,1,repairs and maintenance,-6474.93
+2025-P03,1,supplies,-10084.69
+2025-P03,1,utilities,-11326.37
+2025-P03,2,beverage cost,-9312.47
+2025-P03,2,beverage sales,38731.73
+2025-P03,2,cash over/short,35.34
+2025-P03,2,comps (memo),3810.75
+2025-P03,2,credit card fees,-7322.81
+2025-P03,2,discounts (memo),6106.39
+2025-P03,2,food cost,-72508.06
+2025-P03,2,food sales,254907.32
+2025-P03,2,hourly wages,-80054.92
+2025-P03,2,management salaries,-18231.71
+2025-P03,2,marketing,-5872.78
+2025-P03,2,payroll taxes and benefits,-13181.65
+2025-P03,2,rent and occupancy,-13837.89
+2025-P03,2,repairs and maintenance,-3578.68
+2025-P03,2,supplies,-9545.42
+2025-P03,2,utilities,-9938.25
+2025-P03,3,beverage cost,-8967.04
+2025-P03,3,beverage sales,40557.7
+2025-P03,3,cash over/short,-6.46
+2025-P03,3,comps (memo),3394.75
+2025-P03,3,credit card fees,-7670.96
+2025-P03,3,discounts (memo),5950.4
+2025-P03,3,food cost,-76266.5
+2025-P03,3,food sales,266713.4
+2025-P03,3,hourly wages,-81386.42
+2025-P03,3,management salaries,-18188.18
+2025-P03,3,marketing,-6145.42
+2025-P03,3,payroll taxes and benefits,-13317.67
+2025-P03,3,rent and occupancy,-14529.78
+2025-P03,3,repairs and maintenance,-6069.27
+2025-P03,3,supplies,-9226.9
+2025-P03,3,utilities,-9003.15
+2025-P03,4,beverage cost,-7779.51
+2025-P03,4,beverage sales,35039.17
+2025-P03,4,cash over/short,-44.24
+2025-P03,4,comps (memo),4429.25
+2025-P03,4,credit card fees,-6479.0
+2025-P03,4,discounts (memo),5890.46
+2025-P03,4,food cost,-68958.07
+2025-P03,4,food sales,226655.87
+2025-P03,4,hourly wages,-80437.49
+2025-P03,4,management salaries,-18774.0
+2025-P03,4,marketing,-5233.9
+2025-P03,4,payroll taxes and benefits,-13353.88
+2025-P03,4,rent and occupancy,-12454.1
+2025-P03,4,repairs and maintenance,-5063.71
+2025-P03,4,supplies,-7967.19
+2025-P03,4,utilities,-8900.07
+2025-P03,5,beverage cost,-7983.18
+2025-P03,5,beverage sales,36502.45
+2025-P03,5,cash over/short,-20.47
+2025-P03,5,comps (memo),2771.5
+2025-P03,5,credit card fees,-6533.4
+2025-P03,5,discounts (memo),6681.17
+2025-P03,5,food cost,-67314.45
+2025-P03,5,food sales,227737.38
+2025-P03,5,hourly wages,-80769.46
+2025-P03,5,management salaries,-18425.27
+2025-P03,5,marketing,-5284.8
+2025-P03,5,payroll taxes and benefits,-13306.71
+2025-P03,5,rent and occupancy,-12177.34
+2025-P03,5,repairs and maintenance,-6049.86
+2025-P03,5,supplies,-7844.76
+2025-P03,5,utilities,-8305.25
+2025-P03,6,beverage cost,-8838.58
+2025-P03,6,beverage sales,37817.79
+2025-P03,6,cash over/short,24.19
+2025-P03,6,comps (memo),3618.5
+2025-P03,6,credit card fees,-7038.82
+2025-P03,6,discounts (memo),5520.51
+2025-P03,6,food cost,-69703.3
+2025-P03,6,food sales,245620.5
+2025-P03,6,hourly wages,-79143.8
+2025-P03,6,management salaries,-18931.98
+2025-P03,6,marketing,-5668.77
+2025-P03,6,payroll taxes and benefits,-13249.49
+2025-P03,6,rent and occupancy,-12730.86
+2025-P03,6,repairs and maintenance,-4677.97
+2025-P03,6,supplies,-8194.56
+2025-P03,6,utilities,-10683.14
+2025-P03,7,beverage cost,-10198.23
+2025-P03,7,beverage sales,46621.47
+2025-P03,7,cash over/short,-9.2
+2025-P03,7,comps (memo),3667.75
+2025-P03,7,credit card fees,-8735.23
+2025-P03,7,discounts (memo),6655.44
+2025-P03,7,food cost,-87343.95
+2025-P03,7,food sales,301500.97
+2025-P03,7,hourly wages,-66899.8
+2025-P03,7,management salaries,-19112.83
+2025-P03,7,marketing,-6962.45
+2025-P03,7,payroll taxes and benefits,-11946.06
+2025-P03,7,rent and occupancy,-15913.57
+2025-P03,7,repairs and maintenance,-4999.23
+2025-P03,7,supplies,-8278.87
+2025-P03,7,utilities,-12150.1
+2025-P03,8,beverage cost,-8561.0
+2025-P03,8,beverage sales,36621.78
+2025-P03,8,cash over/short,2.15
+2025-P03,8,comps (memo),2937.25
+2025-P03,8,credit card fees,-7006.74
+2025-P03,8,discounts (memo),6192.42
+2025-P03,8,food cost,-73639.94
+2025-P03,8,food sales,243625.55
+2025-P03,8,hourly wages,-68682.73
+2025-P03,8,management salaries,-18996.37
+2025-P03,8,marketing,-5604.95
+2025-P03,8,payroll taxes and benefits,-12114.23
+2025-P03,8,rent and occupancy,-13561.13
+2025-P03,8,repairs and maintenance,-6472.9
+2025-P03,8,supplies,-8934.92
+2025-P03,8,utilities,-9115.08
+2025-P03,9,beverage cost,-8680.48
+2025-P03,9,beverage sales,36605.72
+2025-P03,9,cash over/short,82.27
+2025-P03,9,comps (memo),2948.5
+2025-P03,9,credit card fees,-6681.74
+2025-P03,9,discounts (memo),5674.78
+2025-P03,9,food cost,-71015.88
+2025-P03,9,food sales,237364.0
+2025-P03,9,hourly wages,-68773.39
+2025-P03,9,management salaries,-19005.68
+2025-P03,9,marketing,-5479.39
+2025-P03,9,payroll taxes and benefits,-12126.44
+2025-P03,9,rent and occupancy,-13146.0
+2025-P03,9,repairs and maintenance,-3934.74
+2025-P03,9,supplies,-7936.57
+2025-P03,9,utilities,-7917.6
+2025-P03,10,beverage cost,-9885.63
+2025-P03,10,beverage sales,43269.49
+2025-P03,10,cash over/short,33.07
+2025-P03,10,comps (memo),3286.5
+2025-P03,10,credit card fees,-8018.37
+2025-P03,10,discounts (memo),6731.64
+2025-P03,10,food cost,-80580.76
+2025-P03,10,food sales,279841.49
+2025-P03,10,hourly wages,-70735.96
+2025-P03,10,management salaries,-18530.79
+2025-P03,10,marketing,-6462.22
+2025-P03,10,payroll taxes and benefits,-12228.35
+2025-P03,10,rent and occupancy,-15221.68
+2025-P03,10,repairs and maintenance,-2832.4
+2025-P03,10,supplies,-9979.67
+2025-P03,10,utilities,-10943.94
+2025-P03,11,beverage cost,-8491.22
+2025-P03,11,beverage sales,38189.65
+2025-P03,11,cash over/short,27.25
+2025-P03,11,comps (memo),3403.25
+2025-P03,11,credit card fees,-7058.3
+2025-P03,11,discounts (memo),5268.28
+2025-P03,11,food cost,-70932.26
+2025-P03,11,food sales,248762.08
+2025-P03,11,hourly wages,-78247.68
+2025-P03,11,management salaries,-19273.04
+2025-P03,11,marketing,-5739.03
+2025-P03,11,payroll taxes and benefits,-13232.77
+2025-P03,11,rent and occupancy,-13422.75
+2025-P03,11,repairs and maintenance,-4477.96
+2025-P03,11,supplies,-9206.45
+2025-P03,11,utilities,-8494.5
+2025-P03,12,beverage cost,-8296.43
+2025-P03,12,beverage sales,33679.28
+2025-P03,12,cash over/short,21.2
+2025-P03,12,comps (memo),2758.75
+2025-P03,12,credit card fees,-6318.53
+2025-P03,12,discounts (memo),5299.82
+2025-P03,12,food cost,-67267.04
+2025-P03,12,food sales,218400.41
+2025-P03,12,hourly wages,-76195.28
+2025-P03,12,management salaries,-18575.78
+2025-P03,12,marketing,-5041.59
+2025-P03,12,payroll taxes and benefits,-12839.67
+2025-P03,12,rent and occupancy,-11762.21
+2025-P03,12,repairs and maintenance,-4546.62
+2025-P03,12,supplies,-6862.98
+2025-P03,12,utilities,-7871.12
+2025-P04,1,beverage cost,-11140.76
+2025-P04,1,beverage sales,47045.85
+2025-P04,1,cash over/short,-48.5
+2025-P04,1,comps (memo),3941.5
+2025-P04,1,credit card fees,-8909.24
+2025-P04,1,discounts (memo),7474.74
+2025-P04,1,food cost,-91049.86
+2025-P04,1,food sales,312424.54
+2025-P04,1,hourly wages,-89718.76
+2025-P04,1,management salaries,-19261.86
+2025-P04,1,marketing,-7189.41
+2025-P04,1,payroll taxes and benefits,-14491.91
+2025-P04,1,rent and occupancy,-16605.47
+2025-P04,1,repairs and maintenance,-3833.7
+2025-P04,1,supplies,-10213.29
+2025-P04,1,utilities,-9769.88
+2025-P04,2,beverage cost,-9956.28
+2025-P04,2,beverage sales,41207.79
+2025-P04,2,cash over/short,-9.33
+2025-P04,2,comps (memo),3689.5
+2025-P04,2,credit card fees,-7687.85
+2025-P04,2,discounts (memo),6620.33
+2025-P04,2,food cost,-76209.74
+2025-P04,2,food sales,267277.38
+2025-P04,2,hourly wages,-77830.24
+2025-P04,2,management salaries,-18199.63
+2025-P04,2,marketing,-6169.7
+2025-P04,2,payroll taxes and benefits,-12929.24
+2025-P04,2,rent and occupancy,-13837.89
+2025-P04,2,repairs and maintenance,-4461.25
+2025-P04,2,supplies,-10843.03
+2025-P04,2,utilities,-9991.96
+2025-P04,3,beverage cost,-9504.57
+2025-P04,3,beverage sales,41850.44
+2025-P04,3,cash over/short,-34.44
+2025-P04,3,comps (memo),3508.0
+2025-P04,3,credit card fees,-7880.03
+2025-P04,3,discounts (memo),6136.17
+2025-P04,3,food cost,-78229.18
+2025-P04,3,food sales,272219.98
+2025-P04,3,hourly wages,-80562.76
+2025-P04,3,management salaries,-18564.94
+2025-P04,3,marketing,-6281.41
+2025-P04,3,payroll taxes and benefits,-13317.49
+2025-P04,3,rent and occupancy,-14529.78
+2025-P04,3,repairs and maintenance,-5382.17
+2025-P04,3,supplies,-8834.63
+2025-P04,3,utilities,-9076.77
+2025-P04,4,beverage cost,-8260.25
+2025-P04,4,beverage sales,36306.67
+2025-P04,4,cash over/short,1.83
+2025-P04,4,comps (memo),3787.25
+2025-P04,4,credit card fees,-6809.4
+2025-P04,4,discounts (memo),5748.56
+2025-P04,4,food cost,-71550.7
+2025-P04,4,food sales,235919.07
+2025-P04,4,hourly wages,-77717.97
+2025-P04,4,management salaries,-19081.78
+2025-P04,4,marketing,-5444.51
+2025-P04,4,payroll taxes and benefits,-13128.6
+2025-P04,4,rent and occupancy,-12454.1
+2025-P04,4,repairs and maintenance,-6156.83
+2025-P04,4,supplies,-8710.5
+2025-P04,4,utilities,-8742.53
+2025-P04,5,beverage cost,-7775.13
+2025-P04,5,beverage sales,35196.28
+2025-P04,5,cash over/short,9.61
+2025-P04,5,comps (memo),2977.75
+2025-P04,5,credit card fees,-6549.15
+2025-P04,5,discounts (memo),6720.95
+2025-P04,5,food cost,-69353.11
+2025-P04,5,food sales,231765.14
+2025-P04,5,hourly wages,-82226.24
+2025-P04,5,management salaries,-18392.85
+2025-P04,5,marketing,-5339.23
+2025-P04,5,payroll taxes and benefits,-13459.17
+2025-P04,5,rent and occupancy,-12177.34
+2025-P04,5,repairs and maintenance,-7075.56
+2025-P04,5,supplies,-8590.58
+2025-P04,5,utilities,-8419.66
+2025-P04,6,beverage cost,-9048.98
+2025-P04,6,beverage sales,38173.68
+2025-P04,6,cash over/short,-12.76
+2025-P04,6,comps (memo),2668.5
+2025-P04,6,credit card fees,-6953.32
+2025-P04,6,discounts (memo),5681.66
+2025-P04,6,food cost,-67049.02
+2025-P04,6,food sales,239942.91
+2025-P04,6,hourly wages,-76864.9
+2025-P04,6,management salaries,-18898.67
+2025-P04,6,marketing,-5562.33
+2025-P04,6,payroll taxes and benefits,-12990.82
+2025-P04,6,rent and occupancy,-12730.86
+2025-P04,6,repairs and maintenance,-4491.17
+2025-P04,6,supplies,-7112.56
+2025-P04,6,utilities,-10855.6
+2025-P04,7,beverage cost,-9913.99
+2025-P04,7,beverage sales,45414.53
+2025-P04,7,cash over/short,-11.78
+2025-P04,7,comps (memo),3693.75
+2025-P04,7,credit card fees,-8556.46
+2025-P04,7,discounts (memo),7370.86
+2025-P04,7,food cost,-86725.39
+2025-P04,7,food sales,296256.11
+2025-P04,7,hourly wages,-70140.26
+2025-P04,7,management salaries,-19079.19
+2025-P04,7,marketing,-6833.41
+2025-P04,7,payroll taxes and benefits,-12294.43
+2025-P04,7,rent and occupancy,-15913.57
+2025-P04,7,repairs and maintenance,-7556.63
+2025-P04,7,supplies,-10007.56
+2025-P04,7,utilities,-11004.85
+2025-P04,8,beverage cost,-8883.53
+2025-P04,8,beverage sales,38206.09
+2025-P04,8,cash over/short,-23.07
+2025-P04,8,comps (memo),3086.5
+2025-P04,8,credit card fees,-7346.21
+2025-P04,8,discounts (memo),6726.88
+2025-P04,8,food cost,-76672.45
+2025-P04,8,food sales,259795.65
+2025-P04,8,hourly wages,-70418.42
+2025-P04,8,management salaries,-18962.94
+2025-P04,8,marketing,-5960.03
+2025-P04,8,payroll taxes and benefits,-12297.13
+2025-P04,8,rent and occupancy,-13561.13
+2025-P04,8,repairs and maintenance,-5294.69
+2025-P04,8,supplies,-8788.69
+2025-P04,8,utilities,-9394.41
+2025-P04,9,beverage cost,-9185.91
+2025-P04,9,beverage sales,38971.7
+2025-P04,9,cash over/short,-21.41
+2025-P04,9,comps (memo),4080.5
+2025-P04,9,credit card fees,-7074.0
+2025-P04,9,discounts (memo),5572.53
+2025-P04,9,food cost,-72598.11
+2025-P04,9,food sales,245804.64
+2025-P04,9,hourly wages,-66663.61
+2025-P04,9,management salaries,-18972.23
+2025-P04,9,marketing,-5695.53
+2025-P04,9,payroll taxes and benefits,-11886.33
+2025-P04,9,rent and occupancy,-13146.0
+2025-P04,9,repairs and maintenance,-3362.48
+2025-P04,9,supplies,-7803.98
+2025-P04,9,utilities,-10819.17
+2025-P04,10,beverage cost,-10524.01
+2025-P04,10,beverage sales,45769.96
+2025-P04,10,cash over/short,3.91
+2025-P04,10,comps (memo),4587.5
+2025-P04,10,credit card fees,-8508.97
+2025-P04,10,discounts (memo),7383.18
+2025-P04,10,food cost,-86579.25
+2025-P04,10,food sales,295665.26
+2025-P04,10,hourly wages,-71201.06
+2025-P04,10,management salaries,-18498.18
+2025-P04,10,marketing,-6828.7
+2025-P04,10,payroll taxes and benefits,-12271.68
+2025-P04,10,rent and occupancy,-15221.68
+2025-P04,10,repairs and maintenance,-2963.54
+2025-P04,10,supplies,-9373.43
+2025-P04,10,utilities,-10907.76
+2025-P04,11,beverage cost,-8311.85
+2025-P04,11,beverage sales,37217.63
+2025-P04,11,cash over/short,-70.19
+2025-P04,11,comps (memo),2934.5
+2025-P04,11,credit card fees,-7043.51
+2025-P04,11,discounts (memo),6268.09
+2025-P04,11,food cost,-71517.18
+2025-P04,11,food sales,246483.03
+2025-P04,11,hourly wages,-81761.07
+2025-P04,11,management salaries,-19239.12
+2025-P04,11,marketing,-5674.01
+2025-P04,11,payroll taxes and benefits,-13611.11
+2025-P04,11,rent and occupancy,-13422.75
+2025-P04,11,repairs and maintenance,-4471.25
+2025-P04,11,supplies,-8170.44
+2025-P04,11,utilities,-10814.28
+2025-P04,12,beverage cost,-8256.51
+2025-P04,12,beverage sales,34175.67
+2025-P04,12,cash over/short,19.85
+2025-P04,12,comps (memo),2850.0
+2025-P04,12,credit card fees,-6378.79
+2025-P04,12,discounts (memo),5016.08
+2025-P04,12,food cost,-66962.59
+2025-P04,12,food sales,222697.47
+2025-P04,12,hourly wages,-77279.07
+2025-P04,12,management salaries,-18543.09
+2025-P04,12,marketing,-5137.46
+2025-P04,12,payroll taxes and benefits,-12951.04
+2025-P04,12,rent and occupancy,-11762.21
+2025-P04,12,repairs and maintenance,-6046.83
+2025-P04,12,supplies,-7082.07
+2025-P04,12,utilities,-8871.82
+2025-P05,1,beverage cost,-11466.24
+2025-P05,1,beverage sales,48826.0
+2025-P05,1,cash over/short,1.49
+2025-P05,1,comps (memo),3894.25
+2025-P05,1,credit card fees,-9176.24
+2025-P05,1,discounts (memo),7635.24
+2025-P05,1,food cost,-94277.25
+2025-P05,1,food sales,320063.14
+2025-P05,1,hourly wages,-88732.48
+2025-P05,1,management salaries,-19253.37
+2025-P05,1,marketing,-7377.78
+2025-P05,1,payroll taxes and benefits,-14381.38
+2025-P05,1,rent and occupancy,-16605.47
+2025-P05,1,repairs and maintenance,-8691.66
+2025-P05,1,supplies,-10609.57
+2025-P05,1,utilities,-11664.16
+2025-P05,2,beverage cost,-9644.38
+2025-P05,2,beverage sales,40679.77
+2025-P05,2,cash over/short,35.85
+2025-P05,2,comps (memo),3490.0
+2025-P05,2,credit card fees,-7767.23
+2025-P05,2,discounts (memo),5877.93
+2025-P05,2,food cost,-76179.94
+2025-P05,2,food sales,267751.65
+2025-P05,2,hourly wages,-84246.94
+2025-P05,2,management salaries,-16248.53
+2025-P05,2,marketing,-6168.63
+2025-P05,2,payroll taxes and benefits,-13166.81
+2025-P05,2,rent and occupancy,-13837.89
+2025-P05,2,repairs and maintenance,-5183.13
+2025-P05,2,supplies,-9031.73
+2025-P05,2,utilities,-9426.5
+2025-P05,3,beverage cost,-9984.9
+2025-P05,3,beverage sales,43634.63
+2025-P05,3,cash over/short,33.09
+2025-P05,3,comps (memo),3239.0
+2025-P05,3,credit card fees,-8218.52
+2025-P05,3,discounts (memo),6992.15
+2025-P05,3,food cost,-82432.43
+2025-P05,3,food sales,284749.72
+2025-P05,3,hourly wages,-85997.47
+2025-P05,3,management salaries,-18556.76
+2025-P05,3,marketing,-6567.69
+2025-P05,3,payroll taxes and benefits,-13913.34
+2025-P05,3,rent and occupancy,-14529.78
+2025-P05,3,repairs and maintenance,-4295.31
+2025-P05,3,supplies,-10273.77
+2025-P05,3,utilities,-10550.88
+2025-P05,4,beverage cost,-8577.44
+2025-P05,4,beverage sales,36442.95
+2025-P05,4,cash over/short,-3.8
+2025-P05,4,comps (memo),3180.5
+2025-P05,4,credit card fees,-7077.41
+2025-P05,4,discounts (memo),6094.84
+2025-P05,4,food cost,-74368.88
+2025-P05,4,food sales,245389.46
+2025-P05,4,hourly wages,-80245.13
+2025-P05,4,management salaries,-19003.35
+2025-P05,4,marketing,-5636.65
+2025-P05,4,payroll taxes and benefits,-13387.77
+2025-P05,4,rent and occupancy,-12454.1
+2025-P05,4,repairs and maintenance,-5591.61
+2025-P05,4,supplies,-8629.08
+2025-P05,4,utilities,-9477.74
+2025-P05,5,beverage cost,-7596.02
+2025-P05,5,beverage sales,35199.42
+2025-P05,5,cash over/short,6.99
+2025-P05,5,comps (memo),2695.75
+2025-P05,5,credit card fees,-6681.9
+2025-P05,5,discounts (memo),7238.11
+2025-P05,5,food cost,-69690.52
+2025-P05,5,food sales,231686.72
+2025-P05,5,hourly wages,-76740.14
+2025-P05,5,management salaries,-18384.74
+2025-P05,5,marketing,-5337.72
+2025-P05,5,payroll taxes and benefits,-12853.75
+2025-P05,5,rent and occupancy,-12177.34
+2025-P05,5,repairs and maintenance,-8310.33
+2025-P05,5,supplies,-9137.7
+2025-P05,5,utilities,-8234.92
+2025-P05,6,beverage cost,-8832.79
+2025-P05,6,beverage sales,37875.47
+2025-P05,6,cash over/short,-8.76
+2025-P05,6,comps (memo),2994.25
+2025-P05,6,credit card fees,-7248.98
+2025-P05,6,discounts (memo),6226.97
+2025-P05,6,food cost,-72652.07
+2025-P05,6,food sales,254296.85
+2025-P05,6,hourly wages,-80458.86
+2025-P05,6,management salaries,-18890.34
+2025-P05,6,marketing,-5843.45
+2025-P05,6,payroll taxes and benefits,-13384.16
+2025-P05,6,rent and occupancy,-12730.86
+2025-P05,6,repairs and maintenance,-7774.15
+2025-P05,6,supplies,-8999.75
+2025-P05,6,utilities,-8690.7
+2025-P05,7,beverage cost,-10672.66
+2025-P05,7,beverage sales,47633.05
+2025-P05,7,cash over/short,-6.23
+2025-P05,7,comps (memo),3814.0
+2025-P05,7,credit card fees,-8846.58
+2025-P05,7,discounts (memo),7384.18
+2025-P05,7,food cost,-89206.82
+2025-P05,7,food sales,304325.45
+2025-P05,7,hourly wages,-73372.71
+2025-P05,7,management salaries,-19070.78
+2025-P05,7,marketing,-7039.17
+2025-P05,7,payroll taxes and benefits,-12647.99
+2025-P05,7,rent and occupancy,-15913.57
+2025-P05,7,repairs and maintenance,-5035.37
+2025-P05,7,supplies,-10841.98
+2025-P05,7,utilities,-9331.73
+2025-P05,8,beverage cost,-8966.34
+2025-P05,8,beverage sales,38487.59
+2025-P05,8,cash over/short,-0.56
+2025-P05,8,comps (memo),3159.5
+2025-P05,8,credit card fees,-7304.38
+2025-P05,8,discounts (memo),5880.9
+2025-P05,8,food cost,-74559.44
+2025-P05,8,food sales,255227.89
+2025-P05,8,hourly wages,-69987.29
+2025-P05,8,management salaries,-18954.58
+2025-P05,8,marketing,-5874.31
+2025-P05,8,payroll taxes and benefits,-12247.7
+2025-P05,8,rent and occupancy,-13561.13
+2025-P05,8,repairs and maintenance,-3554.15
+2025-P05,8,supplies,-9053.76
+2025-P05,8,utilities,-9314.29
+2025-P05,9,beverage cost,-8622.77
+2025-P05,9,beverage sales,37839.47
+2025-P05,9,cash over/short,-18.38
+2025-P05,9,comps (memo),3539.25
+2025-P05,9,credit card fees,-7156.43
+2025-P05,9,discounts (memo),6577.88
+2025-P05,9,food cost,-73517.88
+2025-P05,9,food sales,252736.52
+2025-P05,9,hourly wages,-69094.64
+2025-P05,9,management salaries,-18653.73
+2025-P05,9,marketing,-5811.52
+2025-P05,9,payroll taxes and benefits,-12077.3
+2025-P05,9,rent and occupancy,-13146.0
+2025-P05,9,repairs and maintenance,-3942.47
+2025-P05,9,supplies,-10247.13
+2025-P05,9,utilities,-9603.76
+2025-P05,10,beverage cost,-9890.29
+2025-P05,10,beverage sales,44543.39
+2025-P05,10,cash over/short,-4.76
+2025-P05,10,comps (memo),3073.25
+2025-P05,10,credit card fees,-8206.57
+2025-P05,10,discounts (memo),7023.92
+2025-P05,10,food cost,-84114.21
+2025-P05,10,food sales,287762.96
+2025-P05,10,hourly wages,-70947.27
+2025-P05,10,management salaries,-18490.03
+2025-P05,10,marketing,-6646.13
+2025-P05,10,payroll taxes and benefits,-12241.81
+2025-P05,10,rent and occupancy,-15221.68
+2025-P05,10,repairs and maintenance,-5778.46
+2025-P05,10,supplies,-9812.67
+2025-P05,10,utilities,-10634.46
+2025-P05,11,beverage cost,-8841.29
+2025-P05,11,beverage sales,39833.71
+2025-P05,11,cash over/short,15.03
+2025-P05,11,comps (memo),3573.75
+2025-P05,11,credit card fees,-7563.11
+2025-P05,11,discounts (memo),6243.3
+2025-P05,11,food cost,-74453.61
+2025-P05,11,food sales,259350.87
+2025-P05,11,hourly wages,-81369.45
+2025-P05,11,management salaries,-19230.64
+2025-P05,11,marketing,-5983.69
+2025-P05,11,payroll taxes and benefits,-13565.99
+2025-P05,11,rent and occupancy,-13422.75
+2025-P05,11,repairs and maintenance,-3440.86
+2025-P05,11,supplies,-9931.99
+2025-P05,11,utilities,-9787.03
+2025-P05,12,beverage cost,-9183.95
+2025-P05,12,beverage sales,36720.58
+2025-P05,12,cash over/short,-30.0
+2025-P05,12,comps (memo),3503.0
+2025-P05,12,credit card fees,-6803.27
+2025-P05,12,discounts (memo),5441.02
+2025-P05,12,food cost,-71265.3
+2025-P05,12,food sales,234987.78
+2025-P05,12,hourly wages,-78598.41
+2025-P05,12,management salaries,-18534.92
+2025-P05,12,marketing,-5434.17
+2025-P05,12,payroll taxes and benefits,-13094.21
+2025-P05,12,rent and occupancy,-11762.21
+2025-P05,12,repairs and maintenance,-5598.95
+2025-P05,12,supplies,-7576.99
+2025-P05,12,utilities,-9757.8
+2025-P06,1,beverage cost,-11311.97
+2025-P06,1,beverage sales,49836.89
+2025-P06,1,cash over/short,-9.76
+2025-P06,1,comps (memo),4799.0
+2025-P06,1,credit card fees,-9198.6
+2025-P06,1,discounts (memo),8209.37
+2025-P06,1,food cost,-94856.09
+2025-P06,1,food sales,320955.44
+2025-P06,1,hourly wages,-87169.75
+2025-P06,1,management salaries,-19304.3
+2025-P06,1,marketing,-7415.85
+2025-P06,1,payroll taxes and benefits,-14221.71
+2025-P06,1,rent and occupancy,-16605.47
+2025-P06,1,repairs and maintenance,-5986.53
+2025-P06,1,supplies,-11570.01
+2025-P06,1,utilities,-10844.58
+2025-P06,2,beverage cost,-9629.68
+2025-P06,2,beverage sales,38993.52
+2025-P06,2,cash over/short,6.86
+2025-P06,2,comps (memo),3054.0
+2025-P06,2,credit card fees,-7557.9
+2025-P06,2,discounts (memo),7728.68
+2025-P06,2,food cost,-76846.28
+2025-P06,2,food sales,265841.53
+2025-P06,2,hourly wages,-84255.66
+2025-P06,2,management salaries,-18056.63
+2025-P06,2,marketing,-6096.7
+2025-P06,2,payroll taxes and benefits,-13601.71
+2025-P06,2,rent and occupancy,-13837.89
+2025-P06,2,repairs and maintenance,-9797.06
+2025-P06,2,supplies,-8600.72
+2025-P06,2,utilities,-10927.31
+2025-P06,3,beverage cost,-10688.78
+2025-P06,3,beverage sales,45560.57
+2025-P06,3,cash over/short,-42.06
+2025-P06,3,comps (memo),3889.75
+2025-P06,3,credit card fees,-8253.87
+2025-P06,3,discounts (memo),7248.28
+2025-P06,3,food cost,-82602.69
+2025-P06,3,food sales,283685.57
+2025-P06,3,hourly wages,-84607.76
+2025-P06,3,management salaries,-18756.3
+2025-P06,3,marketing,-6584.92
+2025-P06,3,payroll taxes and benefits,-13808.37
+2025-P06,3,rent and occupancy,-14529.78
+2025-P06,3,repairs and maintenance,-4861.63
+2025-P06,3,supplies,-9535.86
+2025-P06,3,utilities,-9796.85
+2025-P06,4,beverage cost,-9064.86
+2025-P06,4,beverage sales,38116.7
+2025-P06,4,cash over/short,4.32
+2025-P06,4,comps (memo),3296.75
+2025-P06,4,credit card fees,-7155.66
+2025-P06,4,discounts (memo),6086.34
+2025-P06,4,food cost,-76536.07
+2025-P06,4,food sales,250115.85
+2025-P06,4,hourly wages,-75955.62
+2025-P06,4,management salaries,-19053.62
+2025-P06,4,marketing,-5764.65
+2025-P06,4,payroll taxes and benefits,-12927.99
+2025-P06,4,rent and occupancy,-12454.1
+2025-P06,4,repairs and maintenance,-3641.89
+2025-P06,4,supplies,-8866.73
+2025-P06,4,utilities,-8476.12
+2025-P06,5,beverage cost,-8134.56
+2025-P06,5,beverage sales,36518.55
+2025-P06,5,cash over/short,-12.34
+2025-P06,5,comps (memo),2673.25
+2025-P06,5,credit card fees,-6748.43
+2025-P06,5,discounts (memo),7472.38
+2025-P06,5,food cost,-68378.75
+2025-P06,5,food sales,229862.32
+2025-P06,5,hourly wages,-81810.81
+2025-P06,5,management salaries,-18433.38
+2025-P06,5,marketing,-5327.62
+2025-P06,5,payroll taxes and benefits,-13423.2
+2025-P06,5,rent and occupancy,-12177.34
+2025-P06,5,repairs and maintenance,-4731.82
+2025-P06,5,supplies,-7988.33
+2025-P06,5,utilities,-7813.43
+2025-P06,6,beverage cost,-8589.55
+2025-P06,6,beverage sales,37256.38
+2025-P06,6,cash over/short,-16.26
+2025-P06,6,comps (memo),2776.25
+2025-P06,6,credit card fees,-6805.68
+2025-P06,6,discounts (memo),5987.62
+2025-P06,6,food cost,-67074.09
+2025-P06,6,food sales,237054.48
+2025-P06,6,hourly wages,-82748.16
+2025-P06,6,management salaries,-18940.31
+2025-P06,6,marketing,-5486.22
+2025-P06,6,payroll taxes and benefits,-13647.97
+2025-P06,6,rent and occupancy,-12730.86
+2025-P06,6,repairs and maintenance,-4742.6
+2025-P06,6,supplies,-8473.19
+2025-P06,6,utilities,-7182.72
+2025-P06,7,beverage cost,-10904.05
+2025-P06,7,beverage sales,48493.8
+2025-P06,7,cash over/short,-45.36
+2025-P06,7,comps (memo),3775.5
+2025-P06,7,credit card fees,-8763.5
+2025-P06,7,discounts (memo),7923.4
+2025-P06,7,food cost,-90104.16
+2025-P06,7,food sales,306747.77
+2025-P06,7,hourly wages,-69582.93
+2025-P06,7,management salaries,-19121.23
+2025-P06,7,marketing,-7104.83
+2025-P06,7,payroll taxes and benefits,-12243.22
+2025-P06,7,rent and occupancy,-15913.57
+2025-P06,7,repairs and maintenance,-5540.83
+2025-P06,7,supplies,-10134.34
+2025-P06,7,utilities,-10732.99
+2025-P06,8,beverage cost,-9691.22
+2025-P06,8,beverage sales,40975.91
+2025-P06,8,cash over/short,-28.04
+2025-P06,8,comps (memo),3423.5
+2025-P06,8,credit card fees,-7697.5
+2025-P06,8,discounts (memo),6963.63
+2025-P06,8,food cost,-79905.87
+2025-P06,8,food sales,269092.3
+2025-P06,8,hourly wages,-71448.46
+2025-P06,8,management salaries,-19004.73
+2025-P06,8,marketing,-6201.36
+2025-P06,8,payroll taxes and benefits,-12420.47
+2025-P06,8,rent and occupancy,-13561.13
+2025-P06,8,repairs and maintenance,-4515.52
+2025-P06,8,supplies,-8859.97
+2025-P06,8,utilities,-9463.38
+2025-P06,9,beverage cost,-8805.67
+2025-P06,9,beverage sales,37558.94
+2025-P06,9,cash over/short,24.05
+2025-P06,9,comps (memo),2936.5
+2025-P06,9,credit card fees,-7209.22
+2025-P06,9,discounts (memo),6341.96
+2025-P06,9,food cost,-73809.73
+2025-P06,9,food sales,252829.6
+2025-P06,9,hourly wages,-68709.06
+2025-P06,9,management salaries,-18392.11
+2025-P06,9,marketing,-5807.77
+2025-P06,9,payroll taxes and benefits,-11972.1
+2025-P06,9,rent and occupancy,-13146.0
+2025-P06,9,repairs and maintenance,-6196.97
+2025-P06,9,supplies,-8305.1
+2025-P06,9,utilities,-7625.44
+2025-P06,10,beverage cost,-9997.49
+2025-P06,10,beverage sales,45218.8
+2025-P06,10,cash over/short,-46.78
+2025-P06,10,comps (memo),3603.75
+2025-P06,10,credit card fees,-8667.27
+2025-P06,10,discounts (memo),7847.26
+2025-P06,10,food cost,-89509.33
+2025-P06,10,food sales,302143.69
+2025-P06,10,hourly wages,-72729.35
+2025-P06,10,management salaries,-18538.94
+2025-P06,10,marketing,-6947.25
+2025-P06,10,payroll taxes and benefits,-12449.58
+2025-P06,10,rent and occupancy,-15221.68
+2025-P06,10,repairs and maintenance,-3976.02
+2025-P06,10,supplies,-10317.49
+2025-P06,10,utilities,-10979.18
+2025-P06,11,beverage cost,-8412.23
+2025-P06,11,beverage sales,38773.29
+2025-P06,11,cash over/short,26.46
+2025-P06,11,comps (memo),3172.0
+2025-P06,11,credit card fees,-7378.14
+2025-P06,11,discounts (memo),6366.03
+2025-P06,11,food cost,-74178.05
+2025-P06,11,food sales,257417.68
+2025-P06,11,hourly wages,-83163.21
+2025-P06,11,management salaries,-19281.52
+2025-P06,11,marketing,-5923.82
+2025-P06,11,payroll taxes and benefits,-13775.52
+2025-P06,11,rent and occupancy,-13422.75
+2025-P06,11,repairs and maintenance,-3153.97
+2025-P06,11,supplies,-9523.85
+2025-P06,11,utilities,-9535.62
+2025-P06,12,beverage cost,-8889.63
+2025-P06,12,beverage sales,35353.0
+2025-P06,12,cash over/short,-11.04
+2025-P06,12,comps (memo),3426.75
+2025-P06,12,credit card fees,-6554.63
+2025-P06,12,discounts (memo),6292.07
+2025-P06,12,food cost,-69508.53
+2025-P06,12,food sales,228117.55
+2025-P06,12,hourly wages,-75525.15
+2025-P06,12,management salaries,-18583.95
+2025-P06,12,marketing,-5269.41
+2025-P06,12,payroll taxes and benefits,-12767.92
+2025-P06,12,rent and occupancy,-11762.21
+2025-P06,12,repairs and maintenance,-3805.74
+2025-P06,12,supplies,-7668.9
+2025-P06,12,utilities,-8989.45
+2025-P07,1,beverage cost,-11256.56
+2025-P07,1,beverage sales,47815.85
+2025-P07,1,cash over/short,55.07
+2025-P07,1,comps (memo),3963.25
+2025-P07,1,credit card fees,-8821.51
+2025-P07,1,discounts (memo),7370.46
+2025-P07,1,food cost,-92257.42
+2025-P07,1,food sales,307873.86
+2025-P07,1,hourly wages,-90414.5
+2025-P07,1,management salaries,-19334.02
+2025-P07,1,marketing,-7113.79
+2025-P07,1,payroll taxes and benefits,-14585.76
+2025-P07,1,rent and occupancy,-16605.47
+2025-P07,1,repairs and maintenance,-4949.89
+2025-P07,1,supplies,-10926.49
+2025-P07,1,utilities,-12230.08
+2025-P07,2,beverage cost,-9967.2
+2025-P07,2,beverage sales,39924.27
+2025-P07,2,cash over/short,-18.0
+2025-P07,2,comps (memo),3097.5
+2025-P07,2,credit card fees,-7265.89
+2025-P07,2,discounts (memo),7383.54
+2025-P07,2,food cost,-74649.31
+2025-P07,2,food sales,255773.06
+2025-P07,2,hourly wages,-79085.23
+2025-P07,2,management salaries,-18084.42
+2025-P07,2,marketing,-5913.95
+2025-P07,2,payroll taxes and benefits,-13039.64
+2025-P07,2,rent and occupancy,-13837.89
+2025-P07,2,repairs and maintenance,-6572.66
+2025-P07,2,supplies,-9665.31
+2025-P07,2,utilities,-9888.62
+2025-P07,3,beverage cost,-10546.39
+2025-P07,3,beverage sales,42882.36
+2025-P07,3,cash over/short,-41.25
+2025-P07,3,comps (memo),3396.5
+2025-P07,3,credit card fees,-7912.03
+2025-P07,3,discounts (memo),6597.0
+2025-P07,3,food cost,-79907.64
+2025-P07,3,food sales,273964.34
+2025-P07,3,hourly wages,-83342.47
+2025-P07,3,management salaries,-18935.85
+2025-P07,3,marketing,-6336.93
+2025-P07,3,payroll taxes and benefits,-13712.28
+2025-P07,3,rent and occupancy,-14529.78
+2025-P07,3,repairs and maintenance,-5171.21
+2025-P07,3,supplies,-9781.61
+2025-P07,3,utilities,-11998.84
+2025-P07,4,beverage cost,-9124.01
+2025-P07,4,beverage sales,38677.1
+2025-P07,4,cash over/short,8.26
+2025-P07,4,comps (memo),2877.5
+2025-P07,4,credit card fees,-6937.86
+2025-P07,4,discounts (memo),5920.58
+2025-P07,4,food cost,-74078.47
+2025-P07,4,food sales,239560.96
+2025-P07,4,hourly wages,-80173.45
+2025-P07,4,management salaries,-17163.47
+2025-P07,4,marketing,-5564.76
+2025-P07,4,payroll taxes and benefits,-12938.31
+2025-P07,4,rent and occupancy,-12454.1
+2025-P07,4,repairs and maintenance,-3846.82
+2025-P07,4,supplies,-8519.44
+2025-P07,4,utilities,-7928.62
+2025-P07,5,beverage cost,-7380.2
+2025-P07,5,beverage sales,35827.15
+2025-P07,5,cash over/short,12.41
+2025-P07,5,comps (memo),2930.25
+2025-P07,5,credit card fees,-6623.42
+2025-P07,5,discounts (memo),6658.38
+2025-P07,5,food cost,-70018.32
+2025-P07,5,food sales,233520.12
+2025-P07,5,hourly wages,-76011.13
+2025-P07,5,management salaries,-18461.75
+2025-P07,5,marketing,-5386.95
+2025-P07,5,payroll taxes and benefits,-12792.04
+2025-P07,5,rent and occupancy,-12177.34
+2025-P07,5,repairs and maintenance,-3215.6
+2025-P07,5,supplies,-8114.19
+2025-P07,5,utilities,-8602.98
+2025-P07,6,beverage cost,-8785.42
+2025-P07,6,beverage sales,37284.55
+2025-P07,6,cash over/short,-38.1
+2025-P07,6,comps (memo),3310.25
+2025-P07,6,credit card fees,-6960.43
+2025-P07,6,discounts (memo),5906.72
+2025-P07,6,food cost,-70071.62
+2025-P07,6,food sales,243767.6
+2025-P07,6,hourly wages,-77737.57
+2025-P07,6,management salaries,-18969.46
+2025-P07,6,marketing,-5621.04
+2025-P07,6,payroll taxes and benefits,-13103.8
+2025-P07,6,rent and occupancy,-12730.86
+2025-P07,6,repairs and maintenance,-4222.7
+2025-P07,6,supplies,-7452.72
+2025-P07,6,utilities,-10270.63
+2025-P07,7,beverage cost,-10589.45
+2025-P07,7,beverage sales,47821.08
+2025-P07,7,cash over/short,-3.15
+2025-P07,7,comps (memo),3559.0
+2025-P07,7,credit card fees,-8559.87
+2025-P07,7,discounts (memo),6650.74
+2025-P07,7,food cost,-89081.82
+2025-P07,7,food sales,300937.44
+2025-P07,7,hourly wages,-63514.3
+2025-P07,7,management salaries,-19150.66
+2025-P07,7,marketing,-6975.17
+2025-P07,7,payroll taxes and benefits,-11582.73
+2025-P07,7,rent and occupancy,-15913.57
+2025-P07,7,repairs and maintenance,-3910.43
+2025-P07,7,supplies,-10807.91
+2025-P07,7,utilities,-13441.69
+2025-P07,8,beverage cost,-9594.54
+2025-P07,8,beverage sales,41053.38
+2025-P07,8,cash over/short,77.89
+2025-P07,8,comps (memo),3246.5
+2025-P07,8,credit card fees,-7592.66
+2025-P07,8,discounts (memo),6354.08
+2025-P07,8,food cost,-79436.34
+2025-P07,8,food sales,264439.54
+2025-P07,8,hourly wages,-68544.82
+2025-P07,8,management salaries,-19033.98
+2025-P07,8,marketing,-6109.86
+2025-P07,8,payroll taxes and benefits,-12108.09
+2025-P07,8,rent and occupancy,-13561.13
+2025-P07,8,repairs and maintenance,-4269.65
+2025-P07,8,supplies,-7875.79
+2025-P07,8,utilities,-9058.2
+2025-P07,9,beverage cost,-9052.74
+2025-P07,9,beverage sales,39480.06
+2025-P07,9,cash over/short,6.9
+2025-P07,9,comps (memo),3018.25
+2025-P07,9,credit card fees,-7296.01
+2025-P07,9,discounts (memo),6406.22
+2025-P07,9,food cost,-75412.9
+2025-P07,9,food sales,252266.47
+2025-P07,9,hourly wages,-68302.17
+2025-P07,9,management salaries,-18420.42
+2025-P07,9,marketing,-5834.93
+2025-P07,9,payroll taxes and benefits,-11934.14
+2025-P07,9,rent and occupancy,-13146.0
+2025-P07,9,repairs and maintenance,-4171.4
+2025-P07,9,supplies,-9471.43
+2025-P07,9,utilities,-10230.04
+2025-P07,10,beverage cost,-10056.74
+2025-P07,10,beverage sales,45069.5
+2025-P07,10,cash over/short,34.22
+2025-P07,10,comps (memo),3977.0
+2025-P07,10,credit card fees,-8381.16
+2025-P07,10,discounts (memo),7157.13
+2025-P07,10,food cost,-85834.96
+2025-P07,10,food sales,288752.0
+2025-P07,10,hourly wages,-73106.56
+2025-P07,10,management salaries,-18567.48
+2025-P07,10,marketing,-6676.43
+2025-P07,10,payroll taxes and benefits,-12497.92
+2025-P07,10,rent and occupancy,-15221.68
+2025-P07,10,repairs and maintenance,-10405.12
+2025-P07,10,supplies,-11801.97
+2025-P07,10,utilities,-10289.6
+2025-P07,11,beverage cost,-8589.77
+2025-P07,11,beverage sales,39652.79
+2025-P07,11,cash over/short,-11.8
+2025-P07,11,comps (memo),3220.75
+2025-P07,11,credit card fees,-7571.39
+2025-P07,11,discounts (memo),6673.7
+2025-P07,11,food cost,-78243.8
+2025-P07,11,food sales,264114.6
+2025-P07,11,hourly wages,-85900.23
+2025-P07,11,management salaries,-19311.2
+2025-P07,11,marketing,-6075.35
+2025-P07,11,payroll taxes and benefits,-14083.71
+2025-P07,11,rent and occupancy,-13422.75
+2025-P07,11,repairs and maintenance,-5492.3
+2025-P07,11,supplies,-9580.17
+2025-P07,11,utilities,-8285.88
+2025-P07,12,beverage cost,-8839.95
+2025-P07,12,beverage sales,35774.41
+2025-P07,12,cash over/short,41.33
+2025-P07,12,comps (memo),2559.75
+2025-P07,12,credit card fees,-6438.83
+2025-P07,12,discounts (memo),5348.34
+2025-P07,12,food cost,-68140.03
+2025-P07,12,food sales,224385.12
+2025-P07,12,hourly wages,-78101.32
+2025-P07,12,management salaries,-19021.71
+2025-P07,12,marketing,-5203.19
+2025-P07,12,payroll taxes and benefits,-13156.35
+2025-P07,12,rent and occupancy,-11762.21
+2025-P07,12,repairs and maintenance,-3676.21
+2025-P07,12,supplies,-8652.88
+2025-P07,12,utilities,-8563.37
+2025-P08,1,beverage cost,-11486.63
+2025-P08,1,beverage sales,49070.21
+2025-P08,1,cash over/short,45.29
+2025-P08,1,comps (memo),4559.0
+2025-P08,1,credit card fees,-9104.92
+2025-P08,1,discounts (memo),7133.87
+2025-P08,1,food cost,-93878.37
+2025-P08,1,food sales,316225.35
+2025-P08,1,hourly wages,-86299.48
+2025-P08,1,management salaries,-19410.42
+2025-P08,1,marketing,-7305.91
+2025-P08,1,payroll taxes and benefits,-14151.44
+2025-P08,1,rent and occupancy,-16605.47
+2025-P08,1,repairs and maintenance,-6455.64
+2025-P08,1,supplies,-13158.32
+2025-P08,1,utilities,-11629.04
+2025-P08,2,beverage cost,-10157.08
+2025-P08,2,beverage sales,42381.21
+2025-P08,2,cash over/short,38.41
+2025-P08,2,comps (memo),3247.25
+2025-P08,2,credit card fees,-7621.18
+2025-P08,2,discounts (memo),7049.52
+2025-P08,2,food cost,-79870.01
+2025-P08,2,food sales,263843.89
+2025-P08,2,hourly wages,-83615.73
+2025-P08,2,management salaries,-18155.89
+2025-P08,2,marketing,-6124.5
+2025-P08,2,payroll taxes and benefits,-13555.14
+2025-P08,2,rent and occupancy,-13837.89
+2025-P08,2,repairs and maintenance,-4618.59
+2025-P08,2,supplies,-9092.46
+2025-P08,2,utilities,-9868.91
+2025-P08,3,beverage cost,-10787.86
+2025-P08,3,beverage sales,44361.37
+2025-P08,3,cash over/short,-5.19
+2025-P08,3,comps (memo),3268.0
+2025-P08,3,credit card fees,-8329.95
+2025-P08,3,discounts (memo),7312.98
+2025-P08,3,food cost,-87033.94
+2025-P08,3,food sales,288469.39
+2025-P08,3,hourly wages,-85632.11
+2025-P08,3,management salaries,-19010.68
+2025-P08,3,marketing,-6656.62
+2025-P08,3,payroll taxes and benefits,-13982.1
+2025-P08,3,rent and occupancy,-14529.78
+2025-P08,3,repairs and maintenance,-3769.85
+2025-P08,3,supplies,-10932.54
+2025-P08,3,utilities,-12310.29
+2025-P08,4,beverage cost,-8339.38
+2025-P08,4,beverage sales,36394.57
+2025-P08,4,cash over/short,9.01
+2025-P08,4,comps (memo),3447.0
+2025-P08,4,credit card fees,-6817.67
+2025-P08,4,discounts (memo),5661.81
+2025-P08,4,food cost,-72864.66
+2025-P08,4,food sales,237438.52
+2025-P08,4,hourly wages,-79599.72
+2025-P08,4,management salaries,-19586.22
+2025-P08,4,marketing,-5476.66
+2025-P08,4,payroll taxes and benefits,-13456.66
+2025-P08,4,rent and occupancy,-12454.1
+2025-P08,4,repairs and maintenance,-5614.94
+2025-P08,4,supplies,-8367.87
+2025-P08,4,utilities,-8836.71
+2025-P08,5,beverage cost,-8451.57
+2025-P08,5,beverage sales,35898.15
+2025-P08,5,cash over/short,-53.42
+2025-P08,5,comps (memo),2573.0
+2025-P08,5,credit card fees,-6801.17
+2025-P08,5,discounts (memo),5952.8
+2025-P08,5,food cost,-71899.8
+2025-P08,5,food sales,238075.55
+2025-P08,5,hourly wages,-77560.08
+2025-P08,5,management salaries,-18534.7
+2025-P08,5,marketing,-5479.47
+2025-P08,5,payroll taxes and benefits,-12979.94
+2025-P08,5,rent and occupancy,-12177.34
+2025-P08,5,repairs and maintenance,-4417.32
+2025-P08,5,supplies,-8071.36
+2025-P08,5,utilities,-10111.29
+2025-P08,6,beverage cost,-8389.78
+2025-P08,6,beverage sales,35112.09
+2025-P08,6,cash over/short,51.29
+2025-P08,6,comps (memo),2970.75
+2025-P08,6,credit card fees,-6708.91
+2025-P08,6,discounts (memo),5730.33
+2025-P08,6,food cost,-67809.71
+2025-P08,6,food sales,235716.83
+2025-P08,6,hourly wages,-81594.28
+2025-P08,6,management salaries,-19044.43
+2025-P08,6,marketing,-5416.58
+2025-P08,6,payroll taxes and benefits,-13546.03
+2025-P08,6,rent and occupancy,-12730.86
+2025-P08,6,repairs and maintenance,-5089.82
+2025-P08,6,supplies,-7677.74
+2025-P08,6,utilities,-8983.87
+2025-P08,7,beverage cost,-10334.07
+2025-P08,7,beverage sales,45960.12
+2025-P08,7,cash over/short,21.0
+2025-P08,7,comps (memo),4230.0
+2025-P08,7,credit card fees,-8504.86
+2025-P08,7,discounts (memo),6683.64
+2025-P08,7,food cost,-90337.46
+2025-P08,7,food sales,304518.74
+2025-P08,7,hourly wages,-72203.12
+2025-P08,7,management salaries,-19226.34
+2025-P08,7,marketing,-7009.58
+2025-P08,7,payroll taxes and benefits,-12556.67
+2025-P08,7,rent and occupancy,-15913.57
+2025-P08,7,repairs and maintenance,-5407.42
+2025-P08,7,supplies,-10436.16
+2025-P08,7,utilities,-14846.61
+2025-P08,8,beverage cost,-9494.96
+2025-P08,8,beverage sales,39800.68
+2025-P08,8,cash over/short,19.26
+2025-P08,8,comps (memo),3462.0
+2025-P08,8,credit card fees,-7610.41
+2025-P08,8,discounts (memo),6492.76
+2025-P08,8,food cost,-81029.3
+2025-P08,8,food sales,262273.18
+2025-P08,8,hourly wages,-70409.04
+2025-P08,8,management salaries,-19109.2
+2025-P08,8,marketing,-6041.48
+2025-P08,8,payroll taxes and benefits,-12331.2
+2025-P08,8,rent and occupancy,-13561.13
+2025-P08,8,repairs and maintenance,-4114.03
+2025-P08,8,supplies,-8951.54
+2025-P08,8,utilities,-9026.35
+2025-P08,9,beverage cost,-8461.87
+2025-P08,9,beverage sales,37266.69
+2025-P08,9,cash over/short,-20.09
+2025-P08,9,comps (memo),2877.75
+2025-P08,9,credit card fees,-7025.9
+2025-P08,9,discounts (memo),5570.86
+2025-P08,9,food cost,-73671.6
+2025-P08,9,food sales,252087.53
+2025-P08,9,hourly wages,-69775.18
+2025-P08,9,management salaries,-18493.21
+2025-P08,9,marketing,-5787.08
+2025-P08,9,payroll taxes and benefits,-12113.64
+2025-P08,9,rent and occupancy,-13146.0
+2025-P08,9,repairs and maintenance,-4958.67
+2025-P08,9,supplies,-8331.15
+2025-P08,9,utilities,-9066.36
+2025-P08,10,beverage cost,-9596.9
+2025-P08,10,beverage sales,43558.49
+2025-P08,10,cash over/short,-77.68
+2025-P08,10,comps (memo),3902.25
+2025-P08,10,credit card fees,-8572.0
+2025-P08,10,discounts (memo),7125.03
+2025-P08,10,food cost,-88431.29
+2025-P08,10,food sales,300174.23
+2025-P08,10,hourly wages,-74296.95
+2025-P08,10,management salaries,-18640.85
+2025-P08,10,marketing,-6874.65
+2025-P08,10,payroll taxes and benefits,-12646.47
+2025-P08,10,rent and occupancy,-15221.68
+2025-P08,10,repairs and maintenance,-3192.93
+2025-P08,10,supplies,-9295.16
+2025-P08,10,utilities,-11030.68
+2025-P08,11,beverage cost,-8373.9
+2025-P08,11,beverage sales,39629.39
+2025-P08,11,cash over/short,2.04
+2025-P08,11,comps (memo),3133.5
+2025-P08,11,credit card fees,-7532.98
+2025-P08,11,discounts (memo),6044.47
+2025-P08,11,food cost,-76446.34
+2025-P08,11,food sales,261321.39
+2025-P08,11,hourly wages,-84886.26
+2025-P08,11,management salaries,-19062.58
+2025-P08,11,marketing,-6019.02
+2025-P08,11,payroll taxes and benefits,-13912.51
+2025-P08,11,rent and occupancy,-13422.75
+2025-P08,11,repairs and maintenance,-8283.47
+2025-P08,11,supplies,-8613.44
+2025-P08,11,utilities,-10311.01
+2025-P08,12,beverage cost,-8523.59
+2025-P08,12,beverage sales,33890.01
+2025-P08,12,cash over/short,33.39
+2025-P08,12,comps (memo),3290.75
+2025-P08,12,credit card fees,-6403.76
+2025-P08,12,discounts (memo),5778.22
+2025-P08,12,food cost,-67465.16
+2025-P08,12,food sales,222152.59
+2025-P08,12,hourly wages,-80229.53
+2025-P08,12,management salaries,-19096.87
+2025-P08,12,marketing,-5120.85
+2025-P08,12,payroll taxes and benefits,-13408.5
+2025-P08,12,rent and occupancy,-11762.21
+2025-P08,12,repairs and maintenance,-7048.34
+2025-P08,12,supplies,-7794.11
+2025-P08,12,utilities,-8605.66
+2025-P09,1,beverage cost,-11594.61
+2025-P09,1,beverage sales,49318.32
+2025-P09,1,cash over/short,31.2
+2025-P09,1,comps (memo),3986.0
+2025-P09,1,credit card fees,-9253.44
+2025-P09,1,discounts (memo),7084.73
+2025-P09,1,food cost,-95112.59
+2025-P09,1,food sales,322803.45
+2025-P09,1,hourly wages,-92809.01
+2025-P09,1,management salaries,-19491.07
+2025-P09,1,marketing,-7442.44
+2025-P09,1,payroll taxes and benefits,-14886.85
+2025-P09,1,rent and occupancy,-16605.47
+2025-P09,1,repairs and maintenance,-5498.04
+2025-P09,1,supplies,-12265.52
+2025-P09,1,utilities,-10083.55
+2025-P09,2,beverage cost,-9693.69
+2025-P09,2,beverage sales,40231.24
+2025-P09,2,cash over/short,-23.44
+2025-P09,2,comps (memo),3489.75
+2025-P09,2,credit card fees,-7774.46
+2025-P09,2,discounts (memo),6945.44
+2025-P09,2,food cost,-78642.09
+2025-P09,2,food sales,271880.85
+2025-P09,2,hourly wages,-76997.99
+2025-P09,2,management salaries,-18231.32
+2025-P09,2,marketing,-6242.24
+2025-P09,2,payroll taxes and benefits,-12845.3
+2025-P09,2,rent and occupancy,-13837.89
+2025-P09,2,repairs and maintenance,-5182.01
+2025-P09,2,supplies,-9023.58
+2025-P09,2,utilities,-10324.29
+2025-P09,3,beverage cost,-10330.63
+2025-P09,3,beverage sales,43478.08
+2025-P09,3,cash over/short,-23.7
+2025-P09,3,comps (memo),3236.75
+2025-P09,3,credit card fees,-8123.43
+2025-P09,3,discounts (memo),6625.34
+2025-P09,3,food cost,-82943.92
+2025-P09,3,food sales,283125.54
+2025-P09,3,hourly wages,-86367.78
+2025-P09,3,management salaries,-19089.67
+2025-P09,3,marketing,-6532.07
+2025-P09,3,payroll taxes and benefits,-14081.98
+2025-P09,3,rent and occupancy,-14529.78
+2025-P09,3,repairs and maintenance,-3895.39
+2025-P09,3,supplies,-9872.63
+2025-P09,3,utilities,-9605.28
+2025-P09,4,beverage cost,-8540.47
+2025-P09,4,beverage sales,37432.2
+2025-P09,4,cash over/short,-14.92
+2025-P09,4,comps (memo),3056.75
+2025-P09,4,credit card fees,-7457.76
+2025-P09,4,discounts (memo),6507.18
+2025-P09,4,food cost,-79098.97
+2025-P09,4,food sales,258144.12
+2025-P09,4,hourly wages,-78312.0
+2025-P09,4,management salaries,-19667.59
+2025-P09,4,marketing,-5911.53
+2025-P09,4,payroll taxes and benefits,-13334.54
+2025-P09,4,rent and occupancy,-12454.1
+2025-P09,4,repairs and maintenance,-3180.54
+2025-P09,4,supplies,-7961.93
+2025-P09,4,utilities,-8783.74
+2025-P09,5,beverage cost,-8215.97
+2025-P09,5,beverage sales,36140.1
+2025-P09,5,cash over/short,27.27
+2025-P09,5,comps (memo),3052.5
+2025-P09,5,credit card fees,-6983.73
+2025-P09,5,discounts (memo),6161.66
+2025-P09,5,food cost,-74135.65
+2025-P09,5,food sales,243216.97
+2025-P09,5,hourly wages,-81732.81
+2025-P09,5,management salaries,-18611.71
+2025-P09,5,marketing,-5587.14
+2025-P09,5,payroll taxes and benefits,-13457.42
+2025-P09,5,rent and occupancy,-12177.34
+2025-P09,5,repairs and maintenance,-4233.21
+2025-P09,5,supplies,-7517.95
+2025-P09,5,utilities,-8464.79
+2025-P09,6,beverage cost,-8745.71
+2025-P09,6,beverage sales,38250.0
+2025-P09,6,cash over/short,105.46
+2025-P09,6,comps (memo),3162.25
+2025-P09,6,credit card fees,-7282.84
+2025-P09,6,discounts (memo),6069.13
+2025-P09,6,food cost,-72775.21
+2025-P09,6,food sales,253812.41
+2025-P09,6,hourly wages,-83903.46
+2025-P09,6,management salaries,-19123.55
+2025-P09,6,marketing,-5841.25
+2025-P09,6,payroll taxes and benefits,-13819.03
+2025-P09,6,rent and occupancy,-12730.86
+2025-P09,6,repairs and maintenance,-6117.24
+2025-P09,6,supplies,-8923.87
+2025-P09,6,utilities,-9293.19
+2025-P09,7,beverage cost,-10070.66
+2025-P09,7,beverage sales,45626.11
+2025-P09,7,cash over/short,-11.68
+2025-P09,7,comps (memo),4072.0
+2025-P09,7,credit card fees,-8558.37
+2025-P09,7,discounts (memo),6884.57
+2025-P09,7,food cost,-88975.77
+2025-P09,7,food sales,299643.65
+2025-P09,7,hourly wages,-71727.55
+2025-P09,7,management salaries,-19306.22
+2025-P09,7,marketing,-6905.4
+2025-P09,7,payroll taxes and benefits,-12523.52
+2025-P09,7,rent and occupancy,-15913.57
+2025-P09,7,repairs and maintenance,-4779.58
+2025-P09,7,supplies,-10640.73
+2025-P09,7,utilities,-11372.63
+2025-P09,8,beverage cost,-9258.41
+2025-P09,8,beverage sales,38505.47
+2025-P09,8,cash over/short,16.13
+2025-P09,8,comps (memo),3617.75
+2025-P09,8,credit card fees,-7279.31
+2025-P09,8,discounts (memo),6266.09
+2025-P09,8,food cost,-77212.41
+2025-P09,8,food sales,256376.5
+2025-P09,8,hourly wages,-70113.07
+2025-P09,8,management salaries,-19188.59
+2025-P09,8,marketing,-5897.64
+2025-P09,8,payroll taxes and benefits,-12317.7
+2025-P09,8,rent and occupancy,-13561.13
+2025-P09,8,repairs and maintenance,-8212.46
+2025-P09,8,supplies,-9439.83
+2025-P09,8,utilities,-9434.51
+2025-P09,9,beverage cost,-8834.56
+2025-P09,9,beverage sales,38674.58
+2025-P09,9,cash over/short,67.95
+2025-P09,9,comps (memo),3802.0
+2025-P09,9,credit card fees,-7441.35
+2025-P09,9,discounts (memo),6289.81
+2025-P09,9,food cost,-76438.37
+2025-P09,9,food sales,257920.85
+2025-P09,9,hourly wages,-70024.33
+2025-P09,9,management salaries,-18570.05
+2025-P09,9,marketing,-5931.91
+2025-P09,9,payroll taxes and benefits,-12159.49
+2025-P09,9,rent and occupancy,-13146.0
+2025-P09,9,repairs and maintenance,-5972.97
+2025-P09,9,supplies,-10083.32
+2025-P09,9,utilities,-9235.77
+2025-P09,10,beverage cost,-9622.61
+2025-P09,10,beverage sales,43955.82
+2025-P09,10,cash over/short,-19.95
+2025-P09,10,comps (memo),3953.0
+2025-P09,10,credit card fees,-8419.71
+2025-P09,10,discounts (memo),6342.2
+2025-P09,10,food cost,-90100.76
+2025-P09,10,food sales,293451.56
+2025-P09,10,hourly wages,-76270.81
+2025-P09,10,management salaries,-18718.3
+2025-P09,10,marketing,-6748.15
+2025-P09,10,payroll taxes and benefits,-12882.18
+2025-P09,10,rent and occupancy,-15221.68
+2025-P09,10,repairs and maintenance,-10675.72
+2025-P09,10,supplies,-10092.84
+2025-P09,10,utilities,-10521.99
+2025-P09,11,beverage cost,-9240.53
+2025-P09,11,beverage sales,41988.89
+2025-P09,11,cash over/short,18.49
+2025-P09,11,comps (memo),3859.0
+2025-P09,11,credit card fees,-7787.99
+2025-P09,11,discounts (memo),6619.75
+2025-P09,11,food cost,-78746.4
+2025-P09,11,food sales,270602.49
+2025-P09,11,hourly wages,-86827.65
+2025-P09,11,management salaries,-19141.79
+2025-P09,11,marketing,-6251.83
+2025-P09,11,payroll taxes and benefits,-14145.07
+2025-P09,11,rent and occupancy,-13422.75
+2025-P09,11,repairs and maintenance,-6130.67
+2025-P09,11,supplies,-8813.51
+2025-P09,11,utilities,-8515.2
+2025-P09,12,beverage cost,-8535.58
+2025-P09,12,beverage sales,34254.16
+2025-P09,12,cash over/short,-30.98
+2025-P09,12,comps (memo),2215.75
+2025-P09,12,credit card fees,-6762.33
+2025-P09,12,discounts (memo),6015.25
+2025-P09,12,food cost,-72127.34
+2025-P09,12,food sales,233876.64
+2025-P09,12,hourly wages,-81240.6
+2025-P09,12,management salaries,-17117.55
+2025-P09,12,marketing,-5362.62
+2025-P09,12,payroll taxes and benefits,-13044.68
+2025-P09,12,rent and occupancy,-11762.21
+2025-P09,12,repairs and maintenance,-3383.38
+2025-P09,12,supplies,-7675.11
+2025-P09,12,utilities,-8398.0
+2025-P10,1,beverage cost,-11174.96
+2025-P10,1,beverage sales,48701.2
+2025-P10,1,cash over/short,11.66
+2025-P10,1,comps (memo),3902.5
+2025-P10,1,credit card fees,-9152.04
+2025-P10,1,discounts (memo),7204.98
+2025-P10,1,food cost,-94990.16
+2025-P10,1,food sales,318959.9
+2025-P10,1,hourly wages,-91730.38
+2025-P10,1,management salaries,-19529.27
+2025-P10,1,marketing,-7353.22
+2025-P10,1,payroll taxes and benefits,-14777.37
+2025-P10,1,rent and occupancy,-16605.47
+2025-P10,1,repairs and maintenance,-6873.15
+2025-P10,1,supplies,-10945.17
+2025-P10,1,utilities,-12098.99
+2025-P10,2,beverage cost,-9805.04
+2025-P10,2,beverage sales,39484.34
+2025-P10,2,cash over/short,6.53
+2025-P10,2,comps (memo),2774.25
+2025-P10,2,credit card fees,-7530.93
+2025-P10,2,discounts (memo),6838.01
+2025-P10,2,food cost,-78218.09
+2025-P10,2,food sales,267610.77
+2025-P10,2,hourly wages,-80750.94
+2025-P10,2,management salaries,-18267.05
+2025-P10,2,marketing,-6141.9
+2025-P10,2,payroll taxes and benefits,-13266.7
+2025-P10,2,rent and occupancy,-13837.89
+2025-P10,2,repairs and maintenance,-6248.68
+2025-P10,2,supplies,-7864.16
+2025-P10,2,utilities,-11205.55
+2025-P10,3,beverage cost,-10318.65
+2025-P10,3,beverage sales,42323.22
+2025-P10,3,cash over/short,-9.92
+2025-P10,3,comps (memo),3387.25
+2025-P10,3,credit card fees,-8065.65
+2025-P10,3,discounts (memo),6488.06
+2025-P10,3,food cost,-83064.88
+2025-P10,3,food sales,281199.85
+2025-P10,3,hourly wages,-85868.55
+2025-P10,3,management salaries,-19127.08
+2025-P10,3,marketing,-6470.46
+2025-P10,3,payroll taxes and benefits,-14036.04
+2025-P10,3,rent and occupancy,-14529.78
+2025-P10,3,repairs and maintenance,-4286.2
+2025-P10,3,supplies,-9875.14
+2025-P10,3,utilities,-11794.39
+2025-P10,4,beverage cost,-8715.17
+2025-P10,4,beverage sales,38082.33
+2025-P10,4,cash over/short,70.83
+2025-P10,4,comps (memo),3556.5
+2025-P10,4,credit card fees,-7274.41
+2025-P10,4,discounts (memo),6080.14
+2025-P10,4,food cost,-78791.59
+2025-P10,4,food sales,252933.52
+2025-P10,4,hourly wages,-79756.68
+2025-P10,4,management salaries,-19706.14
+2025-P10,4,marketing,-5820.32
+2025-P10,4,payroll taxes and benefits,-13502.71
+2025-P10,4,rent and occupancy,-12454.1
+2025-P10,4,repairs and maintenance,-8013.84
+2025-P10,4,supplies,-8379.63
+2025-P10,4,utilities,-9042.28
+2025-P10,5,beverage cost,-7520.13
+2025-P10,5,beverage sales,33640.78
+2025-P10,5,cash over/short,-33.07
+2025-P10,5,comps (memo),2710.5
+2025-P10,5,credit card fees,-6590.44
+2025-P10,5,discounts (memo),5503.9
+2025-P10,5,food cost,-70042.61
+2025-P10,5,food sales,231718.58
+2025-P10,5,hourly wages,-77300.84
+2025-P10,5,management salaries,-18648.19
+2025-P10,5,marketing,-5307.19
+2025-P10,5,payroll taxes and benefits,-12978.66
+2025-P10,5,rent and occupancy,-12177.34
+2025-P10,5,repairs and maintenance,-3941.01
+2025-P10,5,supplies,-8754.91
+2025-P10,5,utilities,-10039.32
+2025-P10,6,beverage cost,-8125.0
+2025-P10,6,beverage sales,36941.66
+2025-P10,6,cash over/short,32.8
+2025-P10,6,comps (memo),2981.0
+2025-P10,6,credit card fees,-7004.38
+2025-P10,6,discounts (memo),6191.48
+2025-P10,6,food cost,-69488.65
+2025-P10,6,food sales,242530.25
+2025-P10,6,hourly wages,-83147.74
+2025-P10,6,management salaries,-19161.03
+2025-P10,6,marketing,-5589.44
+2025-P10,6,payroll taxes and benefits,-13744.9
+2025-P10,6,rent and occupancy,-12730.86
+2025-P10,6,repairs and maintenance,-3507.4
+2025-P10,6,supplies,-8524.48
+2025-P10,6,utilities,-10306.41
+2025-P10,7,beverage cost,-10900.92
+2025-P10,7,beverage sales,48610.35
+2025-P10,7,cash over/short,-27.98
+2025-P10,7,comps (memo),4565.25
+2025-P10,7,credit card fees,-8924.54
+2025-P10,7,discounts (memo),7237.52
+2025-P10,7,food cost,-93433.2
+2025-P10,7,food sales,311867.01
+2025-P10,7,hourly wages,-75185.16
+2025-P10,7,management salaries,-19344.06
+2025-P10,7,marketing,-7209.55
+2025-P10,7,payroll taxes and benefits,-12912.94
+2025-P10,7,rent and occupancy,-15913.57
+2025-P10,7,repairs and maintenance,-5586.77
+2025-P10,7,supplies,-11653.87
+2025-P10,7,utilities,-10289.95
+2025-P10,8,beverage cost,-9363.39
+2025-P10,8,beverage sales,39735.96
+2025-P10,8,cash over/short,10.74
+2025-P10,8,comps (memo),3162.25
+2025-P10,8,credit card fees,-7404.73
+2025-P10,8,discounts (memo),5837.12
+2025-P10,8,food cost,-76526.92
+2025-P10,8,food sales,262041.59
+2025-P10,8,hourly wages,-69849.32
+2025-P10,8,management salaries,-19226.2
+2025-P10,8,marketing,-6035.55
+2025-P10,8,payroll taxes and benefits,-12297.71
+2025-P10,8,rent and occupancy,-13561.13
+2025-P10,8,repairs and maintenance,-6366.17
+2025-P10,8,supplies,-8174.7
+2025-P10,8,utilities,-9830.81
+2025-P10,9,beverage cost,-8646.32
+2025-P10,9,beverage sales,38018.94
+2025-P10,9,cash over/short,-24.47
+2025-P10,9,comps (memo),2771.5
+2025-P10,9,credit card fees,-7307.6
+2025-P10,9,discounts (memo),5484.66
+2025-P10,9,food cost,-75812.43
+2025-P10,9,food sales,255926.91
+2025-P10,9,hourly wages,-71663.19
+2025-P10,9,management salaries,-18606.44
+2025-P10,9,marketing,-5878.92
+2025-P10,9,payroll taxes and benefits,-12348.5
+2025-P10,9,rent and occupancy,-13146.0
+2025-P10,9,repairs and maintenance,-6882.91
+2025-P10,9,supplies,-8553.5
+2025-P10,9,utilities,-8190.6
+2025-P10,10,beverage cost,-9581.56
+2025-P10,10,beverage sales,44435.37
+2025-P10,10,cash over/short,-3.5
+2025-P10,10,comps (memo),3906.5
+2025-P10,10,credit card fees,-8328.9
+2025-P10,10,discounts (memo),6741.41
+2025-P10,10,food cost,-86341.35
+2025-P10,10,food sales,291774.72
+2025-P10,10,hourly wages,-74923.96
+2025-P10,10,management salaries,-18754.99
+2025-P10,10,marketing,-6724.2
+2025-P10,10,payroll taxes and benefits,-12742.83
+2025-P10,10,rent and occupancy,-15221.68
+2025-P10,10,repairs and maintenance,-6271.64
+2025-P10,10,supplies,-8701.08
+2025-P10,10,utilities,-11596.03
+2025-P10,11,beverage cost,-8267.37
+2025-P10,11,beverage sales,38096.63
+2025-P10,11,cash over/short,0.13
+2025-P10,11,comps (memo),3218.5
+2025-P10,11,credit card fees,-7264.39
+2025-P10,11,discounts (memo),5971.54
+2025-P10,11,food cost,-73588.43
+2025-P10,11,food sales,251331.0
+2025-P10,11,hourly wages,-85961.01
+2025-P10,11,management salaries,-19179.3
+2025-P10,11,marketing,-5788.55
+2025-P10,11,payroll taxes and benefits,-14058.74
+2025-P10,11,rent and occupancy,-13422.75
+2025-P10,11,repairs and maintenance,-7347.69
+2025-P10,11,supplies,-8392.23
+2025-P10,11,utilities,-9148.9
+2025-P10,12,beverage cost,-7436.84
+2025-P10,12,beverage sales,29708.48
+2025-P10,12,cash over/short,37.15
+2025-P10,12,comps (memo),2214.0
+2025-P10,12,credit card fees,-5544.28
+2025-P10,12,discounts (memo),4792.64
+2025-P10,12,food cost,-59621.64
+2025-P10,12,food sales,192533.76
+2025-P10,12,hourly wages,-74662.47
+2025-P10,12,management salaries,-19281.86
+2025-P10,12,marketing,-4444.84
+2025-P10,12,payroll taxes and benefits,-12840.52
+2025-P10,12,rent and occupancy,-11762.21
+2025-P10,12,repairs and maintenance,-2572.52
+2025-P10,12,supplies,-7077.18
+2025-P10,12,utilities,-8048.57
+2025-P11,1,beverage cost,-11045.93
+2025-P11,1,beverage sales,46966.28
+2025-P11,1,cash over/short,-8.06
+2025-P11,1,comps (memo),4044.5
+2025-P11,1,credit card fees,-9080.26
+2025-P11,1,discounts (memo),7171.84
+2025-P11,1,food cost,-96627.39
+2025-P11,1,food sales,318990.75
+2025-P11,1,hourly wages,-90944.9
+2025-P11,1,management salaries,-19601.42
+2025-P11,1,marketing,-7319.14
+2025-P11,1,payroll taxes and benefits,-14708.28
+2025-P11,1,rent and occupancy,-16605.47
+2025-P11,1,repairs and maintenance,-4081.36
+2025-P11,1,supplies,-9719.13
+2025-P11,1,utilities,-12115.51
+2025-P11,2,beverage cost,-9542.5
+2025-P11,2,beverage sales,39775.29
+2025-P11,2,cash over/short,12.84
+2025-P11,2,comps (memo),3076.0
+2025-P11,2,credit card fees,-7414.97
+2025-P11,2,discounts (memo),6899.95
+2025-P11,2,food cost,-76002.24
+2025-P11,2,food sales,257542.56
+2025-P11,2,hourly wages,-80839.04
+2025-P11,2,management salaries,-18334.55
+2025-P11,2,marketing,-5946.36
+2025-P11,2,payroll taxes and benefits,-13292.59
+2025-P11,2,rent and occupancy,-13837.89
+2025-P11,2,repairs and maintenance,-4138.2
+2025-P11,2,supplies,-8622.34
+2025-P11,2,utilities,-8776.3
+2025-P11,3,beverage cost,-10105.28
+2025-P11,3,beverage sales,41417.12
+2025-P11,3,cash over/short,33.21
+2025-P11,3,comps (memo),3317.0
+2025-P11,3,credit card fees,-7949.79
+2025-P11,3,discounts (memo),6667.13
+2025-P11,3,food cost,-83254.43
+2025-P11,3,food sales,281617.87
+2025-P11,3,hourly wages,-86422.16
+2025-P11,3,management salaries,-18363.77
+2025-P11,3,marketing,-6460.7
+2025-P11,3,payroll taxes and benefits,-13913.74
+2025-P11,3,rent and occupancy,-14529.78
+2025-P11,3,repairs and maintenance,-8112.65
+2025-P11,3,supplies,-8926.36
+2025-P11,3,utilities,-8783.16
+2025-P11,4,beverage cost,-8190.72
+2025-P11,4,beverage sales,36060.14
+2025-P11,4,cash over/short,26.34
+2025-P11,4,comps (memo),2806.5
+2025-P11,4,credit card fees,-6781.6
+2025-P11,4,discounts (memo),6276.84
+2025-P11,4,food cost,-74546.11
+2025-P11,4,food sales,237250.64
+2025-P11,4,hourly wages,-82759.21
+2025-P11,4,management salaries,-19778.95
+2025-P11,4,marketing,-5466.22
+2025-P11,4,payroll taxes and benefits,-13850.46
+2025-P11,4,rent and occupancy,-12454.1
+2025-P11,4,repairs and maintenance,-3609.38
+2025-P11,4,supplies,-7992.58
+2025-P11,4,utilities,-8514.52
+2025-P11,5,beverage cost,-8012.72
+2025-P11,5,beverage sales,36013.5
+2025-P11,5,cash over/short,-55.63
+2025-P11,5,comps (memo),3460.5
+2025-P11,5,credit card fees,-6839.66
+2025-P11,5,discounts (memo),5703.3
+2025-P11,5,food cost,-72216.3
+2025-P11,5,food sales,237076.44
+2025-P11,5,hourly wages,-81072.84
+2025-P11,5,management salaries,-18717.09
+2025-P11,5,marketing,-5461.8
+2025-P11,5,payroll taxes and benefits,-13410.11
+2025-P11,5,rent and occupancy,-12177.34
+2025-P11,5,repairs and maintenance,-4431.59
+2025-P11,5,supplies,-9050.91
+2025-P11,5,utilities,-8830.34
+2025-P11,6,beverage cost,-8629.76
+2025-P11,6,beverage sales,38253.9
+2025-P11,6,cash over/short,-35.04
+2025-P11,6,comps (memo),3268.25
+2025-P11,6,credit card fees,-7010.3
+2025-P11,6,discounts (memo),6075.36
+2025-P11,6,food cost,-69651.43
+2025-P11,6,food sales,240717.99
+2025-P11,6,hourly wages,-82895.14
+2025-P11,6,management salaries,-19231.83
+2025-P11,6,marketing,-5579.44
+2025-P11,6,payroll taxes and benefits,-13734.1
+2025-P11,6,rent and occupancy,-12730.86
+2025-P11,6,repairs and maintenance,-8805.46
+2025-P11,6,supplies,-6808.73
+2025-P11,6,utilities,-7465.1
+2025-P11,7,beverage cost,-10284.4
+2025-P11,7,beverage sales,46234.37
+2025-P11,7,cash over/short,-48.13
+2025-P11,7,comps (memo),3871.25
+2025-P11,7,credit card fees,-8503.69
+2025-P11,7,discounts (memo),7439.11
+2025-P11,7,food cost,-91237.81
+2025-P11,7,food sales,303538.09
+2025-P11,7,hourly wages,-71467.91
+2025-P11,7,management salaries,-19415.54
+2025-P11,7,marketing,-6995.45
+2025-P11,7,payroll taxes and benefits,-12521.2
+2025-P11,7,rent and occupancy,-15913.57
+2025-P11,7,repairs and maintenance,-6090.56
+2025-P11,7,supplies,-11000.62
+2025-P11,7,utilities,-9766.89
+2025-P11,8,beverage cost,-8979.46
+2025-P11,8,beverage sales,38477.54
+2025-P11,8,cash over/short,-6.53
+2025-P11,8,comps (memo),3538.5
+2025-P11,8,credit card fees,-7255.09
+2025-P11,8,discounts (memo),6028.31
+2025-P11,8,food cost,-75210.81
+2025-P11,8,food sales,254140.65
+2025-P11,8,hourly wages,-70738.71
+2025-P11,8,management salaries,-19297.24
+2025-P11,8,marketing,-5852.36
+2025-P11,8,payroll taxes and benefits,-12412.59
+2025-P11,8,rent and occupancy,-13561.13
+2025-P11,8,repairs and maintenance,-5319.97
+2025-P11,8,supplies,-6846.68
+2025-P11,8,utilities,-11201.47
+2025-P11,9,beverage cost,-8465.51
+2025-P11,9,beverage sales,37145.69
+2025-P11,9,cash over/short,-111.42
+2025-P11,9,comps (memo),3345.75
+2025-P11,9,credit card fees,-7226.76
+2025-P11,9,discounts (memo),5880.98
+2025-P11,9,food cost,-75091.53
+2025-P11,9,food sales,250729.05
+2025-P11,9,hourly wages,-70460.51
+2025-P11,9,management salaries,-18570.94
+2025-P11,9,marketing,-5757.49
+2025-P11,9,payroll taxes and benefits,-12207.68
+2025-P11,9,rent and occupancy,-13146.0
+2025-P11,9,repairs and maintenance,-5592.27
+2025-P11,9,supplies,-8789.79
+2025-P11,9,utilities,-9097.56
+2025-P11,10,beverage cost,-9249.52
+2025-P11,10,beverage sales,42866.02
+2025-P11,10,cash over/short,-31.01
+2025-P11,10,comps (memo),3887.5
+2025-P11,10,credit card fees,-8535.03
+2025-P11,10,discounts (memo),6879.14
+2025-P11,10,food cost,-94736.48
+2025-P11,10,food sales,299888.2
+2025-P11,10,hourly wages,-73397.91
+2025-P11,10,management salaries,-19020.93
+2025-P11,10,marketing,-6855.08
+2025-P11,10,payroll taxes and benefits,-12638.79
+2025-P11,10,rent and occupancy,-15221.68
+2025-P11,10,repairs and maintenance,-8961.9
+2025-P11,10,supplies,-10710.45
+2025-P11,10,utilities,-10776.55
+2025-P11,11,beverage cost,-8475.06
+2025-P11,11,beverage sales,39049.32
+2025-P11,11,cash over/short,17.08
+2025-P11,11,comps (memo),3002.5
+2025-P11,11,credit card fees,-7486.16
+2025-P11,11,discounts (memo),6204.42
+2025-P11,11,food cost,-75692.28
+2025-P11,11,food sales,258082.88
+2025-P11,11,hourly wages,-83945.58
+2025-P11,11,management salaries,-19250.17
+2025-P11,11,marketing,-5942.64
+2025-P11,11,payroll taxes and benefits,-13854.05
+2025-P11,11,rent and occupancy,-13422.75
+2025-P11,11,repairs and maintenance,-2324.09
+2025-P11,11,supplies,-8690.35
+2025-P11,11,utilities,-10692.24
+2025-P11,12,beverage cost,-8301.49
+2025-P11,12,beverage sales,33161.49
+2025-P11,12,cash over/short,8.62
+2025-P11,12,comps (memo),3787.0
+2025-P11,12,credit card fees,-6269.92
+2025-P11,12,discounts (memo),5399.98
+2025-P11,12,food cost,-67611.22
+2025-P11,12,food sales,217509.24
+2025-P11,12,hourly wages,-75351.52
+2025-P11,12,management salaries,-19353.1
+2025-P11,12,marketing,-5013.41
+2025-P11,12,payroll taxes and benefits,-12933.41
+2025-P11,12,rent and occupancy,-11762.21
+2025-P11,12,repairs and maintenance,-3222.28
+2025-P11,12,supplies,-7053.78
+2025-P11,12,utilities,-8655.51
+2025-P12,1,beverage cost,-10134.16
+2025-P12,1,beverage sales,43618.66
+2025-P12,1,cash over/short,29.79
+2025-P12,1,comps (memo),3330.0
+2025-P12,1,credit card fees,-8553.41
+2025-P12,1,discounts (memo),6824.34
+2025-P12,1,food cost,-91788.37
+2025-P12,1,food sales,300266.95
+2025-P12,1,hourly wages,-85483.98
+2025-P12,1,management salaries,-19669.34
+2025-P12,1,marketing,-6877.71
+2025-P12,1,payroll taxes and benefits,-14123.88
+2025-P12,1,rent and occupancy,-16605.47
+2025-P12,1,repairs and maintenance,-5411.85
+2025-P12,1,supplies,-11798.2
+2025-P12,1,utilities,-11767.82
+2025-P12,2,beverage cost,-8620.6
+2025-P12,2,beverage sales,37263.56
+2025-P12,2,cash over/short,11.36
+2025-P12,2,comps (memo),3121.75
+2025-P12,2,credit card fees,-7012.68
+2025-P12,2,discounts (memo),7349.03
+2025-P12,2,food cost,-74098.55
+2025-P12,2,food sales,248847.66
+2025-P12,2,hourly wages,-80288.21
+2025-P12,2,management salaries,-18398.07
+2025-P12,2,marketing,-5722.22
+2025-P12,2,payroll taxes and benefits,-13247.24
+2025-P12,2,rent and occupancy,-13837.89
+2025-P12,2,repairs and maintenance,-3552.12
+2025-P12,2,supplies,-8491.44
+2025-P12,2,utilities,-8676.6
+2025-P12,3,beverage cost,-9359.3
+2025-P12,3,beverage sales,39711.32
+2025-P12,3,cash over/short,8.58
+2025-P12,3,comps (memo),2863.25
+2025-P12,3,credit card fees,-7686.95
+2025-P12,3,discounts (memo),6150.96
+2025-P12,3,food cost,-80930.67
+2025-P12,3,food sales,270639.84
+2025-P12,3,hourly wages,-79978.01
+2025-P12,3,management salaries,-18427.39
+2025-P12,3,marketing,-6207.02
+2025-P12,3,payroll taxes and benefits,-13220.16
+2025-P12,3,rent and occupancy,-14529.78
+2025-P12,3,repairs and maintenance,-5528.7
+2025-P12,3,supplies,-9454.13
+2025-P12,3,utilities,-10355.45
+2025-P12,4,beverage cost,-8346.32
+2025-P12,4,beverage sales,36781.93
+2025-P12,4,cash over/short,1.99
+2025-P12,4,comps (memo),2903.25
+2025-P12,4,credit card fees,-6650.25
+2025-P12,4,discounts (memo),5625.27
+2025-P12,4,food cost,-73435.69
+2025-P12,4,food sales,232359.05
+2025-P12,4,hourly wages,-78334.96
+2025-P12,4,management salaries,-19847.48
+2025-P12,4,marketing,-5382.82
+2025-P12,4,payroll taxes and benefits,-13380.24
+2025-P12,4,rent and occupancy,-12454.1
+2025-P12,4,repairs and maintenance,-4400.78
+2025-P12,4,supplies,-7763.17
+2025-P12,4,utilities,-8720.42
+2025-P12,5,beverage cost,-7494.05
+2025-P12,5,beverage sales,33165.55
+2025-P12,5,cash over/short,6.91
+2025-P12,5,comps (memo),2989.75
+2025-P12,5,credit card fees,-6277.46
+2025-P12,5,discounts (memo),5497.29
+2025-P12,5,food cost,-68289.92
+2025-P12,5,food sales,221344.41
+2025-P12,5,hourly wages,-74909.54
+2025-P12,5,management salaries,-18781.94
+2025-P12,5,marketing,-5090.2
+2025-P12,5,payroll taxes and benefits,-12747.72
+2025-P12,5,rent and occupancy,-12177.34
+2025-P12,5,repairs and maintenance,-3513.72
+2025-P12,5,supplies,-7255.48
+2025-P12,5,utilities,-7321.67
+2025-P12,6,beverage cost,-8120.94
+2025-P12,6,beverage sales,36262.04
+2025-P12,6,cash over/short,15.72
+2025-P12,6,comps (memo),3109.5
+2025-P12,6,credit card fees,-6755.38
+2025-P12,6,discounts (memo),5649.22
+2025-P12,6,food cost,-70841.11
+2025-P12,6,food sales,232090.24
+2025-P12,6,hourly wages,-79934.95
+2025-P12,6,management salaries,-19298.46
+2025-P12,6,marketing,-5367.05
+2025-P12,6,payroll taxes and benefits,-13424.48
+2025-P12,6,rent and occupancy,-12730.86
+2025-P12,6,repairs and maintenance,-8061.94
+2025-P12,6,supplies,-8506.59
+2025-P12,6,utilities,-7902.3
+2025-P12,7,beverage cost,-9111.58
+2025-P12,7,beverage sales,42489.31
+2025-P12,7,cash over/short,7.77
+2025-P12,7,comps (memo),3302.0
+2025-P12,7,credit card fees,-7964.48
+2025-P12,7,discounts (memo),6278.58
+2025-P12,7,food cost,-85153.36
+2025-P12,7,food sales,279117.24
+2025-P12,7,hourly wages,-66957.17
+2025-P12,7,management salaries,-19482.8
+2025-P12,7,marketing,-6432.13
+2025-P12,7,payroll taxes and benefits,-12041.16
+2025-P12,7,rent and occupancy,-15913.57
+2025-P12,7,repairs and maintenance,-3073.58
+2025-P12,7,supplies,-9719.54
+2025-P12,7,utilities,-10829.44
+2025-P12,8,beverage cost,-8194.59
+2025-P12,8,beverage sales,36266.29
+2025-P12,8,cash over/short,1.89
+2025-P12,8,comps (memo),3381.5
+2025-P12,8,credit card fees,-7064.27
+2025-P12,8,discounts (memo),6233.27
+2025-P12,8,food cost,-75307.01
+2025-P12,8,food sales,248695.92
+2025-P12,8,hourly wages,-63379.23
+2025-P12,8,management salaries,-16197.34
+2025-P12,8,marketing,-5699.24
+2025-P12,8,payroll taxes and benefits,-10859.08
+2025-P12,8,rent and occupancy,-13561.13
+2025-P12,8,repairs and maintenance,-4632.02
+2025-P12,8,supplies,-8277.12
+2025-P12,8,utilities,-7678.55
+2025-P12,9,beverage cost,-8162.35
+2025-P12,9,beverage sales,35121.67
+2025-P12,9,cash over/short,-238.95
+2025-P12,9,comps (memo),3446.75
+2025-P12,9,credit card fees,-6798.34
+2025-P12,9,discounts (memo),5758.54
+2025-P12,9,food cost,-71856.17
+2025-P12,9,food sales,239053.29
+2025-P12,9,hourly wages,-68282.69
+2025-P12,9,management salaries,-18531.39
+2025-P12,9,marketing,-5483.5
+2025-P12,9,payroll taxes and benefits,-11958.63
+2025-P12,9,rent and occupancy,-13146.0
+2025-P12,9,repairs and maintenance,-4321.23
+2025-P12,9,supplies,-8344.66
+2025-P12,9,utilities,-8404.21
+2025-P12,10,beverage cost,-9350.51
+2025-P12,10,beverage sales,42298.32
+2025-P12,10,cash over/short,0.5
+2025-P12,10,comps (memo),3559.5
+2025-P12,10,credit card fees,-7986.1
+2025-P12,10,discounts (memo),6482.08
+2025-P12,10,food cost,-88509.55
+2025-P12,10,food sales,277621.1
+2025-P12,10,hourly wages,-65915.58
+2025-P12,10,management salaries,-19086.83
+2025-P12,10,marketing,-6398.39
+2025-P12,10,payroll taxes and benefits,-11831.55
+2025-P12,10,rent and occupancy,-15221.68
+2025-P12,10,repairs and maintenance,-5077.06
+2025-P12,10,supplies,-9201.77
+2025-P12,10,utilities,-11734.96
+2025-P12,11,beverage cost,-8120.45
+2025-P12,11,beverage sales,36887.56
+2025-P12,11,cash over/short,-24.42
+2025-P12,11,comps (memo),2941.0
+2025-P12,11,credit card fees,-6955.85
+2025-P12,11,discounts (memo),5895.88
+2025-P12,11,food cost,-74514.67
+2025-P12,11,food sales,244148.43
+2025-P12,11,hourly wages,-81604.03
+2025-P12,11,management salaries,-19316.86
+2025-P12,11,marketing,-5620.72
+2025-P12,11,payroll taxes and benefits,-13612.49
+2025-P12,11,rent and occupancy,-13422.75
+2025-P12,11,repairs and maintenance,-6166.84
+2025-P12,11,supplies,-8591.97
+2025-P12,11,utilities,-8328.03
+2025-P12,12,beverage cost,-8167.42
+2025-P12,12,beverage sales,32854.12
+2025-P12,12,cash over/short,9.28
+2025-P12,12,comps (memo),3066.0
+2025-P12,12,credit card fees,-6382.25
+2025-P12,12,discounts (memo),5011.28
+2025-P12,12,food cost,-69588.43
+2025-P12,12,food sales,221575.7
+2025-P12,12,hourly wages,-74201.04
+2025-P12,12,management salaries,-19420.15
+2025-P12,12,marketing,-5088.6
+2025-P12,12,payroll taxes and benefits,-12822.95
+2025-P12,12,rent and occupancy,-11762.21
+2025-P12,12,repairs and maintenance,-1640.27
+2025-P12,12,supplies,-8135.72
+2025-P12,12,utilities,-8416.31
+2025-P13,1,beverage cost,-9965.18
+2025-P13,1,beverage sales,42915.26
+2025-P13,1,cash over/short,-11.21
+2025-P13,1,comps (memo),3099.25
+2025-P13,1,credit card fees,-8169.45
+2025-P13,1,discounts (memo),6511.79
+2025-P13,1,food cost,-87883.61
+2025-P13,1,food sales,290141.12
+2025-P13,1,hourly wages,-87546.35
+2025-P13,1,management salaries,-19737.25
+2025-P13,1,marketing,-6661.13
+2025-P13,1,payroll taxes and benefits,-14367.04
+2025-P13,1,rent and occupancy,-16605.47
+2025-P13,1,repairs and maintenance,-6142.27
+2025-P13,1,supplies,-9758.91
+2025-P13,1,utilities,-10797.5
+2025-P13,2,beverage cost,-9273.55
+2025-P13,2,beverage sales,39093.54
+2025-P13,2,cash over/short,-9.54
+2025-P13,2,comps (memo),3582.25
+2025-P13,2,credit card fees,-7119.56
+2025-P13,2,discounts (memo),6749.82
+2025-P13,2,food cost,-74371.47
+2025-P13,2,food sales,248480.76
+2025-P13,2,hourly wages,-80502.44
+2025-P13,2,management salaries,-18461.6
+2025-P13,2,marketing,-5751.49
+2025-P13,2,payroll taxes and benefits,-13286.05
+2025-P13,2,rent and occupancy,-13837.89
+2025-P13,2,repairs and maintenance,-7491.27
+2025-P13,2,supplies,-8067.38
+2025-P13,2,utilities,-10378.61
+2025-P13,3,beverage cost,-8635.36
+2025-P13,3,beverage sales,38660.42
+2025-P13,3,cash over/short,47.39
+2025-P13,3,comps (memo),2878.75
+2025-P13,3,credit card fees,-7270.31
+2025-P13,3,discounts (memo),6026.7
+2025-P13,3,food cost,-76028.52
+2025-P13,3,food sales,257695.25
+2025-P13,3,hourly wages,-84653.34
+2025-P13,3,management salaries,-18491.02
+2025-P13,3,marketing,-5927.11
+2025-P13,3,payroll taxes and benefits,-13749.71
+2025-P13,3,rent and occupancy,-14529.78
+2025-P13,3,repairs and maintenance,-3483.36
+2025-P13,3,supplies,-9089.74
+2025-P13,3,utilities,-8527.75
+2025-P13,4,beverage cost,-7620.95
+2025-P13,4,beverage sales,33643.44
+2025-P13,4,cash over/short,-5.79
+2025-P13,4,comps (memo),3138.25
+2025-P13,4,credit card fees,-6444.49
+2025-P13,4,discounts (memo),6655.16
+2025-P13,4,food cost,-70431.73
+2025-P13,4,food sales,223203.58
+2025-P13,4,hourly wages,-73564.45
+2025-P13,4,management salaries,-19916.01
+2025-P13,4,marketing,-5136.94
+2025-P13,4,payroll taxes and benefits,-12871.93
+2025-P13,4,rent and occupancy,-12454.1
+2025-P13,4,repairs and maintenance,-2940.01
+2025-P13,4,supplies,-7148.9
+2025-P13,4,utilities,-10970.69
+2025-P13,5,beverage cost,-7478.68
+2025-P13,5,beverage sales,32679.99
+2025-P13,5,cash over/short,-21.31
+2025-P13,5,comps (memo),3038.0
+2025-P13,5,credit card fees,-6310.69
+2025-P13,5,discounts (memo),5541.17
+2025-P13,5,food cost,-67839.04
+2025-P13,5,food sales,220423.34
+2025-P13,5,hourly wages,-77436.25
+2025-P13,5,management salaries,-18846.79
+2025-P13,5,marketing,-5062.07
+2025-P13,5,payroll taxes and benefits,-13041.22
+2025-P13,5,rent and occupancy,-12177.34
+2025-P13,5,repairs and maintenance,-4418.33
+2025-P13,5,supplies,-8309.28
+2025-P13,5,utilities,-10107.58
+2025-P13,6,beverage cost,-6910.92
+2025-P13,6,beverage sales,31331.37
+2025-P13,6,cash over/short,-9.55
+2025-P13,6,comps (memo),2416.75
+2025-P13,6,credit card fees,-6176.93
+2025-P13,6,discounts (memo),5611.19
+2025-P13,6,food cost,-63700.28
+2025-P13,6,food sales,217387.69
+2025-P13,6,hourly wages,-75302.55
+2025-P13,6,management salaries,-19365.1
+2025-P13,6,marketing,-4974.38
+2025-P13,6,payroll taxes and benefits,-12930.9
+2025-P13,6,rent and occupancy,-12730.86
+2025-P13,6,repairs and maintenance,-3397.5
+2025-P13,6,supplies,-6912.88
+2025-P13,6,utilities,-7457.57
+2025-P13,7,beverage cost,-9367.16
+2025-P13,7,beverage sales,42332.77
+2025-P13,7,cash over/short,-16.69
+2025-P13,7,comps (memo),3694.75
+2025-P13,7,credit card fees,-8100.17
+2025-P13,7,discounts (memo),6479.73
+2025-P13,7,food cost,-84769.65
+2025-P13,7,food sales,278536.71
+2025-P13,7,hourly wages,-65838.15
+2025-P13,7,management salaries,-19550.07
+2025-P13,7,marketing,-6417.39
+2025-P13,7,payroll taxes and benefits,-11934.21
+2025-P13,7,rent and occupancy,-15913.57
+2025-P13,7,repairs and maintenance,-4571.92
+2025-P13,7,supplies,-9348.15
+2025-P13,7,utilities,-9147.16
+2025-P13,8,beverage cost,-7748.76
+2025-P13,8,beverage sales,34674.84
+2025-P13,8,cash over/short,11.73
+2025-P13,8,comps (memo),3179.5
+2025-P13,8,credit card fees,-6673.06
+2025-P13,8,discounts (memo),5623.56
+2025-P13,8,food cost,-73377.12
+2025-P13,8,food sales,236787.08
+2025-P13,8,hourly wages,-62687.03
+2025-P13,8,management salaries,-18684.14
+2025-P13,8,marketing,-5429.24
+2025-P13,8,payroll taxes and benefits,-11379.77
+2025-P13,8,rent and occupancy,-13561.13
+2025-P13,8,repairs and maintenance,-3585.45
+2025-P13,8,supplies,-8384.79
+2025-P13,8,utilities,-9411.82
+2025-P13,9,beverage cost,-7929.38
+2025-P13,9,beverage sales,34513.85
+2025-P13,9,cash over/short,-223.81
+2025-P13,9,comps (memo),3007.75
+2025-P13,9,credit card fees,-6698.68
+2025-P13,9,discounts (memo),5753.13
+2025-P13,9,food cost,-68517.56
+2025-P13,9,food sales,230829.39
+2025-P13,9,hourly wages,-66790.54
+2025-P13,9,management salaries,-18595.37
+2025-P13,9,marketing,-5306.86
+2025-P13,9,payroll taxes and benefits,-11809.85
+2025-P13,9,rent and occupancy,-13146.0
+2025-P13,9,repairs and maintenance,-6317.92
+2025-P13,9,supplies,-8337.97
+2025-P13,9,utilities,-7904.89
+2025-P13,10,beverage cost,-9094.04
+2025-P13,10,beverage sales,39916.9
+2025-P13,10,cash over/short,-1.57
+2025-P13,10,comps (memo),2889.0
+2025-P13,10,credit card fees,-7714.42
+2025-P13,10,discounts (memo),6073.32
+2025-P13,10,food cost,-82431.61
+2025-P13,10,food sales,273183.34
+2025-P13,10,hourly wages,-67955.82
+2025-P13,10,management salaries,-19152.73
+2025-P13,10,marketing,-6262.0
+2025-P13,10,payroll taxes and benefits,-12071.8
+2025-P13,10,rent and occupancy,-15221.68
+2025-P13,10,repairs and maintenance,-6603.27
+2025-P13,10,supplies,-9091.22
+2025-P13,10,utilities,-10824.84
+2025-P13,11,beverage cost,-7690.25
+2025-P13,11,beverage sales,35235.55
+2025-P13,11,cash over/short,-9.53
+2025-P13,11,comps (memo),3140.0
+2025-P13,11,credit card fees,-6591.3
+2025-P13,11,discounts (memo),5283.99
+2025-P13,11,food cost,-67514.76
+2025-P13,11,food sales,228765.71
+2025-P13,11,hourly wages,-76233.19
+2025-P13,11,management salaries,-19383.56
+2025-P13,11,marketing,-5280.03
+2025-P13,11,payroll taxes and benefits,-13037.7
+2025-P13,11,rent and occupancy,-13422.75
+2025-P13,11,repairs and maintenance,-5578.65
+2025-P13,11,supplies,-7769.71
+2025-P13,11,utilities,-9520.52
+2025-P13,12,beverage cost,-7411.72
+2025-P13,12,beverage sales,30669.59
+2025-P13,12,cash over/short,-39.48
+2025-P13,12,comps (memo),2154.75
+2025-P13,12,credit card fees,-5914.97
+2025-P13,12,discounts (memo),4858.46
+2025-P13,12,food cost,-63008.01
+2025-P13,12,food sales,202885.83
+2025-P13,12,hourly wages,-74315.88
+2025-P13,12,management salaries,-19487.21
+2025-P13,12,marketing,-4671.11
+2025-P13,12,payroll taxes and benefits,-12851.68
+2025-P13,12,rent and occupancy,-11762.21
+2025-P13,12,repairs and maintenance,-6300.45
+2025-P13,12,supplies,-6739.86
+2025-P13,12,utilities,-5277.56

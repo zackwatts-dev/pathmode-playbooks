@@ -1,0 +1,4149 @@
+store_id,business_date,inv_id,qty,reason
+3,2024-10-08,2,0.34,returned plate
+5,2024-10-08,2,0.34,expired
+11,2024-10-08,2,0.3,dropped
+3,2024-10-09,1,1.01,expired
+3,2024-10-09,2,0.51,dropped
+5,2024-10-09,2,0.33,dropped
+11,2024-10-09,1,1.24,dropped
+1,2024-10-10,1,1.06,overproduction
+6,2024-10-10,1,1.02,expired
+6,2024-10-10,2,0.3,returned plate
+9,2024-10-10,1,1.11,expired
+1,2024-10-11,1,1.88,expired
+1,2024-10-11,2,0.42,prep error
+1,2024-10-11,4,0.48,overproduction
+2,2024-10-11,1,1.77,dropped
+2,2024-10-11,2,0.45,prep error
+3,2024-10-11,1,1.11,prep error
+4,2024-10-11,1,1.71,dropped
+4,2024-10-11,2,0.49,overproduction
+5,2024-10-11,1,1.2,overproduction
+6,2024-10-11,1,1.25,expired
+6,2024-10-11,2,0.41,prep error
+7,2024-10-11,1,1.4,prep error
+7,2024-10-11,2,0.45,returned plate
+8,2024-10-11,1,1.85,expired
+8,2024-10-11,2,0.44,dropped
+9,2024-10-11,2,0.34,prep error
+10,2024-10-11,1,1.92,returned plate
+10,2024-10-11,2,0.55,overproduction
+10,2024-10-11,3,0.51,returned plate
+11,2024-10-11,1,1.17,dropped
+12,2024-10-11,1,1.17,overproduction
+12,2024-10-11,2,0.35,prep error
+1,2024-10-12,1,1.34,overproduction
+1,2024-10-12,2,0.47,dropped
+2,2024-10-12,1,1.34,returned plate
+3,2024-10-12,1,1.62,expired
+3,2024-10-12,2,0.33,returned plate
+4,2024-10-12,1,1.38,overproduction
+4,2024-10-12,2,0.36,overproduction
+10,2024-10-12,1,1.26,overproduction
+10,2024-10-12,2,0.42,prep error
+11,2024-10-12,1,1.1,dropped
+12,2024-10-12,1,1.62,expired
+12,2024-10-12,2,0.35,expired
+9,2024-10-13,1,1.13,overproduction
+9,2024-10-13,2,0.44,dropped
+10,2024-10-13,2,0.3,returned plate
+4,2024-10-14,1,1.08,dropped
+9,2024-10-14,2,0.31,dropped
+12,2024-10-14,2,0.31,overproduction
+7,2024-10-15,1,1.05,overproduction
+8,2024-10-15,1,1.23,expired
+8,2024-10-15,2,0.65,dropped
+3,2024-10-16,1,1.33,expired
+9,2024-10-16,1,1.06,overproduction
+11,2024-10-16,2,0.33,dropped
+2,2024-10-17,1,1.11,returned plate
+3,2024-10-17,1,0.99,returned plate
+3,2024-10-17,2,0.34,expired
+7,2024-10-17,1,1.41,returned plate
+10,2024-10-17,1,1.0,returned plate
+12,2024-10-17,2,0.33,returned plate
+1,2024-10-18,1,1.63,expired
+1,2024-10-18,2,0.33,returned plate
+1,2024-10-18,3,0.5,prep error
+2,2024-10-18,1,1.94,dropped
+2,2024-10-18,2,0.63,overproduction
+2,2024-10-18,3,0.51,expired
+3,2024-10-18,1,1.63,expired
+3,2024-10-18,2,0.35,expired
+5,2024-10-18,2,0.32,prep error
+6,2024-10-18,1,1.04,prep error
+7,2024-10-18,1,1.0,returned plate
+8,2024-10-18,1,1.37,dropped
+8,2024-10-18,2,0.56,overproduction
+9,2024-10-18,1,1.05,dropped
+11,2024-10-18,1,1.18,overproduction
+3,2024-10-19,1,1.07,prep error
+3,2024-10-19,2,0.38,overproduction
+4,2024-10-19,1,1.32,prep error
+4,2024-10-19,2,0.4,dropped
+5,2024-10-19,2,0.31,prep error
+6,2024-10-19,2,0.38,returned plate
+7,2024-10-19,1,1.56,expired
+8,2024-10-19,1,1.02,overproduction
+8,2024-10-19,2,0.36,dropped
+9,2024-10-19,1,1.26,expired
+10,2024-10-19,1,1.68,returned plate
+10,2024-10-19,2,0.59,returned plate
+11,2024-10-19,1,1.19,dropped
+11,2024-10-19,2,0.32,prep error
+12,2024-10-19,1,1.0,expired
+1,2024-10-20,1,17.32,power outage
+1,2024-10-20,2,5.04,power outage
+1,2024-10-20,3,4.66,power outage
+1,2024-10-20,4,3.24,power outage
+1,2024-10-20,5,11.32,power outage
+1,2024-10-20,6,11.89,power outage
+1,2024-10-20,9,3.05,power outage
+1,2024-10-20,10,2.97,power outage
+1,2024-10-20,11,3.76,power outage
+2,2024-10-20,1,1.03,overproduction
+3,2024-10-20,1,1.06,expired
+10,2024-10-20,1,1.16,prep error
+10,2024-10-20,2,0.36,returned plate
+9,2024-10-21,1,1.01,returned plate
+9,2024-10-21,2,0.43,overproduction
+11,2024-10-21,2,0.31,prep error
+1,2024-10-22,1,1.15,overproduction
+1,2024-10-22,2,0.36,returned plate
+8,2024-10-22,1,1.05,returned plate
+8,2024-10-22,2,0.37,expired
+10,2024-10-22,1,1.02,expired
+1,2024-10-23,1,1.45,prep error
+10,2024-10-23,1,1.08,overproduction
+7,2024-10-24,1,1.19,prep error
+8,2024-10-24,1,1.16,dropped
+8,2024-10-24,2,0.37,prep error
+10,2024-10-24,1,1.03,expired
+1,2024-10-25,1,1.06,prep error
+1,2024-10-25,2,0.31,returned plate
+2,2024-10-25,1,1.71,prep error
+2,2024-10-25,2,0.4,dropped
+2,2024-10-25,3,0.47,returned plate
+3,2024-10-25,1,1.32,expired
+3,2024-10-25,2,0.35,returned plate
+4,2024-10-25,1,1.3,expired
+4,2024-10-25,2,0.51,returned plate
+5,2024-10-25,1,1.32,prep error
+5,2024-10-25,2,0.33,dropped
+6,2024-10-25,1,1.44,overproduction
+7,2024-10-25,1,1.75,expired
+7,2024-10-25,2,0.46,overproduction
+7,2024-10-25,3,0.51,dropped
+8,2024-10-25,1,1.57,returned plate
+8,2024-10-25,2,0.36,returned plate
+10,2024-10-25,1,1.49,overproduction
+10,2024-10-25,2,0.39,overproduction
+11,2024-10-25,1,1.28,returned plate
+11,2024-10-25,2,0.42,dropped
+11,2024-10-25,3,0.53,expired
+12,2024-10-25,1,1.17,prep error
+1,2024-10-26,1,1.11,dropped
+3,2024-10-26,1,1.04,overproduction
+3,2024-10-26,2,0.39,expired
+7,2024-10-26,1,1.4,prep error
+7,2024-10-26,2,0.35,prep error
+8,2024-10-26,1,1.2,returned plate
+9,2024-10-26,1,1.05,dropped
+9,2024-10-26,2,0.33,expired
+10,2024-10-26,1,1.01,prep error
+10,2024-10-26,2,0.3,dropped
+11,2024-10-26,1,1.2,returned plate
+11,2024-10-26,2,0.36,prep error
+12,2024-10-26,2,0.4,returned plate
+1,2024-10-27,1,1.39,returned plate
+1,2024-10-27,2,0.42,expired
+3,2024-10-28,1,1.03,prep error
+4,2024-10-28,2,0.31,overproduction
+7,2024-10-29,1,1.08,overproduction
+9,2024-10-30,1,1.16,returned plate
+9,2024-10-30,2,0.34,overproduction
+11,2024-10-30,2,0.37,overproduction
+1,2024-10-31,1,1.03,dropped
+6,2024-10-31,1,1.17,expired
+8,2024-10-31,1,1.08,expired
+12,2024-10-31,1,0.97,dropped
+1,2024-11-01,1,0.97,expired
+2,2024-11-01,1,1.2,prep error
+2,2024-11-01,2,0.35,prep error
+3,2024-11-01,1,1.57,expired
+3,2024-11-01,2,0.6,returned plate
+8,2024-11-01,1,1.52,overproduction
+8,2024-11-01,2,0.36,dropped
+8,2024-11-01,3,0.5,prep error
+10,2024-11-01,2,0.4,prep error
+11,2024-11-01,1,1.06,dropped
+11,2024-11-01,2,0.38,dropped
+1,2024-11-02,2,0.34,dropped
+3,2024-11-02,1,1.56,overproduction
+3,2024-11-02,2,0.7,dropped
+3,2024-11-02,3,0.58,dropped
+4,2024-11-02,2,0.31,expired
+5,2024-11-02,1,0.98,expired
+8,2024-11-02,1,0.97,prep error
+10,2024-11-02,1,1.03,prep error
+11,2024-11-02,1,1.23,dropped
+11,2024-11-02,2,0.31,prep error
+12,2024-11-02,1,1.37,returned plate
+12,2024-11-02,2,0.39,overproduction
+8,2024-11-03,2,0.3,expired
+1,2024-11-04,1,1.08,prep error
+3,2024-11-04,1,1.06,expired
+3,2024-11-04,2,0.3,dropped
+6,2024-11-04,1,1.07,expired
+6,2024-11-04,2,0.37,overproduction
+9,2024-11-04,2,0.33,prep error
+1,2024-11-05,1,0.99,dropped
+2,2024-11-05,1,1.46,returned plate
+2,2024-11-05,2,0.34,expired
+9,2024-11-05,1,1.27,prep error
+3,2024-11-06,2,0.31,prep error
+6,2024-11-06,1,1.18,overproduction
+6,2024-11-06,2,0.66,returned plate
+10,2024-11-06,1,1.28,overproduction
+3,2024-11-07,1,1.7,returned plate
+3,2024-11-07,2,0.37,dropped
+6,2024-11-07,1,1.29,dropped
+6,2024-11-07,2,0.39,dropped
+7,2024-11-07,1,1.08,overproduction
+10,2024-11-07,1,1.14,overproduction
+11,2024-11-07,1,1.03,dropped
+3,2024-11-08,1,1.58,prep error
+3,2024-11-08,2,0.52,prep error
+3,2024-11-08,3,0.51,overproduction
+4,2024-11-08,1,1.53,overproduction
+4,2024-11-08,2,0.4,expired
+4,2024-11-08,3,0.48,returned plate
+5,2024-11-08,1,1.33,returned plate
+5,2024-11-08,2,0.55,prep error
+5,2024-11-08,3,0.51,returned plate
+6,2024-11-08,1,1.04,dropped
+7,2024-11-08,1,1.02,overproduction
+7,2024-11-08,2,0.38,dropped
+8,2024-11-08,1,1.1,expired
+9,2024-11-08,1,1.38,dropped
+3,2024-11-09,1,0.97,dropped
+3,2024-11-09,2,0.37,returned plate
+5,2024-11-09,2,0.31,dropped
+7,2024-11-09,1,1.42,dropped
+7,2024-11-09,2,0.52,expired
+8,2024-11-09,1,1.22,prep error
+8,2024-11-09,2,0.3,expired
+9,2024-11-09,1,1.5,dropped
+11,2024-11-09,1,1.16,expired
+11,2024-11-09,2,0.43,dropped
+1,2024-11-10,1,1.2,returned plate
+6,2024-11-10,1,0.98,prep error
+6,2024-11-10,2,0.35,prep error
+7,2024-11-10,1,0.98,dropped
+1,2024-11-12,1,1.06,overproduction
+7,2024-11-12,1,1.06,returned plate
+12,2024-11-12,2,0.38,returned plate
+3,2024-11-13,2,0.37,dropped
+2,2024-11-14,1,1.07,overproduction
+7,2024-11-14,1,1.23,overproduction
+7,2024-11-14,2,0.39,dropped
+12,2024-11-14,1,1.03,prep error
+1,2024-11-15,1,1.04,overproduction
+3,2024-11-15,1,1.38,overproduction
+3,2024-11-15,2,0.41,prep error
+5,2024-11-15,1,1.17,returned plate
+5,2024-11-15,2,0.35,expired
+10,2024-11-15,1,1.17,prep error
+10,2024-11-15,2,0.39,expired
+11,2024-11-15,1,1.04,dropped
+11,2024-11-15,2,0.4,dropped
+12,2024-11-15,1,1.5,returned plate
+12,2024-11-15,2,0.38,prep error
+12,2024-11-15,4,0.43,overproduction
+1,2024-11-16,1,1.53,returned plate
+1,2024-11-16,4,0.43,dropped
+3,2024-11-16,1,1.68,dropped
+3,2024-11-16,2,0.38,prep error
+3,2024-11-16,3,0.52,dropped
+3,2024-11-16,4,0.45,dropped
+4,2024-11-16,1,1.04,overproduction
+4,2024-11-16,2,0.53,returned plate
+4,2024-11-16,4,0.45,returned plate
+7,2024-11-16,1,1.14,returned plate
+7,2024-11-16,2,0.46,returned plate
+10,2024-11-16,1,1.31,dropped
+10,2024-11-16,2,0.32,prep error
+11,2024-11-16,1,1.01,dropped
+11,2024-11-16,2,0.38,expired
+1,2024-11-17,1,1.56,overproduction
+1,2024-11-17,2,0.63,overproduction
+6,2024-11-17,2,0.36,expired
+9,2024-11-17,1,1.14,prep error
+11,2024-11-17,2,0.3,returned plate
+1,2024-11-18,2,0.3,expired
+7,2024-11-18,1,0.99,returned plate
+10,2024-11-18,1,1.45,overproduction
+1,2024-11-19,1,1.3,dropped
+8,2024-11-19,1,1.12,prep error
+9,2024-11-19,2,0.38,returned plate
+2,2024-11-20,1,1.15,returned plate
+3,2024-11-20,1,1.33,expired
+3,2024-11-20,2,0.55,expired
+8,2024-11-20,2,0.3,returned plate
+9,2024-11-20,2,0.35,expired
+10,2024-11-20,1,1.18,expired
+11,2024-11-20,2,0.3,expired
+1,2024-11-21,1,1.01,prep error
+4,2024-11-21,2,0.3,prep error
+5,2024-11-21,1,1.11,expired
+5,2024-11-21,2,0.35,dropped
+12,2024-11-21,1,1.05,prep error
+1,2024-11-22,1,0.99,prep error
+2,2024-11-22,1,1.38,overproduction
+2,2024-11-22,4,0.46,overproduction
+4,2024-11-22,1,1.12,expired
+4,2024-11-22,2,0.34,dropped
+4,2024-11-22,3,0.48,overproduction
+7,2024-11-22,1,1.22,prep error
+8,2024-11-22,1,1.01,expired
+9,2024-11-22,1,1.04,prep error
+9,2024-11-22,2,0.33,returned plate
+10,2024-11-22,1,1.06,expired
+1,2024-11-23,1,1.01,returned plate
+1,2024-11-23,2,0.32,overproduction
+4,2024-11-23,1,1.53,dropped
+4,2024-11-23,2,0.38,prep error
+7,2024-11-23,1,1.35,dropped
+7,2024-11-23,2,0.35,dropped
+10,2024-11-23,1,1.33,expired
+10,2024-11-23,2,0.38,dropped
+1,2024-11-24,1,1.07,returned plate
+3,2024-11-24,2,0.31,returned plate
+7,2024-11-24,1,1.22,dropped
+1,2024-11-26,1,0.96,expired
+3,2024-11-26,1,1.1,overproduction
+7,2024-11-26,1,1.06,dropped
+7,2024-11-26,2,0.41,expired
+7,2024-11-27,2,0.34,expired
+8,2024-11-27,2,0.31,overproduction
+10,2024-11-27,1,1.67,overproduction
+10,2024-11-27,2,0.47,expired
+1,2024-11-29,1,1.45,overproduction
+1,2024-11-29,2,0.31,returned plate
+2,2024-11-29,1,1.14,returned plate
+2,2024-11-29,2,0.43,expired
+3,2024-11-29,1,1.09,overproduction
+4,2024-11-29,1,1.74,overproduction
+4,2024-11-29,2,0.47,dropped
+4,2024-11-29,3,0.5,expired
+7,2024-11-29,1,1.74,dropped
+7,2024-11-29,2,0.52,returned plate
+7,2024-11-29,3,0.62,expired
+8,2024-11-29,2,0.33,overproduction
+9,2024-11-29,1,1.38,returned plate
+9,2024-11-29,2,0.37,overproduction
+10,2024-11-29,1,1.1,overproduction
+10,2024-11-29,2,0.44,returned plate
+11,2024-11-29,1,1.15,dropped
+12,2024-11-29,1,1.09,dropped
+12,2024-11-29,2,0.3,expired
+1,2024-11-30,1,1.1,returned plate
+1,2024-11-30,2,0.33,expired
+2,2024-11-30,1,1.69,expired
+2,2024-11-30,2,0.34,returned plate
+2,2024-11-30,3,0.51,dropped
+2,2024-11-30,4,0.43,overproduction
+3,2024-11-30,1,1.87,overproduction
+3,2024-11-30,2,0.49,dropped
+3,2024-11-30,3,0.61,returned plate
+3,2024-11-30,6,1.66,prep error
+4,2024-11-30,1,1.0,expired
+5,2024-11-30,1,1.29,returned plate
+8,2024-11-30,1,1.2,prep error
+12,2024-11-30,2,0.3,returned plate
+3,2024-12-01,1,0.99,returned plate
+4,2024-12-01,1,1.14,returned plate
+7,2024-12-01,1,1.31,returned plate
+7,2024-12-01,3,0.51,dropped
+1,2024-12-02,1,1.16,returned plate
+3,2024-12-02,1,1.17,overproduction
+3,2024-12-02,2,0.33,returned plate
+8,2024-12-02,1,0.99,dropped
+8,2024-12-02,2,0.31,dropped
+7,2024-12-03,1,1.06,overproduction
+10,2024-12-03,1,1.05,expired
+12,2024-12-03,1,1.02,dropped
+8,2024-12-04,1,1.06,expired
+4,2024-12-05,2,0.49,expired
+7,2024-12-05,1,1.46,overproduction
+9,2024-12-05,1,1.09,returned plate
+10,2024-12-05,1,1.17,expired
+1,2024-12-06,1,1.53,prep error
+1,2024-12-06,2,0.48,prep error
+2,2024-12-06,1,1.09,overproduction
+4,2024-12-06,1,1.23,dropped
+4,2024-12-06,2,0.42,overproduction
+5,2024-12-06,1,1.06,expired
+9,2024-12-06,1,1.31,prep error
+9,2024-12-06,2,0.33,overproduction
+10,2024-12-06,1,1.46,returned plate
+10,2024-12-06,2,0.53,prep error
+10,2024-12-06,3,0.5,expired
+11,2024-12-06,1,1.82,expired
+11,2024-12-06,2,0.33,prep error
+1,2024-12-07,1,1.45,dropped
+1,2024-12-07,2,0.41,returned plate
+1,2024-12-07,1,79.05,equipment failure
+1,2024-12-07,2,20.12,equipment failure
+1,2024-12-07,3,20.65,equipment failure
+1,2024-12-07,4,16.28,equipment failure
+1,2024-12-07,5,49.2,equipment failure
+1,2024-12-07,6,45.58,equipment failure
+1,2024-12-07,7,13.08,equipment failure
+1,2024-12-07,8,12.47,equipment failure
+1,2024-12-07,9,11.66,equipment failure
+1,2024-12-07,10,12.61,equipment failure
+1,2024-12-07,11,16.19,equipment failure
+1,2024-12-07,13,8.06,equipment failure
+1,2024-12-07,14,18.93,equipment failure
+1,2024-12-07,16,55.06,equipment failure
+1,2024-12-07,17,43.02,equipment failure
+1,2024-12-07,18,91.01,equipment failure
+1,2024-12-07,19,88.44,equipment failure
+1,2024-12-07,21,18.3,equipment failure
+1,2024-12-07,26,9.23,equipment failure
+1,2024-12-07,27,8.54,equipment failure
+1,2024-12-07,28,8.18,equipment failure
+1,2024-12-07,29,7.05,equipment failure
+1,2024-12-07,30,6.07,equipment failure
+1,2024-12-07,31,9.71,equipment failure
+1,2024-12-07,50,143.44,equipment failure
+1,2024-12-07,51,8.3,equipment failure
+1,2024-12-07,52,124.75,equipment failure
+2,2024-12-07,1,1.17,returned plate
+2,2024-12-07,2,0.33,expired
+3,2024-12-07,1,1.41,overproduction
+3,2024-12-07,2,0.41,prep error
+5,2024-12-07,1,0.99,dropped
+5,2024-12-07,2,0.4,returned plate
+6,2024-12-07,1,1.38,returned plate
+6,2024-12-07,2,0.31,prep error
+7,2024-12-07,1,1.5,prep error
+7,2024-12-07,2,0.59,dropped
+7,2024-12-07,3,0.5,returned plate
+8,2024-12-07,1,1.04,dropped
+9,2024-12-07,1,1.23,returned plate
+9,2024-12-07,2,0.44,returned plate
+10,2024-12-07,1,1.0,overproduction
+3,2024-12-08,1,0.98,overproduction
+4,2024-12-08,2,0.31,expired
+10,2024-12-08,1,1.13,returned plate
+10,2024-12-08,2,0.32,overproduction
+11,2024-12-08,1,1.17,expired
+11,2024-12-08,2,0.51,prep error
+7,2024-12-09,1,1.18,overproduction
+12,2024-12-09,1,1.15,dropped
+1,2024-12-10,1,1.04,expired
+3,2024-12-10,2,0.31,dropped
+6,2024-12-10,1,1.02,dropped
+6,2024-12-10,2,0.34,overproduction
+7,2024-12-10,1,1.02,dropped
+7,2024-12-10,2,0.43,prep error
+10,2024-12-10,2,0.31,dropped
+11,2024-12-10,1,41.25,equipment failure
+11,2024-12-10,2,11.42,equipment failure
+11,2024-12-10,3,10.9,equipment failure
+11,2024-12-10,4,10.95,equipment failure
+11,2024-12-10,5,27.05,equipment failure
+11,2024-12-10,6,19.43,equipment failure
+11,2024-12-10,7,5.58,equipment failure
+11,2024-12-10,8,6.63,equipment failure
+11,2024-12-10,9,7.93,equipment failure
+11,2024-12-10,10,6.46,equipment failure
+11,2024-12-10,11,9.8,equipment failure
+11,2024-12-10,14,12.78,equipment failure
+11,2024-12-10,16,35.91,equipment failure
+11,2024-12-10,17,24.44,equipment failure
+11,2024-12-10,27,6.19,equipment failure
+11,2024-12-10,28,6.99,equipment failure
+11,2024-12-10,30,3.84,equipment failure
+11,2024-12-10,31,7.72,equipment failure
+11,2024-12-10,50,83.58,equipment failure
+7,2024-12-11,1,69.15,equipment failure
+7,2024-12-11,2,19.69,equipment failure
+7,2024-12-11,3,23.53,equipment failure
+7,2024-12-11,4,14.01,equipment failure
+7,2024-12-11,5,44.68,equipment failure
+7,2024-12-11,6,41.87,equipment failure
+7,2024-12-11,7,13.5,equipment failure
+7,2024-12-11,8,11.24,equipment failure
+7,2024-12-11,9,12.34,equipment failure
+7,2024-12-11,10,11.37,equipment failure
+7,2024-12-11,11,15.54,equipment failure
+7,2024-12-11,13,6.8,equipment failure
+7,2024-12-11,14,14.62,equipment failure
+7,2024-12-11,16,55.55,equipment failure
+7,2024-12-11,17,36.84,equipment failure
+7,2024-12-11,18,71.51,equipment failure
+7,2024-12-11,21,15.81,equipment failure
+7,2024-12-11,26,12.63,equipment failure
+7,2024-12-11,27,9.12,equipment failure
+7,2024-12-11,28,7.74,equipment failure
+7,2024-12-11,29,8.5,equipment failure
+7,2024-12-11,30,6.49,equipment failure
+7,2024-12-11,31,12.09,equipment failure
+7,2024-12-11,50,108.81,equipment failure
+7,2024-12-11,51,7.92,equipment failure
+8,2024-12-11,2,0.36,returned plate
+10,2024-12-11,1,1.16,dropped
+10,2024-12-11,2,0.44,overproduction
+8,2024-12-12,1,1.06,expired
+10,2024-12-12,1,1.01,returned plate
+1,2024-12-13,1,1.4,prep error
+1,2024-12-13,2,0.34,dropped
+2,2024-12-13,1,1.31,prep error
+2,2024-12-13,2,0.43,prep error
+3,2024-12-13,1,1.6,expired
+3,2024-12-13,2,0.56,expired
+3,2024-12-13,3,0.47,prep error
+3,2024-12-13,4,0.48,dropped
+4,2024-12-13,1,1.08,expired
+6,2024-12-13,1,1.26,overproduction
+6,2024-12-13,2,0.31,returned plate
+7,2024-12-13,1,1.3,dropped
+7,2024-12-13,2,0.46,expired
+8,2024-12-13,1,1.06,prep error
+10,2024-12-13,1,1.88,prep error
+10,2024-12-13,2,0.41,prep error
+10,2024-12-13,3,0.49,returned plate
+12,2024-12-13,1,1.07,prep error
+12,2024-12-13,2,0.3,dropped
+1,2024-12-14,1,1.55,expired
+1,2024-12-14,2,0.4,returned plate
+2,2024-12-14,1,1.2,prep error
+6,2024-12-14,1,1.06,dropped
+6,2024-12-14,2,0.43,overproduction
+6,2024-12-14,1,50.66,equipment failure
+6,2024-12-14,2,15.3,equipment failure
+6,2024-12-14,3,17.12,equipment failure
+6,2024-12-14,4,11.42,equipment failure
+6,2024-12-14,5,34.69,equipment failure
+6,2024-12-14,6,29.15,equipment failure
+6,2024-12-14,7,8.26,equipment failure
+6,2024-12-14,8,8.18,equipment failure
+6,2024-12-14,9,9.22,equipment failure
+6,2024-12-14,10,7.61,equipment failure
+6,2024-12-14,11,11.58,equipment failure
+6,2024-12-14,13,5.41,equipment failure
+6,2024-12-14,14,12.16,equipment failure
+6,2024-12-14,16,38.92,equipment failure
+6,2024-12-14,17,29.1,equipment failure
+6,2024-12-14,18,66.63,equipment failure
+6,2024-12-14,21,12.23,equipment failure
+6,2024-12-14,27,9.14,equipment failure
+6,2024-12-14,30,4.1,equipment failure
+6,2024-12-14,31,8.37,equipment failure
+6,2024-12-14,50,100.12,equipment failure
+7,2024-12-14,1,1.3,returned plate
+7,2024-12-14,2,0.51,prep error
+8,2024-12-14,1,1.61,prep error
+8,2024-12-14,2,0.54,overproduction
+8,2024-12-14,3,0.6,prep error
+10,2024-12-14,1,1.31,overproduction
+11,2024-12-14,1,1.27,prep error
+11,2024-12-14,2,0.39,prep error
+1,2024-12-15,1,1.75,expired
+1,2024-12-15,2,0.59,overproduction
+1,2024-12-15,3,0.54,returned plate
+5,2024-12-15,1,1.03,returned plate
+1,2024-12-16,1,1.1,prep error
+1,2024-12-16,2,0.41,returned plate
+1,2024-12-17,1,1.11,dropped
+3,2024-12-17,1,1.05,returned plate
+10,2024-12-17,1,0.98,returned plate
+10,2024-12-17,2,0.34,dropped
+1,2024-12-18,1,0.97,prep error
+3,2024-12-18,1,1.51,expired
+3,2024-12-18,2,0.54,expired
+4,2024-12-18,2,0.3,dropped
+5,2024-12-18,1,1.17,overproduction
+5,2024-12-18,2,0.36,returned plate
+11,2024-12-18,1,1.42,returned plate
+1,2024-12-19,1,1.23,returned plate
+2,2024-12-19,2,0.34,returned plate
+9,2024-12-19,1,1.32,prep error
+9,2024-12-19,2,0.45,overproduction
+10,2024-12-19,2,0.35,dropped
+11,2024-12-19,1,1.01,expired
+11,2024-12-19,2,0.33,overproduction
+1,2024-12-20,1,1.43,overproduction
+1,2024-12-20,2,0.33,dropped
+1,2024-12-20,3,0.48,overproduction
+2,2024-12-20,1,1.37,overproduction
+2,2024-12-20,2,0.37,overproduction
+4,2024-12-20,1,1.74,dropped
+4,2024-12-20,2,0.35,prep error
+4,2024-12-20,9,0.48,expired
+5,2024-12-20,1,1.21,returned plate
+6,2024-12-20,1,1.13,expired
+6,2024-12-20,2,0.44,expired
+7,2024-12-20,1,1.0,prep error
+7,2024-12-20,2,0.34,overproduction
+8,2024-12-20,1,1.89,returned plate
+8,2024-12-20,2,0.62,returned plate
+8,2024-12-20,3,0.49,returned plate
+8,2024-12-20,4,0.49,dropped
+9,2024-12-20,1,1.79,dropped
+9,2024-12-20,2,0.6,prep error
+9,2024-12-20,3,0.62,returned plate
+9,2024-12-20,9,0.5,dropped
+10,2024-12-20,1,1.68,expired
+10,2024-12-20,2,0.55,expired
+11,2024-12-20,1,1.37,expired
+11,2024-12-20,2,0.36,returned plate
+12,2024-12-20,1,1.3,dropped
+12,2024-12-20,2,0.44,expired
+1,2024-12-21,1,1.62,dropped
+1,2024-12-21,2,0.49,returned plate
+1,2024-12-21,3,0.61,overproduction
+3,2024-12-21,1,1.2,prep error
+3,2024-12-21,2,0.35,expired
+6,2024-12-21,1,1.07,prep error
+7,2024-12-21,1,1.62,returned plate
+7,2024-12-21,2,0.51,returned plate
+10,2024-12-21,1,1.3,returned plate
+10,2024-12-21,2,0.47,prep error
+1,2024-12-22,1,1.12,overproduction
+1,2024-12-22,2,0.36,expired
+2,2024-12-22,2,0.35,returned plate
+12,2024-12-22,2,0.35,dropped
+6,2024-12-23,1,1.18,returned plate
+11,2024-12-23,2,0.35,prep error
+7,2024-12-24,1,1.01,prep error
+1,2024-12-26,1,1.08,expired
+1,2024-12-26,2,0.33,prep error
+3,2024-12-26,1,1.45,dropped
+3,2024-12-26,2,0.4,prep error
+4,2024-12-26,2,0.31,overproduction
+9,2024-12-26,1,1.05,expired
+1,2024-12-27,1,1.49,returned plate
+1,2024-12-27,2,0.37,prep error
+1,2024-12-27,3,0.52,returned plate
+2,2024-12-27,1,1.0,dropped
+3,2024-12-27,1,1.47,prep error
+3,2024-12-27,2,0.52,overproduction
+7,2024-12-27,1,1.44,dropped
+8,2024-12-27,1,1.71,expired
+8,2024-12-27,2,0.63,dropped
+8,2024-12-27,3,0.53,expired
+10,2024-12-27,1,0.98,prep error
+2,2024-12-28,1,2.03,returned plate
+2,2024-12-28,2,0.57,prep error
+2,2024-12-28,3,0.61,prep error
+2,2024-12-28,6,1.45,prep error
+3,2024-12-28,1,1.34,expired
+3,2024-12-28,2,0.47,expired
+4,2024-12-28,1,1.4,prep error
+4,2024-12-28,2,0.5,returned plate
+6,2024-12-28,1,1.2,returned plate
+7,2024-12-28,1,0.99,returned plate
+8,2024-12-28,2,0.31,returned plate
+9,2024-12-28,1,1.07,dropped
+12,2024-12-28,2,0.3,dropped
+1,2024-12-29,2,0.41,prep error
+4,2024-12-29,2,0.43,dropped
+7,2024-12-29,1,0.98,expired
+7,2024-12-29,2,0.39,expired
+1,2024-12-30,2,0.41,expired
+8,2024-12-30,1,1.05,returned plate
+8,2024-12-30,2,0.43,dropped
+12,2024-12-30,1,1.18,returned plate
+12,2024-12-30,2,0.32,expired
+3,2024-12-31,1,1.02,prep error
+3,2024-12-31,2,0.36,overproduction
+3,2024-12-31,3,0.55,expired
+4,2024-12-31,1,1.46,overproduction
+7,2024-12-31,1,1.08,overproduction
+1,2025-01-01,1,1.2,prep error
+4,2025-01-01,2,0.32,overproduction
+6,2025-01-01,2,0.31,dropped
+11,2025-01-01,2,0.32,overproduction
+3,2025-01-02,2,0.48,expired
+5,2025-01-02,1,1.01,expired
+7,2025-01-02,1,1.01,expired
+1,2025-01-03,1,1.2,expired
+1,2025-01-03,2,0.3,dropped
+5,2025-01-03,1,1.12,expired
+6,2025-01-03,1,1.14,returned plate
+6,2025-01-03,2,0.42,returned plate
+7,2025-01-03,1,1.37,overproduction
+7,2025-01-03,2,0.37,expired
+8,2025-01-03,1,1.06,returned plate
+8,2025-01-03,2,0.33,returned plate
+10,2025-01-03,1,1.29,dropped
+11,2025-01-03,1,1.01,overproduction
+11,2025-01-03,2,0.34,dropped
+12,2025-01-03,1,1.74,dropped
+12,2025-01-03,2,0.31,expired
+1,2025-01-04,1,1.35,overproduction
+1,2025-01-04,2,0.5,expired
+1,2025-01-04,1,35.29,equipment failure
+1,2025-01-04,2,10.25,equipment failure
+1,2025-01-04,3,10.57,equipment failure
+1,2025-01-04,4,7.86,equipment failure
+1,2025-01-04,5,22.02,equipment failure
+1,2025-01-04,6,20.85,equipment failure
+1,2025-01-04,7,6.48,equipment failure
+1,2025-01-04,8,5.38,equipment failure
+1,2025-01-04,9,6.07,equipment failure
+1,2025-01-04,10,5.28,equipment failure
+1,2025-01-04,11,8.08,equipment failure
+1,2025-01-04,27,5.46,equipment failure
+1,2025-01-04,50,67.06,equipment failure
+2,2025-01-04,2,0.31,returned plate
+3,2025-01-04,1,1.24,prep error
+3,2025-01-04,2,0.33,prep error
+4,2025-01-04,1,1.23,dropped
+4,2025-01-04,2,0.37,dropped
+5,2025-01-04,2,0.34,returned plate
+6,2025-01-04,1,1.43,dropped
+6,2025-01-04,2,0.68,prep error
+7,2025-01-04,1,1.06,dropped
+8,2025-01-04,1,1.12,expired
+10,2025-01-04,1,1.09,prep error
+11,2025-01-04,1,0.98,prep error
+11,2025-01-04,2,0.4,overproduction
+12,2025-01-04,1,1.13,prep error
+1,2025-01-07,1,1.05,overproduction
+10,2025-01-08,1,1.09,overproduction
+1,2025-01-09,1,1.45,dropped
+1,2025-01-09,2,0.31,overproduction
+7,2025-01-09,1,1.14,returned plate
+7,2025-01-09,2,0.47,returned plate
+10,2025-01-09,1,1.32,expired
+10,2025-01-09,2,0.36,returned plate
+11,2025-01-09,1,1.17,prep error
+11,2025-01-09,2,0.33,prep error
+2,2025-01-10,1,1.25,expired
+2,2025-01-10,2,0.43,returned plate
+3,2025-01-10,1,1.16,returned plate
+4,2025-01-10,1,1.02,expired
+5,2025-01-10,2,0.35,overproduction
+7,2025-01-10,1,1.47,expired
+7,2025-01-10,2,0.61,expired
+10,2025-01-10,2,0.46,prep error
+11,2025-01-10,1,1.46,prep error
+11,2025-01-10,2,0.54,dropped
+1,2025-01-11,2,0.32,expired
+2,2025-01-11,1,1.3,dropped
+2,2025-01-11,2,0.3,returned plate
+3,2025-01-11,1,1.06,expired
+3,2025-01-11,2,0.35,returned plate
+4,2025-01-11,2,0.43,overproduction
+7,2025-01-11,2,0.35,overproduction
+8,2025-01-11,2,0.31,expired
+1,2025-01-12,1,1.16,returned plate
+8,2025-01-14,2,0.54,expired
+2,2025-01-15,1,1.12,dropped
+12,2025-01-15,1,0.99,returned plate
+12,2025-01-15,2,0.38,prep error
+4,2025-01-16,1,1.1,returned plate
+4,2025-01-16,2,0.43,dropped
+8,2025-01-16,2,0.3,dropped
+11,2025-01-16,1,1.16,overproduction
+1,2025-01-17,1,1.1,returned plate
+1,2025-01-17,2,0.33,expired
+2,2025-01-17,1,1.25,returned plate
+2,2025-01-17,2,0.39,expired
+3,2025-01-17,1,1.68,returned plate
+3,2025-01-17,2,0.52,prep error
+3,2025-01-17,3,0.57,prep error
+7,2025-01-17,1,1.79,expired
+7,2025-01-17,2,0.47,returned plate
+7,2025-01-17,4,0.44,dropped
+8,2025-01-17,1,1.18,prep error
+10,2025-01-17,1,1.03,dropped
+2,2025-01-18,1,1.15,returned plate
+3,2025-01-18,1,1.11,returned plate
+4,2025-01-18,2,0.34,overproduction
+5,2025-01-18,1,1.1,prep error
+5,2025-01-18,2,0.31,overproduction
+6,2025-01-18,1,1.09,returned plate
+6,2025-01-18,2,0.43,expired
+7,2025-01-18,1,1.08,returned plate
+9,2025-01-18,1,1.03,overproduction
+3,2025-01-19,1,1.12,expired
+3,2025-01-19,3,0.52,dropped
+4,2025-01-21,1,46.72,equipment failure
+4,2025-01-21,2,12.04,equipment failure
+4,2025-01-21,3,13.21,equipment failure
+4,2025-01-21,4,8.91,equipment failure
+4,2025-01-21,5,32.22,equipment failure
+4,2025-01-21,6,20.42,equipment failure
+4,2025-01-21,8,9.17,equipment failure
+4,2025-01-21,9,7.06,equipment failure
+4,2025-01-21,10,6.05,equipment failure
+4,2025-01-21,11,10.74,equipment failure
+4,2025-01-21,13,6.22,equipment failure
+4,2025-01-21,16,39.84,equipment failure
+4,2025-01-21,26,7.65,equipment failure
+4,2025-01-21,27,8.97,equipment failure
+4,2025-01-21,28,6.92,equipment failure
+4,2025-01-21,30,5.12,equipment failure
+4,2025-01-21,31,8.5,equipment failure
+4,2025-01-21,50,93.99,equipment failure
+1,2025-01-22,1,1.14,returned plate
+1,2025-01-22,2,0.5,returned plate
+2,2025-01-22,1,1.04,prep error
+9,2025-01-22,1,1.05,prep error
+9,2025-01-22,2,0.33,dropped
+3,2025-01-23,2,0.36,returned plate
+5,2025-01-23,1,1.0,expired
+7,2025-01-23,1,1.14,overproduction
+7,2025-01-23,2,0.34,prep error
+1,2025-01-24,1,1.14,prep error
+1,2025-01-24,2,0.54,prep error
+2,2025-01-24,1,1.04,returned plate
+5,2025-01-24,1,1.07,returned plate
+9,2025-01-24,1,1.25,dropped
+9,2025-01-24,2,0.32,overproduction
+1,2025-01-25,1,1.06,returned plate
+1,2025-01-25,2,0.42,dropped
+1,2025-01-25,3,0.51,prep error
+2,2025-01-25,1,0.97,expired
+3,2025-01-25,1,0.98,expired
+6,2025-01-25,1,1.15,dropped
+7,2025-01-25,1,1.3,overproduction
+7,2025-01-25,2,0.31,overproduction
+10,2025-01-25,1,1.5,dropped
+10,2025-01-25,2,0.48,prep error
+2,2025-01-26,2,0.35,expired
+9,2025-01-26,2,0.31,prep error
+2,2025-01-27,1,0.99,dropped
+3,2025-01-27,1,1.08,returned plate
+5,2025-01-27,2,0.35,dropped
+10,2025-01-27,1,1.02,prep error
+2,2025-01-30,1,1.0,overproduction
+2,2025-01-30,2,0.35,dropped
+3,2025-01-30,1,1.04,prep error
+1,2025-01-31,1,1.4,returned plate
+1,2025-01-31,2,0.44,returned plate
+2,2025-01-31,1,1.71,overproduction
+2,2025-01-31,2,0.46,returned plate
+3,2025-01-31,1,1.02,expired
+5,2025-01-31,1,1.39,dropped
+5,2025-01-31,2,0.69,expired
+5,2025-01-31,3,0.48,expired
+6,2025-01-31,1,1.51,overproduction
+6,2025-01-31,2,0.75,expired
+7,2025-01-31,1,1.09,prep error
+7,2025-01-31,2,0.39,returned plate
+8,2025-01-31,1,1.02,prep error
+9,2025-01-31,1,1.36,prep error
+10,2025-01-31,1,1.31,prep error
+11,2025-01-31,1,1.13,dropped
+12,2025-01-31,1,1.29,dropped
+12,2025-01-31,2,0.32,expired
+1,2025-02-01,1,1.06,expired
+1,2025-02-01,2,0.39,expired
+2,2025-02-01,1,1.06,dropped
+3,2025-02-01,1,1.75,overproduction
+3,2025-02-01,2,0.67,prep error
+3,2025-02-01,3,0.48,overproduction
+5,2025-02-01,2,0.31,dropped
+6,2025-02-01,2,0.3,expired
+7,2025-02-01,1,1.53,overproduction
+7,2025-02-01,2,0.45,overproduction
+7,2025-02-01,4,0.56,returned plate
+10,2025-02-01,1,1.7,prep error
+10,2025-02-01,2,0.39,returned plate
+10,2025-02-01,3,0.6,dropped
+10,2025-02-01,4,0.47,dropped
+3,2025-02-02,2,0.39,prep error
+10,2025-02-02,1,1.02,overproduction
+10,2025-02-02,2,0.51,expired
+11,2025-02-02,2,0.31,expired
+7,2025-02-03,1,1.16,overproduction
+9,2025-02-03,2,0.43,returned plate
+1,2025-02-04,1,1.15,returned plate
+12,2025-02-04,1,1.09,overproduction
+1,2025-02-05,1,1.43,expired
+1,2025-02-05,2,0.74,prep error
+1,2025-02-05,3,0.54,prep error
+7,2025-02-05,1,0.96,overproduction
+1,2025-02-06,1,1.0,dropped
+2,2025-02-06,2,0.3,dropped
+3,2025-02-06,1,1.06,expired
+7,2025-02-06,2,0.31,dropped
+9,2025-02-06,2,0.49,prep error
+10,2025-02-06,1,1.01,dropped
+10,2025-02-06,2,0.38,expired
+1,2025-02-07,1,1.55,dropped
+1,2025-02-07,2,0.37,expired
+2,2025-02-07,1,1.17,prep error
+3,2025-02-07,1,1.17,prep error
+3,2025-02-07,2,0.33,overproduction
+6,2025-02-07,1,1.29,expired
+9,2025-02-07,1,1.39,dropped
+9,2025-02-07,2,0.44,prep error
+9,2025-02-07,3,0.47,expired
+10,2025-02-07,1,1.95,expired
+10,2025-02-07,2,0.58,overproduction
+10,2025-02-07,3,0.52,overproduction
+11,2025-02-07,1,1.56,dropped
+11,2025-02-07,2,0.51,prep error
+1,2025-02-08,1,1.56,overproduction
+1,2025-02-08,2,0.35,overproduction
+4,2025-02-08,2,0.34,returned plate
+5,2025-02-08,1,1.19,dropped
+7,2025-02-08,1,2.06,overproduction
+7,2025-02-08,2,0.69,prep error
+7,2025-02-08,3,0.68,prep error
+7,2025-02-08,4,0.51,dropped
+10,2025-02-08,1,1.16,returned plate
+10,2025-02-08,2,0.38,expired
+10,2025-02-08,3,0.57,prep error
+11,2025-02-08,1,1.57,overproduction
+11,2025-02-08,2,0.42,dropped
+12,2025-02-08,1,1.19,returned plate
+12,2025-02-08,2,0.32,expired
+7,2025-02-09,1,1.11,expired
+7,2025-02-09,2,0.47,overproduction
+9,2025-02-09,1,1.48,prep error
+9,2025-02-09,3,0.47,overproduction
+3,2025-02-11,2,0.38,returned plate
+10,2025-02-11,1,1.16,expired
+10,2025-02-11,2,0.51,returned plate
+6,2025-02-12,2,0.3,overproduction
+1,2025-02-13,1,1.24,expired
+8,2025-02-13,1,1.17,overproduction
+10,2025-02-13,2,0.33,dropped
+11,2025-02-13,1,1.06,returned plate
+1,2025-02-14,1,1.95,returned plate
+1,2025-02-14,2,0.69,expired
+1,2025-02-14,3,0.64,returned plate
+4,2025-02-14,1,1.25,returned plate
+6,2025-02-14,1,1.99,expired
+6,2025-02-14,2,0.4,dropped
+6,2025-02-14,4,0.47,expired
+7,2025-02-14,1,1.09,expired
+7,2025-02-14,2,0.38,overproduction
+8,2025-02-14,2,0.3,dropped
+9,2025-02-14,2,0.35,expired
+10,2025-02-14,1,2.07,expired
+10,2025-02-14,2,0.5,expired
+10,2025-02-14,3,0.66,prep error
+11,2025-02-14,1,1.43,dropped
+11,2025-02-14,2,0.4,expired
+1,2025-02-15,1,1.39,overproduction
+1,2025-02-15,2,0.35,returned plate
+4,2025-02-15,1,1.33,prep error
+4,2025-02-15,2,0.39,returned plate
+5,2025-02-15,1,1.09,prep error
+6,2025-02-15,1,1.28,prep error
+6,2025-02-15,2,0.55,returned plate
+6,2025-02-15,3,0.63,prep error
+9,2025-02-15,1,1.35,dropped
+9,2025-02-15,2,0.49,overproduction
+10,2025-02-15,1,0.99,prep error
+11,2025-02-15,1,1.04,overproduction
+11,2025-02-15,2,0.31,overproduction
+3,2025-02-16,2,0.33,expired
+8,2025-02-16,2,0.39,overproduction
+3,2025-02-18,1,0.99,dropped
+6,2025-02-19,2,0.34,expired
+1,2025-02-20,1,1.36,overproduction
+1,2025-02-20,2,0.34,returned plate
+2,2025-02-20,1,1.12,expired
+3,2025-02-20,1,1.15,overproduction
+3,2025-02-20,2,0.42,expired
+4,2025-02-20,1,1.34,dropped
+6,2025-02-20,1,1.01,dropped
+10,2025-02-20,2,0.36,dropped
+12,2025-02-20,1,1.02,prep error
+12,2025-02-20,2,0.31,prep error
+1,2025-02-21,1,1.02,expired
+6,2025-02-21,1,1.13,dropped
+7,2025-02-21,1,0.98,expired
+7,2025-02-21,2,0.37,returned plate
+8,2025-02-21,1,1.08,returned plate
+8,2025-02-21,2,0.52,returned plate
+9,2025-02-21,1,1.37,overproduction
+9,2025-02-21,2,0.39,prep error
+1,2025-02-22,2,0.33,overproduction
+2,2025-02-22,1,1.0,dropped
+4,2025-02-22,1,1.21,overproduction
+5,2025-02-22,1,1.38,returned plate
+5,2025-02-22,2,0.34,returned plate
+5,2025-02-22,3,0.5,prep error
+7,2025-02-22,1,1.45,overproduction
+7,2025-02-22,2,0.37,overproduction
+8,2025-02-22,1,1.45,returned plate
+8,2025-02-22,2,0.31,prep error
+9,2025-02-22,1,1.16,dropped
+9,2025-02-22,2,0.38,dropped
+10,2025-02-22,1,1.42,overproduction
+10,2025-02-22,2,0.41,overproduction
+11,2025-02-22,1,1.38,overproduction
+11,2025-02-22,2,0.47,expired
+1,2025-02-23,2,0.3,overproduction
+6,2025-02-23,1,1.11,prep error
+6,2025-02-23,2,0.35,overproduction
+2,2025-02-24,2,0.32,dropped
+8,2025-02-24,1,1.07,expired
+4,2025-02-25,2,0.36,overproduction
+1,2025-02-26,1,1.29,returned plate
+5,2025-02-26,1,1.22,expired
+5,2025-02-26,2,0.41,expired
+7,2025-02-26,1,1.02,expired
+7,2025-02-26,2,0.3,returned plate
+10,2025-02-26,1,1.2,overproduction
+5,2025-02-27,1,1.17,overproduction
+11,2025-02-27,1,1.03,expired
+12,2025-02-27,2,0.31,prep error
+1,2025-02-28,1,1.35,prep error
+1,2025-02-28,2,0.62,returned plate
+4,2025-02-28,1,1.41,returned plate
+4,2025-02-28,2,0.39,expired
+6,2025-02-28,1,1.6,overproduction
+6,2025-02-28,2,0.48,returned plate
+6,2025-02-28,4,0.47,prep error
+7,2025-02-28,1,1.27,expired
+7,2025-02-28,2,0.44,dropped
+8,2025-02-28,2,0.31,overproduction
+9,2025-02-28,1,1.83,dropped
+9,2025-02-28,2,0.6,returned plate
+9,2025-02-28,4,0.43,prep error
+10,2025-02-28,1,1.36,dropped
+11,2025-02-28,1,1.06,prep error
+2,2025-03-01,1,1.33,prep error
+2,2025-03-01,2,0.41,overproduction
+4,2025-03-01,1,1.16,prep error
+4,2025-03-01,2,0.42,returned plate
+5,2025-03-01,1,1.24,prep error
+6,2025-03-01,1,1.18,expired
+6,2025-03-01,2,0.55,returned plate
+9,2025-03-01,1,1.39,expired
+9,2025-03-01,2,0.33,prep error
+11,2025-03-01,1,1.1,prep error
+11,2025-03-01,2,0.34,overproduction
+12,2025-03-01,1,0.99,prep error
+5,2025-03-02,1,1.0,overproduction
+5,2025-03-02,2,0.44,dropped
+8,2025-03-02,1,0.97,prep error
+7,2025-03-03,2,0.37,prep error
+3,2025-03-04,1,1.15,overproduction
+1,2025-03-05,1,1.87,overproduction
+1,2025-03-05,2,0.5,prep error
+1,2025-03-05,3,0.49,returned plate
+2,2025-03-05,1,1.0,overproduction
+2,2025-03-05,2,0.39,overproduction
+4,2025-03-05,1,1.05,dropped
+4,2025-03-05,2,0.34,prep error
+5,2025-03-05,1,1.1,prep error
+9,2025-03-05,1,0.98,expired
+10,2025-03-05,2,0.34,prep error
+6,2025-03-06,1,1.25,expired
+6,2025-03-06,2,0.34,overproduction
+7,2025-03-06,1,1.06,expired
+9,2025-03-06,1,0.98,returned plate
+12,2025-03-06,1,0.98,expired
+1,2025-03-07,1,1.88,returned plate
+1,2025-03-07,2,0.6,expired
+1,2025-03-07,3,0.63,overproduction
+1,2025-03-07,4,0.43,dropped
+2,2025-03-07,1,0.96,returned plate
+3,2025-03-07,2,0.31,returned plate
+4,2025-03-07,1,1.39,expired
+4,2025-03-07,2,0.45,returned plate
+6,2025-03-07,1,1.09,overproduction
+6,2025-03-07,2,0.4,dropped
+7,2025-03-07,1,1.75,returned plate
+7,2025-03-07,2,0.52,overproduction
+7,2025-03-07,3,0.6,dropped
+7,2025-03-07,4,0.46,returned plate
+9,2025-03-07,1,0.97,expired
+9,2025-03-07,2,0.31,overproduction
+11,2025-03-07,1,1.21,expired
+12,2025-03-07,1,1.02,prep error
+12,2025-03-07,2,0.4,returned plate
+1,2025-03-08,1,1.37,dropped
+1,2025-03-08,2,0.49,prep error
+1,2025-03-08,3,0.49,returned plate
+2,2025-03-08,1,1.43,prep error
+2,2025-03-08,2,0.38,expired
+4,2025-03-08,1,1.02,overproduction
+6,2025-03-08,1,1.37,expired
+8,2025-03-08,1,1.02,prep error
+9,2025-03-08,2,0.39,prep error
+10,2025-03-08,1,1.17,expired
+10,2025-03-08,2,0.38,prep error
+4,2025-03-09,1,1.18,returned plate
+10,2025-03-09,1,1.36,overproduction
+10,2025-03-09,2,0.43,expired
+4,2025-03-10,2,0.38,expired
+1,2025-03-11,1,0.96,returned plate
+5,2025-03-11,1,1.06,prep error
+7,2025-03-11,1,1.31,dropped
+2,2025-03-12,2,0.3,returned plate
+6,2025-03-12,1,1.01,prep error
+6,2025-03-12,2,0.39,dropped
+7,2025-03-12,1,1.53,prep error
+7,2025-03-12,2,0.48,prep error
+7,2025-03-12,3,0.51,dropped
+8,2025-03-12,1,61.11,equipment failure
+8,2025-03-12,2,15.05,equipment failure
+8,2025-03-12,3,16.61,equipment failure
+8,2025-03-12,4,10.12,equipment failure
+8,2025-03-12,5,35.73,equipment failure
+8,2025-03-12,6,39.34,equipment failure
+8,2025-03-12,7,10.74,equipment failure
+8,2025-03-12,8,11.09,equipment failure
+8,2025-03-12,9,10.29,equipment failure
+8,2025-03-12,10,8.15,equipment failure
+8,2025-03-12,11,12.79,equipment failure
+8,2025-03-12,16,44.76,equipment failure
+8,2025-03-12,26,9.44,equipment failure
+8,2025-03-12,27,6.68,equipment failure
+8,2025-03-12,28,7.38,equipment failure
+8,2025-03-12,29,7.58,equipment failure
+8,2025-03-12,30,4.8,equipment failure
+8,2025-03-12,31,9.03,equipment failure
+8,2025-03-12,50,87.33,equipment failure
+11,2025-03-12,1,0.94,prep error
+3,2025-03-13,1,1.32,returned plate
+3,2025-03-13,2,0.35,returned plate
+5,2025-03-13,1,1.0,dropped
+5,2025-03-13,2,0.37,dropped
+7,2025-03-13,1,1.2,overproduction
+11,2025-03-13,1,1.06,overproduction
+11,2025-03-13,2,0.52,dropped
+1,2025-03-14,1,1.06,dropped
+3,2025-03-14,1,1.26,returned plate
+3,2025-03-14,2,0.39,overproduction
+4,2025-03-14,1,1.04,expired
+8,2025-03-14,1,1.08,prep error
+8,2025-03-14,2,0.3,overproduction
+10,2025-03-14,1,1.72,returned plate
+10,2025-03-14,2,0.3,dropped
+10,2025-03-14,4,0.52,dropped
+11,2025-03-14,2,0.35,returned plate
+12,2025-03-14,1,1.0,expired
+12,2025-03-14,2,0.33,overproduction
+1,2025-03-15,1,1.04,returned plate
+2,2025-03-15,1,1.05,expired
+3,2025-03-15,1,1.6,dropped
+3,2025-03-15,2,0.52,prep error
+3,2025-03-15,3,0.46,overproduction
+4,2025-03-15,1,1.49,expired
+4,2025-03-15,2,0.29,dropped
+5,2025-03-15,1,1.22,returned plate
+5,2025-03-15,2,0.49,expired
+7,2025-03-15,1,1.26,prep error
+7,2025-03-15,2,0.46,overproduction
+9,2025-03-15,1,1.12,returned plate
+9,2025-03-15,2,0.38,overproduction
+10,2025-03-15,1,1.1,overproduction
+10,2025-03-15,2,0.32,overproduction
+12,2025-03-15,2,0.36,returned plate
+1,2025-03-16,1,1.02,overproduction
+4,2025-03-16,2,0.31,expired
+7,2025-03-16,1,1.26,dropped
+7,2025-03-16,2,0.36,dropped
+10,2025-03-16,1,1.32,dropped
+7,2025-03-17,1,0.94,overproduction
+7,2025-03-17,2,0.32,returned plate
+9,2025-03-17,1,0.96,returned plate
+1,2025-03-18,1,1.68,overproduction
+1,2025-03-18,2,0.47,dropped
+3,2025-03-18,1,1.06,dropped
+4,2025-03-18,1,1.07,dropped
+5,2025-03-18,1,0.99,prep error
+7,2025-03-18,1,1.1,returned plate
+10,2025-03-18,1,1.3,overproduction
+10,2025-03-18,2,0.41,expired
+1,2025-03-19,1,1.16,dropped
+1,2025-03-19,2,0.46,prep error
+5,2025-03-19,2,0.31,expired
+7,2025-03-19,1,0.94,dropped
+7,2025-03-19,2,0.29,expired
+10,2025-03-19,1,1.19,expired
+10,2025-03-19,2,0.3,returned plate
+11,2025-03-19,2,0.35,overproduction
+6,2025-03-20,1,1.0,overproduction
+7,2025-03-20,1,1.44,dropped
+7,2025-03-20,2,0.38,expired
+7,2025-03-20,3,0.56,expired
+10,2025-03-20,1,1.09,dropped
+11,2025-03-20,1,0.94,returned plate
+12,2025-03-20,1,1.06,overproduction
+1,2025-03-21,1,1.16,expired
+2,2025-03-21,1,1.43,prep error
+2,2025-03-21,2,0.52,overproduction
+3,2025-03-21,1,0.95,expired
+4,2025-03-21,1,1.17,overproduction
+5,2025-03-21,1,1.0,expired
+5,2025-03-21,2,0.34,prep error
+6,2025-03-21,1,1.74,returned plate
+6,2025-03-21,2,0.38,expired
+7,2025-03-21,1,1.76,returned plate
+7,2025-03-21,2,0.51,returned plate
+7,2025-03-21,3,0.72,overproduction
+8,2025-03-21,1,1.19,dropped
+9,2025-03-21,1,1.48,expired
+9,2025-03-21,2,0.33,prep error
+10,2025-03-21,1,1.71,prep error
+10,2025-03-21,2,0.38,returned plate
+10,2025-03-21,3,0.62,prep error
+12,2025-03-21,1,0.97,prep error
+12,2025-03-21,2,0.31,prep error
+12,2025-03-21,1,34.08,equipment failure
+12,2025-03-21,2,9.83,equipment failure
+12,2025-03-21,3,9.73,equipment failure
+12,2025-03-21,4,7.24,equipment failure
+12,2025-03-21,5,17.25,equipment failure
+12,2025-03-21,6,19.92,equipment failure
+12,2025-03-21,7,6.59,equipment failure
+12,2025-03-21,8,6.5,equipment failure
+12,2025-03-21,9,7.48,equipment failure
+12,2025-03-21,10,6.37,equipment failure
+12,2025-03-21,11,7.84,equipment failure
+12,2025-03-21,16,30.51,equipment failure
+12,2025-03-21,26,8.67,equipment failure
+12,2025-03-21,27,13.71,equipment failure
+12,2025-03-21,28,9.42,equipment failure
+12,2025-03-21,30,5.77,equipment failure
+12,2025-03-21,31,10.86,equipment failure
+12,2025-03-21,50,66.82,equipment failure
+1,2025-03-22,1,1.64,expired
+1,2025-03-22,2,0.29,prep error
+1,2025-03-22,3,0.58,overproduction
+2,2025-03-22,2,0.31,overproduction
+3,2025-03-22,1,1.55,returned plate
+3,2025-03-22,2,0.34,dropped
+3,2025-03-22,3,0.47,returned plate
+4,2025-03-22,1,1.35,expired
+5,2025-03-22,1,1.29,overproduction
+5,2025-03-22,2,0.51,expired
+7,2025-03-22,1,0.96,prep error
+9,2025-03-22,1,1.51,prep error
+9,2025-03-22,2,0.47,returned plate
+9,2025-03-22,3,0.5,returned plate
+9,2025-03-22,4,0.46,expired
+10,2025-03-22,1,1.69,prep error
+10,2025-03-22,2,0.38,overproduction
+11,2025-03-22,1,0.98,prep error
+11,2025-03-23,1,1.14,expired
+1,2025-03-24,1,1.4,prep error
+1,2025-03-24,2,0.31,expired
+1,2025-03-24,3,0.56,dropped
+1,2025-03-24,4,0.49,returned plate
+7,2025-03-24,2,0.32,prep error
+2,2025-03-25,1,1.06,prep error
+2,2025-03-25,2,0.33,expired
+4,2025-03-25,2,0.31,dropped
+7,2025-03-25,2,0.29,prep error
+8,2025-03-25,1,0.99,returned plate
+8,2025-03-25,2,0.33,returned plate
+9,2025-03-25,2,0.49,overproduction
+1,2025-03-26,1,1.18,prep error
+1,2025-03-26,2,0.44,prep error
+6,2025-03-26,2,0.31,expired
+7,2025-03-26,1,1.42,overproduction
+7,2025-03-26,3,0.46,returned plate
+8,2025-03-26,1,1.01,returned plate
+8,2025-03-26,2,0.31,prep error
+12,2025-03-26,1,0.94,expired
+5,2025-03-27,2,0.33,returned plate
+6,2025-03-27,1,0.99,expired
+8,2025-03-27,1,1.05,expired
+8,2025-03-27,2,0.4,expired
+10,2025-03-27,2,0.31,returned plate
+1,2025-03-28,1,1.02,dropped
+2,2025-03-28,1,1.2,prep error
+2,2025-03-28,2,0.35,overproduction
+3,2025-03-28,1,1.12,returned plate
+3,2025-03-28,2,0.35,prep error
+6,2025-03-28,1,1.55,expired
+6,2025-03-28,2,0.34,overproduction
+8,2025-03-28,1,1.3,prep error
+8,2025-03-28,2,0.36,returned plate
+9,2025-03-28,1,1.15,expired
+10,2025-03-28,1,1.19,dropped
+10,2025-03-28,2,0.35,overproduction
+11,2025-03-28,1,1.53,returned plate
+11,2025-03-28,3,0.47,dropped
+11,2025-03-28,4,0.47,dropped
+12,2025-03-28,1,1.05,returned plate
+12,2025-03-28,2,0.36,prep error
+2,2025-03-29,1,1.31,prep error
+2,2025-03-29,2,0.33,prep error
+2,2025-03-29,3,0.5,expired
+3,2025-03-29,1,1.67,dropped
+3,2025-03-29,2,0.68,expired
+3,2025-03-29,3,0.49,expired
+4,2025-03-29,1,1.13,prep error
+4,2025-03-29,2,0.37,prep error
+5,2025-03-29,1,1.19,returned plate
+5,2025-03-29,2,0.47,returned plate
+8,2025-03-29,1,1.23,expired
+8,2025-03-29,2,0.31,expired
+10,2025-03-29,1,1.75,overproduction
+10,2025-03-29,2,0.35,returned plate
+12,2025-03-29,1,1.02,dropped
+12,2025-03-29,2,0.3,returned plate
+1,2025-03-30,2,0.32,expired
+2,2025-03-30,1,1.24,overproduction
+2,2025-03-30,2,0.42,prep error
+10,2025-03-30,1,1.21,expired
+10,2025-03-30,2,0.32,expired
+1,2025-03-31,1,1.13,dropped
+1,2025-03-31,2,0.32,dropped
+9,2025-03-31,1,1.03,prep error
+10,2025-03-31,1,1.35,returned plate
+10,2025-03-31,2,0.53,expired
+3,2025-04-01,1,1.0,overproduction
+10,2025-04-01,1,1.03,prep error
+1,2025-04-02,1,1.41,overproduction
+1,2025-04-02,2,0.32,prep error
+2,2025-04-02,1,0.98,dropped
+7,2025-04-02,1,1.08,expired
+8,2025-04-02,1,1.07,dropped
+8,2025-04-02,2,0.35,overproduction
+9,2025-04-02,2,0.37,prep error
+10,2025-04-02,1,1.03,expired
+12,2025-04-02,1,0.94,dropped
+2,2025-04-03,2,0.29,dropped
+3,2025-04-03,1,1.07,dropped
+3,2025-04-03,2,0.33,dropped
+4,2025-04-03,1,1.21,overproduction
+4,2025-04-03,2,0.35,returned plate
+8,2025-04-03,1,1.0,prep error
+12,2025-04-03,1,1.05,dropped
+1,2025-04-04,1,1.25,overproduction
+2,2025-04-04,1,1.09,overproduction
+3,2025-04-04,1,1.63,dropped
+3,2025-04-04,2,0.35,returned plate
+3,2025-04-04,3,0.5,returned plate
+3,2025-04-04,4,0.5,dropped
+4,2025-04-04,1,1.02,overproduction
+4,2025-04-04,2,0.33,overproduction
+5,2025-04-04,1,1.58,overproduction
+5,2025-04-04,2,0.34,dropped
+6,2025-04-04,1,1.4,prep error
+6,2025-04-04,2,0.44,dropped
+7,2025-04-04,1,1.46,returned plate
+7,2025-04-04,2,0.4,expired
+8,2025-04-04,1,1.0,overproduction
+8,2025-04-04,2,0.5,expired
+9,2025-04-04,1,1.19,dropped
+9,2025-04-04,2,0.56,prep error
+10,2025-04-04,1,1.11,overproduction
+11,2025-04-04,1,1.43,overproduction
+11,2025-04-04,2,0.36,prep error
+11,2025-04-04,4,0.44,prep error
+12,2025-04-04,1,0.99,dropped
+1,2025-04-05,1,1.93,overproduction
+1,2025-04-05,2,0.37,overproduction
+3,2025-04-05,1,1.35,prep error
+3,2025-04-05,2,0.42,prep error
+8,2025-04-05,1,1.13,overproduction
+8,2025-04-05,2,0.32,returned plate
+9,2025-04-05,1,1.26,expired
+10,2025-04-05,1,1.2,returned plate
+10,2025-04-05,2,0.37,overproduction
+12,2025-04-05,1,1.02,prep error
+12,2025-04-05,2,0.49,prep error
+8,2025-04-06,1,0.95,expired
+8,2025-04-06,2,0.5,expired
+9,2025-04-06,1,0.95,expired
+10,2025-04-06,1,1.08,returned plate
+10,2025-04-06,2,0.39,prep error
+2,2025-04-07,1,1.08,dropped
+2,2025-04-07,2,0.36,expired
+7,2025-04-07,1,1.09,returned plate
+9,2025-04-07,2,0.39,overproduction
+10,2025-04-07,2,0.31,overproduction
+1,2025-04-08,1,1.28,prep error
+1,2025-04-08,2,0.41,overproduction
+3,2025-04-08,2,0.29,returned plate
+6,2025-04-08,1,1.09,expired
+7,2025-04-08,2,0.29,expired
+11,2025-04-08,1,0.94,returned plate
+3,2025-04-09,1,1.31,prep error
+5,2025-04-09,2,0.31,dropped
+7,2025-04-09,1,1.15,returned plate
+7,2025-04-09,2,0.35,overproduction
+10,2025-04-09,1,1.0,prep error
+11,2025-04-09,1,1.06,expired
+1,2025-04-10,1,1.67,overproduction
+4,2025-04-10,1,0.97,expired
+4,2025-04-10,2,0.43,dropped
+6,2025-04-10,1,1.21,dropped
+6,2025-04-10,2,0.32,dropped
+7,2025-04-10,2,0.29,prep error
+9,2025-04-10,1,1.02,returned plate
+9,2025-04-10,2,0.34,returned plate
+11,2025-04-10,2,0.29,dropped
+12,2025-04-10,1,1.04,prep error
+12,2025-04-10,2,0.42,dropped
+1,2025-04-11,1,1.57,expired
+1,2025-04-11,2,0.33,prep error
+4,2025-04-11,1,1.22,returned plate
+4,2025-04-11,2,0.29,dropped
+5,2025-04-11,1,1.66,expired
+5,2025-04-11,2,0.4,overproduction
+7,2025-04-11,1,1.14,expired
+7,2025-04-11,2,0.47,expired
+8,2025-04-11,1,0.99,expired
+8,2025-04-11,2,0.38,overproduction
+9,2025-04-11,1,1.43,dropped
+9,2025-04-11,2,0.56,overproduction
+12,2025-04-11,1,1.25,prep error
+12,2025-04-11,2,0.53,overproduction
+1,2025-04-12,1,1.47,returned plate
+1,2025-04-12,2,0.58,dropped
+1,2025-04-12,3,0.53,expired
+2,2025-04-12,1,1.32,prep error
+2,2025-04-12,2,0.52,dropped
+2,2025-04-12,3,0.46,returned plate
+2,2025-04-12,4,0.43,overproduction
+3,2025-04-12,1,0.96,returned plate
+3,2025-04-12,2,0.35,returned plate
+4,2025-04-12,1,1.11,overproduction
+4,2025-04-12,2,0.36,expired
+5,2025-04-12,2,0.35,dropped
+6,2025-04-12,1,0.96,returned plate
+8,2025-04-12,1,1.61,dropped
+8,2025-04-12,2,0.43,returned plate
+8,2025-04-12,3,0.45,prep error
+10,2025-04-12,1,1.8,prep error
+10,2025-04-12,2,0.59,dropped
+10,2025-04-12,3,0.66,expired
+10,2025-04-12,4,0.69,returned plate
+11,2025-04-12,1,1.21,returned plate
+11,2025-04-12,2,0.5,returned plate
+11,2025-04-13,2,0.32,prep error
+12,2025-04-13,2,0.44,returned plate
+5,2025-04-16,1,1.02,overproduction
+5,2025-04-16,2,0.42,dropped
+9,2025-04-16,1,1.17,prep error
+9,2025-04-16,2,0.33,returned plate
+1,2025-04-17,1,1.28,overproduction
+1,2025-04-17,2,0.36,dropped
+2,2025-04-17,1,1.44,dropped
+2,2025-04-17,2,0.36,expired
+3,2025-04-17,1,0.96,prep error
+5,2025-04-17,1,1.46,prep error
+6,2025-04-17,1,1.29,overproduction
+8,2025-04-17,1,1.04,prep error
+11,2025-04-17,1,1.14,returned plate
+11,2025-04-17,2,0.66,overproduction
+1,2025-04-18,1,1.27,overproduction
+1,2025-04-18,2,0.43,prep error
+2,2025-04-18,1,1.07,overproduction
+2,2025-04-18,2,0.34,returned plate
+3,2025-04-18,1,1.67,prep error
+3,2025-04-18,2,0.41,expired
+4,2025-04-18,1,1.21,overproduction
+4,2025-04-18,2,0.32,returned plate
+6,2025-04-18,1,1.55,expired
+7,2025-04-18,1,0.97,prep error
+8,2025-04-18,1,1.44,prep error
+8,2025-04-18,2,0.62,expired
+8,2025-04-18,3,0.49,prep error
+11,2025-04-18,1,1.38,expired
+11,2025-04-18,2,0.33,returned plate
+12,2025-04-18,1,1.17,prep error
+1,2025-04-19,1,1.73,dropped
+1,2025-04-19,2,0.67,dropped
+1,2025-04-19,3,0.55,returned plate
+1,2025-04-19,4,0.53,overproduction
+2,2025-04-19,1,1.3,dropped
+2,2025-04-19,2,0.32,overproduction
+5,2025-04-19,1,0.94,expired
+5,2025-04-19,2,0.39,prep error
+6,2025-04-19,1,1.7,returned plate
+6,2025-04-19,2,0.29,prep error
+6,2025-04-19,3,0.46,expired
+7,2025-04-19,2,0.32,dropped
+8,2025-04-19,2,0.32,dropped
+11,2025-04-19,1,1.43,dropped
+11,2025-04-19,2,0.31,dropped
+11,2025-04-19,3,0.52,expired
+1,2025-04-20,2,0.31,expired
+6,2025-04-20,1,0.96,expired
+6,2025-04-20,2,0.3,expired
+6,2025-04-21,1,1.7,overproduction
+1,2025-04-22,1,1.09,overproduction
+1,2025-04-22,2,0.35,returned plate
+3,2025-04-22,1,1.08,expired
+3,2025-04-22,2,0.33,dropped
+5,2025-04-22,2,0.3,expired
+6,2025-04-22,1,0.96,expired
+7,2025-04-22,1,1.08,overproduction
+9,2025-04-22,1,0.94,dropped
+9,2025-04-23,1,1.12,dropped
+3,2025-04-24,1,1.12,returned plate
+3,2025-04-24,2,0.37,returned plate
+10,2025-04-24,1,0.93,dropped
+11,2025-04-24,2,0.29,overproduction
+1,2025-04-25,1,2.04,prep error
+1,2025-04-25,2,0.54,prep error
+1,2025-04-25,3,0.59,expired
+1,2025-04-25,9,0.48,overproduction
+3,2025-04-25,1,1.65,dropped
+3,2025-04-25,2,0.65,overproduction
+3,2025-04-25,3,0.5,dropped
+4,2025-04-25,1,1.1,overproduction
+5,2025-04-25,1,1.46,dropped
+5,2025-04-25,2,0.36,prep error
+5,2025-04-25,3,0.53,dropped
+6,2025-04-25,1,1.73,returned plate
+6,2025-04-25,2,0.54,overproduction
+7,2025-04-25,1,1.07,prep error
+7,2025-04-25,2,0.31,dropped
+8,2025-04-25,1,1.44,expired
+8,2025-04-25,2,0.58,prep error
+10,2025-04-25,1,1.32,returned plate
+10,2025-04-25,2,0.38,returned plate
+1,2025-04-26,1,2.09,overproduction
+1,2025-04-26,2,0.74,returned plate
+1,2025-04-26,3,0.77,expired
+1,2025-04-26,4,0.55,expired
+2,2025-04-26,1,1.94,returned plate
+2,2025-04-26,2,0.76,returned plate
+2,2025-04-26,4,0.45,expired
+2,2025-04-26,6,1.52,expired
+4,2025-04-26,1,1.13,returned plate
+4,2025-04-26,2,0.56,returned plate
+5,2025-04-26,1,1.25,returned plate
+6,2025-04-26,2,0.37,expired
+11,2025-04-26,1,1.34,overproduction
+12,2025-04-26,1,0.97,overproduction
+12,2025-04-26,2,0.48,dropped
+1,2025-04-27,1,1.15,prep error
+5,2025-04-27,1,1.13,expired
+8,2025-04-27,1,1.1,dropped
+9,2025-04-27,1,1.07,expired
+9,2025-04-27,2,0.31,overproduction
+11,2025-04-27,1,0.98,dropped
+3,2025-04-28,1,1.22,returned plate
+1,2025-04-29,1,1.23,dropped
+1,2025-04-29,2,0.37,dropped
+6,2025-04-29,1,1.01,expired
+6,2025-04-30,1,1.12,expired
+6,2025-04-30,2,0.3,returned plate
+7,2025-04-30,1,1.12,returned plate
+7,2025-04-30,2,0.48,expired
+10,2025-04-30,1,1.45,expired
+10,2025-04-30,2,0.55,prep error
+2,2025-05-01,1,1.18,overproduction
+3,2025-05-01,1,1.22,prep error
+4,2025-05-01,1,0.92,overproduction
+5,2025-05-01,1,1.11,returned plate
+5,2025-05-01,2,0.38,returned plate
+8,2025-05-01,1,1.08,overproduction
+8,2025-05-01,2,0.28,dropped
+9,2025-05-01,1,1.11,overproduction
+9,2025-05-01,2,0.31,prep error
+10,2025-05-01,1,1.22,returned plate
+10,2025-05-01,2,0.38,overproduction
+1,2025-05-02,1,1.42,expired
+1,2025-05-02,2,0.53,dropped
+1,2025-05-02,4,0.51,returned plate
+3,2025-05-02,1,1.29,overproduction
+3,2025-05-02,2,0.41,returned plate
+3,2025-05-02,3,0.45,overproduction
+4,2025-05-02,1,1.18,dropped
+5,2025-05-02,1,1.03,overproduction
+5,2025-05-02,2,0.36,returned plate
+6,2025-05-02,2,0.31,dropped
+7,2025-05-02,1,1.11,returned plate
+7,2025-05-02,2,0.32,expired
+8,2025-05-02,1,1.19,prep error
+8,2025-05-02,2,0.5,prep error
+11,2025-05-02,1,0.94,overproduction
+12,2025-05-02,1,1.32,dropped
+12,2025-05-02,2,0.5,expired
+1,2025-05-03,1,1.58,expired
+1,2025-05-03,2,0.4,overproduction
+2,2025-05-03,1,1.06,prep error
+5,2025-05-03,1,1.01,dropped
+7,2025-05-03,2,0.32,expired
+8,2025-05-03,1,1.04,dropped
+8,2025-05-03,2,0.29,overproduction
+10,2025-05-03,1,0.96,dropped
+10,2025-05-03,2,0.35,dropped
+11,2025-05-03,1,0.97,dropped
+11,2025-05-03,2,0.28,dropped
+1,2025-05-04,1,1.06,overproduction
+1,2025-05-04,2,0.29,returned plate
+3,2025-05-04,1,1.0,prep error
+3,2025-05-04,2,0.28,returned plate
+7,2025-05-04,2,0.28,overproduction
+10,2025-05-04,1,1.12,dropped
+10,2025-05-04,2,0.3,dropped
+1,2025-05-05,1,1.2,returned plate
+1,2025-05-05,2,0.48,returned plate
+10,2025-05-05,2,0.32,returned plate
+12,2025-05-05,2,0.4,overproduction
+3,2025-05-06,1,1.19,expired
+7,2025-05-06,1,1.23,expired
+11,2025-05-06,1,1.0,returned plate
+1,2025-05-07,1,1.23,expired
+1,2025-05-07,2,0.38,prep error
+4,2025-05-07,1,0.94,prep error
+5,2025-05-07,1,0.94,overproduction
+5,2025-05-07,2,0.33,returned plate
+7,2025-05-07,1,1.35,prep error
+10,2025-05-07,1,1.32,dropped
+10,2025-05-07,2,0.28,returned plate
+11,2025-05-07,1,1.09,expired
+11,2025-05-07,2,0.43,overproduction
+1,2025-05-08,1,1.66,returned plate
+1,2025-05-08,2,0.35,expired
+2,2025-05-08,1,1.37,prep error
+2,2025-05-08,2,0.29,overproduction
+3,2025-05-08,1,0.96,expired
+4,2025-05-08,1,1.14,returned plate
+4,2025-05-08,2,0.4,prep error
+5,2025-05-08,1,1.0,prep error
+5,2025-05-08,2,0.34,expired
+7,2025-05-08,1,1.1,overproduction
+7,2025-05-08,2,0.3,dropped
+7,2025-05-08,3,0.45,overproduction
+8,2025-05-08,1,0.94,overproduction
+11,2025-05-08,1,1.73,prep error
+11,2025-05-08,3,0.47,overproduction
+11,2025-05-08,6,1.46,prep error
+1,2025-05-09,1,1.18,prep error
+1,2025-05-09,2,0.31,returned plate
+2,2025-05-09,1,1.13,returned plate
+3,2025-05-09,1,1.54,expired
+3,2025-05-09,2,0.45,dropped
+3,2025-05-09,3,0.49,returned plate
+5,2025-05-09,2,0.35,overproduction
+6,2025-05-09,1,1.61,returned plate
+6,2025-05-09,2,0.47,returned plate
+6,2025-05-09,3,0.48,expired
+6,2025-05-09,4,0.54,dropped
+7,2025-05-09,1,1.6,expired
+7,2025-05-09,2,0.45,expired
+7,2025-05-09,3,0.49,returned plate
+7,2025-05-09,4,0.47,prep error
+9,2025-05-09,1,1.63,returned plate
+9,2025-05-09,2,0.29,overproduction
+9,2025-05-09,3,0.48,dropped
+10,2025-05-09,1,1.77,prep error
+10,2025-05-09,2,0.63,prep error
+10,2025-05-09,3,0.56,expired
+10,2025-05-09,4,0.56,returned plate
+11,2025-05-09,1,1.21,prep error
+12,2025-05-09,1,1.08,dropped
+1,2025-05-10,1,1.4,returned plate
+1,2025-05-10,2,0.47,overproduction
+1,2025-05-10,3,0.45,prep error
+2,2025-05-10,1,1.06,dropped
+3,2025-05-10,1,1.11,expired
+7,2025-05-10,2,0.28,dropped
+12,2025-05-10,1,1.66,prep error
+12,2025-05-10,2,0.42,expired
+12,2025-05-10,3,0.5,returned plate
+3,2025-05-11,1,1.02,dropped
+3,2025-05-11,2,0.52,overproduction
+4,2025-05-11,1,1.6,returned plate
+4,2025-05-11,2,0.64,expired
+5,2025-05-11,1,1.07,dropped
+5,2025-05-11,2,0.33,overproduction
+7,2025-05-11,1,1.03,expired
+8,2025-05-11,1,1.37,expired
+8,2025-05-11,2,0.42,prep error
+9,2025-05-11,1,0.96,dropped
+10,2025-05-11,1,1.47,dropped
+10,2025-05-11,2,0.4,dropped
+1,2025-05-12,1,1.37,dropped
+1,2025-05-12,2,0.34,dropped
+10,2025-05-12,2,0.36,overproduction
+1,2025-05-13,1,0.91,prep error
+7,2025-05-13,1,1.41,returned plate
+7,2025-05-13,2,0.57,expired
+7,2025-05-13,3,0.53,expired
+10,2025-05-13,1,1.18,dropped
+10,2025-05-13,2,0.39,expired
+11,2025-05-13,1,1.21,expired
+1,2025-05-14,1,1.1,dropped
+3,2025-05-14,1,1.37,prep error
+3,2025-05-14,2,0.31,returned plate
+5,2025-05-14,1,0.93,overproduction
+5,2025-05-14,2,0.33,expired
+7,2025-05-14,1,1.14,prep error
+7,2025-05-14,2,0.29,prep error
+8,2025-05-14,2,0.3,dropped
+10,2025-05-14,1,1.2,overproduction
+10,2025-05-14,2,0.39,returned plate
+11,2025-05-14,1,1.27,dropped
+11,2025-05-14,2,0.28,returned plate
+4,2025-05-15,1,1.18,dropped
+4,2025-05-15,2,0.49,dropped
+5,2025-05-15,1,1.05,prep error
+5,2025-05-15,2,0.35,overproduction
+7,2025-05-15,2,0.28,returned plate
+8,2025-05-15,1,1.21,returned plate
+9,2025-05-15,1,0.98,overproduction
+10,2025-05-15,1,0.97,overproduction
+10,2025-05-15,2,0.34,prep error
+1,2025-05-16,1,1.81,overproduction
+1,2025-05-16,2,0.65,returned plate
+1,2025-05-16,3,0.48,expired
+2,2025-05-16,1,1.7,overproduction
+2,2025-05-16,2,0.66,dropped
+2,2025-05-16,3,0.67,overproduction
+3,2025-05-16,1,1.96,overproduction
+3,2025-05-16,2,0.56,expired
+3,2025-05-16,3,0.73,returned plate
+3,2025-05-16,4,0.41,prep error
+4,2025-05-16,1,1.5,overproduction
+4,2025-05-16,2,0.45,dropped
+4,2025-05-16,3,0.72,returned plate
+4,2025-05-16,4,0.43,returned plate
+5,2025-05-16,1,1.1,returned plate
+5,2025-05-16,2,0.28,dropped
+6,2025-05-16,1,1.89,expired
+6,2025-05-16,2,0.55,overproduction
+6,2025-05-16,4,0.5,overproduction
+7,2025-05-16,1,1.16,dropped
+11,2025-05-16,1,1.22,dropped
+11,2025-05-16,2,0.54,returned plate
+12,2025-05-16,1,1.18,overproduction
+12,2025-05-16,2,0.42,dropped
+2,2025-05-17,1,1.25,expired
+2,2025-05-17,2,0.3,dropped
+3,2025-05-17,1,1.0,returned plate
+3,2025-05-17,2,0.36,overproduction
+6,2025-05-17,1,1.54,returned plate
+6,2025-05-17,2,0.45,prep error
+7,2025-05-17,1,1.04,returned plate
+10,2025-05-17,1,1.27,overproduction
+11,2025-05-17,1,1.4,expired
+11,2025-05-17,2,0.34,dropped
+11,2025-05-17,3,0.51,prep error
+12,2025-05-17,2,0.28,prep error
+1,2025-05-18,1,0.95,prep error
+3,2025-05-18,1,0.92,returned plate
+3,2025-05-18,2,0.28,overproduction
+4,2025-05-18,1,0.99,prep error
+7,2025-05-18,1,1.37,overproduction
+7,2025-05-18,2,0.41,expired
+7,2025-05-18,3,0.47,expired
+8,2025-05-18,1,1.2,returned plate
+2,2025-05-19,1,1.39,expired
+2,2025-05-19,2,0.3,prep error
+10,2025-05-19,1,0.96,overproduction
+10,2025-05-19,2,0.3,prep error
+1,2025-05-20,1,1.08,prep error
+8,2025-05-20,1,1.1,prep error
+8,2025-05-20,2,0.29,prep error
+5,2025-05-21,1,1.12,returned plate
+6,2025-05-21,1,0.95,returned plate
+7,2025-05-21,1,1.67,prep error
+7,2025-05-21,2,0.31,expired
+8,2025-05-21,1,1.19,expired
+8,2025-05-21,2,0.37,expired
+12,2025-05-21,1,0.95,dropped
+12,2025-05-21,2,0.29,expired
+1,2025-05-22,1,1.21,returned plate
+1,2025-05-22,2,0.42,expired
+2,2025-05-22,1,1.23,expired
+2,2025-05-22,2,0.34,dropped
+4,2025-05-22,1,1.1,overproduction
+5,2025-05-22,1,1.09,dropped
+5,2025-05-22,2,0.28,prep error
+12,2025-05-22,2,0.28,overproduction
+2,2025-05-23,1,1.07,dropped
+3,2025-05-23,1,1.34,prep error
+4,2025-05-23,1,1.42,expired
+4,2025-05-23,2,0.46,dropped
+4,2025-05-23,3,0.51,returned plate
+5,2025-05-23,1,1.14,overproduction
+5,2025-05-23,2,0.46,dropped
+5,2025-05-23,3,0.5,returned plate
+8,2025-05-23,1,1.9,prep error
+8,2025-05-23,2,0.6,expired
+8,2025-05-23,4,0.48,expired
+9,2025-05-23,1,1.03,expired
+10,2025-05-23,1,1.89,prep error
+10,2025-05-23,2,0.62,returned plate
+10,2025-05-23,3,0.46,dropped
+10,2025-05-23,4,0.47,dropped
+11,2025-05-23,1,1.03,dropped
+12,2025-05-23,2,0.31,expired
+1,2025-05-24,1,1.46,prep error
+1,2025-05-24,2,0.45,expired
+1,2025-05-24,3,0.46,returned plate
+2,2025-05-24,1,1.34,dropped
+2,2025-05-24,2,0.4,expired
+2,2025-05-24,3,0.49,overproduction
+3,2025-05-24,1,1.41,expired
+3,2025-05-24,2,0.42,overproduction
+4,2025-05-24,1,0.96,expired
+5,2025-05-24,1,1.34,overproduction
+6,2025-05-24,1,1.09,returned plate
+7,2025-05-24,1,1.77,expired
+7,2025-05-24,2,0.32,overproduction
+7,2025-05-24,3,0.59,expired
+10,2025-05-24,1,1.98,dropped
+10,2025-05-24,2,0.51,returned plate
+10,2025-05-24,3,0.53,prep error
+11,2025-05-24,1,1.3,expired
+11,2025-05-24,2,0.3,expired
+1,2025-05-25,1,1.45,expired
+1,2025-05-25,2,0.32,prep error
+2,2025-05-25,1,0.96,prep error
+2,2025-05-25,2,0.32,prep error
+3,2025-05-25,1,0.9,returned plate
+5,2025-05-25,2,0.32,expired
+8,2025-05-25,1,0.91,prep error
+8,2025-05-25,2,0.35,expired
+10,2025-05-25,1,1.02,dropped
+11,2025-05-25,2,0.35,prep error
+3,2025-05-26,2,0.33,overproduction
+1,2025-05-27,1,0.92,overproduction
+7,2025-05-27,1,1.0,expired
+9,2025-05-27,1,0.94,overproduction
+12,2025-05-27,1,0.95,dropped
+12,2025-05-27,2,0.31,dropped
+1,2025-05-28,1,1.27,dropped
+1,2025-05-28,2,0.35,prep error
+5,2025-05-28,1,0.91,expired
+7,2025-05-28,1,0.96,dropped
+8,2025-05-28,1,1.52,dropped
+8,2025-05-28,2,0.36,expired
+8,2025-05-28,3,0.47,prep error
+2,2025-05-29,1,1.08,returned plate
+2,2025-05-29,2,0.43,prep error
+3,2025-05-29,1,1.04,prep error
+4,2025-05-29,1,1.36,returned plate
+4,2025-05-29,2,0.33,prep error
+6,2025-05-29,1,1.32,prep error
+6,2025-05-29,2,0.38,dropped
+7,2025-05-29,1,1.38,returned plate
+7,2025-05-29,2,0.36,expired
+8,2025-05-29,1,0.91,overproduction
+9,2025-05-29,1,1.06,prep error
+10,2025-05-29,1,1.12,overproduction
+11,2025-05-29,1,0.93,prep error
+1,2025-05-30,1,3.14,dropped
+1,2025-05-30,2,0.9,dropped
+1,2025-05-30,3,0.84,overproduction
+1,2025-05-30,4,0.67,dropped
+2,2025-05-30,1,2.08,returned plate
+2,2025-05-30,2,0.61,prep error
+2,2025-05-30,11,0.57,prep error
+3,2025-05-30,1,1.63,dropped
+3,2025-05-30,2,0.38,returned plate
+3,2025-05-30,3,0.49,overproduction
+5,2025-05-30,1,1.19,dropped
+5,2025-05-30,2,0.39,prep error
+7,2025-05-30,1,1.37,overproduction
+7,2025-05-30,2,0.46,prep error
+7,2025-05-30,3,0.5,prep error
+8,2025-05-30,1,1.2,prep error
+8,2025-05-30,2,0.34,overproduction
+9,2025-05-30,1,1.25,overproduction
+9,2025-05-30,2,0.4,expired
+10,2025-05-30,1,1.5,returned plate
+10,2025-05-30,2,0.35,overproduction
+12,2025-05-30,1,1.33,returned plate
+12,2025-05-30,2,0.51,returned plate
+1,2025-05-31,1,1.3,dropped
+1,2025-05-31,2,0.34,expired
+3,2025-05-31,2,0.33,returned plate
+5,2025-05-31,1,1.26,overproduction
+6,2025-05-31,1,0.99,prep error
+6,2025-05-31,2,0.34,overproduction
+6,2025-05-31,3,0.49,overproduction
+7,2025-05-31,1,0.94,overproduction
+10,2025-05-31,1,1.45,dropped
+10,2025-05-31,2,0.53,expired
+10,2025-05-31,3,0.45,prep error
+11,2025-05-31,1,1.28,expired
+11,2025-05-31,2,0.29,dropped
+12,2025-05-31,1,0.98,overproduction
+1,2025-06-01,1,1.16,prep error
+1,2025-06-01,2,0.48,expired
+4,2025-06-01,1,0.94,expired
+7,2025-06-01,2,0.28,prep error
+9,2025-06-01,2,0.3,dropped
+10,2025-06-01,1,1.1,dropped
+10,2025-06-01,2,0.35,prep error
+11,2025-06-01,2,0.31,returned plate
+12,2025-06-01,1,1.27,expired
+12,2025-06-01,3,0.46,returned plate
+2,2025-06-02,1,1.21,expired
+3,2025-06-02,1,1.14,overproduction
+3,2025-06-02,2,0.29,returned plate
+10,2025-06-02,1,0.94,overproduction
+10,2025-06-02,2,0.36,expired
+3,2025-06-03,2,0.32,prep error
+7,2025-06-03,1,1.2,returned plate
+3,2025-06-04,1,1.01,prep error
+7,2025-06-04,1,1.24,dropped
+7,2025-06-04,2,0.35,returned plate
+1,2025-06-05,1,1.14,expired
+1,2025-06-05,2,0.34,dropped
+2,2025-06-05,1,1.58,expired
+2,2025-06-05,2,0.42,prep error
+2,2025-06-05,3,0.51,dropped
+3,2025-06-05,1,0.9,prep error
+5,2025-06-05,1,0.94,dropped
+5,2025-06-05,2,0.38,expired
+10,2025-06-05,1,1.58,dropped
+10,2025-06-05,2,0.39,returned plate
+10,2025-06-05,4,0.48,prep error
+12,2025-06-05,1,1.43,expired
+12,2025-06-05,2,0.47,overproduction
+12,2025-06-05,3,0.51,prep error
+1,2025-06-06,1,1.66,overproduction
+1,2025-06-06,2,0.5,prep error
+1,2025-06-06,3,0.58,overproduction
+1,2025-06-06,4,0.44,overproduction
+2,2025-06-06,1,1.29,expired
+2,2025-06-06,2,0.35,expired
+3,2025-06-06,1,1.81,overproduction
+3,2025-06-06,2,0.63,returned plate
+3,2025-06-06,3,0.55,overproduction
+4,2025-06-06,1,0.99,overproduction
+5,2025-06-06,1,1.08,overproduction
+5,2025-06-06,3,0.45,overproduction
+6,2025-06-06,1,0.98,dropped
+7,2025-06-06,1,1.9,prep error
+7,2025-06-06,2,0.41,overproduction
+7,2025-06-06,3,0.49,overproduction
+8,2025-06-06,2,0.28,dropped
+9,2025-06-06,1,1.55,dropped
+9,2025-06-06,2,0.47,returned plate
+9,2025-06-06,3,0.45,dropped
+9,2025-06-06,4,0.49,overproduction
+12,2025-06-06,1,0.9,dropped
+1,2025-06-07,1,1.46,prep error
+1,2025-06-07,2,0.47,expired
+2,2025-06-07,2,0.29,expired
+3,2025-06-07,1,1.01,returned plate
+3,2025-06-07,2,0.29,returned plate
+4,2025-06-07,1,1.09,dropped
+4,2025-06-07,2,0.37,prep error
+7,2025-06-07,2,0.31,overproduction
+8,2025-06-07,1,1.05,returned plate
+8,2025-06-07,2,0.28,dropped
+8,2025-06-07,3,0.43,overproduction
+10,2025-06-07,1,1.37,expired
+10,2025-06-07,2,0.4,returned plate
+10,2025-06-07,3,0.62,returned plate
+10,2025-06-07,4,0.44,returned plate
+1,2025-06-08,1,0.96,prep error
+3,2025-06-08,1,1.12,returned plate
+6,2025-06-08,1,0.95,returned plate
+7,2025-06-08,1,1.23,prep error
+10,2025-06-08,1,1.19,returned plate
+10,2025-06-08,2,0.38,returned plate
+11,2025-06-08,1,0.95,overproduction
+1,2025-06-09,1,0.97,overproduction
+3,2025-06-09,1,0.91,overproduction
+4,2025-06-09,1,1.05,prep error
+4,2025-06-09,2,0.42,expired
+6,2025-06-09,2,0.29,prep error
+10,2025-06-09,1,0.91,returned plate
+3,2025-06-10,1,0.95,expired
+9,2025-06-10,1,0.94,prep error
+3,2025-06-11,1,1.14,prep error
+3,2025-06-11,2,0.34,dropped
+7,2025-06-11,1,1.32,returned plate
+7,2025-06-11,2,0.36,overproduction
+4,2025-06-12,1,1.1,overproduction
+8,2025-06-12,1,1.67,returned plate
+8,2025-06-12,3,0.52,prep error
+10,2025-06-12,1,1.15,returned plate
+10,2025-06-12,2,0.3,dropped
+11,2025-06-12,1,1.11,overproduction
+11,2025-06-12,2,0.46,dropped
+12,2025-06-12,2,0.28,overproduction
+1,2025-06-13,1,0.98,returned plate
+1,2025-06-13,2,0.28,dropped
+2,2025-06-13,1,1.93,returned plate
+2,2025-06-13,2,0.44,expired
+3,2025-06-13,1,0.99,overproduction
+4,2025-06-13,1,1.06,returned plate
+4,2025-06-13,2,0.32,prep error
+6,2025-06-13,1,1.35,dropped
+6,2025-06-13,2,0.49,prep error
+7,2025-06-13,1,1.87,overproduction
+7,2025-06-13,2,0.49,prep error
+7,2025-06-13,3,0.48,dropped
+8,2025-06-13,1,1.03,prep error
+8,2025-06-13,2,0.28,prep error
+9,2025-06-13,1,1.01,overproduction
+10,2025-06-13,1,1.85,expired
+10,2025-06-13,2,0.64,prep error
+10,2025-06-13,3,0.61,overproduction
+10,2025-06-13,4,0.46,expired
+11,2025-06-13,1,1.35,prep error
+11,2025-06-13,2,0.35,expired
+11,2025-06-13,3,0.52,expired
+12,2025-06-13,1,1.23,overproduction
+1,2025-06-14,1,1.34,dropped
+1,2025-06-14,2,0.43,expired
+1,2025-06-14,3,0.47,expired
+2,2025-06-14,1,0.9,prep error
+3,2025-06-14,1,1.32,prep error
+4,2025-06-14,2,0.31,expired
+5,2025-06-14,1,1.49,expired
+5,2025-06-14,2,0.48,expired
+5,2025-06-14,3,0.45,expired
+6,2025-06-14,1,1.32,dropped
+6,2025-06-14,2,0.38,returned plate
+7,2025-06-14,1,1.69,overproduction
+7,2025-06-14,2,0.45,dropped
+7,2025-06-14,3,0.54,prep error
+7,2025-06-14,4,0.42,expired
+10,2025-06-14,1,1.88,overproduction
+10,2025-06-14,2,0.54,overproduction
+10,2025-06-14,3,0.54,dropped
+10,2025-06-14,4,0.48,dropped
+12,2025-06-14,1,1.26,prep error
+12,2025-06-14,2,0.35,overproduction
+1,2025-06-15,1,0.98,returned plate
+1,2025-06-15,2,0.34,expired
+4,2025-06-15,1,0.91,expired
+4,2025-06-15,2,0.3,returned plate
+6,2025-06-15,2,0.32,prep error
+7,2025-06-15,1,1.46,prep error
+7,2025-06-15,2,0.4,expired
+2,2025-06-16,1,1.25,overproduction
+3,2025-06-17,1,1.45,dropped
+7,2025-06-17,1,0.89,expired
+7,2025-06-17,2,0.32,returned plate
+10,2025-06-17,1,1.12,prep error
+10,2025-06-17,2,0.39,dropped
+11,2025-06-17,1,1.22,returned plate
+11,2025-06-17,2,0.3,overproduction
+11,2025-06-17,3,0.71,returned plate
+1,2025-06-18,1,0.89,returned plate
+1,2025-06-18,2,0.35,returned plate
+6,2025-06-18,2,0.49,returned plate
+7,2025-06-18,1,0.95,overproduction
+10,2025-06-18,1,1.17,returned plate
+12,2025-06-18,1,0.98,returned plate
+1,2025-06-19,2,0.32,expired
+2,2025-06-19,1,0.92,dropped
+2,2025-06-19,2,0.29,prep error
+5,2025-06-19,1,1.05,expired
+7,2025-06-19,2,0.29,dropped
+8,2025-06-19,1,1.16,expired
+8,2025-06-19,2,0.34,expired
+10,2025-06-19,1,1.24,returned plate
+10,2025-06-19,2,0.44,returned plate
+11,2025-06-19,1,1.17,prep error
+11,2025-06-19,2,0.41,expired
+2,2025-06-20,1,2.18,returned plate
+2,2025-06-20,2,0.71,prep error
+2,2025-06-20,3,0.52,overproduction
+3,2025-06-20,1,1.23,overproduction
+5,2025-06-20,1,1.45,expired
+5,2025-06-20,2,0.44,overproduction
+7,2025-06-20,1,1.35,prep error
+7,2025-06-20,2,0.4,returned plate
+7,2025-06-20,3,0.51,overproduction
+8,2025-06-20,1,0.94,returned plate
+8,2025-06-20,2,0.29,returned plate
+10,2025-06-20,1,1.24,returned plate
+10,2025-06-20,2,0.3,overproduction
+10,2025-06-20,3,0.47,returned plate
+11,2025-06-20,1,1.36,expired
+11,2025-06-20,2,0.37,prep error
+11,2025-06-20,3,0.51,dropped
+12,2025-06-20,1,1.46,overproduction
+12,2025-06-20,2,0.27,prep error
+1,2025-06-21,1,1.32,expired
+1,2025-06-21,2,0.38,expired
+2,2025-06-21,1,0.95,prep error
+3,2025-06-21,1,1.05,returned plate
+3,2025-06-21,2,0.38,prep error
+5,2025-06-21,1,0.92,dropped
+5,2025-06-21,2,0.36,overproduction
+6,2025-06-21,1,1.3,expired
+6,2025-06-21,2,0.33,returned plate
+6,2025-06-21,3,0.5,prep error
+7,2025-06-21,1,1.24,returned plate
+7,2025-06-21,2,0.33,expired
+7,2025-06-21,3,0.48,dropped
+9,2025-06-21,1,1.52,prep error
+9,2025-06-21,2,0.38,dropped
+9,2025-06-21,3,0.48,dropped
+11,2025-06-21,1,1.57,dropped
+11,2025-06-21,2,0.44,dropped
+1,2025-06-22,1,1.4,prep error
+1,2025-06-22,2,0.7,returned plate
+2,2025-06-22,1,0.92,overproduction
+2,2025-06-22,2,0.3,expired
+2,2025-06-22,4,0.44,expired
+7,2025-06-22,1,0.89,prep error
+7,2025-06-22,2,0.36,prep error
+8,2025-06-22,1,1.18,dropped
+8,2025-06-22,2,0.31,expired
+3,2025-06-23,1,1.08,overproduction
+3,2025-06-23,2,0.47,returned plate
+6,2025-06-23,1,1.27,overproduction
+6,2025-06-23,2,0.46,overproduction
+7,2025-06-23,1,0.98,overproduction
+11,2025-06-23,1,1.0,expired
+3,2025-06-24,1,0.93,prep error
+11,2025-06-24,1,0.88,returned plate
+1,2025-06-25,2,0.29,dropped
+2,2025-06-25,1,0.9,prep error
+3,2025-06-25,1,1.04,dropped
+3,2025-06-25,2,0.35,prep error
+6,2025-06-25,1,1.4,expired
+6,2025-06-25,2,0.48,returned plate
+7,2025-06-25,1,1.18,returned plate
+12,2025-06-25,1,1.13,overproduction
+2,2025-06-26,1,1.05,returned plate
+7,2025-06-26,1,1.23,returned plate
+7,2025-06-26,2,0.39,dropped
+11,2025-06-26,1,1.19,expired
+11,2025-06-26,2,0.33,prep error
+12,2025-06-26,1,1.34,overproduction
+1,2025-06-27,1,2.02,prep error
+1,2025-06-27,2,0.48,dropped
+1,2025-06-27,4,0.52,expired
+3,2025-06-27,1,1.53,prep error
+3,2025-06-27,2,0.29,prep error
+4,2025-06-27,1,0.9,overproduction
+4,2025-06-27,2,0.28,returned plate
+5,2025-06-27,1,1.4,overproduction
+5,2025-06-27,2,0.34,overproduction
+5,2025-06-27,3,0.45,overproduction
+6,2025-06-27,1,0.99,expired
+7,2025-06-27,2,0.28,overproduction
+8,2025-06-27,1,1.47,overproduction
+8,2025-06-27,2,0.49,dropped
+9,2025-06-27,1,1.11,expired
+9,2025-06-27,2,0.48,returned plate
+10,2025-06-27,1,1.43,prep error
+10,2025-06-27,2,0.36,dropped
+11,2025-06-27,1,1.16,expired
+11,2025-06-27,2,0.34,expired
+12,2025-06-27,1,1.38,dropped
+12,2025-06-27,2,0.28,prep error
+1,2025-06-28,1,1.26,expired
+1,2025-06-28,2,0.48,returned plate
+1,2025-06-28,3,0.44,dropped
+2,2025-06-28,1,1.04,expired
+2,2025-06-28,2,0.28,expired
+3,2025-06-28,1,1.11,overproduction
+3,2025-06-28,2,0.35,expired
+5,2025-06-28,1,0.98,prep error
+5,2025-06-28,2,0.27,overproduction
+7,2025-06-28,1,0.99,prep error
+8,2025-06-28,1,1.57,prep error
+8,2025-06-28,2,0.43,overproduction
+8,2025-06-28,3,0.45,returned plate
+9,2025-06-28,1,1.35,prep error
+9,2025-06-28,2,0.36,prep error
+10,2025-06-28,1,1.62,returned plate
+10,2025-06-28,2,0.5,overproduction
+10,2025-06-28,3,0.48,expired
+10,2025-06-28,4,0.43,dropped
+11,2025-06-28,2,0.3,returned plate
+6,2025-06-29,2,0.29,expired
+9,2025-06-29,1,1.36,returned plate
+9,2025-06-29,2,0.63,overproduction
+10,2025-06-29,2,0.36,overproduction
+10,2025-06-30,1,0.9,dropped
+10,2025-06-30,2,0.29,expired
+1,2025-07-01,1,1.01,returned plate
+1,2025-07-01,2,0.28,returned plate
+5,2025-07-01,1,1.14,expired
+7,2025-07-01,1,0.98,overproduction
+9,2025-07-01,1,1.4,dropped
+9,2025-07-01,2,0.36,expired
+9,2025-07-01,3,0.44,prep error
+12,2025-07-01,1,0.98,returned plate
+12,2025-07-01,2,0.38,dropped
+1,2025-07-02,1,1.3,overproduction
+1,2025-07-02,2,0.36,prep error
+2,2025-07-02,1,1.26,expired
+2,2025-07-02,2,0.28,overproduction
+3,2025-07-02,1,1.38,overproduction
+3,2025-07-02,2,0.39,expired
+8,2025-07-02,1,0.88,dropped
+8,2025-07-02,2,0.37,prep error
+9,2025-07-02,2,0.36,prep error
+10,2025-07-02,1,1.39,prep error
+10,2025-07-02,2,0.27,expired
+12,2025-07-02,1,1.29,returned plate
+12,2025-07-02,2,0.34,prep error
+2,2025-07-03,1,1.34,overproduction
+2,2025-07-03,2,0.42,returned plate
+3,2025-07-03,1,0.93,dropped
+6,2025-07-03,1,1.19,overproduction
+6,2025-07-03,2,0.44,dropped
+7,2025-07-03,1,1.02,overproduction
+8,2025-07-03,2,0.33,expired
+9,2025-07-03,1,0.92,prep error
+11,2025-07-03,1,1.68,returned plate
+11,2025-07-03,2,0.43,dropped
+1,2025-07-04,1,0.97,returned plate
+3,2025-07-04,1,1.33,overproduction
+3,2025-07-04,2,0.59,prep error
+4,2025-07-04,1,0.93,dropped
+7,2025-07-04,1,1.34,prep error
+7,2025-07-04,2,0.39,dropped
+7,2025-07-04,4,0.4,overproduction
+8,2025-07-04,1,1.1,returned plate
+8,2025-07-04,2,0.28,returned plate
+9,2025-07-04,1,0.96,returned plate
+12,2025-07-04,1,1.02,dropped
+1,2025-07-05,1,1.05,overproduction
+1,2025-07-05,2,0.28,expired
+2,2025-07-05,1,0.96,expired
+2,2025-07-05,2,0.3,prep error
+3,2025-07-05,1,2.1,dropped
+3,2025-07-05,2,0.57,overproduction
+3,2025-07-05,3,0.49,overproduction
+4,2025-07-05,2,0.3,expired
+5,2025-07-05,1,1.07,overproduction
+6,2025-07-05,1,0.96,overproduction
+7,2025-07-05,1,0.92,dropped
+7,2025-07-05,2,0.31,expired
+9,2025-07-05,1,1.32,dropped
+9,2025-07-05,2,0.37,returned plate
+10,2025-07-05,1,1.07,returned plate
+10,2025-07-05,2,0.53,prep error
+11,2025-07-05,2,0.28,prep error
+12,2025-07-05,1,1.0,expired
+1,2025-07-06,1,0.9,expired
+5,2025-07-06,1,1.07,dropped
+5,2025-07-06,2,0.28,overproduction
+7,2025-07-06,1,0.97,expired
+7,2025-07-06,2,0.31,returned plate
+11,2025-07-06,2,0.28,expired
+8,2025-07-07,2,0.28,dropped
+10,2025-07-07,2,0.28,dropped
+1,2025-07-08,2,0.27,returned plate
+2,2025-07-08,1,1.05,overproduction
+2,2025-07-08,2,0.28,returned plate
+6,2025-07-08,1,0.93,dropped
+8,2025-07-08,1,0.89,dropped
+8,2025-07-08,2,0.32,overproduction
+9,2025-07-08,1,1.13,returned plate
+10,2025-07-08,1,1.1,returned plate
+1,2025-07-09,1,1.27,overproduction
+3,2025-07-09,1,1.13,prep error
+4,2025-07-09,1,0.94,dropped
+4,2025-07-09,2,0.37,returned plate
+7,2025-07-09,1,1.31,expired
+7,2025-07-09,3,0.47,overproduction
+8,2025-07-09,1,0.92,returned plate
+10,2025-07-09,1,1.03,returned plate
+1,2025-07-10,1,1.07,dropped
+1,2025-07-10,2,0.4,returned plate
+2,2025-07-10,2,0.35,prep error
+3,2025-07-10,1,0.88,expired
+4,2025-07-10,1,0.97,overproduction
+4,2025-07-10,2,0.4,dropped
+6,2025-07-10,1,1.32,overproduction
+6,2025-07-10,2,0.28,expired
+7,2025-07-10,1,1.19,prep error
+7,2025-07-10,2,0.44,expired
+10,2025-07-10,1,1.09,dropped
+10,2025-07-10,2,0.35,returned plate
+1,2025-07-11,1,1.18,dropped
+1,2025-07-11,2,0.51,prep error
+2,2025-07-11,1,1.24,overproduction
+2,2025-07-11,2,0.38,returned plate
+2,2025-07-11,3,0.44,overproduction
+3,2025-07-11,1,1.15,prep error
+3,2025-07-11,2,0.33,dropped
+4,2025-07-11,2,0.27,prep error
+7,2025-07-11,1,2.08,prep error
+7,2025-07-11,2,0.51,expired
+7,2025-07-11,3,0.56,overproduction
+7,2025-07-11,4,0.49,returned plate
+8,2025-07-11,1,1.62,returned plate
+8,2025-07-11,2,0.34,prep error
+8,2025-07-11,3,0.48,returned plate
+8,2025-07-11,4,0.4,prep error
+9,2025-07-11,1,1.51,dropped
+9,2025-07-11,2,0.45,prep error
+10,2025-07-11,1,0.98,overproduction
+11,2025-07-11,1,0.92,expired
+12,2025-07-11,1,1.04,dropped
+1,2025-07-12,1,1.79,returned plate
+1,2025-07-12,2,0.62,overproduction
+1,2025-07-12,3,0.69,expired
+2,2025-07-12,1,1.09,returned plate
+2,2025-07-12,2,0.34,returned plate
+4,2025-07-12,1,0.99,overproduction
+4,2025-07-12,2,0.28,dropped
+5,2025-07-12,1,1.05,dropped
+6,2025-07-12,1,1.28,returned plate
+6,2025-07-12,2,0.33,expired
+7,2025-07-12,1,1.65,dropped
+7,2025-07-12,2,0.38,dropped
+7,2025-07-12,3,0.5,overproduction
+9,2025-07-12,1,1.94,expired
+9,2025-07-12,2,0.72,overproduction
+9,2025-07-12,3,0.47,dropped
+9,2025-07-12,6,1.48,expired
+10,2025-07-12,1,1.02,returned plate
+10,2025-07-12,2,0.34,overproduction
+11,2025-07-12,1,1.36,overproduction
+1,2025-07-13,1,0.86,returned plate
+1,2025-07-13,2,0.32,returned plate
+3,2025-07-13,1,0.92,overproduction
+7,2025-07-13,1,1.01,overproduction
+7,2025-07-13,2,0.28,expired
+8,2025-07-13,1,1.21,dropped
+8,2025-07-13,2,0.29,returned plate
+1,2025-07-14,1,1.01,returned plate
+1,2025-07-14,2,0.36,expired
+9,2025-07-14,1,0.9,dropped
+1,2025-07-15,1,1.29,dropped
+1,2025-07-15,2,0.33,prep error
+5,2025-07-16,1,1.64,prep error
+5,2025-07-16,2,0.43,returned plate
+5,2025-07-16,3,0.6,overproduction
+6,2025-07-16,1,0.89,returned plate
+6,2025-07-16,2,0.27,overproduction
+7,2025-07-16,1,1.35,overproduction
+7,2025-07-16,2,0.35,dropped
+9,2025-07-16,1,0.88,expired
+11,2025-07-16,1,0.99,expired
+11,2025-07-16,2,0.3,returned plate
+1,2025-07-17,2,0.32,returned plate
+2,2025-07-17,1,0.9,expired
+3,2025-07-17,1,0.95,overproduction
+3,2025-07-17,2,0.41,dropped
+8,2025-07-17,1,0.88,returned plate
+10,2025-07-17,1,1.02,expired
+1,2025-07-18,1,1.73,expired
+1,2025-07-18,2,0.46,prep error
+1,2025-07-18,3,0.51,prep error
+2,2025-07-18,1,0.87,returned plate
+2,2025-07-18,2,0.32,returned plate
+3,2025-07-18,1,0.95,expired
+3,2025-07-18,2,0.27,expired
+4,2025-07-18,1,0.87,prep error
+5,2025-07-18,1,1.13,expired
+5,2025-07-18,2,0.3,returned plate
+7,2025-07-18,1,1.31,returned plate
+7,2025-07-18,2,0.35,overproduction
+8,2025-07-18,1,1.08,returned plate
+9,2025-07-18,1,2.28,expired
+9,2025-07-18,2,0.67,overproduction
+9,2025-07-18,3,0.73,returned plate
+9,2025-07-18,4,0.56,prep error
+10,2025-07-18,1,0.93,dropped
+12,2025-07-18,1,1.13,expired
+12,2025-07-18,2,0.28,dropped
+1,2025-07-19,1,0.96,returned plate
+1,2025-07-19,2,0.38,returned plate
+5,2025-07-19,1,0.95,expired
+6,2025-07-19,1,1.31,dropped
+6,2025-07-19,2,0.46,returned plate
+8,2025-07-19,1,1.17,overproduction
+8,2025-07-19,2,0.38,prep error
+8,2025-07-19,3,0.48,expired
+9,2025-07-19,1,1.45,returned plate
+9,2025-07-19,2,0.35,dropped
+10,2025-07-19,1,0.97,expired
+1,2025-07-20,1,1.01,returned plate
+10,2025-07-20,1,1.42,prep error
+10,2025-07-20,2,0.37,dropped
+10,2025-07-20,3,0.53,prep error
+1,2025-07-21,1,0.91,overproduction
+1,2025-07-21,2,0.31,dropped
+6,2025-07-21,2,0.36,prep error
+10,2025-07-21,1,0.88,prep error
+3,2025-07-22,1,1.24,dropped
+3,2025-07-22,2,0.37,overproduction
+3,2025-07-22,3,0.43,expired
+8,2025-07-22,1,0.98,overproduction
+8,2025-07-22,2,0.27,dropped
+10,2025-07-22,1,0.92,returned plate
+10,2025-07-22,2,0.27,overproduction
+11,2025-07-22,1,1.03,dropped
+11,2025-07-22,2,0.34,dropped
+3,2025-07-23,1,1.13,prep error
+3,2025-07-23,2,0.42,returned plate
+3,2025-07-23,3,0.52,returned plate
+3,2025-07-23,4,0.43,returned plate
+7,2025-07-23,1,1.05,overproduction
+10,2025-07-23,1,1.35,prep error
+10,2025-07-23,2,0.32,prep error
+10,2025-07-23,3,0.52,returned plate
+2,2025-07-24,1,0.98,overproduction
+2,2025-07-24,2,0.33,returned plate
+6,2025-07-24,1,1.29,expired
+6,2025-07-24,2,0.31,expired
+7,2025-07-24,1,1.15,expired
+7,2025-07-24,2,0.37,dropped
+8,2025-07-24,1,0.95,overproduction
+9,2025-07-24,1,0.98,prep error
+9,2025-07-24,2,0.32,expired
+12,2025-07-24,1,1.2,prep error
+1,2025-07-25,1,1.17,prep error
+1,2025-07-25,2,0.33,returned plate
+2,2025-07-25,1,0.9,expired
+2,2025-07-25,2,0.32,returned plate
+5,2025-07-25,1,1.14,overproduction
+7,2025-07-25,1,1.55,overproduction
+7,2025-07-25,2,0.47,returned plate
+7,2025-07-25,3,0.48,prep error
+7,2025-07-25,4,0.44,returned plate
+8,2025-07-25,1,1.3,returned plate
+8,2025-07-25,2,0.4,overproduction
+8,2025-07-25,3,0.46,prep error
+11,2025-07-25,1,1.26,overproduction
+11,2025-07-25,2,0.33,expired
+1,2025-07-26,1,1.44,prep error
+1,2025-07-26,2,0.56,returned plate
+1,2025-07-26,3,0.67,overproduction
+1,2025-07-26,4,0.42,overproduction
+2,2025-07-26,1,1.06,expired
+2,2025-07-26,2,0.48,prep error
+3,2025-07-26,1,1.05,returned plate
+4,2025-07-26,1,0.96,expired
+4,2025-07-26,2,0.55,returned plate
+6,2025-07-26,1,1.53,dropped
+6,2025-07-26,2,0.4,dropped
+6,2025-07-26,4,0.47,prep error
+7,2025-07-26,1,1.69,prep error
+7,2025-07-26,2,0.64,expired
+7,2025-07-26,3,0.5,dropped
+8,2025-07-26,1,1.24,prep error
+8,2025-07-26,2,0.42,expired
+9,2025-07-26,1,1.0,expired
+9,2025-07-26,2,0.36,expired
+10,2025-07-26,1,1.73,overproduction
+10,2025-07-26,2,0.52,returned plate
+10,2025-07-26,3,0.52,overproduction
+11,2025-07-26,1,1.1,expired
+11,2025-07-26,2,0.3,returned plate
+1,2025-07-27,2,0.27,overproduction
+3,2025-07-27,1,1.01,prep error
+3,2025-07-27,2,0.27,dropped
+7,2025-07-27,1,0.96,expired
+8,2025-07-27,1,0.86,overproduction
+10,2025-07-27,1,0.91,dropped
+10,2025-07-27,2,0.3,dropped
+3,2025-07-28,2,0.31,returned plate
+3,2025-07-28,1,48.96,equipment failure
+3,2025-07-28,2,15.92,equipment failure
+3,2025-07-28,3,14.85,equipment failure
+3,2025-07-28,4,11.54,equipment failure
+3,2025-07-28,5,32.51,equipment failure
+3,2025-07-28,6,30.58,equipment failure
+3,2025-07-28,7,4.77,equipment failure
+3,2025-07-28,8,10.89,equipment failure
+3,2025-07-28,9,10.77,equipment failure
+3,2025-07-28,10,6.26,equipment failure
+3,2025-07-28,11,11.95,equipment failure
+3,2025-07-28,16,33.35,equipment failure
+3,2025-07-28,17,27.33,equipment failure
+3,2025-07-28,27,9.12,equipment failure
+3,2025-07-28,29,5.75,equipment failure
+3,2025-07-28,30,4.26,equipment failure
+3,2025-07-28,50,93.8,equipment failure
+7,2025-07-29,1,1.04,returned plate
+1,2025-07-30,1,1.36,returned plate
+1,2025-07-30,4,0.43,expired
+3,2025-07-30,2,0.29,prep error
+4,2025-07-30,1,1.05,overproduction
+4,2025-07-30,2,0.35,dropped
+8,2025-07-30,1,0.93,prep error
+8,2025-07-30,2,0.35,expired
+10,2025-07-30,2,0.33,overproduction
+12,2025-07-30,1,0.97,returned plate
+12,2025-07-30,2,0.37,expired
+2,2025-07-31,1,1.0,dropped
+2,2025-07-31,2,0.4,dropped
+3,2025-07-31,1,0.9,returned plate
+3,2025-07-31,2,0.31,prep error
+8,2025-07-31,1,1.01,expired
+8,2025-07-31,2,0.38,overproduction
+10,2025-07-31,1,2.08,expired
+10,2025-07-31,2,0.49,overproduction
+10,2025-07-31,3,0.45,overproduction
+10,2025-07-31,4,0.47,dropped
+1,2025-08-01,1,1.49,overproduction
+1,2025-08-01,2,0.32,returned plate
+2,2025-08-01,1,1.08,prep error
+2,2025-08-01,2,0.35,overproduction
+3,2025-08-01,1,1.35,dropped
+3,2025-08-01,2,0.43,overproduction
+4,2025-08-01,1,0.89,returned plate
+4,2025-08-01,2,0.39,returned plate
+5,2025-08-01,1,0.86,overproduction
+6,2025-08-01,1,1.01,overproduction
+8,2025-08-01,1,0.86,overproduction
+8,2025-08-01,1,47.03,equipment failure
+8,2025-08-01,2,14.22,equipment failure
+8,2025-08-01,3,15.0,equipment failure
+8,2025-08-01,4,11.06,equipment failure
+8,2025-08-01,5,37.58,equipment failure
+8,2025-08-01,6,36.93,equipment failure
+8,2025-08-01,7,14.26,equipment failure
+8,2025-08-01,8,9.99,equipment failure
+8,2025-08-01,9,10.74,equipment failure
+8,2025-08-01,10,9.78,equipment failure
+8,2025-08-01,11,11.23,equipment failure
+8,2025-08-01,13,7.87,equipment failure
+8,2025-08-01,14,18.97,equipment failure
+8,2025-08-01,16,48.28,equipment failure
+8,2025-08-01,17,33.64,equipment failure
+8,2025-08-01,18,84.31,equipment failure
+8,2025-08-01,21,18.6,equipment failure
+8,2025-08-01,26,13.26,equipment failure
+8,2025-08-01,27,18.42,equipment failure
+8,2025-08-01,28,17.79,equipment failure
+8,2025-08-01,29,12.44,equipment failure
+8,2025-08-01,30,9.84,equipment failure
+8,2025-08-01,31,20.15,equipment failure
+8,2025-08-01,50,121.72,equipment failure
+8,2025-08-01,51,6.76,equipment failure
+8,2025-08-01,52,118.74,equipment failure
+9,2025-08-01,1,1.19,prep error
+10,2025-08-01,1,1.25,dropped
+10,2025-08-01,2,0.3,returned plate
+10,2025-08-01,3,0.47,overproduction
+11,2025-08-01,1,1.0,prep error
+11,2025-08-01,2,0.57,returned plate
+1,2025-08-02,1,0.86,overproduction
+1,2025-08-02,2,0.38,dropped
+2,2025-08-02,1,1.12,expired
+3,2025-08-02,1,1.12,overproduction
+3,2025-08-02,2,0.3,returned plate
+4,2025-08-02,1,0.96,dropped
+5,2025-08-02,1,0.98,dropped
+5,2025-08-02,2,0.29,prep error
+6,2025-08-02,1,1.21,expired
+6,2025-08-02,2,0.28,prep error
+7,2025-08-02,1,1.46,prep error
+7,2025-08-02,2,0.53,dropped
+8,2025-08-02,1,1.53,prep error
+8,2025-08-02,2,0.37,expired
+10,2025-08-02,1,1.33,expired
+11,2025-08-02,1,1.55,expired
+11,2025-08-02,2,0.44,dropped
+12,2025-08-02,1,1.2,expired
+12,2025-08-02,2,0.31,expired
+12,2025-08-02,4,0.4,overproduction
+1,2025-08-03,1,1.32,returned plate
+1,2025-08-03,2,0.38,returned plate
+1,2025-08-03,3,0.56,overproduction
+6,2025-08-03,2,0.44,prep error
+2,2025-08-04,1,0.87,overproduction
+10,2025-08-04,1,0.86,overproduction
+11,2025-08-04,1,0.95,prep error
+1,2025-08-05,1,1.1,expired
+1,2025-08-05,2,0.41,dropped
+3,2025-08-05,1,1.09,returned plate
+3,2025-08-05,2,0.44,expired
+4,2025-08-05,1,0.97,overproduction
+7,2025-08-05,2,0.32,returned plate
+10,2025-08-05,1,0.99,overproduction
+10,2025-08-05,2,0.31,prep error
+1,2025-08-06,1,0.95,prep error
+1,2025-08-06,2,0.31,dropped
+2,2025-08-06,1,1.08,expired
+2,2025-08-06,2,0.28,expired
+7,2025-08-06,1,1.36,prep error
+7,2025-08-06,2,0.29,dropped
+7,2025-08-06,3,0.46,dropped
+9,2025-08-06,1,0.86,dropped
+10,2025-08-06,1,1.73,expired
+10,2025-08-06,2,0.62,expired
+10,2025-08-06,3,0.44,prep error
+11,2025-08-06,1,1.21,overproduction
+1,2025-08-07,1,0.93,returned plate
+2,2025-08-07,2,0.34,prep error
+3,2025-08-07,1,1.0,prep error
+3,2025-08-07,2,0.29,overproduction
+5,2025-08-07,1,1.22,overproduction
+5,2025-08-07,2,0.34,returned plate
+7,2025-08-07,1,1.39,overproduction
+7,2025-08-07,2,0.41,expired
+7,2025-08-07,4,0.39,dropped
+10,2025-08-07,1,1.19,prep error
+10,2025-08-07,2,0.39,overproduction
+11,2025-08-07,2,0.3,prep error
+12,2025-08-07,1,1.12,prep error
+12,2025-08-07,2,0.3,overproduction
+6,2025-08-08,1,1.15,dropped
+6,2025-08-08,2,0.41,expired
+7,2025-08-08,1,1.46,overproduction
+7,2025-08-08,2,0.38,overproduction
+9,2025-08-08,1,1.17,dropped
+9,2025-08-08,2,0.38,overproduction
+10,2025-08-08,1,1.53,expired
+10,2025-08-08,2,0.5,returned plate
+12,2025-08-08,1,1.37,dropped
+1,2025-08-09,1,0.92,expired
+2,2025-08-09,1,1.18,dropped
+2,2025-08-09,2,0.37,returned plate
+3,2025-08-09,1,0.87,overproduction
+3,2025-08-09,2,0.27,overproduction
+4,2025-08-09,1,1.35,prep error
+4,2025-08-09,2,0.33,prep error
+5,2025-08-09,1,1.2,overproduction
+5,2025-08-09,2,0.34,dropped
+6,2025-08-09,1,1.75,prep error
+6,2025-08-09,2,0.66,prep error
+6,2025-08-09,3,0.48,dropped
+6,2025-08-09,4,0.52,overproduction
+7,2025-08-09,1,1.37,overproduction
+7,2025-08-09,2,0.46,prep error
+10,2025-08-09,1,1.04,prep error
+10,2025-08-09,2,0.44,prep error
+10,2025-08-09,3,0.43,prep error
+1,2025-08-10,1,0.97,dropped
+5,2025-08-10,1,0.95,dropped
+6,2025-08-10,1,1.15,returned plate
+7,2025-08-10,1,1.3,expired
+12,2025-08-10,1,0.96,prep error
+3,2025-08-11,1,1.31,overproduction
+7,2025-08-11,1,0.86,prep error
+10,2025-08-11,1,0.87,overproduction
+10,2025-08-11,2,0.29,returned plate
+3,2025-08-12,2,0.3,expired
+10,2025-08-12,1,0.88,dropped
+10,2025-08-12,2,0.32,prep error
+11,2025-08-12,1,1.2,dropped
+11,2025-08-12,2,0.32,overproduction
+2,2025-08-13,1,1.3,expired
+2,2025-08-13,2,0.39,dropped
+2,2025-08-13,3,0.53,prep error
+3,2025-08-13,1,1.27,overproduction
+3,2025-08-13,2,0.31,prep error
+3,2025-08-13,3,0.45,prep error
+4,2025-08-13,1,1.16,overproduction
+4,2025-08-13,2,0.33,overproduction
+8,2025-08-13,1,1.17,expired
+8,2025-08-13,2,0.44,dropped
+9,2025-08-13,1,1.08,expired
+10,2025-08-13,1,1.68,prep error
+10,2025-08-13,2,0.33,dropped
+10,2025-08-13,4,0.4,returned plate
+12,2025-08-13,1,0.95,overproduction
+12,2025-08-13,2,0.29,dropped
+1,2025-08-14,1,1.31,expired
+1,2025-08-14,2,0.34,returned plate
+1,2025-08-14,4,0.39,expired
+2,2025-08-14,1,1.34,overproduction
+2,2025-08-14,2,0.43,overproduction
+3,2025-08-14,2,0.27,overproduction
+4,2025-08-14,2,0.28,returned plate
+6,2025-08-14,1,1.18,returned plate
+6,2025-08-14,2,0.38,dropped
+7,2025-08-14,1,1.02,prep error
+8,2025-08-14,2,0.3,overproduction
+9,2025-08-14,1,0.92,overproduction
+10,2025-08-14,1,1.36,returned plate
+10,2025-08-14,2,0.37,expired
+1,2025-08-15,1,1.07,overproduction
+1,2025-08-15,2,0.3,returned plate
+2,2025-08-15,1,1.51,expired
+2,2025-08-15,2,0.62,prep error
+2,2025-08-15,3,0.56,prep error
+2,2025-08-15,4,0.44,dropped
+3,2025-08-15,1,1.26,overproduction
+3,2025-08-15,2,0.33,prep error
+5,2025-08-15,1,1.08,expired
+5,2025-08-15,2,0.37,dropped
+6,2025-08-15,1,1.37,returned plate
+6,2025-08-15,2,0.29,returned plate
+7,2025-08-15,1,0.95,overproduction
+7,2025-08-15,2,0.33,returned plate
+8,2025-08-15,1,1.01,prep error
+12,2025-08-15,1,1.33,prep error
+12,2025-08-15,2,0.27,expired
+1,2025-08-16,1,1.83,overproduction
+1,2025-08-16,2,0.44,dropped
+1,2025-08-16,3,0.5,prep error
+1,2025-08-16,9,0.47,expired
+3,2025-08-16,1,1.38,expired
+3,2025-08-16,2,0.48,prep error
+4,2025-08-16,1,0.88,expired
+5,2025-08-16,1,1.22,prep error
+5,2025-08-16,2,0.37,dropped
+6,2025-08-16,1,1.02,expired
+6,2025-08-16,2,0.32,returned plate
+7,2025-08-16,1,1.44,prep error
+7,2025-08-16,2,0.54,overproduction
+10,2025-08-16,1,1.21,expired
+10,2025-08-16,2,0.3,prep error
+10,2025-08-16,3,0.44,expired
+11,2025-08-16,1,1.25,prep error
+11,2025-08-16,2,0.51,overproduction
+12,2025-08-16,1,1.26,dropped
+1,2025-08-17,1,1.48,returned plate
+1,2025-08-17,3,0.51,returned plate
+2,2025-08-17,1,0.94,prep error
+9,2025-08-17,2,0.31,expired
+12,2025-08-17,1,1.09,prep error
+12,2025-08-17,2,0.3,returned plate
+2,2025-08-18,1,1.22,returned plate
+2,2025-08-18,2,0.28,dropped
+7,2025-08-18,1,0.88,overproduction
+7,2025-08-18,2,0.34,returned plate
+10,2025-08-18,1,0.9,overproduction
+7,2025-08-19,1,0.94,dropped
+9,2025-08-19,1,0.99,expired
+9,2025-08-19,2,0.27,dropped
+1,2025-08-20,1,1.41,returned plate
+1,2025-08-20,2,0.4,dropped
+1,2025-08-20,4,0.41,returned plate
+2,2025-08-20,1,0.92,returned plate
+4,2025-08-20,1,0.9,prep error
+4,2025-08-20,2,0.37,prep error
+7,2025-08-20,1,1.07,prep error
+7,2025-08-20,2,0.32,returned plate
+8,2025-08-20,1,0.99,dropped
+9,2025-08-20,1,0.95,expired
+10,2025-08-20,1,1.08,expired
+12,2025-08-20,1,0.97,overproduction
+3,2025-08-21,1,1.6,prep error
+3,2025-08-21,2,0.27,overproduction
+3,2025-08-21,3,0.42,returned plate
+4,2025-08-21,1,1.42,dropped
+4,2025-08-21,2,0.35,returned plate
+4,2025-08-21,3,0.52,expired
+7,2025-08-21,1,1.29,returned plate
+7,2025-08-21,2,0.46,expired
+7,2025-08-21,3,0.66,overproduction
+7,2025-08-21,4,0.39,expired
+8,2025-08-21,1,0.91,prep error
+8,2025-08-21,2,0.27,prep error
+10,2025-08-21,1,1.04,expired
+12,2025-08-21,2,0.27,expired
+1,2025-08-22,1,1.63,dropped
+1,2025-08-22,2,0.36,returned plate
+2,2025-08-22,1,1.68,expired
+2,2025-08-22,2,0.29,dropped
+3,2025-08-22,1,1.71,returned plate
+3,2025-08-22,2,0.37,expired
+3,2025-08-22,3,0.44,expired
+3,2025-08-22,4,0.46,returned plate
+4,2025-08-22,1,1.67,returned plate
+4,2025-08-22,2,0.41,expired
+4,2025-08-22,3,0.51,returned plate
+4,2025-08-22,4,0.39,overproduction
+5,2025-08-22,2,0.33,returned plate
+6,2025-08-22,1,1.6,overproduction
+6,2025-08-22,2,0.42,returned plate
+6,2025-08-22,3,0.58,returned plate
+6,2025-08-22,4,0.42,returned plate
+7,2025-08-22,1,1.22,prep error
+7,2025-08-22,2,0.44,dropped
+7,2025-08-22,3,0.42,dropped
+8,2025-08-22,2,0.28,returned plate
+9,2025-08-22,1,1.42,prep error
+9,2025-08-22,2,0.61,dropped
+10,2025-08-22,1,1.74,prep error
+10,2025-08-22,2,0.39,returned plate
+10,2025-08-22,3,0.56,expired
+10,2025-08-22,4,0.52,overproduction
+11,2025-08-22,1,1.56,overproduction
+11,2025-08-22,2,0.31,expired
+11,2025-08-22,3,0.47,expired
+12,2025-08-22,1,0.87,prep error
+1,2025-08-23,1,1.01,returned plate
+2,2025-08-23,1,1.49,returned plate
+2,2025-08-23,2,0.41,dropped
+3,2025-08-23,1,1.13,returned plate
+3,2025-08-23,2,0.45,prep error
+6,2025-08-23,1,0.95,dropped
+6,2025-08-23,2,0.28,prep error
+7,2025-08-23,1,1.37,expired
+7,2025-08-23,2,0.38,dropped
+7,2025-08-23,3,0.59,expired
+8,2025-08-23,1,1.08,returned plate
+11,2025-08-23,1,1.7,returned plate
+11,2025-08-23,2,0.44,expired
+11,2025-08-23,3,0.57,prep error
+12,2025-08-23,1,1.37,expired
+12,2025-08-23,3,0.42,overproduction
+3,2025-08-24,1,0.89,prep error
+4,2025-08-24,1,1.14,returned plate
+4,2025-08-24,2,0.28,prep error
+5,2025-08-24,2,0.29,dropped
+1,2025-08-25,2,0.28,overproduction
+4,2025-08-25,1,0.89,overproduction
+10,2025-08-25,1,1.27,returned plate
+10,2025-08-25,2,0.39,expired
+10,2025-08-25,4,0.46,overproduction
+11,2025-08-25,1,1.0,expired
+3,2025-08-26,1,0.9,overproduction
+7,2025-08-26,1,1.04,returned plate
+11,2025-08-26,1,0.88,dropped
+11,2025-08-26,2,0.29,dropped
+12,2025-08-26,1,0.93,expired
+12,2025-08-26,2,0.49,expired
+1,2025-08-27,1,0.9,returned plate
+2,2025-08-27,1,1.09,overproduction
+2,2025-08-27,2,0.33,returned plate
+7,2025-08-27,1,0.88,dropped
+9,2025-08-27,1,1.29,expired
+9,2025-08-27,2,0.48,expired
+10,2025-08-27,1,1.14,prep error
+10,2025-08-27,2,0.29,prep error
+12,2025-08-27,1,1.12,returned plate
+1,2025-08-28,1,1.23,expired
+1,2025-08-28,2,0.42,prep error
+3,2025-08-28,1,1.34,returned plate
+3,2025-08-28,2,0.37,dropped
+4,2025-08-28,1,0.93,prep error
+6,2025-08-28,1,1.02,dropped
+7,2025-08-28,1,1.1,prep error
+8,2025-08-28,1,0.98,expired
+1,2025-08-29,1,0.94,prep error
+1,2025-08-29,2,0.32,expired
+2,2025-08-29,1,1.18,overproduction
+3,2025-08-29,1,1.47,overproduction
+3,2025-08-29,2,0.31,returned plate
+3,2025-08-29,3,0.49,dropped
+4,2025-08-29,1,1.32,returned plate
+4,2025-08-29,2,0.37,returned plate
+5,2025-08-29,1,1.4,dropped
+5,2025-08-29,2,0.43,overproduction
+5,2025-08-29,3,0.42,prep error
+7,2025-08-29,1,0.86,returned plate
+8,2025-08-29,1,1.83,dropped
+8,2025-08-29,2,0.7,expired
+8,2025-08-29,3,0.66,dropped
+8,2025-08-29,4,0.63,overproduction
+10,2025-08-29,1,1.18,returned plate
+10,2025-08-29,2,0.39,returned plate
+1,2025-08-30,1,0.96,expired
+2,2025-08-30,1,1.05,returned plate
+3,2025-08-30,1,1.31,overproduction
+3,2025-08-30,2,0.33,returned plate
+3,2025-08-30,3,0.48,returned plate
+4,2025-08-30,1,1.15,prep error
+4,2025-08-30,3,0.43,overproduction
+6,2025-08-30,1,1.57,overproduction
+6,2025-08-30,2,0.43,overproduction
+7,2025-08-30,2,0.33,overproduction
+8,2025-08-30,1,1.23,overproduction
+8,2025-08-30,2,0.44,prep error
+8,2025-08-30,3,0.53,expired
+9,2025-08-30,2,0.35,dropped
+10,2025-08-30,1,1.09,dropped
+11,2025-08-30,2,0.29,dropped
+12,2025-08-30,1,0.9,expired
+1,2025-08-31,1,1.18,returned plate
+1,2025-08-31,2,0.31,prep error
+8,2025-08-31,1,0.91,prep error
+8,2025-08-31,2,0.34,overproduction
+9,2025-08-31,1,1.19,overproduction
+9,2025-08-31,2,0.35,prep error
+10,2025-08-31,1,0.96,overproduction
+10,2025-08-31,2,0.32,overproduction
+11,2025-08-31,1,1.06,expired
+1,2025-09-01,1,0.89,returned plate
+9,2025-09-01,1,1.03,returned plate
+9,2025-09-01,2,0.32,dropped
+11,2025-09-01,2,0.29,expired
+2,2025-09-02,1,1.06,expired
+2,2025-09-02,2,0.31,returned plate
+3,2025-09-02,1,1.03,returned plate
+4,2025-09-02,1,1.02,expired
+7,2025-09-02,2,0.27,returned plate
+8,2025-09-02,1,1.06,prep error
+11,2025-09-02,1,1.1,dropped
+12,2025-09-02,1,0.97,expired
+12,2025-09-02,3,0.43,returned plate
+1,2025-09-03,1,1.1,returned plate
+1,2025-09-03,2,0.35,prep error
+4,2025-09-03,1,0.94,expired
+6,2025-09-03,1,0.96,dropped
+6,2025-09-03,2,0.39,dropped
+10,2025-09-03,1,0.92,expired
+10,2025-09-03,1,63.81,equipment failure
+10,2025-09-03,2,20.8,equipment failure
+10,2025-09-03,3,17.54,equipment failure
+10,2025-09-03,4,17.04,equipment failure
+10,2025-09-03,5,47.69,equipment failure
+10,2025-09-03,6,43.8,equipment failure
+10,2025-09-03,7,14.57,equipment failure
+10,2025-09-03,8,8.59,equipment failure
+10,2025-09-03,9,12.96,equipment failure
+10,2025-09-03,10,10.81,equipment failure
+10,2025-09-03,11,14.66,equipment failure
+10,2025-09-03,13,5.97,equipment failure
+10,2025-09-03,16,46.18,equipment failure
+10,2025-09-03,17,37.92,equipment failure
+10,2025-09-03,18,64.78,equipment failure
+10,2025-09-03,19,74.13,equipment failure
+10,2025-09-03,26,11.11,equipment failure
+10,2025-09-03,27,15.07,equipment failure
+10,2025-09-03,28,9.04,equipment failure
+10,2025-09-03,30,5.88,equipment failure
+10,2025-09-03,31,12.87,equipment failure
+10,2025-09-03,50,114.18,equipment failure
+10,2025-09-03,51,8.17,equipment failure
+12,2025-09-03,1,1.05,returned plate
+12,2025-09-03,2,0.29,dropped
+1,2025-09-04,1,1.93,returned plate
+1,2025-09-04,2,0.44,expired
+2,2025-09-04,1,1.18,expired
+2,2025-09-04,2,0.36,returned plate
+2,2025-09-04,3,0.43,expired
+4,2025-09-04,2,0.32,prep error
+5,2025-09-04,1,0.87,prep error
+6,2025-09-04,1,1.32,expired
+6,2025-09-04,2,0.32,dropped
+7,2025-09-04,1,0.89,dropped
+8,2025-09-04,1,1.2,returned plate
+8,2025-09-04,2,0.32,overproduction
+9,2025-09-04,1,0.9,prep error
+11,2025-09-04,1,0.92,overproduction
+1,2025-09-05,1,1.47,overproduction
+1,2025-09-05,2,0.51,returned plate
+1,2025-09-05,9,0.46,returned plate
+2,2025-09-05,1,1.92,expired
+2,2025-09-05,2,0.56,expired
+2,2025-09-05,3,0.58,dropped
+3,2025-09-05,1,1.37,returned plate
+3,2025-09-05,2,0.35,prep error
+4,2025-09-05,1,0.91,overproduction
+4,2025-09-05,2,0.27,prep error
+7,2025-09-05,1,1.37,dropped
+7,2025-09-05,2,0.4,prep error
+8,2025-09-05,1,0.94,returned plate
+8,2025-09-05,2,0.46,expired
+9,2025-09-05,1,1.57,returned plate
+9,2025-09-05,2,0.44,dropped
+9,2025-09-05,3,0.53,expired
+11,2025-09-05,1,1.25,overproduction
+11,2025-09-05,2,0.27,overproduction
+12,2025-09-05,1,1.02,expired
+12,2025-09-05,2,0.36,returned plate
+1,2025-09-06,1,1.52,expired
+1,2025-09-06,2,0.4,prep error
+2,2025-09-06,1,0.86,dropped
+3,2025-09-06,1,1.37,returned plate
+3,2025-09-06,2,0.5,expired
+3,2025-09-06,3,0.48,overproduction
+4,2025-09-06,2,0.27,overproduction
+5,2025-09-06,2,0.29,dropped
+8,2025-09-06,1,1.46,expired
+9,2025-09-06,1,1.16,expired
+11,2025-09-06,1,1.25,returned plate
+1,2025-09-07,1,1.02,overproduction
+2,2025-09-07,1,1.16,expired
+2,2025-09-07,2,0.39,prep error
+3,2025-09-07,1,1.3,prep error
+3,2025-09-07,2,0.44,overproduction
+4,2025-09-07,1,1.05,expired
+7,2025-09-07,1,0.93,returned plate
+7,2025-09-07,2,0.31,dropped
+11,2025-09-07,1,1.16,expired
+11,2025-09-07,2,0.27,dropped
+7,2025-09-08,2,0.34,returned plate
+12,2025-09-08,2,0.31,prep error
+5,2025-09-09,1,0.92,expired
+1,2025-09-10,1,1.08,prep error
+8,2025-09-10,1,1.42,overproduction
+8,2025-09-10,2,0.43,returned plate
+9,2025-09-10,1,0.98,overproduction
+10,2025-09-10,1,0.89,overproduction
+12,2025-09-10,2,0.35,prep error
+1,2025-09-11,1,0.89,dropped
+1,2025-09-11,2,0.3,returned plate
+7,2025-09-11,1,1.46,prep error
+7,2025-09-11,2,0.3,prep error
+8,2025-09-11,1,1.22,returned plate
+8,2025-09-11,3,0.42,prep error
+9,2025-09-11,1,0.95,prep error
+9,2025-09-11,2,0.38,prep error
+11,2025-09-11,2,0.38,overproduction
+12,2025-09-11,1,0.98,overproduction
+2,2025-09-12,1,1.58,prep error
+2,2025-09-12,2,0.51,dropped
+3,2025-09-12,1,1.23,returned plate
+3,2025-09-12,2,0.41,expired
+4,2025-09-12,2,0.35,returned plate
+5,2025-09-12,2,0.34,dropped
+8,2025-09-12,1,1.81,overproduction
+8,2025-09-12,2,0.42,returned plate
+8,2025-09-12,4,0.41,expired
+9,2025-09-12,1,0.95,overproduction
+9,2025-09-12,2,0.35,dropped
+10,2025-09-12,1,1.43,overproduction
+10,2025-09-12,2,0.45,expired
+10,2025-09-12,3,0.45,overproduction
+12,2025-09-12,1,1.06,prep error
+12,2025-09-12,2,0.39,returned plate
+1,2025-09-13,1,1.55,prep error
+1,2025-09-13,2,0.5,prep error
+1,2025-09-13,3,0.43,expired
+2,2025-09-13,1,1.15,returned plate
+2,2025-09-13,2,0.37,returned plate
+3,2025-09-13,1,1.08,expired
+3,2025-09-13,2,0.29,expired
+4,2025-09-13,1,0.97,dropped
+4,2025-09-13,2,0.36,dropped
+5,2025-09-13,2,0.32,dropped
+7,2025-09-13,1,1.59,prep error
+7,2025-09-13,2,0.5,overproduction
+7,2025-09-13,4,0.42,returned plate
+10,2025-09-13,1,1.37,prep error
+12,2025-09-13,1,0.98,expired
+12,2025-09-13,2,0.33,prep error
+3,2025-09-14,2,0.27,returned plate
+4,2025-09-14,1,1.2,prep error
+4,2025-09-14,2,0.29,prep error
+7,2025-09-14,2,0.29,prep error
+8,2025-09-14,1,0.86,prep error
+9,2025-09-14,1,1.05,dropped
+2,2025-09-16,1,0.93,prep error
+7,2025-09-16,1,1.34,prep error
+7,2025-09-16,2,0.41,dropped
+4,2025-09-17,1,1.02,returned plate
+4,2025-09-17,2,0.3,expired
+5,2025-09-17,1,0.85,dropped
+5,2025-09-17,2,0.3,overproduction
+7,2025-09-17,1,0.95,expired
+8,2025-09-17,1,1.39,dropped
+8,2025-09-17,2,0.27,dropped
+8,2025-09-17,3,0.5,expired
+9,2025-09-17,1,0.89,expired
+9,2025-09-17,2,0.27,expired
+11,2025-09-17,1,1.05,overproduction
+3,2025-09-18,1,1.35,overproduction
+5,2025-09-18,1,1.17,returned plate
+7,2025-09-18,1,1.21,expired
+7,2025-09-18,2,0.3,prep error
+9,2025-09-18,1,0.87,prep error
+9,2025-09-18,2,0.32,overproduction
+10,2025-09-18,1,0.93,expired
+10,2025-09-18,2,0.34,prep error
+11,2025-09-18,1,1.11,dropped
+1,2025-09-19,1,0.97,overproduction
+1,2025-09-19,2,0.27,expired
+3,2025-09-19,1,1.07,dropped
+3,2025-09-19,2,0.37,overproduction
+4,2025-09-19,1,1.62,expired
+4,2025-09-19,3,0.48,overproduction
+5,2025-09-19,1,1.27,expired
+5,2025-09-19,2,0.29,overproduction
+7,2025-09-19,1,1.16,prep error
+7,2025-09-19,2,0.34,overproduction
+8,2025-09-19,1,1.17,overproduction
+8,2025-09-19,2,0.28,expired
+10,2025-09-19,1,1.22,returned plate
+1,2025-09-20,1,1.09,expired
+1,2025-09-20,2,0.3,overproduction
+2,2025-09-20,1,1.0,overproduction
+2,2025-09-20,2,0.31,overproduction
+3,2025-09-20,1,0.92,expired
+3,2025-09-20,2,0.36,expired
+4,2025-09-20,1,0.96,dropped
+4,2025-09-20,2,0.32,prep error
+5,2025-09-20,1,1.52,expired
+5,2025-09-20,2,0.4,prep error
+6,2025-09-20,1,1.16,expired
+7,2025-09-20,1,0.86,overproduction
+7,2025-09-20,2,0.38,returned plate
+9,2025-09-20,1,0.95,dropped
+10,2025-09-20,1,1.29,prep error
+10,2025-09-20,2,0.31,expired
+1,2025-09-21,1,1.23,dropped
+1,2025-09-21,2,0.62,prep error
+2,2025-09-21,1,0.92,returned plate
+8,2025-09-21,1,1.12,prep error
+11,2025-09-21,1,0.94,prep error
+12,2025-09-21,1,0.97,expired
+7,2025-09-22,1,1.12,overproduction
+7,2025-09-22,2,0.28,overproduction
+1,2025-09-23,1,0.88,prep error
+3,2025-09-23,1,0.88,overproduction
+10,2025-09-23,1,0.95,overproduction
+1,2025-09-24,1,1.44,prep error
+1,2025-09-24,2,0.33,dropped
+6,2025-09-24,2,0.31,returned plate
+7,2025-09-24,1,0.91,returned plate
+8,2025-09-24,1,0.94,prep error
+8,2025-09-24,2,0.29,returned plate
+11,2025-09-24,1,1.02,overproduction
+11,2025-09-24,2,0.3,overproduction
+3,2025-09-25,1,0.89,expired
+4,2025-09-25,1,1.06,dropped
+7,2025-09-25,1,0.94,prep error
+7,2025-09-25,2,0.31,overproduction
+8,2025-09-25,1,1.0,expired
+10,2025-09-25,1,1.58,overproduction
+10,2025-09-25,2,0.43,dropped
+10,2025-09-25,4,0.49,returned plate
+11,2025-09-25,1,1.11,expired
+1,2025-09-26,1,1.04,prep error
+1,2025-09-26,2,0.42,expired
+2,2025-09-26,1,1.4,dropped
+2,2025-09-26,2,0.36,expired
+2,2025-09-26,3,0.47,dropped
+3,2025-09-26,1,1.32,expired
+3,2025-09-26,2,0.55,returned plate
+4,2025-09-26,1,1.12,dropped
+4,2025-09-26,2,0.37,overproduction
+7,2025-09-26,1,1.79,overproduction
+7,2025-09-26,2,0.51,expired
+7,2025-09-26,3,0.55,expired
+8,2025-09-26,1,1.31,expired
+8,2025-09-26,3,0.42,expired
+10,2025-09-26,1,1.79,dropped
+10,2025-09-26,2,0.31,expired
+10,2025-09-26,3,0.61,expired
+11,2025-09-26,1,1.09,overproduction
+11,2025-09-26,2,0.29,dropped
+1,2025-09-27,1,1.28,returned plate
+1,2025-09-27,2,0.38,prep error
+3,2025-09-27,1,1.24,expired
+5,2025-09-27,1,0.87,returned plate
+7,2025-09-27,1,0.92,dropped
+9,2025-09-27,1,1.42,expired
+9,2025-09-27,2,0.32,prep error
+10,2025-09-27,1,1.22,prep error
+10,2025-09-27,2,0.32,overproduction
+1,2025-09-28,1,1.26,prep error
+1,2025-09-28,2,0.36,overproduction
+4,2025-09-28,1,1.05,expired
+4,2025-09-28,2,0.56,dropped
+7,2025-09-28,1,1.38,dropped
+7,2025-09-28,2,0.56,returned plate
+7,2025-09-28,3,0.48,overproduction
+8,2025-09-28,1,1.23,dropped
+10,2025-09-28,1,0.96,returned plate
+10,2025-09-28,2,0.48,returned plate
+11,2025-09-28,1,1.03,overproduction
+11,2025-09-28,2,0.34,overproduction
+7,2025-09-29,1,1.2,dropped
+7,2025-09-29,2,0.27,returned plate
+9,2025-09-29,2,0.3,overproduction
+1,2025-09-30,1,0.88,dropped
+5,2025-09-30,2,0.27,dropped
+8,2025-09-30,1,0.98,overproduction
+8,2025-09-30,2,0.3,dropped
+10,2025-09-30,1,1.04,returned plate
+11,2025-09-30,1,0.86,dropped
+11,2025-09-30,2,0.31,prep error
+1,2025-10-01,1,0.91,returned plate
+2,2025-10-01,1,1.05,dropped
+2,2025-10-01,2,0.3,prep error
+4,2025-10-01,1,1.12,expired
+6,2025-10-01,1,1.03,dropped
+6,2025-10-01,2,0.42,dropped
+8,2025-10-01,1,0.86,overproduction
+2,2025-10-02,1,0.98,overproduction
+3,2025-10-02,2,0.31,prep error
+4,2025-10-02,2,0.31,returned plate
+5,2025-10-02,1,0.88,prep error
+6,2025-10-02,1,1.27,returned plate
+6,2025-10-02,2,0.42,prep error
+8,2025-10-02,1,1.26,returned plate
+8,2025-10-02,2,0.35,prep error
+9,2025-10-02,1,0.9,overproduction
+10,2025-10-02,1,1.2,returned plate
+10,2025-10-02,2,0.33,prep error
+11,2025-10-02,1,1.19,expired
+12,2025-10-02,1,1.04,prep error
+12,2025-10-02,2,0.28,dropped
+1,2025-10-03,1,0.97,dropped
+2,2025-10-03,1,1.14,dropped
+2,2025-10-03,2,0.41,dropped
+2,2025-10-03,4,0.4,prep error
+4,2025-10-03,1,0.93,returned plate
+7,2025-10-03,1,1.82,dropped
+7,2025-10-03,2,0.37,dropped
+7,2025-10-03,3,0.56,prep error
+8,2025-10-03,1,1.02,expired
+9,2025-10-03,1,1.3,overproduction
+9,2025-10-03,2,0.3,returned plate
+10,2025-10-03,1,1.48,prep error
+10,2025-10-03,2,0.28,returned plate
+10,2025-10-03,3,0.58,prep error
+11,2025-10-03,1,1.45,overproduction
+11,2025-10-03,2,0.32,prep error
+11,2025-10-03,3,0.42,overproduction
+1,2025-10-04,1,1.48,dropped
+1,2025-10-04,2,0.32,returned plate
+1,2025-10-04,3,0.5,prep error
+2,2025-10-04,1,1.62,prep error
+2,2025-10-04,2,0.32,overproduction
+2,2025-10-04,3,0.43,dropped
+3,2025-10-04,1,1.29,returned plate
+3,2025-10-04,2,0.4,returned plate
+4,2025-10-04,1,1.08,overproduction
+7,2025-10-04,1,0.88,overproduction
+7,2025-10-04,2,0.33,overproduction
+8,2025-10-04,1,1.73,overproduction
+8,2025-10-04,2,0.55,returned plate
+9,2025-10-04,1,1.23,expired
+9,2025-10-04,2,0.5,returned plate
+10,2025-10-04,1,1.29,expired
+10,2025-10-04,2,0.34,prep error
+10,2025-10-04,3,0.52,expired
+11,2025-10-04,1,1.18,expired
+12,2025-10-04,1,1.03,overproduction
+1,2025-10-05,1,0.85,dropped
+1,2025-10-05,2,0.28,overproduction
+2,2025-10-05,2,0.29,dropped
+4,2025-10-05,1,1.1,dropped
+4,2025-10-05,2,0.69,overproduction
+4,2025-10-05,3,0.56,dropped
+9,2025-10-05,1,0.99,expired
+9,2025-10-05,2,0.3,prep error
+10,2025-10-05,1,1.21,overproduction
+10,2025-10-05,2,0.45,overproduction
+1,2025-10-06,1,0.87,overproduction
+3,2025-10-06,1,1.0,overproduction
+3,2025-10-06,2,0.35,overproduction
+4,2025-10-06,1,0.94,returned plate
+8,2025-10-06,1,0.95,overproduction
+10,2025-10-06,1,0.97,dropped
+2,2025-10-07,1,1.03,returned plate
+2,2025-10-07,2,0.38,returned plate
+7,2025-10-07,1,0.94,returned plate
+8,2025-10-07,1,0.96,dropped
+9,2025-10-07,1,0.97,returned plate
+10,2025-10-07,1,1.12,overproduction
+10,2025-10-07,2,0.28,overproduction
+11,2025-10-07,1,1.07,expired
+1,2025-10-08,1,1.05,dropped
+4,2025-10-08,2,0.27,prep error
+6,2025-10-08,1,0.92,overproduction
+7,2025-10-08,1,1.31,dropped
+8,2025-10-08,1,1.0,overproduction
+8,2025-10-08,2,0.3,expired
+9,2025-10-08,1,1.04,dropped
+9,2025-10-08,2,0.27,prep error
+1,2025-10-09,1,0.98,overproduction
+1,2025-10-09,2,0.34,overproduction
+3,2025-10-09,1,1.21,returned plate
+3,2025-10-09,2,0.28,expired
+4,2025-10-09,1,1.33,overproduction
+4,2025-10-09,2,0.4,expired
+7,2025-10-09,1,1.09,dropped
+7,2025-10-09,2,0.34,dropped
+10,2025-10-09,1,0.92,prep error
+10,2025-10-09,2,0.35,expired
+12,2025-10-09,2,0.28,expired
+1,2025-10-10,1,1.35,expired
+1,2025-10-10,2,0.6,overproduction
+1,2025-10-10,3,0.5,dropped
+2,2025-10-10,1,1.52,returned plate
+2,2025-10-10,2,0.29,returned plate
+2,2025-10-10,4,0.42,returned plate
+3,2025-10-10,1,1.75,dropped
+3,2025-10-10,2,0.52,prep error
+4,2025-10-10,1,1.17,dropped
+4,2025-10-10,2,0.44,prep error
+5,2025-10-10,1,1.25,prep error
+5,2025-10-10,2,0.28,expired
+6,2025-10-10,1,1.2,returned plate
+7,2025-10-10,1,1.66,expired
+7,2025-10-10,2,0.36,dropped
+7,2025-10-10,3,0.49,returned plate
+8,2025-10-10,1,1.22,dropped
+8,2025-10-10,3,0.42,overproduction
+9,2025-10-10,1,1.16,overproduction
+9,2025-10-10,2,0.35,returned plate
+9,2025-10-10,3,0.43,overproduction
+10,2025-10-10,1,1.15,expired
+10,2025-10-10,2,0.4,overproduction
+11,2025-10-10,1,1.39,prep error
+11,2025-10-10,2,0.42,dropped
+11,2025-10-10,3,0.42,dropped
+1,2025-10-11,1,1.35,expired
+1,2025-10-11,2,0.38,returned plate
+2,2025-10-11,1,1.14,returned plate
+2,2025-10-11,2,0.36,prep error
+3,2025-10-11,1,1.37,returned plate
+3,2025-10-11,2,0.39,dropped
+3,2025-10-11,3,0.63,expired
+4,2025-10-11,1,1.31,prep error
+4,2025-10-11,2,0.32,dropped
+4,2025-10-11,3,0.5,dropped
+5,2025-10-11,1,1.43,dropped
+5,2025-10-11,2,0.37,overproduction
+5,2025-10-11,3,0.44,returned plate
+6,2025-10-11,2,0.27,expired
+7,2025-10-11,1,1.2,returned plate
+7,2025-10-11,3,0.42,dropped
+8,2025-10-11,1,1.39,prep error
+8,2025-10-11,2,0.54,prep error
+10,2025-10-11,1,1.69,dropped
+10,2025-10-11,2,0.32,returned plate
+10,2025-10-11,3,0.47,expired
+1,2025-10-12,1,1.13,expired
+1,2025-10-12,2,0.27,dropped
+2,2025-10-12,1,0.97,overproduction
+2,2025-10-12,2,0.3,overproduction
+4,2025-10-12,2,0.29,dropped
+5,2025-10-12,1,0.95,overproduction
+7,2025-10-12,1,1.21,returned plate
+7,2025-10-12,2,0.35,dropped
+11,2025-10-12,1,0.93,prep error
+11,2025-10-12,2,0.35,prep error
+1,2025-10-13,1,1.25,overproduction
+7,2025-10-13,1,1.02,prep error
+6,2025-10-14,1,0.88,overproduction
+7,2025-10-14,1,0.96,prep error
+10,2025-10-14,1,0.89,expired
+12,2025-10-14,2,0.42,returned plate
+2,2025-10-15,1,1.23,overproduction
+2,2025-10-15,2,0.32,overproduction
+4,2025-10-15,1,0.96,overproduction
+6,2025-10-15,1,0.99,prep error
+6,2025-10-15,2,0.27,returned plate
+7,2025-10-15,1,0.9,returned plate
+1,2025-10-16,1,0.92,overproduction
+2,2025-10-16,1,0.9,expired
+3,2025-10-16,1,1.01,dropped
+4,2025-10-16,1,0.96,prep error
+4,2025-10-16,2,0.41,dropped
+7,2025-10-16,2,0.33,overproduction
+8,2025-10-16,1,1.12,dropped
+8,2025-10-16,2,0.3,overproduction
+1,2025-10-17,1,1.39,overproduction
+1,2025-10-17,2,0.39,expired
+1,2025-10-17,3,0.45,prep error
+1,2025-10-17,4,0.42,prep error
+2,2025-10-17,1,0.88,prep error
+2,2025-10-17,2,0.34,returned plate
+3,2025-10-17,1,1.78,prep error
+3,2025-10-17,2,0.5,overproduction
+3,2025-10-17,3,0.63,dropped
+4,2025-10-17,1,1.22,dropped
+4,2025-10-17,2,0.41,overproduction
+5,2025-10-17,1,0.88,overproduction
+6,2025-10-17,1,1.0,expired
+7,2025-10-17,1,1.55,dropped
+7,2025-10-17,2,0.37,dropped
+7,2025-10-17,3,0.54,overproduction
+7,2025-10-17,4,0.44,prep error
+8,2025-10-17,1,1.31,expired
+8,2025-10-17,2,0.32,overproduction
+10,2025-10-17,1,1.59,returned plate
+10,2025-10-17,2,0.54,expired
+11,2025-10-17,1,1.03,dropped
+11,2025-10-17,2,0.28,prep error
+12,2025-10-17,1,0.93,expired
+3,2025-10-18,1,1.15,dropped
+4,2025-10-18,1,1.08,overproduction
+6,2025-10-18,1,1.08,overproduction
+6,2025-10-18,2,0.29,returned plate
+7,2025-10-18,1,0.99,overproduction
+9,2025-10-18,1,0.96,overproduction
+9,2025-10-18,2,0.32,dropped
+10,2025-10-18,1,1.87,dropped
+10,2025-10-18,2,0.78,prep error
+10,2025-10-18,3,0.51,dropped
+12,2025-10-18,1,1.03,expired
+12,2025-10-18,2,0.39,expired
+3,2025-10-19,1,0.92,expired
+8,2025-10-19,1,0.86,returned plate
+10,2025-10-19,1,0.98,returned plate
+10,2025-10-19,2,0.36,returned plate
+1,2025-10-20,1,1.01,prep error
+3,2025-10-20,2,0.29,prep error
+8,2025-10-20,1,0.86,overproduction
+12,2025-10-20,2,0.31,returned plate
+1,2025-10-21,1,0.95,overproduction
+1,2025-10-21,2,0.3,prep error
+8,2025-10-21,1,1.03,expired
+12,2025-10-21,1,0.89,overproduction
+12,2025-10-21,2,0.29,prep error
+1,2025-10-22,1,1.24,dropped
+1,2025-10-22,2,0.32,overproduction
+2,2025-10-22,1,0.99,overproduction
+3,2025-10-22,1,1.18,dropped
+3,2025-10-22,2,0.4,prep error
+4,2025-10-22,1,1.33,expired
+5,2025-10-22,1,0.86,returned plate
+5,2025-10-22,2,0.46,returned plate
+6,2025-10-22,1,0.92,prep error
+7,2025-10-22,1,1.25,dropped
+9,2025-10-22,1,1.12,dropped
+9,2025-10-22,2,0.33,dropped
+10,2025-10-22,1,0.98,expired
+10,2025-10-22,2,0.35,dropped
+11,2025-10-22,1,1.01,prep error
+1,2025-10-23,1,1.54,overproduction
+1,2025-10-23,2,0.4,prep error
+2,2025-10-23,1,1.35,overproduction
+2,2025-10-23,2,0.35,expired
+3,2025-10-23,1,1.35,expired
+3,2025-10-23,2,0.3,prep error
+7,2025-10-23,1,1.92,expired
+7,2025-10-23,2,0.35,expired
+7,2025-10-23,3,0.42,expired
+8,2025-10-23,2,0.27,expired
+9,2025-10-23,1,1.57,overproduction
+9,2025-10-23,2,0.42,expired
+10,2025-10-23,1,1.56,dropped
+10,2025-10-23,2,0.38,prep error
+10,2025-10-23,3,0.43,returned plate
+10,2025-10-23,4,0.42,overproduction
+11,2025-10-23,1,1.09,expired
+11,2025-10-23,2,0.32,dropped
+12,2025-10-23,1,0.96,prep error
+1,2025-10-24,1,0.92,returned plate
+2,2025-10-24,1,1.51,returned plate
+2,2025-10-24,2,0.4,prep error
+2,2025-10-24,3,0.52,returned plate
+2,2025-10-24,4,0.44,expired
+3,2025-10-24,1,1.09,dropped
+4,2025-10-24,1,1.09,prep error
+9,2025-10-24,1,1.0,dropped
+11,2025-10-24,2,0.34,returned plate
+12,2025-10-24,2,0.3,returned plate
+1,2025-10-25,1,1.63,dropped
+1,2025-10-25,2,0.47,returned plate
+1,2025-10-25,3,0.49,expired
+1,2025-10-25,4,0.47,expired
+2,2025-10-25,1,1.36,returned plate
+2,2025-10-25,2,0.45,returned plate
+3,2025-10-25,1,0.94,overproduction
+3,2025-10-25,2,0.27,expired
+4,2025-10-25,1,0.87,overproduction
+5,2025-10-25,1,1.3,dropped
+5,2025-10-25,2,0.45,overproduction
+6,2025-10-25,1,1.5,overproduction
+6,2025-10-25,6,1.47,overproduction
+7,2025-10-25,1,1.29,dropped
+7,2025-10-25,2,0.37,overproduction
+7,2025-10-25,3,0.46,prep error
+10,2025-10-25,1,1.3,expired
+10,2025-10-25,2,0.48,returned plate
+10,2025-10-25,3,0.42,overproduction
+11,2025-10-25,1,1.12,returned plate
+1,2025-10-26,1,1.12,overproduction
+1,2025-10-26,2,0.31,prep error
+2,2025-10-26,1,1.23,prep error
+7,2025-10-26,1,1.0,overproduction
+7,2025-10-26,3,0.44,prep error
+10,2025-10-26,1,1.18,returned plate
+2,2025-10-27,2,0.29,returned plate
+7,2025-10-27,1,0.95,dropped
+7,2025-10-27,2,0.42,overproduction
+10,2025-10-27,2,0.35,overproduction
+10,2025-10-27,4,0.4,overproduction
+1,2025-10-28,1,1.11,dropped
+1,2025-10-28,2,0.29,expired
+2,2025-10-28,1,0.98,expired
+2,2025-10-28,2,0.38,overproduction
+7,2025-10-28,1,1.6,expired
+7,2025-10-28,2,0.45,prep error
+8,2025-10-28,1,0.88,dropped
+10,2025-10-28,1,0.9,returned plate
+4,2025-10-29,1,0.89,expired
+5,2025-10-29,1,1.13,prep error
+5,2025-10-29,2,0.32,dropped
+6,2025-10-29,2,0.33,returned plate
+7,2025-10-29,1,1.19,dropped
+11,2025-10-29,1,1.25,returned plate
+11,2025-10-29,2,0.31,overproduction
+11,2025-10-29,3,0.45,dropped
+12,2025-10-29,1,0.9,overproduction
+1,2025-10-30,1,1.42,dropped
+1,2025-10-30,2,0.52,returned plate
+1,2025-10-30,3,0.54,returned plate
+3,2025-10-30,1,0.95,prep error
+6,2025-10-30,1,0.98,overproduction
+6,2025-10-30,2,0.36,overproduction
+10,2025-10-30,1,0.91,prep error
+12,2025-10-30,1,1.18,overproduction
+12,2025-10-30,2,0.49,prep error
+1,2025-10-31,1,1.05,overproduction
+1,2025-10-31,2,0.49,overproduction
+2,2025-10-31,1,1.66,overproduction
+3,2025-10-31,1,0.91,returned plate
+5,2025-10-31,1,1.41,prep error
+5,2025-10-31,2,0.29,returned plate
+6,2025-10-31,1,0.92,prep error
+6,2025-10-31,2,0.32,expired
+7,2025-10-31,1,1.34,prep error
+7,2025-10-31,2,0.27,overproduction
+8,2025-10-31,2,0.27,returned plate
+9,2025-10-31,1,0.87,returned plate
+10,2025-10-31,1,1.08,prep error
+10,2025-10-31,2,0.3,overproduction
+1,2025-11-01,1,0.92,prep error
+2,2025-11-01,1,1.08,returned plate
+2,2025-11-01,2,0.31,prep error
+3,2025-11-01,1,0.88,returned plate
+3,2025-11-01,2,0.26,overproduction
+5,2025-11-01,2,0.33,returned plate
+6,2025-11-01,1,1.07,returned plate
+6,2025-11-01,2,0.48,prep error
+7,2025-11-01,1,1.3,expired
+7,2025-11-01,2,0.42,dropped
+7,2025-11-01,3,0.41,prep error
+8,2025-11-01,1,1.08,dropped
+8,2025-11-01,2,0.41,returned plate
+9,2025-11-01,2,0.28,dropped
+11,2025-11-01,2,0.27,overproduction
+12,2025-11-01,1,0.91,returned plate
+12,2025-11-01,2,0.38,expired
+1,2025-11-02,1,1.13,prep error
+1,2025-11-02,2,0.37,overproduction
+6,2025-11-02,1,0.98,returned plate
+7,2025-11-02,1,0.94,dropped
+8,2025-11-02,1,1.19,overproduction
+8,2025-11-02,2,0.27,dropped
+12,2025-11-02,1,0.83,dropped
+1,2025-11-03,1,1.21,overproduction
+1,2025-11-03,2,0.28,dropped
+2,2025-11-03,1,1.17,returned plate
+2,2025-11-03,2,0.28,dropped
+3,2025-11-03,2,0.27,dropped
+6,2025-11-03,1,0.88,prep error
+7,2025-11-03,1,0.92,prep error
+7,2025-11-03,2,0.29,expired
+10,2025-11-03,1,1.05,expired
+11,2025-11-03,1,0.92,returned plate
+2,2025-11-04,1,1.22,dropped
+2,2025-11-04,2,0.52,overproduction
+7,2025-11-04,1,1.22,prep error
+7,2025-11-04,2,0.36,prep error
+10,2025-11-04,1,0.88,expired
+10,2025-11-04,2,0.31,prep error
+1,2025-11-05,1,1.0,overproduction
+1,2025-11-05,2,0.26,overproduction
+3,2025-11-05,1,0.93,overproduction
+3,2025-11-05,2,0.4,returned plate
+5,2025-11-05,1,0.9,returned plate
+6,2025-11-05,1,1.77,dropped
+6,2025-11-05,2,0.46,expired
+6,2025-11-05,3,0.61,prep error
+7,2025-11-05,1,1.15,expired
+10,2025-11-05,1,0.87,overproduction
+10,2025-11-05,2,0.48,expired
+1,2025-11-06,1,0.91,expired
+2,2025-11-06,2,0.27,prep error
+3,2025-11-06,1,1.27,returned plate
+3,2025-11-06,2,0.32,returned plate
+4,2025-11-06,2,0.3,overproduction
+7,2025-11-06,1,0.95,dropped
+7,2025-11-06,2,0.28,expired
+8,2025-11-06,1,0.87,dropped
+8,2025-11-06,2,0.27,overproduction
+9,2025-11-06,1,0.87,returned plate
+10,2025-11-06,1,0.88,prep error
+10,2025-11-06,2,0.31,overproduction
+11,2025-11-06,1,0.94,overproduction
+11,2025-11-06,2,0.26,expired
+1,2025-11-07,1,1.71,expired
+1,2025-11-07,2,0.43,prep error
+1,2025-11-07,3,0.55,returned plate
+3,2025-11-07,1,1.0,expired
+3,2025-11-07,2,0.32,expired
+5,2025-11-07,1,1.21,returned plate
+5,2025-11-07,2,0.43,expired
+6,2025-11-07,1,1.34,returned plate
+6,2025-11-07,2,0.48,dropped
+7,2025-11-07,1,1.26,expired
+7,2025-11-07,2,0.29,prep error
+8,2025-11-07,1,1.45,dropped
+8,2025-11-07,2,0.46,prep error
+8,2025-11-07,3,0.49,expired
+9,2025-11-07,1,1.03,dropped
+9,2025-11-07,2,0.33,prep error
+10,2025-11-07,1,1.44,dropped
+10,2025-11-07,2,0.39,prep error
+11,2025-11-07,1,1.58,prep error
+11,2025-11-07,2,0.43,expired
+11,2025-11-07,3,0.43,prep error
+12,2025-11-07,1,0.88,overproduction
+1,2025-11-08,1,1.21,prep error
+1,2025-11-08,2,0.44,expired
+1,2025-11-08,3,0.42,returned plate
+2,2025-11-08,1,1.02,expired
+2,2025-11-08,2,0.39,expired
+3,2025-11-08,1,1.28,returned plate
+3,2025-11-08,2,0.34,expired
+4,2025-11-08,1,0.95,prep error
+5,2025-11-08,2,0.33,dropped
+6,2025-11-08,1,1.05,expired
+6,2025-11-08,2,0.35,prep error
+6,2025-11-08,3,0.48,expired
+7,2025-11-08,1,1.04,overproduction
+7,2025-11-08,2,0.3,dropped
+11,2025-11-08,1,1.48,returned plate
+11,2025-11-08,2,0.57,dropped
+11,2025-11-08,3,0.68,dropped
+3,2025-11-09,1,1.06,returned plate
+3,2025-11-09,3,0.41,returned plate
+8,2025-11-09,1,0.88,prep error
+8,2025-11-09,2,0.33,returned plate
+11,2025-11-09,2,0.29,dropped
+12,2025-11-09,1,0.84,prep error
+1,2025-11-10,1,1.03,dropped
+1,2025-11-10,2,0.29,overproduction
+1,2025-11-10,3,0.55,returned plate
+6,2025-11-10,1,0.89,prep error
+6,2025-11-10,1,49.48,equipment failure
+6,2025-11-10,2,14.14,equipment failure
+6,2025-11-10,3,12.24,equipment failure
+6,2025-11-10,4,11.6,equipment failure
+6,2025-11-10,5,34.6,equipment failure
+6,2025-11-10,6,27.47,equipment failure
+6,2025-11-10,7,6.8,equipment failure
+6,2025-11-10,8,9.57,equipment failure
+6,2025-11-10,9,7.19,equipment failure
+6,2025-11-10,10,7.19,equipment failure
+6,2025-11-10,11,11.7,equipment failure
+6,2025-11-10,13,5.94,equipment failure
+6,2025-11-10,16,27.97,equipment failure
+6,2025-11-10,17,31.88,equipment failure
+6,2025-11-10,27,6.23,equipment failure
+6,2025-11-10,50,91.44,equipment failure
+7,2025-11-10,1,0.97,expired
+7,2025-11-10,2,0.31,dropped
+8,2025-11-10,1,1.05,prep error
+11,2025-11-10,1,1.06,dropped
+11,2025-11-10,2,0.43,returned plate
+11,2025-11-10,3,0.41,expired
+1,2025-11-12,2,0.26,expired
+10,2025-11-12,1,1.09,prep error
+1,2025-11-13,1,1.74,overproduction
+1,2025-11-13,2,0.5,dropped
+2,2025-11-13,1,0.92,dropped
+2,2025-11-13,2,0.3,expired
+4,2025-11-13,1,0.89,returned plate
+5,2025-11-13,2,0.33,dropped
+8,2025-11-13,1,0.97,expired
+8,2025-11-13,2,0.31,returned plate
+9,2025-11-13,1,0.88,returned plate
+10,2025-11-13,1,0.95,expired
+11,2025-11-13,1,1.33,expired
+11,2025-11-13,2,0.29,returned plate
+12,2025-11-13,1,1.0,returned plate
+12,2025-11-13,2,0.3,dropped
+1,2025-11-14,1,1.56,dropped
+1,2025-11-14,2,0.54,dropped
+3,2025-11-14,1,1.27,returned plate
+3,2025-11-14,2,0.29,prep error
+4,2025-11-14,1,0.94,expired
+5,2025-11-14,1,0.9,expired
+5,2025-11-14,2,0.41,overproduction
+7,2025-11-14,1,1.41,returned plate
+7,2025-11-14,2,0.43,overproduction
+8,2025-11-14,1,1.31,expired
+8,2025-11-14,2,0.33,overproduction
+8,2025-11-14,4,0.38,dropped
+9,2025-11-14,2,0.3,prep error
+10,2025-11-14,1,1.54,overproduction
+10,2025-11-14,2,0.43,overproduction
+10,2025-11-14,3,0.57,returned plate
+10,2025-11-14,4,0.41,overproduction
+11,2025-11-14,2,0.33,dropped
+1,2025-11-15,1,1.37,expired
+1,2025-11-15,2,0.32,overproduction
+1,2025-11-15,3,0.43,returned plate
+2,2025-11-15,1,1.72,dropped
+2,2025-11-15,2,0.47,returned plate
+2,2025-11-15,3,0.5,returned plate
+3,2025-11-15,1,1.34,expired
+3,2025-11-15,2,0.36,prep error
+3,2025-11-15,3,0.5,expired
+4,2025-11-15,2,0.26,overproduction
+5,2025-11-15,1,1.0,dropped
+5,2025-11-15,2,0.35,returned plate
+7,2025-11-15,1,0.92,overproduction
+7,2025-11-15,2,0.37,overproduction
+10,2025-11-15,1,1.38,overproduction
+10,2025-11-15,2,0.34,expired
+10,2025-11-15,3,0.42,expired
+11,2025-11-15,2,0.27,overproduction
+12,2025-11-15,1,0.99,expired
+12,2025-11-15,2,0.3,returned plate
+1,2025-11-16,2,0.32,expired
+3,2025-11-16,1,1.14,overproduction
+3,2025-11-16,2,0.33,expired
+4,2025-11-16,1,1.31,expired
+7,2025-11-16,1,0.88,dropped
+8,2025-11-16,1,1.01,expired
+8,2025-11-16,2,0.33,prep error
+9,2025-11-16,1,0.97,dropped
+9,2025-11-16,2,0.43,prep error
+10,2025-11-16,1,0.9,returned plate
+11,2025-11-16,1,1.1,overproduction
+11,2025-11-16,2,0.3,prep error
+12,2025-11-16,1,1.07,expired
+12,2025-11-16,2,0.32,overproduction
+3,2025-11-17,2,0.31,returned plate
+6,2025-11-17,1,0.97,overproduction
+12,2025-11-17,2,0.41,dropped
+7,2025-11-18,1,1.32,expired
+7,2025-11-18,2,0.28,returned plate
+7,2025-11-18,4,0.43,dropped
+8,2025-11-18,2,0.3,returned plate
+11,2025-11-18,1,0.96,expired
+11,2025-11-18,2,0.3,prep error
+12,2025-11-18,2,0.39,dropped
+1,2025-11-19,1,0.94,returned plate
+1,2025-11-19,2,0.29,returned plate
+3,2025-11-19,1,0.98,dropped
+4,2025-11-19,1,0.86,returned plate
+9,2025-11-19,1,0.9,returned plate
+10,2025-11-19,1,0.92,overproduction
+11,2025-11-19,2,0.33,returned plate
+1,2025-11-20,1,1.23,overproduction
+1,2025-11-20,2,0.46,dropped
+3,2025-11-20,1,1.37,overproduction
+3,2025-11-20,2,0.35,prep error
+6,2025-11-20,2,0.26,expired
+8,2025-11-20,1,1.04,returned plate
+8,2025-11-20,2,0.36,expired
+9,2025-11-20,1,1.01,dropped
+9,2025-11-20,2,0.27,dropped
+11,2025-11-20,1,1.23,expired
+11,2025-11-20,2,0.43,dropped
+1,2025-11-21,1,1.35,returned plate
+1,2025-11-21,2,0.58,dropped
+1,2025-11-21,4,0.41,prep error
+2,2025-11-21,1,1.3,returned plate
+2,2025-11-21,2,0.31,returned plate
+3,2025-11-21,1,1.57,expired
+3,2025-11-21,2,0.46,expired
+4,2025-11-21,1,1.23,expired
+4,2025-11-21,2,0.38,returned plate
+5,2025-11-21,1,1.08,prep error
+5,2025-11-21,2,0.26,overproduction
+6,2025-11-21,1,1.1,overproduction
+9,2025-11-21,1,0.89,expired
+9,2025-11-21,2,0.27,expired
+10,2025-11-21,1,1.1,overproduction
+10,2025-11-21,2,0.34,dropped
+1,2025-11-22,1,1.62,returned plate
+1,2025-11-22,2,0.33,overproduction
+1,2025-11-22,4,0.39,overproduction
+3,2025-11-22,1,0.9,prep error
+4,2025-11-22,2,0.32,dropped
+5,2025-11-22,1,1.37,expired
+5,2025-11-22,2,0.41,returned plate
+6,2025-11-22,1,1.07,dropped
+7,2025-11-22,1,1.45,dropped
+7,2025-11-22,2,0.4,returned plate
+8,2025-11-22,2,0.27,returned plate
+10,2025-11-22,1,1.49,returned plate
+10,2025-11-22,2,0.52,expired
+11,2025-11-22,1,1.13,returned plate
+11,2025-11-22,2,0.59,expired
+12,2025-11-22,1,1.15,prep error
+12,2025-11-22,2,0.34,dropped
+1,2025-11-23,1,0.92,returned plate
+1,2025-11-23,2,0.38,prep error
+7,2025-11-23,1,0.94,expired
+7,2025-11-23,2,0.31,overproduction
+7,2025-11-23,3,0.43,returned plate
+11,2025-11-23,1,1.01,expired
+11,2025-11-23,2,0.26,overproduction
+12,2025-11-23,1,1.03,overproduction
+12,2025-11-23,4,0.41,returned plate
+1,2025-11-24,1,1.0,expired
+1,2025-11-24,2,0.35,dropped
+3,2025-11-24,1,0.87,overproduction
+3,2025-11-24,2,0.34,overproduction
+6,2025-11-24,1,0.9,prep error
+6,2025-11-24,2,0.33,overproduction
+7,2025-11-24,1,1.33,dropped
+7,2025-11-24,2,0.52,returned plate
+10,2025-11-24,1,1.0,dropped
+12,2025-11-24,1,0.93,overproduction
+2,2025-11-25,1,1.0,expired
+3,2025-11-25,1,0.94,expired
+1,2025-11-26,1,0.99,dropped
+4,2025-11-26,1,0.85,returned plate
+8,2025-11-26,1,0.9,overproduction
+8,2025-11-26,2,0.34,expired
+11,2025-11-26,1,1.41,returned plate
+11,2025-11-26,2,0.27,expired
+12,2025-11-26,1,0.87,dropped
+12,2025-11-26,2,0.31,overproduction
+1,2025-11-28,1,1.11,dropped
+2,2025-11-28,1,0.94,dropped
+4,2025-11-28,1,1.18,expired
+4,2025-11-28,2,0.35,overproduction
+5,2025-11-28,1,0.85,overproduction
+5,2025-11-28,2,0.29,prep error
+6,2025-11-28,1,1.13,dropped
+6,2025-11-28,2,0.3,returned plate
+7,2025-11-28,1,1.26,prep error
+7,2025-11-28,2,0.46,prep error
+8,2025-11-28,1,0.86,returned plate
+9,2025-11-28,1,0.92,overproduction
+10,2025-11-28,1,1.63,expired
+10,2025-11-28,2,0.52,dropped
+10,2025-11-28,3,0.47,returned plate
+11,2025-11-28,1,0.98,returned plate
+11,2025-11-28,2,0.37,returned plate
+11,2025-11-28,3,0.4,prep error
+12,2025-11-28,1,0.96,returned plate
+12,2025-11-28,2,0.57,prep error
+1,2025-11-29,1,1.11,overproduction
+1,2025-11-29,2,0.44,dropped
+2,2025-11-29,1,0.83,overproduction
+4,2025-11-29,2,0.3,dropped
+5,2025-11-29,2,0.28,expired
+6,2025-11-29,1,1.29,expired
+6,2025-11-29,2,0.38,dropped
+7,2025-11-29,1,1.6,overproduction
+7,2025-11-29,2,0.38,dropped
+8,2025-11-29,1,1.47,expired
+8,2025-11-29,2,0.56,prep error
+8,2025-11-29,3,0.53,prep error
+9,2025-11-29,1,1.32,prep error
+9,2025-11-29,2,0.46,overproduction
+9,2025-11-29,3,0.44,returned plate
+11,2025-11-29,1,0.95,overproduction
+11,2025-11-29,2,0.31,returned plate
+12,2025-11-29,1,1.19,overproduction
+12,2025-11-29,2,0.29,prep error
+1,2025-11-30,1,0.95,dropped
+1,2025-11-30,2,0.28,prep error
+2,2025-11-30,1,0.97,overproduction
+2,2025-11-30,2,0.26,returned plate
+10,2025-11-30,1,0.93,overproduction
+10,2025-12-01,1,0.86,prep error
+1,2025-12-02,1,1.36,dropped
+1,2025-12-02,2,0.35,overproduction
+1,2025-12-02,3,0.45,prep error
+2,2025-12-02,2,0.27,prep error
+3,2025-12-02,1,0.87,dropped
+4,2025-12-02,1,0.89,expired
+7,2025-12-02,2,0.29,dropped
+1,2025-12-03,2,0.28,overproduction
+3,2025-12-03,1,1.1,overproduction
+3,2025-12-03,2,0.29,prep error
+5,2025-12-03,2,0.27,expired
+7,2025-12-03,1,1.4,returned plate
+7,2025-12-03,2,0.32,returned plate
+10,2025-12-03,1,1.23,overproduction
+10,2025-12-03,2,0.29,prep error
+11,2025-12-03,1,0.87,expired
+1,2025-12-04,1,1.28,expired
+1,2025-12-04,2,0.43,dropped
+1,2025-12-04,4,0.37,returned plate
+2,2025-12-04,1,1.01,expired
+5,2025-12-04,2,0.26,dropped
+1,2025-12-05,1,1.52,prep error
+1,2025-12-05,2,0.49,overproduction
+2,2025-12-05,1,0.89,overproduction
+3,2025-12-05,1,0.87,prep error
+4,2025-12-05,1,1.29,overproduction
+4,2025-12-05,2,0.47,returned plate
+4,2025-12-05,3,0.44,dropped
+6,2025-12-05,1,0.99,dropped
+6,2025-12-05,2,0.28,dropped
+7,2025-12-05,1,1.51,dropped
+7,2025-12-05,2,0.36,dropped
+7,2025-12-05,3,0.42,returned plate
+7,2025-12-05,4,0.39,overproduction
+9,2025-12-05,1,1.46,expired
+9,2025-12-05,2,0.45,dropped
+9,2025-12-05,4,0.43,dropped
+12,2025-12-05,1,0.92,overproduction
+1,2025-12-06,1,0.97,returned plate
+1,2025-12-06,2,0.38,expired
+2,2025-12-06,1,1.45,expired
+2,2025-12-06,2,0.51,overproduction
+3,2025-12-06,1,1.25,prep error
+3,2025-12-06,2,0.42,overproduction
+5,2025-12-06,1,1.15,prep error
+5,2025-12-06,2,0.35,dropped
+6,2025-12-06,1,1.72,dropped
+6,2025-12-06,2,0.62,prep error
+6,2025-12-06,3,0.5,expired
+6,2025-12-06,4,0.41,dropped
+7,2025-12-06,1,1.29,overproduction
+7,2025-12-06,2,0.32,returned plate
+7,2025-12-06,3,0.4,dropped
+9,2025-12-06,1,1.43,dropped
+9,2025-12-06,2,0.32,expired
+9,2025-12-06,3,0.41,overproduction
+10,2025-12-06,1,1.85,returned plate
+10,2025-12-06,2,0.6,prep error
+10,2025-12-06,4,0.47,overproduction
+11,2025-12-06,1,1.15,overproduction
+11,2025-12-06,2,0.31,prep error
+12,2025-12-06,1,0.89,dropped
+2,2025-12-07,2,0.27,dropped
+7,2025-12-07,1,0.91,expired
+7,2025-12-07,2,0.55,dropped
+9,2025-12-07,1,0.96,overproduction
+9,2025-12-07,2,0.39,expired
+10,2025-12-07,1,0.93,overproduction
+1,2025-12-09,1,0.89,expired
+2,2025-12-09,1,0.97,dropped
+2,2025-12-09,2,0.28,dropped
+6,2025-12-09,1,0.93,prep error
+6,2025-12-09,2,0.39,expired
+7,2025-12-09,1,0.88,returned plate
+7,2025-12-09,2,0.26,dropped
+10,2025-12-09,2,0.25,expired
+11,2025-12-09,1,0.96,overproduction
+11,2025-12-09,2,0.32,dropped
+2,2025-12-10,2,0.25,expired
+3,2025-12-10,1,1.31,expired
+3,2025-12-10,2,0.33,expired
+4,2025-12-10,1,1.11,returned plate
+8,2025-12-10,1,1.08,returned plate
+8,2025-12-10,2,0.33,expired
+11,2025-12-10,1,0.89,returned plate
+1,2025-12-11,1,1.11,prep error
+2,2025-12-11,1,1.2,returned plate
+2,2025-12-11,2,0.36,expired
+4,2025-12-11,1,0.87,returned plate
+5,2025-12-11,1,1.04,returned plate
+6,2025-12-11,1,1.2,returned plate
+7,2025-12-11,1,1.66,overproduction
+7,2025-12-11,2,0.3,overproduction
+8,2025-12-11,1,1.1,expired
+8,2025-12-11,2,0.33,returned plate
+9,2025-12-11,1,1.32,dropped
+9,2025-12-11,2,0.39,overproduction
+9,2025-12-11,3,0.42,expired
+10,2025-12-11,1,0.96,prep error
+10,2025-12-11,2,0.31,expired
+1,2025-12-12,1,1.23,overproduction
+1,2025-12-12,2,0.38,returned plate
+2,2025-12-12,1,0.94,returned plate
+2,2025-12-12,2,0.41,dropped
+3,2025-12-12,2,0.26,dropped
+4,2025-12-12,1,0.81,prep error
+5,2025-12-12,1,1.43,overproduction
+5,2025-12-12,2,0.3,prep error
+5,2025-12-12,4,0.41,dropped
+6,2025-12-12,1,0.83,dropped
+6,2025-12-12,2,0.34,returned plate
+7,2025-12-12,1,1.48,dropped
+7,2025-12-12,2,0.49,dropped
+7,2025-12-12,3,0.45,prep error
+7,2025-12-12,4,0.45,dropped
+8,2025-12-12,1,1.06,overproduction
+8,2025-12-12,2,0.43,overproduction
+9,2025-12-12,1,1.07,prep error
+9,2025-12-12,2,0.33,returned plate
+10,2025-12-12,1,1.34,overproduction
+10,2025-12-12,2,0.27,expired
+10,2025-12-12,4,0.39,overproduction
+11,2025-12-12,1,1.46,dropped
+11,2025-12-12,2,0.56,overproduction
+11,2025-12-12,3,0.44,expired
+12,2025-12-12,1,1.39,prep error
+12,2025-12-12,2,0.45,expired
+1,2025-12-13,1,1.32,overproduction
+1,2025-12-13,2,0.27,expired
+2,2025-12-13,1,0.88,dropped
+4,2025-12-13,1,0.98,dropped
+4,2025-12-13,2,0.33,dropped
+5,2025-12-13,1,1.36,prep error
+5,2025-12-13,2,0.28,prep error
+6,2025-12-13,1,0.84,overproduction
+6,2025-12-13,2,0.25,dropped
+8,2025-12-13,1,1.04,returned plate
+10,2025-12-13,1,0.93,returned plate
+10,2025-12-13,2,0.32,overproduction
+12,2025-12-13,2,0.27,expired
+1,2025-12-14,1,1.34,dropped
+1,2025-12-14,2,0.53,prep error
+1,2025-12-14,3,0.44,prep error
+5,2025-12-14,1,0.84,overproduction
+7,2025-12-14,1,1.16,dropped
+8,2025-12-14,1,0.88,expired
+8,2025-12-14,2,0.3,prep error
+3,2025-12-15,1,0.83,returned plate
+7,2025-12-15,2,0.3,returned plate
+10,2025-12-15,2,0.29,dropped
+1,2025-12-16,1,1.02,dropped
+1,2025-12-16,2,0.42,prep error
+6,2025-12-16,1,0.99,overproduction
+9,2025-12-16,1,0.82,dropped
+9,2025-12-16,2,0.26,returned plate
+10,2025-12-16,1,0.85,overproduction
+10,2025-12-16,2,0.26,prep error
+11,2025-12-16,1,0.96,expired
+12,2025-12-16,1,0.9,overproduction
+1,2025-12-17,1,0.97,dropped
+1,2025-12-17,2,0.27,prep error
+9,2025-12-17,1,0.83,overproduction
+12,2025-12-17,1,0.89,prep error
+12,2025-12-17,2,0.3,overproduction
+2,2025-12-18,1,0.83,prep error
+2,2025-12-18,2,0.27,expired
+4,2025-12-18,1,0.98,prep error
+6,2025-12-18,1,1.04,prep error
+6,2025-12-18,2,0.54,dropped
+7,2025-12-18,1,0.96,dropped
+7,2025-12-18,2,0.28,prep error
+8,2025-12-18,1,0.84,returned plate
+8,2025-12-18,1,51.73,equipment failure
+8,2025-12-18,2,17.2,equipment failure
+8,2025-12-18,3,16.49,equipment failure
+8,2025-12-18,4,10.41,equipment failure
+8,2025-12-18,5,29.88,equipment failure
+8,2025-12-18,6,36.81,equipment failure
+8,2025-12-18,7,11.35,equipment failure
+8,2025-12-18,8,8.28,equipment failure
+8,2025-12-18,9,8.48,equipment failure
+8,2025-12-18,10,8.68,equipment failure
+8,2025-12-18,11,9.18,equipment failure
+8,2025-12-18,13,6.13,equipment failure
+8,2025-12-18,14,15.71,equipment failure
+8,2025-12-18,16,46.29,equipment failure
+8,2025-12-18,17,33.39,equipment failure
+8,2025-12-18,27,10.44,equipment failure
+8,2025-12-18,28,6.65,equipment failure
+8,2025-12-18,29,7.03,equipment failure
+8,2025-12-18,31,7.68,equipment failure
+8,2025-12-18,50,102.92,equipment failure
+9,2025-12-18,1,1.08,prep error
+9,2025-12-18,2,0.29,prep error
+10,2025-12-18,1,1.45,expired
+10,2025-12-18,2,0.34,returned plate
+10,2025-12-18,4,0.38,returned plate
+12,2025-12-18,1,0.92,returned plate
+12,2025-12-18,2,0.29,expired
+1,2025-12-19,1,1.66,overproduction
+1,2025-12-19,2,0.4,returned plate
+1,2025-12-19,3,0.4,dropped
+1,2025-12-19,4,0.48,expired
+2,2025-12-19,1,1.8,prep error
+2,2025-12-19,2,0.5,expired
+2,2025-12-19,3,0.45,prep error
+2,2025-12-19,4,0.44,expired
+3,2025-12-19,1,1.2,expired
+3,2025-12-19,2,0.37,expired
+4,2025-12-19,1,1.33,prep error
+4,2025-12-19,3,0.54,dropped
+5,2025-12-19,1,1.06,dropped
+5,2025-12-19,2,0.52,returned plate
+6,2025-12-19,1,1.07,expired
+6,2025-12-19,2,0.45,prep error
+7,2025-12-19,1,0.99,expired
+7,2025-12-19,2,0.27,overproduction
+9,2025-12-19,1,1.05,expired
+9,2025-12-19,2,0.3,prep error
+10,2025-12-19,1,1.42,expired
+10,2025-12-19,2,0.48,overproduction
+12,2025-12-19,1,0.85,overproduction
+12,2025-12-19,2,0.36,expired
+1,2025-12-20,1,1.5,returned plate
+1,2025-12-20,2,0.51,overproduction
+1,2025-12-20,3,0.52,prep error
+1,2025-12-20,4,0.38,overproduction
+2,2025-12-20,1,1.29,prep error
+2,2025-12-20,2,0.33,dropped
+3,2025-12-20,1,1.09,overproduction
+3,2025-12-20,2,0.37,expired
+5,2025-12-20,1,1.23,expired
+5,2025-12-20,2,0.32,dropped
+7,2025-12-20,1,1.06,prep error
+8,2025-12-20,1,1.51,overproduction
+8,2025-12-20,2,0.43,dropped
+10,2025-12-20,1,1.07,prep error
+10,2025-12-20,2,0.47,returned plate
+11,2025-12-20,1,0.94,dropped
+11,2025-12-20,2,0.42,overproduction
+12,2025-12-20,1,1.24,overproduction
+12,2025-12-20,2,0.33,dropped
+1,2025-12-21,1,0.9,overproduction
+1,2025-12-21,2,0.34,expired
+9,2025-12-21,1,1.11,dropped
+9,2025-12-21,2,0.45,overproduction
+10,2025-12-21,1,0.81,prep error
+11,2025-12-21,1,0.99,overproduction
+1,2025-12-22,1,1.02,expired
+1,2025-12-22,2,0.46,overproduction
+4,2025-12-22,1,0.95,overproduction
+4,2025-12-22,2,0.42,overproduction
+9,2025-12-22,1,1.0,prep error
+9,2025-12-22,2,0.26,dropped
+10,2025-12-22,1,0.99,prep error
+10,2025-12-22,2,0.26,prep error
+1,2025-12-23,1,1.46,overproduction
+1,2025-12-23,2,0.29,returned plate
+1,2025-12-23,3,0.42,prep error
+6,2025-12-23,1,0.86,dropped
+7,2025-12-23,1,0.86,returned plate
+8,2025-12-23,1,1.08,overproduction
+9,2025-12-23,1,0.87,dropped
+9,2025-12-23,2,0.38,returned plate
+9,2025-12-23,3,0.4,prep error
+11,2025-12-23,1,0.81,returned plate
+12,2025-12-23,2,0.28,overproduction
+1,2025-12-24,1,0.85,overproduction
+7,2025-12-24,1,22.12,equipment failure
+7,2025-12-24,2,5.48,equipment failure
+7,2025-12-24,3,5.92,equipment failure
+7,2025-12-24,4,5.31,equipment failure
+7,2025-12-24,5,15.39,equipment failure
+7,2025-12-24,6,12.96,equipment failure
+7,2025-12-24,7,4.22,equipment failure
+7,2025-12-24,9,3.62,equipment failure
+7,2025-12-24,10,3.94,equipment failure
+7,2025-12-24,11,4.8,equipment failure
+8,2025-12-24,1,0.93,dropped
+8,2025-12-24,2,0.29,prep error
+9,2025-12-24,1,0.85,prep error
+9,2025-12-24,2,0.25,overproduction
+1,2025-12-26,1,1.97,overproduction
+1,2025-12-26,2,0.55,dropped
+1,2025-12-26,3,0.51,dropped
+2,2025-12-26,1,0.95,returned plate
+2,2025-12-26,2,0.3,expired
+3,2025-12-26,1,1.88,expired
+3,2025-12-26,2,0.71,expired
+3,2025-12-26,3,0.64,prep error
+3,2025-12-26,6,1.43,prep error
+5,2025-12-26,1,0.87,dropped
+6,2025-12-26,1,1.48,dropped
+6,2025-12-26,2,0.45,dropped
+6,2025-12-26,3,0.54,overproduction
+6,2025-12-26,4,0.43,dropped
+7,2025-12-26,1,1.55,prep error
+7,2025-12-26,2,0.31,returned plate
+7,2025-12-26,3,0.44,prep error
+9,2025-12-26,1,1.4,dropped
+9,2025-12-26,2,0.43,prep error
+9,2025-12-26,4,0.48,prep error
+10,2025-12-26,1,1.26,expired
+10,2025-12-26,2,0.48,overproduction
+11,2025-12-26,1,0.98,overproduction
+12,2025-12-26,1,0.95,expired
+12,2025-12-26,2,0.26,returned plate
+1,2025-12-27,1,1.16,prep error
+2,2025-12-27,1,1.23,dropped
+2,2025-12-27,2,0.35,prep error
+3,2025-12-27,1,1.49,returned plate
+3,2025-12-27,2,0.41,expired
+5,2025-12-27,2,0.34,returned plate
+6,2025-12-27,1,1.14,overproduction
+6,2025-12-27,2,0.43,prep error
+7,2025-12-27,1,1.79,dropped
+7,2025-12-27,2,0.49,dropped
+7,2025-12-27,4,0.44,expired
+8,2025-12-27,1,1.05,expired
+9,2025-12-27,1,0.82,prep error
+10,2025-12-27,1,1.32,returned plate
+10,2025-12-27,2,0.36,expired
+10,2025-12-27,3,0.47,overproduction
+3,2025-12-28,1,1.2,dropped
+6,2025-12-28,2,0.28,prep error
+7,2025-12-28,2,0.32,overproduction
+11,2025-12-28,1,0.9,expired

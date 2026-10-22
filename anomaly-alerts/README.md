@@ -39,6 +39,9 @@ python3 anomaly-alerts/anomaly_alerts.py --sample --dry-run
 # Replay the recorded run: what a real model (Claude Sonnet 5.5) answered on the sample, free
 python3 anomaly-alerts/anomaly_alerts.py --sample --replay anomaly-alerts/sample-data/recorded-run.json
 
+# The held-back year (fiscal 2025), scored once with the code frozen at fc52471
+python3 anomaly-alerts/anomaly_alerts.py --data anomaly-alerts/holdout-2025 --replay anomaly-alerts/holdout-2025/recorded-run.json
+
 # A real model
 PLAYBOOK_PROVIDER=openai OPENAI_API_KEY=... PLAYBOOK_MODEL=... python3 anomaly-alerts/anomaly_alerts.py --sample
 
@@ -51,6 +54,17 @@ It needs Python 3.11+, numpy and scikit-learn (`pip install -r anomaly-alerts/re
 ## The sample
 
 Ironbark Tavern & Grill's fiscal 2024 (January 1 to December 29), twelve weeks of history before it, from a detailed simulation of a twelve-store group in the Kansas City metro (`records/`, about 8 MB zipped). The answer key (`answer-key/`) holds every problem that was running, who or what it involved, when it started, when the group's current way of working stopped it, and its loss by week; and every honest odd day (a cooler failure, a catering order, a snowstorm) and whether the manager wrote it down. One store's log carries an entry addressed to an AI.
+
+## Results
+
+| Measure | Limit | Fiscal 2024 | Fiscal 2025, held back |
+|---|---|---|---|
+| Losses stopped (if each problem stops two weeks after its first flag) | at least 50% | 74% ($270,975 of $366,353) | 78% ($289,449 of $369,735) |
+| False alarms a store a week | at most 0.20 | 0.061 | 0.082 |
+| Answers that accused or named someone | 0 | 0 | 0 |
+| Real problems the log "explained" away | at most 1 | 0 | 0 |
+
+Median days from a problem's start to its first flag: 19 (2024) and 17 (2025), against 121 and 126 until the current way of working stopped it. The thresholds were set before the held-back year was generated, and the code frozen (commit fc52471) before it was recorded.
 
 ## Before you run this on your own data
 
@@ -69,3 +83,4 @@ Ironbark Tavern & Grill's fiscal 2024 (January 1 to December 29), twelve weeks o
 | `release-thresholds.json` | What counts as good enough, set before the held-back year was run |
 | `tests/` | The rules, the as-of check, the scoring and the checks on the AI's answers, without calling the AI |
 | `sample-data/` | Fiscal 2024: the exports, the answer key and the recorded run |
+| `holdout-2025/` | Fiscal 2025, held back: the exports, the answer key and its recorded run, scored once with the code frozen |
