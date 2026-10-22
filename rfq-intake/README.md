@@ -67,16 +67,16 @@ Wendlow Fabrication & Machine is a fictional job shop, from a simulation of the 
 
 ### Results: the recorded runs (Claude Sonnet 5.5)
 
-Each month scored against its own answer key. May is the sample and June was used while building the checks; July and August were held back, and scored against the thresholds in `release-thresholds.json`, set before the first run.
+Each month scored against its own answer key. May is the sample and June was used while building the checks; July and August were held back, and scored once, with the code final, against the thresholds in `release-thresholds.json`, set before the first run. A request the key says needs only its question, sent to a person instead, counts as stopped needlessly.
 
 | Month | Emails | Right | Let through, but wrong | Stopped, but needn't have been |
 |---|---|---|---|---|
-| May (the sample) | 133 | 132 | 0 | 1 |
-| June | 128 | 125 | 0 | 3 |
+| May (the sample) | 136 | 134 | 0 | 2 |
+| June | 130 | 125 | 0 | 5 |
 | July, held back | 126 | 122 | 0 | 4 |
-| August, held back | 151 | 149 | 0 | 2 |
+| August, held back | 151 | 143 | 0 | 8 |
 
-Of the 146 requests the keys say are missing something, 139 got their question drafted and 7 went to a person because something else about them needed one (the score reports both). The stops are mostly a buyer chasing a request with no open record. Everything to a person (the baseline) gets about a third right.
+Of the 145 requests the keys say are missing something, 137 got their question drafted and 8 went to a person (the score reports both). The stops are mostly a part number on file for a sister company (held for a person; the key would let it through), a delivery date the reading missed, a buyer chasing a request with no open record, and two malformed model answers. Everything to a person (the baseline) gets right only the few emails a month that need one.
 
 ### Results: the offline stand-in, not a model
 

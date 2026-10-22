@@ -978,8 +978,10 @@ def test_the_replay_scores_and_forecasts(replayed):
     run_, _ = replayed
     s = run_.scored
     assert s["n"][ri.LET_THROUGH] == 0 and s["passed"] and run_.count(ri.FAILED) == 0
-    # With every request read and asked about the day it arrives, May's forecast has none at risk (the page says so).
-    assert run_.plan and run_.plan.queue and not run_.plan.at_risk
+    # With every request read and asked about the day it arrives, May's forecast flags only the three April requests
+    # that were already past their due dates when the run began (the page says so).
+    assert run_.plan and run_.plan.queue
+    assert len(run_.plan.at_risk) == 3 and all("already past its due date" in why for _, why in run_.plan.at_risk)
 
 
 # --- the independent review's fixes ---------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 
 ## The problem
 
-Requests for quotes arrive in quotes@, a shared Microsoft 365 mailbox, about 100 a month. About 4 in 10 are missing something we need to price them: a revision, a quantity, or the drawing itself. Nobody reads a request until an estimator opens it to price it, so that's when we notice the gap, email the buyer, and wait for the answer, and by then the buyer has often decided without our quote. We lose about 120 quotes a year this way. The requests are also mixed in with buyers chasing quotes, revised drawings for quotes in progress, awards, and sales pitches, and someone has to sort it all and retype every part number, revision and quantity before pricing can start.
+Requests for quotes arrive in quotes@, a shared Microsoft 365 mailbox, about 100 a month. About 4 in 10 are missing something we need to price them: a revision, a quantity, or the drawing itself. The estimators read the inbox twice a week and key each request into the ERP by hand, about ten minutes each, and nobody notices a gap until an estimator opens the request to price it. So the question goes to the buyer days after the request arrived, we wait for the answer, and by then the buyer has often decided without our quote. We lose about 240 quotes a year to timing. The requests are also mixed in with buyers chasing quotes, revised drawings for quotes in progress, awards, and sales pitches, which someone has to sort.
 
 ## What it does
 
@@ -23,6 +23,7 @@ For every new email in quotes@:
    - then the at-risk requests;
    - then the ready queue, in order, with each request's due date and expected finish;
    - five ready ones picked at random for a person to spot-check.
+8. **An import file for the ERP:** one row per line of every request that's ready to quote or waiting on its answer (customer, buyer, part number, revision, quantity, dates, the drawing files, and what's still missing), in the columns our ERP's RFQ import takes, so nobody keys them. A person loads it; the tool never writes to the ERP.
 
 It's decision support. People decide what to quote, what to decline, and send everything.
 
@@ -55,7 +56,7 @@ It's decision support. People decide what to quote, what to decline, and send ev
 - **The AI** gets the email and nothing else: no customer records, no tools. Its answer only counts once code has checked it.
 - **Email is untrusted:** ignore instructions in it, flag emails with instructions aimed at an AI, and escape everything from an email on the dashboard.
 - **No third-party packages:** Python's standard library only.
-- **What it never does:** send email, change the mailbox, price anything, or decline a request.
+- **What it never does:** send email, change the mailbox, write to the ERP, price anything, or decline a request.
 
 ## How it runs
 
