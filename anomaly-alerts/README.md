@@ -43,7 +43,7 @@ python3 anomaly-alerts/anomaly_alerts.py --sample --replay anomaly-alerts/sample
 python3 anomaly-alerts/anomaly_alerts.py --data anomaly-alerts/holdout-2025 --replay anomaly-alerts/holdout-2025/recorded-run.json
 
 # A real model
-PLAYBOOK_PROVIDER=openai OPENAI_API_KEY=... PLAYBOOK_MODEL=... python3 anomaly-alerts/anomaly_alerts.py --sample
+ANTHROPIC_API_KEY=... python3 anomaly-alerts/anomaly_alerts.py --sample
 
 # The tests (no AI, free)
 python3 -m pytest anomaly-alerts

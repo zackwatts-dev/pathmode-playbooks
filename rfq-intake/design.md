@@ -8,7 +8,7 @@ Requests for quotes arrive in quotes@, a shared Microsoft 365 mailbox, about 100
 
 For every new email in quotes@:
 1. **Decide what kind it is:** a new request for quote, a buyer chasing one, a revised drawing for an open request, an award or a "no thanks" on a quote we sent, or something else.
-2. **For a request,** an AI model (OpenAI's API) pulls out the customer, each part number with its revision, quantity and requested delivery date, and the date quotes are due if the buyer gives one, quoting the exact words each came from.
+2. **For a request,** an AI model (Claude, through Anthropic's API) pulls out the customer, each part number with its revision, quantity and requested delivery date, and the date quotes are due if the buyer gives one, quoting the exact words each came from.
 3. **Plain code, not AI, checks it:** every quote really appears in the email, and every value is in the words quoted for it. It matches the sender to a customer on file, each part to the customer's parts (a part we've made before, or a new one), and a chaser or revision to the open request it belongs to. Exact matches only. If more than one could fit, it asks; it never guesses.
 4. **It puts each email in one pile:**
    - **ready to quote:** everything needed to price it is there;

@@ -45,7 +45,7 @@ python3 rfq-intake/rfq_intake.py --sample --dry-run
 python3 rfq-intake/rfq_intake.py --sample --replay rfq-intake/sample-data/recorded-run.json
 
 # A real model: an API account whose terms say your data isn't used for training
-export ANTHROPIC_API_KEY=...        # or PLAYBOOK_PROVIDER=openai OPENAI_API_KEY=... PLAYBOOK_MODEL=...
+export ANTHROPIC_API_KEY=...
 python3 rfq-intake/rfq_intake.py --sample
 
 # The queue replay: a model of what reading every request on arrival is worth, 2024

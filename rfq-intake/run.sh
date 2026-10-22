@@ -2,7 +2,7 @@
 # One scheduled run: copy new email out of quotes@, then sort it, plan the queue and rebuild the dashboard.
 # Schedule it every 15 minutes (cron, or a timer job on a server you control). Settings come from the environment:
 #   MS_TENANT_ID, MS_CLIENT_ID, MS_CLIENT_SECRET  the read-only mailbox app (see graph_mailbox.py)
-#   ANTHROPIC_API_KEY, or PLAYBOOK_PROVIDER=openai OPENAI_API_KEY=... PLAYBOOK_MODEL=...   the AI model
+#   ANTHROPIC_API_KEY   the AI model (Claude); PLAYBOOK_MODEL to pin a different Claude model
 #   MAILBOX   the mailbox address, e.g. quotes@yourcompany.com
 #   WORK      a folder on this server, e.g. /srv/quote-intake
 #   RECORDS   the folder the ERP exports customers, contacts, customer-parts and open-rfqs to each night, with
