@@ -87,17 +87,17 @@ From `--dry-run`: regular expressions for the sample's phrasings, a test of the 
 
 - **today:** read and keyed twice a week; the question goes out when the request is opened.
 - **daily:** a person reads and keys every request the morning it arrives (the same 10 minutes), and asks then. No AI.
-- **intake:** AI reads every request the day it arrives and drafts the question; the lines go to the ERP as an import file. The requests the tool sends to a person (8%) are read and keyed by hand the next morning someone is in, and a person spends a minute looking over each import row.
+- **intake:** AI reads every request the day it arrives and drafts the question; the lines go to the ERP as an import file. The requests the tool sends to a person (12%, as in the recorded months) are read and keyed by hand on a day someone is in, and a person spends a minute looking over each request's import rows.
 
-Every way of working pays the same quarter hour to check and send each question, sent on a day someone is in. One calibration factor on the quoting time is fitted on `today` alone, to each window's actual on-time count. A quote is on time if it went out by the buyer's true decision date, which only the scoring sees. A won quote is worth $35,800 of first-year revenue (every order of its parts in the year after the win, Wendlow's records for 2022–23: `pathmode-corpus/simulations/fabricator/scripts/rfq_value_stats.py`) × 27% margin, at the window's on-time win rate.
+Every way of working pays the same quarter hour to check and send each question, sent on a day someone is in. One calibration factor on the quoting time (1.66 in 2024: the owner's formula underestimates quoting time, and the dashboard's forecast with it) is fitted on `today` alone, to each window's actual on-time count. A quote is on time if it went out by the buyer's true decision date, which only the scoring sees. A won quote is worth $35,800 of first-year revenue (every order of its parts in the year after the win, Wendlow's records for 2022–23: `pathmode-corpus/simulations/fabricator/scripts/rfq_value_stats.py`) × 27% margin, at the window's on-time win rate.
 
 | Year | Lost to late quotes | More on time: daily | More on time: intake | Extra wins: intake | First-year margin: intake |
 |---|---|---|---|---|---|
-| 2023 | 293 | 100 | 135 | 47 | $454,000 |
-| 2024 | 210 | 100 | 122 | 46 | $441,000 |
-| 2025 (to Nov 26) | 195 | 113 | 129 | 53 | $508,000 |
+| 2023 | 293 | 100 | 137 | 48 | $461,000 |
+| 2024 | 210 | 100 | 119 | 44 | $428,000 |
+| 2025 (to Nov 26) | 195 | 113 | 129 | 52 | $505,000 |
 
-Today the question goes out about three days after the request arrived. Most of intake's gain is timing: with `--keying-minutes 0` (no keying cost at all), intake still gets 82 more quotes out on time in 2024; at 5 minutes, 103; at 10, 122. `--data` runs each year's folder; the defaults reproduce the 2024 row.
+Today the question goes out about three days after the request arrived. Most of intake's gain is timing: with `--keying-minutes 0` (no keying cost at all), intake gets 83 more quotes out on time in 2024 and a person reading each morning 85; at 5 minutes, intake 101; at 10, 119. Most of the gain is reading daily, which a person can do; intake adds the keying hours back. `--data` runs each year's folder; the defaults reproduce the 2024 row.
 
 **Limits of the model.** A late quote made on time is assumed to win at the average on-time rate. A buyer is assumed to take as long to answer a question asked on day one as one asked on day three. The person reading every morning is assumed to catch every gap. And a won part's later years aren't counted: in Wendlow's records a part won in 2017–19 brought in 2.89 times its first year's revenue over its life.
 

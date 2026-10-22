@@ -78,8 +78,8 @@ SEEDS = 20
 
 # Labeled estimates, not results.
 KEYING_MINUTES = 10  # an estimator's minutes to read a request and key it into the ERP (the simulation's own)
-CHECK_MINUTES = 1  # with AI intake, a person's minutes to look over each request's import row
-TO_A_PERSON = 0.08  # with AI intake, the share of new requests sent to a person, keyed by hand (the recorded months)
+CHECK_MINUTES = 1  # with AI intake, a person's minutes to look over each request's import rows
+TO_A_PERSON = 0.12  # with AI intake, the share of new requests sent to a person (35 of 299 in the recorded months)
 REVENUE_PER_WIN = (
     35_800  # first-year revenue per won new-part quote, every order of its parts in the year after the win:
 )
