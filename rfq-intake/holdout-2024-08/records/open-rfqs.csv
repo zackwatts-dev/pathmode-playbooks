@@ -1,0 +1,3 @@
+rfq_id,customer_id,buyer,received_on,stated_due,part_numbers,quantities,requested_dates
+23591,8,Sage Oberly,2024-07-25,,ECK-14550;ECK-19965,36;18,2024-08-29;2024-08-15
+23607,134,Riley Yoder,2024-07-29,,NAG-40369,43,2024-08-19

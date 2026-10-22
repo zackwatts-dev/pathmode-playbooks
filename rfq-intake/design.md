@@ -2,7 +2,7 @@
 
 ## The problem
 
-Requests for quotes arrive in quotes@, a shared Microsoft 365 mailbox, about 100 a month, with drawings attached. Our estimators work them in the order they arrive, key accounts first. When we're short an estimator, the queue backs up, and a buyer who wanted quotes by Thursday decides without ours. In bad months we lose more work to late quotes than to price. The requests are also mixed in with buyers chasing quotes, revised drawings for quotes in progress, awards, and sales pitches, and someone has to sort it all and retype every part number, revision and quantity before pricing can start.
+Requests for quotes arrive in quotes@, a shared Microsoft 365 mailbox, about 100 a month. About 4 in 10 are missing something we need to price them: a revision, a quantity, or the drawing itself. Nobody reads a request until an estimator opens it to price it, so that's when we notice the gap, email the buyer, and wait for the answer, and by then the buyer has often decided without our quote. We lose about 100 quotes a year this way. The requests are also mixed in with buyers chasing quotes, revised drawings for quotes in progress, awards, and sales pitches, and someone has to sort it all and retype every part number, revision and quantity before pricing can start.
 
 ## What it does
 
@@ -12,7 +12,7 @@ For every new email in quotes@:
 3. **Plain code, not AI, checks it:** every quote really appears in the email, and every value is in the words quoted for it. It matches the sender to a customer on file, each part to the customer's parts (a part we've made before, or a new one), and a chaser or revision to the open request it belongs to. Exact matches only. If more than one could fit, it asks; it never guesses.
 4. **It puts each email in one pile:**
    - **ready to quote:** everything needed to price it is there;
-   - **needs info:** a quantity or revision is missing, with a short drafted question for us to send;
+   - **needs info:** a quantity, a revision or the drawing is missing, with a short drafted question for us to send the day the request arrives;
    - **needs a person:** it failed a check (a value that isn't in its quote, a sender we can't place, instructions aimed at an AI, an attachment it can't read, an answer it couldn't use);
    - **not a request:** where it goes instead (a chaser to whoever has the request, a revision attached to its request, an award to sales, a pitch nowhere).
 5. **It puts the ready requests in order** (code): stated due date first, soonest first; then key accounts; then oldest first. A request with no stated due date is given the usual buyer's window, six working days.

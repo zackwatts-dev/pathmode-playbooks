@@ -67,7 +67,7 @@ def worksheet(item: dict, path: Path, checked: str) -> None:
         excel = re.sub(r"[A-Za-z_]\w*", lambda m: cells[m.group()], formula)
         ws.cell(row, 1, o["label"])
         c = ws.cell(row, 2, f"={excel}")
-        c.number_format = '"$"#,##0' if o["format"] == "money" else '#,##0" hours"'
+        c.number_format = {"money": '"$"#,##0', "number": "#,##0"}.get(o["format"], '#,##0" hours"')
         c.font = bold
         row += 1
     row += 1

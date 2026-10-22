@@ -1092,6 +1092,9 @@ def match_customer(r: Result, records: Records) -> None:
     r.notes += notes
 
 
+DRAWING_FILES = {"pdf", "step", "stp", "dwg", "dxf", "igs", "iges", "sldprt", "x_t"}
+
+
 def new_request(r: Result, a: dict, records: Records, opens: list[OpenRequest]) -> None:
     mail = r.mail
     match_customer(r, records)
@@ -1130,6 +1133,14 @@ def new_request(r: Result, a: dict, records: Records, opens: list[OpenRequest]) 
         r.lines.append(ln)
     if not a["lines"]:
         r.questions.append("Which part numbers, revisions and quantities would you like us to quote?")
+    drawings_attached = [n for n in mail.attachments if n.lower().rsplit(".", 1)[-1] in DRAWING_FILES]
+    new_parts = [ln.part for ln in r.lines if ln.part and not str(ln.status).startswith("repeat")]
+    if new_parts and not drawings_attached:
+        # A new part can't be priced without its drawing, whatever the email says about attachments.
+        r.questions.append(
+            f"Could you send the drawing{'s' if len(new_parts) > 1 else ''} for {', '.join(new_parts)}? "
+            "Nothing was attached to the email."
+        )
     r.reasons += clause_problems(r.lines, mail)
     missing = parts_in(mail.source) - seen
     if missing:
@@ -1137,6 +1148,12 @@ def new_request(r: Result, a: dict, records: Records, opens: list[OpenRequest]) 
         r.reasons.append(f"the email mentions {', '.join(dict.fromkeys(names))}, which isn't among the lines read")
     r.quote_due = to_date(a["quote_due"]["value"]) if not any("due date" in x for x in r.reasons) else None
     r.due_stated = r.quote_due is not None
+    if not r.due_stated and not any("due date" in x for x in r.reasons):
+        # A due date the email clearly gives can't be lost: deadline words and a date on one line, and none read.
+        for line in mail.source.splitlines():
+            if DUE_WORDS.search(line) and DATE.search(line):
+                r.reasons.append(f'the email says when quotes are due ("{line.strip()[:80]}"), but none was read')
+                break
     says_weld = bool(WELD_WORDS.search(mail.subject + "\n" + mail.text))
     r.weld = any(ln.family in WELD_FAMILIES or (not ln.family and says_weld) for ln in r.lines)
     chased = [o for o in opens if r.customer and o.customer and o.customer.id == r.customer.id and set(o.parts) & seen]

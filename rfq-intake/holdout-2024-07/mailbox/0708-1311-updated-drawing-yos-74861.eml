@@ -1,0 +1,42 @@
+From: Skyler Reinholt <sreinholt@yostconveyor.example>
+To: quotes@wendlow.example
+Subject: Updated drawing YOS-74861
+Date: Mon, 08 Jul 2024 13:11:00 -0400
+Message-ID: <202407081311.0100@yostconveyor.example>
+In-Reply-To: <202407031030.0012@yostconveyor.example>
+References: <202407031030.0012@yostconveyor.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="==wendlow-0100=="
+
+--==wendlow-0100==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi Wendlow team,
+
+Please use rev B attached instead of the A drawing we sent for YOS-74861.
+
+Thanks
+Skyler Reinholt
+Supply Chain
+Yost Conveyor, Inc.
+
+--==wendlow-0100==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="YOS-74861_revB.pdf"
+MIME-Version: 1.0
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2Jq
+CjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2Jq
+CjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA3OTIg
+NjEyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4g
+Pj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA2NSA+PgpzdHJlYW0KQlQgL0YxIDEyIFRm
+IDcyIDcyMCBUZCAoWU9TLTc0ODYxIHJldiBCIC0gY3VzdG9tZXIgZHJhd2luZykgVGogRVQKZW5k
+c3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFz
+ZUZvbnQgL0hlbHZldGljYSA+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAow
+MDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTggMDAwMDAgbiAKMDAwMDAwMDExNSAwMDAwMCBu
+IAowMDAwMDAwMjQxIDAwMDAwIG4gCjAwMDAwMDAzNTYgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6
+ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo0MjYKJSVFT0YK
+
+--==wendlow-0100==--
