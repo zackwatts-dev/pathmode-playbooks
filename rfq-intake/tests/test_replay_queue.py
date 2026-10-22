@@ -65,11 +65,19 @@ def test_keying_costs_the_same_hours_read_daily_or_twice_a_week_and_ai_intake_sa
     assert max(none.sent.values()) <= max(intake.sent.values())  # intake still pays its checks and hand-keyed share
 
 
-def test_ai_intake_reads_on_a_day_nobody_is_in_and_a_person_doesnt():
+def test_ai_intake_reads_on_a_day_nobody_is_in_but_a_person_sends_the_question_the_next_day_someone_is():
     gap = req("gap", 0.5, missing="revision", answer_days=1)
     cap = [rq.Day(MON, 0.0)] + capacity(6, 1.0)[1:]
-    assert rq.replay([gap], cap, "intake").asked["gap"] == MON
+    assert rq.replay([gap], cap, "intake").asked["gap"] == TUE
     assert rq.replay([gap], cap, "daily").asked["gap"] == TUE
+
+
+def test_the_requests_ai_intake_sends_to_a_person_are_read_by_hand_the_next_morning_someone_is_in(monkeypatch):
+    monkeypatch.setattr(rq, "TO_A_PERSON", 1.0)  # every request to a person: intake is a person reading daily
+    reqs = [req(f"r{i}", 0.5, missing="quantity" if i % 3 == 0 else "", answer_days=2) for i in range(9)]
+    cap = [rq.Day(MON, 0.0)] + capacity(10, 1.0)[1:]
+    intake, daily = rq.replay(reqs, cap, "intake"), rq.replay(reqs, cap, "daily")
+    assert intake.asked == daily.asked and intake.sent == daily.sent
 
 
 def test_screened_requests_are_keyed_but_never_priced():

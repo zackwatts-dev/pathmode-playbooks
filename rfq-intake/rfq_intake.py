@@ -98,7 +98,7 @@ ROUTE_TEXT = {
     OTHER: "Sales",
 }
 
-# The quoting-time formula (the owner's answer to the plan's question 3): hours per request.
+# The quoting-time formula (the owner's answer to the plan's question on quoting time): hours per request.
 QUOTE_HOURS_BASE = 0.6
 QUOTE_HOURS_PER_EXTRA_LINE = 0.3
 QUOTE_HOURS_WELD = 1.5
@@ -117,16 +117,29 @@ PART_PATTERN = re.compile(r"(?<![A-Za-z0-9])([A-Z]{2,5}-\d{3,7})(?![0-9])")
 NOT_PARTS = ("PO", "RFQ", "QT", "INV", "SO")  # prefixes that are order, quote or invoice numbers, not parts
 
 # Text aimed at an AI. Any match sends the email to a person, whatever the model says; so does the model's own flag.
+# Either something addressed to an AI (or to whatever system reads the email) followed by an instruction, or one of
+# the phrases that only ever appear in instructions to a model.
+_AI_ADDRESSEE = (
+    r"(?<![\w.])(ai|a\.i\.|chatbot|bot|claude|chatgpt|gpt|llm|copilot|language model|ai assistant|ai agent|"
+    r"hey assistant|dear assistant|assistant reading|automated (assistant|agent|quoting|pricing|tools?|reader)|"
+    r"whatever system|any system|system message|whoever (reads|processes|handles) this)(?!\w)"
+)
+_AI_DIRECTIVE = (
+    r"(\bmark (this|it|the|these)\b.{0,40}\bas\b|\bapprove\b|\bset the price\b|\bquote (it |this )?at\b|"
+    r"\b\d+\s*%\s*(off|discount)\b|\bskip (the )?(review|checks?)\b|\bignore\b|\b(do not|don't|no need to) "
+    r"(flag|escalate|review|check)\b|\btreat (this|it)\b.{0,30}\bas\b|\btop priority\b|\bpre-?approved\b)"
+)
 INJECTION = re.compile(
-    r"(ignore (all |your |any |the )?(previous |prior |above )?instructions"
+    _AI_ADDRESSEE
+    + r".{0,200}?"
+    + _AI_DIRECTIVE
+    + r"|ignore (all |your |any |the )?(previous |prior |above )?(instructions|guidance|rules)"
+    r"|\b(assistant|system)\s*:\s*(approve|mark|ignore|set|change|override|treat)\b"
+    r"|\bapply (a |an )?\d+\s*% discount to (this|the|our) (quote|price|rfq|request)"
     r"|disregard (all |the |any )?(previous |prior )?(instructions|rules)"
-    r"|note to (any|the|an) (ai|assistant|bot)|(ai|automated) (assistant|system|agent)s? (processing|reading)"
-    r"|language model|system prompt|you are (now )?an? (ai|assistant)|mark this (request |rfq |email )?as"
-    r"|approve (it |this )?at \d|skip the (review|check)|do not (flag|escalate)"
-    r"|^\s*(assistant|system|user)\s*:|\b(assistant|system)\s*:\s*(approve|mark|ignore|you|set|change|override|treat)"
-    r"|ignore previous|approve (it |this )?(at|with|now)\b"
-    r"|\b(apply|give|grant|take) (a |an |the )?\d+\s*% (off|discount))",
-    re.I | re.M,
+    r"|system prompt|you are (now )?an? (ai|assistant|pricing assistant)"
+    r"|^\s*(assistant|system)\s*:\s*(approve|mark|ignore|you|set|change|override|treat)",
+    re.I | re.M | re.S,
 )
 # Ordinary request wording ("PPAP approval", "approved vendor list", "Hydraulic system: 3000 psi") isn't on the list.
 RFQ_WORDS = re.compile(r"\b(rfq|request for quote|quote needed|please quote|pls quote|quote the following)\b", re.I)
@@ -649,7 +662,8 @@ def to_date(value: str) -> date | None:
 
 
 def working_days_after(d: date, n: int) -> date:
-    """n working days (Monday to Friday) after d. Holidays aren't counted (the owner's answer to question 6)."""
+    """n working days (Monday to Friday) after d. Holidays aren't counted (the owner's answer to the plan's question
+    on ordering)."""
     while n > 0:
         d += timedelta(days=1)
         if d.weekday() < 5:
@@ -670,6 +684,7 @@ class Line:
     status: str = ""  # "new", "repeat", "repeat, new revision (...)"
     family: str = ""  # a repeat's from its record; a new part's from its description (customer-parts.csv)
     revised: str = ""  # a later revision that arrived for this part, from a revision email
+    missing: list[str] = field(default_factory=list)  # what the buyer still has to send: part number, revision, ...
 
 
 @dataclass
@@ -715,6 +730,12 @@ class Result:
     @property
     def who(self) -> str:
         return self.customer.name if self.customer else ""
+
+    @property
+    def missing(self) -> set[str]:
+        """What the drafted questions ask for: part number, revision, quantity, drawing, or the lines themselves."""
+        out = {m for ln in self.lines for m in ln.missing}
+        return out | ({"lines"} if self.kind == "new rfq" and not self.lines and self.questions else set())
 
 
 NEAR = 150  # characters: how far a value's words may sit from its part number and still belong to it
@@ -1120,6 +1141,7 @@ def new_request(r: Result, a: dict, records: Records, opens: list[OpenRequest]) 
         ln = Line(part, rev, qty if isinstance(qty, int) else None, to_date(raw["requested_date"]["value"]))
         ln.description = raw["description"]["value"]
         if not part:
+            ln.missing.append("part number")
             r.questions.append(f"Line {i + 1}: which part number should we quote?")
             r.lines.append(ln)
             continue
@@ -1131,10 +1153,12 @@ def new_request(r: Result, a: dict, records: Records, opens: list[OpenRequest]) 
         if qty is not None and isinstance(qty, int) and qty <= 0:
             r.reasons.append(f"{part}'s quantity {qty} isn't above zero")
         if not rev:
+            ln.missing.append("revision")
             r.questions.append(
                 f"Which revision of {part} should we quote? The email doesn't say, and nor do the files."
             )
         if qty is None:
+            ln.missing.append("quantity")
             r.questions.append(f"How many pieces of {part}{f' rev {rev}' if rev else ''} would you like quoted?")
         drawn = {m.lower() for m in _attachment_revisions(part, mail.attachments)}
         if rev and drawn and rev.lower() not in drawn:
@@ -1164,6 +1188,9 @@ def new_request(r: Result, a: dict, records: Records, opens: list[OpenRequest]) 
             "check which file is which"
         )
     elif missing_dwg:
+        for ln in r.lines:
+            if ln.part in missing_dwg:
+                ln.missing.append("drawing")
         attached = "Nothing was attached to the email." if not drawings else "It wasn't attached to the email."
         r.questions.append(
             f"Could you send the drawing{'s' if len(missing_dwg) > 1 else ''} for {', '.join(missing_dwg)}? {attached}"
@@ -1768,9 +1795,9 @@ def line_rows(results: list[Result]) -> list[dict]:
 
 
 def erp_import_rows(results: list[Result]) -> list[dict]:
-    """One row per line of every new request that's ready to quote or waiting on its answer, in the columns an ERP's
-    RFQ import takes. A person loads the file; nothing here writes to the ERP. A value still to come from the buyer
-    is left blank and named in `missing`."""
+    """One row per line of every new request that's ready to quote or waiting on its answer, in a fixed column layout
+    to map to the ERP's RFQ import once. A person loads the file; nothing here writes to the ERP. A value still to come
+    from the buyer is left blank and named in `missing` (part number, revision, quantity, drawing)."""
     rows = []
     for r in results:
         if r.kind != "new rfq" or r.status not in (READY, INFO) or r.customer is None:
@@ -1790,12 +1817,19 @@ def erp_import_rows(results: list[Result]) -> list[dict]:
                     "quantity": "" if ln.quantity is None else ln.quantity,
                     "requested_date": ln.requested or "",
                     "description": ln.description,
-                    "new_or_repeat": "new" if ln.status == "new" else "repeat",
+                    "new_or_repeat": _new_or_repeat(ln),
                     "drawings": "; ".join(a for a in r.mail.attachments if _drawing_for(ln.part, [a])),
-                    "missing": "; ".join(q for q in r.questions if ln.part in q) if r.status == INFO else "",
+                    "missing": ", ".join(ln.missing) if r.status == INFO else "",
                 }
             )
     return rows
+
+
+def _new_or_repeat(ln: Line) -> str:
+    """As the records say: new, repeat, or a repeat at a new revision; unknown when the part number is still to come."""
+    if not ln.part or not ln.status:
+        return "unknown"
+    return "repeat, new revision" if "new revision" in ln.status else ln.status
 
 
 def queue_rows(plan: Plan | None) -> list[dict]:
@@ -1956,6 +1990,10 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
                 incomplete["asked" if got == INFO else "to a person" if got in HELD else "missed"].append(r.mail.file)
             if got == READY:
                 groups[LET_THROUGH].append(tag)
+            elif want == INFO and got == INFO and k.get("missing") and r.missing != set(k["missing"].split(";")):
+                groups[WRONG_PLACE].append(
+                    f"{tag}, asking for {', '.join(sorted(r.missing))} (key: {k['missing'].replace(';', ', ')})"
+                )
             elif want == INFO and got == INFO or want == REVIEW and got in HELD and got != INFO:
                 groups[RIGHT].append(r.mail.file)
             elif want == INFO and got in HELD:

@@ -27,7 +27,7 @@ from pathlib import Path
 
 TIERS = ("key", "regular", "occasional")
 SENIORITY = ("junior", "senior")
-# The families the quoting-time formula charges 1.5x for (the owner's answer to the plan's question 3).
+# The families the quoting-time formula charges 1.5x for (the owner's answer to the plan's question on quoting time).
 WELD_FAMILIES = ("structural weldment", "machined weldment", "assembly")
 
 COLUMNS = {

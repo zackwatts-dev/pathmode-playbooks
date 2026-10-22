@@ -12,7 +12,7 @@ For every new email in quotes@:
 3. **Plain code, not AI, checks it:** every quote really appears in the email, and every value is in the words quoted for it. It matches the sender to a customer on file, each part to the customer's parts (a part we've made before, or a new one), and a chaser or revision to the open request it belongs to. Exact matches only. If more than one could fit, it asks; it never guesses.
 4. **It puts each email in one pile:**
    - **ready to quote:** everything needed to price it is there;
-   - **needs info:** a quantity, a revision or the drawing is missing, with a short drafted question for us to send the day the request arrives;
+   - **needs info:** a quantity, a revision or the drawing is missing, with a short drafted question, asking for exactly what's missing, for us to send the day the request arrives;
    - **needs a person:** it failed a check (a value that isn't in its quote, a sender we can't place, instructions aimed at an AI, an attachment it can't read, an answer it couldn't use);
    - **not a request:** where it goes instead (a chaser to whoever has the request, a revision attached to its request, an award to sales, a pitch nowhere).
 5. **It puts the ready requests in order** (code): stated due date first, soonest first; then key accounts; then oldest first. A request with no stated due date is given the usual buyer's window, six working days.
@@ -23,7 +23,7 @@ For every new email in quotes@:
    - then the at-risk requests;
    - then the ready queue, in order, with each request's due date and expected finish;
    - five ready ones picked at random for a person to spot-check.
-8. **An import file for the ERP:** one row per line of every request that's ready to quote or waiting on its answer (customer, buyer, part number, revision, quantity, dates, the drawing files, and what's still missing), in the columns our ERP's RFQ import takes, so nobody keys them. A person loads it; the tool never writes to the ERP.
+8. **An import file for the ERP:** one row per line of every request that's ready to quote or waiting on its answer (customer, buyer, part number, revision, quantity, dates, the drawing files, whether the part is new or one we've made, and which fields are still missing), in a fixed column layout we map to the ERP's RFQ import once, so nobody keys them. A person loads it; the tool never writes to the ERP.
 
 It's decision support. People decide what to quote, what to decline, and send everything.
 
@@ -64,5 +64,5 @@ It's decision support. People decide what to quote, what to decline, and send ev
 - **Limit:** at most 200 emails to the AI per run. Anything over the limit is listed for a person and picked up next run.
 - **Nothing is silently dropped.** An unusable answer is listed as "couldn't process". An email with no readable text goes to a person.
 - **Logging:** every run adds a line to a log: when, which model, how many emails, how many in each pile.
-- **Retention and access:** saved email is deleted after 90 days. Only estimating and sales see the output.
+- **Access:** the output is written to a folder only estimating and sales can open. Keeping and deleting the mailbox copy is the copy step's job, not this tool's.
 - **After any change,** including a new model version, re-run the answer key before going live.

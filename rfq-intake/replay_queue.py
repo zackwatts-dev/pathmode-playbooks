@@ -47,6 +47,7 @@ import math
 import random
 import statistics
 import sys
+import zlib
 from dataclasses import dataclass, field, replace
 from datetime import date
 from pathlib import Path
@@ -219,11 +220,9 @@ def replay(
     if policy not in POLICIES:
         raise ValueError(f"policy {policy!r} isn't one of {', '.join(POLICIES)}")
     early = policy in ("daily", "intake")  # the question goes out when the request is read
-    per_request = (
-        (TO_A_PERSON * keying_minutes + (1 - TO_A_PERSON) * CHECK_MINUTES) / 60
-        if policy == "intake"
-        else keying_minutes / 60
-    )
+    # With AI intake, most requests are read and keyed by the tool every morning, and a person spends a minute
+    # checking each; the share it sends to a person is read and keyed by hand the next morning someone is in.
+    # Either way, a person sends the drafted question, so it goes out on a day someone is in.
     need = {r.id: work_hours(r, scale) for r in requests if not r.screened}
     spent = dict.fromkeys(need, 0.0)
     out = Outcome({r.id: None for r in requests if r.priced})
@@ -239,10 +238,16 @@ def replay(
         items = queue + requotes + [r for _, r in waiting.values()]
         return sum(need[r.id] if spent[r.id] > 0 else UNSTARTED for r in items) / STANDARD_DAY / 5
 
-    def reading_day(day: Day) -> bool:
-        if policy == "intake":
+    def by_hand(r: Request) -> bool:
+        """With AI intake, the requests the tool sends to a person: a fixed share, chosen by id."""
+        return policy == "intake" and (zlib.crc32(r.id.encode()) % 10_000) / 10_000 < TO_A_PERSON
+
+    def reading_day(day: Day, r: Request) -> bool:
+        if policy == "intake" and not by_hand(r):
             return True  # the tool reads every morning, whoever is in
-        return day.hours > 0 and (policy == "daily" or day.date.weekday() in INTAKE_WEEKDAYS)
+        return day.hours > 0 and (policy in ("daily", "intake") or day.date.weekday() in INTAKE_WEEKDAYS)
+
+    unasked: list[Request] = []  # intake: read on a day nobody was in; the question waits for someone
 
     for day in days(capacity):
         while pending and (pending[0].at_start or pending[0].received <= day.date):
@@ -253,24 +258,33 @@ def replay(
                 requotes.append(r)  # raised inside the ERP: nothing to read
             elif not r.at_start:
                 inbox.append(r)
-        if reading_day(day):
-            for r in inbox:
-                debt[0] += per_request
-                if r.screened:
-                    continue
-                if r.tier == "occasional" and backlog_weeks() > TRIAGE_WEEKS:
-                    out.declined.append(r.id)
-                    continue
-                if r.missing and early:
-                    asked = r.received if policy == "intake" else day.date
-                    out.asked[r.id] = asked
-                    ready[r.id] = working_days_after(asked, r.answer_days)
+        if day.hours > 0:
+            for r in unasked:
+                out.asked[r.id] = day.date
+                ready[r.id] = working_days_after(day.date, r.answer_days)
+                debt[0] += QUESTION_HOURS
+            unasked.clear()
+        for r in [r for r in inbox if reading_day(day, r)]:
+            inbox.remove(r)
+            machine = policy == "intake" and not by_hand(r)
+            debt[0] += (CHECK_MINUTES if machine else keying_minutes) / 60
+            if r.screened:
+                continue
+            if r.tier == "occasional" and backlog_weeks() > TRIAGE_WEEKS:
+                out.declined.append(r.id)
+                continue
+            if r.missing and early:
+                if day.hours > 0:
+                    out.asked[r.id] = day.date
+                    ready[r.id] = working_days_after(day.date, r.answer_days)
                     debt[0] += QUESTION_HOURS  # a person reads the drafted question and sends it
-                if r.tier == "key":
-                    queue.insert(0, r)  # as the simulation does: a key account's request goes to the front
                 else:
-                    queue.append(r)
-            inbox.clear()
+                    unasked.append(r)
+                    ready[r.id] = date.max  # not workable until the question has gone and been answered
+            if r.tier == "key":
+                queue.insert(0, r)  # as the simulation does: a key account's request goes to the front
+            else:
+                queue.append(r)
         for rid, (back, r) in list(waiting.items()):
             if back <= day.date:
                 del waiting[rid]
@@ -284,7 +298,7 @@ def replay(
             out.helper_days += 1
         cap = _work(queue, cap, day, need, spent, out, waiting, ready, early, scale)
         _work(requotes, cap, day, need, spent, out, waiting, ready, early, scale)
-        if not queue and not requotes and not pending and not waiting and not inbox:
+        if not queue and not requotes and not pending and not waiting and not inbox and not unasked:
             break
     return out
 
