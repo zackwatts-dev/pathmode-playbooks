@@ -37,7 +37,7 @@ Exports for two years up to the cutoff: customers, sites, agreements, jobs, quot
 ## Security and privacy
 
 - **Customer data stays on Summit's server.** The AI sees only averages for segments, and one customer's numbers at a time for the list: no contacts, no addresses.
-- **Lists of customers labelled "likely to pay late" are sensitive.** Only billing sees them, and the scores behind them: they're written to a billing-only folder. The team's map and files name no one on the list.
+- **Lists of customers labeled "likely to pay late" are sensitive.** Only billing sees them, and the scores behind them: they're written to a billing-only folder. The team's map and files name no one on the list.
 - **Pinned packages:** scikit-learn and its dependencies, by exact version and hash.
 
 ## How it runs

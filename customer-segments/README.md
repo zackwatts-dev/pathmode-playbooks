@@ -66,7 +66,7 @@ On the sample, learned from 2024, the late-payment rule wins again (0.94 against
 - **Amounts** are read as plain numbers or as `$1,225.42` and `(12.50)`. Anything else (words, ranges, other currencies) isn't read: the row is left out and listed in `review-queue.csv`.
 - **A decided quote with no decision date** is left out and listed, not guessed at. Quote statuses other than Accepted, Declined and Sent aren't understood.
 - **Sites carry no date** in most exports, so a site counts once a job or an agreement on or before the cutoff shows it existed (or by its own `Added`/`Created` date, if your export has one). A site with no activity at all isn't counted.
-- **Exports taken after the cutoff:** jobs completed and quotes decided after it are treated as still open, but a status that was changed without a date (a cancelled job, a merged customer) can't be undone. Export as close to the cutoff as you can.
+- **Exports taken after the cutoff:** jobs completed and quotes decided after it are treated as still open, but a status that was changed without a date (a canceled job, a merged customer) can't be undone. Export as close to the cutoff as you can.
 - **"Left" has no date in the records,** so it means no job or invoice for a year. Your exports must include former customers, or "who'll leave" can't be tested.
 - **The direction check reads plain comparisons** ("faster than", "lower repair share", "slow-paying"). A claim worded another way ("rarely on time") isn't caught; a person still reads the segment names before they're used.
 - **The recorded run belongs to the sample as it was recorded.** Change the features or the data and re-record: answers that no longer fit are caught by the checks or counted as "no recorded answer", but nothing replaces them.

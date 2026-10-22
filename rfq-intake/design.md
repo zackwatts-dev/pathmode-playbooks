@@ -35,7 +35,7 @@ It's decision support. People decide what to quote, what to decline, and send ev
   - customer parts;
   - requests still open from before.
 - **The estimators' hours this week:** a small file a person keeps up to date.
-- **`answer-key.csv`:** a month of email, labelled with what should happen to each.
+- **`answer-key.csv`:** a month of email, labeled with what should happen to each.
 
 ## What "correct" means
 
