@@ -503,6 +503,7 @@ def test_a_valid_explanation_from_the_log_is_accepted():
         dict(explanation="The gap is due to the cook over-portioning."),
         dict(next_step="Write up the manager and let them go."),
         dict(explanation="Quill7 Marsh appears to be behind these numbers."),
+        dict(explanation="The bartender may be behind the bar's gap."),
         dict(explanation="quill7 was on that week."),
         dict(explanation="The voids happen because the employee rings cash checks after print."),
         dict(explanation="The gap is due to heavy portions by the cook."),
@@ -526,6 +527,8 @@ def test_every_adversarial_answer_is_rejected_and_goes_to_a_person(bad):
         "The records clearly show the gap that week.",
         "Count the cash drawer behind the bar.",
         "Check the price list and the long wait times.",
+        "Check for any equipment, recipe or pricing changes behind the gap.",
+        "The records don't show what is behind it.",
     ],
 )
 def test_ordinary_kitchen_words_are_not_taken_for_accusations(fine):
