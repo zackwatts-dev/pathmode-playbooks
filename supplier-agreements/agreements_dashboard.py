@@ -16,6 +16,12 @@ summary{cursor:pointer;font-weight:600}
 """
 
 
+def _cut(text: str, n: int = 220) -> str:
+    """A long passage shortened at a word, marked as shortened."""
+    text = " ".join(str(text).split())
+    return text if len(text) <= n else text[:n].rsplit(" ", 1)[0] + " …"
+
+
 def _m(x: float) -> str:
     return f"${x:,.0f}"
 
@@ -42,7 +48,7 @@ def dashboard(r) -> str:
             _e(o.kind),
             _m(o.gap),
             _e(o.how),
-            f'{_e(o.term.doc)}<br><span class="quote">"{_e(o.term.quote[:220])}"</span>',
+            f'{_e(o.term.doc)}<br><span class="quote">"{_e(_cut(o.term.quote))}"</span>',
         ]
         for o in claims
     ]
@@ -53,7 +59,7 @@ def dashboard(r) -> str:
         if o.kind in ("co-op", "stock rotation")
     ]
     people = [
-        [_e(p.supplier), _e(p.what), _e(p.reason), f'<span class="quote">{_e(p.passage[:220])}</span>']
+        [_e(p.supplier), _e(p.what), _e(p.reason), f'<span class="quote">{_e(_cut(p.passage))}</span>']
         for p in r.people
     ]
     letters = "".join(
