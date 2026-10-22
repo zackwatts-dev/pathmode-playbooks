@@ -3,7 +3,7 @@
     python rfq-intake/replay_queue.py                      # the sample window: writes out/replay/
     python rfq-intake/replay_queue.py --data DIR --out DIR # another window (a folder with rfqs.csv, capacity.csv)
 
-About 3 in 10 of Wendlow's new requests arrive missing something it needs to price them: a revision, a quantity or
+About 4 in 10 of Wendlow's new requests arrive missing something it needs to price them: a revision, a quantity or
 the drawing. Today nobody reads a request until an estimator opens it to price it, so that's when the gap is found
 and the question goes to the buyer, and the request waits for the answer. In a busy week that's days after it
 arrived, and the buyer decides before the quote is ready.
@@ -72,7 +72,10 @@ SEEDS = 20
 
 # Value parameters: labeled, not results.
 TYPING_MINUTES = 10  # estimator minutes saved per new request by not retyping its lines: an estimate
-REVENUE_PER_WIN = 34_000  # first-year revenue per won new-part quote: Wendlow's records, won new-part quotes 2022-23
+REVENUE_PER_WIN = (
+    36_700  # first-year revenue per won new-part quote, every order of its parts in the year after the win:
+)
+# Wendlow's records, quotes won 2022-23 (pathmode-corpus simulations/fabricator/scripts/rfq_value_stats.py)
 MARGIN = 0.27  # the middle of the published 22-31% range for job shops (Wendlow's own books run higher)
 
 
@@ -210,6 +213,7 @@ def replay(
     waiting: dict[str, tuple[date, Request]] = {}  # asked when opened (today, order): back in on the answer
     ready: dict[str, date] = {}  # asked on arrival (intake, both): workable from the answer
     pending = sorted(requests, key=lambda r: (not r.at_start, r.received, r.id))
+    question_debt = [0.0]
 
     def backlog_weeks() -> float:
         items = queue + requotes + [r for _, r in waiting.values()]
@@ -227,12 +231,16 @@ def replay(
             if r.missing and early:
                 out.asked[r.id] = r.received
                 ready[r.id] = working_days_after(r.received, r.answer_days)
+                question_debt[0] += QUESTION_HOURS  # someone still reads the draft and sends it: the same quarter hour
             queue.append(r)
         for rid, (back, r) in list(waiting.items()):
             if back <= day.date:
                 del waiting[rid]
                 queue.insert(0, r)  # the estimator picks it straight back up
         cap = day.hours
+        paid = min(cap, question_debt[0])  # questions drafted on arrival are sent first thing, from the same hours
+        cap -= paid
+        question_debt[0] -= paid
         if backlog_weeks() > HELP_WEEKS:
             cap += HELPERS * HELPER_HOURS
             out.helper_days += 1

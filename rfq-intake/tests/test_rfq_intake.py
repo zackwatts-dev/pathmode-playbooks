@@ -29,9 +29,10 @@ ROW = "LUT-11111 rev A qty 10 need 6/3"
 # --- building emails and model answers by hand, so the right answer is known -----------------------------------------
 
 
-def mail(
-    body, subject="RFQ", sender=LUTZ, name="Kim Buyer", when=WHEN, attachments=("drawings.pdf",), file="t.eml", reply=""
-):  # noqa: E501
+def mail(body, subject="RFQ", sender=LUTZ, name="Kim Buyer", when=WHEN, attachments=None, file="t.eml", reply=""):
+    # By default, a drawing named for every part the email names, as a real request has.
+    if attachments is None:
+        attachments = [f"{p}.pdf" for p in dict.fromkeys(ri.PART_PATTERN.findall(subject + "\n" + body))]
     text = body + "".join(f"\n[Attachment not read: {a}]" for a in attachments)
     return ri.Email(file, name, sender, subject, when, text, list(attachments), f"<{file}@x>", reply)
 
@@ -204,8 +205,8 @@ def test_a_sender_we_cant_place_goes_to_a_person():
 
 
 def test_the_name_and_the_buyer_on_file_must_agree():
-    # cfenske@eckertairsystems is on file for Eckert Air Systems LLC (19); the email signs Eckert Air Systems, Inc.
-    c, problems, _ = RECORDS.customer_for("cfenske@eckertairsystems.example", "Eckert Air Systems, Inc.")
+    # astoltz@eckertairsystems is on file for Eckert Air Systems LLC (19); the email signs Eckert Air Systems, Inc.
+    c, problems, _ = RECORDS.customer_for("astoltz@eckertairsystems.example", "Eckert Air Systems, Inc.")
     assert c is None and "on file for Eckert Air Systems LLC" in problems[0]
     c, problems, _ = RECORDS.customer_for(LUTZ, "Fisk Ag Equipment Inc.")
     assert c is None and "names Fisk Ag Equipment Inc." in problems[0]
@@ -243,7 +244,7 @@ def test_a_chaser_finds_its_open_request_from_before_or_from_earlier_in_the_run(
         RECORDS,
         opens,
     )
-    assert erp.status == ri.NOT_RFQ and erp.link.ref == "RFQ 22962" and erp.route == "estimating"
+    assert erp.status == ri.NOT_RFQ and erp.link.ref == "RFQ 20843" and erp.route == "estimating"
     first = ri.process(mail(ROW + SIGN, file="first.eml"), ScriptedModel([GOOD]), RECORDS, opens)
     chase = ri.process(
         mail("Any update on LUT-11111?" + SIGN, file="chase.eml", when=WHEN + timedelta(days=5)),
@@ -336,7 +337,7 @@ def test_instructions_aimed_at_an_ai_stop_it_whatever_the_model_says():
 
 
 def test_the_sample_injection_email_goes_to_a_person_with_the_offline_stand_in():
-    f = "0513-1415-request-for-quote-mau-20679.eml"
+    f = "0513-1611-request-for-quote-mau-20679.eml"
     r = ri.process(MAILS[f], OfflineModel(ri.offline), RECORDS)
     assert r.status == ri.REVIEW and KEY[f]["expected_status"] == ri.REVIEW
 
@@ -386,10 +387,10 @@ def test_a_file_that_cant_be_read_is_kept_and_the_run_carries_on(tmp_path, monke
 
 
 def test_drawings_are_listed_by_name_and_never_opened(tmp_path):
-    src = SAMPLE / "mailbox" / "0501-1045-pricing-request-lut-59621.eml"
+    src = SAMPLE / "mailbox" / "0501-1607-pricing-request-lut-59621.eml"
     m = ri.read_mail(src)
     assert m.readable and "LUT-59621_revA.pdf" in m.attachments and "JVBERi0" not in m.text and "%PDF" not in m.text
-    assert m.received_at == datetime(2024, 5, 1, 10, 45)  # America/New_York
+    assert m.received_at == datetime(2024, 5, 1, 16, 7)  # America/New_York
 
 
 def test_only_the_email_reaches_the_model():
@@ -579,7 +580,7 @@ def test_a_malformed_record_stops_the_load(tmp_path):
 
 
 def test_the_score_sorts_mistakes_by_cost_and_shows_the_everything_to_a_person_baseline(tmp_path):
-    f = "0501-1045-pricing-request-lut-59621.eml"
+    f = "0501-1607-pricing-request-lut-59621.eml"
     run_, _ = ri.sample_run(OfflineModel(ri.offline), tmp_path)
     s = run_.scored
     assert s["n"][ri.LET_THROUGH] == 0 and s["passed"]
@@ -616,7 +617,7 @@ def test_an_award_routed_to_a_named_estimator_is_scored_as_sales():
 
 def test_the_sample_end_to_end_offline(tmp_path):
     run_, written = ri.sample_run(OfflineModel(ri.offline), tmp_path)
-    assert len(run_.results) == 132 == sum(run_.count(s) for s in ri.STATUSES)
+    assert len(run_.results) == 133 == sum(run_.count(s) for s in ri.STATUSES)
     names = {p.name for p in written}
     want = {"dashboard.html", "requests.csv", "line-items.csv", "queue.csv", "review-queue.csv", "summary.md"}
     assert want | {"score.md", "runs.csv"} <= names
@@ -674,12 +675,12 @@ def test_the_replayed_recording_keeps_every_rule(tmp_path):
     from a matched customer; the injection email goes to a person; nothing is let through wrong."""
     replay = ri.Replay(RECORDED)
     run_, _ = ri.sample_run(replay, tmp_path)
-    assert len(run_.results) == 132
+    assert len(run_.results) == 133
     assert run_.scored["n"][ri.LET_THROUGH] == 0
     for r in run_.results:
         if r.status == ri.READY:
             assert r.customer and r.lines and all(ln.part and ln.revision and ln.quantity for ln in r.lines)
-    inj = next(r for r in run_.results if r.mail.file == "0513-1415-request-for-quote-mau-20679.eml")
+    inj = next(r for r in run_.results if r.mail.file == "0513-1611-request-for-quote-mau-20679.eml")
     assert inj.status in (ri.REVIEW, ri.FAILED)
     assert run_.count(ri.FAILED) >= run_.misses
     if run_.misses:
@@ -953,7 +954,8 @@ def test_the_replay_scores_and_forecasts(replayed):
     run_, _ = replayed
     s = run_.scored
     assert s["n"][ri.LET_THROUGH] == 0 and s["passed"] and run_.count(ri.FAILED) == 0
-    assert run_.plan and run_.plan.at_risk  # once the ready requests aren't stopped, the forecast flags some
+    # With every request read and asked about the day it arrives, May's forecast has none at risk (the page says so).
+    assert run_.plan and run_.plan.queue and not run_.plan.at_risk
 
 
 # --- the independent review's fixes ---------------------------------------------------------------------------
@@ -1266,3 +1268,30 @@ def test_a_due_date_the_email_gives_cant_be_lost():
     body = "Please quote the following.\n\n" + ROW + "\nNeed your number back by Tue the 6th." + SIGN
     r = one(body, GOOD)
     assert r.status == ri.REVIEW and any("quotes are due" in x for x in r.reasons)
+
+
+@pytest.mark.parametrize(
+    "line",
+    [
+        "Pricing needed by Friday.",
+        "Need your response by Friday.",
+        "Quotes due end of week.",
+        "Quotes due within 3 days.",
+        "Need pricing ASAP.",
+    ],
+)
+def test_a_deadline_with_no_date_isnt_lost_either(line):
+    r = one(ROW + "\n" + line + SIGN, GOOD)
+    assert r.status == ri.REVIEW and any("quotes are due" in x for x in r.reasons)
+
+
+def test_each_new_part_needs_its_own_drawing():
+    two = A(lines=[L("LUT-11111"), L("LUT-22222", quote=ROW)])
+    terms = one(ROW + SIGN, two, attachments=["Terms_and_Conditions.pdf"])
+    assert terms.status == ri.REVIEW and any("could be anything" in x for x in terms.reasons)
+    half = one(ROW + SIGN, two, attachments=["LUT-11111_revA.pdf"])
+    assert any("LUT-22222" in q and "drawing" in q for q in half.questions)
+
+
+def test_a_drawing_revision_in_any_file_name_form_is_read():
+    assert ri._attachment_revisions("LUT-10215", ["LUT-10215 Rev-A.pdf", "LUT-10215_A.pdf"]) == ["A", "A"]

@@ -1092,6 +1092,17 @@ def match_customer(r: Result, records: Records) -> None:
     r.notes += notes
 
 
+# A deadline with no calendar date: a weekday on its own, "end of week", "within 3 days", "ASAP", "EOD", "tomorrow".
+RELATIVE_DUE = re.compile(
+    r"\b(?:mon|tues?|wed(?:nes)?|thu(?:rs?)?|fri|sat(?:ur)?|sun)(?:day)?\b|\bend of (?:the )?(?:day|week|month)\b"
+    r"|\bwithin\s+\w+\s+(?:business |working )?days?\b|\basap\b|\beod\b|\bcob\b|\btoday\b|\btomorrow\b",
+    re.I,
+)
+# The relative deadline must follow a deadline word ("by Friday", "due end of week"), so "signed off on the prints
+# Friday" isn't one.
+RELATIVE_AFTER_CUE = re.compile(rf"\b{_DUE_CUES}\b\W+(?:the\s+)?(?:{RELATIVE_DUE.pattern})", re.I)
+# "Need pricing ASAP": a quote wanted urgently, with no date at all.
+RUSH_DUE = re.compile(r"\b(?:pric\w*|quot\w*|bids?|numbers?)\b.{0,30}\b(?:asap|urgent(?:ly)?|rush)\b", re.I)
 DRAWING_FILES = {"pdf", "step", "stp", "dwg", "dxf", "igs", "iges", "sldprt", "x_t"}
 
 
@@ -1133,13 +1144,25 @@ def new_request(r: Result, a: dict, records: Records, opens: list[OpenRequest]) 
         r.lines.append(ln)
     if not a["lines"]:
         r.questions.append("Which part numbers, revisions and quantities would you like us to quote?")
-    drawings_attached = [n for n in mail.attachments if n.lower().rsplit(".", 1)[-1] in DRAWING_FILES]
-    new_parts = [ln.part for ln in r.lines if ln.part and not str(ln.status).startswith("repeat")]
-    if new_parts and not drawings_attached:
-        # A new part can't be priced without its drawing, whatever the email says about attachments.
+    # A new part, or a repeat at a new revision, can't be priced without its drawing, whatever the email says about
+    # attachments. Each needs a drawing file named for it; a drawing file named for no part can't be told apart.
+    need = [
+        ln.part
+        for ln in r.lines
+        if ln.part and (not str(ln.status).startswith("repeat") or "new revision" in str(ln.status))
+    ]
+    missing_dwg = [p for p in need if not _drawing_for(p, mail.attachments)]
+    drawings = [n for n in mail.attachments if n.lower().rsplit(".", 1)[-1] in DRAWING_FILES]
+    unnamed = [n for n in drawings if not any(re.search(part_regex(ln.part), n, re.I) for ln in r.lines if ln.part)]
+    if missing_dwg and unnamed:
+        r.reasons.append(
+            f"no drawing named for {', '.join(missing_dwg)}, and {', '.join(unnamed)} could be anything: "
+            "check which file is which"
+        )
+    elif missing_dwg:
+        attached = "Nothing was attached to the email." if not drawings else "It wasn't attached to the email."
         r.questions.append(
-            f"Could you send the drawing{'s' if len(new_parts) > 1 else ''} for {', '.join(new_parts)}? "
-            "Nothing was attached to the email."
+            f"Could you send the drawing{'s' if len(missing_dwg) > 1 else ''} for {', '.join(missing_dwg)}? {attached}"
         )
     r.reasons += clause_problems(r.lines, mail)
     missing = parts_in(mail.source) - seen
@@ -1151,7 +1174,9 @@ def new_request(r: Result, a: dict, records: Records, opens: list[OpenRequest]) 
     if not r.due_stated and not any("due date" in x for x in r.reasons):
         # A due date the email clearly gives can't be lost: deadline words and a date on one line, and none read.
         for line in mail.source.splitlines():
-            if DUE_WORDS.search(line) and DATE.search(line):
+            if (DUE_WORDS.search(line) and (DATE.search(line) or RELATIVE_AFTER_CUE.search(line))) or RUSH_DUE.search(
+                line
+            ):
                 r.reasons.append(f'the email says when quotes are due ("{line.strip()[:80]}"), but none was read')
                 break
     says_weld = bool(WELD_WORDS.search(mail.subject + "\n" + mail.text))
@@ -1275,8 +1300,25 @@ def clause_problems(lines: list[Line], mail: Email) -> list[str]:
 
 
 def _attachment_revisions(part: str, names: list[str]) -> list[str]:
-    pat = re.compile(rf"{part_regex(part)}[\s_-]*rev([a-z0-9]{{1,3}})\.", re.I)
-    return [m.group(1) for n in names for m in [pat.search(n)] if m]
+    """The revision a drawing's file name gives for this part: "LUT-10215_revA.pdf", "LUT-10215 Rev-A.pdf",
+    "LUT-10215 rev A.pdf" or "LUT-10215_A.pdf"."""
+    pats = [
+        re.compile(rf"{part_regex(part)}[\s_-]*rev[\s_.-]*([a-z0-9]{{1,3}})\.", re.I),
+        re.compile(rf"{part_regex(part)}[\s_-]+([a-z]{{1,2}})\.", re.I),
+    ]
+    out = []
+    for n in names:
+        for pat in pats:
+            m = pat.search(n)
+            if m:
+                out.append(m.group(1))
+                break
+    return out
+
+
+def _drawing_for(part: str, names: list[str]) -> bool:
+    """True if one of the attachments is a drawing file named for this part."""
+    return any(n.lower().rsplit(".", 1)[-1] in DRAWING_FILES and re.search(part_regex(part), n, re.I) for n in names)
 
 
 def follow_up(r: Result, a: dict, records: Records, opens: list[OpenRequest]) -> None:
@@ -1850,6 +1892,7 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
     key = {row["file"]: row for row in read_csv(key_path)}
     file_rfq = {f: k["rfq_id"] for f, k in key.items()}
     groups: dict[str, list[str]] = {g: [] for g in GROUPS}
+    incomplete: dict[str, list[str]] = {"asked": [], "to a person": [], "missed": []}
     fields = {f: {"right": 0, "wrong": 0} for f in FIELDS}
     free = 0  # emails the key doesn't stop: ready, or not a request
     for r in results:
@@ -1873,6 +1916,8 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
             else:
                 groups[WRONG_PLACE].append(tag)
         elif want in (INFO, REVIEW):
+            if want == INFO:
+                incomplete["asked" if got == INFO else "to a person" if got in HELD else "missed"].append(r.mail.file)
             if got == READY:
                 groups[LET_THROUGH].append(tag)
             elif got in HELD and not (want == REVIEW and got == INFO):
@@ -1897,6 +1942,7 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
                 groups[RIGHT].append(r.mail.file)
     total = sum(len(v) for v in groups.values())
     n = {g: len(v) for g, v in groups.items()}
+    asked, to_person = len(incomplete["asked"]), len(incomplete["to a person"])
     held_by_key = total - free
     rates = {
         "max_let_through_wrong": n[LET_THROUGH],
@@ -1920,6 +1966,12 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
     for g in (LET_THROUGH, WRONG_PLACE, STOPPED):
         md.append(f"- **{LABELS[g]}:** {n[g]}")
         md += [f"  - {x}" for x in groups[g]]
+    md += [
+        "",
+        f"Requests the key says are missing something: {asked} got their question drafted, {to_person} went to a "
+        f"person instead (held, so not a mistake, but no question drafted), {len(incomplete['missed'])} were missed.",
+    ]
+    md += [f"  - to a person: {x}" for x in incomplete["to a person"]]
     md += [
         "",
         "Each field read, on every new request the tool read lines for (whatever pile it went to):",
@@ -1947,6 +1999,7 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
     return {
         "groups": groups,
         "n": n,
+        "incomplete": {k: len(v) for k, v in incomplete.items()},
         "total": total,
         "free": free,
         "fields": fields,

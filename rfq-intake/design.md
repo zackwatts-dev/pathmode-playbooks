@@ -2,7 +2,7 @@
 
 ## The problem
 
-Requests for quotes arrive in quotes@, a shared Microsoft 365 mailbox, about 100 a month. About 4 in 10 are missing something we need to price them: a revision, a quantity, or the drawing itself. Nobody reads a request until an estimator opens it to price it, so that's when we notice the gap, email the buyer, and wait for the answer, and by then the buyer has often decided without our quote. We lose about 100 quotes a year this way. The requests are also mixed in with buyers chasing quotes, revised drawings for quotes in progress, awards, and sales pitches, and someone has to sort it all and retype every part number, revision and quantity before pricing can start.
+Requests for quotes arrive in quotes@, a shared Microsoft 365 mailbox, about 100 a month. About 4 in 10 are missing something we need to price them: a revision, a quantity, or the drawing itself. Nobody reads a request until an estimator opens it to price it, so that's when we notice the gap, email the buyer, and wait for the answer, and by then the buyer has often decided without our quote. We lose about 120 quotes a year this way. The requests are also mixed in with buyers chasing quotes, revised drawings for quotes in progress, awards, and sales pitches, and someone has to sort it all and retype every part number, revision and quantity before pricing can start.
 
 ## What it does
 

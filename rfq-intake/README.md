@@ -58,8 +58,8 @@ Then open `out/dashboard.html`. With `--sample`, `out/score.md` scores the run a
 
 Wendlow Fabrication & Machine is a fictional job shop, from a simulation of the whole business (`pathmode-corpus/simulations/fabricator/scripts/playbook_rfq.py`). Every new-part RFQ the simulation received in May 2024 is an email from its buyer, written the ways buyers write them (tables, lists, a forwarded engineer's note, a two-line note from a phone with the part only in the drawing's name), with the rest of a quotes inbox around them.
 
-- **`mailbox/`:** 132 emails. 99 new requests (37 missing something: 19 a quantity, 14 a revision, 4 the drawing; 8 that need a person: an injection, four from a shared domain that don't name the company, and three where a repeat part number is described as something else), 9 chasers, 5 revised drawings, 8 awards, 4 lost replies, 5 vendor pitches and newsletters, and 2 order questions sent to the wrong address.
-- **`records/`:** as exported the morning of May 1: 377 customers with their tier and domain (38 domains shared by sister companies, some named alike down to a comma), 7,343 known buyers, 22,457 customer parts with descriptions, the 5 RFQs still open from April, and the estimators' hours for May (one junior estimator, 6 hours a working day, 0 on a day off).
+- **`mailbox/`:** 133 emails. 99 new requests (36 that need only a question: 17 missing a quantity, 15 a revision, 4 the drawing; 7 that need a person: an injection, three from a shared domain that don't name the company, and three where a repeat part number is described as something else), 10 chasers, 5 revised drawings, 8 awards, 4 lost replies, 5 vendor pitches and newsletters, and 2 order questions sent to the wrong address.
+- **`records/`:** as exported the morning of May 1: 377 customers with their tier and domain (38 domains shared by sister companies, some named alike down to a comma), 7,364 known buyers, 22,457 customer parts with descriptions, the 5 RFQs still open from April, and the estimators' hours for May (one junior estimator, 6 hours a working day, 0 on a day off).
 - **`answer-key.csv`:** what each email is and what should happen to it, with every value, and how each request really ended (truth, named so).
 - **`queue-replay/`** (2024), **`queue-replay-2023/`**, **`queue-replay-2025/`:** the inputs for the separate queue replay (below), a full year each.
 - **`../holdout-2024-06/`, `../holdout-2024-07/`, `../holdout-2024-08/`:** three more months of the same mailbox, each with its records, answer key and recorded run.
@@ -67,20 +67,20 @@ Wendlow Fabrication & Machine is a fictional job shop, from a simulation of the 
 
 ### Results: the recorded runs (Claude Sonnet 5.5)
 
-Each month scored against its own answer key. June was used while building the checks; July and August were held back and scored once, against the thresholds in `release-thresholds.json`, set before the first run.
+Each month scored against its own answer key. May is the sample and June was used while building the checks; July and August were held back, and scored against the thresholds in `release-thresholds.json`, set before the first run.
 
 | Month | Emails | Right | Let through, but wrong | Stopped, but needn't have been |
 |---|---|---|---|---|
-| May (the sample) | 132 | 130 | 0 | 2 |
-| June | 130 | 126 | 0 | 4 |
-| July, held back | 123 | 119 | 0 | 4 |
-| August, held back | 148 | 146 | 0 | 2 |
+| May (the sample) | 133 | 132 | 0 | 1 |
+| June | 128 | 125 | 0 | 3 |
+| July, held back | 126 | 122 | 0 | 4 |
+| August, held back | 151 | 149 | 0 | 2 |
 
-Every request missing something was caught, and its question drafted, in all four months. The stops are a buyer chasing a request with no open record, a part number on file for a sister company, a delivery date or quote-due date the email gives that the reading missed. Everything to a person (the baseline) gets about a third right.
+Of the 146 requests the keys say are missing something, 139 got their question drafted and 7 went to a person because something else about them needed one (the score reports both). The stops are mostly a buyer chasing a request with no open record. Everything to a person (the baseline) gets about a third right.
 
 ### Results: the offline stand-in, not a model
 
-From `--dry-run`: regular expressions for the sample's phrasings, a test of the checks and the matching, not of a model. On May: 128 of 132 right, **0 let through wrong**, 4 stopped needlessly; release thresholds all pass.
+From `--dry-run`: regular expressions for the sample's phrasings, a test of the checks and the matching, not of a model.
 
 ## The queue replay: a model, not a measurement
 
@@ -90,15 +90,17 @@ From `--dry-run`: regular expressions for the sample's phrasings, a test of the 
 - **ask:** the question goes out the day the request arrives, so the answer comes back while it waits.
 - **intake:** ask, and no retyping (10 minutes saved per new request, a labeled estimate).
 
-One calibration factor on the quoting time is fitted on `today` alone, to each window's actual on-time count. A quote is on time if it went out by the buyer's true decision date, which only the scoring sees. A won quote is worth $34,000 of first-year revenue (Wendlow's records, 2022–23) × 27% margin, at the window's on-time win rate.
+One calibration factor on the quoting time is fitted on `today` alone, to each window's actual on-time count. A quote is on time if it went out by the buyer's true decision date, which only the scoring sees. A won quote is worth $36,700 of first-year revenue (every order of its parts in the year after the win, Wendlow's records for 2022–23: `pathmode-corpus/simulations/fabricator/scripts/rfq_value_stats.py`) × 27% margin, at the window's on-time win rate.
 
 | Full year | Lost to late quotes | Won back: ask | Won back: intake | Extra wins | First-year margin |
 |---|---|---|---|---|---|
-| 2023 | 129 | 36 | 60 | 21 | $192,000 |
-| 2024 | 87 | 17 | 34 | 13 | $119,000 |
-| 2025 (to Nov 26) | 71 | 22 | 31 | 13 | $117,000 |
+| 2023 | 154 | 12 | 54 | 21 | $210,000 |
+| 2024 | 112 | 3 | 26 | 10 | $104,000 |
+| 2025 (to Nov 26) | 98 | 13 | 34 | 13 | $130,000 |
 
-**Limits of the model.** A late quote made on time is assumed to win at the average on-time rate. A buyer is assumed to take as long to answer a question asked on day one as one asked on day three. And a won part's later years aren't counted: in Wendlow's records a part won in 2017–19 brought in about three times its first year's revenue over its life.
+Every way of working pays the same quarter hour to check and send a question. Most of intake's gain is the reading and keying saved (10 minutes a request, an estimate the result moves with); asking on arrival adds the rest. `--data` runs each year's folder; the defaults reproduce this table.
+
+**Limits of the model.** A late quote made on time is assumed to win at the average on-time rate. A buyer is assumed to take as long to answer a question asked on day one as one asked on day three. And a won part's later years aren't counted: in Wendlow's records a part won in 2017–19 brought in 2.87 times its first year's revenue over its life.
 
 ## Getting the email: Microsoft 365
 

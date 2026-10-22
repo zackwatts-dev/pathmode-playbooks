@@ -71,7 +71,7 @@ def test_the_calibration_matches_the_status_quo_and_the_report_says_it_is_a_mode
         assert rq.NAMES[p] in text
     x = res["policies"]["intake"]
     assert (
-        abs(x["margin_value"] - x["extra_on_time"] * res["win_rate"] * 34_000 * 0.27)
+        abs(x["margin_value"] - x["extra_on_time"] * res["win_rate"] * rq.REVENUE_PER_WIN * rq.MARGIN)
         <= 0.01 * abs(x["margin_value"]) + 400
     )
     shutil.copytree(rq.DATA, tmp_path / "w")
