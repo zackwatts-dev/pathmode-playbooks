@@ -419,10 +419,28 @@ def test_the_sample_runs_offline_end_to_end(tmp_path):
 def test_a_premium_on_an_existing_line_is_priced_from_that_line_not_from_history():
     """A named manufacturer's premium can't be separated from the equipment line in job cost, so pricing it from past
     jobs' equipment actuals would price the whole equipment package."""
-    data = type("Data", (), {"estimates": {"9": {**EST, "project_id": "1"}},
-                             "lines": {"9": [line("23-0500", "Equipment per schedule: Trane or equal", 100_000), line("23-3100", "Ductwork", 200_000)]},
-                             "projects": {"1": {}}, "usual_rate": D.usual_rate})()
-    rv = E.Review("1", "9", "Pat", "2024-03-05", "2024-03-08",
-                  accepted=[E.Req("manufacturer", "23 73 13", "q", "base bid", particulars={"manufacturer": "Daikin"})])
+    data = type(
+        "Data",
+        (),
+        {
+            "estimates": {"9": {**EST, "project_id": "1"}},
+            "lines": {
+                "9": [
+                    line("23-0500", "Equipment per schedule: Trane or equal", 100_000),
+                    line("23-3100", "Ductwork", 200_000),
+                ]
+            },
+            "projects": {"1": {}},
+            "usual_rate": D.usual_rate,
+        },
+    )()
+    rv = E.Review(
+        "1",
+        "9",
+        "Pat",
+        "2024-03-05",
+        "2024-03-08",
+        accepted=[E.Req("manufacturer", "23 73 13", "q", "base bid", particulars={"manufacturer": "Daikin"})],
+    )
     E.check_estimate(rv, data, FakeHist())
     assert rv.gaps[0].cost == pytest.approx(8_000)

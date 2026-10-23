@@ -5,6 +5,8 @@ word from the documents or the AI is escaped."""
 
 from __future__ import annotations
 
+from collections import defaultdict
+
 from common.page import STYLE, _e, _table
 
 MORE = """
@@ -20,6 +22,10 @@ def _m(x: float) -> str:
     return f"${x:,.0f}"
 
 
+def _where(source: str) -> str:
+    return source if source.startswith("Addendum") else f"Section {source}"
+
+
 def _card(rv) -> str:
     head = f"<h3>{_e(rv.name or 'Project ' + rv.pid)}</h3>"
     meta = (
@@ -27,7 +33,7 @@ def _card(rv) -> str:
         f"{len(rv.accepted)} requirements read</div>"
     )
     gaps = "".join(
-        f"<li><b>{_e(g.kind_title)}</b>, Section {_e(g.source)}: add about {_e(_m(g.cost))} "
+        f"<li><b>{_e(g.kind_title)}</b>, {_e(_where(g.source))}: add about {_e(_m(g.cost))} "
         f'(from {_e(_m(g.low))} to {_e(_m(g.high))}, {_e(g.basis)}). <span class="quote">"{_e(g.quote)}"</span></li>'
         for g in rv.gaps
     )
@@ -104,11 +110,12 @@ def dashboard(r) -> str:
     probs = f'<p class="bad">{_e("; ".join(r.problems))}</p>' if r.problems else ""
     score = ""
     if r.score:
-        s = r.score
+        s = defaultdict(float, r.score)
         score = (
-            f"<h2>Against the answer key</h2><p>Found {s['found']:.0f} of {s['missed']:.0f} missed requirements "
+            f"<h2>Against the answer key</h2><p>Found {s.get('found', 0):.0f} of {s.get('missed', 0):.0f} missed requirements "
             f"({_m(s['found_cost'])} of {_m(s['missed_cost'])}); on the bids won, {_m(s['found_won_cost'])} of "
-            f"{_m(s['missed_won_cost'])}. Margin with every flag acted on: {_m(s['money'])}.</p>"
+            f"{_m(s['missed_won_cost'])}. Wrong flags: {(s.get('false_gap', 0) + s.get('wrongly_required', 0) + s.get('phantom', 0)) / max(s['bids'], 1):.2f} a bid. "
+            f"What pricing each find into its bid would do is in score.md.</p>"
         )
     return (
         f"<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'>"

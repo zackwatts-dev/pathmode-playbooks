@@ -539,7 +539,17 @@ def check_estimate(rv: Review, data: Data, hist: History) -> None:
         if r.kind in LINE_PRICED:
             code, mid, lo, hi = LINE_PRICED[r.kind]
             amt = sum(line_amount(ln) for ln in lines if ln["cost_code"] == code)
-            rv.gaps.append(Gap(r.kind, r.source, r.quote, mid * amt, lo * amt, hi * amt, f"a rule: {mid:.0%} of the estimate's {code} line"))
+            rv.gaps.append(
+                Gap(
+                    r.kind,
+                    r.source,
+                    r.quote,
+                    mid * amt,
+                    lo * amt,
+                    hi * amt,
+                    f"a rule: {mid:.0%} of the estimate's {code} line",
+                )
+            )
             continue
         sh = hist.share(r.kind, p.get("building_type", ""), rv.ready_on)
         if not sh:

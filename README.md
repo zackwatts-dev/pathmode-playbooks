@@ -11,7 +11,7 @@ Working code for the free [PathMode playbooks](https://pathmode.com/playbooks/):
 | [Account summary](account-summary/) | A one-page briefing on a customer or a branch from several systems: scope checked in code before anything is gathered, every number calculated from written definitions, every number and quote in the AI's words checked. | Level 2 |
 | [Inherited records](inherited-records/) | Turns an acquired company's job tickets into records you can merge: an AI copies out each ticket, and code checks every value, groups and matches the locations, merges the equipment (settling mistyped serials, retiring replaced units) and finds the agreements and open quotes. | Level 2 |
 | [Request routing](request-routing/) | Routes internal requests by a policy written in plain words: the AI uses judgment, and code holds the lines (safety always first, approval limits, nobody approves their own request, pay stays private). | Level 3 |
-| [Estimate check](estimate-check/) | Before a quote goes out, compares each line's labor with what the first runs of similar parts took, and flags the light ones on the welded families, largest dollar gap first; an AI writes the note to the estimator and code checks every number in it. At Wendlow Fabrication & Machine, a simulated job shop. | Level 2 |
+| [Estimate check](estimate-check/) | Before a bid goes out, an AI reads the whole specification and its addenda for every requirement that costs money, quoting its words and whose work it is; code checks every quote, checks the estimate prices each one, prices what's missing from past jobs, and compares each estimator's labor with their history. At Halden Mechanical, a simulated mechanical subcontractor. | Level 2 |
 
 Risk levels: 1 chat only; 2 works with files you give it; 3 reads your email or systems, read-only; 4 takes actions. None of these goes past drafting. A person decides.
 
@@ -63,7 +63,7 @@ The tests run offline, with scripted model answers, including deliberately wrong
 | `tools/build_downloads.py` | Builds each playbook's downloads for pathmode.com. |
 | `tools/record.py` | Records a real model's answers on a playbook's sample, for `--replay` (costs API calls). |
 
-The sample data is fictional: Summit Mechanical, a made-up commercial HVAC contractor in Arizona, from a simulation of the whole business that the PathMode course uses throughout. The RFQ intake's and the estimate check's is Wendlow Fabrication & Machine, a made-up job shop in Dayton, from a second simulation.
+The sample data is fictional: Summit Mechanical, a made-up commercial HVAC contractor in Arizona, from a simulation of the whole business that the PathMode course uses throughout. The RFQ intake's is Wendlow Fabrication & Machine, a made-up job shop in Dayton; the anomaly alerts' is Ironbark Tavern & Grill, a made-up restaurant group in Kansas City; the estimate check's is Halden Mechanical, a made-up mechanical subcontractor in Columbus. Each comes from its own simulation.
 
 ## License
 
