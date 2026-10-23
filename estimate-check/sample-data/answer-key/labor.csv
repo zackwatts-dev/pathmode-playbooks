@@ -1,0 +1,2395 @@
+estimate_id,system,estimated_hours,true_hours
+1522,ductwork,726.2,650.5
+1522,equipment,264.7,289.6
+1522,fixtures,127.9,131.5
+1522,general conditions,276.7,262.8
+1522,hvac piping,604.6,571.3
+1522,insulation,0.0,0.0
+1522,plumbing piping,655.6,626.5
+1523,ductwork,365.7,390.4
+1523,equipment,196.1,207.7
+1523,fixtures,65.7,62.7
+1523,general conditions,181.0,179.4
+1523,hvac piping,402.6,350.3
+1523,insulation,0.0,0.0
+1523,plumbing piping,405.4,381.5
+1524,ductwork,500.4,545.4
+1524,equipment,321.6,353.5
+1524,fixtures,130.2,134.2
+1524,general conditions,219.0,212.2
+1524,hvac piping,163.2,172.2
+1524,insulation,0.0,0.0
+1524,plumbing piping,394.4,472.7
+1525,ductwork,1219.4,1244.0
+1525,equipment,464.9,449.3
+1525,fixtures,223.3,224.3
+1525,general conditions,417.4,424.1
+1525,hvac piping,959.6,1043.4
+1525,insulation,0.0,0.0
+1525,plumbing piping,1036.6,1029.4
+1526,ductwork,503.1,463.5
+1526,equipment,267.8,256.2
+1526,fixtures,96.2,93.5
+1526,general conditions,191.3,208.1
+1526,hvac piping,504.3,524.2
+1526,insulation,0.0,0.0
+1526,plumbing piping,392.9,405.2
+1527,ductwork,366.1,376.8
+1527,equipment,179.8,194.6
+1527,fixtures,68.4,68.4
+1527,general conditions,147.3,159.0
+1527,hvac piping,153.5,148.6
+1527,insulation,0.0,0.0
+1527,plumbing piping,303.7,345.0
+1528,ductwork,583.8,565.3
+1528,equipment,233.6,235.8
+1528,fixtures,77.6,78.1
+1528,general conditions,194.5,199.3
+1528,hvac piping,173.9,197.4
+1528,insulation,0.0,0.0
+1528,plumbing piping,471.5,474.3
+1529,ductwork,713.1,700.6
+1529,equipment,274.2,287.8
+1529,fixtures,87.8,88.3
+1529,general conditions,269.8,267.4
+1529,hvac piping,593.4,567.9
+1529,insulation,0.0,0.0
+1529,plumbing piping,827.3,857.3
+1530,ductwork,259.5,237.4
+1530,equipment,99.7,104.1
+1530,fixtures,34.4,34.7
+1530,general conditions,86.3,77.6
+1530,hvac piping,195.1,180.9
+1530,insulation,0.0,0.0
+1530,plumbing piping,141.9,160.9
+1531,ductwork,452.9,457.2
+1531,equipment,250.4,246.4
+1531,fixtures,87.5,88.2
+1531,general conditions,150.0,152.8
+1531,hvac piping,295.5,323.8
+1531,insulation,0.0,0.0
+1531,plumbing piping,354.8,353.4
+1532,ductwork,317.2,339.5
+1532,equipment,193.2,192.8
+1532,fixtures,63.0,66.7
+1532,general conditions,140.1,130.8
+1532,hvac piping,296.7,330.6
+1532,insulation,0.0,0.0
+1532,plumbing piping,352.5,378.2
+1533,ductwork,3515.1,3440.0
+1533,equipment,1349.8,1565.8
+1533,fixtures,482.2,501.4
+1533,general conditions,1340.0,1398.7
+1533,hvac piping,3256.4,3368.9
+1533,insulation,0.0,0.0
+1533,plumbing piping,3306.6,3183.8
+1534,ductwork,474.1,462.2
+1534,equipment,218.4,207.7
+1534,fixtures,98.5,96.9
+1534,general conditions,225.9,238.6
+1534,hvac piping,402.5,444.1
+1534,insulation,0.0,0.0
+1534,plumbing piping,393.0,399.9
+1535,ductwork,199.7,189.8
+1535,equipment,73.9,67.2
+1535,fixtures,27.4,27.2
+1535,general conditions,65.4,66.5
+1535,hvac piping,116.2,136.4
+1535,insulation,0.0,0.0
+1535,plumbing piping,119.8,121.3
+1536,ductwork,3351.3,3484.7
+1536,equipment,1498.3,1585.7
+1536,fixtures,631.8,642.7
+1536,general conditions,1343.7,1297.7
+1536,hvac piping,985.6,1021.9
+1536,insulation,0.0,0.0
+1536,plumbing piping,2776.8,2687.2
+1537,ductwork,590.9,552.6
+1537,equipment,309.8,318.4
+1537,fixtures,94.2,103.5
+1537,general conditions,212.9,202.5
+1537,hvac piping,509.4,494.4
+1537,insulation,0.0,0.0
+1537,plumbing piping,496.1,546.2
+1538,ductwork,260.5,265.9
+1538,equipment,116.9,135.5
+1538,fixtures,59.7,61.9
+1538,general conditions,138.7,132.8
+1538,hvac piping,318.7,307.3
+1538,insulation,0.0,0.0
+1538,plumbing piping,197.4,194.7
+1539,ductwork,931.0,933.1
+1539,equipment,447.0,484.9
+1539,fixtures,196.4,191.9
+1539,general conditions,419.6,412.3
+1539,hvac piping,280.9,289.3
+1539,insulation,0.0,0.0
+1539,plumbing piping,633.6,643.9
+1540,ductwork,486.6,495.3
+1540,equipment,271.8,300.1
+1540,fixtures,95.0,89.3
+1540,general conditions,187.5,188.0
+1540,hvac piping,402.6,379.9
+1540,insulation,0.0,0.0
+1540,plumbing piping,403.6,425.3
+1541,ductwork,3051.8,3064.2
+1541,equipment,926.2,978.4
+1541,fixtures,347.9,327.1
+1541,general conditions,761.6,802.0
+1541,hvac piping,1971.9,2128.3
+1541,insulation,0.0,0.0
+1541,plumbing piping,2555.4,2300.4
+1542,ductwork,1042.3,950.7
+1542,equipment,333.0,348.9
+1542,fixtures,196.9,196.8
+1542,general conditions,294.8,282.3
+1542,hvac piping,331.4,309.4
+1542,insulation,0.0,0.0
+1542,plumbing piping,559.5,526.5
+1543,ductwork,132.7,132.7
+1543,equipment,76.2,63.8
+1543,fixtures,29.2,30.2
+1543,general conditions,68.3,64.8
+1543,hvac piping,54.1,50.8
+1543,insulation,0.0,0.0
+1543,plumbing piping,103.4,117.5
+1544,ductwork,470.1,441.9
+1544,equipment,219.6,246.2
+1544,fixtures,95.5,99.4
+1544,general conditions,255.3,244.1
+1544,hvac piping,518.9,517.1
+1544,insulation,0.0,0.0
+1544,plumbing piping,526.8,507.7
+1545,ductwork,504.4,506.1
+1545,equipment,210.1,196.1
+1545,fixtures,93.6,95.0
+1545,general conditions,208.1,211.2
+1545,hvac piping,171.0,196.7
+1545,insulation,0.0,0.0
+1545,plumbing piping,385.4,421.0
+1546,ductwork,1150.1,1185.3
+1546,equipment,462.4,446.2
+1546,fixtures,172.4,169.6
+1546,general conditions,407.2,381.5
+1546,hvac piping,297.5,337.8
+1546,insulation,0.0,0.0
+1546,plumbing piping,741.2,803.3
+1547,ductwork,1417.5,1333.1
+1547,equipment,601.8,616.4
+1547,fixtures,239.8,221.4
+1547,general conditions,544.2,506.4
+1547,hvac piping,902.1,913.8
+1547,insulation,0.0,0.0
+1547,plumbing piping,1109.7,1278.1
+1548,ductwork,437.2,466.0
+1548,equipment,220.4,246.7
+1548,fixtures,84.8,81.8
+1548,general conditions,244.0,225.7
+1548,hvac piping,111.3,128.2
+1548,insulation,0.0,0.0
+1548,plumbing piping,303.0,296.3
+1549,ductwork,2733.2,2936.4
+1549,equipment,1591.6,1492.9
+1549,fixtures,607.8,593.5
+1549,general conditions,1082.5,1090.2
+1549,hvac piping,1345.0,1228.8
+1549,insulation,0.0,0.0
+1549,plumbing piping,2295.8,2357.4
+1550,ductwork,188.3,207.2
+1550,equipment,106.3,96.3
+1550,fixtures,40.3,43.8
+1550,general conditions,90.9,91.0
+1550,hvac piping,170.6,192.2
+1550,insulation,0.0,0.0
+1550,plumbing piping,150.9,155.9
+1551,ductwork,147.5,157.4
+1551,equipment,64.1,65.5
+1551,fixtures,29.7,28.6
+1551,general conditions,55.9,62.4
+1551,hvac piping,36.3,40.3
+1551,insulation,0.0,0.0
+1551,plumbing piping,96.4,105.3
+1552,ductwork,826.3,830.5
+1552,equipment,455.7,465.5
+1552,fixtures,154.1,154.8
+1552,general conditions,284.5,298.8
+1552,hvac piping,172.8,212.6
+1552,insulation,0.0,0.0
+1552,plumbing piping,558.5,581.5
+1553,ductwork,1131.8,1151.6
+1553,equipment,583.4,588.2
+1553,fixtures,190.2,197.8
+1553,general conditions,466.9,448.4
+1553,hvac piping,1320.5,1367.5
+1553,insulation,0.0,0.0
+1553,plumbing piping,1276.0,1454.4
+1554,ductwork,1308.1,1240.0
+1554,equipment,550.6,619.8
+1554,fixtures,270.1,253.8
+1554,general conditions,656.2,653.9
+1554,hvac piping,1217.6,1248.7
+1554,insulation,0.0,0.0
+1554,plumbing piping,1286.4,1171.9
+1555,ductwork,678.4,687.2
+1555,equipment,229.4,217.4
+1555,fixtures,111.8,109.6
+1555,general conditions,260.6,266.5
+1555,hvac piping,191.9,187.9
+1555,insulation,0.0,0.0
+1555,plumbing piping,344.9,411.5
+1556,ductwork,686.8,692.8
+1556,equipment,276.4,292.9
+1556,fixtures,145.2,131.3
+1556,general conditions,230.4,239.5
+1556,hvac piping,508.7,585.3
+1556,insulation,0.0,0.0
+1556,plumbing piping,408.8,389.9
+1557,ductwork,2885.0,2910.5
+1557,equipment,1107.3,1101.1
+1557,fixtures,493.0,506.9
+1557,general conditions,1179.5,1188.2
+1557,hvac piping,2318.6,2544.0
+1557,insulation,0.0,0.0
+1557,plumbing piping,2820.6,2675.9
+1558,ductwork,171.9,175.1
+1558,equipment,104.7,103.0
+1558,fixtures,35.6,36.3
+1558,general conditions,70.7,72.3
+1558,hvac piping,223.8,227.1
+1558,insulation,0.0,0.0
+1558,plumbing piping,139.2,142.8
+1559,ductwork,1310.3,1355.3
+1559,equipment,690.1,796.5
+1559,fixtures,303.4,336.4
+1559,general conditions,782.4,739.0
+1559,hvac piping,1610.5,1658.6
+1559,insulation,0.0,0.0
+1559,plumbing piping,1407.3,1250.6
+1560,ductwork,114.5,120.9
+1560,equipment,56.1,60.3
+1560,fixtures,25.0,25.8
+1560,general conditions,47.4,46.4
+1560,hvac piping,95.2,96.5
+1560,insulation,0.0,0.0
+1560,plumbing piping,101.7,100.6
+1561,ductwork,223.6,228.7
+1561,equipment,144.1,136.1
+1561,fixtures,39.4,38.5
+1561,general conditions,100.6,90.5
+1561,hvac piping,86.6,90.9
+1561,insulation,0.0,0.0
+1561,plumbing piping,251.6,277.2
+1562,ductwork,1908.4,1790.4
+1562,equipment,680.8,679.3
+1562,fixtures,437.9,440.4
+1562,general conditions,529.4,541.9
+1562,hvac piping,1137.4,1395.1
+1562,insulation,0.0,0.0
+1562,plumbing piping,2021.5,1973.1
+1563,ductwork,536.9,566.4
+1563,equipment,236.9,232.3
+1563,fixtures,109.6,112.6
+1563,general conditions,275.6,265.8
+1563,hvac piping,172.6,177.2
+1563,insulation,0.0,0.0
+1563,plumbing piping,424.5,429.9
+1564,ductwork,232.0,234.8
+1564,equipment,111.2,127.5
+1564,fixtures,40.8,45.2
+1564,general conditions,117.2,120.1
+1564,hvac piping,244.1,243.8
+1564,insulation,0.0,0.0
+1564,plumbing piping,258.5,240.5
+1565,ductwork,3608.9,3348.5
+1565,equipment,1070.0,1212.5
+1565,fixtures,601.8,605.2
+1565,general conditions,1104.6,1141.7
+1565,hvac piping,2226.3,2213.7
+1565,insulation,0.0,0.0
+1565,plumbing piping,2992.3,2802.9
+1566,ductwork,107.9,108.8
+1566,equipment,50.2,54.5
+1566,fixtures,17.6,17.6
+1566,general conditions,42.8,43.1
+1566,hvac piping,30.6,30.4
+1566,insulation,0.0,0.0
+1566,plumbing piping,85.3,83.8
+1567,ductwork,770.9,722.0
+1567,equipment,351.7,355.1
+1567,fixtures,126.3,128.0
+1567,general conditions,258.8,256.9
+1567,hvac piping,641.9,690.3
+1567,insulation,0.0,0.0
+1567,plumbing piping,887.2,779.9
+1568,ductwork,5255.7,4433.5
+1568,equipment,1626.9,1830.6
+1568,fixtures,675.8,644.5
+1568,general conditions,1442.8,1504.2
+1568,hvac piping,3292.5,3202.9
+1568,insulation,0.0,0.0
+1568,plumbing piping,3080.0,3001.5
+1569,ductwork,496.2,512.7
+1569,equipment,274.6,254.9
+1569,fixtures,87.4,86.0
+1569,general conditions,155.7,160.2
+1569,hvac piping,129.3,140.5
+1569,insulation,0.0,0.0
+1569,plumbing piping,300.7,283.0
+1570,ductwork,2635.6,2486.8
+1570,equipment,936.8,960.8
+1570,fixtures,409.4,403.0
+1570,general conditions,1000.0,978.0
+1570,hvac piping,2070.9,2237.8
+1570,insulation,0.0,0.0
+1570,plumbing piping,2068.2,1847.7
+1571,ductwork,635.5,690.8
+1571,equipment,295.1,332.4
+1571,fixtures,133.0,126.4
+1571,general conditions,297.2,301.3
+1571,hvac piping,646.9,633.7
+1571,insulation,0.0,0.0
+1571,plumbing piping,551.9,612.2
+1572,ductwork,173.6,168.6
+1572,equipment,83.9,91.3
+1572,fixtures,35.1,35.5
+1572,general conditions,80.7,83.7
+1572,hvac piping,194.8,166.6
+1572,insulation,0.0,0.0
+1572,plumbing piping,173.5,168.7
+1573,ductwork,1497.8,1468.0
+1573,equipment,867.3,815.5
+1573,fixtures,274.1,274.3
+1573,general conditions,649.0,598.5
+1573,hvac piping,419.7,392.9
+1573,insulation,0.0,0.0
+1573,plumbing piping,1083.4,1170.3
+1574,ductwork,1237.1,1277.2
+1574,equipment,553.3,559.8
+1574,fixtures,234.6,230.6
+1574,general conditions,495.1,478.1
+1574,hvac piping,1161.3,1177.1
+1574,insulation,0.0,0.0
+1574,plumbing piping,1520.3,1593.4
+1575,ductwork,320.8,334.2
+1575,equipment,137.4,145.1
+1575,fixtures,58.5,61.9
+1575,general conditions,111.5,111.3
+1575,hvac piping,112.5,113.6
+1575,insulation,0.0,0.0
+1575,plumbing piping,240.3,239.2
+1576,ductwork,109.2,116.2
+1576,equipment,56.0,51.5
+1576,fixtures,16.9,17.2
+1576,general conditions,30.8,30.7
+1576,hvac piping,69.5,79.0
+1576,insulation,0.0,0.0
+1576,plumbing piping,58.0,64.0
+1577,ductwork,824.6,903.0
+1577,equipment,318.2,379.1
+1577,fixtures,159.2,159.0
+1577,general conditions,335.8,319.2
+1577,hvac piping,237.3,246.4
+1577,insulation,0.0,0.0
+1577,plumbing piping,685.4,685.4
+1578,ductwork,1491.9,1520.7
+1578,equipment,828.3,791.5
+1578,fixtures,355.1,342.1
+1578,general conditions,709.4,760.6
+1578,hvac piping,1516.7,1590.6
+1578,insulation,0.0,0.0
+1578,plumbing piping,1498.5,1567.9
+1579,ductwork,160.9,155.0
+1579,equipment,95.2,96.4
+1579,fixtures,34.4,37.5
+1579,general conditions,68.3,62.9
+1579,hvac piping,142.3,153.0
+1579,insulation,0.0,0.0
+1579,plumbing piping,157.6,161.5
+1580,ductwork,769.0,709.1
+1580,equipment,263.3,267.2
+1580,fixtures,152.0,136.9
+1580,general conditions,259.1,266.4
+1580,hvac piping,151.3,176.0
+1580,insulation,0.0,0.0
+1580,plumbing piping,561.2,559.6
+1581,ductwork,346.7,355.9
+1581,equipment,153.9,172.3
+1581,fixtures,61.7,60.9
+1581,general conditions,143.1,137.0
+1581,hvac piping,369.3,352.9
+1581,insulation,0.0,0.0
+1581,plumbing piping,355.0,315.4
+1582,ductwork,1984.6,1739.1
+1582,equipment,584.0,647.2
+1582,fixtures,241.5,274.1
+1582,general conditions,555.0,510.7
+1582,hvac piping,1289.3,1251.7
+1582,insulation,0.0,0.0
+1582,plumbing piping,1382.3,1367.8
+1583,ductwork,178.6,186.5
+1583,equipment,95.0,88.7
+1583,fixtures,43.5,41.3
+1583,general conditions,93.2,89.2
+1583,hvac piping,161.5,169.6
+1583,insulation,0.0,0.0
+1583,plumbing piping,145.2,136.4
+1584,ductwork,162.4,160.2
+1584,equipment,99.6,98.6
+1584,fixtures,41.9,41.7
+1584,general conditions,55.2,57.2
+1584,hvac piping,143.8,159.7
+1584,insulation,0.0,0.0
+1584,plumbing piping,141.3,137.8
+1585,ductwork,694.8,678.8
+1585,equipment,258.9,278.8
+1585,fixtures,109.6,112.4
+1585,general conditions,241.6,270.2
+1585,hvac piping,216.2,228.9
+1585,insulation,0.0,0.0
+1585,plumbing piping,569.1,630.9
+1586,ductwork,552.2,533.6
+1586,equipment,260.3,255.9
+1586,fixtures,98.9,107.0
+1586,general conditions,213.2,203.6
+1586,hvac piping,375.6,404.3
+1586,insulation,0.0,0.0
+1586,plumbing piping,389.9,387.4
+1587,ductwork,615.4,582.0
+1587,equipment,266.3,274.8
+1587,fixtures,137.4,130.0
+1587,general conditions,198.4,206.3
+1587,hvac piping,136.8,134.4
+1587,insulation,0.0,0.0
+1587,plumbing piping,508.2,491.9
+1588,ductwork,210.9,209.8
+1588,equipment,115.3,110.3
+1588,fixtures,34.4,36.1
+1588,general conditions,106.5,108.6
+1588,hvac piping,76.1,77.7
+1588,insulation,0.0,0.0
+1588,plumbing piping,162.6,180.4
+1589,ductwork,932.1,955.2
+1589,equipment,583.7,557.1
+1589,fixtures,239.7,237.7
+1589,general conditions,497.7,486.4
+1589,hvac piping,885.7,1040.5
+1589,insulation,0.0,0.0
+1589,plumbing piping,881.3,850.5
+1590,ductwork,2621.5,2603.4
+1590,equipment,1384.0,1315.8
+1590,fixtures,487.5,526.2
+1590,general conditions,1041.4,1090.2
+1590,hvac piping,2431.0,2529.9
+1590,insulation,0.0,0.0
+1590,plumbing piping,2298.6,2712.0
+1591,ductwork,919.0,949.1
+1591,equipment,457.4,481.7
+1591,fixtures,193.3,189.8
+1591,general conditions,456.3,454.0
+1591,hvac piping,985.0,963.2
+1591,insulation,0.0,0.0
+1591,plumbing piping,778.2,830.9
+1592,ductwork,84.6,89.5
+1592,equipment,39.3,46.0
+1592,fixtures,21.7,20.4
+1592,general conditions,47.4,46.3
+1592,hvac piping,89.8,89.5
+1592,insulation,0.0,0.0
+1592,plumbing piping,85.5,81.5
+1593,ductwork,5826.7,5373.3
+1593,equipment,3592.1,3920.2
+1593,fixtures,1310.3,1278.1
+1593,general conditions,2620.0,2607.7
+1593,hvac piping,2374.8,2367.8
+1593,insulation,0.0,0.0
+1593,plumbing piping,5211.4,5006.4
+1594,ductwork,3064.0,2918.8
+1594,equipment,1338.8,1374.6
+1594,fixtures,452.0,430.9
+1594,general conditions,1157.1,1126.2
+1594,hvac piping,2539.6,2533.4
+1594,insulation,0.0,0.0
+1594,plumbing piping,3499.0,3446.9
+1595,ductwork,225.9,216.4
+1595,equipment,76.4,77.0
+1595,fixtures,36.7,35.5
+1595,general conditions,75.2,74.5
+1595,hvac piping,199.7,176.6
+1595,insulation,0.0,0.0
+1595,plumbing piping,197.6,200.7
+1596,ductwork,402.7,408.8
+1596,equipment,184.2,202.4
+1596,fixtures,75.8,80.4
+1596,general conditions,230.4,252.0
+1596,hvac piping,159.2,149.9
+1596,insulation,0.0,0.0
+1596,plumbing piping,424.5,491.6
+1597,ductwork,691.9,640.4
+1597,equipment,256.6,303.2
+1597,fixtures,119.1,111.2
+1597,general conditions,259.1,255.8
+1597,hvac piping,187.6,187.4
+1597,insulation,0.0,0.0
+1597,plumbing piping,769.1,742.9
+1598,ductwork,767.1,776.1
+1598,equipment,287.7,305.0
+1598,fixtures,124.5,126.9
+1598,general conditions,392.9,363.8
+1598,hvac piping,248.6,257.5
+1598,insulation,0.0,0.0
+1598,plumbing piping,706.0,713.5
+1599,ductwork,667.1,614.7
+1599,equipment,402.4,402.4
+1599,fixtures,120.8,129.1
+1599,general conditions,336.6,326.8
+1599,hvac piping,599.8,620.9
+1599,insulation,0.0,0.0
+1599,plumbing piping,535.6,607.9
+1600,ductwork,331.5,309.7
+1600,equipment,138.0,153.7
+1600,fixtures,57.4,57.3
+1600,general conditions,133.4,145.8
+1600,hvac piping,276.8,263.9
+1600,insulation,0.0,0.0
+1600,plumbing piping,290.0,276.5
+1601,ductwork,91.2,87.7
+1601,equipment,43.2,45.7
+1601,fixtures,16.7,17.6
+1601,general conditions,41.2,43.9
+1601,hvac piping,113.2,117.2
+1601,insulation,0.0,0.0
+1601,plumbing piping,86.5,79.9
+1602,ductwork,564.4,534.5
+1602,equipment,217.5,210.3
+1602,fixtures,107.7,96.1
+1602,general conditions,155.7,175.3
+1602,hvac piping,487.1,488.5
+1602,insulation,0.0,0.0
+1602,plumbing piping,436.0,528.6
+1603,ductwork,468.6,461.2
+1603,equipment,167.6,190.7
+1603,fixtures,59.2,60.1
+1603,general conditions,146.5,145.9
+1603,hvac piping,124.0,124.5
+1603,insulation,0.0,0.0
+1603,plumbing piping,411.6,397.3
+1604,ductwork,1218.9,1175.8
+1604,equipment,419.2,479.5
+1604,fixtures,202.0,179.7
+1604,general conditions,355.1,353.8
+1604,hvac piping,1119.8,1051.1
+1604,insulation,0.0,0.0
+1604,plumbing piping,766.4,737.7
+1605,ductwork,130.8,138.9
+1605,equipment,49.5,54.3
+1605,fixtures,17.3,16.4
+1605,general conditions,43.3,38.8
+1605,hvac piping,31.4,32.0
+1605,insulation,0.0,0.0
+1605,plumbing piping,57.9,68.0
+1606,ductwork,565.8,611.0
+1606,equipment,258.9,227.0
+1606,fixtures,132.7,122.5
+1606,general conditions,231.9,241.1
+1606,hvac piping,478.9,489.2
+1606,insulation,0.0,0.0
+1606,plumbing piping,751.3,705.2
+1607,ductwork,420.2,451.2
+1607,equipment,245.3,287.8
+1607,fixtures,92.4,100.4
+1607,general conditions,193.1,193.3
+1607,hvac piping,582.8,518.0
+1607,insulation,0.0,0.0
+1607,plumbing piping,358.1,317.0
+1608,ductwork,393.3,402.8
+1608,equipment,155.9,159.1
+1608,fixtures,60.6,60.3
+1608,general conditions,135.1,143.3
+1608,hvac piping,436.6,485.2
+1608,insulation,0.0,0.0
+1608,plumbing piping,320.3,316.1
+1609,ductwork,341.5,329.5
+1609,equipment,175.7,186.1
+1609,fixtures,56.9,56.5
+1609,general conditions,145.2,140.7
+1609,hvac piping,381.9,405.8
+1609,insulation,0.0,0.0
+1609,plumbing piping,262.7,249.9
+1610,ductwork,3862.8,3787.4
+1610,equipment,1430.0,1804.2
+1610,fixtures,686.6,696.0
+1610,general conditions,1759.6,1703.2
+1610,hvac piping,3256.6,3647.0
+1610,insulation,0.0,0.0
+1610,plumbing piping,4157.8,3793.6
+1611,ductwork,252.3,263.4
+1611,equipment,129.4,129.1
+1611,fixtures,38.3,38.1
+1611,general conditions,104.2,104.6
+1611,hvac piping,194.8,202.8
+1611,insulation,0.0,0.0
+1611,plumbing piping,254.1,277.1
+1612,ductwork,7037.0,6775.7
+1612,equipment,2715.6,3042.7
+1612,fixtures,1082.5,1136.1
+1612,general conditions,2924.6,2890.3
+1612,hvac piping,1828.7,1754.2
+1612,insulation,0.0,0.0
+1612,plumbing piping,7155.6,7211.5
+1613,ductwork,641.8,683.9
+1613,equipment,228.3,242.9
+1613,fixtures,100.0,95.6
+1613,general conditions,190.0,199.9
+1613,hvac piping,500.5,457.5
+1613,insulation,0.0,0.0
+1613,plumbing piping,529.9,528.7
+1614,ductwork,154.6,156.7
+1614,equipment,82.3,84.6
+1614,fixtures,39.4,37.2
+1614,general conditions,85.4,86.7
+1614,hvac piping,168.3,159.8
+1614,insulation,0.0,0.0
+1614,plumbing piping,156.0,175.9
+1615,ductwork,3054.0,3158.5
+1615,equipment,1094.4,1120.1
+1615,fixtures,423.7,423.0
+1615,general conditions,702.0,723.5
+1615,hvac piping,735.2,785.1
+1615,insulation,0.0,0.0
+1615,plumbing piping,2497.4,2552.2
+1616,ductwork,195.4,194.6
+1616,equipment,121.9,131.0
+1616,fixtures,39.8,40.8
+1616,general conditions,88.1,90.1
+1616,hvac piping,200.2,219.2
+1616,insulation,0.0,0.0
+1616,plumbing piping,239.3,228.6
+1617,ductwork,954.8,908.9
+1617,equipment,399.7,431.0
+1617,fixtures,210.4,209.7
+1617,general conditions,368.4,390.4
+1617,hvac piping,712.8,717.4
+1617,insulation,0.0,0.0
+1617,plumbing piping,982.1,1147.2
+1618,ductwork,1208.4,1275.1
+1618,equipment,738.5,692.2
+1618,fixtures,189.1,184.3
+1618,general conditions,518.4,523.1
+1618,hvac piping,1089.2,1025.5
+1618,insulation,0.0,0.0
+1618,plumbing piping,1033.4,1177.1
+1619,ductwork,273.9,267.8
+1619,equipment,101.3,114.7
+1619,fixtures,56.4,56.9
+1619,general conditions,88.1,101.4
+1619,hvac piping,240.4,237.8
+1619,insulation,0.0,0.0
+1619,plumbing piping,210.1,196.0
+1620,ductwork,540.7,578.8
+1620,equipment,242.7,248.9
+1620,fixtures,111.8,110.9
+1620,general conditions,220.9,220.1
+1620,hvac piping,533.7,542.5
+1620,insulation,0.0,0.0
+1620,plumbing piping,436.8,495.8
+1621,ductwork,8655.3,7936.1
+1621,equipment,2518.6,2815.0
+1621,fixtures,1360.7,1444.3
+1621,general conditions,2695.5,2634.5
+1621,hvac piping,1990.3,2128.8
+1621,insulation,0.0,0.0
+1621,plumbing piping,4579.4,4935.1
+1622,ductwork,537.2,540.3
+1622,equipment,205.9,223.1
+1622,fixtures,78.8,78.7
+1622,general conditions,211.2,206.8
+1622,hvac piping,426.6,435.4
+1622,insulation,0.0,0.0
+1622,plumbing piping,400.0,372.2
+1623,ductwork,386.9,366.2
+1623,equipment,136.0,128.5
+1623,fixtures,64.7,65.8
+1623,general conditions,195.1,198.3
+1623,hvac piping,350.2,378.4
+1623,insulation,0.0,0.0
+1623,plumbing piping,371.6,377.4
+1624,ductwork,287.6,305.9
+1624,equipment,160.5,156.1
+1624,fixtures,52.9,48.7
+1624,general conditions,121.0,129.4
+1624,hvac piping,106.2,111.2
+1624,insulation,0.0,0.0
+1624,plumbing piping,236.6,231.2
+1625,ductwork,948.4,1042.3
+1625,equipment,436.5,522.8
+1625,fixtures,218.3,212.5
+1625,general conditions,444.7,438.8
+1625,hvac piping,450.0,416.9
+1625,insulation,0.0,0.0
+1625,plumbing piping,916.5,920.4
+1626,ductwork,345.7,342.8
+1626,equipment,192.1,168.6
+1626,fixtures,69.4,67.2
+1626,general conditions,162.5,160.8
+1626,hvac piping,96.4,99.6
+1626,insulation,0.0,0.0
+1626,plumbing piping,271.9,272.0
+1627,ductwork,1532.8,1506.4
+1627,equipment,457.5,504.6
+1627,fixtures,335.5,332.3
+1627,general conditions,566.4,557.0
+1627,hvac piping,372.7,377.0
+1627,insulation,0.0,0.0
+1627,plumbing piping,1349.8,1360.0
+1628,ductwork,857.6,836.2
+1628,equipment,304.7,335.4
+1628,fixtures,147.0,147.3
+1628,general conditions,205.0,220.7
+1628,hvac piping,224.9,218.3
+1628,insulation,0.0,0.0
+1628,plumbing piping,485.8,532.5
+1629,ductwork,1664.5,1580.1
+1629,equipment,546.1,601.2
+1629,fixtures,246.2,258.3
+1629,general conditions,641.0,612.5
+1629,hvac piping,1529.0,1549.4
+1629,insulation,0.0,0.0
+1629,plumbing piping,1215.5,1110.0
+1630,ductwork,1002.4,1013.0
+1630,equipment,372.1,406.2
+1630,fixtures,162.3,160.2
+1630,general conditions,279.2,276.2
+1630,hvac piping,1174.1,1118.9
+1630,insulation,0.0,0.0
+1630,plumbing piping,729.1,749.8
+1631,ductwork,302.1,326.8
+1631,equipment,244.5,254.2
+1631,fixtures,84.3,82.9
+1631,general conditions,172.9,186.4
+1631,hvac piping,133.1,135.0
+1631,insulation,0.0,0.0
+1631,plumbing piping,346.0,353.0
+1632,ductwork,279.5,267.9
+1632,equipment,119.6,120.9
+1632,fixtures,54.4,52.0
+1632,general conditions,91.3,93.4
+1632,hvac piping,286.5,285.3
+1632,insulation,0.0,0.0
+1632,plumbing piping,207.0,236.6
+1633,ductwork,695.2,727.3
+1633,equipment,296.5,342.5
+1633,fixtures,124.7,123.1
+1633,general conditions,268.1,263.1
+1633,hvac piping,478.6,487.8
+1633,insulation,0.0,0.0
+1633,plumbing piping,804.2,827.1
+1634,ductwork,692.7,663.6
+1634,equipment,420.3,388.3
+1634,fixtures,144.1,125.2
+1634,general conditions,357.1,336.2
+1634,hvac piping,619.0,704.6
+1634,insulation,0.0,0.0
+1634,plumbing piping,833.2,867.1
+1635,ductwork,773.9,854.6
+1635,equipment,570.1,554.4
+1635,fixtures,202.9,204.2
+1635,general conditions,409.4,414.8
+1635,hvac piping,366.5,348.6
+1635,insulation,0.0,0.0
+1635,plumbing piping,819.1,897.0
+1636,ductwork,430.8,447.6
+1636,equipment,159.7,157.5
+1636,fixtures,75.9,77.6
+1636,general conditions,155.7,156.5
+1636,hvac piping,342.5,328.6
+1636,insulation,0.0,0.0
+1636,plumbing piping,385.1,429.8
+1637,ductwork,1443.7,1500.8
+1637,equipment,875.9,920.4
+1637,fixtures,305.4,306.2
+1637,general conditions,664.8,578.9
+1637,hvac piping,1150.3,1232.8
+1637,insulation,0.0,0.0
+1637,plumbing piping,1263.6,1396.1
+1638,ductwork,257.0,276.6
+1638,equipment,96.7,100.8
+1638,fixtures,43.9,43.3
+1638,general conditions,102.8,104.0
+1638,hvac piping,85.0,85.5
+1638,insulation,0.0,0.0
+1638,plumbing piping,317.0,304.0
+1639,ductwork,770.3,781.7
+1639,equipment,399.6,405.2
+1639,fixtures,158.7,156.9
+1639,general conditions,310.2,308.8
+1639,hvac piping,260.3,258.7
+1639,insulation,0.0,0.0
+1639,plumbing piping,557.6,633.1
+1640,ductwork,1784.6,1663.6
+1640,equipment,640.8,620.9
+1640,fixtures,304.8,319.3
+1640,general conditions,683.2,706.1
+1640,hvac piping,539.3,500.9
+1640,insulation,0.0,0.0
+1640,plumbing piping,1483.9,1563.6
+1641,ductwork,703.5,691.3
+1641,equipment,435.2,388.9
+1641,fixtures,103.7,108.5
+1641,general conditions,206.6,235.9
+1641,hvac piping,577.4,640.9
+1641,insulation,0.0,0.0
+1641,plumbing piping,601.8,588.1
+1642,ductwork,259.3,264.6
+1642,equipment,156.4,154.2
+1642,fixtures,51.0,52.4
+1642,general conditions,128.2,130.5
+1642,hvac piping,237.3,259.1
+1642,insulation,0.0,0.0
+1642,plumbing piping,185.1,180.6
+1643,ductwork,1006.8,989.1
+1643,equipment,330.0,311.7
+1643,fixtures,228.8,209.3
+1643,general conditions,371.0,376.3
+1643,hvac piping,778.9,896.6
+1643,insulation,0.0,0.0
+1643,plumbing piping,1068.8,1080.1
+1644,ductwork,1293.2,1205.8
+1644,equipment,613.1,569.3
+1644,fixtures,141.9,154.0
+1644,general conditions,431.2,432.6
+1644,hvac piping,254.8,278.9
+1644,insulation,0.0,0.0
+1644,plumbing piping,812.1,812.5
+1645,ductwork,1016.1,1009.9
+1645,equipment,459.5,488.5
+1645,fixtures,198.5,196.8
+1645,general conditions,415.0,425.7
+1645,hvac piping,1070.5,1016.1
+1645,insulation,0.0,0.0
+1645,plumbing piping,884.6,758.8
+1646,ductwork,114.9,113.5
+1646,equipment,55.0,61.5
+1646,fixtures,29.0,27.1
+1646,general conditions,51.0,46.7
+1646,hvac piping,108.8,112.6
+1646,insulation,0.0,0.0
+1646,plumbing piping,106.9,103.1
+1647,ductwork,223.8,227.0
+1647,equipment,116.0,109.8
+1647,fixtures,47.5,49.7
+1647,general conditions,99.7,103.3
+1647,hvac piping,262.2,275.2
+1647,insulation,0.0,0.0
+1647,plumbing piping,233.8,252.0
+1648,ductwork,514.2,476.8
+1648,equipment,238.9,252.2
+1648,fixtures,109.0,111.4
+1648,general conditions,237.0,249.0
+1648,hvac piping,566.0,524.3
+1648,insulation,0.0,0.0
+1648,plumbing piping,525.2,512.0
+1649,ductwork,596.1,609.0
+1649,equipment,342.2,347.7
+1649,fixtures,116.6,121.0
+1649,general conditions,202.6,202.9
+1649,hvac piping,621.1,625.7
+1649,insulation,0.0,0.0
+1649,plumbing piping,403.1,480.4
+1650,ductwork,1124.3,1105.9
+1650,equipment,600.6,585.1
+1650,fixtures,219.1,208.2
+1650,general conditions,511.4,480.8
+1650,hvac piping,300.5,320.4
+1650,insulation,0.0,0.0
+1650,plumbing piping,1413.9,1423.9
+1651,ductwork,363.1,382.1
+1651,equipment,223.4,192.8
+1651,fixtures,70.4,65.8
+1651,general conditions,168.6,170.7
+1651,hvac piping,355.3,420.4
+1651,insulation,0.0,0.0
+1651,plumbing piping,405.7,417.6
+1652,ductwork,707.6,694.5
+1652,equipment,361.2,363.9
+1652,fixtures,111.3,114.4
+1652,general conditions,267.8,265.3
+1652,hvac piping,168.0,189.0
+1652,insulation,0.0,0.0
+1652,plumbing piping,414.2,452.9
+1653,ductwork,312.8,322.1
+1653,equipment,117.6,126.4
+1653,fixtures,54.4,52.1
+1653,general conditions,98.2,98.9
+1653,hvac piping,75.9,77.3
+1653,insulation,0.0,0.0
+1653,plumbing piping,245.6,246.2
+1654,ductwork,897.9,891.4
+1654,equipment,530.8,547.7
+1654,fixtures,238.0,226.8
+1654,general conditions,416.4,441.5
+1654,hvac piping,873.9,887.4
+1654,insulation,0.0,0.0
+1654,plumbing piping,1334.9,1331.2
+1655,ductwork,544.8,575.0
+1655,equipment,292.8,304.9
+1655,fixtures,118.3,106.7
+1655,general conditions,310.3,287.6
+1655,hvac piping,198.6,188.6
+1655,insulation,0.0,0.0
+1655,plumbing piping,472.6,504.3
+1656,ductwork,288.1,310.1
+1656,equipment,207.7,195.0
+1656,fixtures,76.2,78.3
+1656,general conditions,160.0,164.8
+1656,hvac piping,281.9,324.1
+1656,insulation,0.0,0.0
+1656,plumbing piping,295.9,292.4
+1657,ductwork,981.3,985.7
+1657,equipment,474.2,435.1
+1657,fixtures,205.4,191.1
+1657,general conditions,325.1,358.6
+1657,hvac piping,313.8,341.6
+1657,insulation,0.0,0.0
+1657,plumbing piping,1134.1,1098.1
+1658,ductwork,181.6,189.0
+1658,equipment,85.0,79.9
+1658,fixtures,33.9,34.5
+1658,general conditions,69.6,74.5
+1658,hvac piping,198.5,195.1
+1658,insulation,0.0,0.0
+1658,plumbing piping,142.7,163.3
+1659,ductwork,346.6,343.3
+1659,equipment,138.8,141.9
+1659,fixtures,70.5,69.0
+1659,general conditions,148.1,151.4
+1659,hvac piping,348.3,358.1
+1659,insulation,0.0,0.0
+1659,plumbing piping,242.6,232.8
+1660,ductwork,1822.3,1822.7
+1660,equipment,682.2,741.7
+1660,fixtures,269.7,289.5
+1660,general conditions,511.6,534.6
+1660,hvac piping,1638.9,1588.8
+1660,insulation,0.0,0.0
+1660,plumbing piping,1111.9,1209.7
+1661,ductwork,529.3,528.2
+1661,equipment,190.1,200.3
+1661,fixtures,87.0,89.8
+1661,general conditions,174.5,159.0
+1661,hvac piping,436.6,430.3
+1661,insulation,0.0,0.0
+1661,plumbing piping,303.7,288.6
+1662,ductwork,1846.1,1938.7
+1662,equipment,610.9,666.4
+1662,fixtures,390.9,394.9
+1662,general conditions,656.3,623.6
+1662,hvac piping,544.6,572.7
+1662,insulation,0.0,0.0
+1662,plumbing piping,1689.6,1631.1
+1663,ductwork,1573.1,1577.2
+1663,equipment,588.0,624.9
+1663,fixtures,266.0,253.2
+1663,general conditions,702.7,661.4
+1663,hvac piping,439.4,462.5
+1663,insulation,0.0,0.0
+1663,plumbing piping,1364.3,1397.3
+1664,ductwork,441.5,465.7
+1664,equipment,292.8,302.3
+1664,fixtures,104.5,99.0
+1664,general conditions,251.7,242.3
+1664,hvac piping,421.1,428.9
+1664,insulation,0.0,0.0
+1664,plumbing piping,394.8,430.1
+1665,ductwork,780.4,724.2
+1665,equipment,381.8,342.8
+1665,fixtures,182.0,179.0
+1665,general conditions,283.0,296.2
+1665,hvac piping,286.6,307.4
+1665,insulation,0.0,0.0
+1665,plumbing piping,665.1,644.1
+1666,ductwork,1092.6,1021.5
+1666,equipment,457.5,433.8
+1666,fixtures,157.9,146.1
+1666,general conditions,326.7,319.7
+1666,hvac piping,673.5,754.0
+1666,insulation,0.0,0.0
+1666,plumbing piping,760.3,769.0
+1667,ductwork,453.4,449.3
+1667,equipment,169.3,203.3
+1667,fixtures,101.4,101.3
+1667,general conditions,144.7,153.8
+1667,hvac piping,156.7,148.5
+1667,insulation,0.0,0.0
+1667,plumbing piping,317.4,316.5
+1668,ductwork,108.3,114.7
+1668,equipment,62.4,61.5
+1668,fixtures,22.1,24.0
+1668,general conditions,35.1,36.0
+1668,hvac piping,37.1,39.0
+1668,insulation,0.0,0.0
+1668,plumbing piping,104.6,112.9
+1669,ductwork,1093.1,1088.8
+1669,equipment,519.8,524.9
+1669,fixtures,221.2,231.7
+1669,general conditions,491.8,520.2
+1669,hvac piping,702.0,734.1
+1669,insulation,0.0,0.0
+1669,plumbing piping,777.0,870.8
+1670,ductwork,822.0,806.1
+1670,equipment,344.3,385.9
+1670,fixtures,191.4,189.8
+1670,general conditions,435.1,415.3
+1670,hvac piping,781.1,823.3
+1670,insulation,0.0,0.0
+1670,plumbing piping,893.4,850.1
+1671,ductwork,200.0,201.6
+1671,equipment,77.4,85.9
+1671,fixtures,41.2,41.5
+1671,general conditions,103.1,95.9
+1671,hvac piping,56.4,57.9
+1671,insulation,0.0,0.0
+1671,plumbing piping,186.5,177.5
+1672,ductwork,916.6,858.5
+1672,equipment,258.6,304.9
+1672,fixtures,187.2,171.4
+1672,general conditions,391.2,374.8
+1672,hvac piping,250.8,257.3
+1672,insulation,0.0,0.0
+1672,plumbing piping,558.6,591.4
+1673,ductwork,3249.1,3092.6
+1673,equipment,1054.9,1099.2
+1673,fixtures,379.4,386.6
+1673,general conditions,935.3,937.0
+1673,hvac piping,829.7,900.6
+1673,insulation,0.0,0.0
+1673,plumbing piping,2749.9,2810.8
+1674,ductwork,393.2,401.3
+1674,equipment,190.7,200.2
+1674,fixtures,91.4,88.4
+1674,general conditions,169.7,170.2
+1674,hvac piping,468.0,446.6
+1674,insulation,0.0,0.0
+1674,plumbing piping,323.9,360.2
+1675,ductwork,545.1,540.5
+1675,equipment,246.9,268.9
+1675,fixtures,91.9,97.4
+1675,general conditions,315.1,308.7
+1675,hvac piping,201.3,186.7
+1675,insulation,0.0,0.0
+1675,plumbing piping,489.8,468.6
+1676,ductwork,314.4,340.2
+1676,equipment,153.6,151.7
+1676,fixtures,60.1,60.3
+1676,general conditions,126.2,127.5
+1676,hvac piping,321.2,308.2
+1676,insulation,0.0,0.0
+1676,plumbing piping,276.2,293.8
+1677,ductwork,1247.6,1135.4
+1677,equipment,472.2,448.4
+1677,fixtures,258.2,257.0
+1677,general conditions,336.1,359.2
+1677,hvac piping,961.8,897.9
+1677,insulation,0.0,0.0
+1677,plumbing piping,789.5,801.6
+1678,ductwork,87.2,88.1
+1678,equipment,51.0,51.1
+1678,fixtures,18.1,17.9
+1678,general conditions,48.2,50.7
+1678,hvac piping,33.0,34.4
+1678,insulation,0.0,0.0
+1678,plumbing piping,85.2,83.9
+1679,ductwork,335.2,346.3
+1679,equipment,127.6,131.8
+1679,fixtures,65.0,61.4
+1679,general conditions,122.1,127.6
+1679,hvac piping,74.5,76.7
+1679,insulation,0.0,0.0
+1679,plumbing piping,289.2,297.1
+1680,ductwork,355.8,342.2
+1680,equipment,161.7,154.0
+1680,fixtures,47.5,50.0
+1680,general conditions,136.7,137.2
+1680,hvac piping,388.3,377.1
+1680,insulation,0.0,0.0
+1680,plumbing piping,366.0,374.0
+1681,ductwork,792.1,705.4
+1681,equipment,293.0,332.1
+1681,fixtures,122.0,124.7
+1681,general conditions,368.7,358.1
+1681,hvac piping,199.2,207.4
+1681,insulation,0.0,0.0
+1681,plumbing piping,552.1,565.6
+1682,ductwork,742.4,688.3
+1682,equipment,299.5,307.0
+1682,fixtures,108.4,110.9
+1682,general conditions,272.6,280.4
+1682,hvac piping,612.0,671.0
+1682,insulation,0.0,0.0
+1682,plumbing piping,691.4,704.0
+1683,ductwork,492.1,503.5
+1683,equipment,224.2,233.9
+1683,fixtures,153.5,138.4
+1683,general conditions,187.8,182.8
+1683,hvac piping,528.5,473.0
+1683,insulation,0.0,0.0
+1683,plumbing piping,316.8,313.0
+1684,ductwork,1966.8,1864.5
+1684,equipment,612.9,609.3
+1684,fixtures,322.8,309.4
+1684,general conditions,583.4,588.9
+1684,hvac piping,1349.8,1363.9
+1684,insulation,0.0,0.0
+1684,plumbing piping,1370.9,1428.5
+1685,ductwork,453.8,433.7
+1685,equipment,265.6,257.1
+1685,fixtures,79.3,79.6
+1685,general conditions,173.2,170.7
+1685,hvac piping,372.0,411.3
+1685,insulation,0.0,0.0
+1685,plumbing piping,551.2,541.0
+1686,ductwork,546.2,578.3
+1686,equipment,280.1,277.6
+1686,fixtures,144.1,138.2
+1686,general conditions,204.9,181.0
+1686,hvac piping,508.8,558.3
+1686,insulation,0.0,0.0
+1686,plumbing piping,479.4,501.2
+1687,ductwork,1606.9,1601.8
+1687,equipment,901.7,893.0
+1687,fixtures,288.3,285.0
+1687,general conditions,698.1,695.5
+1687,hvac piping,1888.8,1857.6
+1687,insulation,0.0,0.0
+1687,plumbing piping,1346.3,1488.9
+1688,ductwork,2121.6,2167.8
+1688,equipment,975.8,967.1
+1688,fixtures,470.7,435.1
+1688,general conditions,698.4,640.9
+1688,hvac piping,1687.1,1802.8
+1688,insulation,0.0,0.0
+1688,plumbing piping,1954.3,2025.9
+1689,ductwork,738.9,698.7
+1689,equipment,282.8,298.3
+1689,fixtures,167.6,165.0
+1689,general conditions,256.5,276.1
+1689,hvac piping,655.4,706.3
+1689,insulation,0.0,0.0
+1689,plumbing piping,558.1,587.4
+1690,ductwork,101.5,100.5
+1690,equipment,45.5,47.8
+1690,fixtures,19.6,20.5
+1690,general conditions,42.8,39.3
+1690,hvac piping,83.2,83.0
+1690,insulation,0.0,0.0
+1690,plumbing piping,89.7,84.5
+1691,ductwork,854.9,886.5
+1691,equipment,356.1,387.9
+1691,fixtures,169.1,163.2
+1691,general conditions,294.3,286.4
+1691,hvac piping,245.6,238.7
+1691,insulation,0.0,0.0
+1691,plumbing piping,867.9,825.2
+1692,ductwork,2551.9,2614.3
+1692,equipment,1304.7,1364.3
+1692,fixtures,581.9,598.9
+1692,general conditions,1369.7,1221.0
+1692,hvac piping,941.0,948.0
+1692,insulation,0.0,0.0
+1692,plumbing piping,2733.9,2895.2
+1693,ductwork,634.6,639.2
+1693,equipment,313.1,333.0
+1693,fixtures,107.3,115.0
+1693,general conditions,206.1,208.7
+1693,hvac piping,197.1,180.6
+1693,insulation,0.0,0.0
+1693,plumbing piping,535.7,611.2
+1694,ductwork,904.3,898.5
+1694,equipment,341.5,350.9
+1694,fixtures,145.5,140.0
+1694,general conditions,346.6,306.4
+1694,hvac piping,662.3,725.9
+1694,insulation,0.0,0.0
+1694,plumbing piping,901.3,853.0
+1695,ductwork,733.2,740.4
+1695,equipment,336.8,350.3
+1695,fixtures,159.6,169.5
+1695,general conditions,297.2,323.4
+1695,hvac piping,628.7,621.0
+1695,insulation,0.0,0.0
+1695,plumbing piping,758.2,873.1
+1696,ductwork,544.6,541.9
+1696,equipment,175.5,208.4
+1696,fixtures,102.0,101.6
+1696,general conditions,200.2,196.4
+1696,hvac piping,175.8,164.7
+1696,insulation,0.0,0.0
+1696,plumbing piping,365.3,322.5
+1697,ductwork,707.0,713.7
+1697,equipment,248.9,259.1
+1697,fixtures,105.5,101.6
+1697,general conditions,234.9,232.3
+1697,hvac piping,523.0,550.8
+1697,insulation,0.0,0.0
+1697,plumbing piping,489.6,490.5
+1698,ductwork,221.2,231.2
+1698,equipment,96.1,109.4
+1698,fixtures,35.5,34.1
+1698,general conditions,86.8,88.8
+1698,hvac piping,176.7,181.9
+1698,insulation,0.0,0.0
+1698,plumbing piping,213.2,198.1
+1699,ductwork,338.0,357.0
+1699,equipment,173.1,185.0
+1699,fixtures,57.7,60.0
+1699,general conditions,147.4,146.2
+1699,hvac piping,443.4,408.1
+1699,insulation,0.0,0.0
+1699,plumbing piping,325.7,365.0
+1700,ductwork,727.5,733.1
+1700,equipment,435.0,462.8
+1700,fixtures,180.0,172.4
+1700,general conditions,357.3,377.5
+1700,hvac piping,753.7,699.3
+1700,insulation,0.0,0.0
+1700,plumbing piping,646.7,689.2
+1701,ductwork,906.0,904.9
+1701,equipment,421.1,414.2
+1701,fixtures,190.0,182.9
+1701,general conditions,316.4,319.9
+1701,hvac piping,971.0,1011.5
+1701,insulation,0.0,0.0
+1701,plumbing piping,801.5,787.9
+1702,ductwork,512.4,537.8
+1702,equipment,323.8,314.2
+1702,fixtures,109.0,110.5
+1702,general conditions,211.5,212.9
+1702,hvac piping,200.6,199.1
+1702,insulation,0.0,0.0
+1702,plumbing piping,448.0,456.1
+1703,ductwork,860.7,863.0
+1703,equipment,602.0,543.7
+1703,fixtures,187.5,202.7
+1703,general conditions,348.4,373.6
+1703,hvac piping,248.9,267.8
+1703,insulation,0.0,0.0
+1703,plumbing piping,909.0,914.7
+1704,ductwork,4172.8,4087.7
+1704,equipment,1575.9,1674.0
+1704,fixtures,683.2,709.8
+1704,general conditions,1408.7,1402.8
+1704,hvac piping,3092.7,3440.8
+1704,insulation,0.0,0.0
+1704,plumbing piping,2561.3,2796.5
+1705,ductwork,511.8,502.8
+1705,equipment,197.4,221.4
+1705,fixtures,99.2,104.6
+1705,general conditions,221.1,217.6
+1705,hvac piping,155.3,159.3
+1705,insulation,0.0,0.0
+1705,plumbing piping,353.5,330.5
+1706,ductwork,225.8,233.1
+1706,equipment,78.1,81.1
+1706,fixtures,43.2,40.2
+1706,general conditions,98.3,94.7
+1706,hvac piping,59.1,66.3
+1706,insulation,0.0,0.0
+1706,plumbing piping,193.1,192.4
+1707,ductwork,128.6,129.2
+1707,equipment,54.6,49.2
+1707,fixtures,31.0,29.7
+1707,general conditions,52.7,52.5
+1707,hvac piping,100.7,111.5
+1707,insulation,0.0,0.0
+1707,plumbing piping,106.6,104.9
+1708,ductwork,567.0,567.2
+1708,equipment,203.2,188.9
+1708,fixtures,87.5,96.8
+1708,general conditions,180.9,177.3
+1708,hvac piping,181.4,185.5
+1708,insulation,0.0,0.0
+1708,plumbing piping,478.4,512.5
+1709,ductwork,591.8,595.7
+1709,equipment,233.7,232.2
+1709,fixtures,84.6,82.0
+1709,general conditions,202.8,202.3
+1709,hvac piping,407.5,429.5
+1709,insulation,0.0,0.0
+1709,plumbing piping,569.5,601.0
+1710,ductwork,225.2,225.6
+1710,equipment,140.0,128.1
+1710,fixtures,48.4,51.2
+1710,general conditions,91.2,94.9
+1710,hvac piping,83.5,90.1
+1710,insulation,0.0,0.0
+1710,plumbing piping,200.9,215.9
+1711,ductwork,989.2,921.9
+1711,equipment,571.8,555.6
+1711,fixtures,158.1,156.3
+1711,general conditions,525.8,486.7
+1711,hvac piping,1003.6,975.5
+1711,insulation,0.0,0.0
+1711,plumbing piping,698.5,799.0
+1712,ductwork,313.0,316.2
+1712,equipment,146.1,143.7
+1712,fixtures,64.7,65.1
+1712,general conditions,156.6,149.4
+1712,hvac piping,199.7,250.6
+1712,insulation,0.0,0.0
+1712,plumbing piping,376.6,359.0
+1713,ductwork,138.5,144.5
+1713,equipment,55.8,62.0
+1713,fixtures,30.9,29.5
+1713,general conditions,62.5,60.6
+1713,hvac piping,129.5,133.1
+1713,insulation,0.0,0.0
+1713,plumbing piping,129.3,116.6
+1714,ductwork,669.3,688.7
+1714,equipment,316.1,312.7
+1714,fixtures,118.2,126.3
+1714,general conditions,260.7,277.6
+1714,hvac piping,230.0,205.4
+1714,insulation,0.0,0.0
+1714,plumbing piping,545.7,608.4
+1715,ductwork,899.9,953.7
+1715,equipment,526.8,493.9
+1715,fixtures,193.6,195.4
+1715,general conditions,491.4,473.2
+1715,hvac piping,1142.1,1144.2
+1715,insulation,0.0,0.0
+1715,plumbing piping,951.0,1071.3
+1716,ductwork,706.1,696.2
+1716,equipment,205.7,226.9
+1716,fixtures,110.4,115.3
+1716,general conditions,195.5,217.9
+1716,hvac piping,538.7,524.5
+1716,insulation,0.0,0.0
+1716,plumbing piping,541.4,516.6
+1717,ductwork,452.1,476.5
+1717,equipment,267.0,258.3
+1717,fixtures,81.5,78.3
+1717,general conditions,197.8,222.7
+1717,hvac piping,392.5,387.4
+1717,insulation,0.0,0.0
+1717,plumbing piping,354.9,400.6
+1718,ductwork,4358.7,3764.5
+1718,equipment,1338.7,1536.6
+1718,fixtures,795.9,750.2
+1718,general conditions,1394.2,1429.9
+1718,hvac piping,3176.0,3068.3
+1718,insulation,0.0,0.0
+1718,plumbing piping,2727.5,2974.2
+1719,ductwork,759.2,793.0
+1719,equipment,405.6,402.1
+1719,fixtures,154.3,157.3
+1719,general conditions,276.6,292.9
+1719,hvac piping,738.9,754.6
+1719,insulation,0.0,0.0
+1719,plumbing piping,843.6,837.6
+1720,ductwork,636.0,655.1
+1720,equipment,281.0,285.7
+1720,fixtures,118.9,120.0
+1720,general conditions,267.2,282.1
+1720,hvac piping,605.2,614.7
+1720,insulation,0.0,0.0
+1720,plumbing piping,543.1,610.2
+1721,ductwork,651.0,707.0
+1721,equipment,283.8,291.7
+1721,fixtures,91.6,99.8
+1721,general conditions,249.9,246.8
+1721,hvac piping,223.0,219.7
+1721,insulation,0.0,0.0
+1721,plumbing piping,530.9,479.6
+1722,ductwork,522.9,532.7
+1722,equipment,217.7,231.7
+1722,fixtures,87.0,90.5
+1722,general conditions,199.4,194.1
+1722,hvac piping,186.1,173.6
+1722,insulation,0.0,0.0
+1722,plumbing piping,412.4,460.0
+1723,ductwork,273.9,266.6
+1723,equipment,120.3,131.2
+1723,fixtures,45.2,44.1
+1723,general conditions,75.0,80.3
+1723,hvac piping,238.7,250.9
+1723,insulation,0.0,0.0
+1723,plumbing piping,311.9,276.9
+1724,ductwork,3671.7,3696.5
+1724,equipment,1220.8,1305.3
+1724,fixtures,516.6,547.5
+1724,general conditions,1291.4,1291.6
+1724,hvac piping,1317.6,1298.8
+1724,insulation,0.0,0.0
+1724,plumbing piping,2719.7,2977.4
+1725,ductwork,607.6,571.6
+1725,equipment,173.7,205.0
+1725,fixtures,124.3,125.5
+1725,general conditions,215.0,212.9
+1725,hvac piping,149.3,146.6
+1725,insulation,0.0,0.0
+1725,plumbing piping,470.6,423.0
+1726,ductwork,104.3,105.2
+1726,equipment,61.2,59.9
+1726,fixtures,18.8,17.7
+1726,general conditions,40.4,41.5
+1726,hvac piping,103.1,111.7
+1726,insulation,0.0,0.0
+1726,plumbing piping,137.1,139.8
+1727,ductwork,2601.3,2466.1
+1727,equipment,1429.4,1319.3
+1727,fixtures,484.1,465.1
+1727,general conditions,882.7,955.1
+1727,hvac piping,2402.1,2661.1
+1727,insulation,0.0,0.0
+1727,plumbing piping,2281.8,2410.8
+1728,ductwork,710.2,710.5
+1728,equipment,391.1,392.3
+1728,fixtures,146.8,139.3
+1728,general conditions,410.1,388.6
+1728,hvac piping,723.8,791.0
+1728,insulation,0.0,0.0
+1728,plumbing piping,565.2,546.6
+1729,ductwork,5869.6,5578.4
+1729,equipment,1548.6,1695.5
+1729,fixtures,716.2,737.3
+1729,general conditions,1613.9,1653.8
+1729,hvac piping,3712.2,3721.2
+1729,insulation,0.0,0.0
+1729,plumbing piping,4202.1,3994.7
+1730,ductwork,584.2,569.4
+1730,equipment,324.7,321.8
+1730,fixtures,97.4,98.1
+1730,general conditions,201.7,211.5
+1730,hvac piping,201.8,215.6
+1730,insulation,0.0,0.0
+1730,plumbing piping,513.1,523.6
+1731,ductwork,1099.6,1070.3
+1731,equipment,684.8,643.3
+1731,fixtures,181.1,177.2
+1731,general conditions,293.7,297.3
+1731,hvac piping,974.8,1106.2
+1731,insulation,0.0,0.0
+1731,plumbing piping,1404.9,1383.1
+1732,ductwork,911.1,884.9
+1732,equipment,572.2,565.9
+1732,fixtures,189.9,192.3
+1732,general conditions,523.9,486.9
+1732,hvac piping,397.4,378.4
+1732,insulation,0.0,0.0
+1732,plumbing piping,1068.5,1158.1
+1733,ductwork,1715.0,1808.0
+1733,equipment,659.4,698.3
+1733,fixtures,258.2,267.4
+1733,general conditions,627.9,588.7
+1733,hvac piping,1696.1,1728.8
+1733,insulation,0.0,0.0
+1733,plumbing piping,1862.8,1849.7
+1734,ductwork,1619.2,1499.1
+1734,equipment,582.3,683.3
+1734,fixtures,275.6,271.7
+1734,general conditions,718.5,669.5
+1734,hvac piping,493.3,490.6
+1734,insulation,0.0,0.0
+1734,plumbing piping,1313.9,1242.5
+1735,ductwork,450.5,431.7
+1735,equipment,228.6,223.8
+1735,fixtures,99.6,100.6
+1735,general conditions,243.3,230.9
+1735,hvac piping,157.6,151.8
+1735,insulation,0.0,0.0
+1735,plumbing piping,370.4,407.4
+1736,ductwork,1446.3,1340.9
+1736,equipment,619.3,651.2
+1736,fixtures,234.7,227.7
+1736,general conditions,550.2,594.7
+1736,hvac piping,401.3,402.6
+1736,insulation,0.0,0.0
+1736,plumbing piping,1041.1,989.1
+1737,ductwork,315.0,327.2
+1737,equipment,161.4,145.2
+1737,fixtures,41.8,42.4
+1737,general conditions,122.9,119.9
+1737,hvac piping,118.1,117.3
+1737,insulation,0.0,0.0
+1737,plumbing piping,252.1,232.6
+1738,ductwork,407.1,412.8
+1738,equipment,137.8,147.5
+1738,fixtures,70.6,69.5
+1738,general conditions,129.3,135.1
+1738,hvac piping,388.6,356.8
+1738,insulation,0.0,0.0
+1738,plumbing piping,443.1,432.9
+1739,ductwork,545.8,575.4
+1739,equipment,177.3,176.9
+1739,fixtures,82.0,87.2
+1739,general conditions,199.2,204.1
+1739,hvac piping,338.9,365.7
+1739,insulation,0.0,0.0
+1739,plumbing piping,372.1,365.4
+1740,ductwork,1414.8,1384.5
+1740,equipment,584.9,573.8
+1740,fixtures,236.3,245.1
+1740,general conditions,538.2,555.8
+1740,hvac piping,332.6,337.1
+1740,insulation,0.0,0.0
+1740,plumbing piping,1124.0,1214.2
+1741,ductwork,402.0,363.6
+1741,equipment,154.5,156.0
+1741,fixtures,60.3,57.9
+1741,general conditions,118.8,125.1
+1741,hvac piping,267.8,268.7
+1741,insulation,0.0,0.0
+1741,plumbing piping,254.5,279.9
+1742,ductwork,414.4,394.8
+1742,equipment,177.6,166.5
+1742,fixtures,75.3,73.0
+1742,general conditions,158.5,159.4
+1742,hvac piping,106.8,113.6
+1742,insulation,0.0,0.0
+1742,plumbing piping,320.2,318.5
+1743,ductwork,1614.8,1528.2
+1743,equipment,664.1,682.4
+1743,fixtures,298.1,292.2
+1743,general conditions,726.8,712.0
+1743,hvac piping,455.2,469.2
+1743,insulation,0.0,0.0
+1743,plumbing piping,1379.9,1426.4
+1744,ductwork,3583.6,3455.4
+1744,equipment,1539.2,1713.8
+1744,fixtures,676.3,728.7
+1744,general conditions,1417.4,1362.2
+1744,hvac piping,1184.3,1140.1
+1744,insulation,0.0,0.0
+1744,plumbing piping,2416.3,2466.5
+1745,ductwork,1412.3,1415.9
+1745,equipment,724.3,729.5
+1745,fixtures,260.1,261.2
+1745,general conditions,602.4,569.9
+1745,hvac piping,1129.3,1065.2
+1745,insulation,0.0,0.0
+1745,plumbing piping,1189.5,1152.4
+1746,ductwork,2203.9,2065.4
+1746,equipment,775.1,789.3
+1746,fixtures,336.3,332.0
+1746,general conditions,827.1,844.5
+1746,hvac piping,498.6,519.9
+1746,insulation,0.0,0.0
+1746,plumbing piping,1623.2,1547.9
+1747,ductwork,246.1,244.1
+1747,equipment,108.3,112.7
+1747,fixtures,47.8,47.5
+1747,general conditions,89.1,90.4
+1747,hvac piping,68.2,75.1
+1747,insulation,0.0,0.0
+1747,plumbing piping,183.1,185.7
+1748,ductwork,2293.4,2227.1
+1748,equipment,1073.8,1100.4
+1748,fixtures,381.1,401.4
+1748,general conditions,865.2,870.7
+1748,hvac piping,786.5,798.5
+1748,insulation,0.0,0.0
+1748,plumbing piping,1672.2,2028.8
+1749,ductwork,2333.2,2438.8
+1749,equipment,681.5,710.3
+1749,fixtures,471.0,462.5
+1749,general conditions,744.1,698.7
+1749,hvac piping,494.0,536.7
+1749,insulation,0.0,0.0
+1749,plumbing piping,1486.2,1587.7
+1750,ductwork,3705.2,3521.6
+1750,equipment,1342.8,1473.1
+1750,fixtures,622.7,617.5
+1750,general conditions,1488.0,1407.1
+1750,hvac piping,3570.1,3471.0
+1750,insulation,0.0,0.0
+1750,plumbing piping,4023.9,4031.6
+1751,ductwork,1297.0,1315.4
+1751,equipment,727.3,678.5
+1751,fixtures,239.0,244.7
+1751,general conditions,562.0,591.5
+1751,hvac piping,803.3,1058.1
+1751,insulation,0.0,0.0
+1751,plumbing piping,1136.8,1098.1
+1752,ductwork,1954.3,1897.1
+1752,equipment,832.4,800.4
+1752,fixtures,316.9,308.5
+1752,general conditions,564.8,566.2
+1752,hvac piping,1367.6,1474.4
+1752,insulation,0.0,0.0
+1752,plumbing piping,1731.9,1693.9
+1753,ductwork,700.6,715.3
+1753,equipment,241.1,225.7
+1753,fixtures,103.5,97.0
+1753,general conditions,244.2,274.9
+1753,hvac piping,149.5,161.5
+1753,insulation,0.0,0.0
+1753,plumbing piping,425.2,430.7
+1754,ductwork,280.8,286.6
+1754,equipment,136.9,132.8
+1754,fixtures,60.1,60.3
+1754,general conditions,139.5,133.1
+1754,hvac piping,307.2,323.0
+1754,insulation,0.0,0.0
+1754,plumbing piping,376.0,361.7
+1755,ductwork,234.4,212.3
+1755,equipment,91.7,89.8
+1755,fixtures,32.3,32.0
+1755,general conditions,71.1,72.9
+1755,hvac piping,67.6,65.5
+1755,insulation,0.0,0.0
+1755,plumbing piping,150.4,166.0
+1756,ductwork,304.0,316.4
+1756,equipment,206.9,216.5
+1756,fixtures,77.7,77.0
+1756,general conditions,143.1,141.1
+1756,hvac piping,122.1,133.9
+1756,insulation,0.0,0.0
+1756,plumbing piping,397.2,387.4
+1757,ductwork,232.3,224.2
+1757,equipment,130.4,140.7
+1757,fixtures,50.8,49.4
+1757,general conditions,113.4,113.7
+1757,hvac piping,89.5,94.4
+1757,insulation,0.0,0.0
+1757,plumbing piping,180.9,185.8
+1758,ductwork,1195.0,1147.9
+1758,equipment,506.0,561.4
+1758,fixtures,173.7,167.0
+1758,general conditions,506.3,497.7
+1758,hvac piping,295.5,291.6
+1758,insulation,0.0,0.0
+1758,plumbing piping,1000.2,941.6
+1759,ductwork,1002.3,998.1
+1759,equipment,444.8,481.4
+1759,fixtures,210.5,208.6
+1759,general conditions,486.8,446.2
+1759,hvac piping,1057.6,1082.9
+1759,insulation,0.0,0.0
+1759,plumbing piping,778.0,760.9
+1760,ductwork,726.0,792.2
+1760,equipment,404.9,417.1
+1760,fixtures,146.2,153.6
+1760,general conditions,348.4,375.3
+1760,hvac piping,304.8,286.4
+1760,insulation,0.0,0.0
+1760,plumbing piping,601.2,615.8
+1761,ductwork,245.9,235.1
+1761,equipment,122.6,117.4
+1761,fixtures,39.9,43.6
+1761,general conditions,103.1,108.2
+1761,hvac piping,89.4,97.6
+1761,insulation,0.0,0.0
+1761,plumbing piping,207.3,207.2
+1762,ductwork,1362.5,1346.0
+1762,equipment,557.7,586.6
+1762,fixtures,193.6,184.9
+1762,general conditions,397.4,431.9
+1762,hvac piping,389.2,382.6
+1762,insulation,0.0,0.0
+1762,plumbing piping,1050.5,1054.8
+1763,ductwork,188.5,185.9
+1763,equipment,81.5,78.0
+1763,fixtures,36.2,35.1
+1763,general conditions,81.8,79.0
+1763,hvac piping,182.2,192.7
+1763,insulation,0.0,0.0
+1763,plumbing piping,154.3,165.6
+1764,ductwork,295.6,295.7
+1764,equipment,109.5,108.8
+1764,fixtures,47.9,49.6
+1764,general conditions,117.5,116.5
+1764,hvac piping,234.6,231.5
+1764,insulation,0.0,0.0
+1764,plumbing piping,180.2,199.3
+1765,ductwork,1774.1,1750.8
+1765,equipment,970.7,948.5
+1765,fixtures,356.9,316.1
+1765,general conditions,813.6,766.9
+1765,hvac piping,526.7,554.7
+1765,insulation,0.0,0.0
+1765,plumbing piping,1317.7,1375.1
+1766,ductwork,104.4,107.8
+1766,equipment,52.0,55.6
+1766,fixtures,17.7,15.8
+1766,general conditions,40.8,43.7
+1766,hvac piping,70.5,75.3
+1766,insulation,0.0,0.0
+1766,plumbing piping,117.1,100.8
+1767,ductwork,445.5,457.9
+1767,equipment,247.7,274.6
+1767,fixtures,107.0,100.7
+1767,general conditions,158.9,187.0
+1767,hvac piping,163.9,166.3
+1767,insulation,0.0,0.0
+1767,plumbing piping,461.9,442.7
+1768,ductwork,1156.0,1112.3
+1768,equipment,578.5,535.9
+1768,fixtures,193.0,194.1
+1768,general conditions,497.5,479.9
+1768,hvac piping,293.6,329.2
+1768,insulation,0.0,0.0
+1768,plumbing piping,1019.0,1108.2
+1769,ductwork,1250.3,1275.1
+1769,equipment,543.8,500.7
+1769,fixtures,211.1,198.7
+1769,general conditions,338.7,340.9
+1769,hvac piping,362.6,366.4
+1769,insulation,0.0,0.0
+1769,plumbing piping,797.2,906.3
+1770,ductwork,286.4,274.4
+1770,equipment,105.0,100.9
+1770,fixtures,62.1,61.3
+1770,general conditions,126.4,130.3
+1770,hvac piping,93.0,89.2
+1770,insulation,0.0,0.0
+1770,plumbing piping,242.3,280.3
+1771,ductwork,363.3,364.8
+1771,equipment,128.5,125.2
+1771,fixtures,64.0,61.2
+1771,general conditions,118.7,110.6
+1771,hvac piping,81.5,94.1
+1771,insulation,0.0,0.0
+1771,plumbing piping,290.9,306.0
+1772,ductwork,345.7,364.4
+1772,equipment,124.4,134.2
+1772,fixtures,53.6,56.0
+1772,general conditions,129.6,127.8
+1772,hvac piping,312.8,296.7
+1772,insulation,0.0,0.0
+1772,plumbing piping,231.1,236.1
+1773,ductwork,182.4,182.2
+1773,equipment,78.6,89.2
+1773,fixtures,33.5,33.6
+1773,general conditions,84.4,84.9
+1773,hvac piping,51.4,51.2
+1773,insulation,0.0,0.0
+1773,plumbing piping,195.1,181.6
+1774,ductwork,402.9,429.2
+1774,equipment,144.7,148.1
+1774,fixtures,50.5,51.8
+1774,general conditions,134.7,132.5
+1774,hvac piping,357.5,339.3
+1774,insulation,0.0,0.0
+1774,plumbing piping,305.9,314.1
+1775,ductwork,1399.2,1385.7
+1775,equipment,673.7,655.4
+1775,fixtures,252.4,249.0
+1775,general conditions,528.1,542.9
+1775,hvac piping,1168.7,1073.4
+1775,insulation,0.0,0.0
+1775,plumbing piping,1263.2,1470.7
+1776,ductwork,2754.5,2859.5
+1776,equipment,1376.2,1619.5
+1776,fixtures,526.2,544.6
+1776,general conditions,1343.6,1296.5
+1776,hvac piping,863.9,874.3
+1776,insulation,0.0,0.0
+1776,plumbing piping,2788.1,2799.2
+1777,ductwork,209.4,196.1
+1777,equipment,80.3,80.1
+1777,fixtures,36.0,35.6
+1777,general conditions,80.0,78.6
+1777,hvac piping,50.8,55.2
+1777,insulation,0.0,0.0
+1777,plumbing piping,155.9,148.5
+1778,ductwork,345.3,335.2
+1778,equipment,156.6,151.4
+1778,fixtures,62.7,62.1
+1778,general conditions,142.4,140.2
+1778,hvac piping,231.7,260.7
+1778,insulation,0.0,0.0
+1778,plumbing piping,370.3,353.0
+1779,ductwork,942.7,994.8
+1779,equipment,470.9,440.6
+1779,fixtures,175.1,173.3
+1779,general conditions,435.0,408.7
+1779,hvac piping,1026.9,1110.0
+1779,insulation,0.0,0.0
+1779,plumbing piping,722.2,718.0
+1780,ductwork,598.3,606.6
+1780,equipment,267.3,300.4
+1780,fixtures,109.2,107.7
+1780,general conditions,260.1,277.0
+1780,hvac piping,618.9,614.8
+1780,insulation,0.0,0.0
+1780,plumbing piping,514.9,450.4
+1781,ductwork,1186.1,1173.7
+1781,equipment,590.3,544.3
+1781,fixtures,212.3,224.2
+1781,general conditions,572.3,604.5
+1781,hvac piping,441.0,529.6
+1781,insulation,0.0,0.0
+1781,plumbing piping,954.6,948.7
+1782,ductwork,337.1,322.9
+1782,equipment,127.3,145.2
+1782,fixtures,55.6,54.3
+1782,general conditions,158.7,157.0
+1782,hvac piping,119.0,118.4
+1782,insulation,0.0,0.0
+1782,plumbing piping,276.0,258.9
+1783,ductwork,1590.6,1488.2
+1783,equipment,605.4,594.2
+1783,fixtures,248.0,251.9
+1783,general conditions,512.1,503.6
+1783,hvac piping,817.1,935.8
+1783,insulation,0.0,0.0
+1783,plumbing piping,903.5,925.3
+1784,ductwork,2579.5,2560.6
+1784,equipment,1182.2,1117.1
+1784,fixtures,409.6,403.1
+1784,general conditions,1072.0,1069.0
+1784,hvac piping,2828.3,2742.8
+1784,insulation,0.0,0.0
+1784,plumbing piping,2778.9,3080.7
+1785,ductwork,683.5,673.8
+1785,equipment,272.8,272.0
+1785,fixtures,119.0,126.3
+1785,general conditions,241.3,246.0
+1785,hvac piping,230.0,226.6
+1785,insulation,0.0,0.0
+1785,plumbing piping,397.6,476.4
+1786,ductwork,1272.9,1278.5
+1786,equipment,865.7,844.6
+1786,fixtures,271.8,262.5
+1786,general conditions,548.7,554.6
+1786,hvac piping,659.0,630.4
+1786,insulation,0.0,0.0
+1786,plumbing piping,912.0,947.9
+1787,ductwork,369.8,363.1
+1787,equipment,183.0,187.1
+1787,fixtures,61.5,62.7
+1787,general conditions,144.9,136.5
+1787,hvac piping,389.1,383.0
+1787,insulation,0.0,0.0
+1787,plumbing piping,435.2,418.9
+1788,ductwork,338.3,326.5
+1788,equipment,165.9,175.5
+1788,fixtures,69.7,64.4
+1788,general conditions,132.3,125.7
+1788,hvac piping,399.6,384.1
+1788,insulation,0.0,0.0
+1788,plumbing piping,304.1,295.7
+1789,ductwork,423.6,438.2
+1789,equipment,247.9,226.8
+1789,fixtures,92.4,90.6
+1789,general conditions,211.2,202.5
+1789,hvac piping,139.9,142.0
+1789,insulation,0.0,0.0
+1789,plumbing piping,315.9,353.3
+1790,ductwork,391.6,376.7
+1790,equipment,172.4,162.3
+1790,fixtures,45.7,47.9
+1790,general conditions,133.9,133.5
+1790,hvac piping,247.9,267.5
+1790,insulation,0.0,0.0
+1790,plumbing piping,298.3,329.7
+1791,ductwork,328.5,344.9
+1791,equipment,140.3,158.4
+1791,fixtures,49.1,53.6
+1791,general conditions,123.6,124.1
+1791,hvac piping,285.5,290.1
+1791,insulation,0.0,0.0
+1791,plumbing piping,293.6,272.8
+1792,ductwork,243.8,244.1
+1792,equipment,112.9,122.3
+1792,fixtures,56.9,58.9
+1792,general conditions,125.0,131.2
+1792,hvac piping,87.8,93.2
+1792,insulation,0.0,0.0
+1792,plumbing piping,243.9,230.6
+1793,ductwork,687.7,637.8
+1793,equipment,302.7,279.7
+1793,fixtures,126.6,123.8
+1793,general conditions,259.9,269.5
+1793,hvac piping,412.1,498.0
+1793,insulation,0.0,0.0
+1793,plumbing piping,484.2,488.0
+1794,ductwork,2803.5,2684.4
+1794,equipment,1164.3,1264.1
+1794,fixtures,463.9,454.5
+1794,general conditions,952.8,929.9
+1794,hvac piping,715.1,720.3
+1794,insulation,0.0,0.0
+1794,plumbing piping,1362.9,1528.5
+1795,ductwork,1841.1,1819.2
+1795,equipment,749.0,742.8
+1795,fixtures,298.7,316.8
+1795,general conditions,616.7,647.4
+1795,hvac piping,1204.6,1278.1
+1795,insulation,0.0,0.0
+1795,plumbing piping,1809.0,1786.6
+1796,ductwork,103.8,109.1
+1796,equipment,49.5,50.2
+1796,fixtures,21.1,20.9
+1796,general conditions,41.9,43.6
+1796,hvac piping,35.0,35.6
+1796,insulation,0.0,0.0
+1796,plumbing piping,112.7,113.0
+1797,ductwork,75.2,72.3
+1797,equipment,34.8,40.3
+1797,fixtures,18.0,18.3
+1797,general conditions,28.3,29.1
+1797,hvac piping,73.4,73.2
+1797,insulation,0.0,0.0
+1797,plumbing piping,86.3,80.4
+1798,ductwork,734.0,685.8
+1798,equipment,285.7,280.0
+1798,fixtures,85.9,92.0
+1798,general conditions,294.3,290.5
+1798,hvac piping,206.3,197.5
+1798,insulation,0.0,0.0
+1798,plumbing piping,437.7,485.6
+1799,ductwork,1297.0,1424.4
+1799,equipment,686.4,674.8
+1799,fixtures,238.8,221.5
+1799,general conditions,517.2,504.1
+1799,hvac piping,1152.2,1122.5
+1799,insulation,0.0,0.0
+1799,plumbing piping,1280.2,1295.9
+1800,ductwork,778.6,723.4
+1800,equipment,292.8,308.1
+1800,fixtures,109.0,108.9
+1800,general conditions,274.5,271.6
+1800,hvac piping,833.8,770.8
+1800,insulation,0.0,0.0
+1800,plumbing piping,522.7,554.6
+1801,ductwork,1554.5,1563.6
+1801,equipment,819.2,796.7
+1801,fixtures,250.9,267.9
+1801,general conditions,672.0,651.1
+1801,hvac piping,410.9,414.5
+1801,insulation,0.0,0.0
+1801,plumbing piping,1169.0,1284.1
+1802,ductwork,419.4,424.7
+1802,equipment,248.9,270.8
+1802,fixtures,100.4,106.8
+1802,general conditions,208.7,212.1
+1802,hvac piping,398.7,412.2
+1802,insulation,0.0,0.0
+1802,plumbing piping,493.6,492.2
+1803,ductwork,1819.1,1807.5
+1803,equipment,758.0,752.5
+1803,fixtures,380.5,380.7
+1803,general conditions,804.8,781.5
+1803,hvac piping,1469.3,1608.1
+1803,insulation,0.0,0.0
+1803,plumbing piping,1276.5,1346.1
+1804,ductwork,289.3,290.2
+1804,equipment,127.5,123.6
+1804,fixtures,53.2,52.1
+1804,general conditions,96.1,97.7
+1804,hvac piping,243.8,230.9
+1804,insulation,0.0,0.0
+1804,plumbing piping,157.4,186.5
+1805,ductwork,253.2,277.1
+1805,equipment,154.9,142.3
+1805,fixtures,55.1,52.5
+1805,general conditions,109.0,106.2
+1805,hvac piping,214.7,230.4
+1805,insulation,0.0,0.0
+1805,plumbing piping,208.2,211.9
+1806,ductwork,662.3,669.6
+1806,equipment,339.2,343.8
+1806,fixtures,124.5,119.1
+1806,general conditions,208.2,215.6
+1806,hvac piping,511.7,550.8
+1806,insulation,0.0,0.0
+1806,plumbing piping,557.4,566.1
+1807,ductwork,310.1,320.2
+1807,equipment,235.9,253.2
+1807,fixtures,80.3,81.9
+1807,general conditions,173.3,175.0
+1807,hvac piping,120.6,129.0
+1807,insulation,0.0,0.0
+1807,plumbing piping,405.0,413.1
+1808,ductwork,315.5,314.2
+1808,equipment,188.2,183.2
+1808,fixtures,66.4,71.1
+1808,general conditions,160.6,145.2
+1808,hvac piping,151.5,132.4
+1808,insulation,0.0,0.0
+1808,plumbing piping,393.5,425.0
+1809,ductwork,192.7,196.9
+1809,equipment,75.3,86.9
+1809,fixtures,38.7,36.5
+1809,general conditions,83.5,86.3
+1809,hvac piping,188.5,165.9
+1809,insulation,0.0,0.0
+1809,plumbing piping,131.9,136.8
+1810,ductwork,959.5,986.8
+1810,equipment,488.2,518.5
+1810,fixtures,213.2,188.9
+1810,general conditions,434.0,395.1
+1810,hvac piping,797.9,778.7
+1810,insulation,0.0,0.0
+1810,plumbing piping,643.1,717.7
+1811,ductwork,407.5,374.2
+1811,equipment,214.4,237.6
+1811,fixtures,68.0,66.2
+1811,general conditions,154.5,162.7
+1811,hvac piping,139.3,136.0
+1811,insulation,0.0,0.0
+1811,plumbing piping,512.9,472.4
+1812,ductwork,832.4,858.6
+1812,equipment,333.3,341.8
+1812,fixtures,122.9,131.2
+1812,general conditions,294.2,301.3
+1812,hvac piping,517.2,576.9
+1812,insulation,0.0,0.0
+1812,plumbing piping,599.3,523.6
+1813,ductwork,2671.6,2523.4
+1813,equipment,1050.2,981.9
+1813,fixtures,409.1,398.2
+1813,general conditions,874.8,828.9
+1813,hvac piping,1824.3,2137.8
+1813,insulation,0.0,0.0
+1813,plumbing piping,2265.4,2263.7
+1814,ductwork,1238.9,1290.6
+1814,equipment,563.5,593.1
+1814,fixtures,232.0,222.6
+1814,general conditions,518.4,514.8
+1814,hvac piping,919.1,1029.1
+1814,insulation,0.0,0.0
+1814,plumbing piping,995.5,1022.5
+1815,ductwork,109.5,120.7
+1815,equipment,70.2,67.8
+1815,fixtures,24.0,24.2
+1815,general conditions,48.1,47.1
+1815,hvac piping,45.9,47.8
+1815,insulation,0.0,0.0
+1815,plumbing piping,123.6,124.3
+1816,ductwork,140.2,136.9
+1816,equipment,75.7,75.9
+1816,fixtures,22.7,23.9
+1816,general conditions,52.2,50.2
+1816,hvac piping,119.8,115.1
+1816,insulation,0.0,0.0
+1816,plumbing piping,82.3,88.6
+1817,ductwork,181.3,172.7
+1817,equipment,86.7,85.8
+1817,fixtures,37.6,37.3
+1817,general conditions,77.9,72.6
+1817,hvac piping,60.3,66.1
+1817,insulation,0.0,0.0
+1817,plumbing piping,125.6,124.0
+1818,ductwork,223.5,211.6
+1818,equipment,103.6,92.5
+1818,fixtures,38.3,40.1
+1818,general conditions,75.0,80.0
+1818,hvac piping,66.7,75.2
+1818,insulation,0.0,0.0
+1818,plumbing piping,156.8,159.1
+1819,ductwork,1062.5,1077.5
+1819,equipment,454.8,466.6
+1819,fixtures,191.6,189.4
+1819,general conditions,480.0,473.6
+1819,hvac piping,278.8,300.5
+1819,insulation,0.0,0.0
+1819,plumbing piping,1093.6,1113.6
+1820,ductwork,184.2,186.7
+1820,equipment,103.1,93.1
+1820,fixtures,30.9,30.6
+1820,general conditions,89.3,85.0
+1820,hvac piping,56.1,60.3
+1820,insulation,0.0,0.0
+1820,plumbing piping,262.6,255.7
+1821,ductwork,560.2,569.1
+1821,equipment,295.9,308.2
+1821,fixtures,128.9,130.8
+1821,general conditions,262.0,251.9
+1821,hvac piping,250.5,259.9
+1821,insulation,0.0,0.0
+1821,plumbing piping,468.8,516.7
+1822,ductwork,630.5,624.9
+1822,equipment,212.5,210.6
+1822,fixtures,97.2,96.2
+1822,general conditions,215.3,210.6
+1822,hvac piping,199.2,198.8
+1822,insulation,0.0,0.0
+1822,plumbing piping,479.7,539.9
+1823,ductwork,545.3,572.3
+1823,equipment,202.2,228.4
+1823,fixtures,90.2,92.7
+1823,general conditions,204.4,199.7
+1823,hvac piping,188.3,184.0
+1823,insulation,0.0,0.0
+1823,plumbing piping,442.3,414.0
+1824,ductwork,314.7,309.2
+1824,equipment,165.5,177.0
+1824,fixtures,88.7,85.6
+1824,general conditions,169.7,158.9
+1824,hvac piping,120.8,123.1
+1824,insulation,0.0,0.0
+1824,plumbing piping,276.5,293.9
+1825,ductwork,459.8,454.7
+1825,equipment,175.2,178.4
+1825,fixtures,76.8,85.9
+1825,general conditions,166.2,146.8
+1825,hvac piping,122.1,124.6
+1825,insulation,0.0,0.0
+1825,plumbing piping,277.4,313.5
+1826,ductwork,535.1,531.2
+1826,equipment,193.9,212.6
+1826,fixtures,84.7,86.4
+1826,general conditions,201.5,192.2
+1826,hvac piping,420.9,451.9
+1826,insulation,0.0,0.0
+1826,plumbing piping,427.8,413.0
+1827,ductwork,720.6,730.3
+1827,equipment,282.2,261.3
+1827,fixtures,91.5,87.6
+1827,general conditions,251.4,265.6
+1827,hvac piping,173.3,181.0
+1827,insulation,0.0,0.0
+1827,plumbing piping,626.2,640.4
+1828,ductwork,1387.1,1371.8
+1828,equipment,517.7,525.4
+1828,fixtures,226.5,226.8
+1828,general conditions,485.0,494.3
+1828,hvac piping,950.5,1171.2
+1828,insulation,0.0,0.0
+1828,plumbing piping,1241.6,1249.9
+1829,ductwork,333.7,360.1
+1829,equipment,135.1,162.9
+1829,fixtures,69.8,73.7
+1829,general conditions,114.7,119.2
+1829,hvac piping,305.7,304.4
+1829,insulation,0.0,0.0
+1829,plumbing piping,396.9,373.9
+1830,ductwork,1342.6,1423.8
+1830,equipment,818.1,722.4
+1830,fixtures,200.9,202.9
+1830,general conditions,549.0,538.5
+1830,hvac piping,414.6,429.2
+1830,insulation,0.0,0.0
+1830,plumbing piping,970.3,1159.6
+1831,ductwork,1173.4,1135.8
+1831,equipment,410.0,411.3
+1831,fixtures,193.6,186.1
+1831,general conditions,423.3,422.8
+1831,hvac piping,784.1,804.9
+1831,insulation,0.0,0.0
+1831,plumbing piping,911.0,1006.4
+1832,ductwork,489.0,492.7
+1832,equipment,244.0,266.0
+1832,fixtures,102.4,105.8
+1832,general conditions,225.0,221.5
+1832,hvac piping,473.6,454.2
+1832,insulation,0.0,0.0
+1832,plumbing piping,397.5,377.4
+1833,ductwork,288.1,298.8
+1833,equipment,115.5,109.3
+1833,fixtures,52.8,51.4
+1833,general conditions,113.1,108.8
+1833,hvac piping,77.8,72.9
+1833,insulation,0.0,0.0
+1833,plumbing piping,214.7,245.7
+1834,ductwork,2563.7,2450.5
+1834,equipment,768.0,766.5
+1834,fixtures,378.5,383.7
+1834,general conditions,802.1,778.8
+1834,hvac piping,2133.1,2301.6
+1834,insulation,0.0,0.0
+1834,plumbing piping,1784.5,1726.4
+1835,ductwork,253.8,275.0
+1835,equipment,127.0,127.5
+1835,fixtures,57.5,55.8
+1835,general conditions,104.4,109.1
+1835,hvac piping,82.2,81.3
+1835,insulation,0.0,0.0
+1835,plumbing piping,173.1,169.8
+1836,ductwork,2857.5,2726.6
+1836,equipment,1384.7,1304.5
+1836,fixtures,608.7,620.3
+1836,general conditions,1248.7,1286.7
+1836,hvac piping,2447.6,2460.4
+1836,insulation,0.0,0.0
+1836,plumbing piping,1911.9,2152.3
+1837,ductwork,387.9,362.9
+1837,equipment,114.1,117.8
+1837,fixtures,71.9,64.4
+1837,general conditions,136.1,136.7
+1837,hvac piping,249.3,285.9
+1837,insulation,0.0,0.0
+1837,plumbing piping,266.4,271.5
+1838,ductwork,1878.5,1854.3
+1838,equipment,659.1,719.2
+1838,fixtures,266.3,272.3
+1838,general conditions,681.7,669.1
+1838,hvac piping,651.1,654.3
+1838,insulation,0.0,0.0
+1838,plumbing piping,1678.2,1567.6
+1839,ductwork,1545.5,1475.8
+1839,equipment,534.6,496.2
+1839,fixtures,233.6,229.0
+1839,general conditions,549.2,572.7
+1839,hvac piping,1137.5,1250.8
+1839,insulation,0.0,0.0
+1839,plumbing piping,1136.3,1136.7
+1840,ductwork,3892.0,3889.3
+1840,equipment,1015.5,1198.5
+1840,fixtures,604.0,614.6
+1840,general conditions,1329.7,1280.2
+1840,hvac piping,3199.5,2817.3
+1840,insulation,0.0,0.0
+1840,plumbing piping,3483.2,3637.1
+1841,ductwork,2104.2,2203.8
+1841,equipment,1338.8,1232.6
+1841,fixtures,441.2,476.7
+1841,general conditions,971.0,937.7
+1841,hvac piping,882.7,798.5
+1841,insulation,0.0,0.0
+1841,plumbing piping,2382.1,2526.9
+1842,ductwork,1015.8,1027.2
+1842,equipment,716.2,629.9
+1842,fixtures,272.6,263.1
+1842,general conditions,349.6,357.1
+1842,hvac piping,1071.8,1141.8
+1842,insulation,0.0,0.0
+1842,plumbing piping,1090.0,1095.2
+1843,ductwork,402.9,423.0
+1843,equipment,220.1,201.3
+1843,fixtures,91.1,87.7
+1843,general conditions,186.5,192.1
+1843,hvac piping,463.2,478.9
+1843,insulation,0.0,0.0
+1843,plumbing piping,359.1,372.2
+1844,ductwork,139.0,136.7
+1844,equipment,56.9,65.0
+1844,fixtures,22.2,22.3
+1844,general conditions,49.8,50.7
+1844,hvac piping,108.2,110.3
+1844,insulation,0.0,0.0
+1844,plumbing piping,139.6,135.4
+1845,ductwork,859.5,897.5
+1845,equipment,453.0,479.0
+1845,fixtures,172.4,192.1
+1845,general conditions,414.1,449.6
+1845,hvac piping,1038.4,1002.1
+1845,insulation,0.0,0.0
+1845,plumbing piping,760.8,750.2
+1846,ductwork,1562.7,1537.8
+1846,equipment,694.3,652.3
+1846,fixtures,272.0,265.0
+1846,general conditions,604.2,620.7
+1846,hvac piping,1755.8,1689.1
+1846,insulation,0.0,0.0
+1846,plumbing piping,1219.5,1328.5
+1847,ductwork,90.2,101.8
+1847,equipment,38.1,41.1
+1847,fixtures,17.6,16.6
+1847,general conditions,36.1,36.2
+1847,hvac piping,93.2,99.7
+1847,insulation,0.0,0.0
+1847,plumbing piping,74.1,81.1
+1848,ductwork,811.5,791.8
+1848,equipment,457.8,435.9
+1848,fixtures,209.6,196.7
+1848,general conditions,354.6,340.0
+1848,hvac piping,714.2,684.7
+1848,insulation,0.0,0.0
+1848,plumbing piping,973.4,1106.8
+1849,ductwork,294.6,290.2
+1849,equipment,143.1,138.1
+1849,fixtures,65.0,67.2
+1849,general conditions,119.8,113.0
+1849,hvac piping,224.4,220.5
+1849,insulation,0.0,0.0
+1849,plumbing piping,312.4,276.8
+1850,ductwork,773.9,770.9
+1850,equipment,344.8,326.7
+1850,fixtures,137.0,127.1
+1850,general conditions,269.0,260.1
+1850,hvac piping,584.9,699.6
+1850,insulation,0.0,0.0
+1850,plumbing piping,553.9,590.4
+1851,ductwork,1854.8,1944.4
+1851,equipment,768.9,780.7
+1851,fixtures,304.8,310.1
+1851,general conditions,646.8,648.6
+1851,hvac piping,447.4,542.7
+1851,insulation,0.0,0.0
+1851,plumbing piping,1060.5,1110.3
+1852,ductwork,3492.9,3547.1
+1852,equipment,1296.5,1434.2
+1852,fixtures,615.2,577.7
+1852,general conditions,1216.7,1245.6
+1852,hvac piping,1176.3,1221.7
+1852,insulation,0.0,0.0
+1852,plumbing piping,2972.7,2859.7
+1853,ductwork,1221.4,1219.2
+1853,equipment,496.8,476.2
+1853,fixtures,168.3,167.6
+1853,general conditions,378.4,382.2
+1853,hvac piping,824.8,936.5
+1853,insulation,0.0,0.0
+1853,plumbing piping,808.7,806.0
+1854,ductwork,9231.5,9521.7
+1854,equipment,3785.0,4243.0
+1854,fixtures,1601.6,1587.8
+1854,general conditions,2744.2,2973.0
+1854,hvac piping,2846.7,2904.9
+1854,insulation,0.0,0.0
+1854,plumbing piping,7200.9,6894.1
+1855,ductwork,649.3,680.6
+1855,equipment,249.7,248.3
+1855,fixtures,107.7,105.6
+1855,general conditions,244.9,239.8
+1855,hvac piping,173.4,171.1
+1855,insulation,0.0,0.0
+1855,plumbing piping,461.4,461.3
+1856,ductwork,391.9,350.1
+1856,equipment,136.4,137.3
+1856,fixtures,54.3,53.2
+1856,general conditions,100.8,102.7
+1856,hvac piping,95.7,92.8
+1856,insulation,0.0,0.0
+1856,plumbing piping,182.5,215.4
+1857,ductwork,458.1,488.9
+1857,equipment,274.2,267.0
+1857,fixtures,127.1,128.2
+1857,general conditions,265.3,252.5
+1857,hvac piping,555.6,577.1
+1857,insulation,0.0,0.0
+1857,plumbing piping,344.8,429.4
+1858,ductwork,413.2,397.3
+1858,equipment,207.2,209.4
+1858,fixtures,59.0,59.2
+1858,general conditions,137.4,144.1
+1858,hvac piping,147.3,154.8
+1858,insulation,0.0,0.0
+1858,plumbing piping,297.7,324.9
+1859,ductwork,119.9,122.2
+1859,equipment,53.2,63.6
+1859,fixtures,23.8,23.8
+1859,general conditions,51.7,54.9
+1859,hvac piping,110.0,103.7
+1859,insulation,0.0,0.0
+1859,plumbing piping,123.1,116.4
+1860,ductwork,117.2,117.7
+1860,equipment,58.2,55.9
+1860,fixtures,24.7,22.9
+1860,general conditions,51.2,56.3
+1860,hvac piping,34.2,39.8
+1860,insulation,0.0,0.0
+1860,plumbing piping,82.6,89.0
+1861,ductwork,100.0,92.4
+1861,equipment,56.0,53.3
+1861,fixtures,13.4,14.6
+1861,general conditions,33.6,36.2
+1861,hvac piping,27.9,32.2
+1861,insulation,0.0,0.0
+1861,plumbing piping,118.4,109.7
+1862,ductwork,227.6,240.5
+1862,equipment,130.6,130.1
+1862,fixtures,52.7,50.3
+1862,general conditions,67.5,77.4
+1862,hvac piping,93.0,93.4
+1862,insulation,0.0,0.0
+1862,plumbing piping,139.3,161.0
+1863,ductwork,419.4,403.5
+1863,equipment,128.7,135.9
+1863,fixtures,52.3,50.0
+1863,general conditions,123.1,127.9
+1863,hvac piping,103.8,102.6
+1863,insulation,0.0,0.0
+1863,plumbing piping,385.4,335.8

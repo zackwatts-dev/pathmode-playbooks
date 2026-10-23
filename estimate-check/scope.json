@@ -1,4 +1,0 @@
-{
-  "_owner": "Set by the shop's owner after the April-May 2024 run failed the release thresholds, before any holdout data was made. The check is used only on these families; every other family is priced as today. Only a person changes it. Names must be in FAMILIES in estimate_check.py.",
-  "families": ["structural weldment", "machined weldment", "assembly"]
-}

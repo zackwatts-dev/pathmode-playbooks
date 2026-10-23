@@ -1,150 +1,116 @@
-<!-- Written by Claude Sonnet 5.5 from plan-prompt.md and design.md on 2026-10-19, unedited. The review of it is on the playbook page, Step 3. -->
+<!-- Generated 2026-10-22 by Claude Sonnet 5.5 (claude -p --model sonnet, run from an empty folder with no tools) from plan-prompt.md and design.md. Unedited. -->
 
-# Build plan: estimate check for Wendlow Fabrication & Machine
+# Build plan: pre-bid spec check
 
-Python 3 standard library only. The package is `estcheck`. Work happens on branch `estimate-check`.
+## 1. Ground rules for the agent
 
-## 1. Parts
+- Work on branch `spec-check`. Make one small commit per step in section 6, and stop for review at the marked steps.
+- Runtime uses Python's standard library and pinned numpy only. Call the Anthropic API with `urllib`, not the SDK. Dev tools (`ruff`, `bandit`, `pip-audit`) are not part of runtime.
+- **Do not edit `tests/` or `answerkey/` without approval.** `scripts/check_locked.sh` fails if either path differs from the last human-approved commit, so a change there needs a human-authored commit.
+- Every judgment-bearing number goes in one reviewed file, `config/rules.toml`: kind→cost codes, kind→evidence type, system→cost codes, prevailing rates, minimum job counts, and the labor thresholds. Business logic never hard-codes them.
 
-Each part is a module with typed inputs and outputs. Parts 1 to 5 are pure functions that don't touch the network.
+## 2. Parts and interfaces
 
-| # | Part | Does | Does not |
-|---|---|---|---|
-| 1 | `load` | Reads the 5 CSVs read-only. Validates and types the rows. Uses `Decimal` for hours and money. Returns the good rows and a list of rejected rows, each with a reason. | Decide anything |
-| 2 | `comparables` | Finds comparable operations for one line and work centre (rule 1 of the design), with the fallback. Returns the operations and which tier was used. | Calculate |
-| 3 | `history` | Computes the median clocked/estimated ratio per work centre, the suggested hours, and the labour cost both ways. | Choose a pile |
-| 4 | `classify` | Assigns a pile: check this, may be priced high, looks right, or not enough history. A reason code goes with every "not enough history". | Call anything external |
-| 5 | `evidence` | Builds the evidence object for one quote: numbers, work-centre names and an enum for the pile. This is the only thing the AI will ever see. | Include free text or customer fields |
-| 6 | `notes` | Has three pieces: the OpenAI client (`urllib`, timeout, HTTPS only), the number check, and the plain note writer. It enforces the 100-note cap. | Run without a fallback |
-| 7 | `dashboard` | Renders one static HTML page. Every value goes through `html.escape`. | Use JavaScript or external resources |
-| 8 | `runlog` and `run` | Wires 1 to 7 together. Appends one line to the log per run. | Write anywhere except the output directory and the log |
-| 9 | `score` | Scores the piles against `answer-key.csv`. Run by a person, not by the agent. | Call the AI |
+Each part is a pure function over plain data, except where noted.
 
-Piles are final after part 4. The AI can change a note's wording, never a pile.
-
-## 2. Business rules to build as written
-
-These are interpretations or decisions the design left open. Each gets a test, and the open questions in section 7 cover the ones I couldn't settle.
-
-- **Pile thresholds.** Labour-cost ratio = suggested ÷ estimated.
-  - At or above 1.10 → check this.
-  - At or below 0.85 → may be priced high (information only).
-  - Otherwise → looks right.
-  - The boundaries are inclusive, and tests cover exactly 1.10 and 0.85.
-- **Comparable operations.**
-  - Same work centre.
-  - Same family, material and quantity band.
-  - Finished within 3 years before the quote date, and strictly before the quote's prepared date.
-  - At least 20, so 19 fails and 20 passes.
-  - Fallback: drop material and quantity, then retry with the same threshold.
-- **No hindsight.** An operation finished on or after the prepared date is never used, even on the fallback tier.
-- **Nothing silently dropped.** These cases all go to "not enough history" with a reason code:
-  - a rejected input row;
-  - a work centre with no rate;
-  - a line with no hours;
-  - a zero estimated-hours history row.
-  - Invariant: pile counts always sum to the number of input lines.
-- **Note cap.** At most 100 notes go to the AI per run. Over the cap, the remaining notes are code-written, taken in order of dollar gap, largest first.
-- **Number check.** Evidence supplies every number as a pre-formatted string, and a note may contain only those strings. Any other number, or a missing API key or an API error, produces the code-written note. A note that fails the check is never shown.
-- **Dashboard totals.** The dashboard shows the pile counts and the "to check" lines, largest gap first. It shows breakdowns by estimator and family. It also shows total under-recovered labour, which is the sum of positive gaps on "check this" lines only.
-
-## 3. Order of work
-
-**Fixtures.** Hand-built synthetic CSVs where the right answer is known by construction. Real exports and the real answer key stay out of the repo.
-
-1. **Commit 1, tests only.** Write failing tests for every rule in section 2 and every row in section 5, plus the fixtures. **Stop here for human review.**
-2. **Commits 2 to 9.** One part per commit, in the order 1 to 9. Each commit turns its own tests green and touches nothing else.
-3. **Final commit.** Wire up `run`, add the scheduling example (a cron line, not an installer) and a short README with the commands.
-
-**Protected files.**
-- `tests/` and `fixtures/answer-key*.csv` are protected.
-- The agent may not edit, delete or regenerate them without approval. If a test looks wrong, the agent stops and asks.
-- `tests/PROTECTED.sha256` holds the hashes a person approved. `tests/test_protected.py` fails if any hash differs. Only a person updates the file.
-
-**Tests a person must review** (they encode the business rules and the security rules):
-- `test_comparables`
-- `test_classify`
-- `test_no_hindsight`
-- `test_no_silent_drop`
-- `test_score`
-- `test_notes_validation`
-- `test_security`
-
-Format and layout tests (`dashboard` layout, `runlog` format) can be skimmed.
-
-## 4. Commands and gates
-
-Deterministic gates run in this order, and every one must pass before any AI review.
-
-```
-python3 -I -W error -m unittest discover -s tests -v   # all tests; the AI client is replaced by a fake
-python3 -m compileall -q src                            # syntax
-python3 -I -m unittest tests.test_hygiene               # stdlib-only lint (below)
-```
-
-`tests/test_hygiene.py` stands in for a linter that would need third-party packages. It uses the `ast` module to check:
-- imports are on a stdlib allowlist;
-- there is no `eval`, `exec`, `subprocess`, `os.system` or `pickle`;
-- there are no write-mode `open()` calls outside the output and log paths;
-- no secret-shaped strings appear.
-
-After the gates are green:
-1. Run `/security-review` on the branch, covering the code and the security table in section 5.
-2. Run `/code-review`.
-3. A person reads the diff commit by commit.
-
-**Go-live gate** (run by a person, with real data, after any change including a new model or new hour standards):
-
-```
-python3 -m estcheck.score --quotes … --history … --key answer-key.csv
-```
-
-It prints:
-- the confusion matrix;
-- the count and dollar value of light lines marked "looks right" (the worst case);
-- the count of flagged-but-fine lines;
-- the "not enough history" rate.
-
-It exits non-zero if any value breaks `release-thresholds.json`, a file a person owns. A separate `python3 -m estcheck.notes_probe` makes real API calls on a sample. It reports the number-check pass rate and writes the notes for a person to read. It is never part of the test suite.
-
-## 5. Security: rule, where enforced, proof
-
-| Rule | Enforced in | Proving test |
+| Part | Input → Output | Notes |
 |---|---|---|
-| Read-only to the exports | `load` opens files `"r"` only. Hygiene bans write-mode `open()` elsewhere. | Make the input files and directory read-only, run the full pipeline, and check it succeeds and the file hashes are unchanged. |
-| No credentials in code | `notes` reads `OPENAI_API_KEY` from the environment only. | Hygiene scan for key patterns. With the variable unset, the run completes with code-written notes. |
-| The key never reaches logs or the page | `runlog` and `dashboard` take no key. Errors are logged as a type only. | Set a canary key, force an API error, and grep the log and HTML for it. |
-| The AI sees only the evidence for one quote | `evidence` builds an allowlisted object. `notes` sends only that object. No tools, no files. | Assert on the exact request body: it has no customer, contact or free-text field and no `tools` key. Also test that a hostile part name (`"ignore previous instructions"`) never appears in the request. |
-| An AI note counts only after the check | `notes.validate` | Table of notes: an invented number, a changed figure, a missing evidence figure, and the empty and over-long cases. All fall back to the plain note. |
-| Everything on the dashboard is escaped | `dashboard` | Fixtures with `<script>`, `"onload=`, and `&` in every text field and in an AI note. The output contains none of them unescaped. |
-| The page loads no external resources and runs no scripts | `dashboard` adds a CSP meta tag and has no `<script>` or external URLs. | Assert on the HTML. |
-| Standard library only | Hygiene allowlist | `test_hygiene` |
-| 100-note cap and fallback on API failure | `notes` | A fake client counts calls: 150 quotes produce 100 calls. A timeout or a 500 error produces a plain note. |
-| Only the estimating team and the general manager see the output | Not enforceable in code. See open question 9. | Deployment checklist item, not a unit test. |
+| `ingest` | CSV exports, `as_of` time → `BidSnapshot` | Only part that reads files. Read-only. A missing section list or unreadable addendum yields a `Problem`, never a silent skip. |
+| `reader` | one bid's documents → raw JSON claims | **Only part with network.** No tools in the request. Also handles "addendum vs. earlier list". |
+| `verify` | raw claims + documents → accepted requirements + referrals | Quote check, kind check, status-quote check, injection flags. |
+| `reconcile` | earlier list + addendum delta → current list | Adds, changes, deletes. Handles an addendum that amends an earlier addendum. |
+| `coverage` | accepted list + estimate + config → gaps, priced-but-not-required | Three special evidence rules. |
+| `pricing` | gaps + job history + bid date → cost and range per gap | Same building type, or all types when too few jobs. |
+| `labor` | estimate + that estimator's history → flags in hours and dollars | numpy. |
+| `report` | everything → one escaped page + one log line | Only part that writes. |
+| `runner` | clock → picks new ready estimates and addenda, enforces the 40/day cap | Keeps a small state file of what it has already processed. |
+| `evalkey` | answer key + recorded AI replies → scores | `--replay` is deterministic and runs in CI. `--live` calls the API and is run by a person. |
 
-## 6. Out of scope
+## 3. Business rules and the tests that prove them
 
-- Any write to the ERP, a quote or a price.
-- Emailing or notifying anyone.
-- Changing the hour standards, or any learned or ML model.
-- Rework and repeat jobs.
-- Login, user accounts and access control for the dashboard.
-- Server setup (beyond one example cron line).
-- Charts needing a JavaScript library.
-- Reviewing quotes already sent.
-- Scoring the quality of AI notes in the automatic tests.
+Tests come first. For each rule the agent writes a failing test from the design, then the code. **[H]** marks tests a person must review before any code is written. These encode judgment, not plumbing. The AI is replaced by a fake client with canned replies throughout.
 
-## 7. Open questions for you to answer before building
+| # | Rule | Test |
+|---|---|---|
+| R1 [H] | Accept a requirement only if its quote is found word for word (whitespace-normalized only) in the section or addendum it names. | Paraphrased, truncated, wrong-section and nonexistent-section quotes are all rejected and referred. |
+| R2 [H] | Kind must be on the list of 15. | An invented kind is referred. |
+| R3 [H] | "By others", "doesn't apply" and "deleted" need a quote of the words that say so. A deletion must quote the addendum. | Each status without a quote is referred. A deletion quoting the original section instead of the addendum is rejected. |
+| R4 | A failed check sends that section to the chief estimator, unread. It does not drop it and does not guess. | The referral names the section and the reason. |
+| R5 [H] | A requirement counts as priced when there is a line on its cost code with an amount, or a line whose description names it. | Cases: priced by code, priced by description, a zero-amount line (not priced), a line on the wrong code. |
+| R6 [H] | Prevailing wage is priced only by a labor rate at the prevailing rate or a prevailing wage line. A named manufacturer is priced only if the equipment line names that manufacturer. Upgraded insulation is priced only if the insulation line names the thickness or jacket. | A generic line on the right code does not satisfy any of the three. |
+| R7 [H] | Unpriced base-bid requirements are gaps. Priced lines for by-others, doesn't-apply or deleted requirements are "priced but not required". | Fixture bid with one of each. Alternates are not gaps. |
+| R8 | Gaps are sorted largest first. | Ordering test. |
+| R9 [H] | Gap cost is the median share of base cost on same-type completed jobs before the bid date, with a range. It falls back to all types below the minimum job count. | A job completed after the bid date is excluded (leak test). The fallback triggers at the threshold. |
+| R10 [H] | A labor flag appears only with enough jobs and a steady over-run for that estimator and system, and gives hours and dollars at that rate. | The variable-margin, too-few-jobs and other-estimator cases give no flag. A steady 10% over-run gives the expected hours and dollars. |
+| R11 | An addendum after the first read goes through `reconcile`. | Add, change, delete, and delete-then-reinstate. |
+| R12 | The cap is 40 reads a day. The 41st goes to a person, named in the review. | Boundary test at 40 and 41. |
+| R13 | Nothing is silently dropped. Missing section list, unreadable addendum, API failure and malformed JSON are named at the top of the review. | One test per cause. |
+| R14 | Re-run on addendum only before the bid due date. Re-run with no new input makes no AI call. | Idempotency test. |
+| R15 | Each run appends one log line: time, model, bids read, requirements found, gaps, sent to person. | Format test, and the line contains no document text. |
+| R16 [H] | Severity gate for the eval: zero accepted requirements whose quote isn't in the documents (a phantom). Then minimize requirements wrongly called required (by-others or deleted). Then missed requirements. Then false gaps. | The scorer reports each tier separately. Any phantom fails the run. |
+| R17 [H] | Money metric: reprice each bid with gaps added, labor flags applied, and priced-but-not-required removed. Compare with the same competitors and the same GC choice. | Hand-computed three-bid fixture, including a win gained, a loss avoided and a win lost. |
 
-1. **Column names.** I need the headers of all five CSVs, and what each line's identifier is. The list in the design has no **quote prepared date** on `quotes-to-check.csv`, which the no-hindsight rule depends on. Where does it come from? I also need the finish date and the quantity on `job-history.csv`.
-2. **Quantity bands.** What are the band edges (for example 1–5, 6–25, 26–100, over 100)?
-3. **Any work centre short of history.** If one work centre on a line has fewer than 20 comparables but the others have enough, does the whole line become "not enough history"? That is the design's literal reading, and it could hide a weldment. The alternative is to sort the line using the standard hours for the thin centre, marked partial. Which do you want?
-4. **Setup and run hours.** Is one ratio applied to setup plus run together, or are the two kept separate? Is the ratio built from total clocked hours over total estimated hours?
-5. **Rate and money rounding.** What is the rounding rule and the currency unit, and is the gap dollar-per-line or per-quote?
-6. **Release thresholds.** What results on the test month count as passing? For example: how many light lines marked "looks right" are tolerable (zero?), the highest acceptable flagged-but-fine rate, and the highest acceptable "not enough history" rate. These go into `release-thresholds.json`.
-7. **"May be priced high" lines.** The answer key only says whether a line was light, so these can't be scored. Is that fine, or is there a "ran heavy" column?
-8. **Real data and the agent.** Can the agent build on synthetic fixtures only? I recommend this, and that a person runs the real answer-key scoring. Otherwise customer data is on the agent's machine.
-9. **Who sees the dashboard.** How will the page be served? A web server restricted to the estimating team and the general manager, a shared folder with permissions, or something else? Code can't enforce this.
-10. **Data going to OpenAI.** Is it acceptable that the evidence (hours, part family, material, dollar figures, with no customer names) leaves the shop to OpenAI's API? If not, set the cap to 0 and keep all notes code-written. Also, which model name, and who owns the key?
-11. **Dev tooling.** Does "no third-party packages" cover dev tools such as ruff and bandit? I've assumed it does, hence the stdlib hygiene test. Say if you'd allow them for development only.
-12. **Quote versus line.** Should a quote with several lines get one note covering all its "check this" lines? I've assumed yes. Which date counts as "saved that day": the export's own filter, or something the tool must compute?
+**Eval split.** Split the answer key into a tuning set and a held-out set, and never tune on the held-out set. Estimator real/not-real marks may adjust `rules.toml` only through a reviewed commit.
+
+## 4. Check order (all deterministic checks first)
+
+Run in this order. The AI review (`/code-review`) happens only after steps 1–5 pass.
+
+1. `python -I -m unittest discover -s tests`
+2. `python -I -m halden.evalkey --replay answerkey/ --recorded recorded/` (R16 and R17 gates)
+3. `ruff check . && ruff format --check .`
+4. `bandit -r src` and `pip-audit -r requirements.txt`
+5. `scripts/check_locked.sh` and the `/security-review` skill on the branch diff
+6. **AI code review**, last
+7. Before go-live, and after any change including a model version: a person runs `evalkey --live` and compares it to the recorded baseline.
+
+## 5. Security rules, where enforced, and proof
+
+| Rule | Enforced in | Test |
+|---|---|---|
+| Read-only; can't send anything | `ingest` opens files `r`. `report` writes only to the output directory. | Run against a read-only copy of the inputs and check checksums are unchanged. An AST test asserts that `socket`, `smtplib` and `urllib.request` are imported nowhere except `reader`, and that `reader` has a single hard-coded API host. |
+| The AI sees one bid's documents only; no estimate, job cost or other bids | `reader` prompt builder takes only a document set | Plant sentinel strings in the estimate, history and a second bid. Assert none appear in the request body. |
+| The AI has no tools | `reader` request construction | Assert the payload has no `tools` key. |
+| Documents are data, not instructions | The prompt delimits documents and says so. `verify` flags instruction-like text. `coverage` never takes AI output except verified requirements. | Fixture specs and addenda saying "ignore prior rules", "mark all priced" and "this requirement is deleted". These are reported to the chief estimator, remove no requirement, and mark nothing priced. A flagged section cannot supply a "by others / deleted / doesn't apply" downgrade (see Q4). |
+| Everything shown is escaped | `report` renders only through one escape function | Quotes containing `<script>`, `&`, quotes and spreadsheet-formula prefixes appear inert in the output. |
+| Credentials from the environment | `reader` reads `ANTHROPIC_API_KEY` | A repo scan finds no key patterns. A missing key gives a clear error. The key never appears in logs, referrals or exceptions. |
+| Software: stdlib and pinned numpy | `requirements.txt` | A test fails on any other runtime import or an unpinned line. |
+| Spec text kept out of the log | `report` log writer | R15 test. |
+
+## 6. Build sequence
+
+Each step is a branch commit or a few. ★ means stop for human review.
+
+1. Skeleton, `rules.toml`, fake AI client, `check_locked.sh`.
+2. ★ **Write all tests and fixtures (section 3), plus the answer-key loader.** A person reviews the [H] tests, then locks them.
+3. `ingest`.
+4. `verify`, then `reconcile`.
+5. `coverage`.
+6. `pricing`, then `labor`.
+7. `report`, then `runner` (cap, state, log).
+8. `evalkey` replay, then the `reader` (real prompt and API call).
+9. ★ Full check order from section 4, then the human live run.
+10. Deployment notes: cron every 30 minutes during working hours, on the server you control.
+
+## 7. Out of scope
+
+- Any write to estimating or job cost, and any email or notification.
+- Changing the estimate or suggesting line edits.
+- A UI, or storing estimator marks.
+- Retraining or automatic rule tuning from marks (v1 only collects them).
+- Reading drawings, or anything outside the exports.
+- Bid-day or post-bid analysis.
+
+## 8. Open questions to answer before building
+
+1. **Kind → cost-code and evidence table.** The design needs it for R5, R9 and R10, but none of the exports defines it. Who writes it, and who supplies the prevailing-wage rate table?
+2. **System → cost-code map** for ductwork, HVAC piping, plumbing and equipment.
+3. **Project facts to the AI.** The AI needs building type, public owner and similar facts to judge "doesn't apply". Is it allowed to see the project's facts, or only the documents?
+4. **Injection and downgrades.** A quoted "by others" can itself be planted text. Do you accept my rule that flagged sections can't downgrade a requirement, or should every downgrade be human-confirmed?
+5. **Thresholds:** minimum jobs for same-type pricing, minimum jobs and "steady margin" for labor flags, and the minimum dollar amount for a line to count as priced.
+6. **Answer key size and split.** How many bids, and may I hold out a portion? What counts as passing R17 (a minimum margin change)?
+7. **Where the review lands.** A file in a shared folder, or a web page? HTML or plain text? "Sends nothing" means somebody has to fetch it.
+8. **Estimator marks.** Where are they stored, given the tool is read-only?
+9. **Model and data handling.** Which Claude model and version do we pin? Is sending owner spec documents to Anthropic's API acceptable under your contracts?
+10. **Dev tools.** Are `ruff`, `bandit` and `pip-audit` allowed as dev-only dependencies?
+11. **When an estimate changes after a review** without a new addendum, should it re-run the coverage check (no AI call needed)?

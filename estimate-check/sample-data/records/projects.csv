@@ -1,0 +1,343 @@
+project_id,name,building_type,work_type,gross_sf,public_owner,county,delivery,bid_due,owner,general_contractor
+1652,Kestrel Valley Health: Imaging Department Renovation,healthcare,renovation,6532,0,Franklin,hard bid,2024-01-01,Kestrel Valley Health,Corwin Saye Construction
+1656,Tolland Office Partners: Office Building Core and Shell,office,new construction,5218,0,Franklin,negotiated,2024-01-01,Tolland Office Partners,Gilchrist & Hale
+1651,Sixty-Two West LLC: Office Building Interior Renovation,office,renovation,12576,0,Pickaway,negotiated,2024-01-02,Sixty-Two West LLC,Brightline Construction
+1654,Garland Institute of Technology: Library Renovation,higher-ed,renovation,16876,0,Franklin,hard bid,2024-01-03,Garland Institute of Technology,Daventry Construction
+1659,Brookline Hills City Schools: Intermediate School New Building,K-12 school,new construction,5142,1,Union,negotiated,2024-01-03,Brookline Hills City Schools,Brightline Construction
+1657,Alder Creek Local Schools: Middle School New Building,K-12 school,new construction,3561,1,Franklin,hard bid,2024-01-04,Alder Creek Local Schools,Brightline Construction
+1665,Fairway Plaza LLC: Retail Center Remodel,retail,renovation,16675,0,Fairfield,negotiated,2024-01-04,Fairway Plaza LLC,Stonefield Builders
+1660,Riverbend Health: Surgery Center New Building,healthcare,new construction,3810,0,Franklin,hard bid,2024-01-08,Riverbend Health,Brightline Construction
+1661,Kettle Ridge Township: Headquarters Interior Renovation,office,renovation,4842,1,Franklin,hard bid,2024-01-08,Kettle Ridge Township,Daventry Construction
+1667,City of Millbrook: Office Building Tenant Fit-Out,office,renovation,10150,1,Franklin,hard bid,2024-01-08,City of Millbrook,Vanterpool Builders
+1666,Riverbend Health: Medical Office Building New Building,healthcare,new construction,2064,0,Licking,negotiated,2024-01-09,Riverbend Health,Northgate Construction
+1673,Alder Creek City Schools: Middle School New Building,K-12 school,new construction,34229,1,Franklin,hard bid,2024-01-11,Alder Creek City Schools,Marlow Construction Co.
+1668,Whitcomb University: Science Hall New Building,higher-ed,new construction,3977,1,Franklin,hard bid,2024-01-15,Whitcomb University,Ridgeline Builders
+1669,Brookline Hills City Schools: Elementary School New Building,K-12 school,new construction,1571,1,Franklin,hard bid,2024-01-15,Brookline Hills City Schools,Corwin Saye Construction
+1670,Sixty-Two West LLC: Office Building Core and Shell,office,new construction,37701,0,Franklin,hard bid,2024-01-15,Sixty-Two West LLC,Brightline Construction
+1672,St. Brendan Medical Center: Surgery Center Renovation,healthcare,renovation,5883,0,Fairfield,hard bid,2024-01-16,St. Brendan Medical Center,Vanterpool Builders
+1664,Brookline Hills City Schools: Elementary School New Building,K-12 school,new construction,2889,1,Franklin,negotiated,2024-01-17,Brookline Hills City Schools,Brightline Construction
+1675,Tolland Office Partners: Tenant Floors 3-5 Interior Renovation,office,renovation,19236,0,Fairfield,hard bid,2024-01-22,Tolland Office Partners,Vanterpool Builders
+1676,Garland Institute of Technology: Residence Hall New Building,higher-ed,new construction,4233,0,Franklin,hard bid,2024-01-22,Garland Institute of Technology,Vanterpool Builders
+1678,Harmon Regional Hospital: Emergency Department New Building,healthcare,new construction,13296,1,Franklin,hard bid,2024-01-22,Harmon Regional Hospital,Ashlar Construction Managers
+1680,Kettle Ridge Township: Headquarters Interior Renovation,office,renovation,16689,1,Franklin,hard bid,2024-01-22,Kettle Ridge Township,Brightline Construction
+1681,Harbor Lane Retail: Restaurant Row Tenant Fit-Out,retail,renovation,4550,0,Knox,hard bid,2024-01-22,Harbor Lane Retail,Brightline Construction
+1683,Whitcomb University Research: Clean Room Suite New Building,lab,new construction,2400,1,Delaware,hard bid,2024-01-22,Whitcomb University Research,Brightline Construction
+1684,Alder Creek City Schools: Middle School New Building,K-12 school,new construction,4388,1,Franklin,hard bid,2024-01-22,Alder Creek City Schools,Brightline Construction
+1685,Brookline Hills City Schools: Elementary School HVAC Renovation,K-12 school,renovation,16340,1,Franklin,hard bid,2024-01-22,Brookline Hills City Schools,Vanterpool Builders
+1687,St. Brendan Medical Center: 4th Floor Medical-Surgical Unit Expansion,healthcare,renovation,12785,0,Franklin,hard bid,2024-01-22,St. Brendan Medical Center,Ashlar Construction Managers
+1679,Pellston Manufacturing: Cold Storage Building New Building,industrial,new construction,6847,0,Franklin,hard bid,2024-01-24,Pellston Manufacturing,Brightline Construction
+1686,Pellston Manufacturing: Distribution Center New Building,industrial,new construction,44495,0,Pickaway,hard bid,2024-01-25,Pellston Manufacturing,Brightline Construction
+1691,Tolland Office Partners: Office Building Core and Shell,office,new construction,2597,0,Franklin,hard bid,2024-01-25,Tolland Office Partners,Brightline Construction
+1688,Tolland Office Partners: Tenant Floors 3-5 Interior Renovation,office,renovation,2946,0,Franklin,negotiated,2024-01-26,Tolland Office Partners,Brightline Construction
+1694,Meridian Center Partners: Grocery Store Tenant Fit-Out,retail,renovation,26094,0,Franklin,hard bid,2024-01-29,Meridian Center Partners,Brightline Construction
+1697,Kestrel Valley Health: Surgery Center Expansion,healthcare,renovation,13140,0,Franklin,hard bid,2024-01-29,Kestrel Valley Health,Brightline Construction
+1677,Riverbend Health: 4th Floor Medical-Surgical Unit Renovation,healthcare,renovation,13540,0,Franklin,hard bid,2024-01-30,Riverbend Health,Corwin Saye Construction
+1692,Tolland Office Partners: Headquarters Interior Renovation,office,renovation,11662,0,Union,negotiated,2024-02-01,Tolland Office Partners,Ellison Construction Group
+1690,Ardent Foods: Production Facility Process Upgrade,industrial,renovation,19158,0,Franklin,hard bid,2024-02-02,Ardent Foods,Quarry Hill Builders
+1701,Riverbend Health: 4th Floor Medical-Surgical Unit New Building,healthcare,new construction,15541,0,Delaware,hard bid,2024-02-02,Riverbend Health,Vanterpool Builders
+1689,Tolland Office Partners: Office Building Core and Shell,office,new construction,2584,0,Franklin,hard bid,2024-02-05,Tolland Office Partners,Northgate Construction
+1693,Haverford Plains City Schools: Middle School New Building,K-12 school,new construction,16311,1,Delaware,hard bid,2024-02-05,Haverford Plains City Schools,Northgate Construction
+1698,Cedar Run Local Schools: Middle School New Building,K-12 school,new construction,1204,1,Franklin,hard bid,2024-02-05,Cedar Run Local Schools,Gilchrist & Hale
+1699,Sixty-Two West LLC: Municipal Building Core and Shell,office,new construction,2990,0,Franklin,hard bid,2024-02-07,Sixty-Two West LLC,Palisade Construction
+1696,Riverbend Health: Medical Office Building Renovation,healthcare,renovation,17343,0,Fairfield,negotiated,2024-02-08,Riverbend Health,Ashlar Construction Managers
+1695,Tolland Office Partners: Office Building Core and Shell,office,new construction,6254,0,Franklin,hard bid,2024-02-09,Tolland Office Partners,Ashlar Construction Managers
+1702,Sixty-Two West LLC: Municipal Building Core and Shell,office,new construction,3376,0,Franklin,hard bid,2024-02-12,Sixty-Two West LLC,Brightline Construction
+1703,Harmon Regional Hospital: 4th Floor Medical-Surgical Unit Expansion,healthcare,renovation,29350,1,Fairfield,hard bid,2024-02-12,Harmon Regional Hospital,Corwin Saye Construction
+1704,Brightwater Commons LLC: Headquarters Tenant Fit-Out,office,renovation,2212,0,Franklin,hard bid,2024-02-12,Brightwater Commons LLC,Corwin Saye Construction
+1706,Riverbend Health: Imaging Department New Building,healthcare,new construction,4139,0,Franklin,hard bid,2024-02-13,Riverbend Health,Brightline Construction
+1707,Whitcomb University: Science Hall Renovation,higher-ed,renovation,58232,1,Franklin,hard bid,2024-02-14,Whitcomb University,Brightline Construction
+1713,Ardent Foods: Production Facility Office and Locker Renovation,industrial,renovation,12564,0,Knox,negotiated,2024-02-15,Ardent Foods,Brightline Construction
+1714,Haverford Plains City Schools: High School HVAC Renovation,K-12 school,renovation,41487,1,Pickaway,hard bid,2024-02-16,Haverford Plains City Schools,Marlow Construction Co.
+1705,St. Brendan Medical Center: 4th Floor Medical-Surgical Unit Renovation,healthcare,renovation,7184,0,Franklin,hard bid,2024-02-19,St. Brendan Medical Center,Gilchrist & Hale
+1712,Norrland Materials Research: Vivarium Renovation,lab,renovation,1545,0,Franklin,hard bid,2024-02-19,Norrland Materials Research,Daventry Construction
+1716,Calvary Street Partners: Senior Living New Building,multifamily,new construction,19267,0,Franklin,negotiated,2024-02-19,Calvary Street Partners,Brightline Construction
+1708,Kestrel Valley Health: Imaging Department Expansion,healthcare,renovation,13389,0,Franklin,direct,2024-02-22,Kestrel Valley Health,Marlow Construction Co.
+1711,Tolland Office Partners: Municipal Building Interior Renovation,office,renovation,6397,0,Franklin,hard bid,2024-02-26,Tolland Office Partners,Brightline Construction
+1719,Tolland Office Partners: Office Building Core and Shell,office,new construction,1222,0,Franklin,hard bid,2024-02-26,Tolland Office Partners,Daventry Construction
+1721,Haverford Plains Local Schools: Intermediate School HVAC Renovation,K-12 school,renovation,13412,1,Union,hard bid,2024-02-26,Haverford Plains Local Schools,Stonefield Builders
+1723,Calvary Street Partners: Senior Living New Building,multifamily,new construction,24746,0,Franklin,hard bid,2024-02-26,Calvary Street Partners,Stonefield Builders
+1709,Granger Valley City Schools: Intermediate School New Building,K-12 school,new construction,1800,1,Franklin,hard bid,2024-02-27,Granger Valley City Schools,Northgate Construction
+1710,Linden Row Residential: Apartments Renovation,multifamily,renovation,15084,0,Union,negotiated,2024-02-27,Linden Row Residential,Stonefield Builders
+1728,Harmon Regional Hospital: Emergency Department Renovation,healthcare,renovation,3626,1,Franklin,hard bid,2024-02-27,Harmon Regional Hospital,Brightline Construction
+1718,Harmon Regional Hospital: Surgery Center Renovation,healthcare,renovation,14728,1,Franklin,hard bid,2024-02-28,Harmon Regional Hospital,Marlow Construction Co.
+1724,Tolland Office Partners: Office Building Core and Shell,office,new construction,2415,0,Fairfield,hard bid,2024-02-28,Tolland Office Partners,Rook Construction
+1725,Ardent Foods: Production Facility New Building,industrial,new construction,2940,0,Franklin,negotiated,2024-02-29,Ardent Foods,Rook Construction
+1715,Corrigan Logistics: Cold Storage Building New Building,industrial,new construction,9652,0,Franklin,hard bid,2024-03-04,Corrigan Logistics,Brightline Construction
+1720,Kettle Ridge Local Schools: Elementary School Addition and Renovation,K-12 school,renovation,9237,1,Franklin,negotiated,2024-03-04,Kettle Ridge Local Schools,Northgate Construction
+1727,Brookline Hills Local Schools: Elementary School New Building,K-12 school,new construction,5036,1,Knox,hard bid,2024-03-04,Brookline Hills Local Schools,Ashlar Construction Managers
+1731,Sixty-Two West LLC: Office Building Core and Shell,office,new construction,2513,0,Knox,negotiated,2024-03-05,Sixty-Two West LLC,Brightline Construction
+1734,Millbrook Local Schools: Middle School HVAC Renovation,K-12 school,renovation,20105,1,Franklin,hard bid,2024-03-05,Millbrook Local Schools,Gilchrist & Hale
+1722,Riverbend Health: Medical Office Building New Building,healthcare,new construction,15495,0,Franklin,hard bid,2024-03-06,Riverbend Health,Brightline Construction
+1726,Ashby College: Residence Hall New Building,higher-ed,new construction,8325,0,Franklin,hard bid,2024-03-07,Ashby College,Gilchrist & Hale
+1729,Granger Valley City Schools: Middle School Mechanical Upgrades,K-12 school,renovation,1786,1,Madison,hard bid,2024-03-07,Granger Valley City Schools,Northgate Construction
+1733,Fox Hollow City Schools: Elementary School New Building,K-12 school,new construction,59461,1,Pickaway,negotiated,2024-03-07,Fox Hollow City Schools,Brightline Construction
+1737,Kestrel Valley Health: Surgery Center New Building,healthcare,new construction,16577,0,Knox,negotiated,2024-03-07,Kestrel Valley Health,Brightline Construction
+1738,Harmon Regional Hospital: Surgery Center New Building,healthcare,new construction,1077,1,Knox,hard bid,2024-03-11,Harmon Regional Hospital,Moreland Construction
+1743,Calvary Street Partners: Senior Living New Building,multifamily,new construction,6094,0,Franklin,hard bid,2024-03-11,Calvary Street Partners,Northgate Construction
+1732,Linden Row Residential: Senior Living New Building,multifamily,new construction,8541,0,Franklin,hard bid,2024-03-12,Linden Row Residential,Daventry Construction
+1747,Linden Row Residential: Mixed-Use Building New Building,multifamily,new construction,9599,0,Franklin,negotiated,2024-03-13,Linden Row Residential,Vanterpool Builders
+1736,Alder Creek City Schools: Elementary School Addition and Renovation,K-12 school,renovation,13308,1,Franklin,direct,2024-03-14,Alder Creek City Schools,Corwin Saye Construction
+1748,Whitcomb University: Athletics Center New Building,higher-ed,new construction,2632,1,Franklin,negotiated,2024-03-14,Whitcomb University,Vanterpool Builders
+1735,Garland Institute of Technology: Residence Hall New Building,higher-ed,new construction,837,0,Franklin,hard bid,2024-03-15,Garland Institute of Technology,Moreland Construction
+1741,Harmon Regional Hospital: Imaging Department New Building,healthcare,new construction,2803,1,Franklin,hard bid,2024-03-15,Harmon Regional Hospital,Northgate Construction
+1739,Linden Row Residential: Apartments New Building,multifamily,new construction,5303,0,Franklin,hard bid,2024-03-18,Linden Row Residential,Marlow Construction Co.
+1740,Linden Row Residential: Senior Living New Building,multifamily,new construction,14862,0,Delaware,negotiated,2024-03-18,Linden Row Residential,Northgate Construction
+1744,Pellston Manufacturing: Distribution Center New Building,industrial,new construction,1598,0,Franklin,hard bid,2024-03-18,Pellston Manufacturing,Gilchrist & Hale
+1742,Riverbend Health: Medical Office Building New Building,healthcare,new construction,3271,0,Franklin,negotiated,2024-03-19,Riverbend Health,Brightline Construction
+1753,Millbrook City Schools: Middle School HVAC Renovation,K-12 school,renovation,9401,1,Franklin,hard bid,2024-03-19,Millbrook City Schools,Brightline Construction
+1750,Tolland Office Partners: Tenant Floors 3-5 Core and Shell,office,new construction,4940,0,Delaware,hard bid,2024-03-20,Tolland Office Partners,Vanterpool Builders
+1746,Whitcomb University: Residence Hall New Building,higher-ed,new construction,3002,1,Franklin,hard bid,2024-03-25,Whitcomb University,Ashlar Construction Managers
+1762,Harmon Regional Hospital: Emergency Department New Building,healthcare,new construction,22150,1,Franklin,hard bid,2024-03-26,Harmon Regional Hospital,Brightline Construction
+1751,Norrland Materials Research: Research Laboratory Renovation,lab,renovation,2191,0,Franklin,hard bid,2024-03-27,Norrland Materials Research,Brightline Construction
+1749,Calvary Street Partners: Mixed-Use Building Renovation,multifamily,renovation,157382,0,Madison,hard bid,2024-03-28,Calvary Street Partners,Quarry Hill Builders
+1757,Pellston Manufacturing: Production Facility New Building,industrial,new construction,9335,0,Franklin,hard bid,2024-03-28,Pellston Manufacturing,Brightline Construction
+1764,Haverford Plains City Schools: Intermediate School Mechanical Upgrades,K-12 school,renovation,3312,1,Franklin,hard bid,2024-03-29,Haverford Plains City Schools,Brightline Construction
+1759,Ardent Foods: Cold Storage Building Office and Locker Renovation,industrial,renovation,70893,0,Franklin,hard bid,2024-04-01,Ardent Foods,Brightline Construction
+1752,Brookline Hills Local Schools: Intermediate School New Building,K-12 school,new construction,2444,1,Franklin,hard bid,2024-04-02,Brookline Hills Local Schools,Vanterpool Builders
+1756,Union Mill Apartments LLC: Senior Living Renovation,multifamily,renovation,25680,0,Franklin,hard bid,2024-04-03,Union Mill Apartments LLC,Brightline Construction
+1760,St. Brendan Medical Center: 4th Floor Medical-Surgical Unit Expansion,healthcare,renovation,13086,0,Franklin,hard bid,2024-04-03,St. Brendan Medical Center,Corwin Saye Construction
+1767,Whitcomb University: Student Union New Building,higher-ed,new construction,2135,1,Franklin,hard bid,2024-04-03,Whitcomb University,Brightline Construction
+1754,Brightwater Commons LLC: Tenant Floors 3-5 Core and Shell,office,new construction,7147,0,Franklin,negotiated,2024-04-04,Brightwater Commons LLC,Brightline Construction
+1755,Sixty-Two West LLC: Office Building Core and Shell,office,new construction,76833,0,Fairfield,hard bid,2024-04-05,Sixty-Two West LLC,Brightline Construction
+1765,Laurel Ridge Community College: Student Union New Building,higher-ed,new construction,4037,1,Pickaway,negotiated,2024-04-08,Laurel Ridge Community College,Corwin Saye Construction
+1771,Whitcomb University Research: Clean Room Suite Renovation,lab,renovation,3107,1,Franklin,hard bid,2024-04-08,Whitcomb University Research,Brightline Construction
+1758,Meridian Center Partners: Restaurant Row Remodel,retail,renovation,9830,0,Franklin,hard bid,2024-04-09,Meridian Center Partners,Brightline Construction
+1772,Linden Row Residential: Apartments New Building,multifamily,new construction,14288,0,Delaware,hard bid,2024-04-10,Linden Row Residential,Brightline Construction
+1774,Fox Hollow City Schools: Intermediate School Addition and Renovation,K-12 school,renovation,5659,1,Franklin,hard bid,2024-04-10,Fox Hollow City Schools,Northgate Construction
+1763,Linden Row Residential: Apartments Renovation,multifamily,renovation,31974,0,Madison,hard bid,2024-04-11,Linden Row Residential,Brightline Construction
+1768,Corrigan Logistics: Cold Storage Building New Building,industrial,new construction,10484,0,Franklin,hard bid,2024-04-15,Corrigan Logistics,Northgate Construction
+1769,Kettle Ridge City Schools: High School New Building,K-12 school,new construction,14641,1,Franklin,hard bid,2024-04-15,Kettle Ridge City Schools,Brightline Construction
+1770,Corrigan Logistics: Cold Storage Building New Building,industrial,new construction,15752,0,Franklin,hard bid,2024-04-15,Corrigan Logistics,Vanterpool Builders
+1779,Brightwater Commons LLC: Tenant Floors 3-5 Interior Renovation,office,renovation,9013,0,Franklin,negotiated,2024-04-15,Brightwater Commons LLC,Vanterpool Builders
+1766,Calder Biosciences: Clean Room Suite Fit-Out,lab,renovation,2246,0,Franklin,hard bid,2024-04-16,Calder Biosciences,Brightline Construction
+1777,Kestrel Valley Health: 4th Floor Medical-Surgical Unit New Building,healthcare,new construction,3992,0,Franklin,hard bid,2024-04-17,Kestrel Valley Health,Vanterpool Builders
+1776,Calvary Street Partners: Senior Living Renovation,multifamily,renovation,21023,0,Franklin,hard bid,2024-04-19,Calvary Street Partners,Brightline Construction
+1775,Cedar Run City Schools: Middle School New Building,K-12 school,new construction,9381,1,Franklin,negotiated,2024-04-22,Cedar Run City Schools,Brightline Construction
+1778,St. Brendan Medical Center: Medical Office Building Renovation,healthcare,renovation,4042,0,Franklin,hard bid,2024-04-22,St. Brendan Medical Center,Corwin Saye Construction
+1773,Harmon Regional Hospital: Emergency Department New Building,healthcare,new construction,8963,1,Franklin,negotiated,2024-04-23,Harmon Regional Hospital,Brightline Construction
+1787,Linden Row Residential: Mixed-Use Building Renovation,multifamily,renovation,6239,0,Franklin,negotiated,2024-04-23,Linden Row Residential,Vanterpool Builders
+1786,Fairway Plaza LLC: Grocery Store Tenant Fit-Out,retail,renovation,25983,0,Franklin,negotiated,2024-04-24,Fairway Plaza LLC,Ashlar Construction Managers
+1782,Calvary Street Partners: Mixed-Use Building New Building,multifamily,new construction,20594,0,Franklin,hard bid,2024-04-26,Calvary Street Partners,Corwin Saye Construction
+1781,Whitcomb University: Science Hall New Building,higher-ed,new construction,5813,1,Franklin,hard bid,2024-04-29,Whitcomb University,Brightline Construction
+1785,Fox Hollow City Schools: Middle School New Building,K-12 school,new construction,2847,1,Union,hard bid,2024-04-29,Fox Hollow City Schools,Moreland Construction
+1788,Riverbend Health: Imaging Department Expansion,healthcare,renovation,9598,0,Franklin,hard bid,2024-04-29,Riverbend Health,Brightline Construction
+1780,Cedar Run Local Schools: Middle School HVAC Renovation,K-12 school,renovation,17727,1,Franklin,hard bid,2024-04-30,Cedar Run Local Schools,Corwin Saye Construction
+1792,Alder Creek City Schools: Middle School New Building,K-12 school,new construction,10425,1,Franklin,hard bid,2024-05-01,Alder Creek City Schools,Vanterpool Builders
+1793,Granger Valley Local Schools: High School New Building,K-12 school,new construction,1254,1,Franklin,hard bid,2024-05-02,Granger Valley Local Schools,Moreland Construction
+1783,Harmon Regional Hospital: 4th Floor Medical-Surgical Unit New Building,healthcare,new construction,1451,1,Franklin,hard bid,2024-05-03,Harmon Regional Hospital,Vanterpool Builders
+1784,St. Brendan Medical Center: Emergency Department Renovation,healthcare,renovation,5635,0,Franklin,negotiated,2024-05-06,St. Brendan Medical Center,Brightline Construction
+1789,Brightwater Commons LLC: Office Building Tenant Fit-Out,office,renovation,14970,0,Knox,hard bid,2024-05-06,Brightwater Commons LLC,Stonefield Builders
+1794,Union Mill Apartments LLC: Mixed-Use Building New Building,multifamily,new construction,16084,0,Franklin,hard bid,2024-05-06,Union Mill Apartments LLC,Gilchrist & Hale
+1795,St. Brendan Medical Center: Imaging Department Renovation,healthcare,renovation,4248,0,Fairfield,hard bid,2024-05-06,St. Brendan Medical Center,Teague & Whitford
+1796,Meridian Center Partners: Restaurant Row New Store,retail,new construction,11753,0,Franklin,hard bid,2024-05-07,Meridian Center Partners,Brightline Construction
+1790,Brookline Hills Local Schools: Intermediate School New Building,K-12 school,new construction,2527,1,Franklin,hard bid,2024-05-08,Brookline Hills Local Schools,Ashlar Construction Managers
+1791,Riverbend Health: Emergency Department New Building,healthcare,new construction,6291,0,Franklin,hard bid,2024-05-09,Riverbend Health,Ashlar Construction Managers
+1797,Pellston Manufacturing: Distribution Center New Building,industrial,new construction,9294,0,Franklin,hard bid,2024-05-13,Pellston Manufacturing,Brightline Construction
+1804,Haverford Plains Local Schools: Intermediate School New Building,K-12 school,new construction,3662,1,Fairfield,hard bid,2024-05-15,Haverford Plains Local Schools,Corwin Saye Construction
+1802,Brightwater Commons LLC: Headquarters Interior Renovation,office,renovation,21346,0,Franklin,hard bid,2024-05-16,Brightwater Commons LLC,Corwin Saye Construction
+1798,Laurel Ridge Community College: Residence Hall New Building,higher-ed,new construction,1556,1,Franklin,hard bid,2024-05-17,Laurel Ridge Community College,Brightline Construction
+1799,Whitcomb University: Science Hall New Building,higher-ed,new construction,2803,1,Franklin,hard bid,2024-05-17,Whitcomb University,Ridgeline Builders
+1800,Meridian Center Partners: Restaurant Row Tenant Fit-Out,retail,renovation,58028,0,Franklin,negotiated,2024-05-20,Meridian Center Partners,Northgate Construction
+1806,Laurel Ridge Community College: Science Hall New Building,higher-ed,new construction,3686,1,Franklin,hard bid,2024-05-20,Laurel Ridge Community College,Brightline Construction
+1808,Sixty-Two West LLC: Municipal Building Tenant Fit-Out,office,renovation,35640,0,Franklin,hard bid,2024-05-20,Sixty-Two West LLC,Corwin Saye Construction
+1803,Calvary Street Partners: Senior Living Renovation,multifamily,renovation,35158,0,Franklin,hard bid,2024-05-22,Calvary Street Partners,Brightline Construction
+1810,Cedar Run Local Schools: High School Mechanical Upgrades,K-12 school,renovation,9775,1,Franklin,hard bid,2024-05-22,Cedar Run Local Schools,Gilchrist & Hale
+1805,Harbor Lane Retail: Restaurant Row New Store,retail,new construction,13326,0,Franklin,hard bid,2024-05-27,Harbor Lane Retail,Brightline Construction
+1807,Laurel Ridge Community College: Athletics Center Mechanical Renewal,higher-ed,renovation,13475,1,Fairfield,hard bid,2024-05-27,Laurel Ridge Community College,Ashlar Construction Managers
+1813,Tolland Office Partners: Office Building Core and Shell,office,new construction,4877,0,Franklin,hard bid,2024-05-27,Tolland Office Partners,Northgate Construction
+1812,Ardent Foods: Production Facility New Building,industrial,new construction,1772,0,Franklin,hard bid,2024-05-28,Ardent Foods,Brightline Construction
+1815,Vantage Diagnostics: Analytical Lab New Building,lab,new construction,4874,0,Franklin,hard bid,2024-06-03,Vantage Diagnostics,Brightline Construction
+1816,St. Brendan Medical Center: Medical Office Building Expansion,healthcare,renovation,9019,0,Franklin,hard bid,2024-06-03,St. Brendan Medical Center,Corwin Saye Construction
+1817,Keswick Packaging: Distribution Center New Building,industrial,new construction,2997,0,Franklin,hard bid,2024-06-03,Keswick Packaging,Corwin Saye Construction
+1811,Sixty-Two West LLC: Municipal Building Core and Shell,office,new construction,8910,0,Franklin,hard bid,2024-06-05,Sixty-Two West LLC,Ellison Construction Group
+1818,Linden Row Residential: Senior Living New Building,multifamily,new construction,34739,0,Franklin,hard bid,2024-06-05,Linden Row Residential,Brightline Construction
+1826,Millbrook City Schools: High School New Building,K-12 school,new construction,4393,1,Franklin,hard bid,2024-06-05,Millbrook City Schools,Moreland Construction
+1828,Harbor Lane Retail: Restaurant Row Remodel,retail,renovation,18461,0,Union,negotiated,2024-06-05,Harbor Lane Retail,Brightline Construction
+1823,Whitcomb University: Residence Hall Renovation,higher-ed,renovation,5045,1,Pickaway,hard bid,2024-06-06,Whitcomb University,Brightline Construction
+1833,Garland Institute of Technology: Science Hall Mechanical Renewal,higher-ed,renovation,15526,0,Madison,hard bid,2024-06-06,Garland Institute of Technology,Moreland Construction
+1825,Fairway Plaza LLC: Restaurant Row New Store,retail,new construction,1797,0,Madison,negotiated,2024-06-07,Fairway Plaza LLC,Brightline Construction
+1814,Sixty-Two West LLC: Municipal Building Core and Shell,office,new construction,3565,0,Franklin,hard bid,2024-06-10,Sixty-Two West LLC,Ridgeline Builders
+1820,St. Brendan Medical Center: Emergency Department Renovation,healthcare,renovation,3656,0,Franklin,negotiated,2024-06-10,St. Brendan Medical Center,Ashlar Construction Managers
+1830,Pellston Manufacturing: Production Facility New Building,industrial,new construction,10516,0,Franklin,hard bid,2024-06-10,Pellston Manufacturing,Brightline Construction
+1822,Calder Biosciences: Analytical Lab Renovation,lab,renovation,5812,0,Franklin,hard bid,2024-06-11,Calder Biosciences,Brightline Construction
+1819,Whitcomb University: Student Union Mechanical Renewal,higher-ed,renovation,7538,1,Franklin,hard bid,2024-06-12,Whitcomb University,Stonefield Builders
+1824,Sixty-Two West LLC: Office Building Tenant Fit-Out,office,renovation,36424,0,Pickaway,hard bid,2024-06-12,Sixty-Two West LLC,Brightline Construction
+1821,St. Brendan Medical Center: Surgery Center Expansion,healthcare,renovation,5010,0,Franklin,hard bid,2024-06-13,St. Brendan Medical Center,Ridgeline Builders
+1839,Haverford Plains City Schools: Intermediate School New Building,K-12 school,new construction,5925,1,Franklin,hard bid,2024-06-13,Haverford Plains City Schools,Brightline Construction
+1842,Whitcomb University: Residence Hall New Building,higher-ed,new construction,14891,1,Knox,hard bid,2024-06-13,Whitcomb University,Ridgeline Builders
+1832,Calder Biosciences: Analytical Lab New Building,lab,new construction,9479,0,Union,direct,2024-06-14,Calder Biosciences,Ridgeline Builders
+1836,Granger Valley City Schools: Elementary School New Building,K-12 school,new construction,7077,1,Franklin,hard bid,2024-06-14,Granger Valley City Schools,Gilchrist & Hale
+1827,Harbor Lane Retail: Retail Center New Store,retail,new construction,1945,0,Franklin,hard bid,2024-06-17,Harbor Lane Retail,Brightline Construction
+1831,Brookline Hills Local Schools: Elementary School New Building,K-12 school,new construction,7695,1,Fairfield,hard bid,2024-06-17,Brookline Hills Local Schools,Brightline Construction
+1834,Linden Row Residential: Apartments New Building,multifamily,new construction,37721,0,Franklin,hard bid,2024-06-17,Linden Row Residential,Rook Construction
+1837,Union Mill Apartments LLC: Senior Living New Building,multifamily,new construction,8275,0,Delaware,hard bid,2024-06-17,Union Mill Apartments LLC,Brightline Construction
+1840,Harmon Regional Hospital: Medical Office Building Renovation,healthcare,renovation,8322,1,Fairfield,hard bid,2024-06-17,Harmon Regional Hospital,Northgate Construction
+1829,Harmon Regional Hospital: Imaging Department New Building,healthcare,new construction,4395,1,Franklin,hard bid,2024-06-18,Harmon Regional Hospital,Northgate Construction
+1841,Corrigan Logistics: Production Facility New Building,industrial,new construction,7064,0,Franklin,hard bid,2024-06-18,Corrigan Logistics,Corwin Saye Construction
+1838,Fox Hollow Local Schools: Middle School New Building,K-12 school,new construction,6113,1,Franklin,hard bid,2024-06-21,Fox Hollow Local Schools,Brightline Construction
+1846,Millbrook City Schools: Intermediate School New Building,K-12 school,new construction,2214,1,Franklin,hard bid,2024-06-24,Millbrook City Schools,Brightline Construction
+1848,Whitcomb University Research: Research Laboratory New Building,lab,new construction,1785,1,Franklin,hard bid,2024-06-24,Whitcomb University Research,Daventry Construction
+1849,Whitcomb University: Residence Hall New Building,higher-ed,new construction,7078,1,Licking,hard bid,2024-06-27,Whitcomb University,Moreland Construction
+1844,Meridian Center Partners: Grocery Store New Store,retail,new construction,17875,0,Franklin,hard bid,2024-07-01,Meridian Center Partners,Ashlar Construction Managers
+1850,Brightwater Commons LLC: Office Building Tenant Fit-Out,office,renovation,11713,0,Knox,negotiated,2024-07-01,Brightwater Commons LLC,Marlow Construction Co.
+1845,Sixty-Two West LLC: Tenant Floors 3-5 Tenant Fit-Out,office,renovation,20531,0,Franklin,hard bid,2024-07-02,Sixty-Two West LLC,Ashlar Construction Managers
+1847,Kettle Ridge Local Schools: Middle School New Building,K-12 school,new construction,36328,1,Fairfield,hard bid,2024-07-02,Kettle Ridge Local Schools,Brightline Construction
+1851,Kettle Ridge City Schools: Elementary School New Building,K-12 school,new construction,4239,1,Franklin,hard bid,2024-07-03,Kettle Ridge City Schools,Vanterpool Builders
+1855,Whitcomb University: Student Union New Building,higher-ed,new construction,1535,1,Franklin,hard bid,2024-07-03,Whitcomb University,Brightline Construction
+1857,Ashby College: Library New Building,higher-ed,new construction,1006,0,Franklin,hard bid,2024-07-05,Ashby College,Gilchrist & Hale
+1854,Harbor Lane Retail: Restaurant Row Remodel,retail,renovation,15645,0,Franklin,negotiated,2024-07-08,Harbor Lane Retail,Brightline Construction
+1856,St. Brendan Medical Center: Imaging Department New Building,healthcare,new construction,2947,0,Delaware,hard bid,2024-07-08,St. Brendan Medical Center,Brightline Construction
+1858,Cedar Run Local Schools: Elementary School HVAC Renovation,K-12 school,renovation,4087,1,Franklin,hard bid,2024-07-08,Cedar Run Local Schools,Brightline Construction
+1852,Fox Hollow Local Schools: Elementary School New Building,K-12 school,new construction,10388,1,Franklin,hard bid,2024-07-09,Fox Hollow Local Schools,Moreland Construction
+1867,St. Brendan Medical Center: Emergency Department Expansion,healthcare,renovation,3256,0,Franklin,hard bid,2024-07-10,St. Brendan Medical Center,Brightline Construction
+1868,Whitcomb University: Science Hall Mechanical Renewal,higher-ed,renovation,2113,1,Franklin,negotiated,2024-07-11,Whitcomb University,Northgate Construction
+1860,Corrigan Logistics: Production Facility New Building,industrial,new construction,10006,0,Knox,hard bid,2024-07-12,Corrigan Logistics,Brightline Construction
+1862,Kestrel Valley Health: Imaging Department New Building,healthcare,new construction,6001,0,Fairfield,hard bid,2024-07-12,Kestrel Valley Health,Vanterpool Builders
+1859,Kestrel Valley Health: Surgery Center Expansion,healthcare,renovation,5831,0,Franklin,hard bid,2024-07-15,Kestrel Valley Health,Brightline Construction
+1864,Haverford Plains City Schools: Elementary School New Building,K-12 school,new construction,4880,1,Pickaway,hard bid,2024-07-18,Haverford Plains City Schools,Brightline Construction
+1876,Brookline Hills Local Schools: Elementary School Mechanical Upgrades,K-12 school,renovation,63804,1,Franklin,hard bid,2024-07-18,Brookline Hills Local Schools,Northgate Construction
+1865,Riverbend Health: Medical Office Building New Building,healthcare,new construction,4541,0,Delaware,negotiated,2024-07-19,Riverbend Health,Brightline Construction
+1866,Alder Creek Local Schools: High School New Building,K-12 school,new construction,6555,1,Franklin,negotiated,2024-07-19,Alder Creek Local Schools,Teague & Whitford
+1861,Alder Creek City Schools: High School New Building,K-12 school,new construction,5524,1,Delaware,hard bid,2024-07-22,Alder Creek City Schools,Gilchrist & Hale
+1871,Pellston Manufacturing: Production Facility New Building,industrial,new construction,7379,0,Franklin,hard bid,2024-07-22,Pellston Manufacturing,Corwin Saye Construction
+1863,St. Brendan Medical Center: 4th Floor Medical-Surgical Unit Expansion,healthcare,renovation,2668,0,Franklin,hard bid,2024-07-23,St. Brendan Medical Center,Marlow Construction Co.
+1869,Sixty-Two West LLC: Tenant Floors 3-5 Core and Shell,office,new construction,36660,0,Franklin,negotiated,2024-07-25,Sixty-Two West LLC,Gilchrist & Hale
+1870,Kettle Ridge Local Schools: Elementary School Addition and Renovation,K-12 school,renovation,8142,1,Franklin,hard bid,2024-07-26,Kettle Ridge Local Schools,Brightline Construction
+1873,Calder Biosciences: Analytical Lab New Building,lab,new construction,551,0,Franklin,hard bid,2024-07-26,Calder Biosciences,Brightline Construction
+1874,Whitcomb University: Science Hall Renovation,higher-ed,renovation,40091,1,Fairfield,hard bid,2024-07-29,Whitcomb University,Gilchrist & Hale
+1875,Brightwater Commons LLC: Municipal Building Tenant Fit-Out,office,renovation,18088,0,Madison,hard bid,2024-07-31,Brightwater Commons LLC,Brightline Construction
+1884,Garland Institute of Technology: Student Union New Building,higher-ed,new construction,36318,0,Franklin,negotiated,2024-08-02,Garland Institute of Technology,Northgate Construction
+1885,Fox Hollow City Schools: Intermediate School New Building,K-12 school,new construction,5430,1,Franklin,hard bid,2024-08-02,Fox Hollow City Schools,Brightline Construction
+1878,Whitcomb University Research: Analytical Lab New Building,lab,new construction,5443,1,Franklin,hard bid,2024-08-05,Whitcomb University Research,Corwin Saye Construction
+1881,Calvary Street Partners: Apartments New Building,multifamily,new construction,14542,0,Delaware,hard bid,2024-08-05,Calvary Street Partners,Ashlar Construction Managers
+1886,Vantage Diagnostics: Clean Room Suite New Building,lab,new construction,7846,0,Franklin,hard bid,2024-08-05,Vantage Diagnostics,Ashlar Construction Managers
+1889,Meridian Center Partners: Retail Center New Store,retail,new construction,26066,0,Licking,hard bid,2024-08-08,Meridian Center Partners,Northgate Construction
+1880,Whitcomb University: Library Mechanical Renewal,higher-ed,renovation,6527,1,Franklin,hard bid,2024-08-09,Whitcomb University,Vanterpool Builders
+1883,Keswick Packaging: Cold Storage Building New Building,industrial,new construction,19539,0,Franklin,hard bid,2024-08-09,Keswick Packaging,Gilchrist & Hale
+1882,Brightwater Commons LLC: Municipal Building Interior Renovation,office,renovation,6166,0,Franklin,hard bid,2024-08-13,Brightwater Commons LLC,Vanterpool Builders
+1892,Riverbend Health: 4th Floor Medical-Surgical Unit Expansion,healthcare,renovation,3833,0,Franklin,hard bid,2024-08-13,Riverbend Health,Quarry Hill Builders
+1895,Harmon Regional Hospital: Medical Office Building New Building,healthcare,new construction,2497,1,Union,hard bid,2024-08-16,Harmon Regional Hospital,Ellison Construction Group
+1887,Calvary Street Partners: Apartments New Building,multifamily,new construction,16809,0,Knox,hard bid,2024-08-19,Calvary Street Partners,Rook Construction
+1890,Norrland Materials Research: Clean Room Suite Renovation,lab,renovation,2709,0,Franklin,hard bid,2024-08-19,Norrland Materials Research,Ashlar Construction Managers
+1894,Whitcomb University: Science Hall New Building,higher-ed,new construction,2794,1,Franklin,negotiated,2024-08-19,Whitcomb University,Quarry Hill Builders
+1900,Harmon Regional Hospital: 4th Floor Medical-Surgical Unit Expansion,healthcare,renovation,13916,1,Fairfield,hard bid,2024-08-19,Harmon Regional Hospital,Vanterpool Builders
+1896,Brightwater Commons LLC: Headquarters Core and Shell,office,new construction,39066,0,Pickaway,negotiated,2024-08-20,Brightwater Commons LLC,Corwin Saye Construction
+1891,Granger Valley Local Schools: Middle School HVAC Renovation,K-12 school,renovation,25409,1,Franklin,hard bid,2024-08-21,Granger Valley Local Schools,Brightline Construction
+1897,Granger Valley City Schools: High School New Building,K-12 school,new construction,16623,1,Franklin,negotiated,2024-08-22,Granger Valley City Schools,Corwin Saye Construction
+1908,Corrigan Logistics: Production Facility New Building,industrial,new construction,3497,0,Franklin,hard bid,2024-08-22,Corrigan Logistics,Stonefield Builders
+1898,Sixty-Two West LLC: Headquarters Core and Shell,office,new construction,25726,0,Union,hard bid,2024-08-23,Sixty-Two West LLC,Brightline Construction
+1903,Haverford Plains Local Schools: Elementary School Mechanical Upgrades,K-12 school,renovation,31108,1,Licking,hard bid,2024-08-23,Haverford Plains Local Schools,Northgate Construction
+1899,Whitcomb University Research: Analytical Lab New Building,lab,new construction,16475,1,Franklin,hard bid,2024-08-26,Whitcomb University Research,Vanterpool Builders
+1902,Fox Hollow Local Schools: High School New Building,K-12 school,new construction,13360,1,Franklin,negotiated,2024-08-26,Fox Hollow Local Schools,Marlow Construction Co.
+1893,Kestrel Valley Health: Emergency Department Renovation,healthcare,renovation,17477,0,Franklin,hard bid,2024-08-28,Kestrel Valley Health,Northgate Construction
+1912,Pellston Manufacturing: Production Facility Process Upgrade,industrial,renovation,15421,0,Franklin,direct,2024-08-29,Pellston Manufacturing,Brightline Construction
+1901,St. Brendan Medical Center: Medical Office Building Renovation,healthcare,renovation,3251,0,Franklin,hard bid,2024-08-30,St. Brendan Medical Center,Ashlar Construction Managers
+1909,Union Mill Apartments LLC: Apartments Renovation,multifamily,renovation,4552,0,Franklin,hard bid,2024-09-02,Union Mill Apartments LLC,Ashlar Construction Managers
+1914,Fairway Plaza LLC: Retail Center Remodel,retail,renovation,12696,0,Franklin,hard bid,2024-09-02,Fairway Plaza LLC,Ridgeline Builders
+1904,Meridian Center Partners: Retail Center New Store,retail,new construction,4547,0,Franklin,hard bid,2024-09-04,Meridian Center Partners,Brightline Construction
+1911,Brightwater Commons LLC: Municipal Building Core and Shell,office,new construction,12610,0,Delaware,hard bid,2024-09-04,Brightwater Commons LLC,Ashlar Construction Managers
+1905,Brookline Hills Local Schools: Middle School New Building,K-12 school,new construction,10412,1,Fairfield,hard bid,2024-09-05,Brookline Hills Local Schools,Brightline Construction
+1906,Fairway Plaza LLC: Restaurant Row New Store,retail,new construction,14521,0,Union,direct,2024-09-05,Fairway Plaza LLC,Northgate Construction
+1907,Fairway Plaza LLC: Grocery Store New Store,retail,new construction,4309,0,Fairfield,hard bid,2024-09-05,Fairway Plaza LLC,Ashlar Construction Managers
+1910,Brightwater Commons LLC: Tenant Floors 3-5 Interior Renovation,office,renovation,24891,0,Union,hard bid,2024-09-05,Brightwater Commons LLC,Daventry Construction
+1919,Haverford Plains Local Schools: Middle School Addition and Renovation,K-12 school,renovation,3414,1,Delaware,hard bid,2024-09-05,Haverford Plains Local Schools,Brightline Construction
+1913,Laurel Ridge Community College: Residence Hall New Building,higher-ed,new construction,2158,1,Franklin,negotiated,2024-09-09,Laurel Ridge Community College,Brightline Construction
+1917,Keswick Packaging: Cold Storage Building Office and Locker Renovation,industrial,renovation,48257,0,Franklin,hard bid,2024-09-10,Keswick Packaging,Brightline Construction
+1927,Kestrel Valley Health: 4th Floor Medical-Surgical Unit Renovation,healthcare,renovation,1059,0,Franklin,negotiated,2024-09-10,Kestrel Valley Health,Brightline Construction
+1915,Corrigan Logistics: Cold Storage Building Office and Locker Renovation,industrial,renovation,13669,0,Union,hard bid,2024-09-11,Corrigan Logistics,Brightline Construction
+1916,Union Mill Apartments LLC: Senior Living Renovation,multifamily,renovation,26551,0,Franklin,hard bid,2024-09-11,Union Mill Apartments LLC,Northgate Construction
+1918,Keswick Packaging: Distribution Center New Building,industrial,new construction,15950,0,Franklin,hard bid,2024-09-11,Keswick Packaging,Marlow Construction Co.
+1922,Corrigan Logistics: Production Facility New Building,industrial,new construction,4058,0,Licking,negotiated,2024-09-11,Corrigan Logistics,Moreland Construction
+1923,Fairway Plaza LLC: Grocery Store Tenant Fit-Out,retail,renovation,9958,0,Franklin,hard bid,2024-09-11,Fairway Plaza LLC,Northgate Construction
+1920,Brightwater Commons LLC: Tenant Floors 3-5 Core and Shell,office,new construction,4050,0,Franklin,hard bid,2024-09-12,Brightwater Commons LLC,Brightline Construction
+1921,Calvary Street Partners: Apartments New Building,multifamily,new construction,2425,0,Fairfield,hard bid,2024-09-16,Calvary Street Partners,Corwin Saye Construction
+1925,Ashby College: Residence Hall New Building,higher-ed,new construction,2943,0,Franklin,hard bid,2024-09-16,Ashby College,Moreland Construction
+1928,St. Brendan Medical Center: 4th Floor Medical-Surgical Unit Renovation,healthcare,renovation,13921,0,Franklin,hard bid,2024-09-17,St. Brendan Medical Center,Stonefield Builders
+1926,Tolland Office Partners: Tenant Floors 3-5 Interior Renovation,office,renovation,64312,0,Franklin,negotiated,2024-09-18,Tolland Office Partners,Brightline Construction
+1929,Tolland Office Partners: Tenant Floors 3-5 Tenant Fit-Out,office,renovation,3736,0,Licking,direct,2024-09-23,Tolland Office Partners,Corwin Saye Construction
+1931,Kestrel Valley Health: 4th Floor Medical-Surgical Unit New Building,healthcare,new construction,1838,0,Franklin,negotiated,2024-09-23,Kestrel Valley Health,Brightline Construction
+1932,Ardent Foods: Distribution Center New Building,industrial,new construction,16359,0,Franklin,negotiated,2024-09-23,Ardent Foods,Corwin Saye Construction
+1936,Haverford Plains City Schools: Middle School New Building,K-12 school,new construction,6195,1,Franklin,hard bid,2024-09-23,Haverford Plains City Schools,Vanterpool Builders
+1934,Fairway Plaza LLC: Retail Center Tenant Fit-Out,retail,renovation,39208,0,Franklin,hard bid,2024-09-26,Fairway Plaza LLC,Brightline Construction
+1937,Haverford Plains City Schools: High School New Building,K-12 school,new construction,2885,1,Franklin,hard bid,2024-09-26,Haverford Plains City Schools,Vanterpool Builders
+1935,Alder Creek Local Schools: Middle School HVAC Renovation,K-12 school,renovation,22779,1,Franklin,hard bid,2024-09-30,Alder Creek Local Schools,Brightline Construction
+1938,Kestrel Valley Health: Medical Office Building Expansion,healthcare,renovation,27328,0,Franklin,hard bid,2024-09-30,Kestrel Valley Health,Daventry Construction
+1933,Sixty-Two West LLC: Tenant Floors 3-5 Interior Renovation,office,renovation,12714,0,Franklin,negotiated,2024-10-02,Sixty-Two West LLC,Quarry Hill Builders
+1940,Harbor Lane Retail: Retail Center New Store,retail,new construction,25764,0,Fairfield,hard bid,2024-10-03,Harbor Lane Retail,Northgate Construction
+1941,Riverbend Health: Medical Office Building New Building,healthcare,new construction,2174,0,Licking,hard bid,2024-10-04,Riverbend Health,Corwin Saye Construction
+1943,Kettle Ridge Township: Tenant Floors 3-5 Core and Shell,office,new construction,4477,1,Madison,hard bid,2024-10-08,Kettle Ridge Township,Vanterpool Builders
+1942,Laurel Ridge Community College: Library Renovation,higher-ed,renovation,6197,1,Franklin,hard bid,2024-10-09,Laurel Ridge Community College,Brightline Construction
+1948,Linden Row Residential: Mixed-Use Building Renovation,multifamily,renovation,8843,0,Franklin,hard bid,2024-10-11,Linden Row Residential,Ridgeline Builders
+1944,Harmon Regional Hospital: Imaging Department Expansion,healthcare,renovation,3274,1,Fairfield,direct,2024-10-14,Harmon Regional Hospital,Northgate Construction
+1949,Corrigan Logistics: Production Facility New Building,industrial,new construction,4000,0,Franklin,hard bid,2024-10-14,Corrigan Logistics,Ashlar Construction Managers
+1945,Tolland Office Partners: Tenant Floors 3-5 Core and Shell,office,new construction,7689,0,Pickaway,hard bid,2024-10-17,Tolland Office Partners,Brightline Construction
+1947,Tolland Office Partners: Headquarters Core and Shell,office,new construction,27301,0,Madison,hard bid,2024-10-17,Tolland Office Partners,Brightline Construction
+1951,St. Brendan Medical Center: Surgery Center New Building,healthcare,new construction,9253,0,Franklin,hard bid,2024-10-21,St. Brendan Medical Center,Vanterpool Builders
+1946,Harbor Lane Retail: Retail Center Remodel,retail,renovation,3550,0,Franklin,hard bid,2024-10-22,Harbor Lane Retail,Vanterpool Builders
+1950,St. Brendan Medical Center: 4th Floor Medical-Surgical Unit Renovation,healthcare,renovation,829,0,Franklin,direct,2024-10-23,St. Brendan Medical Center,Moreland Construction
+1955,Tolland Office Partners: Municipal Building Tenant Fit-Out,office,renovation,12560,0,Franklin,hard bid,2024-10-24,Tolland Office Partners,Brightline Construction
+1952,Harmon Regional Hospital: Surgery Center Renovation,healthcare,renovation,13689,1,Madison,hard bid,2024-10-25,Harmon Regional Hospital,Brightline Construction
+1954,Fox Hollow City Schools: Middle School New Building,K-12 school,new construction,6967,1,Delaware,negotiated,2024-10-25,Fox Hollow City Schools,Ridgeline Builders
+1953,Brightwater Commons LLC: Headquarters Tenant Fit-Out,office,renovation,32365,0,Delaware,negotiated,2024-10-28,Brightwater Commons LLC,Corwin Saye Construction
+1960,Riverbend Health: Medical Office Building Renovation,healthcare,renovation,5142,0,Madison,hard bid,2024-10-28,Riverbend Health,Northgate Construction
+1961,Laurel Ridge Community College: Student Union New Building,higher-ed,new construction,14408,1,Franklin,hard bid,2024-10-29,Laurel Ridge Community College,Brightline Construction
+1962,Sixty-Two West LLC: Tenant Floors 3-5 Tenant Fit-Out,office,renovation,6015,0,Franklin,hard bid,2024-10-31,Sixty-Two West LLC,Corwin Saye Construction
+1963,Millbrook Local Schools: High School HVAC Renovation,K-12 school,renovation,5002,1,Delaware,hard bid,2024-10-31,Millbrook Local Schools,Brightline Construction
+1965,Fairway Plaza LLC: Retail Center New Store,retail,new construction,12716,0,Franklin,hard bid,2024-10-31,Fairway Plaza LLC,Brightline Construction
+1956,Harmon Regional Hospital: Emergency Department New Building,healthcare,new construction,2161,1,Franklin,hard bid,2024-11-01,Harmon Regional Hospital,Brightline Construction
+1959,Calvary Street Partners: Mixed-Use Building New Building,multifamily,new construction,4901,0,Franklin,hard bid,2024-11-01,Calvary Street Partners,Brightline Construction
+1957,Fox Hollow City Schools: Elementary School New Building,K-12 school,new construction,1864,1,Franklin,hard bid,2024-11-04,Fox Hollow City Schools,Ashlar Construction Managers
+1958,Haverford Plains Local Schools: High School New Building,K-12 school,new construction,9649,1,Franklin,hard bid,2024-11-04,Haverford Plains Local Schools,Gilchrist & Hale
+1971,Calvary Street Partners: Mixed-Use Building New Building,multifamily,new construction,5684,0,Delaware,hard bid,2024-11-04,Calvary Street Partners,Northgate Construction
+1972,Sixty-Two West LLC: Office Building Core and Shell,office,new construction,9128,0,Franklin,hard bid,2024-11-04,Sixty-Two West LLC,Vanterpool Builders
+1969,Whitcomb University: Residence Hall New Building,higher-ed,new construction,19284,1,Franklin,direct,2024-11-05,Whitcomb University,Brightline Construction
+1968,Riverbend Health: Emergency Department Expansion,healthcare,renovation,12232,0,Knox,hard bid,2024-11-07,Riverbend Health,Corwin Saye Construction
+1982,Sixty-Two West LLC: Office Building Interior Renovation,office,renovation,2751,0,Licking,hard bid,2024-11-08,Sixty-Two West LLC,Vanterpool Builders
+1970,Garland Institute of Technology: Science Hall New Building,higher-ed,new construction,1101,0,Franklin,hard bid,2024-11-11,Garland Institute of Technology,Brightline Construction
+1973,Fairway Plaza LLC: Grocery Store New Store,retail,new construction,3082,0,Knox,hard bid,2024-11-11,Fairway Plaza LLC,Brightline Construction
+1978,Keswick Packaging: Distribution Center New Building,industrial,new construction,2971,0,Franklin,negotiated,2024-11-11,Keswick Packaging,Gilchrist & Hale
+1979,Union Mill Apartments LLC: Apartments New Building,multifamily,new construction,13916,0,Union,negotiated,2024-11-12,Union Mill Apartments LLC,Ashlar Construction Managers
+1975,Calvary Street Partners: Senior Living Renovation,multifamily,renovation,4866,0,Delaware,hard bid,2024-11-13,Calvary Street Partners,Brightline Construction
+1976,Ardent Foods: Production Facility New Building,industrial,new construction,9370,0,Franklin,hard bid,2024-11-13,Ardent Foods,Brightline Construction
+1981,Calvary Street Partners: Mixed-Use Building New Building,multifamily,new construction,7092,0,Franklin,hard bid,2024-11-13,Calvary Street Partners,Ridgeline Builders
+1966,Sixty-Two West LLC: Office Building Tenant Fit-Out,office,renovation,10491,0,Franklin,hard bid,2024-11-14,Sixty-Two West LLC,Brightline Construction
+1967,Whitcomb University: Athletics Center Renovation,higher-ed,renovation,4836,1,Franklin,hard bid,2024-11-14,Whitcomb University,Vanterpool Builders
+1974,Brightwater Commons LLC: Headquarters Core and Shell,office,new construction,4537,0,Franklin,hard bid,2024-11-14,Brightwater Commons LLC,Brightline Construction
+1977,Haverford Plains Local Schools: Elementary School HVAC Renovation,K-12 school,renovation,8786,1,Union,hard bid,2024-11-15,Haverford Plains Local Schools,Vanterpool Builders
+1987,Whitcomb University Research: Research Laboratory New Building,lab,new construction,2575,1,Franklin,hard bid,2024-11-15,Whitcomb University Research,Ridgeline Builders
+1988,Whitcomb University Research: Research Laboratory Renovation,lab,renovation,10461,1,Franklin,hard bid,2024-11-15,Whitcomb University Research,Daventry Construction
+1980,Vantage Diagnostics: Clean Room Suite New Building,lab,new construction,1615,0,Franklin,hard bid,2024-11-18,Vantage Diagnostics,Gilchrist & Hale
+1983,Meridian Center Partners: Restaurant Row Tenant Fit-Out,retail,renovation,44415,0,Franklin,hard bid,2024-11-18,Meridian Center Partners,Ridgeline Builders
+1984,Whitcomb University: Student Union Renovation,higher-ed,renovation,15285,1,Fairfield,hard bid,2024-11-18,Whitcomb University,Brightline Construction
+1985,Granger Valley City Schools: Intermediate School Mechanical Upgrades,K-12 school,renovation,9418,1,Knox,hard bid,2024-11-18,Granger Valley City Schools,Vanterpool Builders
+1986,Sixty-Two West LLC: Office Building Tenant Fit-Out,office,renovation,5487,0,Fairfield,hard bid,2024-11-18,Sixty-Two West LLC,Brightline Construction
+1993,Millbrook Local Schools: Intermediate School HVAC Renovation,K-12 school,renovation,38339,1,Franklin,hard bid,2024-11-22,Millbrook Local Schools,Corwin Saye Construction
+1992,Granger Valley City Schools: Elementary School HVAC Renovation,K-12 school,renovation,4187,1,Franklin,hard bid,2024-11-25,Granger Valley City Schools,Vanterpool Builders
+1994,Laurel Ridge Community College: Residence Hall Renovation,higher-ed,renovation,41874,1,Licking,hard bid,2024-11-25,Laurel Ridge Community College,Daventry Construction
+1996,Brookline Hills Local Schools: Elementary School Mechanical Upgrades,K-12 school,renovation,5737,1,Franklin,hard bid,2024-11-25,Brookline Hills Local Schools,Quarry Hill Builders
+1995,Laurel Ridge Community College: Science Hall New Building,higher-ed,new construction,12503,1,Franklin,hard bid,2024-11-27,Laurel Ridge Community College,Northgate Construction
+1998,Whitcomb University: Residence Hall New Building,higher-ed,new construction,10768,1,Franklin,hard bid,2024-11-28,Whitcomb University,Moreland Construction
+2001,Calder Biosciences: Research Laboratory New Building,lab,new construction,15239,0,Fairfield,negotiated,2024-12-02,Calder Biosciences,Vanterpool Builders
+1989,Fairway Plaza LLC: Grocery Store Tenant Fit-Out,retail,renovation,79147,0,Pickaway,negotiated,2024-12-03,Fairway Plaza LLC,Gilchrist & Hale
+1991,Harmon Regional Hospital: Surgery Center Renovation,healthcare,renovation,12114,1,Franklin,hard bid,2024-12-03,Harmon Regional Hospital,Gilchrist & Hale
+1997,Ashby College: Student Union Renovation,higher-ed,renovation,6802,0,Madison,hard bid,2024-12-03,Ashby College,Ridgeline Builders
+1990,Riverbend Health: Emergency Department New Building,healthcare,new construction,740,0,Franklin,hard bid,2024-12-05,Riverbend Health,Brightline Construction
+2000,Laurel Ridge Community College: Student Union New Building,higher-ed,new construction,8155,1,Madison,hard bid,2024-12-09,Laurel Ridge Community College,Marlow Construction Co.
+2003,Whitcomb University: Student Union New Building,higher-ed,new construction,12712,1,Franklin,hard bid,2024-12-09,Whitcomb University,Brightline Construction
+2004,Granger Valley Local Schools: Elementary School New Building,K-12 school,new construction,956,1,Pickaway,hard bid,2024-12-09,Granger Valley Local Schools,Brightline Construction
+2002,St. Brendan Medical Center: Surgery Center New Building,healthcare,new construction,5050,0,Franklin,hard bid,2024-12-10,St. Brendan Medical Center,Brightline Construction
+2006,Kestrel Valley Health: Medical Office Building New Building,healthcare,new construction,1593,0,Franklin,negotiated,2024-12-10,Kestrel Valley Health,Daventry Construction
+1999,Millbrook City Schools: Intermediate School New Building,K-12 school,new construction,7208,1,Union,hard bid,2024-12-12,Millbrook City Schools,Northgate Construction
+2007,Laurel Ridge Community College: Residence Hall New Building,higher-ed,new construction,12280,1,Franklin,hard bid,2024-12-17,Laurel Ridge Community College,Gilchrist & Hale
+2008,Meridian Center Partners: Retail Center New Store,retail,new construction,57001,0,Union,negotiated,2024-12-17,Meridian Center Partners,Ellison Construction Group
+2009,Ardent Foods: Distribution Center New Building,industrial,new construction,17417,0,Delaware,hard bid,2024-12-17,Ardent Foods,Ashlar Construction Managers
+2013,City of Millbrook: Tenant Floors 3-5 Core and Shell,office,new construction,98174,1,Franklin,hard bid,2024-12-19,City of Millbrook,Corwin Saye Construction
+2005,Sixty-Two West LLC: Headquarters Core and Shell,office,new construction,6531,0,Delaware,negotiated,2024-12-23,Sixty-Two West LLC,Northgate Construction
+2019,Meridian Center Partners: Restaurant Row Tenant Fit-Out,retail,renovation,9255,0,Franklin,hard bid,2024-12-24,Meridian Center Partners,Gilchrist & Hale
+2017,Tolland Office Partners: Tenant Floors 3-5 Core and Shell,office,new construction,7107,0,Franklin,hard bid,2024-12-25,Tolland Office Partners,Moreland Construction
+2010,Fairway Plaza LLC: Retail Center New Store,retail,new construction,6962,0,Franklin,hard bid,2024-12-27,Fairway Plaza LLC,Ellison Construction Group
+2011,Riverbend Health: Imaging Department New Building,healthcare,new construction,713,0,Franklin,hard bid,2024-12-30,Riverbend Health,Moreland Construction
+2014,Granger Valley Local Schools: Intermediate School HVAC Renovation,K-12 school,renovation,1931,1,Licking,hard bid,2024-12-30,Granger Valley Local Schools,Brightline Construction
+2015,Union Mill Apartments LLC: Senior Living New Building,multifamily,new construction,1321,0,Delaware,hard bid,2024-12-30,Union Mill Apartments LLC,Marlow Construction Co.
+2016,Sixty-Two West LLC: Tenant Floors 3-5 Core and Shell,office,new construction,2718,0,Franklin,hard bid,2024-12-30,Sixty-Two West LLC,Gilchrist & Hale
+2018,Union Mill Apartments LLC: Mixed-Use Building New Building,multifamily,new construction,4340,0,Union,hard bid,2024-12-30,Union Mill Apartments LLC,Palisade Construction

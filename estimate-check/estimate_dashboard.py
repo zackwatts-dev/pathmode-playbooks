@@ -1,247 +1,118 @@
-"""The estimate-check dashboard: one static page for the estimating team and the general manager.
-
-Everything on it is escaped, including the AI's notes. It runs no scripts and loads nothing from anywhere else.
-"""
+# ruff: noqa: E501  (HTML fragments and spec fixtures read better on one line)
+"""The year's dashboard for the chief estimator: the bids with the most to add, each with its gaps (the words quoted,
+the section, the cost to add), what's priced but not required, the labor flags, and what went to a person. Every
+word from the documents or the AI is escaped."""
 
 from __future__ import annotations
 
-from collections import defaultdict
-
-from estimate_check import (
-    CHECK,
-    HIGH,
-    NOT_CHECKED,
-    PERSON,
-    PILES,
-    RIGHT,
-    Run,
-    money,
-    pct_text,
-    token_labels,
-    total_gap,
-)
-
 from common.page import STYLE, _e, _table
 
-CSP = "default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; base-uri 'none'; form-action 'none'"
+MORE = """
+.bid{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}
+.bid h3{margin:0 0 4px;font-size:16px}
+.quote{color:var(--muted);font-style:italic}
+details{margin:6px 0}
+summary{cursor:pointer}
+"""
 
 
-def _breakdown(run_: Run, field: str, label: str) -> str:
-    groups: dict[str, list] = defaultdict(list)
-    for r in run_.results:
-        groups[r.row.get(field, "") or "(blank)"].append(r)
-    rows = []
-    for name, rs in sorted(groups.items(), key=lambda kv: -total_gap(kv[1])):
-        rows.append(
-            [_e(name), str(len(rs))] + [str(sum(r.pile == p for r in rs)) for p in PILES] + [_e(money(total_gap(rs)))]
-        )
-    return _table(
-        [label, "Lines", *[p.capitalize() for p in PILES], "Under-recovered"], rows, set(range(1, len(PILES) + 3))
+def _m(x: float) -> str:
+    return f"${x:,.0f}"
+
+
+def _card(rv) -> str:
+    head = f"<h3>{_e(rv.name or 'Project ' + rv.pid)}</h3>"
+    meta = (
+        f'<div class="muted">{_e(rv.estimator)} · ready {_e(rv.ready_on)} · due {_e(rv.due)} · '
+        f"{len(rv.accepted)} requirements read</div>"
     )
-
-
-def _centres(r) -> str:
-    out = []
-    for c in sorted(r.centres, key=lambda c: c.gap, reverse=True):
-        if c.ratio is None:
-            out.append(
-                f"{_e(c.work_centre)}: {_e(f'{c.est_hours:.1f}')} h, "
-                f"<span class='muted'>no history ({len(c.found.ops)} first runs): estimate kept</span>"
-            )
-        else:
-            ops = c.found.ops
-            out.append(
-                f"<b>{_e(c.work_centre)}</b>: {_e(f'{c.est_hours:.1f}')} h estimated, "
-                f"{_e(f'{c.history_hours:.1f}')} h at history ({_e(pct_text(c.ratio))}; {len(ops)} first runs, "
-                f"{_e(ops[0].completed_on.strftime('%b %Y'))} to {_e(ops[-1].completed_on.strftime('%b %Y'))}, "
-                f"{_e(c.found.tier)})"
-            )
-    return "<br>".join(out)
-
-
-def dashboard(run_: Run) -> str:
-    results = run_.results
-    tiles = [
-        (CHECK, run_.count(CHECK), "review" if run_.count(CHECK) else ""),
-        (HIGH, run_.count(HIGH), ""),
-        (RIGHT, run_.count(RIGHT), "ready"),
-        (PERSON, run_.count(PERSON), "review" if run_.count(PERSON) else ""),
-        (NOT_CHECKED, run_.count(NOT_CHECKED), ""),
-    ]
-    out = [
-        "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
-        f"<meta http-equiv='Content-Security-Policy' content=\"{CSP}\">"
-        "<meta name='viewport' content='width=device-width,initial-scale=1'><title>Estimate check</title>"
-        f"<style>{STYLE}</style></head><body><main>",
-        "<h1>Estimate check</h1>",
-        f"<p class='muted'>Model (for the notes only): {_e(run_.model_name)}. {len(results)} quote lines. Code "
-        "compared every line with first runs of similar work and sorted it; the AI only wrote the notes, and code "
-        "checked every number in them. Nothing was sent and no quote was changed.</p>",
-        "<div class='tiles'>"
-        + "".join(f"<div class='tile {c}'><b>{n}</b>{_e(label.capitalize())}</div>" for label, n, c in tiles)
-        + f"<div class='tile'><b>{_e(money(total_gap(results)))}</b>History's estimate of labour the flagged lines "
-        "would under-recover</div>" + "</div>",
-    ]
-    scope = (
-        "Checked: every family (--scope all)."
-        if run_.families is None
-        else f"Checked: {', '.join(run_.families)} (scope.json). {run_.count(NOT_CHECKED)} lines in other families "
-        "weren't checked: the estimator prices them as today."
+    gaps = "".join(
+        f"<li><b>{_e(g.kind_title)}</b>, Section {_e(g.source)}: add about {_e(_m(g.cost))} "
+        f'(from {_e(_m(g.low))} to {_e(_m(g.high))}, {_e(g.basis)}). <span class="quote">"{_e(g.quote)}"</span></li>'
+        for g in rv.gaps
     )
-    out.append(f"<p>{_e(scope)}</p>")
-    if run_.misses:
-        out.append(f"<p class='bad'>{run_.misses} quotes had no recorded answer: code wrote their notes.</p>")
-
-    checks = sorted((r for r in results if r.pile == CHECK), key=lambda r: r.gap, reverse=True)
-    notes = {n.quote_id: n for n in run_.notes}
-    shown: set[str] = set()
-    rows = []
-    for r in checks:
-        n = notes.get(r.quote_id)
-        if n and r.quote_id not in shown:
-            shown.add(r.quote_id)
-            by = f"the model ({run_.model_name}), checked by code" if n.by == "model" else "code"
-            names = "; ".join(f"{_e(t)} is {_e(lbl)}" for t, lbl in token_labels(n))
-            note = (
-                f"{_e(n.text)}<span class='muted reason'>{names}</span><span class='muted reason'>Written by {_e(by)}"
-                + (f": {_e(n.why)}" if n.why else "")
-                + "</span>"
-            )
-        else:
-            note = f"<span class='muted'>See quote {_e(r.quote_id)}'s note above.</span>"
-        thin = f"<br><span class='muted'>{_e(r.reason)}</span>" if r.reason else ""
-        rows.append(
-            [
-                f"<b>{_e(r.quote_id)}</b> line {_e(r.line_id)}<br>{_e(r.row.get('customer', ''))}<br>"
-                f"<span class='muted'>{_e(r.row.get('estimator', ''))}</span>",
-                f"{_e(r.row.get('part_number', ''))} {_e(r.row.get('description', ''))}<br>"
-                f"<span class='muted'>{_e(r.row.get('family', ''))}, {_e(r.row.get('material', ''))}, "
-                f"qty {_e(r.row.get('quantity', ''))}</span>",
-                f"<b>{_e(money(r.gap))}</b><br>{_e(money(r.est_cost))} → {_e(money(r.history_cost))}<br>"
-                f"{_e(pct_text(r.ratio))}",
-                _centres(r) + thin,
-                note,
-            ]
-        )
-    out.append(
-        "<section class='queue'><h2>Check these first</h2><p>History says each line's labour runs at least 10% over "
-        "the estimate. Largest dollar gap first. The estimator decides.</p>"
-        + (_table(["Quote", "Part", "Gap", "Work centres", "Note"], rows, {2}) if rows else "<p>None today.</p>")
-        + "</section>"
+    nr = "".join(
+        f'<li><b>{_e(n.kind_title)}</b> is {_e(n.status)} ({_e(n.source)}: <span class="quote">"{_e(n.quote)}"</span>), '
+        f"but the estimate carries {_e(_m(n.amount))} for it: {_e(n.line)}.</li>"
+        for n in rv.not_required
     )
+    lab = "".join(
+        f"<li><b>{_e(f.system.capitalize())} labor:</b> on {f.jobs} of this estimator's completed jobs, actual hours ran "
+        f"{(f.ratio / f.company - 1):.0%} over the company's usual. At that rate this estimate's {f.hours:,.0f} hours would be "
+        f"{f.hours + f.extra_hours:,.0f}, about {_e(_m(f.dollars))} more.</li>"
+        for f in rv.labor
+    )
+    ref = "".join(f"<li>{_e(x)}</li>" for x in rv.referrals)
+    body = ""
+    if gaps:
+        body += f"<p>Not priced:</p><ul>{gaps}</ul>"
+    if nr:
+        body += f"<p>Priced but not required:</p><ul>{nr}</ul>"
+    if lab:
+        body += f"<p>Labor:</p><ul>{lab}</ul>"
+    if ref:
+        body += f"<details><summary>For a person ({len(rv.referrals)})</summary><ul>{ref}</ul></details>"
+    return f'<div class="bid">{head}{meta}{body}</div>'
 
-    people = [r for r in results if r.pile == PERSON]
-    if people:
-        rows = [
-            [
-                f"<b>{_e(r.quote_id)}</b> line {_e(r.line_id)}",
-                f"{_e(r.row.get('part_number', ''))} {_e(r.row.get('description', ''))}",
-                _e(r.row.get("estimator", "")),
-                _e(r.reason),
-            ]
-            for r in people
-        ]
-        out.append(
-            "<h2>Not enough history: a person checks these</h2>" + _table(["Quote", "Part", "Estimator", "Why"], rows)
-        )
 
-    thin = [r for r in results if r.pile in (RIGHT, HIGH) and r.thin]
-    if thin:
-        rows = [
-            [
-                f"<b>{_e(r.quote_id)}</b> line {_e(r.line_id)}",
-                f"{_e(r.row.get('part_number', ''))} {_e(r.row.get('description', ''))}",
-                _e(r.row.get("estimator", "")),
-                _e(r.pile),
-                _e(r.reason),
-            ]
-            for r in thin
-        ]
-        out.append(
-            "<h2>Sorted, but with a thin work centre</h2><p class='muted'>These lines have a work centre with too few "
-            "first runs to judge; its estimated hours were taken as they are. Worth a glance at that centre.</p>"
-            + _table(["Quote", "Part", "Estimator", "Pile", "Why"], rows)
-        )
+def dashboard(r) -> str:
+    from estimate_check import KINDS
 
-    high = sorted((r for r in results if r.pile == HIGH), key=lambda r: r.gap)
-    if high:
-        rows = [
-            [
-                f"<b>{_e(r.quote_id)}</b> line {_e(r.line_id)}",
-                f"{_e(r.row.get('part_number', ''))} {_e(r.row.get('description', ''))}",
-                _e(r.row.get("estimator", "")),
-                _e(money(-r.gap)),
-                _e(pct_text(r.ratio)),
-            ]
-            for r in high
-        ]
-        out.append(
-            "<h2>May be priced high</h2><p class='muted'>For information: history says the labour runs at least "
-            "15% under the estimate, so we may be losing work we could win. It doesn't hold the quote.</p>"
-            + _table(["Quote", "Part", "Estimator", "Labour over history", "Labour vs estimate"], rows, {3})
+    for rv in r.reviews:
+        for g in rv.gaps:
+            g.kind_title = KINDS[g.kind][0]
+        for n in rv.not_required:
+            n.kind_title = KINDS[n.kind][0]
+    reviews = r.reviews
+    gaps = sum(len(x.gaps) for x in reviews)
+    gap_cost = sum(x.gap_cost for x in reviews)
+    labor = sum(len(x.labor) for x in reviews)
+    nr = sum(len(x.not_required) for x in reviews)
+    person = sum(1 for x in reviews if x.referrals)
+    tiles = (
+        f'<div class="tiles"><div class="tile"><b>{len(reviews)}</b>bids checked</div>'
+        f'<div class="tile review"><b>{gaps}</b>requirements not priced, about {_m(gap_cost)}</div>'
+        f'<div class="tile"><b>{nr}</b>priced but not required</div>'
+        f'<div class="tile"><b>{labor}</b>labor flags</div>'
+        f'<div class="tile"><b>{person}</b>bids with something for a person</div></div>'
+    )
+    top = sorted(
+        [x for x in reviews if x.gaps or x.not_required or x.labor],
+        key=lambda x: -(x.gap_cost + sum(f.dollars for f in x.labor) + sum(n.amount for n in x.not_required)),
+    )
+    cards = "".join(_card(x) for x in top[:40]) or "<p>Nothing to add.</p>"
+    by_kind: dict[str, list] = {}
+    for x in reviews:
+        for g in x.gaps:
+            k = by_kind.setdefault(g.kind_title, [0, 0.0])
+            k[0] += 1
+            k[1] += g.cost
+    kinds = _table(
+        ["Requirement", "Gaps", "Cost to add"],
+        [[_e(k), str(v[0]), _e(_m(v[1]))] for k, v in sorted(by_kind.items(), key=lambda kv: -kv[1][1])],
+        {1, 2},
+    )
+    addressed = [(x, a) for x in reviews for a in x.addressed]
+    inj = ""
+    if addressed:
+        items = "".join(
+            f'<li>{_e(x.name)}, {_e(a["source"])}: <span class="quote">"{_e(a["quote"])}"</span> '
+            f"(found by {_e(a['by'])}; ignored)</li>"
+            for x, a in addressed
         )
-
-    out.append("<h2>By estimator</h2>" + _breakdown(run_, "estimator", "Estimator"))
-    out.append("<h2>By part family</h2>" + _breakdown(run_, "family", "Family"))
-
-    if run_.rejected:
-        rows = [[_e(x.file), str(x.row), _e(x.reason)] for x in run_.rejected[:200]]
-        more = len(run_.rejected) - len(rows)
-        out.append(
-            f"<h2>Input rows that couldn't be used ({len(run_.rejected)})</h2>"
-            "<p class='muted'>A bad quote or hours row sends its line to a person; a bad history or rate row isn't "
-            "used. All of them are in rejected.csv.</p>"
-            + _table(["File", "Row", "Why"], rows, {1})
-            + (f"<p class='muted'>And {more} more in rejected.csv.</p>" if more > 0 else "")
+        inj = f"<h2>Text in the documents addressed to an AI</h2><ul>{items}</ul>"
+    probs = f'<p class="bad">{_e("; ".join(r.problems))}</p>' if r.problems else ""
+    score = ""
+    if r.score:
+        s = r.score
+        score = (
+            f"<h2>Against the answer key</h2><p>Found {s['found']:.0f} of {s['missed']:.0f} missed requirements "
+            f"({_m(s['found_cost'])} of {_m(s['missed_cost'])}); on the bids won, {_m(s['found_won_cost'])} of "
+            f"{_m(s['missed_won_cost'])}. Margin with every flag acted on: {_m(s['money'])}.</p>"
         )
-
-    s = run_.scored
-    if s:
-        n, d = s["n"], s["dollars"]
-        out.append("<h2>Against the answer key</h2>")
-        out.append(
-            f"<p>{s['light']} lines in scope were really light (the work took 10% or more labour than estimated).</p>"
-            + _table(
-                ["", "Lines", "Labour"],
-                [
-                    ["Light lines caught (check this)", str(n["right"]), _e(money(d["right"])) + " under-recovered"],
-                    [
-                        "<span class='bad'>Light lines missed</span> (looks right or may be priced high)",
-                        str(n["missed"]),
-                        _e(money(d["missed"])) + " under-recovered",
-                    ],
-                    ["False flags (check this on a fine line)", str(n["false flag"]), _e(money(d["false flag"]))],
-                    ["To a person (not enough history)", str(n["to a person"]), _e(money(d["to a person"])) + " light"],
-                    ["Fine and not flagged", str(n["clear"]), ""],
-                    [
-                        "Out of scope (not checked; not in the thresholds)",
-                        str(n["out of scope"]),
-                        f"{s['out_of_scope_light']} of them light",
-                    ],
-                ],
-                {1, 2},
-            )
-        )
-        b = s["baseline"]
-        out.append(
-            f"<p>Truly under-recovered on the flagged lines, from the answer key: <b>{_e(money(s['true_on_flagged']))}"
-            f"</b>, against history's estimate of {_e(money(total_gap(results)))}.</p>"
-            + _table(
-                ["", "The check", "Flag every line in scope"],
-                [
-                    ["Light lines caught", str(n["right"]), str(b["caught"])],
-                    ["Light lines missed", str(n["missed"]), str(b["missed"])],
-                    ["Flags that were fine", f"{s['false_flag_rate']:.0%}", f"{b['false_flag_rate']:.0%}"],
-                ],
-                {1, 2},
-            )
-        )
-        if s["checks"]:
-            items = "".join(
-                f"<li><span class='{'ok' if ok else 'bad'}'>{'pass' if ok else 'fail'}</span>: "
-                f"{_e(s['labels'][k])} {v:.0%} (at most {limit:.0%})</li>"
-                for k, (v, limit, ok) in s["checks"].items()
-            )
-            out.append(f"<p>Release thresholds:</p><ul>{items}</ul>")
-    out.append("</main></body></html>")
-    return "\n".join(out)
+    return (
+        f"<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'>"
+        f"<title>Spec check: the year's bids</title><style>{STYLE}{MORE}</style></head><body><main>"
+        f"<h1>Spec check: the year's bids</h1><p class=muted>{_e(r.model)}</p>{probs}{tiles}{score}"
+        f"<h2>Bids with the most to add</h2>{cards}<h2>By kind of requirement</h2>{kinds}{inj}</main></body></html>"
+    )
