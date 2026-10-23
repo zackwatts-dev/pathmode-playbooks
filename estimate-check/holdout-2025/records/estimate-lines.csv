@@ -1,0 +1,419 @@
+estimate_id,line_no,cost_code,description,labor_hours,labor,material,equipment,subcontract,total
+1864,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1080.9,51717.85,90334.65,0.0,0.0,142052.5
+1864,2,23-2100,HVAC piping: hydronic and condensate,1077.7,51563.73,68021.46,0.0,0.0,119585.19
+1864,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",975.1,46655.37,52678.04,0.0,0.0,99333.41
+1864,4,22-4000,"Plumbing fixtures and trim, per schedule",236.4,11312.68,37722.98,0.0,0.0,49035.66
+1864,5,23-0500,"Equipment per schedule: basis of design Daikin Applied, no substitutions",462.1,22109.25,6695.23,139993.73,0.0,168798.2
+1864,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,29306.11,29306.11
+1864,7,01-0000,"General conditions: supervision, small tools, permits, trucks",437.3,20923.4,11413.61,38045.36,0.0,70382.37
+1864,8,01-7836,"Extended warranty: 5-yr compressors, parts and labor",31.7,1515.42,0.0,0.0,3535.99,5051.41
+1877,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",262.6,12565.99,21948.79,0.0,0.0,34514.79
+1877,2,23-2100,HVAC piping: hydronic and condensate,260.6,12466.92,16446.02,0.0,0.0,28912.94
+1877,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",270.6,12946.24,14617.45,0.0,0.0,27563.68
+1877,4,22-4000,"Plumbing fixtures and trim, per schedule",46.0,2203.17,7346.63,0.0,0.0,9549.8
+1877,5,23-0500,Equipment per schedule: Trane or equal,109.2,5224.45,1582.09,30850.81,0.0,37657.35
+1877,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,8456.49,8456.49
+1877,7,01-0000,"General conditions: supervision, small tools, permits, trucks",106.7,5104.22,2784.32,9281.08,0.0,17169.62
+1877,8,23-0593,TAB: independent AABC agency (sub quote),0.0,0.0,0.0,0.0,3011.75,3011.75
+1877,9,01-9113,"Commissioning support: checklists, functional testing, 4 meetings",40.5,1937.93,0.0,0.0,0.0,1937.93
+1877,10,01-1400,Premium time: second shift / occupied phasing,100.6,4811.68,0.0,0.0,0.0,4811.68
+1877,11,00-7346,Prevailing wage adjustment: Knox County determination,344.8,16495.2,0.0,0.0,0.0,16495.2
+1877,12,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,4550.66,4550.66
+1877,13,01-3113,"BIM coordination: Revit model, LOD 400",44.0,2105.03,0.0,0.0,0.0,2105.03
+1877,14,23-0900,"Controls sub: DDC, integrate with Honeywell WEBs",0.0,0.0,0.0,0.0,7493.42,7493.42
+1877,15,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,880.84,880.84
+1877,16,01-8119,IAQ flush-out before occupancy,4.8,231.4,0.0,231.4,0.0,462.8
+1878,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1204.6,57633.58,100667.55,0.0,0.0,158301.13
+1878,2,23-2100,HVAC piping: refrigerant and condensate,369.4,17672.42,25554.46,0.0,0.0,43226.88
+1878,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1048.0,50141.5,58628.79,0.0,0.0,108770.29
+1878,4,22-4000,"Plumbing fixtures and trim, per schedule",227.2,10868.98,36243.45,0.0,0.0,47112.43
+1878,5,23-0500,"Equipment per schedule: basis of design Trane, no substitutions",524.8,25112.06,6689.22,138687.43,0.0,170488.71
+1878,6,23-0700,"Insulation sub: 1-1/2 in. with aluminum jacket, per spec",0.0,0.0,0.0,0.0,42553.38,42553.38
+1878,7,01-0000,"General conditions: supervision, small tools, permits, trucks",535.6,25626.45,13979.1,46596.99,0.0,86202.53
+1878,8,23-0900,"Controls sub: DDC, integrate with Distech ECLYPSE",0.0,0.0,0.0,0.0,33115.43,33115.43
+1879,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",193.7,9267.92,16188.12,0.0,0.0,25456.04
+1879,2,23-2100,HVAC piping: hydronic and condensate,132.2,6324.99,9145.99,0.0,0.0,15470.98
+1879,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",203.8,9752.2,11402.92,0.0,0.0,21155.13
+1879,4,22-4000,"Plumbing fixtures and trim, per schedule",31.5,1507.35,5026.38,0.0,0.0,6533.73
+1879,5,23-0500,"Equipment per schedule: basis of design York, no substitutions",74.5,3563.45,949.21,19218.06,0.0,23730.73
+1879,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,4875.52,4875.52
+1879,7,01-0000,"General conditions: supervision, small tools, permits, trucks",65.4,3128.7,1706.69,5688.97,0.0,10524.36
+1879,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,1892.39,1892.39
+1879,9,23-0548,Seismic restraints: delegated design and bracing,20.9,1001.33,667.55,0.0,0.0,1668.88
+1879,10,00-7346,Prevailing wage adjustment: Franklin County determination,226.2,10822.78,0.0,0.0,0.0,10822.78
+1879,11,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,3244.48,3244.48
+1879,12,23-0900,"Controls sub: DDC, integrate with Honeywell WEBs",0.0,0.0,0.0,0.0,3183.52,3183.52
+1886,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",122.7,5955.87,10403.0,0.0,0.0,16358.87
+1886,2,23-2100,HVAC piping: hydronic and condensate,89.4,4337.12,6271.51,0.0,0.0,10608.64
+1886,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",109.0,5291.6,6187.29,0.0,0.0,11478.89
+1886,4,22-4000,"Plumbing fixtures and trim, per schedule",15.7,761.8,2540.29,0.0,0.0,3302.09
+1886,5,23-0500,Equipment per schedule: York or equal,46.3,2247.31,598.63,11673.2,0.0,14519.14
+1886,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,2448.09,2448.09
+1886,7,01-0000,"General conditions: supervision, small tools, permits, trucks",41.4,2010.45,1096.69,3655.64,0.0,6762.78
+1886,8,01-9113,"Commissioning support: checklists, functional testing, 6 meetings",15.0,729.59,0.0,0.0,0.0,729.59
+1886,9,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,1970.71,1970.71
+1886,10,01-3113,"BIM coordination: Revit and Navisworks model, LOD 350",15.4,745.23,0.0,0.0,0.0,745.23
+1886,11,01-8119,IAQ flush-out before occupancy,2.7,131.75,0.0,131.75,0.0,263.51
+1889,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",511.7,24829.45,43369.16,0.0,0.0,68198.61
+1889,2,23-2100,HVAC piping: hydronic and condensate,522.3,25344.83,32721.97,0.0,0.0,58066.79
+1889,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",514.1,24946.79,32349.08,0.0,0.0,57295.86
+1889,4,22-4000,"Plumbing fixtures and trim, per schedule",106.4,5163.22,17217.15,0.0,0.0,22380.38
+1889,5,23-0500,Equipment per schedule: Carrier or equal,232.2,11269.77,3095.05,60353.41,0.0,74718.22
+1889,6,23-0700,"Insulation sub: 2 in. with aluminum jacket, per spec",0.0,0.0,0.0,0.0,19083.89,19083.89
+1889,7,01-0000,"General conditions: supervision, small tools, permits, trucks",268.6,13036.51,7111.35,23704.49,0.0,43852.35
+1889,8,23-0593,TAB: independent AABC agency (sub quote),0.0,0.0,0.0,0.0,4537.12,4537.12
+1889,9,01-9113,"Commissioning support: checklists, functional testing, 6 meetings",88.2,4280.73,0.0,0.0,0.0,4280.73
+1889,10,01-3113,"BIM coordination: Revit model, LOD 400",76.5,3710.29,0.0,0.0,0.0,3710.29
+1889,11,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,1734.99,1734.99
+1897,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1591.2,77219.39,133969.19,0.0,0.0,211188.58
+1897,2,23-2100,HVAC piping: refrigerant and condensate,374.5,18175.49,23307.77,0.0,0.0,41483.26
+1897,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",757.7,36770.97,47360.58,0.0,0.0,84131.54
+1897,4,22-4000,"Plumbing fixtures and trim, per schedule",171.7,8331.54,27594.99,0.0,0.0,35926.53
+1897,5,23-0500,Equipment per schedule: Johnson Controls or equal,558.8,27115.12,7494.02,146133.43,0.0,180742.57
+1897,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,29702.16,29702.16
+1897,7,01-0000,"General conditions: supervision, small tools, permits, trucks",430.1,20873.74,11426.86,38089.52,0.0,70390.11
+1897,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,7707.8,7707.8
+1897,9,01-7836,"Extended warranty: 3-yr compressors, parts and labor",50.6,2455.48,0.0,0.0,5729.46,8184.94
+1898,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",2062.1,100067.85,173609.35,0.0,0.0,273677.2
+1898,2,23-2100,HVAC piping: hydronic and condensate,1437.3,69750.83,100180.87,0.0,0.0,169931.7
+1898,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1910.8,92725.83,107690.88,0.0,0.0,200416.72
+1898,4,22-4000,"Plumbing fixtures and trim, per schedule",345.7,16776.29,55564.98,0.0,0.0,72341.27
+1898,5,23-0500,Equipment per schedule: Johnson Controls or equal,1004.8,48758.95,13070.69,254878.54,0.0,316708.19
+1898,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,56058.35,56058.35
+1898,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. Cx support labor",983.8,47741.71,20273.69,67578.97,0.0,135594.36
+1898,8,23-0593,TAB: independent TABB agency (sub quote),0.0,0.0,0.0,0.0,10564.38,10564.38
+1898,9,23-0548,Seismic restraints: delegated design and bracing,210.2,10202.43,6801.62,0.0,0.0,17004.05
+1898,10,01-3113,"BIM coordination: Revit and Navisworks model, LOD 300",499.2,24227.33,0.0,0.0,0.0,24227.33
+1898,11,01-5100,"Temporary heat: units, fuel, attendance",104.5,5072.73,0.0,11836.36,0.0,16909.09
+1898,12,07-8400,Firestopping: UL systems at mechanical penetrations,74.5,3616.85,2411.23,0.0,0.0,6028.08
+1898,13,23-0900,"Controls sub: DDC, integrate with Distech ECLYPSE",0.0,0.0,0.0,0.0,82151.7,82151.7
+1906,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",979.1,64141.14,82429.27,0.0,0.0,146570.41
+1906,2,23-2100,HVAC piping: hydronic and condensate,758.2,49671.07,47182.88,0.0,0.0,96853.95
+1906,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",640.1,41937.61,40011.22,0.0,0.0,81948.83
+1906,4,22-4000,"Plumbing fixtures and trim, per schedule",139.0,9106.49,22342.02,0.0,0.0,31448.51
+1906,5,23-0500,"Equipment per schedule: basis of design York, no substitutions",457.6,29976.67,6136.96,127749.79,0.0,163863.42
+1906,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,26506.75,26506.75
+1906,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. Cx support labor",476.5,31216.64,10137.74,33792.45,0.0,75146.83
+1906,8,23-0593,TAB: independent AABC agency (sub quote),0.0,0.0,0.0,0.0,6962.09,6962.09
+1906,9,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,11222.4,11222.4
+1906,10,01-5100,"Temporary heat: units, fuel, attendance",21.3,1394.66,0.0,2410.52,0.0,3805.18
+1906,11,07-8400,Firestopping: UL systems at mechanical penetrations,37.6,2465.26,1217.41,0.0,0.0,3682.67
+1914,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",259.2,12576.94,21819.95,0.0,0.0,34396.89
+1914,2,23-2100,HVAC piping: hydronic and condensate,262.1,12719.94,18269.24,0.0,0.0,30989.17
+1914,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",238.1,11556.48,13421.58,0.0,0.0,24978.07
+1914,4,22-4000,"Plumbing fixtures and trim, per schedule",54.7,2654.22,8791.07,0.0,0.0,11445.28
+1914,5,23-0500,Equipment per schedule: AAON or equal,155.2,7533.09,2019.38,39377.83,0.0,48930.29
+1914,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,8566.15,8566.15
+1914,7,01-0000,"General conditions: supervision, small tools, permits, trucks",97.7,4741.44,2595.6,8651.99,0.0,15989.03
+1914,8,23-0593,TAB: independent TABB agency (sub quote),0.0,0.0,0.0,0.0,2020.92,2020.92
+1914,9,01-9113,"Commissioning support: checklists, functional testing, 10 meetings",20.8,1010.45,0.0,0.0,0.0,1010.45
+1920,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",505.6,24535.57,42567.16,0.0,0.0,67102.73
+1920,2,23-2100,HVAC piping: hydronic and condensate,564.9,27415.18,35921.74,0.0,0.0,63336.92
+1920,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",541.4,26270.76,29462.21,0.0,0.0,55732.98
+1920,4,22-4000,"Plumbing fixtures and trim, per schedule",99.1,4810.41,15932.62,0.0,0.0,20743.03
+1920,5,23-0500,Equipment per schedule: York or equal,221.3,10741.18,3273.37,63830.64,0.0,77845.18
+1920,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,12898.43,12898.43
+1920,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. premium time",433.4,21032.38,5853.25,19510.83,0.0,46396.45
+1920,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,6288.93,6288.93
+1920,9,01-9113,"Commissioning support: checklists, functional testing, 4 meetings",52.0,2523.51,0.0,0.0,0.0,2523.51
+1920,10,23-0548,Seismic restraints: delegated design and bracing,74.9,3634.57,2423.05,0.0,0.0,6057.62
+1920,11,01-3113,"BIM coordination: Navisworks model, LOD 300",72.1,3498.9,0.0,0.0,0.0,3498.9
+1920,12,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,1462.0,1462.0
+1924,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1189.6,57727.28,93393.2,0.0,0.0,151120.48
+1924,2,23-2100,HVAC piping: refrigerant and condensate,356.7,17308.22,20697.73,0.0,0.0,38005.94
+1924,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1113.2,54023.04,64885.33,0.0,0.0,118908.36
+1924,4,22-4000,"Plumbing fixtures and trim, per schedule",203.1,9853.81,30434.4,0.0,0.0,40288.2
+1924,5,23-0500,Equipment per schedule: Daikin Applied or equal,517.3,25103.07,6900.34,134556.64,0.0,166560.05
+1924,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,35616.68,35616.68
+1924,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. premium time",1063.8,51625.99,10166.5,33888.32,0.0,95680.8
+1924,8,23-0900,"Controls sub: DDC, integrate with Automated Logic WebCTRL",0.0,0.0,0.0,0.0,31918.76,31918.76
+1952,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1018.1,49407.56,80035.57,0.0,0.0,129443.13
+1952,2,23-2100,HVAC piping: hydronic and condensate; incl. water treatment sub,1011.1,49065.71,65799.8,0.0,2112.81,116978.32
+1952,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",987.1,47902.99,51945.97,0.0,0.0,99848.97
+1952,4,22-4000,"Plumbing fixtures and trim, per schedule",179.8,8723.02,26976.35,0.0,0.0,35699.37
+1952,5,23-0500,Equipment per schedule: Johnson Controls or equal,553.3,26849.25,7190.52,140215.24,0.0,174255.01
+1952,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,40322.58,40322.58
+1952,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. TAB sub",450.3,21852.51,11785.04,39283.47,9757.97,82679.0
+1952,8,23-0548,Seismic restraints: delegated design and bracing,100.9,4897.76,3265.17,0.0,0.0,8162.94
+1952,9,23-0900,"Controls sub: DDC, integrate with Honeywell WEBs",0.0,0.0,0.0,0.0,50377.86,50377.86
+1952,10,01-8119,IAQ flush-out before occupancy,38.4,1864.93,0.0,1864.93,0.0,3729.86
+1952,11,07-8400,Firestopping: UL systems at mechanical penetrations,45.8,2223.58,1482.39,0.0,0.0,3705.97
+1952,12,01-5100,"Temporary heat: units, fuel, attendance",36.5,1771.36,0.0,4133.18,0.0,5904.55
+1952,13,01-1400,Premium time: second shift / occupied phasing,583.1,28294.79,0.0,0.0,0.0,28294.79
+1960,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",968.6,47003.99,76142.01,0.0,0.0,123146.0
+1960,2,23-2100,HVAC piping: hydronic and condensate,997.5,48404.35,64912.87,0.0,0.0,113317.21
+1960,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",926.7,44969.89,48765.32,0.0,0.0,93735.2
+1960,4,22-4000,"Plumbing fixtures and trim, per schedule",229.7,11147.33,34473.64,0.0,0.0,45620.98
+1960,5,23-0500,Equipment per schedule: Carrier or equal,566.7,27500.18,7364.85,143614.59,0.0,178479.62
+1960,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,26043.49,26043.49
+1960,7,01-0000,"General conditions: supervision, small tools, permits, trucks",397.8,19306.19,10411.81,34706.05,0.0,64424.05
+1960,8,01-9113,"Commissioning support: checklists, functional testing, 11 meetings",106.2,5153.3,0.0,0.0,0.0,5153.3
+1960,9,01-7836,"Extended warranty: 5-yr compressors, parts and labor",28.2,1366.82,0.0,0.0,3189.24,4556.06
+1960,10,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,11717.01,11717.01
+1960,11,23-0900,"Controls sub: DDC, integrate with Automated Logic WebCTRL",0.0,0.0,0.0,0.0,26689.02,26689.02
+1963,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1692.2,82119.41,133025.65,0.0,0.0,215145.06
+1963,2,23-2100,HVAC piping: refrigerant and condensate,509.2,24712.44,33140.73,0.0,0.0,57853.17
+1963,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1441.2,69936.65,75839.26,0.0,0.0,145775.91
+1963,4,22-4000,"Plumbing fixtures and trim, per schedule",309.5,15018.79,46446.31,0.0,0.0,61465.1
+1963,5,23-0500,"Equipment per schedule: basis of design Johnson Controls, no substitutions",800.5,38845.42,10403.23,215220.75,0.0,264469.4
+1963,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,44765.59,44765.59
+1963,7,01-0000,"General conditions: supervision, small tools, permits, trucks",606.4,29425.99,15869.41,52898.05,0.0,98193.46
+1963,8,23-0593,TAB: independent TABB agency (sub quote),0.0,0.0,0.0,0.0,9044.41,9044.41
+1963,9,01-7836,"Extended warranty: 5-yr compressors, parts and labor",38.4,1864.95,0.0,0.0,4351.56,6216.51
+1963,10,23-0900,"Controls sub: DDC, integrate with Johnson Controls Metasys",0.0,0.0,0.0,0.0,41315.39,41315.39
+1963,11,07-8400,Firestopping: UL systems at mechanical penetrations,36.4,1764.74,1176.49,0.0,0.0,2941.23
+1965,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1646.3,79891.16,129416.11,0.0,0.0,209307.27
+1965,2,23-2100,HVAC piping: refrigerant and condensate,501.7,24346.11,29785.64,0.0,0.0,54131.76
+1965,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1710.7,83015.8,86928.96,0.0,0.0,169944.76
+1965,4,22-4000,"Plumbing fixtures and trim, per schedule",327.1,15873.94,49090.9,0.0,0.0,64964.84
+1965,5,23-0500,Equipment per schedule: York or equal; incl. extended warranty,765.0,37121.28,10461.21,203993.54,6442.67,258018.69
+1965,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,57115.72,57115.72
+1965,7,01-0000,"General conditions: supervision, small tools, permits, trucks",892.7,43320.85,23362.9,77876.33,0.0,144560.08
+1965,8,23-0900,"Controls sub: DDC, integrate with Siemens Desigo",0.0,0.0,0.0,0.0,40109.4,40109.4
+1970,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",679.8,33316.99,53970.36,0.0,0.0,87287.35
+1970,2,23-2100,HVAC piping: refrigerant and condensate,168.1,8239.53,10080.44,0.0,0.0,18319.97
+1970,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",454.9,22297.55,23348.6,0.0,0.0,45646.16
+1970,4,22-4000,"Plumbing fixtures and trim, per schedule",136.6,6694.96,20704.47,0.0,0.0,27399.42
+1970,5,23-0500,Equipment per schedule: AAON or equal,236.1,11570.18,3522.63,68691.32,0.0,83784.14
+1970,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,17694.18,17694.18
+1970,7,01-0000,"General conditions: supervision, small tools, permits, trucks",266.2,13046.48,7035.96,23453.18,0.0,43535.62
+1970,8,23-0593,TAB: independent TABB agency (sub quote),0.0,0.0,0.0,0.0,5938.25,5938.25
+1970,9,00-7346,Prevailing wage adjustment: Licking County determination,676.7,33166.11,0.0,0.0,0.0,33166.11
+1972,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",510.6,33783.85,40538.24,0.0,0.0,74322.09
+1972,2,23-2100,HVAC piping: hydronic and condensate,644.4,42637.32,37816.54,0.0,0.0,80453.86
+1972,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",479.2,31706.05,28244.33,0.0,0.0,59950.38
+1972,4,22-4000,"Plumbing fixtures and trim, per schedule",102.6,6789.45,15553.11,0.0,0.0,22342.56
+1972,5,23-0500,Equipment per schedule: Johnson Controls or equal,244.7,16188.16,3310.94,64563.32,0.0,84062.42
+1972,6,23-0700,"Insulation sub: 2 in. with aluminum jacket, per spec",0.0,0.0,0.0,0.0,22487.75,22487.75
+1972,7,01-0000,"General conditions: supervision, small tools, permits, trucks",232.5,15383.46,6145.4,20484.66,0.0,42013.52
+1972,8,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,8044.4,8044.4
+1980,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",683.4,33494.87,54825.83,0.0,0.0,88320.7
+1980,2,23-2100,HVAC piping: hydronic and condensate,474.7,23266.65,31528.09,0.0,0.0,54794.74
+1980,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",420.4,20606.68,22579.52,0.0,0.0,43186.21
+1980,4,22-4000,"Plumbing fixtures and trim, per schedule",98.3,4816.3,15050.36,0.0,0.0,19866.66
+1980,5,23-0500,Equipment per schedule: Johnson Controls or equal,266.3,13053.63,3543.19,69092.17,0.0,85688.99
+1980,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,14304.33,14304.33
+1980,7,01-0000,"General conditions: supervision, small tools, permits, trucks",214.5,10511.95,5742.25,19140.85,0.0,35395.05
+1980,8,00-7346,Prevailing wage adjustment: Licking County determination,756.4,37070.88,0.0,0.0,0.0,37070.88
+1980,9,23-0900,"Controls sub: DDC, integrate with Johnson Controls Metasys",0.0,0.0,0.0,0.0,21399.78,21399.78
+1982,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",376.1,18431.22,30169.01,0.0,0.0,48600.23
+1982,2,23-2100,HVAC piping: refrigerant and condensate; incl. seismic bracing,136.5,6690.9,7418.15,0.0,0.0,14109.05
+1982,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",371.3,18200.14,22116.44,0.0,0.0,40316.58
+1982,4,22-4000,"Plumbing fixtures and trim, per schedule",82.6,4047.16,12646.9,0.0,0.0,16694.06
+1982,5,23-0500,"Equipment per schedule: basis of design AAON, no substitutions",165.6,8114.58,2270.85,46184.46,0.0,56569.88
+1982,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,9570.24,9570.24
+1982,7,01-0000,"General conditions: supervision, small tools, permits, trucks",158.3,7758.98,4238.42,14128.07,0.0,26125.47
+1982,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,1408.71,1408.71
+2045,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",176.0,8625.17,13958.81,0.0,0.0,22583.98
+2045,2,23-2100,HVAC piping: refrigerant and condensate,60.1,2946.92,3948.26,0.0,0.0,6895.18
+2045,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",212.3,10406.95,11274.67,0.0,0.0,21681.62
+2045,4,22-4000,"Plumbing fixtures and trim, per schedule",40.0,1959.94,6055.52,0.0,0.0,8015.46
+2045,5,23-0500,Equipment per schedule: AAON or equal,97.7,4788.03,1300.53,25360.43,0.0,31449.0
+2045,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,7709.68,7709.68
+2045,7,01-0000,"General conditions: supervision, small tools, permits, trucks",66.3,3249.43,1771.99,5906.65,0.0,10928.07
+2045,8,23-0593,TAB: independent TABB agency (sub quote),0.0,0.0,0.0,0.0,923.7,923.7
+2045,9,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,3120.87,3120.87
+2045,10,23-0900,"Controls sub: DDC, integrate with Distech ECLYPSE",0.0,0.0,0.0,0.0,5891.14,5891.14
+2045,11,07-8400,Firestopping: UL systems at mechanical penetrations,6.3,307.01,204.67,0.0,0.0,511.68
+2054,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",666.7,32677.78,52885.09,0.0,0.0,85562.87
+2054,2,23-2100,HVAC piping: hydronic and condensate,456.7,22384.59,26777.26,0.0,0.0,49161.85
+2054,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",345.8,16948.89,20363.64,0.0,0.0,37312.54
+2054,4,22-4000,"Plumbing fixtures and trim, per schedule",109.0,5343.96,16510.89,0.0,0.0,21854.84
+2054,5,23-0500,Equipment per schedule: Carrier or equal,236.4,11588.84,3245.37,63284.69,0.0,78118.9
+2054,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,19623.84,19623.84
+2054,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. premium time",719.6,35271.88,7714.22,25714.08,0.0,68700.18
+2054,8,23-0593,TAB: independent TABB agency (sub quote),0.0,0.0,0.0,0.0,3653.67,3653.67
+2054,9,01-9113,"Commissioning support: checklists, functional testing, 11 meetings",54.2,2658.26,0.0,0.0,0.0,2658.26
+2054,10,01-7836,"Extended warranty: 10-yr compressors, parts and labor",13.0,637.05,0.0,0.0,1486.45,2123.5
+2054,11,00-7346,Prevailing wage adjustment: Knox County determination,885.3,43392.09,0.0,0.0,0.0,43392.09
+2054,12,23-0900,"Controls sub: DDC, integrate with Automated Logic WebCTRL",0.0,0.0,0.0,0.0,14618.03,14618.03
+2054,13,07-8400,Firestopping: UL systems at mechanical penetrations,18.3,897.3,598.2,0.0,0.0,1495.49
+2056,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",895.3,43878.9,71012.78,0.0,0.0,114891.68
+2056,2,23-2100,HVAC piping: refrigerant and condensate,294.4,14430.14,17637.58,0.0,0.0,32067.71
+2056,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1026.8,50325.97,52648.63,0.0,0.0,102974.6
+2056,4,22-4000,"Plumbing fixtures and trim, per schedule",192.0,9409.38,29071.55,0.0,0.0,38480.93
+2056,5,23-0500,"Equipment per schedule: basis of design Johnson Controls, no substitutions",343.0,16813.31,5191.79,107839.73,0.0,129844.83
+2056,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,28028.38,28028.38
+2056,7,01-0000,"General conditions: supervision, small tools, permits, trucks",336.3,16483.02,8988.6,29961.99,0.0,55433.6
+2056,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,5325.76,5325.76
+2056,9,01-9113,"Commissioning support: checklists, functional testing, 9 meetings",64.1,3139.4,0.0,0.0,0.0,3139.4
+2059,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",904.8,44346.69,71769.84,0.0,0.0,116116.53
+2059,2,23-2100,HVAC piping: hydronic and condensate,736.4,36090.67,48354.02,0.0,0.0,84444.7
+2059,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1104.5,54136.61,58650.46,0.0,0.0,112787.07
+2059,4,22-4000,"Plumbing fixtures and trim, per schedule",177.6,8704.44,26893.54,0.0,0.0,35597.98
+2059,5,23-0500,Equipment per schedule: York or equal,432.3,21189.45,5755.52,112232.65,0.0,139177.62
+2059,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,23424.27,23424.27
+2059,7,01-0000,"General conditions: supervision, small tools, permits, trucks",312.7,15328.3,8358.9,27863.01,0.0,51550.22
+2059,8,01-1400,Premium time: second shift / occupied phasing,762.5,37369.92,0.0,0.0,0.0,37369.92
+2059,9,00-7346,Prevailing wage adjustment: Madison County determination,1246.7,61105.87,0.0,0.0,0.0,61105.87
+2059,10,23-0900,"Controls sub: DDC, integrate with Automated Logic WebCTRL",0.0,0.0,0.0,0.0,25532.81,25532.81
+2059,11,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,3856.04,3856.04
+2067,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1047.7,51799.81,83831.84,0.0,0.0,135631.65
+2067,2,23-2100,HVAC piping: hydronic and condensate,824.7,40773.08,48774.23,0.0,0.0,89547.3
+2067,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm; incl. firestopping",479.9,23725.73,27933.36,0.0,0.0,51659.09
+2067,4,22-4000,"Plumbing fixtures and trim, per schedule",168.5,8329.83,25736.14,0.0,0.0,34065.97
+2067,5,23-0500,Equipment per schedule: York or equal,357.8,17690.38,4954.06,96604.19,0.0,119248.64
+2067,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,23361.83,23361.83
+2067,7,01-0000,"General conditions: supervision, small tools, permits, trucks",232.5,11494.34,6268.15,20893.82,0.0,38656.31
+2067,8,23-0593,TAB: independent AABC agency (sub quote),0.0,0.0,0.0,0.0,4675.43,4675.43
+2067,9,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,2344.34,2344.34
+2067,10,01-5100,"Temporary heat: units, fuel, attendance",23.9,1181.61,0.0,2757.08,0.0,3938.69
+2069,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",593.3,29332.61,47471.34,0.0,0.0,76803.96
+2069,2,23-2100,HVAC piping: refrigerant and condensate,173.2,8560.87,11469.79,0.0,0.0,20030.67
+2069,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",500.4,24741.95,26804.91,0.0,0.0,51546.86
+2069,4,22-4000,"Plumbing fixtures and trim, per schedule",117.2,5792.9,17897.94,0.0,0.0,23690.84
+2069,5,23-0500,Equipment per schedule: Daikin Applied or equal,323.3,15984.76,4341.81,84665.35,0.0,104991.93
+2069,6,23-0700,"Insulation sub: 1-1/2 in. with PVC jacket, per spec",0.0,0.0,0.0,0.0,20202.15,20202.15
+2069,7,01-0000,"General conditions: supervision, small tools, permits, trucks",250.3,12373.08,6747.35,22491.16,0.0,41611.59
+2069,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,3240.1,3240.1
+2069,9,07-8400,Firestopping: UL systems at mechanical penetrations,23.9,1181.79,787.86,0.0,0.0,1969.65
+2069,10,23-0900,"Controls sub: DDC, integrate with Johnson Controls Metasys",0.0,0.0,0.0,0.0,15566.43,15566.43
+2074,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",743.6,36762.97,59255.15,0.0,0.0,96018.11
+2074,2,23-2100,HVAC piping: hydronic and condensate,627.8,31039.78,41418.18,0.0,0.0,72457.97
+2074,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",454.3,22462.65,24236.85,0.0,0.0,46699.5
+2074,4,22-4000,"Plumbing fixtures and trim, per schedule",141.6,7002.83,21548.43,0.0,0.0,28551.26
+2074,5,23-0500,Equipment per schedule: Trane or equal,302.5,14954.65,4077.36,79508.57,0.0,98540.58
+2074,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,18748.7,18748.7
+2074,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. Cx support labor",329.0,16266.88,6525.75,21752.5,0.0,44545.12
+2074,8,01-7836,"Extended warranty: 10-yr compressors, parts and labor",18.7,922.12,0.0,0.0,2151.6,3073.72
+2074,9,01-8119,IAQ flush-out before occupancy,16.8,828.41,0.0,828.41,0.0,1656.81
+2074,10,01-3113,"BIM coordination: Revit and Navisworks model, LOD 400",172.5,8529.62,0.0,0.0,0.0,8529.62
+2099,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",518.9,25655.99,41424.17,0.0,0.0,67080.16
+2099,2,23-2100,HVAC piping: refrigerant and condensate,154.4,7634.51,9111.34,0.0,0.0,16745.86
+2099,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",445.6,22028.95,26405.37,0.0,0.0,48434.32
+2099,4,22-4000,"Plumbing fixtures and trim, per schedule",102.6,5071.6,15632.81,0.0,0.0,20704.41
+2099,5,23-0500,Equipment per schedule: Johnson Controls or equal,221.6,10958.2,3054.74,59567.41,0.0,73580.34
+2099,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,20334.51,20334.51
+2099,7,01-0000,"General conditions: supervision, small tools, permits, trucks",200.0,9890.35,5371.2,17904.01,0.0,33165.57
+2099,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,4017.51,4017.51
+2099,9,01-1400,Premium time: second shift / occupied phasing,154.9,7656.68,0.0,0.0,0.0,7656.68
+2108,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",2911.6,143955.66,220236.79,0.0,0.0,364192.45
+2108,2,23-2100,HVAC piping: refrigerant and condensate,843.5,41705.31,50856.24,0.0,0.0,92561.55
+2108,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm; incl. firestopping",2825.8,139711.9,149480.53,0.0,0.0,289192.42
+2108,4,22-4000,"Plumbing fixtures and trim, per schedule",676.1,33429.78,103044.61,0.0,0.0,136474.4
+2108,5,23-0500,Equipment per schedule: Carrier or equal,1641.2,81141.81,25038.47,488250.14,0.0,594430.42
+2108,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,95948.46,95948.46
+2108,7,01-0000,"General conditions: supervision, small tools, permits, trucks",1235.5,61084.04,33173.24,110577.47,0.0,204834.74
+2108,8,23-0593,TAB: independent TABB agency (sub quote),0.0,0.0,0.0,0.0,17893.67,17893.67
+2108,9,01-9113,"Commissioning support: checklists, functional testing, 10 meetings",381.7,18872.83,0.0,0.0,0.0,18872.83
+2108,10,23-0900,"Controls sub: DDC, integrate with Distech ECLYPSE",0.0,0.0,0.0,0.0,51283.52,51283.52
+2125,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",514.0,25412.02,42209.24,0.0,0.0,67621.26
+2125,2,23-2100,HVAC piping: hydronic and condensate,392.7,19413.89,24353.91,0.0,0.0,43767.81
+2125,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",467.0,23089.17,24790.82,0.0,0.0,47879.99
+2125,4,22-4000,"Plumbing fixtures and trim, per schedule",79.7,3941.54,12498.59,0.0,0.0,16440.13
+2125,5,23-0500,"Equipment per schedule: basis of design York, no substitutions",203.5,10062.64,3099.58,64743.02,0.0,77905.25
+2125,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,12325.77,12325.77
+2125,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. TAB sub",190.7,9428.83,5158.57,17195.25,2138.87,33921.51
+2125,8,01-9113,"Commissioning support: checklists, functional testing, 11 meetings",34.2,1689.06,0.0,0.0,0.0,1689.06
+2125,9,23-0900,"Controls sub: DDC, integrate with Distech ECLYPSE",0.0,0.0,0.0,0.0,16414.75,16414.75
+2125,10,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,1800.35,1800.35
+2125,11,01-8119,IAQ flush-out before occupancy,14.8,732.09,0.0,732.09,0.0,1464.19
+2130,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1520.1,75155.97,124833.71,0.0,0.0,199989.68
+2130,2,23-2100,HVAC piping: refrigerant and condensate,493.5,24401.08,30610.13,0.0,0.0,55011.21
+2130,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1602.3,79222.67,85061.29,0.0,0.0,164283.96
+2130,4,22-4000,"Plumbing fixtures and trim, per schedule",285.9,14133.24,44816.36,0.0,0.0,58949.6
+2130,5,23-0500,Equipment per schedule: Trane or equal,813.4,40215.36,12387.48,241555.96,0.0,294158.8
+2130,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,59139.13,59139.13
+2130,7,01-0000,"General conditions: supervision, small tools, permits, trucks",598.0,29567.15,16176.38,53921.28,0.0,99664.82
+2130,8,23-0593,TAB: independent AABC agency (sub quote),0.0,0.0,0.0,0.0,8493.95,8493.95
+2130,9,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,15599.55,15599.55
+2130,10,01-5100,"Temporary heat: units, fuel, attendance",37.1,1836.35,0.0,4284.81,0.0,6121.16
+2130,11,23-0900,"Controls sub: DDC, integrate with Honeywell WEBs",0.0,0.0,0.0,0.0,40545.47,40545.47
+2134,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",87.0,4301.58,7144.91,0.0,0.0,11446.49
+2134,2,23-2100,HVAC piping: hydronic and condensate,88.3,4364.14,5474.63,0.0,0.0,9838.77
+2134,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",80.0,3957.24,4248.89,0.0,0.0,8206.13
+2134,4,22-4000,"Plumbing fixtures and trim, per schedule",16.1,797.2,2527.93,0.0,0.0,3325.13
+2134,5,23-0500,Equipment per schedule: Daikin Applied or equal,52.9,2613.61,805.07,15698.81,0.0,19117.49
+2134,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,2471.8,2471.8
+2134,7,01-0000,"General conditions: supervision, small tools, permits, trucks",34.8,1719.23,940.6,3135.35,0.0,5795.18
+2134,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,696.68,696.68
+2134,9,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,1912.0,1912.0
+2134,10,23-0900,"Controls sub: DDC, integrate with Automated Logic WebCTRL",0.0,0.0,0.0,0.0,2162.86,2162.86
+2134,11,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,183.52,183.52
+2143,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",260.7,12967.42,21538.82,0.0,0.0,34506.24
+2143,2,23-2100,HVAC piping: refrigerant and condensate,63.7,3166.74,4354.5,0.0,0.0,7521.24
+2143,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",266.2,13245.28,14727.5,0.0,0.0,27972.78
+2143,4,22-4000,"Plumbing fixtures and trim, per schedule",43.9,2183.78,6924.73,0.0,0.0,9108.51
+2143,5,23-0500,"Equipment per schedule: basis of design AAON, no substitutions",140.8,7005.83,1898.24,41128.64,0.0,50032.71
+2143,6,23-0700,"Insulation sub: 1-1/2 in. with stainless steel jacket, per spec",0.0,0.0,0.0,0.0,9752.94,9752.94
+2143,7,01-0000,"General conditions: supervision, small tools, permits, trucks",143.6,7146.22,3909.75,13032.49,0.0,24088.46
+2143,8,23-0900,"Controls sub: DDC, integrate with Siemens Desigo",0.0,0.0,0.0,0.0,4479.73,4479.73
+2143,9,01-5100,"Temporary heat: units, fuel, attendance",11.7,582.62,0.0,1359.45,0.0,1942.07
+2143,10,07-8400,Firestopping: UL systems at mechanical penetrations,4.8,237.4,158.27,0.0,0.0,395.67
+2143,11,01-9113,"Commissioning support: checklists, functional testing, 6 meetings",35.4,1759.71,0.0,0.0,0.0,1759.71
+2147,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1379.3,68619.13,114029.57,0.0,0.0,182648.7
+2147,2,23-2100,HVAC piping: refrigerant and condensate,412.5,20523.47,25209.21,0.0,0.0,45732.68
+2147,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",888.7,44211.86,54543.68,0.0,0.0,98755.54
+2147,4,22-4000,"Plumbing fixtures and trim, per schedule",187.4,9321.67,29572.82,0.0,0.0,38894.5
+2147,5,23-0500,Equipment per schedule: Carrier or equal,537.8,26753.54,7481.1,145881.47,0.0,180116.1
+2147,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,33987.35,33987.35
+2147,7,01-0000,"General conditions: supervision, small tools, permits, trucks",381.8,18996.72,10402.47,34674.91,0.0,64074.11
+2147,8,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,11411.64,11411.64
+2147,9,01-5100,"Temporary heat: units, fuel, attendance",46.0,2290.16,0.0,5343.71,0.0,7633.87
+2147,10,07-8400,Firestopping: UL systems at mechanical penetrations,30.2,1504.5,1003.0,0.0,0.0,2507.5
+2149,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",1240.2,61699.12,102530.07,0.0,0.0,164229.19
+2149,2,23-2100,HVAC piping: refrigerant and condensate,455.3,22649.78,28426.54,0.0,0.0,51076.33
+2149,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",824.9,41040.54,44085.87,0.0,0.0,85126.41
+2149,4,22-4000,"Plumbing fixtures and trim, per schedule",178.3,8868.43,28134.91,0.0,0.0,37003.34
+2149,5,23-0500,"Equipment per schedule: basis of design Johnson Controls, no substitutions",593.2,29509.93,9098.96,189163.84,0.0,227772.73
+2149,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,30218.27,30218.27
+2149,7,01-0000,"General conditions: supervision, small tools, permits, trucks",440.8,21932.28,12009.97,40033.22,0.0,73975.47
+2149,8,01-9113,"Commissioning support: checklists, functional testing, 11 meetings",72.3,3598.44,0.0,0.0,0.0,3598.44
+2149,9,00-7346,Prevailing wage adjustment: Franklin County determination,1378.3,68572.88,0.0,0.0,0.0,68572.88
+2149,10,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,12604.69,12604.69
+2149,11,07-8400,Firestopping: UL systems at mechanical penetrations,39.0,1938.05,1292.04,0.0,0.0,3230.09
+2155,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",544.5,27091.3,45019.65,0.0,0.0,72110.95
+2155,2,23-2100,HVAC piping: refrigerant and condensate,170.5,8480.14,11666.27,0.0,0.0,20146.41
+2155,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",510.7,25405.01,28261.24,0.0,0.0,53666.25
+2155,4,22-4000,"Plumbing fixtures and trim, per schedule",100.4,4997.21,15853.54,0.0,0.0,20850.75
+2155,5,23-0500,Equipment per schedule: Trane or equal,254.5,12660.36,3433.77,66958.5,0.0,83052.62
+2155,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,15540.34,15540.34
+2155,7,01-0000,"General conditions: supervision, small tools, permits, trucks",229.5,11418.36,6252.61,20842.04,0.0,38513.01
+2155,8,23-0593,TAB: independent AABC agency (sub quote),0.0,0.0,0.0,0.0,4362.69,4362.69
+2155,9,01-9113,"Commissioning support: checklists, functional testing, 4 meetings",69.9,3478.52,0.0,0.0,0.0,3478.52
+2155,10,07-8400,Firestopping: UL systems at mechanical penetrations,15.0,746.53,497.69,0.0,0.0,1244.22
+2168,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",169.7,8443.91,14047.9,0.0,0.0,22491.81
+2168,2,23-2100,HVAC piping: refrigerant and condensate,56.6,2817.5,3540.14,0.0,0.0,6357.64
+2168,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",163.4,8129.35,8742.54,0.0,0.0,16871.89
+2168,4,22-4000,"Plumbing fixtures and trim, per schedule",31.5,1565.47,4972.08,0.0,0.0,6537.54
+2168,5,23-0500,Equipment per schedule: Trane or equal,69.6,3462.35,1066.27,20792.23,0.0,25320.85
+2168,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,4996.29,4996.29
+2168,7,01-0000,"General conditions: supervision, small tools, permits, trucks",64.3,3198.61,1750.25,5834.17,0.0,10783.04
+2177,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",571.3,28423.31,47287.07,0.0,0.0,75710.38
+2177,2,23-2100,HVAC piping: hydronic and condensate,488.8,24317.38,33492.03,0.0,0.0,57809.41
+2177,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm; incl. firestopping",548.2,27274.15,29947.69,0.0,0.0,57221.84
+2177,4,22-4000,"Plumbing fixtures and trim, per schedule",115.2,5732.69,18207.6,0.0,0.0,23940.29
+2177,5,23-0500,"Equipment per schedule: basis of design Johnson Controls, no substitutions",237.9,11837.61,2978.95,61324.3,1961.94,78102.8
+2177,6,23-0700,Insulation sub: per code minimum,0.0,0.0,0.0,0.0,12764.13,12764.13
+2177,7,01-0000,"General conditions: supervision, small tools, permits, trucks",219.2,10906.13,5967.74,19892.45,0.0,36766.32
+2177,8,01-9113,"Commissioning support: checklists, functional testing, 9 meetings",42.1,2094.87,0.0,0.0,0.0,2094.87
+2177,9,00-7346,Prevailing wage adjustment: Franklin County determination,754.9,37557.24,0.0,0.0,0.0,37557.24
+2177,10,23-0900,"Controls sub: DDC, integrate with Honeywell WEBs",0.0,0.0,0.0,0.0,15543.2,15543.2
+2191,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",843.3,41953.97,69797.66,0.0,0.0,111751.64
+2191,2,23-2100,HVAC piping: hydronic and condensate,649.6,32318.86,40607.99,0.0,0.0,72926.85
+2191,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",768.7,38242.93,41127.57,0.0,0.0,79370.51
+2191,4,22-4000,"Plumbing fixtures and trim, per schedule",143.9,7161.43,22745.43,0.0,0.0,29906.86
+2191,5,23-0500,Equipment per schedule: York or equal,316.8,15762.42,4854.22,94657.22,0.0,115273.85
+2191,6,23-0700,"Insulation sub: 1-1/2 in. with aluminum jacket, per spec",0.0,0.0,0.0,0.0,30185.12,30185.12
+2191,7,01-0000,"General conditions: supervision, small tools, permits, trucks; incl. TAB sub",313.2,15582.92,8526.83,28422.77,5718.72,58251.24
+2191,8,01-9113,"Commissioning support: checklists, functional testing, 7 meetings",83.7,4165.31,0.0,0.0,0.0,4165.31
+2191,9,23-0548,Seismic restraints: delegated design and bracing,95.2,4734.8,3156.53,0.0,0.0,7891.33
+2191,10,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,10408.29,10408.29
+2191,11,23-0900,"Controls sub: DDC, integrate with Honeywell WEBs",0.0,0.0,0.0,0.0,20784.8,20784.8
+2191,12,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,1526.07,1526.07
+2191,13,01-1400,Premium time: second shift / occupied phasing,625.1,31099.68,0.0,0.0,0.0,31099.68
+2194,1,23-3100,"Ductwork: galvanized, fabricated in shop, per SMACNA",908.8,45212.64,75219.01,0.0,0.0,120431.65
+2194,2,23-2100,HVAC piping: hydronic and condensate,752.8,37452.64,47058.48,0.0,0.0,84511.12
+2194,3,22-1100,"Plumbing piping: domestic water, sanitary, vent, storm",1206.5,60024.96,64552.6,0.0,0.0,124577.57
+2194,4,22-4000,"Plumbing fixtures and trim, per schedule",121.3,6034.16,19165.1,0.0,0.0,25199.26
+2194,5,23-0500,Equipment per schedule: Trane or equal; incl. extended warranty,395.3,19664.35,5720.8,111555.54,2538.68,139479.37
+2194,6,23-0700,"Insulation sub: 1-1/2 in. with PVC jacket, per spec",0.0,0.0,0.0,0.0,31596.98,31596.98
+2194,7,01-0000,"General conditions: supervision, small tools, permits, trucks",360.7,17945.91,9819.84,32732.8,0.0,60498.55
+2194,8,23-0593,TAB: independent NEBB agency (sub quote),0.0,0.0,0.0,0.0,8252.38,8252.38
+2194,9,01-9113,"Commissioning support: checklists, functional testing, 12 meetings",125.2,6230.77,0.0,0.0,0.0,6230.77
+2194,10,00-7346,Prevailing wage adjustment: Franklin County determination,1325.5,65944.19,0.0,0.0,0.0,65944.19
+2194,11,00-6113,Payment and performance bond,0.0,0.0,0.0,0.0,12200.18,12200.18
+2194,12,01-3113,"BIM coordination: Navisworks model, LOD 400",242.3,12054.78,0.0,0.0,0.0,12054.78
+2194,13,23-0900,"Controls sub: DDC, integrate with Johnson Controls Metasys",0.0,0.0,0.0,0.0,28896.09,28896.09
+2194,14,23-2500,"Water treatment: clean, flush, 1-yr service (sub)",0.0,0.0,0.0,0.0,3067.7,3067.7
+2194,15,07-8400,Firestopping: UL systems at mechanical penetrations,35.7,1775.35,1183.57,0.0,0.0,2958.92

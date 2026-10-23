@@ -1,0 +1,41 @@
+project_id,name,building_type,work_type,gross_sf,public_owner,county,delivery,bid_due,owner,general_contractor
+2020,Tolland Office Partners: Tenant Floors 3-5 Tenant Fit-Out,office,renovation,25215,0,Franklin,hard bid,2025-01-01,Tolland Office Partners,Ashlar Construction Managers
+2032,Harmon Regional Hospital: 4th Floor Medical-Surgical Unit Expansion,healthcare,renovation,2643,1,Knox,hard bid,2025-01-20,Harmon Regional Hospital,Corwin Saye Construction
+2034,Pellston Manufacturing: Cold Storage Building Office and Locker Renovation,industrial,renovation,32331,0,Union,hard bid,2025-01-20,Pellston Manufacturing,Rook Construction
+2037,Harmon Regional Hospital: Emergency Department Renovation,healthcare,renovation,1749,1,Franklin,hard bid,2025-01-20,Harmon Regional Hospital,Brightline Construction
+2044,Harmon Regional Hospital: Medical Office Building Renovation,healthcare,renovation,1064,1,Knox,hard bid,2025-01-27,Harmon Regional Hospital,Brightline Construction
+2040,Vantage Diagnostics: Vivarium Renovation,lab,renovation,4491,0,Franklin,hard bid,2025-01-28,Vantage Diagnostics,Ridgeline Builders
+2052,Fairway Plaza LLC: Retail Center New Store,retail,new construction,21381,0,Madison,hard bid,2025-02-03,Fairway Plaza LLC,Northgate Construction
+2061,Riverbend Health: Imaging Department New Building,healthcare,new construction,10823,0,Franklin,hard bid,2025-02-03,Riverbend Health,Vanterpool Builders
+2069,Laurel Ridge Community College: Residence Hall New Building,higher-ed,new construction,7674,1,Franklin,negotiated,2025-02-11,Laurel Ridge Community College,Moreland Construction
+2079,Ashby College: Library New Building,higher-ed,new construction,2465,0,Madison,hard bid,2025-02-18,Ashby College,Brightline Construction
+2075,Kestrel Valley Health: Imaging Department Expansion,healthcare,renovation,5630,0,Union,hard bid,2025-02-28,Kestrel Valley Health,Vanterpool Builders
+2084,Linden Row Residential: Apartments New Building,multifamily,new construction,14490,0,Franklin,hard bid,2025-03-05,Linden Row Residential,Brightline Construction
+2119,Riverbend Health: Medical Office Building New Building,healthcare,new construction,6410,0,Franklin,negotiated,2025-04-03,Riverbend Health,Brightline Construction
+2125,Millbrook City Schools: Elementary School Addition and Renovation,K-12 school,renovation,20278,1,Franklin,hard bid,2025-04-11,Millbrook City Schools,Corwin Saye Construction
+2126,Calvary Street Partners: Senior Living Renovation,multifamily,renovation,37558,0,Franklin,hard bid,2025-04-14,Calvary Street Partners,Brightline Construction
+2128,Brightwater Commons LLC: Office Building Core and Shell,office,new construction,20317,0,Licking,hard bid,2025-04-17,Brightwater Commons LLC,Corwin Saye Construction
+2135,Sixty-Two West LLC: Office Building Core and Shell,office,new construction,6889,0,Licking,negotiated,2025-04-23,Sixty-Two West LLC,Corwin Saye Construction
+2133,Whitcomb University: Library New Building,higher-ed,new construction,4727,1,Franklin,direct,2025-04-25,Whitcomb University,Brightline Construction
+2143,Whitcomb University: Residence Hall New Building,higher-ed,new construction,4867,1,Licking,negotiated,2025-05-07,Whitcomb University,Brightline Construction
+2141,Linden Row Residential: Mixed-Use Building Renovation,multifamily,renovation,9232,0,Licking,hard bid,2025-05-09,Linden Row Residential,Ashlar Construction Managers
+2213,Harmon Regional Hospital: Emergency Department New Building,healthcare,new construction,989,1,Franklin,hard bid,2025-07-07,Harmon Regional Hospital,Northgate Construction
+2236,Laurel Ridge Community College: Athletics Center Mechanical Renewal,higher-ed,renovation,8337,1,Knox,negotiated,2025-07-14,Laurel Ridge Community College,Brightline Construction
+2233,Union Mill Apartments LLC: Apartments New Building,multifamily,new construction,11885,0,Franklin,hard bid,2025-07-15,Union Mill Apartments LLC,Moreland Construction
+2229,Brightwater Commons LLC: Tenant Floors 3-5 Tenant Fit-Out,office,renovation,21918,0,Madison,hard bid,2025-07-21,Brightwater Commons LLC,Brightline Construction
+2251,Tolland Office Partners: Tenant Floors 3-5 Core and Shell,office,new construction,9959,0,Franklin,hard bid,2025-07-28,Tolland Office Partners,Brightline Construction
+2243,Harbor Lane Retail: Retail Center Remodel,retail,renovation,19825,0,Fairfield,hard bid,2025-07-30,Harbor Lane Retail,Brightline Construction
+2253,Haverford Plains City Schools: High School HVAC Renovation,K-12 school,renovation,12094,1,Franklin,hard bid,2025-08-04,Haverford Plains City Schools,Moreland Construction
+2275,Ardent Foods: Production Facility New Building,industrial,new construction,7771,0,Franklin,hard bid,2025-09-04,Ardent Foods,Marlow Construction Co.
+2289,Harbor Lane Retail: Restaurant Row Tenant Fit-Out,retail,renovation,102054,0,Franklin,hard bid,2025-09-12,Harbor Lane Retail,Ridgeline Builders
+2308,St. Brendan Medical Center: 4th Floor Medical-Surgical Unit New Building,healthcare,new construction,2623,0,Franklin,negotiated,2025-10-02,St. Brendan Medical Center,Corwin Saye Construction
+2316,Cedar Run Local Schools: High School New Building,K-12 school,new construction,15575,1,Franklin,hard bid,2025-10-06,Cedar Run Local Schools,Brightline Construction
+2310,Tolland Office Partners: Tenant Floors 3-5 Interior Renovation,office,renovation,2253,0,Franklin,hard bid,2025-10-13,Tolland Office Partners,Corwin Saye Construction
+2327,Calvary Street Partners: Mixed-Use Building New Building,multifamily,new construction,3553,0,Franklin,negotiated,2025-10-24,Calvary Street Partners,Ridgeline Builders
+2329,Alder Creek Local Schools: High School New Building,K-12 school,new construction,10035,1,Franklin,negotiated,2025-11-03,Alder Creek Local Schools,Northgate Construction
+2328,Laurel Ridge Community College: Student Union New Building,higher-ed,new construction,8802,1,Franklin,hard bid,2025-11-07,Laurel Ridge Community College,Brightline Construction
+2334,Calvary Street Partners: Senior Living Renovation,multifamily,renovation,12677,0,Franklin,hard bid,2025-11-17,Calvary Street Partners,Ashlar Construction Managers
+2350,Fairway Plaza LLC: Retail Center Tenant Fit-Out,retail,renovation,5413,0,Franklin,hard bid,2025-12-08,Fairway Plaza LLC,Ridgeline Builders
+2357,Whitcomb University: Athletics Center Mechanical Renewal,higher-ed,renovation,8080,1,Franklin,hard bid,2025-12-15,Whitcomb University,Daventry Construction
+2384,St. Brendan Medical Center: Emergency Department New Building,healthcare,new construction,4282,0,Franklin,hard bid,2025-12-26,St. Brendan Medical Center,Brightline Construction
+2366,Whitcomb University Research: Vivarium New Building,lab,new construction,4208,1,Franklin,hard bid,2025-12-30,Whitcomb University Research,Daventry Construction
