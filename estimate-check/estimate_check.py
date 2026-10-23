@@ -85,6 +85,9 @@ STATUS_WORDS = {  # a status other than base bid must quote words like these
 SYSTEM_CODES = {"23-3100": "ductwork", "23-2100": "HVAC piping", "22-1100": "plumbing", "23-0500": "equipment"}
 BASE_CODES = ("01-0000", "23-3100", "23-2100", "22-1100", "22-4000", "23-0500", "23-0700")
 BUDGET_PRICED = ("night", "prevailing")  # their cost lands on the labor lines, so history prices them from budgets
+# A premium on a line the estimate already carries: past jobs can't separate it from the line, so it's a rule
+# (the chief estimator's), as a share of this estimate's own line. Added after the held-back test (README).
+LINE_PRICED = {"manufacturer": ("23-0500", 0.08, 0.05, 0.12), "insulation": ("23-0700", 0.45, 0.30, 0.60)}
 PREVAILING_RATE = 1.20  # a labor rate this far over the month's usual rate is a prevailing-wage rate
 PRICE_MIN_JOBS = 8  # jobs of the same building type needed to price a gap from them; otherwise all types
 LABOR_MIN_JOBS = 12  # an estimator's completed jobs with that system needed for a labor flag
@@ -532,6 +535,11 @@ def check_estimate(rv: Review, data: Data, hist: History) -> None:
             continue
         seen.add(r.kind)
         if priced(r.kind, r, e, lines, data):
+            continue
+        if r.kind in LINE_PRICED:
+            code, mid, lo, hi = LINE_PRICED[r.kind]
+            amt = sum(line_amount(ln) for ln in lines if ln["cost_code"] == code)
+            rv.gaps.append(Gap(r.kind, r.source, r.quote, mid * amt, lo * amt, hi * amt, f"a rule: {mid:.0%} of the estimate's {code} line"))
             continue
         sh = hist.share(r.kind, p.get("building_type", ""), rv.ready_on)
         if not sh:
