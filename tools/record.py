@@ -74,6 +74,45 @@ class ClaudeCLI:
         return done.stdout.strip()
 
 
+class _Collect:
+    """A stand-in that answers nothing: it notes each call the sample run would make, and fails it."""
+
+    name = "collect"
+
+    def __init__(self, key, known):
+        self.key, self.known, self.asks = key, known, {}
+
+    def complete(self, system: str, user: str, max_tokens: int = 2000) -> str:
+        k = self.key(system, user)
+        if k in self.known:
+            return self.known[k]
+        self.asks[k] = (system, user, max_tokens)
+        raise llm.ModelError("collecting")
+
+
+def prefetch(module, model: Recording, n: int) -> None:
+    """Ask every call the sample run makes, n at a time, into the recording, as real calls. The run afterwards finds
+    them answered, and asks anything that only comes up after an answer (a retry) itself."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    collect = _Collect(model.key, model.keep)
+    with tempfile.TemporaryDirectory() as out:
+        module.sample_run(collect, Path(out))
+
+    def ask(item):
+        k, (system, user, max_tokens) = item
+        try:
+            return k, model.inner.complete(system, user, max_tokens)
+        except Exception:  # noqa: BLE001 - left for the run afterwards to ask again
+            return k, None
+
+    with ThreadPoolExecutor(n) as pool:
+        for k, answer in pool.map(ask, collect.asks.items()):
+            if answer is not None:
+                model.answers[k] = answer
+                model.calls += 1
+
+
 def load(slug: str):
     folder = ROOT / slug
     script = folder / f"{slug.replace('-', '_')}.py"
@@ -95,6 +134,13 @@ def main() -> None:
     p.add_argument(
         "--keep", action="store_true", help="reuse recorded answers whose inputs haven't changed; ask only the rest"
     )
+    p.add_argument(
+        "--parallel",
+        type=int,
+        default=0,
+        metavar="N",
+        help="ask N calls at a time (for a playbook whose sample run keeps going when a call fails, as RFQ intake's)",
+    )
     args = p.parse_args()
     folder, module = load(args.slug)
     if not hasattr(module, "replay_key"):
@@ -106,6 +152,8 @@ def main() -> None:
     path = folder / "sample-data" / "recorded-run.json"
     keep = json.loads(path.read_text())["answers"] if args.keep and path.exists() else {}
     model = Recording(inner, module.replay_key, keep)
+    if args.parallel and hasattr(module, "sample_run"):
+        prefetch(module, model, args.parallel)
     with tempfile.TemporaryDirectory() as out:
         if hasattr(module, "sample_run"):
             module.sample_run(model, Path(out))
