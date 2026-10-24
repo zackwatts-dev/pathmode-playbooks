@@ -85,7 +85,6 @@ python3 supplier-agreements/supplier_agreements.py --data supplier-agreements/ho
 
 # A real model: an API account whose terms say your data isn't used for training
 ANTHROPIC_API_KEY=... python3 supplier-agreements/supplier_agreements.py --sample
-PLAYBOOK_PROVIDER=openai OPENAI_API_KEY=... PLAYBOOK_MODEL=... python3 supplier-agreements/supplier_agreements.py --sample
 ```
 
 It needs Python 3.11 or later and `pdftotext` (poppler; `apt install poppler-utils` or `brew install poppler`). Nothing else.

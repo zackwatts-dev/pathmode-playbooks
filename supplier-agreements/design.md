@@ -16,7 +16,7 @@ In March each supplier sends a statement of what it says it owes us, and we acce
 ## What it does
 
 For the program year just ended:
-1. **Read each supplier's documents** (AI). An AI model (OpenAI's API) reads every agreement, amendment, program sheet and email for a supplier, one supplier at a time. It returns each term in a fixed structure:
+1. **Read each supplier's documents** (AI). An AI model (Claude, through Anthropic's API) reads every agreement, amendment, program sheet and email for a supplier, one supplier at a time. It returns each term in a fixed structure:
    - kind (volume tiers, growth, product line, co-op, freight prepaid, stock rotation, eligible locations);
    - the numbers (tiers, rates, thresholds, allowances, deadlines);
    - what purchases it covers, and the dates it applies;
