@@ -715,12 +715,12 @@ def test_the_replayed_recording_keeps_every_rule(tmp_path):
     from a matched customer; the injection email goes to a person; nothing is let through wrong."""
     replay = ri.Replay(RECORDED)
     run_, _ = ri.sample_run(replay, tmp_path)
-    assert len(run_.results) == 210  # 136 before the quote desk's re-quotes sent in by email
+    assert len(run_.results) == 196  # May 2026's sample (210 in May 2024's with the desk's re-quotes, 136 before)
     assert run_.scored["n"][ri.LET_THROUGH] == 0
     for r in run_.results:
         if r.status == ri.READY:
             assert r.customer and r.lines and all(ln.part and ln.revision and ln.quantity for ln in r.lines)
-    inj = next(r for r in run_.results if r.mail.file == "0513-1229-request-for-quote-mau-20679.eml")
+    inj = next(r for r in run_.results if r.mail.file == "0512-0717-request-for-quote-gra-97280.eml")  # May 2026's
     assert inj.status in (ri.REVIEW, ri.FAILED)
     assert run_.count(ri.FAILED) >= run_.misses
     if run_.misses:
@@ -994,10 +994,10 @@ def test_the_replay_scores_and_forecasts(replayed):
     run_, _ = replayed
     s = run_.scored
     assert s["n"][ri.LET_THROUGH] == 0 and s["passed"] and run_.count(ri.FAILED) == 0
-    # With every request read and asked about the day it arrives, May's forecast flags only the three April requests
-    # that were already past their due dates when the run began (the page says so).
+    # With every request read and asked about the day it arrives, May's forecast flags only the April request that
+    # was already past its due date when the run began (three in May 2024's sample; one in May 2026's).
     assert run_.plan and run_.plan.queue
-    assert len(run_.plan.at_risk) == 3 and all("already past its due date" in why for _, why in run_.plan.at_risk)
+    assert len(run_.plan.at_risk) == 1 and all("already past its due date" in why for _, why in run_.plan.at_risk)
 
 
 # --- the independent review's fixes ---------------------------------------------------------------------------
