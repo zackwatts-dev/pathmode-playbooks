@@ -1358,3 +1358,139 @@ def test_a_question_that_asks_for_the_wrong_thing_is_scored_as_the_wrong_place(t
     assert any("asking for quantity" in x for x in ri.score([waiting], key)["groups"][ri.WRONG_PLACE])
     key.write_text(KEY_HEAD + f"{f},new rfq,needs info,estimating,6,1,LUT-22222,A,,2024-06-03,,,x,quantity\n")
     assert ri.score([waiting], key)["groups"][ri.RIGHT] == [f]
+
+
+# --- general forms, after the quote desk's three held-back months (2024-11 to 2025-01, now development data) ----------
+# The checks met each month's new layouts as one-off phrasings. These tests ask for the general rule instead: any
+# common date style, an item written over two lines, any usual ERP column name. Synthetic examples, none copied.
+
+
+@pytest.mark.parametrize(
+    "words, want",
+    [
+        ("due Jun-03", date(2024, 6, 3)),
+        ("Jun.3", date(2024, 6, 3)),
+        ("need by 03-Jun", date(2024, 6, 3)),
+        ("ship Jun/03", date(2024, 6, 3)),
+        ("Jun 3, 2024", date(2024, 6, 3)),
+    ],
+)
+def test_a_month_name_and_a_day_are_read_with_any_one_separator(words, want):
+    assert ri.read_dates(words, date(2024, 5, 6)) == ([want], [])
+
+
+def test_a_date_never_spans_a_table_cells_gap():
+    """Cells lined up with spaces: "19" is the quantity, "Jun 21, 2024" the date."""
+    assert ri.read_dates("19         Jun 21, 2024", date(2024, 5, 6)) == ([date(2024, 6, 21)], [])
+    assert ri.read_dates("51    Jun", date(2024, 5, 6)) == ([], [])
+
+
+@pytest.mark.parametrize("words", ["23.6.2024", "23/6/2024", "23.06.24"])
+def test_a_numeric_date_that_can_only_be_day_first_is_read_that_way(words):
+    assert ri.read_dates(words, date(2024, 5, 6)) == ([date(2024, 6, 23)], [])
+
+
+def test_an_emails_own_dates_settle_which_way_its_ambiguous_dates_run():
+    """A dotted date that can only be day first ("23.6.2024") says the email's dotted dates run day first, so
+    "4.6.2024" there is June 4. Slashed dates keep their own way (month first, as a US shop reads them) unless one of
+    them says otherwise. With nothing to settle it, a date reads month first, as before."""
+    text = "LUT-11111 qty 10 due 23.6.2024\nLUT-22222 qty 5 due 4.6.2024\nLUT-33333 qty 2 due 06/04/2024"
+    assert ri.day_first_in(text) == {"."}
+    assert ri.read_dates("4.6.2024", date(2024, 5, 6), ri.day_first_in(text)) == ([date(2024, 6, 4)], [])
+    assert ri.read_dates("06/04/2024", date(2024, 5, 6), ri.day_first_in(text)) == ([date(2024, 6, 4)], [])
+    assert ri.read_dates("4.6.2024", date(2024, 5, 6)) == ([date(2024, 4, 6)], [])
+    assert ri.day_first_in("due 23.6.2024 or 6.17.2024") == set()  # both ways in one email: nothing settled
+
+
+def test_an_ambiguous_date_read_against_its_emails_way_goes_to_a_person():
+    body = "Please quote:\nLUT-11111 rev A qty 10 due 23.6.2024\nLUT-22222 rev A qty 5 due 06/04/2024" + SIGN
+    right = [
+        L("LUT-11111", need="2024-06-23", pq="LUT-11111", rq="rev A", qq="qty 10", nq="due 23.6.2024"),
+        L("LUT-22222", qty=5, need="2024-06-04", pq="LUT-22222", rq="rev A", qq="qty 5", nq="due 06/04/2024"),
+    ]
+    assert one(body, A(lines=right)).status == ri.READY
+    flipped = [right[0], dict(right[1], requested_date=F("2024-04-06", "due 06/04/2024"))]
+    assert one(body, A(lines=flipped)).status == ri.REVIEW
+
+
+TWO_LINE_ITEMS = (
+    "Please quote:\n\nLUT-11111 Rev A bracket\n    Qty 10, due 6/3\nLUT-22222 Rev A gusset\n    Qty 5, due 6/10\n"
+    + SIGN
+)
+
+
+def test_a_part_with_its_details_indented_on_the_next_line_is_one_item():
+    lines = [
+        L("LUT-11111", pq="LUT-11111", rq="Rev A", qq="Qty 10", nq="due 6/3"),
+        L("LUT-22222", qty=5, need="2024-06-10", pq="LUT-22222", rq="Rev A", qq="Qty 5", nq="due 6/10"),
+    ]
+    r = one(TWO_LINE_ITEMS, A(lines=lines))
+    assert r.status == ri.READY, r.reasons
+    swapped = [dict(lines[0], quantity=F(5, "Qty 5")), dict(lines[1], quantity=F(10, "Qty 10"))]
+    assert one(TWO_LINE_ITEMS, A(lines=swapped)).status == ri.REVIEW
+
+
+@pytest.mark.parametrize(
+    "cell, want",
+    [
+        ("Material", "part"),
+        ("Item No.", "part"),
+        ("Drawing No", "part"),
+        ("Text", "desc"),
+        ("Part Description", "desc"),
+        ("Req. Date", "date"),
+        ("Requested Delivery", "date"),
+        ("Quantity (ea)", "qty"),
+        ("Rev.", "rev"),
+        ("Ln", None),
+        ("Unit Price", None),
+    ],
+)
+def test_the_usual_erp_column_names_are_table_headers(cell, want):
+    assert ri._header(cell) == want
+
+
+ERP_TABLE = (
+    "See the list below.\n\n"
+    "Ln   Material     Revision   Text      Quantity   Req. Date\n"
+    "1    LUT-11111    A          gusset    51         Jun 24, 2024\n"
+    "2    LUT-22222    A          flange    8          Jun 10, 2024\n" + SIGN
+)
+
+
+def test_a_table_under_erp_column_names_reads_its_cells():
+    lines = [
+        L("LUT-11111", qty=51, need="2024-06-24", pq="LUT-11111", rq="A", qq="51", nq="Jun 24, 2024"),
+        L("LUT-22222", qty=8, need="2024-06-10", pq="LUT-22222", rq="A", qq="8", nq="Jun 10, 2024"),
+    ]
+    r = one(ERP_TABLE, A(lines=lines))
+    assert r.status == ri.READY, r.reasons
+    wrong = [dict(lines[0], quantity=F(8, "8")), lines[1]]  # the 8 is LUT-22222's
+    assert one(ERP_TABLE, A(lines=wrong)).status == ri.REVIEW
+
+
+def test_a_parts_list_with_an_unquoted_comma_in_a_date_keeps_the_date_in_one_cell():
+    table = ri.csv_as_table("Ln,Material,Quantity,Req. Date\n1,LUT-11111,19,Jun 21, 2024\n")
+    row = ri.table_row(table, table.index("LUT-11111"))
+    assert row["date"][2] == "Jun 21, 2024" and row["qty"][2] == "19"
+    # a row that's short, or long for another reason, is left as it was
+    assert "x" in ri.csv_as_table("a,b\n1,2,x\n")
+
+
+def test_a_part_number_only_in_the_subject_is_the_lines_part():
+    body = "pls quote attached bushing, qty 10, rev A. need 6/3." + SIGN
+    line = L("", pq="", rq="rev A", qq="qty 10", nq="need 6/3")
+    r = one(body, A(lines=[line]), subject="Pricing request LUT-11111", attachments=[])
+    assert [ln.part for ln in r.lines] == ["LUT-11111"] and r.status == ri.INFO and r.missing == {"drawing"}, r.reasons
+    two = one(body.replace("bushing", "bushing (see also LUT-22222)"), A(lines=[line]),
+              subject="Pricing request LUT-11111", attachments=[])
+    assert two.status == ri.REVIEW  # two parts named: which one is this line's isn't code's to guess
+
+
+def test_a_drawing_said_to_be_attached_but_missing_is_asked_for_with_its_part_number():
+    """No part number anywhere and no file: the buyer meant to attach the drawing, which carries the part number.
+    One question asks for both."""
+    body = "pls quote attached bracket, qty 10, rev A. need 6/3." + SIGN
+    r = one(body, A(lines=[L("", pq="", rq="rev A", qq="qty 10", nq="need 6/3")]), attachments=[])
+    assert r.status == ri.INFO and r.missing == {"drawing"}, (r.reasons, r.missing)
+    assert any("drawing" in q and "part number" in q for q in r.questions)
