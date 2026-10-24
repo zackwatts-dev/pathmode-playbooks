@@ -1,0 +1,82 @@
+From: Micah Ickes <mickes@pfeifferprocessmac.example>
+To: quotes@wendlow.example
+Subject: Pricing request PFE-74036
+Date: Fri, 24 Jan 2025 11:21:00 -0400
+Message-ID: <202501241121.0064@pfeifferprocessmac.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="==wendlow-0064=="
+
+--==wendlow-0064==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi,
+
+New RFQ:
+[42] PFE-74036 (rev A) - bracket - 21.3.2025
+[52] PFE-27991 (rev A) - pin - Friday February 7
+
+Bid closes 02/27/2025.
+
+Thx
+Micah Ickes
+
+--==wendlow-0064==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PFE-74036_revA.pdf"
+MIME-Version: 1.0
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2Jq
+CjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2Jq
+CjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA3OTIg
+NjEyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4g
+Pj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA2NSA+PgpzdHJlYW0KQlQgL0YxIDEyIFRm
+IDcyIDcyMCBUZCAoUEZFLTc0MDM2IHJldiBBIC0gY3VzdG9tZXIgZHJhd2luZykgVGogRVQKZW5k
+c3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFz
+ZUZvbnQgL0hlbHZldGljYSA+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAow
+MDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTggMDAwMDAgbiAKMDAwMDAwMDExNSAwMDAwMCBu
+IAowMDAwMDAwMjQxIDAwMDAwIG4gCjAwMDAwMDAzNTYgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6
+ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo0MjYKJSVFT0YK
+
+--==wendlow-0064==
+Content-Type: application/step
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PFE-74036_revA.step"
+MIME-Version: 1.0
+
+SVNPLTEwMzAzLTIxOwpIRUFERVI7CkZJTEVfREVTQ1JJUFRJT04oKCdwbGFjZWhvbGRlciBtb2Rl
+bCcpLCcyOzEnKTsKRklMRV9OQU1FKCdQRkUtNzQwMzZfcmV2QS5zdGVwJywnMjAyNS0wMS0wMScs
+KCcnKSwoJycpLCcnLCcnLCcnKTsKRklMRV9TQ0hFTUEoKCdBVVRPTU9USVZFX0RFU0lHTicpKTsK
+RU5EU0VDOwpEQVRBOwpFTkRTRUM7CkVORC1JU08tMTAzMDMtMjE7Cg==
+
+--==wendlow-0064==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PFE-27991_revA.pdf"
+MIME-Version: 1.0
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2Jq
+CjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2Jq
+CjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA3OTIg
+NjEyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4g
+Pj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA2NSA+PgpzdHJlYW0KQlQgL0YxIDEyIFRm
+IDcyIDcyMCBUZCAoUEZFLTI3OTkxIHJldiBBIC0gY3VzdG9tZXIgZHJhd2luZykgVGogRVQKZW5k
+c3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFz
+ZUZvbnQgL0hlbHZldGljYSA+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAow
+MDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTggMDAwMDAgbiAKMDAwMDAwMDExNSAwMDAwMCBu
+IAowMDAwMDAwMjQxIDAwMDAwIG4gCjAwMDAwMDAzNTYgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6
+ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo0MjYKJSVFT0YK
+
+--==wendlow-0064==
+Content-Type: application/step
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PFE-27991_revA.step"
+MIME-Version: 1.0
+
+SVNPLTEwMzAzLTIxOwpIRUFERVI7CkZJTEVfREVTQ1JJUFRJT04oKCdwbGFjZWhvbGRlciBtb2Rl
+bCcpLCcyOzEnKTsKRklMRV9OQU1FKCdQRkUtMjc5OTFfcmV2QS5zdGVwJywnMjAyNS0wMS0wMScs
+KCcnKSwoJycpLCcnLCcnLCcnKTsKRklMRV9TQ0hFTUEoKCdBVVRPTU9USVZFX0RFU0lHTicpKTsK
+RU5EU0VDOwpEQVRBOwpFTkRTRUM7CkVORC1JU08tMTAzMDMtMjE7Cg==
+
+--==wendlow-0064==--
