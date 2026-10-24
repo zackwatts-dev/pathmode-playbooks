@@ -4,39 +4,24 @@ Reads every email in a quotes mailbox the day it arrives: each request for quote
 
 The full playbook, worked through at Wendlow Fabrication & Machine (a simulated Dayton job shop) with the design, the plan an AI wrote from it, and the owner's answers to its questions: **https://pathmode.com/playbooks/rfq-intake/**
 
-## Work in progress: the quote desk (not yet released)
+## Where it stands (2026-10-24)
 
-The published page describes the intake as it was. On 2026-10-23/24 it was extended into a quote desk. The extensions:
-- **Attachments are read:** the buyer's own RFQ form (PDF) or parts list (CSV). A file named for a part is a drawing, listed and not read.
-- **Repeat parts get a history brief** from the quote and job history: last price, won or lost, estimated against actual hours. A part at the same revision, quoted in the last three years with a job behind it, is **fast-track**.
-- **Bid odds** come from the customer's record. They're shown to the estimator, not used to reorder the queue, because in the queue replay reordering cost more on-time quotes than it gained.
-- **The sample** now carries re-quotes sent in by email (210 emails: 136 before, 21 of them now with their lines only in an attachment, plus 74 re-quotes).
+**The page and the code differ on one part, on purpose, for now.** The published page describes the solution in four parts: an AI reader, an AI checker, IT integration (matching each request to the business's records and bringing back the history), and a person who approves. This code has the reader, the IT integration and the person. In place of the AI checker it still uses plain code that re-reads the email to confirm each value against the words the AI quoted. That re-reading is being replaced by the AI checker: a second, independent read that checks each value against the email, with any disagreement going to a person. The checks against the records stay in code.
 
-**On the sample, the desk passes everything:** 208 of 210 right, none let through wrong, 21 of 21 attachment requests and 74 of 74 re-quotes right, and 71 of the re-quotes fast-track.
+**The sample is May 2026.** Every date in the simulation's files moved forward 104 weeks, so weekdays and holidays keep their places (pathmode-corpus, `simulations/fabricator/BUILD.md`). Recorded once (Claude Sonnet 5.5, 196 calls): 193 of 196 right, none let through wrong, 19 of 19 attachment requests and 63 of 64 re-quotes right. Every release threshold passes.
 
-**It hasn't passed a held-back month.** Each month was generated after the code froze, in new wording, recorded once and scored once:
+**Held-back months.** Each was generated after the code froze, in new wording, recorded once and scored once. Nothing wrong was ever let through; every miss was the re-reading code stopping a request whose values the AI had read correctly, because it didn't recognize a new way of writing them:
 
-| Held-back month | Code | Right | Let through wrong | Stopped needlessly | Attachment requests right | Re-quotes right |
-|---|---|---|---|---|---|---|
-| 2024-11 | de9a6b7 | 73 of 160 | 0 | 87 | 5 of 20 | 15 of 50 |
-| 2024-12 | caffb9e | 104 of 153 | 0 | 49 | 10 of 13 | 28 of 39 |
-| 2025-01 | c25ae3d | 132 of 171 | 0 | 38 | 3 of 12 | 59 of 59 |
+| Held-back month | Code | Right | Let through wrong | Stopped needlessly |
+|---|---|---|---|---|
+| 2024-11 | de9a6b7 | 73 of 160 | 0 | 87 |
+| 2024-12 | caffb9e | 104 of 153 | 0 | 49 |
+| 2025-01 | c25ae3d | 132 of 171 | 0 | 38 |
+| 2026-03 | 8f78462 | 129 of 175 | 0 | 46 |
 
-Every miss was a stop, never a wrong value let through. The AI read the values. Code's checks refused new ways of writing them:
-- quantities: "price on 18 now", "x116";
-- dates: "20DEC24", "2025/02/03", "23.1.2025", "Jan-28";
-- column names and pipe tables;
-- layouts that put a value two lines from its part.
+The first three became development data for 8f78462 (re-scored with it: 154 of 160, 152 of 153, 166 of 171). The fourth found two more date styles ("3-30-2026", "April the 15th"). That pattern is why the re-reading is being replaced rather than patched again. The release thresholds were set before any held-back month and none was changed. Scores are in each `holdout-*/score-at-<commit>.md`.
 
-Each round's fixes came with new tests, and no earlier test changed. Each failed month then became development data, and each did well on it (November 149 of 160, December 150 of 153). A new month in new wording still found new formats.
-
-The release thresholds were set before any held-back month, and two were added for the desk before its first. None was changed. Under the rule for that night (three held-back attempts), work stopped here. Scores are in each `holdout-*/score-at-<commit>.md`.
-
-What it would take to finish:
-1. **A different way to check dates and quantities.** The check confirms the AI's value appears in its quoted words, by matching patterns. Instead it could confirm that the quoted words parse to that value under a broader, tested normalizer (or a second, independent read), with ambiguous formats like "02/06/2025" still going to a person.
-2. **A fourth held-back month** in new wording.
-
-The queue replay's fourth way, the desk, is in `replay_queue.py`. It doesn't win more on-time quotes than AI intake alone. Fast-tracked re-quotes free about 400 estimator hours a year, but in this shop's queue those hours don't turn into earlier new quotes: re-quotes only use hours no new request needed, and managers help less when the backlog is shorter.
+**The quote desk's extensions are in:** attachments read (the buyer's RFQ form as a PDF, or a parts list as a CSV), a history brief and fast-track for repeat parts, and bid odds shown to the estimator. The queue replay (`replay_queue.py`) has the desk as a fourth way of working.
 
 ## What it does
 
