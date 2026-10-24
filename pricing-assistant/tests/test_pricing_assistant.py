@@ -363,3 +363,58 @@ def test_everything_shown_is_escaped():
 
     html = D.render_rows([["<script>alert(1)</script>", "x"]])
     assert "<script>" not in html and "&lt;script&gt;" in html
+
+
+# --- Added after the first held-back year failed (holdout-2025/score-at-b28cb0b.md) ------------------------------
+@pytest.mark.parametrize(
+    ("quote", "qty"),
+    [
+        ("Ashland 2.0-ton AHU (16.5 SEER2) x1", 1),
+        ("Looking for ASH-GA040130X times 1.", 1),
+        ("model ASH-GA040130X, need 3", 3),
+        ("ASH-GA040130X x 2", 2),
+        ("12 pcs ASH-GA040130X", 12),
+    ],
+)
+def test_a_quantity_written_with_an_x_or_at_the_end_of_a_sentence_is_in_the_quote(quote, qty):
+    assert P.qty_in_quote(qty, quote)
+
+
+@pytest.mark.parametrize(
+    ("quote", "qty"),
+    [("Ashland 2.0-ton AHU (16.5 SEER2) x1", 2), ("Ashland 3.5-ton AC unit x1", 3), ("ASH-GA040130X times 1.", 4)],
+)
+def test_a_tonnage_or_a_part_number_is_still_not_a_quantity(quote, qty):
+    assert not P.qty_in_quote(qty, quote)
+
+
+@pytest.mark.parametrize("words", ["AC unit", "outdoor unit", "A/C condenser", "condensing unit"])
+def test_the_common_words_for_a_condenser_are_known(words):
+    text = f"Looking for 2 of the Ashland 2.5 ton {words}s at 14.3 SEER2 on 454b.\n"
+    it = item(quote=f"2 of the Ashland 2.5 ton {words}s at 14.3 SEER2 on 454b")
+    line, question, _ = P.check_item(it, text, catalog())
+    assert line and line.sku == "ASH-CO025143A" and not question
+
+
+def test_a_unit_word_the_code_doesnt_know_is_settled_by_the_details_or_asked():
+    # Only one Northstar 3 ton 15.2 SEER2 454B product exists: the details settle it, whatever it's called.
+    text = "Need (1) Northstar 3T 15.2 split on 454b.\n"
+    it = {
+        "quote": "(1) Northstar 3T 15.2 split on 454b",
+        "qty": 1,
+        "maker": "Northstar",
+        "type": "heat pump",
+        "tons": "3",
+        "seer2": "15.2",
+        "refrigerant": "454b",
+    }
+    line, question, _ = P.check_item(it, text, catalog())
+    assert line and line.sku == "NOR-HE030152A"
+    # Two kinds share these details: ask which.
+    cat = P.Catalog(
+        PRODUCTS
+        + [dict(PRODUCTS[2], sku="NOR-CO030152A", type="Condenser", description="Condenser 3.0 ton SEER2 15.2 R-454B")],
+        [],
+    )
+    line, question, _ = P.check_item(it, text, cat)
+    assert line is None and question and "Condenser or Heat Pump" in question

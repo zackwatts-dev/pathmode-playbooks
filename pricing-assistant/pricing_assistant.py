@@ -69,7 +69,15 @@ READS_A_DAY = 400
 WORKERS = 4
 
 TYPES = {  # words for each kind of equipment, as customers write them
-    "Condenser": ("condensing unit", "ac condenser", "condenser"),
+    "Condenser": (
+        "condensing unit",
+        "ac condenser",
+        "a/c condenser",
+        "condenser",
+        "ac unit",
+        "a/c unit",
+        "outdoor unit",
+    ),
     "Heat Pump": ("heat pump",),
     "Air Handler": ("air handler", "ahu"),
     "Gas Furnace": ("gas furnace", "furnace"),
@@ -161,15 +169,15 @@ class Line:
     quote: str
 
 
-QTY = re.compile(r"(?<![\w.])(\d+)(?:x\b)?(?![\w.]|\s*(?:ton|t\b|seer))", re.I)
-
-
 def qty_in_quote(qty: int, quote: str) -> bool:
-    """The quantity is a whole number standing alone in the quote, or a number word: not part of "2.5 ton", a SEER2
-    rating or a part number."""
-    low = quote.lower()
-    if any(int(m.group(1)) == qty for m in QTY.finditer(re.sub(r"seer2?\s*\d+(\.\d+)?", " ", low))):
-        return True
+    """The quantity is a whole number in the quote, alone or written "x2", "2x" or at the end of a sentence; or a
+    number word. Never part of "2.5 ton", a SEER2 rating or a part number."""
+    low = re.sub(r"seer2?\s*\(?\d+(\.\d+)?", " ", quote.lower())
+    for tok in re.findall(r"[a-z0-9./-]+", low):
+        tok = tok.strip(".,;:)(")
+        m = re.fullmatch(r"x?(\d+)x?", tok)
+        if m and int(m.group(1)) == qty:
+            return True
     return any(NUMBER_WORDS.get(w) == qty for w in re.findall(r"[a-z]+", low))
 
 
@@ -218,19 +226,26 @@ def check_item(it: dict, text: str, cat: Catalog) -> tuple[Line | None, str | No
     seer = number_written(it.get("seer2"), quote)
     ref = ref_code(it.get("refrigerant") or "")
     ref = ref if ref and ref_code(quote) == ref else ""
-    if not kind:
+    if not kind and not (maker and tons):
         return None, f'On "{quote}": what kind of unit is it? A model number would settle it.', ""
-    found = cat.match(maker, kind, tons, seer, ref)
+    found = cat.match(maker, kind, tons, seer, ref)  # with no known word for the unit, the written details decide
     if len(found) == 1:
         return Line(found[0]["sku"], qty, quote), None, ""
     what = " ".join(
         x
-        for x in [maker.title(), kind.lower(), f"{tons:g} ton" if tons else "", f"{seer:g} SEER2" if seer else "", ref]
+        for x in [
+            maker.title(),
+            kind.lower() or "unit",
+            f"{tons:g} ton" if tons else "",
+            f"{seer:g} SEER2" if seer else "",
+            ref,
+        ]
         if x
     )
     if not found:
         return None, f"We don't show a {what}. Can you send the model number?", ""
     for col, label, unit in (
+        ("type", "kind of unit", ""),
         ("refrigerant", "refrigerant", ""),
         ("maker", "maker", ""),
         ("seer2", "efficiency", " SEER2"),
