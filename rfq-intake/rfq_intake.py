@@ -160,7 +160,7 @@ _NOT_DUE = r"(?!(?:ship|shipped|shipping|deliver\w*|need(?:ed)?|req'?d|required|
 DUE_WORDS = re.compile(
     rf"\b{_DUE_NOUNS}\b(?:\W+{_NOT_DUE}[\w'-]+){{0,4}}?\W+{_DUE_CUES}\b"
     rf"|\b(?:submit|send|return|get|have)\b(?:\W+[\w'-]+){{0,3}}?\W+{_DUE_NOUNS}\b"
-    rf"|\b{_DUE_CUES}\b\W+(?:for\W+)?{_DUE_NOUNS}\b"
+    rf"|\b{_DUE_CUES}\b(?:\W+[\w'-]+){{0,2}}?\W+{_DUE_NOUNS}\b"
     rf"|\b{_DUE_NOUNS}\s+(?:is\s+|are\s+)?needed\s+{_DUE_CUES}\b",
     re.I,
 )
@@ -569,8 +569,8 @@ _MON = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec)"
 DATE = re.compile(
     r"(?P<wd>\b(?:mon|tues?|wed|thu(?:rs?)?|fri|sat|sun)(?:day|nesday|rsday|sday|urday)?\.?,?\s+)?"
     r"(?:(?P<iso>\b\d{4}-\d{2}-\d{2}\b)"
-    rf"|\b(?P<dmy>\d{{1,2}})[-\s](?P<mon3>{_MON})[a-z]*\.?[-\s](?P<y3>\d{{4}}|\d{{2}})\b"
-    r"|\bthe\s+(?P<ord>\d{1,2})(?:st|nd|rd|th)\b"
+    rf"|\b(?P<dmy>\d{{1,2}})[-\s]?(?P<mon3>{_MON})[a-z]*\.?[-\s]?(?P<y3>\d{{4}}|\d{{2}})\b"
+    rf"|\bthe\s+(?P<ord>\d{{1,2}})(?:st|nd|rd|th)\b(?!\s+(?:of\s+)?{_MON})"
     r"|(?<![\d/.-])(?P<m>\d{1,2})/(?P<d>\d{1,2})(?:/(?P<y>\d{4}|\d{2}))?(?![\d/])"
     r"|(?<![\d/.$-])(?P<dm_>\d{1,2})\.(?P<dd_>\d{1,2})\.(?P<dy_>\d{4}|\d{2})(?![\d.]\d)"
     rf"|\b(?P<mon>{_MON})[a-z]*\.?\s+(?P<md>\d{{1,2}})(?:st|nd|rd|th)?\b(?:,?\s+(?P<my>\d{{4}}))?"
@@ -662,7 +662,7 @@ def part_regex(part: str) -> str:
     return r"(?<![a-z0-9])" + r"[\s_-]?".join(re.escape(p) for p in pieces) + r"(?![0-9])"
 
 
-REV_AFTER_PART = r"(?:[\s_-]*rev(?:ision)?\.?[\s:#]*|[\s_-]+)"
+REV_AFTER_PART = r"(?:[\s_|,-]*rev(?:ision)?\.?[\s:#]*|[\s_|,-]+)"
 
 
 def _after_part(part: str, desc: str) -> str:
@@ -703,7 +703,22 @@ def quantity_in_quote(qty, part: str, quote: str, desc: str = "", rev: str = "")
     if rev.strip() and re.fullmatch(r"[a-z0-9]{1,3}", rev.strip().lower()):
         # a table row quoted from its Rev column on ("A   14   6/17"): which row, the association check decides
         pats.append(rf"^\s*{re.escape(rev.strip().lower())}\s+{n}(?![\d/.]|,\d)")
-    return any(re.search(p, low) for p in pats)
+    return any(re.search(p, low) for p in pats) or only_bare_number(qty, quote)
+
+
+def only_bare_number(qty: int, quote: str) -> bool:
+    """True if this is the one bare whole number in the part's words, once dates, part numbers, revisions, prices,
+    sizes and other units are set aside: "price on 18 now", "18 per release", "76 of ECK-16159". Two candidates, or
+    none, isn't proof."""
+    text = DATE.sub(" ", quote)
+    text = PART_PATTERN.sub(" ", text.upper()).lower()
+    text = re.sub(r"\brev(?:ision)?\.?\s*[:#]?\s*[a-z0-9]{1,3}\b", " ", text)
+    text = re.sub(r"\$\s*[\d,]+(?:\.\d+)?|[\d,]+\.\d+", " ", text)
+    text = re.sub(
+        r"\b\d+\s*(?:%|in\b|inch|mm\b|ft\b|lbs?\b|ga\b|gauge|ton|days?\b|weeks?\b|wks?\b|hours?\b|hrs?\b)", " ", text
+    )
+    bare = re.findall(r"(?<![\w/.-])(\d{1,6})(?![\w/.-]|,\d)", text)
+    return len(bare) == 1 and int(bare[0]) == qty
 
 
 def parts_in(text: str) -> set[str]:
@@ -860,11 +875,12 @@ def _item_blocks(text: str) -> list[tuple[int, int]]:
 
 
 HEADERS = {
-    "rev": r"rev(?:ision)?\.?",
-    "qty": r"qty\.?|quantity|quan\.?|pcs",
-    "desc": r"desc(?:ription)?\.?|item",
-    "date": r"need(?:ed)?(?: by| date)?|req(?:uired|'d)?(?: date| by)?|date|due|ship(?: date)?|delivery",
-    "part": r"part(?: number| no\.?| #)?|p/?n|part#",
+    "rev": r"rev(?:ision)?\.?(?: level)?",
+    "qty": r"(?:order |ord\.? )?(?:qty\.?|quantity|quan\.?)(?: req(?:uired|'d)?)?|pcs",
+    "desc": r"(?:part |item )?desc(?:ription)?\.?|item",
+    "date": r"need(?:ed)?(?: by| date)?|req(?:uired|'d)?(?: date| by)?|date|due|ship(?: date)?|(?:dock |delivery )?date"
+    r"|delivery(?: date)?",
+    "part": r"(?:customer |cust\.? )?(?:part(?: number| no\.?| #)?|p/?n|part#)",
 }
 RULE_LINE = re.compile(r"^[\s\-=_|+]*$")
 
@@ -872,10 +888,12 @@ RULE_LINE = re.compile(r"^[\s\-=_|+]*$")
 def _cells(line: str) -> list[tuple[int, int, str]]:
     """A table line's cells, with their offsets: split at tabs (an empty cell is a cell), or else at two or more
     spaces."""
-    if "\t" in line:
+    sep = "\t" if "\t" in line else "|" if line.count("|") >= 2 else ""
+    if sep:
         out, pos = [], 0
-        for cell in line.split("\t"):
-            out.append((pos, pos + len(cell), cell.strip()))
+        for cell in line.split(sep):
+            lead = len(cell) - len(cell.lstrip())
+            out.append((pos + lead, pos + lead + len(cell.strip()), cell.strip()))
             pos += len(cell) + 1
         return out
     return [(m.start(), m.end(), m.group(0)) for m in re.finditer(r"\S+(?: \S+)*", line)]
@@ -971,7 +989,16 @@ def owner(span: tuple[int, int], text: str, clauses: list[tuple[int, int]]) -> s
     """The part number a piece of the email belongs to: the only part in its clause, or failing that the only one on
     its line, within NEAR characters. With several near, the nearest only if it's clearly nearest (under half the
     next one's distance). Otherwise None: it could be either's."""
-    for lo, hi in (next((c for c in clauses if c[0] <= span[0] < c[1]), (0, 0)), _line_of(span[0], text)):
+    clause = next((c for c in clauses if c[0] <= span[0] < c[1]), (0, 0))
+    sentence = _sentence_of(span[0], text)
+    # The clause within its sentence first: a clause that runs across sentences mustn't hand a value to the next
+    # sentence's part just because it's nearer.
+    for lo, hi in (
+        (max(clause[0], sentence[0]), min(clause[1], sentence[1])),
+        clause,
+        sentence,
+        _line_of(span[0], text),
+    ):
         dist: dict[str, int] = {}
         for m in PART_PATTERN.finditer(text, lo, hi):
             if m.group(1).split("-")[0] in NOT_PARTS:
@@ -986,6 +1013,14 @@ def owner(span: tuple[int, int], text: str, clauses: list[tuple[int, int]]) -> s
             first, second = sorted(dist.items(), key=lambda kv: kv[1])[:2]
             return first[0] if first[1] * 2 < second[1] else None
     return None
+
+
+def _sentence_of(pos: int, text: str) -> tuple[int, int]:
+    """The sentence around pos, within its line: from the last ". " before it to the next."""
+    lo, hi = _line_of(pos, text)
+    start = max(text.rfind(". ", lo, pos) + 2 if text.rfind(". ", lo, pos) != -1 else lo, lo)
+    end = text.find(". ", pos, hi)
+    return start, (end + 1 if end != -1 else hi)
 
 
 def _line_of(pos: int, text: str) -> tuple[int, int]:

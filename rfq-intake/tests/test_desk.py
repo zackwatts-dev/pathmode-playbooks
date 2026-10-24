@@ -222,3 +222,70 @@ def test_low_odds_reorder_nothing_unless_switched_on():
     reqs = [r("poor", 1.0, rate=0.05), r("good", 1.0, rate=0.5, received=MON + timedelta(days=1))]
     out = rq.replay(reqs, cap(5, 1.0), "desk", shop_rate=0.4)
     assert out.sent["poor"] <= out.sent["good"] and not desk.REORDER
+
+
+# --- Added after the desk's first held-back month failed (holdout-2024-11/score-at-de9a6b7.md) --------------------
+import pytest  # noqa: E402
+
+
+@pytest.mark.parametrize(
+    "quote",
+    [
+        "what's your price on 18 now?",
+        "18 per release",
+        "We need 18 of LUT-11111",
+        "LUT-11111 | A | bracket | 18 | December 2",
+    ],
+)
+def test_the_only_bare_number_in_the_parts_words_is_its_quantity(quote):
+    assert ri.quantity_in_quote(18, "LUT-11111", quote, "bracket", "A")
+
+
+@pytest.mark.parametrize("quote", ["18 per release, 30 a year", "ship June 18", "18.5 in long"])
+def test_a_number_that_could_be_something_else_isnt_proof(quote):
+    # Two bare numbers, a revision, a date or a size: not the only reading, so not proof.
+    assert not ri.quantity_in_quote(18, "LUT-11111", quote)
+
+
+def test_a_date_written_without_separators_is_read():
+    found, problems = ri.read_dates("need 20DEC24", date(2024, 11, 6))
+    assert found == [date(2024, 12, 20)] and not problems
+
+
+def test_closing_this_rfq_out_says_quotes_are_due():
+    assert ri.DUE_WORDS.search("We're closing this RFQ out Tue, Nov 12.")
+
+
+def test_common_column_names_are_known_table_headers():
+    for cell, name in [
+        ("Customer Part", "part"),
+        ("Order Qty", "qty"),
+        ("Dock Date", "date"),
+        ("Rev Level", "rev"),
+        ("Part Description", "desc"),
+        ("QTY REQ'D", "qty"),
+        ("P/N", "part"),
+    ]:
+        assert ri._header(cell) == name, cell
+
+
+def test_a_pipe_table_splits_into_cells_and_a_revision_after_a_pipe_counts():
+    assert [c[2] for c in ri._cells("LUT-11111 | A | bracket | 25 | 2024-12-26")] == [
+        "LUT-11111",
+        "A",
+        "bracket",
+        "25",
+        "2024-12-26",
+    ]
+    assert ri.revision_in_quote("A", "LUT-11111", "LUT-11111 | A | bracket | 25")
+
+
+def test_the_16th_of_december_is_december_not_the_next_16th():
+    found, _ = ri.read_dates("need it the 16th of December", date(2024, 11, 14))
+    assert found == [date(2024, 12, 16)]
+
+
+def test_a_value_in_a_sentence_about_one_part_belongs_to_it():
+    text = "We need 276 of LUT-21398 at revision A (bracket), delivered 20DEC24. We need 33 of LUT-24767 (plate), delivered 11DEC24."
+    span = (text.index("20DEC24"), text.index("20DEC24") + 7)
+    assert ri.owner(span, text, ri._clauses(text)) == ri.squash("LUT-21398")
