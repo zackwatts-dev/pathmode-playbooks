@@ -8,8 +8,8 @@ are what actually happened, for comparison with the replay.
 
 ## rfqs.csv
 
-Every request the estimators had to price: the new-part RFQs and annual re-quotes received 2024-01-02 to
-2024-12-31, plus those received earlier and not yet quoted on the morning of 2024-01-02 (`in_queue_on_start` = 1 if
+Every request the estimators had to price: the new-part RFQs and annual re-quotes received 2025-01-01 to
+2025-12-31, plus those received earlier and not yet quoted on the morning of 2025-01-01 (`in_queue_on_start` = 1 if
 already keyed into the ERP by then, 0 if still unread in quotes@). RFQs screened out in the window are included, with
 outcome `screened out`: they were read and keyed, never priced. Screened-out RFQs from before the window are left out.
 

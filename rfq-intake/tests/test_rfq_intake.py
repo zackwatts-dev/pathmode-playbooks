@@ -361,7 +361,7 @@ def test_ordinary_request_wording_isnt_taken_for_instructions_to_an_ai():
 
 
 def test_the_sample_injection_email_goes_to_a_person_with_the_offline_stand_in():
-    f = "0513-1229-request-for-quote-mau-20679.eml"
+    f = "0512-0717-request-for-quote-gra-97280.eml"  # the 2026 sample's (was 0513-1229-...-mau-20679 in May 2024's)
     r = ri.process(MAILS[f], OfflineModel(ri.offline), RECORDS)
     assert r.status == ri.REVIEW and KEY[f]["expected_status"] == ri.REVIEW
 
@@ -411,10 +411,10 @@ def test_a_file_that_cant_be_read_is_kept_and_the_run_carries_on(tmp_path, monke
 
 
 def test_drawings_are_listed_by_name_and_never_opened(tmp_path):
-    src = SAMPLE / "mailbox" / "0501-1050-pricing-request-lut-59621.eml"
+    src = SAMPLE / "mailbox" / "0507-1732-rfq-3215.eml"  # the 2026 sample's (was 0501-1050-...-lut-59621)
     m = ri.read_mail(src)
-    assert m.readable and "LUT-59621_revA.pdf" in m.attachments and "JVBERi0" not in m.text and "%PDF" not in m.text
-    assert m.received_at == datetime(2024, 5, 1, 10, 50)  # America/New_York
+    assert m.readable and "KES-40061_revA.pdf" in m.attachments and "JVBERi0" not in m.text and "%PDF" not in m.text
+    assert m.received_at == datetime(2026, 5, 7, 17, 32)  # America/New_York
 
 
 def test_only_the_email_reaches_the_model():
@@ -531,8 +531,8 @@ def test_nothing_is_declined_a_flag_leaves_the_email_ready_and_in_the_queue(tmp_
 
 
 def test_no_hours_on_file_means_no_forecast_and_the_dashboard_says_so(tmp_path):
-    m = mail(ROW + SIGN, when=datetime(2025, 1, 6, 9, 0))  # after the last estimator hours on file
-    run_, _ = ri.run([m], RECORDS, ScriptedModel([GOOD]), tmp_path, date(2025, 1, 6))
+    m = mail(ROW + SIGN, when=datetime(2027, 1, 4, 9, 0))  # after the last estimator hours on file (2026 sample)
+    run_, _ = ri.run([m], RECORDS, ScriptedModel([GOOD]), tmp_path, date(2027, 1, 4))
     assert run_.plan is None and "No estimator hours on file" in (tmp_path / "dashboard.html").read_text()
 
 
@@ -604,7 +604,7 @@ def test_a_malformed_record_stops_the_load(tmp_path):
 
 
 def test_the_score_sorts_mistakes_by_cost_and_shows_the_everything_to_a_person_baseline(tmp_path):
-    f = "0501-1050-pricing-request-lut-59621.eml"
+    f = "0507-1732-rfq-3215.eml"  # the 2026 sample's two-line request (was 0501-1050-...-lut-59621)
     run_, _ = ri.sample_run(OfflineModel(ri.offline), tmp_path)
     s = run_.scored
     assert s["n"][ri.LET_THROUGH] == 0  # the offline stand-in reads less than a model, but nothing gets past the checks
@@ -614,12 +614,12 @@ def test_the_score_sorts_mistakes_by_cost_and_shows_the_everything_to_a_person_b
     m = MAILS[f]
     wrong = json.loads(ri.offline(ri.EXTRACT, ri.prompt(m)))
     wrong["lines"][1]["quantity"] = {"value": 4, "quote": "qty 4"}
-    body = m.text.replace("qty 46", "qty 4")
+    body = m.text.replace("qty 27", "qty 4")
     swapped = ri.Email(m.file, m.sender_name, m.sender, m.subject, m.received_at, body, m.attachments)
     q = wrong["lines"][1]
     for k in ("part_number", "description", "revision", "requested_date"):
-        q[k]["quote"] = "LUT-26698 rev A  gusset  qty 4  req'd June 13"
-    q["quantity"]["quote"] = "LUT-26698 rev A  gusset  qty 4  req'd June 13"
+        q[k]["quote"] = "KES-11427 rev A  control box  qty 4  req'd 05/21/2026"
+    q["quantity"]["quote"] = "KES-11427 rev A  control box  qty 4  req'd 05/21/2026"
     r = ri.process(swapped, ScriptedModel([json.dumps(wrong)]), RECORDS)
     assert r.status == ri.READY
     scored = ri.score([r], SAMPLE / "answer-key.csv")
@@ -653,13 +653,15 @@ def test_the_erp_import_has_the_ready_and_waiting_requests_line_by_line_and_noth
 
 def test_the_sample_end_to_end_offline(tmp_path):
     run_, written = ri.sample_run(OfflineModel(ri.offline), tmp_path)
-    # The sample is 210 emails since the quote desk added re-quotes sent in by email (136 before).
-    assert len(run_.results) == 210 == sum(run_.count(s) for s in ri.STATUSES)
+    # The sample is 196 emails since it moved to May 2026 (210 in May 2024 with the quote desk's re-quotes, 136 before).
+    assert len(run_.results) == 196 == sum(run_.count(s) for s in ri.STATUSES)
     names = {p.name for p in written}
     want = {"dashboard.html", "requests.csv", "line-items.csv", "erp-import.csv", "queue.csv", "review-queue.csv"}
     want.add("summary.md")
     assert want | {"score.md", "runs.csv"} <= names
-    assert run_.count(ri.READY) > 40 and run_.plan is not None and run_.plan.queue
+    # The offline stand-in's floor, scaled with the key when the sample moved to May 2026: 40 of the 128 ready
+    # requests in May 2024's key, so 35 of the 113 in May 2026's.
+    assert run_.count(ri.READY) > 35 and run_.plan is not None and run_.plan.queue
     ri.sample_run(OfflineModel(ri.offline), tmp_path)
     assert len(list(csv.DictReader((tmp_path / "runs.csv").open()))) == 2
 
@@ -820,7 +822,7 @@ def test_graph_mailbox_starts_from_since_on_its_first_run(tmp_path):
 def test_dates_are_written_without_format_codes_windows_lacks():
     for f in ("rfq_intake.py", "dashboard.py", "replay_queue.py"):
         assert "%-" not in (Path(ri.__file__).parent / f).read_text()
-    assert ri.long_date(ri.SAMPLE_AS_OF) == "May 31, 2024"
+    assert ri.long_date(ri.SAMPLE_AS_OF) == "May 31, 2026"
 
 
 # --- descriptions, families, seniority and the re-quote reservation ---------------------------------------------
@@ -1193,9 +1195,9 @@ def test_a_chaser_the_model_read_no_part_for_uses_the_emails_part_number():
 
 
 def test_the_forecast_starts_with_the_hours_covering_the_runs_email_not_the_as_of_date(tmp_path):
-    m = mail(ROW + SIGN, when=datetime(2024, 5, 6, 9, 0))
-    run_, _ = ri.run([m], RECORDS, ScriptedModel([GOOD]), tmp_path, date(2024, 5, 31))  # as of the month's end
-    assert run_.plan.start == date(2024, 5, 6) and run_.plan.capacity > 6
+    m = mail(ROW + SIGN, when=datetime(2026, 5, 4, 9, 0))  # a Monday in the 2026 sample's hours (was May 6, 2024)
+    run_, _ = ri.run([m], RECORDS, ScriptedModel([GOOD]), tmp_path, date(2026, 5, 31))  # as of the month's end
+    assert run_.plan.start == date(2026, 5, 4) and run_.plan.capacity > 6
 
 
 # --- July 2024's wording (training data now); synthetic examples ---------------------------------------------

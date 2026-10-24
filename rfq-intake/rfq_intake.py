@@ -22,7 +22,7 @@ an answer, one row per line, for the ERP's RFQ import, so nobody keys them), que
 and questions/ (drafts), and adds a line to out/runs.csv. With an answer key, also out/score.md. Nothing is sent,
 declined, priced or written to the ERP: a person does all of that.
 
-The sample is Wendlow Fabrication & Machine's quotes@ mailbox for May 2024, from the Wendlow simulation.
+The sample is Wendlow Fabrication & Machine's quotes@ mailbox for May 2026, from the Wendlow simulation.
 """
 
 from __future__ import annotations
@@ -59,7 +59,7 @@ HERE = Path(__file__).resolve().parent
 SAMPLE = HERE / "sample-data"
 THRESHOLDS = HERE / "release-thresholds.json"
 FORECAST_SETTINGS = HERE / "forecast.json"
-SAMPLE_AS_OF = date(2024, 5, 31)
+SAMPLE_AS_OF = date(2026, 5, 31)
 SIGNATURE = "Wendlow Fabrication & Machine, Estimating"
 MAX_TEXT = 12000
 MAX_EMAILS = 200

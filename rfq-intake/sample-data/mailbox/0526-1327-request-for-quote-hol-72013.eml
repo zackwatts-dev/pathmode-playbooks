@@ -1,0 +1,112 @@
+From: Toby Wendt <twendt@hollisbuilders.example>
+To: quotes@wendlow.example
+Subject: Request for quote - HOL-72013
+Date: Tue, 26 May 2026 13:27:00 -0400
+Message-ID: <202605261327.0077@hollisbuilders.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="==wendlow-0077=="
+
+--==wendlow-0077==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Wendlow team,
+
+We'd like a quote for 33 pieces of HOL-72013 rev A (clip angle), needed by 20=
+26-07-08; 41 pieces of HOL-24959 rev A (mounting plate), needed by July 22; 3=
+0 pieces of HOL-28449 rev A (mounting plate), needed by 2026-06-16. See attac=
+hed PDF and STEP.
+
+Regards
+Toby Wendt
+Buyer, Purchasing
+Hollis Builders LLC
+
+--==wendlow-0077==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="HOL-72013_revA.pdf"
+MIME-Version: 1.0
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2Jq
+CjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2Jq
+CjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA3OTIg
+NjEyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4g
+Pj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA2NSA+PgpzdHJlYW0KQlQgL0YxIDEyIFRm
+IDcyIDcyMCBUZCAoSE9MLTcyMDEzIHJldiBBIC0gY3VzdG9tZXIgZHJhd2luZykgVGogRVQKZW5k
+c3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFz
+ZUZvbnQgL0hlbHZldGljYSA+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAow
+MDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTggMDAwMDAgbiAKMDAwMDAwMDExNSAwMDAwMCBu
+IAowMDAwMDAwMjQxIDAwMDAwIG4gCjAwMDAwMDAzNTYgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6
+ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo0MjYKJSVFT0YK
+
+--==wendlow-0077==
+Content-Type: application/step
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="HOL-72013_revA.step"
+MIME-Version: 1.0
+
+SVNPLTEwMzAzLTIxOwpIRUFERVI7CkZJTEVfREVTQ1JJUFRJT04oKCdwbGFjZWhvbGRlciBtb2Rl
+bCcpLCcyOzEnKTsKRklMRV9OQU1FKCdIT0wtNzIwMTNfcmV2QS5zdGVwJywnMjAyNi0wNS0wMScs
+KCcnKSwoJycpLCcnLCcnLCcnKTsKRklMRV9TQ0hFTUEoKCdBVVRPTU9USVZFX0RFU0lHTicpKTsK
+RU5EU0VDOwpEQVRBOwpFTkRTRUM7CkVORC1JU08tMTAzMDMtMjE7Cg==
+
+--==wendlow-0077==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="HOL-24959_revA.pdf"
+MIME-Version: 1.0
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2Jq
+CjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2Jq
+CjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA3OTIg
+NjEyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4g
+Pj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA2NSA+PgpzdHJlYW0KQlQgL0YxIDEyIFRm
+IDcyIDcyMCBUZCAoSE9MLTI0OTU5IHJldiBBIC0gY3VzdG9tZXIgZHJhd2luZykgVGogRVQKZW5k
+c3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFz
+ZUZvbnQgL0hlbHZldGljYSA+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAow
+MDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTggMDAwMDAgbiAKMDAwMDAwMDExNSAwMDAwMCBu
+IAowMDAwMDAwMjQxIDAwMDAwIG4gCjAwMDAwMDAzNTYgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6
+ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo0MjYKJSVFT0YK
+
+--==wendlow-0077==
+Content-Type: application/step
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="HOL-24959_revA.step"
+MIME-Version: 1.0
+
+SVNPLTEwMzAzLTIxOwpIRUFERVI7CkZJTEVfREVTQ1JJUFRJT04oKCdwbGFjZWhvbGRlciBtb2Rl
+bCcpLCcyOzEnKTsKRklMRV9OQU1FKCdIT0wtMjQ5NTlfcmV2QS5zdGVwJywnMjAyNi0wNS0wMScs
+KCcnKSwoJycpLCcnLCcnLCcnKTsKRklMRV9TQ0hFTUEoKCdBVVRPTU9USVZFX0RFU0lHTicpKTsK
+RU5EU0VDOwpEQVRBOwpFTkRTRUM7CkVORC1JU08tMTAzMDMtMjE7Cg==
+
+--==wendlow-0077==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="HOL-28449_revA.pdf"
+MIME-Version: 1.0
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2Jq
+CjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2Jq
+CjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA3OTIg
+NjEyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4g
+Pj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA2NSA+PgpzdHJlYW0KQlQgL0YxIDEyIFRm
+IDcyIDcyMCBUZCAoSE9MLTI4NDQ5IHJldiBBIC0gY3VzdG9tZXIgZHJhd2luZykgVGogRVQKZW5k
+c3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFz
+ZUZvbnQgL0hlbHZldGljYSA+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAow
+MDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTggMDAwMDAgbiAKMDAwMDAwMDExNSAwMDAwMCBu
+IAowMDAwMDAwMjQxIDAwMDAwIG4gCjAwMDAwMDAzNTYgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6
+ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo0MjYKJSVFT0YK
+
+--==wendlow-0077==
+Content-Type: application/step
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="HOL-28449_revA.step"
+MIME-Version: 1.0
+
+SVNPLTEwMzAzLTIxOwpIRUFERVI7CkZJTEVfREVTQ1JJUFRJT04oKCdwbGFjZWhvbGRlciBtb2Rl
+bCcpLCcyOzEnKTsKRklMRV9OQU1FKCdIT0wtMjg0NDlfcmV2QS5zdGVwJywnMjAyNi0wNS0wMScs
+KCcnKSwoJycpLCcnLCcnLCcnKTsKRklMRV9TQ0hFTUEoKCdBVVRPTU9USVZFX0RFU0lHTicpKTsK
+RU5EU0VDOwpEQVRBOwpFTkRTRUM7CkVORC1JU08tMTAzMDMtMjE7Cg==
+
+--==wendlow-0077==--
