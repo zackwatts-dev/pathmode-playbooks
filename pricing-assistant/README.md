@@ -38,18 +38,33 @@ The answer key (`answer-key/`) holds what each request truly asks for, each repl
 
 ## Results
 
-| Measure | Limit | Sample (2024) |
-|---|---|---|
-| Wrong items | 0 | 0 |
-| Items found | at least 95% | 100% (87 of 87) |
-| Questions that were needed, asked | at least 80% | 6 of 6 |
-| Questions that weren't needed | at most 10% of requests | 0 |
-| Text addressed to an AI, missed | 0 | 0 |
-| Reply kinds right | at least 90% | 25 of 25 |
-| Competitor prices in replies, wrong | 0 | 0 of 7 |
-| Margin gained, points on won quotes | at least 0.5 | 1.09 ($670,754 on $61.5M) |
+| Measure | Limit | Sample (2024) | Held back: 2025 | 2023 | 2022 | 2021 |
+|---|---|---|---|---|---|---|
+| Wrong items | 0 | 0 | 0 | 0 | **5** | 0 |
+| Items found | at least 95% | 87 of 87 | **81 of 97** | **61 of 86** | **82 of 87** | 89 of 90 |
+| Questions that were needed, asked | at least 80% | 6 of 6 | **1 of 6** | 6 of 6 | 6 of 6 | 6 of 6 |
+| Questions that weren't needed | at most 10% of requests | 0 | **5** | **11** | 0 | 1 |
+| Text addressed to an AI, missed | 0 | 0 | 0 | 0 | 0 | 0 |
+| Reply kinds right | at least 90% | 25 of 25 | 25 of 25 | 25 of 25 | 25 of 25 | 25 of 25 |
+| Competitor prices in replies, wrong | 0 | 0 | 0 | 0 | 0 | 0 |
+| Margin gained, points on won quotes | at least 0.5 | 1.09 | 1.16 | 0.98 | 1.02 | 1.01 |
+| The same, in dollars | | $670,754 | $734,644 | $538,604 | $701,030 | $751,910 |
+| Code it was scored with | | | b28cb0b | bd5939c | 9f5ac0e | 510ae5b |
 
-The thresholds (`release-thresholds.json`) were set after the sample was recorded and before the held-back year was generated. Of the gain, $404K is residential customers, who were given about 1.9 points extra and buy almost as often without it; the rest is mixed and commercial customers, priced closer to what wins them. With every customer's true sensitivity known, the most there was is $972,756.
+Bold is a release threshold missed. The thresholds (`release-thresholds.json`) were set after the sample was recorded and before any held-back year was generated, and never changed.
+
+**Four held-back tests, three failed.** Each held-back year was generated after the code froze, in wording written after that, recorded once and scored once. Each kept its score (`score-at-<commit>.md`).
+
+- **2025: failed.** Quantities written "x1" or "times 1." were rejected, and "AC unit" and "outdoor unit" weren't known as condensers.
+- **2023: failed.** Contractor shorthand ("HP", "AH", "cond") became questions, and "410" and "454" without the letter weren't read as refrigerants.
+- **2022: failed, with five wrong items.** "Heat pump condenser" was priced as a straight condenser: the AI had it right, and code's word check overruled it. Before running this year we had said its result would be final. After it failed, Hartwell's owner chose to fix it and test once more, and we say so here.
+- **2021: passed** everything, with the code frozen at 510ae5b.
+
+Every failure was in code's checks on the AI's reading, and never in the reading itself or the price. Each fix came with a new test, and no earlier test changed. After the third failure, the three failed years became development data: they were read again to check the fixes (not committed, since they no longer count as tests). The fixes were these:
+- the AI now cites the customer's words for the kind of unit;
+- a line the reading leaves out is read again, then goes to a person by name.
+
+The margin gained held in every year, between 0.98 and 1.16 points. Most of it is residential customers, who are given about 1.9 points extra and buy almost as often without it. The rest is mixed and commercial customers, priced closer to what wins them. With every customer's true sensitivity known, the most there was is about $0.8 to $1.2 million a year.
 
 ## Files
 
@@ -59,6 +74,7 @@ The thresholds (`release-thresholds.json`) were set after the sample was recorde
 | `pricing_dashboard.py` | The dashboard |
 | `design.md` | The design, one page |
 | `plan.md` | The plan an AI wrote from it, unedited |
-| `release-thresholds.json` | What counts as good enough, set before the held-back year was generated |
+| `release-thresholds.json` | What counts as good enough, set before any held-back year was generated |
 | `tests/` | Every rule and check, without calling the AI |
 | `sample-data/` | The sample year: exports, requests, replies, answer key, recorded run |
+| `holdout-2025/`, `holdout-2023/`, `holdout-2022/`, `holdout-2021/` | The four held-back years, each with its recorded run and its score at the code it was tested with |
