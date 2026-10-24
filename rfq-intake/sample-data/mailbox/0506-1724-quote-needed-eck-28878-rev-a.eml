@@ -8,12 +8,24 @@ Content-Type: multipart/mixed; boundary="==wendlow-0011=="
 
 --==wendlow-0011==
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
 
-pls quote attached: ECK-28878 rev A skid qty 10 need 7/2, ECK-41402 rev A gua=
-rd need 6/11. We need pricing by EOD Fri 5/10.
+Hi,
 
-Tatum
+Parts list attached, please quote. We need pricing by EOD Fri 5/10.
+
+Thx
+Tatum Gessner
+Eckert Automation LLC
+
+--==wendlow-0011==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Eckert_RFQ_20176_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxFQ0stMjg4Nzgs
+QSxza2lkLDEwLDIwMjQtMDctMDIKMixFQ0stNDE0MDIsQSxndWFyZCwsMjAyNC0wNi0xMQo=
 
 --==wendlow-0011==
 Content-Type: application/pdf

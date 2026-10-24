@@ -10,29 +10,39 @@ Content-Type: multipart/mixed; boundary="==wendlow-0036=="
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 
-Pls quote, details below. Quotes due by Tuesday 5/14.
+Hello,
 
-Thanks
+Parts list attached, please quote. Quotes due by Tuesday 5/14.
+
+Regards
 Harper Pfeiffer
-Buyer, Purchasing
 Eckert Automation LLC
 
----------- Forwarded message ---------
-From: Ari Engle <ari.engle@eckertautomation.example>
-Date: Thu, May 09, 2024 at 05:28 PM
-Subject: New parts for quote
-To: Harper Pfeiffer <hpfeiffer@eckertautomation.example>
+--==wendlow-0036==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Eckert_RFQ_20232.pdf"
+MIME-Version: 1.0
 
-Harper,
-
-Can you get this out to a couple of shops? Need it for the next build.
-
-  ECK-38336 rev A clip angle - 128 pcs - need June 17
-  ECK-30466 rev A base frame - 7 pcs - need 2024-06-03
-  ECK-85160 rev A mounting plate - 24 pcs - need Mon 6/10
-
-Ari Engle
-Manufacturing Engineer
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2Jq
+CjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2Jq
+CjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIg
+NzkyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4g
+Pj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA1MDggPj4Kc3RyZWFtCkJUIC9GMSAxMCBU
+ZiA1MCA3NDAgVGQgKEVja2VydCBBdXRvbWF0aW9uIExMQyAtIFJFUVVFU1QgRk9SIFFVT1RBVElP
+TikgVGogMCAtMTYgVGQgKFJGUSAyMDIzMiAgICBCdXllcjogSGFycGVyIFBmZWlmZmVyKSBUaiAw
+IC0xNiBUZCAoKSBUaiAwIC0xNiBUZCAoSXRlbSAgUGFydCBudW1iZXIgIFJldiAgRGVzY3JpcHRp
+b24gICAgIFF0eSAgTmVlZCBieSkgVGogMCAtMTYgVGQgKDEgICAgIEVDSy0zODMzNiAgICBBICAg
+IGNsaXAgYW5nbGUgICAgICAxMjggIDIwMjQtMDYtMTcpIFRqIDAgLTE2IFRkICgyICAgICBFQ0st
+MzA0NjYgICAgQSAgICBiYXNlIGZyYW1lICAgICAgNyAgICAyMDI0LTA2LTAzKSBUaiAwIC0xNiBU
+ZCAoMyAgICAgRUNLLTg1MTYwICAgIEEgICAgbW91bnRpbmcgcGxhdGUgIDI0ICAgMjAyNC0wNi0x
+MCkgVGogMCAtMTYgVGQgKCkgVGogMCAtMTYgVGQgKFF1b3RlIHBlciBhdHRhY2hlZCBkcmF3aW5n
+cyBhbmQgb3VyIHN0YW5kYXJkIHRlcm1zLikgVGogMCAtMTYgVGQgRVQKZW5kc3RyZWFtCmVuZG9i
+ago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFzZUZvbnQgL0NvdXJp
+ZXIgPj4KZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAwOSAwMDAw
+MCBuIAowMDAwMDAwMDU4IDAwMDAwIG4gCjAwMDAwMDAxMTUgMDAwMDAgbiAKMDAwMDAwMDI0MSAw
+MDAwMCBuIAowMDAwMDAwODAwIDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgNiAvUm9vdCAxIDAg
+UiA+PgpzdGFydHhyZWYKODY4CiUlRU9GCg==
 
 --==wendlow-0036==
 Content-Type: application/pdf

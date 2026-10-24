@@ -8,12 +8,24 @@ Content-Type: multipart/mixed; boundary="==wendlow-0006=="
 
 --==wendlow-0006==
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
 
-pls quote attached clip angle, rev A. need 6/17. We need pricing by EOD Tue 5=
-/7.
+Hello,
 
-Jody
+Parts list attached, please quote. We need pricing by EOD Tue 5/7.
+
+Regards
+Jody Ruhl
+Eckert Automation LLC
+
+--==wendlow-0006==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Eckert_RFQ_20165_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxFQ0stNzA4MTEs
+QSxjbGlwIGFuZ2xlLCwyMDI0LTA2LTE3Cg==
 
 --==wendlow-0006==
 Content-Type: application/pdf

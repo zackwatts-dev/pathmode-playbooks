@@ -10,20 +10,22 @@ Content-Type: multipart/mixed; boundary="==wendlow-0084=="
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 
-Hi Wendlow team,
+Good morning,
 
-Please quote the following. Drawings and models attached.
+Parts list attached, please quote.
 
-Part number   Description         Rev   Qty    Need by
------------   -----------------   ---   ----   --------
-HAR-71757     bracket             A     39     6/26
-
-Material per print. 
-
-Regards
+Thank you
 Bailey Stoltz
-Supply Chain
 Hartman Implement, Inc.
+
+--==wendlow-0084==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Hartman_RFQ_20346_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxIQVItNzE3NTcs
+QSxicmFja2V0LDM5LDIwMjQtMDYtMjYK
 
 --==wendlow-0084==
 Content-Type: application/pdf

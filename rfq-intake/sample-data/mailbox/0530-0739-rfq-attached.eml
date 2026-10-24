@@ -10,18 +10,23 @@ Content-Type: multipart/mixed; boundary="==wendlow-0093=="
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 
-Hi all,
+Hi,
 
-RFQ for the parts below, drawings attached:
+See our RFQ form attached for parts and quantities.
 
-- CRO-16476 rev A  base frame  qty 9  req'd 6/27/24
-- CRO-76135 rev A  platform  qty 13  req'd 7/5/24
-
-
-Thank you
+Thanks
 Gale Croft
-Buyer, Purchasing
 Croft Construction, Inc.
+
+--==wendlow-0093==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Croft_RFQ_20363_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxDUk8tMTY0NzYs
+QSxiYXNlIGZyYW1lLDksMjAyNC0wNi0yNwoyLENSTy03NjEzNSxBLHBsYXRmb3JtLDEzLDIwMjQt
+MDctMDUK
 
 --==wendlow-0093==
 Content-Type: application/pdf

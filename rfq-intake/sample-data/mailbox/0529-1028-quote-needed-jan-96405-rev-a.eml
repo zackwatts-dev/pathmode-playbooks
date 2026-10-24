@@ -8,17 +8,24 @@ Content-Type: multipart/mixed; boundary="==wendlow-0082=="
 
 --==wendlow-0082==
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
 
-Good morning,
+Hi all,
 
-We'd like a quote for 17 pieces of JAN-96405 rev A (bracket), needed by June =
-12. Prints are attached.
+Parts list attached, please quote.
 
-Thank you
+Regards
 Dale Ostrander
-Buyer, Purchasing
 Jansen Packaging Systems Inc.
+
+--==wendlow-0082==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Jansen_RFQ_20344_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxKQU4tOTY0MDUs
+QSxicmFja2V0LDE3LDIwMjQtMDYtMTIK
 
 --==wendlow-0082==
 Content-Type: application/pdf

@@ -2347,14 +2347,17 @@ def sample_plan_from(records: Records) -> date:
 def sample_run(model, out: Path) -> tuple[Run, list[Path]]:
     """The sample, scored against its answer key. tools/record.py uses this to record a real model's answers."""
     records = Records.load(SAMPLE / "records")
+    mails = read_mailbox(SAMPLE / "mailbox")
     return run(
-        read_mailbox(SAMPLE / "mailbox"),
+        mails,
         records,
         model,
         out,
         SAMPLE_AS_OF,
         plan_from=sample_plan_from(records),
         answer_key=SAMPLE / "answer-key.csv",
+        # A month's email at once, not one 15-minute run's: the per-run ceiling would hold some back.
+        max_emails=max(MAX_EMAILS, len(mails)),
     )
 
 

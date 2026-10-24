@@ -8,30 +8,39 @@ Content-Type: multipart/mixed; boundary="==wendlow-0041=="
 
 --==wendlow-0041==
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
 
-See below, please quote.
+Hi,
+
+Parts list attached, please quote.
 
 Thanks
 Toby Stoltz
-Supply Chain
 Pfeiffer Process Machinery, Inc.
 
----------- Forwarded message ---------
-From: Parker Graber <pgraber@pfeifferprocessmac.example>
-Date: Mon, May 13, 2024 at 07:41 AM
-Subject: New parts for quote
-To: Toby Stoltz <tstoltz@pfeifferprocessmac.example>
+--==wendlow-0041==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Pfeiffer_RFQ_20237.pdf"
+MIME-Version: 1.0
 
-Toby,
-
-These are the new parts for the Q3 line. Wendlow did the last batch, try them=
- first.
-
-  PFE-11561 mounting plate - 12 pcs - need 2024-07-02
-
-Parker Graber
-Manufacturing Engineer
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2Jq
+CjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2Jq
+CjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIg
+NzkyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4g
+Pj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCAzNzUgPj4Kc3RyZWFtCkJUIC9GMSAxMCBU
+ZiA1MCA3NDAgVGQgKFBmZWlmZmVyIFByb2Nlc3MgTWFjaGluZXJ5LCBJbmMuIC0gUkVRVUVTVCBG
+T1IgUVVPVEFUSU9OKSBUaiAwIC0xNiBUZCAoUkZRIDIwMjM3ICAgIEJ1eWVyOiBUb2J5IFN0b2x0
+eikgVGogMCAtMTYgVGQgKCkgVGogMCAtMTYgVGQgKEl0ZW0gIFBhcnQgbnVtYmVyICBSZXYgIERl
+c2NyaXB0aW9uICAgICBRdHkgIE5lZWQgYnkpIFRqIDAgLTE2IFRkICgxICAgICBQRkUtMTE1NjEg
+ICAgICAgICBtb3VudGluZyBwbGF0ZSAgMTIgICAyMDI0LTA3LTAyKSBUaiAwIC0xNiBUZCAoKSBU
+aiAwIC0xNiBUZCAoUXVvdGUgcGVyIGF0dGFjaGVkIGRyYXdpbmdzIGFuZCBvdXIgc3RhbmRhcmQg
+dGVybXMuKSBUaiAwIC0xNiBUZCBFVAplbmRzdHJlYW0KZW5kb2JqCjUgMCBvYmoKPDwgL1R5cGUg
+L0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvQ291cmllciA+PgplbmRvYmoKeHJlZgow
+IDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTggMDAw
+MDAgbiAKMDAwMDAwMDExNSAwMDAwMCBuIAowMDAwMDAwMjQxIDAwMDAwIG4gCjAwMDAwMDA2Njcg
+MDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo3MzUK
+JSVFT0YK
 
 --==wendlow-0041==
 Content-Type: application/pdf

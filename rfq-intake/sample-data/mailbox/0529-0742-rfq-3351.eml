@@ -8,13 +8,25 @@ Content-Type: multipart/mixed; boundary="==wendlow-0089=="
 
 --==wendlow-0089==
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
 
-pls quote attached: HOL-58491 rev A gusset qty 6 need 6/19, HOL-62780 rev A f=
-lange qty 236 need 6/26, HOL-59422 rev A bracket qty 16 need 6/19. Bid closes=
- 05/31/2024.
+Hello,
 
-Taylor
+See our RFQ form attached for parts and quantities. Bid closes 05/31/2024.
+
+Appreciate it
+Taylor Neff
+Hollis Builders LLC
+
+--==wendlow-0089==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Hollis_RFQ_20351_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxIT0wtNTg0OTEs
+QSxndXNzZXQsNiwyMDI0LTA2LTE5CjIsSE9MLTYyNzgwLEEsZmxhbmdlLDIzNiwyMDI0LTA2LTI2
+CjMsSE9MLTU5NDIyLEEsYnJhY2tldCwxNiwyMDI0LTA2LTE5Cg==
 
 --==wendlow-0089==
 Content-Type: application/pdf

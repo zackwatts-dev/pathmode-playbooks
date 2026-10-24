@@ -8,13 +8,24 @@ Content-Type: multipart/mixed; boundary="==wendlow-0019=="
 
 --==wendlow-0019==
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
 
-We'd like a quote for ECK-80009 rev A (flange), needed by June 5. Drawings at=
-tached.
+Hi Wendlow team,
 
-Best regards
+See our RFQ form attached for parts and quantities.
+
+Thanks
 Ellis Ickes
+Eckert Automation LLC
+
+--==wendlow-0019==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Eckert_RFQ_20191_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxFQ0stODAwMDks
+QSxmbGFuZ2UsLDIwMjQtMDYtMDUK
 
 --==wendlow-0019==
 Content-Type: application/pdf

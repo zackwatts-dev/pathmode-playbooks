@@ -10,28 +10,23 @@ Content-Type: multipart/mixed; boundary="==wendlow-0097=="
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 
-Pls quote, details below.
+Hi,
 
-Thank you
+Please quote the parts on the attached form.
+
+Best regards
 Jordan Yost
-Supply Chain
 Stoltz Climate Products, Inc.
 
----------- Forwarded message ---------
-From: Alex Graber <alex.graber@stoltzclimateprodu.example>
-Date: Thu, May 30, 2024 at 09:03 PM
-Subject: New parts for quote
-To: Jordan Yost <jyost@stoltzclimateprodu.example>
+--==wendlow-0097==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Stoltz_RFQ_20374_parts.csv"
+MIME-Version: 1.0
 
-Jordan,
-
-Can you get this out to a couple of shops? Need it for the next build.
-
-  STO-61711 rev A clip angle - 36 pcs - need 6/14/24
-  STO-67904 rev A bracket - 17 pcs - need 6/14/24
-
-Alex Graber
-Manufacturing Engineer
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxTVE8tNjE3MTEs
+QSxjbGlwIGFuZ2xlLDM2LDIwMjQtMDYtMTQKMixTVE8tNjc5MDQsQSxicmFja2V0LDE3LDIwMjQt
+MDYtMTQK
 
 --==wendlow-0097==
 Content-Type: application/pdf

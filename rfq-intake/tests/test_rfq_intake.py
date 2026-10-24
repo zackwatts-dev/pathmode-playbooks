@@ -653,7 +653,8 @@ def test_the_erp_import_has_the_ready_and_waiting_requests_line_by_line_and_noth
 
 def test_the_sample_end_to_end_offline(tmp_path):
     run_, written = ri.sample_run(OfflineModel(ri.offline), tmp_path)
-    assert len(run_.results) == 136 == sum(run_.count(s) for s in ri.STATUSES)
+    # The sample is 210 emails since the quote desk added re-quotes sent in by email (136 before).
+    assert len(run_.results) == 210 == sum(run_.count(s) for s in ri.STATUSES)
     names = {p.name for p in written}
     want = {"dashboard.html", "requests.csv", "line-items.csv", "erp-import.csv", "queue.csv", "review-queue.csv"}
     want.add("summary.md")
@@ -712,7 +713,7 @@ def test_the_replayed_recording_keeps_every_rule(tmp_path):
     from a matched customer; the injection email goes to a person; nothing is let through wrong."""
     replay = ri.Replay(RECORDED)
     run_, _ = ri.sample_run(replay, tmp_path)
-    assert len(run_.results) == 136
+    assert len(run_.results) == 210  # 136 before the quote desk's re-quotes sent in by email
     assert run_.scored["n"][ri.LET_THROUGH] == 0
     for r in run_.results:
         if r.status == ri.READY:

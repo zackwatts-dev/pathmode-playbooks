@@ -8,31 +8,24 @@ Content-Type: multipart/mixed; boundary="==wendlow-0062=="
 
 --==wendlow-0062==
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 
-See below, please quote. Quotes due by Tuesday 5/21.
+See our RFQ form attached for parts and quantities. Quotes due by Tuesday 5/2=
+1.
 
-Thanks
+Thx
 Jody Coburn
-Supply Chain
 Dunlap Earthmoving Inc.
 
----------- Forwarded message ---------
-From: Jody Kuhn <jkuhn@dunlapearthmoving.example>
-Date: Sun, May 19, 2024 at 09:07 AM
-Subject: New parts for quote
-To: Jody Coburn <jcoburn@dunlapearthmoving.example>
+--==wendlow-0062==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Dunlap_RFQ_20272_parts.csv"
+MIME-Version: 1.0
 
-Jody,
-
-Can you get this out to a couple of shops? Need it for the next build.
-
-  DUN-13209 rev A bracket - 15 pcs - need 6/11
-  DUN-25921 rev A support stand - qty ? - need 6/4
-  DUN-88751 rev A mounting plate - 43 pcs - need 6/25/24
-
-Jody Kuhn
-Project Engineer
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxEVU4tMTMyMDks
+QSxicmFja2V0LDE1LDIwMjQtMDYtMTEKMixEVU4tMjU5MjEsQSxzdXBwb3J0IHN0YW5kLCwyMDI0
+LTA2LTA0CjMsRFVOLTg4NzUxLEEsbW91bnRpbmcgcGxhdGUsNDMsMjAyNC0wNi0yNQo=
 
 --==wendlow-0062==
 Content-Type: application/pdf

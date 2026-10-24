@@ -10,12 +10,24 @@ Content-Type: multipart/mixed; boundary="==wendlow-0018=="
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-pls quote attached: ECK-83442 rev A support stand qty 1 need 5/29, ECK-79290 =
-rev A mounting plate qty 18 need 6/5. Quote due 5/8 - we're awarding that wee=
-k.
+Good morning,
 
-Taylor
-Sent from my iPhone
+See our RFQ form attached for parts and quantities. Quote due 5/8 - we're awa=
+rding that week.
+
+Thanks
+Taylor Yost
+Eckert Automation LLC
+
+--==wendlow-0018==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Eckert_RFQ_20190_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxFQ0stODM0NDIs
+QSxzdXBwb3J0IHN0YW5kLDEsMjAyNC0wNS0yOQoyLEVDSy03OTI5MCxBLG1vdW50aW5nIHBsYXRl
+LDE4LDIwMjQtMDYtMDUK
 
 --==wendlow-0018==
 Content-Type: application/pdf

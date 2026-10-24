@@ -10,17 +10,23 @@ Content-Type: multipart/mixed; boundary="==wendlow-0025=="
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 
-Good morning,
+Hi all,
 
-RFQ for the parts below, drawings attached:
+Parts list attached, please quote.
 
-- ECK-96829 rev A  mounting plate  qty 8  req'd 7/5
-- ECK-88920 rev A  bracket   req'd 2024-06-27
-- ECK-52745 rev A  shaft  qty 93  req'd 2024-07-05
-
-
-Appreciate it
+Thanks
 Peyton Albers
+Eckert Automation LLC
+
+--==wendlow-0025==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Eckert_RFQ_20207_parts.csv"
+MIME-Version: 1.0
+
+SXRlbSxQYXJ0IG51bWJlcixSZXYsRGVzY3JpcHRpb24sUXR5LE5lZWQgYnkKMSxFQ0stOTY4Mjks
+QSxtb3VudGluZyBwbGF0ZSw4LDIwMjQtMDctMDUKMixFQ0stODg5MjAsQSxicmFja2V0LCwyMDI0
+LTA2LTI3CjMsRUNLLTUyNzQ1LEEsc2hhZnQsOTMsMjAyNC0wNy0wNQo=
 
 --==wendlow-0025==
 Content-Type: application/pdf
