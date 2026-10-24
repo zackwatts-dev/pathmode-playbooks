@@ -418,3 +418,48 @@ def test_a_unit_word_the_code_doesnt_know_is_settled_by_the_details_or_asked():
     )
     line, question, _ = P.check_item(it, text, cat)
     assert line is None and question and "Condenser or Heat Pump" in question
+
+
+# --- Added after the second held-back year failed (holdout-2023/score-at-bd5939c.md) -------------------------------
+def test_shorthand_for_the_unit_is_accepted_when_the_ai_cites_the_words_that_say_it():
+    text = "Called in:\n(2) Ashland 2.5T 14.3 cond w/ 454\n"
+    it = {
+        "quote": "(2) Ashland 2.5T 14.3 cond w/ 454",
+        "qty": 2,
+        "maker": "Ashland",
+        "type": "condenser",
+        "type_words": "cond",
+        "tons": "2.5",
+        "seer2": "14.3",
+        "refrigerant": "454",
+    }
+    line, question, _ = P.check_item(it, text, catalog())
+    assert line and line.sku == "ASH-CO025143A" and not question
+
+
+def test_type_words_that_arent_in_the_quote_dont_count():
+    text = "Called in:\n(2) Ashland 2.5T 14.3 w/ 454\n"
+    it = {
+        "quote": "(2) Ashland 2.5T 14.3 w/ 454",
+        "qty": 2,
+        "maker": "Ashland",
+        "type": "condenser",
+        "type_words": "condenser",
+        "tons": "2.5",
+        "seer2": "14.3",
+        "refrigerant": "454",
+    }
+    line, question, _ = P.check_item(it, text, catalog())
+    assert line is None or line.sku == "ASH-CO025143A"  # settled only by the details, never by the AI's word
+
+
+def test_a_refrigerant_written_without_its_letter_is_read():
+    assert P.ref_code("w/ 410") == "R-410A" and P.ref_code("(454)") == "R-454B" and P.ref_code("R-454B") == "R-454B"
+    assert P.ref_code("ASH-CO025143H") == ""
+
+
+def test_a_bare_part_number_is_a_quote():
+    text = "From the counter:\nASH-CO025143A\n"
+    it = {"quote": "ASH-CO025143A", "qty": 1, "part_number": "ASH-CO025143A"}
+    line, _q, why = P.check_item(it, text, catalog())
+    assert why == "the quantity is not in its words" and line is None  # its words are found; one unit isn't written
