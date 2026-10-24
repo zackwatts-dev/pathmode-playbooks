@@ -1,27 +1,32 @@
 # Customer RFQ intake
 
-Reads every email in a quotes mailbox the day it arrives: each request for quote into the fields an estimator needs, with a question drafted for anything missing (a revision, a quantity, the drawing), and everything else sorted to where it goes. A model reads each email, quoting its words for every value; plain code checks those words, matches them to your records and sorts; anything that doesn't check out goes to a person. Nothing is sent: a person sends every question and every quote.
+Reads every email in a quotes mailbox the day it arrives: each request for quote into the fields an estimator needs, with a question drafted for anything missing (a revision, a quantity, the drawing), and everything else sorted to where it goes. An AI reader reads each email, quoting its words for every value; an AI checker checks every value against the email; plain code matches it all to your records and sorts; anything that doesn't check out goes to a person. Nothing is sent: a person sends every question and every quote.
 
 The full playbook, worked through at Wendlow Fabrication & Machine (a simulated Dayton job shop) with the design, the plan an AI wrote from it, and the owner's answers to its questions: **https://pathmode.com/playbooks/rfq-intake/**
 
 ## Where it stands (2026-10-24)
 
-**The page and the code differ on one part, on purpose, for now.** The published page describes the solution in four parts: an AI reader, an AI checker, IT integration (matching each request to the business's records and bringing back the history), and a person who approves. This code has the reader, the IT integration and the person. In place of the AI checker it still uses plain code that re-reads the email to confirm each value against the words the AI quoted. That re-reading is being replaced by the AI checker: a second, independent read that checks each value against the email, with any disagreement going to a person. The checks against the records stay in code.
+**Four parts, as the published page describes them:** an AI reader; an AI checker (a second call to the model, sent the email and the reader's values, that says what the email itself says for each value, whether it's clear, and what the reading missed); IT integration (plain code that checks every quoted phrase is in the email, matches the sender, parts and open requests to the records, checks drawings and that dates make sense); and a person who approves. Code compares the reader and the checker; any difference, unclear value or miss goes to a person with the reason.
 
-**The sample is May 2026.** Every date in the simulation's files moved forward 104 weeks, so weekdays and holidays keep their places (pathmode-corpus, `simulations/fabricator/BUILD.md`). Recorded once (Claude Sonnet 5.5, 196 calls): 193 of 196 right, none let through wrong, 19 of 19 attachment requests and 63 of 64 re-quotes right. Every release threshold passes.
+**The sample is May 2026.** Every date in the simulation's files moved forward 104 weeks, so weekdays and holidays keep their places (pathmode-corpus, `simulations/fabricator/BUILD.md`). Recorded with the reader and the checker (Claude Sonnet 5.5): 193 of 196 right, none let through wrong, 19 of 19 attachment requests and 63 of 64 re-quotes right. Every release threshold passes.
 
-**Held-back months.** Each was generated after the code froze, in new wording, recorded once and scored once. Nothing wrong was ever let through; every miss was the re-reading code stopping a request whose values the AI had read correctly, because it didn't recognize a new way of writing them:
+**Held-back months.** Each was generated after the code froze, in wording no earlier month used, recorded once and scored once. The release thresholds were set before the first and never changed:
 
-| Held-back month | Code | Right | Let through wrong | Stopped needlessly |
-|---|---|---|---|---|
-| 2024-11 | de9a6b7 | 73 of 160 | 0 | 87 |
-| 2024-12 | caffb9e | 104 of 153 | 0 | 49 |
-| 2025-01 | c25ae3d | 132 of 171 | 0 | 38 |
-| 2026-03 | 8f78462 | 129 of 175 | 0 | 46 |
+| Held-back month | Code | Checking | Right | Let through wrong | Stopped needlessly | Thresholds |
+|---|---|---|---|---|---|---|
+| 2024-11 | de9a6b7 | code re-reading the email | 73 of 160 | 0 | 87 | fail |
+| 2024-12 | caffb9e | code re-reading the email | 104 of 153 | 0 | 49 | fail |
+| 2025-01 | c25ae3d | code re-reading the email | 132 of 171 | 0 | 38 | fail |
+| 2026-03 | 8f78462 | code re-reading the email | 129 of 175 | 0 | 46 | fail |
+| 2026-04 | d3c3a3b | the AI checker | 162 of 166 | 0 | 4 | **pass** |
 
-The first three became development data for 8f78462 (re-scored with it: 154 of 160, 152 of 153, 166 of 171). The fourth found two more date styles ("3-30-2026", "April the 15th"). That pattern is why the re-reading is being replaced rather than patched again. The release thresholds were set before any held-back month and none was changed. Scores are in each `holdout-*/score-at-<commit>.md`.
+Under the old checking, every miss was code stopping a request the AI had read correctly, because it didn't recognize a new way of writing a date or a layout; patching it each month found another. The AI checker replaced it. Its four stops in April were each a real mistake in the reading that the checker caught. Scores are in each `holdout-*/score-at-<commit>.md`; the earlier months are development data.
+
+**Tests removed with the old checks** (e6c5443), because the behavior they tested is now the checker's: `test_a_bare_number_or_letter_isnt_proof_of_a_quantity_or_revision`, `test_a_bare_table_cell_counts_under_its_header_in_its_parts_row`, `test_a_date_quote_with_two_dates_or_the_wrong_weekday_goes_to_a_person`, `test_a_date_the_model_left_blank_in_its_parts_clause_goes_to_a_person`, `test_a_deadline_with_no_date_isnt_lost_either`, `test_a_dotted_date_that_reads_both_ways_with_nothing_to_settle_it_goes_to_a_person`, `test_a_due_date_the_email_gives_cant_be_lost`, `test_an_emails_own_dates_settle_which_way_its_ambiguous_dates_run`, `test_a_part_with_its_details_indented_on_the_next_line_is_one_item`, `test_a_single_part_email_gets_the_clause_checks_too`, `test_a_space_aligned_table_without_a_rev_column_reads_its_cells`, `test_a_table_under_erp_column_names_reads_its_cells`, `test_a_tab_separated_rows_values_are_read_from_its_cells`, `test_a_value_not_in_its_quote_goes_to_a_person`, `test_a_value_quoted_next_to_another_part_or_two_parts_goes_to_a_person`, `test_a_value_that_isnt_the_one_the_email_gives_for_the_part_goes_to_a_person`, `test_a_wrapped_line_carries_its_value_to_the_next_part`, `test_due_words_just_before_the_quoted_date_count`, `test_item_blocks_are_one_clause_per_item`, `test_nlt_and_needed_as_quote_due_cues`, `test_n_x_description_is_a_quantity`, `test_parts_due_is_a_requested_date_not_a_quote_due_date`, `test_quote_due_cues_and_delivery_words`, `test_slash_and_pipe_layouts_split_per_part`, `test_the_usual_erp_column_names_are_table_headers`, `test_values_that_need_a_person_not_a_reading`, `test_a_number_that_could_be_something_else_isnt_proof`, `test_a_pipe_table_splits_into_cells_and_a_revision_after_a_pipe_counts`, `test_a_quantity_written_x116_and_a_revision_after_a_slash_count`, `test_a_value_in_a_sentence_about_one_part_belongs_to_it`, `test_closing_this_rfq_out_says_quotes_are_due`, `test_common_column_names_are_known_table_headers`, `test_more_ways_of_saying_quotes_are_due`, `test_the_next_release_of_a_part_isnt_a_release_quantity_but_releases_of_50_are`, `test_the_only_bare_number_in_the_parts_words_is_its_quantity`. One assertion of `test_the_due_date_must_be_about_quotes_and_after_the_email` went with them (its "quotes are due" wording); its "before the email" part stays.
 
 **The quote desk's extensions are in:** attachments read (the buyer's RFQ form as a PDF, or a parts list as a CSV), a history brief and fast-track for repeat parts, and bid odds shown to the estimator. The queue replay (`replay_queue.py`) has the desk as a fourth way of working.
+
+**Templates** for your own version are in `templates/`: a design to fill in, an answer key to label your own email in, a pass-mark sheet to sign before scoring, and a go-live checklist.
 
 ## What it does
 
