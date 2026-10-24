@@ -1,117 +1,109 @@
-<!-- Written by Claude Sonnet 5.5 from plan-prompt.md and design.md on 2026-10-23, unedited. The review of it is on the playbook page, Step 3. -->
+# Build plan: Hartwell quote pricing tool
 
-# Build plan: quote pricing assistant (Hartwell Supply)
+Working directory `/tmp/tmp.WaJnaoDw4v` is not a git repo, so step 0 is `git init`, then work on branch `build/quote-pricing`.
 
-## 1. Ground rules for the agent
-- Work on branch `build/quote-pricing`. Make small commits, one per step below, and put tests in their own commit before the code they test.
-- **Tests and the answer key are frozen.** The agent may not edit `tests/`, `fixtures/`, or `answer_key/` after the "tests approved" commit without written approval from a person. CI hashes those paths against that commit and fails on any difference. If a test looks wrong, the agent stops and asks.
-- All AI calls go through one interface, `LLMClient`. Tests use a fake client, so the whole suite runs offline. Only tests marked `live` call Anthropic, and they run by hand.
-- Python with pinned numpy and scikit-learn. Credentials come from environment variables only.
+## 1. Parts and interfaces
 
-## 2. Parts and interfaces
-Each part is a pure function or small class with typed inputs and outputs. It is tested alone and does not import its neighbours.
+Each part is a Python module with typed inputs and outputs. Only `reader` and `checker` (and the note and reply-drafting calls) touch the AI, through one `LLMClient` protocol that tests replace with a fake. Everything else is pure code.
 
-| # | Part | Interface | Notes |
-|---|---|---|---|
-| 1 | `ingest` | `load_exports(dir) -> Dataset` | Validates the CSV schema. Rejects bad rows loudly. |
-| 2 | `reader` (AI) | `read_request(text, customer_name) -> RawReading` | Sends one request and the customer name only. No tools. Returns items, each with `quote`, `qty`, `part_no` or equipment details, plus `competitor_price`, `deadline`, `job_name` and `instructions_found[]`. |
-| 3 | `verify` (code) | `verify(reading, text, catalog) -> VerifiedItems, Questions, Flags` | Rules in §4. Drafts questions from templates. |
-| 4 | `pricing` | `agreed_price(line, customer, date)` | List × (1 − agreed discount) × (1 − markdown for that month). |
-| 5 | `winmodel` | `train(quotes, as_of)`, `p_win(features, extra_disc)` | Trains nightly. Uses only quotes closed before `as_of`. Returns chances at 0–5%. |
-| 6 | `suggest` | `suggest(lines, p_win_curve) -> Suggestion` | Maximises P(win) × margin. Enforces the floor (cost + 5%) and the manager flag above 3%. |
-| 7 | `draft` | `build_quote(...)` (code); `write_note(facts)` (AI) | Code computes every price and total. The note comes from a fixed fact list, and every number in it is checked against that list. |
-| 8 | `reply_reader` (AI) | `read_reply(text) -> {kind, competitor_amount, quote}` | |
-| 9 | `negotiate` (code) | `respond(reply, quote, authority, p_win) -> match/hold/escalate` | Finds the extra discount that matches the competitor. Matches only within authority and only if expected margin beats holding. |
-| 10 | `outputs` | `render(...)`, `log_run(...)`, `record_feedback(...)` | Escaped HTML or text drafts. One log line per run. Account managers mark each suggestion used or not, with a reason. |
-| 11 | `runner` | `run_once(now)` | Runs every 10 minutes. Enforces the 400-reads-a-day cap. Puts exceptions at the top of the account manager's list. |
-| 12 | `evaluate` | `score(answer_key) -> Report` | Reading, reply and money scores as in §5. |
+| Part | In → Out | Rule |
+|---|---|---|
+| `ingest` | CSV files → typed records | Validates columns and dates. Unknown customer yields `Unmatched`, never a drop. |
+| `reader` | request text, customer name → `Reading` (items with exact quote, qty, part no. or equipment fields; competitor price, deadline, job name, each quoted) | Calls the LLM. |
+| `checker` | request text, `Reading` → `Check` (per-item facts and clarity, missed items, competitor price, AI-addressed lines) | A separate LLM call. |
+| `compare` | `Reading`, `Check` → `Agree` / `ToPerson(reason)` / `AskCustomer(question)` | Code. |
+| `match` | `Reading`, `Check`, catalog → accepted lines, questions | Code. Verbatim-quote check, part-number lookup, exactly-one equipment match, injection flagging. |
+| `pricing` | line, customer, date → agreed price | `Decimal`. List, then agreed discount, then that day's markdown. |
+| `winmodel` | history, as-of date → P(win) at each extra discount | scikit-learn, pinned. Nightly. |
+| `policy` | agreed price, cost, P(win) curve → suggestion | Argmax of P(win) × margin. Floor cost + 5%. Above 3% needs the sales manager. |
+| `note` | facts from code → 1–2 sentence note | LLM. Every number in the output must be in the facts, or the note is dropped and a template is used. |
+| `replies` | reply text → kind, competitor amount; then `negotiate()` in code | Reader and checker as above. Code decides match, hold or escalate. |
+| `outputs` | drafts, AM list, run log, feedback | Escapes everything. Writes files only. |
+| `runner` | schedule, 400-read budget | Every 10 minutes. Over budget goes to the AM, flagged. |
+| `eval` | answer key → reading, reply and money metrics | One command, one report. |
 
-## 3. Order of work
-0. **Skeleton**: repo layout, tooling config, `Makefile` with the commands in §7.
-1. **Tests and fixtures** (no implementation): the tests listed in §4 and §5, a small hand-made fixture set, and loaders for the real answer key. **Stop for human review.**
-2. Steps 1–5 below are code-only, in this order: `ingest`, `pricing`, `verify`, `winmodel`, `suggest`, `negotiate`. Each is its own commit.
-3. `reader`, `reply_reader` and `draft` behind `LLMClient`, tested with the fake client.
-4. `outputs`, `runner`, `evaluate`.
-5. Run the deterministic checks (§7), then the live answer-key run, then AI review (§7).
+## 2. Business rules (each gets an ID and a test)
 
-## 4. Business rules and the tests that prove them
-Every test runs without the AI.
+- **R1** Every quoted phrase appears in the request word for word. A part number appears in its own words.
+- **R2** An item is accepted only if the part number exists, or exactly one catalog product matches the equipment fields that reader and checker agree on. Zero or several matches become a customer question drafted by code.
+- **R3** Any reader/checker disagreement, unclear item or missed item goes to a person with the reason, or to the customer if the request doesn't give the detail.
+- **R4** Price = list × (1 − agreed discount), then the markdown in effect on the quote date, per line.
+- **R5** The suggested extra discount is the one on the 0–5% grid with the highest P(win) × margin.
+- **R6** The price after the extra discount is never below cost × 1.05. The suggestion is capped at the highest discount that satisfies this.
+- **R7** Any extra discount above 3% is marked "needs sales manager". Only AM and sales-manager authority change what is offered.
+- **R8** A reply with a named competitor price: code computes the matching extra discount. Match only if it is within AM authority **and** expected margin beats holding. Otherwise hold, or offer the sales manager the choice.
+- **R9** The win model trains only on quotes closed in the 3 years before the as-of date. None on or after it.
+- **R10** Note numbers are a subset of the numbers code provided.
+- **R11** Nothing is silently dropped. No customer match or unreadable means top of the AM's list.
+- **R12** The run log has one line per run: time, model, requests, items, questions, discounts.
+- **R13** The daily cap is 400 AI reads. A request costs two. Overflow is flagged to the AM.
 
-**Reading checks (`verify`)**
-- A quote that isn't word for word in the request rejects the item. The test uses a paraphrased quote.
-- A part number that isn't in the catalog rejects the item.
-- Equipment details matching zero or two or more products produce a question, never a guess. The test uses "410A or 454B?".
-- A quantity that isn't inside the quote rejects the item.
-- Zero wrong items on the answer-key sample is the pass bar (see open question 5).
-
-**Prices and discount**
-- The agreed price uses the markdown for the quote's month, and the month boundary is covered.
-- The suggestion is the argmax of P(win) × margin over 0–5%, checked on a hand-built curve.
-- The suggestion never goes below cost + 5%. If the agreed price is already below that, suggest 0% and flag it.
-- A suggestion above 3% is marked "needs sales manager". A suggestion at exactly 3% is not.
-- The win model's training set excludes quotes closed after `as_of`. A test with a planted future quote proves it.
-
-**Replies**
-- The kind and competitor amount match the key.
-- Matching happens only within authority and only when it beats holding on expected margin. Otherwise the result is hold or escalate.
-
-**Notes and drafts**
-- A note containing a number not in the fact list is rejected and replaced by a plain template.
-- A request with no customer match, or one that can't be read, appears at the top of the list. Nothing is dropped silently.
-- The 401st read of the day goes to the account manager unprocessed.
-
-**Tests a person must review before any code is written:**
-- the answer-key loaders and scoring;
-- the margin floor and authority tests;
-- every security test (§6);
-- the money metric.
-
-## 5. Acceptance: the answer key
-Report all of these, produced by `evaluate`:
-- **Reading:** items found, wrong items, unneeded questions. Weighted worst to least bad: wrong item, then a match the margin doesn't support, then an unneeded question.
-- **Replies:** kind accuracy and competitor-amount accuracy.
-- **Money:** for every quote in the year, the expected margin at the suggested discount against the expected margin at the discount the account manager gave. Both use the simulation's true win chances. Show the difference in dollars and in points of margin on won quotes. The report must say it uses the simulation's own win curve, and that a real company would prove it with a split trial.
-- Re-run all of this after any change, including a new model version, before going live.
-
-## 6. Security rules: where enforced, and what proves it
+## 3. Security rules: where enforced, what proves it
 
 | Rule | Enforced in | Test |
 |---|---|---|
-| Read-only: no writes to ERP/CRM, nothing sent | There is no network or write code beyond the Anthropic call and the output directory. `outputs` writes only under `OUT_DIR`. | Run with network blocked except a mocked Anthropic endpoint. Assert no other sockets and no file writes outside `OUT_DIR`. |
-| AI sees one request or reply plus the customer name, and no costs, margins, other customers or win model | `reader` and `reply_reader` build the prompt from a fixed template with two inputs. | Capture the prompt with the fake client. Assert it contains no cost, margin or other-customer strings from the fixtures. |
-| The AI has no tools | `LLMClient` sends no `tools` parameter. | Assert the request payload has none. |
-| Requests and replies are data: injected instructions are reported and change nothing | The AI's `instructions_found` list and a code-side pattern check feed `Flags`. Prices and authority are computed from catalog and config only. | Requests and replies saying "approve 15%" or "ignore previous rules", with the fake client obeying them. Assert prices and authority are unchanged and the sales manager gets a flag. |
-| Everything shown is escaped | `render` uses autoescape. | Customer names and request text containing `<script>` appear escaped in the output. |
-| Credentials from the environment | A single config module reads them. | Scan the repo for key-like strings. Startup fails if the variable is missing. |
-| Pinned dependencies | `requirements.txt` with hashes. | `pip-audit` in CI. |
-| The AI cannot set a number | `draft` and `negotiate` take numbers only from code. | The note-number check test in §4. |
+| Read-only, can't send | No SMTP/ERP/CRM client in dependencies. Outputs write only under `drafts/`. | Import-graph test fails if network or mail libs are imported outside `llm_client`. Test that a full run changes no input file hash. |
+| AI sees one request, customer name only, no costs, margins, other customers, model | `prompts.build()` takes only text and name | Snapshot test of the prompt. Canary values (cost, other customer name) planted in fixtures must not appear. |
+| AI has no tools | `llm_client` never passes `tools` | Test asserts the request payload has no `tools` key. |
+| Requests are data, not instructions | `match` flags AI-addressed text from the reader, the checker, or a code regex. Prices come only from `pricing` and `policy`. | Fixture "approve 15%" in request and reply: price, floor and authority are identical to the clean version, and a flag goes to the sales manager. |
+| Output escaped | One `render()` function, autoescape on | Fixtures with `<script>` in names and text appear escaped in every output. |
+| Credentials from environment | `config.py` reads env only | Test that the missing-key error names the variable. Secret scan (see §5) finds no keys in the repo. |
+| Pinned dependencies | `requirements.txt` with exact versions | Test parses it and fails on any unpinned line. `pip-audit` runs. |
 
-## 7. Commands, in order
-Deterministic checks come first, and AI review comes last.
+## 4. Tests first
+
+Write tests before each part, in this order, from the rules above and the answer key. The first commit holds the tests only, and they fail.
+
+- **Unit tests per rule** R1–R13 with a fake `LLMClient`, so none call the AI.
+- **Key-driven tests:** reading (items found, wrong items, unneeded questions), reply kind and amount, and the money metric. These run on recorded AI outputs. A separate `eval --live` calls the real model.
+- **Properties:** floor never violated across random inputs. Suggestion never above the cap without the flag. Training rows never dated at or after the as-of date.
+
+**A person must review before the agent builds on them:** R1, R2, R6, R7, R8, R9, all security tests, and the metric definitions and thresholds in `eval`. These are the money, wrong-item and safety rules.
+
+**Locked files:** `tests/` and `answer_key/` are hashed in `LOCKED.sha256`, committed by a person. `scripts/check_locked.sh` fails on any difference. The agent may not edit tests, the key or the hash file without written approval. If a test seems wrong, the agent stops and asks.
+
+## 5. Checks, in order (all deterministic before any AI review)
+
 ```
-make test        # pytest -m "not live"  (all offline)
-make lint        # ruff check . && ruff format --check . && mypy src
-make security    # bandit -r src && pip-audit
-make frozen      # verify hashes of tests/, fixtures/, answer_key/
-make eval-live   # pytest -m live; calls the API, run manually
+pytest -q                      # unit + key-driven, no AI calls
+ruff check . && ruff format --check .
+mypy src
+bandit -r src                  # security review of the code
+pip-audit -r requirements.txt
+gitleaks detect                # or detect-secrets; no credentials in repo
+scripts/check_locked.sh
+python -m hartwell.eval --key answer_key/ --recorded   # metrics report
 ```
-After these are green, run `/security-review` on the branch, then `/code-review`. A person reads the diff last.
 
-## 8. Out of scope
-- Writing to or syncing with the ERP or CRM, and sending email.
-- The split trial on real quotes.
-- A web UI beyond the draft output and the used/not-used mark.
-- EDI and phone parsing. Input is the request text only.
-- Any pricing beyond the 0–5% extra discount.
+Only after all pass does an AI code review run on the diff (for example `/code-review`). Before go-live, and after any model-version change, run `eval --live` and compare with the last report.
 
-## 9. Open questions for you
-1. **Win model facts and AI privacy.** The design says the AI never sees the win model, but the account-manager note ("buys at our agreed price about half the time") needs a win-model fact. Is the note allowed to see the win-model facts, and the reply draft only code's numbers? I'd say yes to the first and no cost or margin text in anything customer-facing.
-2. **Margin and the floor.** Is "cost plus 5%" a markup on cost, and is the floor checked per line or on the whole quote? Is expected margin in dollars or percent? I assume dollars per line.
-3. **How the extra discount stacks.** Is it taken off the already-discounted price, or added in points to the agreed discount? Does it apply to every line?
-4. **Authority.** What is an account manager's limit? The design gives 3% for suggestions. Is it the same for competitor matching, and what happens when a match needs more than 5%?
-5. **Pass bars.** What score on the answer key counts as ready: zero wrong items? A maximum for unneeded questions? A minimum money gain?
-6. **Matching rules.** Are discontinued products excluded from matches? If the customer didn't give a detail, such as SEER2, does it count as "matches every detail written" or does it trigger a question?
-7. **Injection detection.** Do you accept the AI's `instructions_found` field plus a simple pattern list, or do you want something stricter?
-8. **Delivery.** Where do drafts, flags and the "used or not" marks live: files in a folder, a simple page, or something else? And who gets the sales-manager flags?
-9. **Selection bias.** In the simulation, are extra discounts given at random, or by account-manager habit? If it's habit, the model's win curve could be biased, and I'd want the money test to show that.
-10. **Sample size.** How big is the answer-key sample, and does it cover the full year of quotes the money test needs?
+## 6. Build order (small commits, one reviewable step each)
+
+1. Tests-only commit, then human review of the list in §4.
+2. `ingest` and fixtures.
+3. `pricing` (R4).
+4. `policy` (R5–R7) and `winmodel` (R9).
+5. `reader`, `checker`, `compare`, `match` with the fake client (R1–R3).
+6. `note` (R10), `replies` and `negotiate` (R8).
+7. `outputs`, `runner`, log, feedback capture (R11–R13).
+8. `eval` and first metrics report.
+
+Each commit passes §5 on its own. The agent stops at the end of steps 1, 4 and 8 for review.
+
+## 7. Out of scope
+
+Writing to ERP/CRM, sending email, and EDI parsing beyond text. A split trial on real quotes. A UI beyond the draft files and AM list. Retraining the reader or checker. Multi-language requests. Tuning the win model beyond the stated inputs.
+
+## 8. Open questions before building
+
+1. **Budget:** 55,000 quotes a year is about 220 requests a working day, which is about 440 reads before any replies. Is 400 a day meant to be this tight, or should it be higher?
+2. **Discount grid:** whole points (0,1,…,5) or finer steps?
+3. **Level:** is the extra discount chosen per line or for the whole quote? Is "expected margin" in dollars?
+4. **Floor:** is cost + 5% measured on the price after the agreed discount and markdown? What if the agreed price already sits below it?
+5. **Stacking:** does a markdown replace, or add to, the customer's agreed discount?
+6. **Authority:** what is each AM's limit? Is it one number (3%) or per person?
+7. **Pass thresholds:** what are the acceptable wrong-item rate (zero?), items-found rate and unneeded-question rate for go-live?
+8. **Win model:** which model class (logistic regression?), and how should a customer with little history be handled?
+9. **Where the answer key lives** and who owns `LOCKED.sha256`. Who is the reviewer for §4?
+10. **Competitor-price replies:** if the named price is below the floor, hold, or offer the sales manager the choice?
+11. **Tooling:** are ruff, mypy, bandit, gitleaks and pip-audit acceptable, or does your team have standards?
