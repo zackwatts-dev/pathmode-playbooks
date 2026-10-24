@@ -639,9 +639,9 @@ def _numeric(a: int, b: int, sep: str, day_first: set[str]) -> tuple[int, int]:
     return a, b
 
 
-def day_first_in(text: str) -> set[str]:
-    """The separators ("/" or ".") whose numeric dates run day first in this text: at least one can only be read day
-    first (23.6.2024), and none only month first (6.17.2024). With both, or neither, nothing is settled."""
+def _orders(text: str) -> tuple[set[str], set[str]]:
+    """The separators ("/" or ".") with a numeric date in this text that can only be day first (23.6.2024), and those
+    with one that can only be month first (6.17.2024)."""
     only_day, only_month = set(), set()
     for m in DATE.finditer(text):
         for a, b, sep in ((m.group("m"), m.group("d"), "/"), (m.group("dm_"), m.group("dd_"), ".")):
@@ -651,7 +651,27 @@ def day_first_in(text: str) -> set[str]:
                     only_day.add(sep)
                 elif b > 12 >= a:
                     only_month.add(sep)
+    return only_day, only_month
+
+
+def day_first_in(text: str) -> set[str]:
+    """The separators whose numeric dates run day first in this text: at least one can only be read day first, and
+    none only month first. With both, or neither, nothing is settled."""
+    only_day, only_month = _orders(text)
     return only_day - only_month
+
+
+def unsettled_dotted(words: str, text: str) -> str | None:
+    """A dotted date in `words` that reads both ways ("4.6.2024": April 6 or June 4), when nothing in the email's
+    other dotted dates settles which. Slashed dates are a US shop's own way, month first, and aren't asked about."""
+    only_day, only_month = _orders(text)
+    if ("." in only_day) != ("." in only_month):
+        return None
+    for m in DATE.finditer(words):
+        a, b = m.group("dm_"), m.group("dd_")
+        if a and b and a != b and int(a) <= 12 and int(b) <= 12:
+            return m.group(0).strip()
+    return None
 
 
 def read_dates(text: str, received: date | None, day_first: set[str] = frozenset()) -> tuple[list[date], list[str]]:
@@ -1213,6 +1233,9 @@ def _date_problems(label: str, value: str, quote: str, mail: Email, due: bool) -
     dates, problems = read_dates(quote, mail.received, day_first_in(mail.source))
     if problems:
         return [f"{label}: {problems[0]}"]
+    both = unsettled_dotted(quote, mail.source)
+    if both:
+        return [f'{label}: "{both}" could be either day first or month first, and the email doesn\'t settle which']
     if set(dates) != {d}:
         return [f'{label} isn\'t the date its words give ("{quote[:60]}")']
     said = [bool(DUE_WORDS.search(c)) for c in _contexts(quote, mail.source)] or [bool(DUE_WORDS.search(quote))]
