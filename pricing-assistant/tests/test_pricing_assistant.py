@@ -632,3 +632,27 @@ def test_an_item_that_cant_be_checked_sends_the_request_to_a_person():
     bad = dict(item(), part_number="ZZZ999999")  # not in the catalog
     r = checked_read(Desk([reading(bad, IGN)]))
     assert r.to_person and any("ZZZ999999" in x for x in r.to_person), r.to_person
+
+
+# Restored unchanged (removed by mistake with the prose checks; the rule is about identifiers, not wording):
+def test_a_part_number_from_another_line_is_dropped_and_the_written_details_decide():
+    text = "Called in:\n(1) IGN080023\n2 Ashland 2.5 ton 14.3 SEER2 condenser 454B\n"
+    it = {
+        "quote": "2 Ashland 2.5 ton 14.3 SEER2 condenser 454B",
+        "qty": 2,
+        "part_number": "IGN080023",
+        "maker": "Ashland",
+        "type": "condenser",
+        "type_words": "condenser",
+        "tons": "2.5",
+        "seer2": "14.3",
+        "refrigerant": "454B",
+    }
+    line, _q, _w = P.check_item(it, text, catalog())
+    assert line and line.sku == "ASH-CO025143A" and line.qty == 2
+
+
+def test_a_catalog_part_number_in_the_request_that_isnt_on_the_draft_goes_to_a_person():
+    """Every catalog part number the request names must end up as an item: one that doesn't is a request read short."""
+    r = checked_read(Desk([reading(item())]))  # the reading has the condenser only; the request also names IGN080023
+    assert any("IGN080023" in x for x in r.to_person), r.to_person
