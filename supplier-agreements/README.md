@@ -78,10 +78,10 @@ python3 supplier-agreements/supplier_agreements.py --sample --dry-run
 # Replay a recorded run: what a real model (Claude Sonnet 5.5) read on the sample, free
 python3 supplier-agreements/supplier_agreements.py --sample --replay supplier-agreements/sample-data/recorded-run.json
 
-# The held-back year, 2024, replayed
-python3 supplier-agreements/supplier_agreements.py --data supplier-agreements/holdout-2024 \
-  --answer-key supplier-agreements/holdout-2024/answer-key/entitlements-key.csv \
-  --replay supplier-agreements/holdout-2024/recorded-run.json
+# The held-back years replayed (2023 is the one to trust; see Results)
+python3 supplier-agreements/supplier_agreements.py --data supplier-agreements/holdout-2023 \
+  --answer-key supplier-agreements/holdout-2023/answer-key/entitlements-key.csv \
+  --replay supplier-agreements/holdout-2023/recorded-run.json
 
 # A real model: an API account whose terms say your data isn't used for training
 ANTHROPIC_API_KEY=... python3 supplier-agreements/supplier_agreements.py --sample
@@ -110,7 +110,19 @@ One program sheet carries a note telling "automated rebate systems" to record ev
 - `terms-key.csv`, every term as written;
 - `entitlements-key.csv`, what each supplier truly owed under each term, what was paid or claimed, and why they differ.
 
-`holdout-2024/` is a second program year, with the gaps on other suppliers. The release thresholds (`release-thresholds.json`) were written down before it was first run. Each `recorded-run.json` says how it was made: the real calls, the answers reused from an earlier recording of exactly the same inputs, and any failed calls.
+`holdout-2024/` and `holdout-2023/` are earlier program years, with the gaps on other suppliers each time. Each `recorded-run.json` says how it was made: the real calls, the answers reused from an earlier recording of exactly the same inputs, and any failed calls.
+
+## Results
+
+| Measure | Limit | Sample (2025) | Held back (2024) | Held back (2023) |
+|---|---|---|---|---|
+| Wrong claims | 0 | 0 | 0 | 0 |
+| Money found | at least 95% | 100% ($699,214) | 100% ($498,475) | 100% ($486,192) |
+| For a person | at most 3 | 1 | 1 | 1 |
+
+The thresholds (`release-thresholds.json`) were set before any held-back year was run. Each year's item for a person is the right one: a rep's emailed promise of an extra point that the program doesn't back. The note addressed to automated systems sits on a supplier with nothing owed each year, and that supplier's terms were read and worked out as usual.
+
+**Why there are two held-back years.** 2024 was scored first, then an independent review changed the code (commit bd19915), and 2024 was scored again, mostly from the answers already recorded. A year scored before a fix isn't an untouched test after it. So the code was frozen again (commit b82003f), and 2023 was generated after that, with the gaps on a third arrangement of suppliers and the note in new wording, recorded once (18 calls, none reused) and scored once. 2023 is the result to trust.
 
 ## Before you run this on your own data
 
@@ -126,7 +138,7 @@ One program sheet carries a note telling "automated rebate systems" to record ev
 - Once after the statements arrive, and again when a new agreement or amendment comes in.
 - On a server you control, with the key in its secret store.
 - The output goes to a folder only purchasing, the controller and the CFO can open.
-- After any change, including a new model version, run the sample and the held-back year again, and check `release-thresholds.json`.
+- After any change, including a new model version, run the sample and the held-back years again, and check `release-thresholds.json`.
 
 ## Files
 
@@ -135,6 +147,6 @@ One program sheet carries a note telling "automated rebate systems" to record ev
 | `supplier_agreements.py` | Reads, checks, works out, compares, drafts and scores |
 | `agreements_dashboard.py` | The one-page dashboard |
 | `design.md`, `plan.md` | The design, and the plan an AI wrote from it (unedited) |
-| `release-thresholds.json` | What counts as good enough: set before the held-back year was run |
+| `release-thresholds.json` | What counts as good enough: set before any held-back year was run |
 | `tests/` | Every rule above, without calling the AI |
-| `sample-data/`, `holdout-2024/` | Hartwell's documents, records, answer keys and recorded runs |
+| `sample-data/`, `holdout-2024/`, `holdout-2023/` | Hartwell's documents, records, answer keys and recorded runs |

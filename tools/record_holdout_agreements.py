@@ -2,6 +2,7 @@
 the sample. The thresholds in release-thresholds.json were set before this was first run.
 
     python tools/record_holdout_agreements.py          # through the claude command line (Claude Sonnet 5.5)
+    python tools/record_holdout_agreements.py holdout-2023    # another held-back year
 """
 
 from __future__ import annotations
@@ -18,7 +19,8 @@ sys.path[:0] = [str(ROOT), str(ROOT / "tools"), str(ROOT / "supplier-agreements"
 import record  # noqa: E402
 import supplier_agreements as sa  # noqa: E402
 
-HOLDOUT = ROOT / "supplier-agreements" / "holdout-2024"
+_ARGS = [a for a in sys.argv[1:] if not a.startswith("--")]
+HOLDOUT = ROOT / "supplier-agreements" / (_ARGS[0] if _ARGS else "holdout-2024")
 
 
 def main() -> None:

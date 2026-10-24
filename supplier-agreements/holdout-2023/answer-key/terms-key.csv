@@ -1,0 +1,28 @@
+supplier,term,detail,source,effective,informal
+Ashland Climate,volume tiers,"{'base': 'equipment purchases, net of returns, excluding freight', 'tiers': [(18000000.0, 1.0), (26000000.0, 1.75), (37000000.0, 2.25)], 'retroactive': True}",ashland-climate-distributor-agreement.pdf,2023-01-01,no
+Ashland Climate,volume tiers,"{'base': 'equipment purchases, net of returns, excluding freight', 'tiers': [(18000000.0, 1.0), (26000000.0, 1.75), (31000000.0, 2.25)], 'retroactive': True, 'replaces': 'Exhibit B, section 2'}",ashland-climate-amendment-2023-06.pdf,2023-01-01,no
+Ashland Climate,line incentive,"{'line': 'R-454B equipment', 'rate': 1.5}",ashland-climate-amendment-2023-06.pdf,2023-07-01,no
+Ashland Climate,co-op,"{'accrual': 1.0, 'base': 'equipment purchases', 'reimburse': 50, 'claim_by': '2024-04-30'}",ashland-climate-distributor-agreement.pdf,2023-01-01,no
+Ashland Climate,freight prepaid,{'min_order': 5000.0},ashland-climate-distributor-agreement.pdf,2023-01-01,no
+Vantel,volume tiers,"{'base': 'all purchases, net of returns', 'tiers': [(2000000.0, 1.0), (3500000.0, 1.5), (4500000.0, 2.0)], 'retroactive': False}",vantel-distributor-agreement.pdf,2023-01-01,no
+Vantel,stock rotation,"{'allowance': 5.0, 'of': 'prior-year purchases', 'restocking_fee': 10.0, 'age_limit_months': 18, 'request_by': '2024-03-31'}",vantel-distributor-agreement.pdf,2023-01-01,no
+Northstar HVAC,volume tiers,"{'base': 'all purchases, net of returns', 'tiers': [(2400000.0, 0.5), (3900000.0, 1.0), (4600000.0, 1.5)], 'retroactive': True}",northstar-hvac-program-2023.pdf,2023-01-01,no
+Northstar HVAC,co-op,"{'accrual': 2.0, 'base': 'all purchases', 'reimburse': 50, 'claim_by': '2024-04-30'}",northstar-hvac-program-2023.pdf,2023-01-01,no
+Brightwater Systems,volume tiers,"{'base': 'purchases by eligible locations (Schedule 1)', 'tiers': [(2100000.0, 1.25), (3500000.0, 2.25)], 'retroactive': True}",brightwater-systems-program-2023.pdf,2023-01-01,no
+Brightwater Systems,eligible locations,"{'added': ['Pittsburgh', 'Louisville'], 'per': 'section 4.2 notice'}",brightwater-systems-locations-email.eml,2023-03-03,no
+Brightwater Systems,growth,"{'rate': 1.0, 'over': 'total 2022 net purchases'}",brightwater-systems-program-2023.pdf,2023-01-01,no
+Thistle Ventilation,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1050000.0, 1.5)], 'retroactive': True}",thistle-ventilation-program-sheet-2023.pdf,2023-01-01,no
+Thistle Ventilation,growth,"{'rate': 2.0, 'over': '2022 net purchases'}",thistle-ventilation-program-sheet-2023.pdf,2023-01-01,no
+Westerly Thermostats,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(2100000.0, 0.75), (3500000.0, 1.25)], 'retroactive': True}",westerly-thermostats-terms-and-conditions-2023.pdf,2023-01-01,no
+Garnet Hose & Fittings,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1500000.0, 1.0), (2800000.0, 1.5)], 'retroactive': True}",garnet-hose-fittings-program-sheet-2023.pdf,2023-01-01,no
+Garnet Hose & Fittings,growth,"{'rate': 1.0, 'over': '2022 net purchases'}",garnet-hose-fittings-program-sheet-2023.pdf,2023-01-01,no
+Rook Hangers,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(2000000.0, 1.25)], 'retroactive': True}",rook-hangers-program-sheet-2023.pdf,2023-01-01,no
+Rook Hangers,freight prepaid,{'min_order': 1500.0},rook-hangers-program-sheet-2023.pdf,2023-01-01,no
+Merriam Electrical Supply,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1300000.0, 1.0), (2100000.0, 1.75)], 'retroactive': True}",merriam-electrical-supply-program-sheet-2023.pdf,2023-01-01,no
+Merriam Electrical Supply,informal promise,"{'rate': 1.0, 'if_over': 2300000.0, 'said': 'an extra point on the year'}",merriam-electrical-supply-rep-email.eml,2023-01-01,yes
+Pell Capacitor Co.,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1400000.0, 1.5)], 'retroactive': True}",pell-capacitor-co-terms-and-conditions-2023.pdf,2023-01-01,no
+Pell Capacitor Co.,freight prepaid,{'min_order': 1000.0},pell-capacitor-co-terms-and-conditions-2023.pdf,2023-01-01,no
+Pell Capacitor Co.,stock rotation,"{'allowance': 5.0, 'of': 'prior-year purchases', 'restocking_fee': 0, 'request_by': '2024-03-31'}",pell-capacitor-co-terms-and-conditions-2023.pdf,2023-01-01,no
+Solway Refrigeration Parts,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1000000.0, 0.75), (1700000.0, 1.25)], 'retroactive': True}",solway-refrigeration-parts-terms-and-conditions-2023.pdf,2023-01-01,no
+Granite Coil,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(850000.0, 1.0), (1500000.0, 1.5)], 'retroactive': True}",granite-coil-program-sheet-2023.pdf,2023-01-01,no
+Granite Coil,growth,"{'rate': 1.0, 'over': '2022 net purchases'}",granite-coil-program-sheet-2023.pdf,2023-01-01,no
