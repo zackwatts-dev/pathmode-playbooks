@@ -1498,3 +1498,20 @@ def test_a_drawing_said_to_be_attached_but_missing_is_asked_for_with_its_part_nu
     r = one(body, A(lines=[L("", pq="", rq="rev A", qq="qty 10", nq="need 6/3")]), attachments=[])
     assert r.status == ri.INFO and r.missing == {"drawing"}, (r.reasons, r.missing)
     assert any("drawing" in q and "part number" in q for q in r.questions)
+
+
+def test_a_dotted_date_that_reads_both_ways_with_nothing_to_settle_it_goes_to_a_person():
+    """"4.6.2024" is April 6 to some buyers and June 4 to others. With no other dotted date in the email to settle it,
+    code can't know, whatever the reading says. Slashed dates are a US shop's own way (month first) and stay as
+    they were; so does a dotted date the email settles."""
+    alone = "Please quote LUT-11111 rev A qty 10 due 4.6.2024" + SIGN
+    line = L("LUT-11111", need="2024-04-06", quote="LUT-11111 rev A qty 10 due 4.6.2024")
+    r = one(alone, A(lines=[line]))
+    assert r.status == ri.REVIEW and any("could be" in x for x in r.reasons), r.reasons
+    settled = "Please quote LUT-11111 rev A qty 10 due 4.6.2024. Drawing dated 6.17.2024." + SIGN
+    assert one(settled, A(lines=[line])).status == ri.READY
+    slashed = "Please quote LUT-11111 rev A qty 10 due 6/4/2024" + SIGN
+    sline = L("LUT-11111", need="2024-06-04", quote="LUT-11111 rev A qty 10 due 6/4/2024")
+    assert one(slashed, A(lines=[sline])).status == ri.READY
+    blank = dict(line, requested_date=F("", ""))  # the reading left it blank: code's own reading can't settle it
+    assert one(alone, A(lines=[blank])).status == ri.REVIEW
