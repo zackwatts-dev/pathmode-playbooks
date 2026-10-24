@@ -1,0 +1,85 @@
+rep_id,name,branch,role
+1,Dana Ingram,Columbus,outside
+2,Taylor Fischer,Columbus,outside
+3,Riley Garner,Columbus,outside
+4,Sage Ingram,Columbus,inside
+5,Jordan Barnes,Columbus,inside
+6,Skyler Rowe,Columbus,inside
+7,Harper Quill,Columbus,inside
+8,Dana Jessup,Cleveland,outside
+9,Taylor Keller,Cleveland,outside
+10,Sam Keller,Cleveland,outside
+11,Emerson Sutter,Cleveland,inside
+12,Brooke Barnes,Cleveland,inside
+13,Brooke Ellis,Cleveland,inside
+14,Frankie Yates,Cleveland,inside
+15,Sam Keller,Cincinnati,outside
+16,Toby Keller,Cincinnati,outside
+17,Taylor Ingram,Cincinnati,outside
+18,Kendall Tolliver,Cincinnati,inside
+19,Lee Dunn,Cincinnati,inside
+20,Kendall Nolan,Cincinnati,inside
+21,Val Ingram,Cincinnati,inside
+22,Toby Ingram,Dayton,outside
+23,Sage Lowry,Dayton,outside
+24,Toby Garner,Dayton,outside
+25,Riley Zeller,Dayton,inside
+26,Riley Whitaker,Dayton,inside
+27,Riley Collier,Dayton,inside
+28,Drew Tolliver,Dayton,inside
+29,Harper Abbott,Toledo,outside
+30,Gray Collier,Toledo,outside
+31,Alex Pruitt,Toledo,outside
+32,Alex Hale,Toledo,inside
+33,Emerson Osborne,Toledo,inside
+34,Gray Rowe,Toledo,inside
+35,Lee Osborne,Toledo,inside
+36,Kendall Garner,Akron,outside
+37,Morgan Tolliver,Akron,outside
+38,Morgan Fischer,Akron,outside
+39,Harper Whitaker,Akron,inside
+40,Dana Ellis,Akron,inside
+41,Harper Ingram,Akron,inside
+42,Robin Tolliver,Akron,inside
+43,Parker Lowry,Indianapolis,outside
+44,Harper Sutter,Indianapolis,outside
+45,Alex Vance,Indianapolis,outside
+46,Emerson Hale,Indianapolis,inside
+47,Morgan Rowe,Indianapolis,inside
+48,Dana Jessup,Indianapolis,inside
+49,Reese Hale,Indianapolis,inside
+50,Frankie Whitaker,Fort Wayne,outside
+51,Lee Rowe,Fort Wayne,outside
+52,Brooke Collier,Fort Wayne,outside
+53,Kendall Pruitt,Fort Wayne,inside
+54,Dana Rowe,Fort Wayne,inside
+55,Reese Pruitt,Fort Wayne,inside
+56,Jamie Abbott,Fort Wayne,inside
+57,Riley Pruitt,Louisville,outside
+58,Quinn Keller,Louisville,outside
+59,Drew Lowry,Louisville,outside
+60,Dana Vance,Louisville,inside
+61,Taylor Abbott,Louisville,inside
+62,Quinn Nolan,Louisville,inside
+63,Drew Jessup,Louisville,inside
+64,Harper Lowry,Lexington,outside
+65,Gray Ellis,Lexington,outside
+66,Frankie Whitaker,Lexington,outside
+67,Kendall Keller,Lexington,inside
+68,Casey Whitaker,Lexington,inside
+69,Skyler Barnes,Lexington,inside
+70,Gray Abbott,Lexington,inside
+71,Jamie Zeller,Troy,outside
+72,Harper Rowe,Troy,outside
+73,Gray Garner,Troy,outside
+74,Jamie Keller,Troy,inside
+75,Gray Rowe,Troy,inside
+76,Harper Zeller,Troy,inside
+77,Lee Zeller,Troy,inside
+78,Harper Pruitt,Pittsburgh,outside
+79,Morgan Upton,Pittsburgh,outside
+80,Drew Ellis,Pittsburgh,outside
+81,Robin Fischer,Pittsburgh,inside
+82,Robin Osborne,Pittsburgh,inside
+83,Harper Rowe,Pittsburgh,inside
+84,Quinn Ingram,Pittsburgh,inside
