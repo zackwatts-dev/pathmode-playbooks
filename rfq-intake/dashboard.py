@@ -52,8 +52,7 @@ def dashboard(run_) -> str:
         "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,"
         f"initial-scale=1'><title>Quotes intake</title><style>{STYLE}{EXTRA_STYLE}</style></head><body><main>",
         "<h1>Quotes mailbox</h1>",
-        f"<p class='muted'>As of {long_date(run_.as_of)}. Model: {_e(run_.model_name)}. "
-        "Nothing was sent, declined or priced.</p>",
+        f"<p class='muted'>As of {long_date(run_.as_of)}.</p>",  # the model and run details are in summary.md
         "<div class='tiles'>"
         + "".join(f"<div class='tile {c}'><b>{n}</b>{_e(label)}</div>" for label, n, c in tiles)
         + "</div>",
