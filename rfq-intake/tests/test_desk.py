@@ -201,7 +201,7 @@ def test_the_desk_quotes_re_quotes_in_less_time():
 
 def test_the_desk_puts_a_low_odds_request_behind_a_likely_one():
     reqs = [r("poor", 1.0, rate=0.05), r("good", 1.0, rate=0.5, received=MON + timedelta(days=1))]
-    out = rq.replay(reqs, cap(5, 1.0), "desk", shop_rate=0.4)
+    out = rq.replay(reqs, cap(5, 1.0), "desk", shop_rate=0.4, reorder_low=True)  # off by default (desk.REORDER)
     assert out.sent["good"] <= out.sent["poor"]
 
 
@@ -216,3 +216,9 @@ def test_the_desk_still_prices_new_requests_before_re_quotes():
     reqs = [r("rq1", 1.0, kind="requote"), r("new", 1.0)]
     out = rq.replay(reqs, cap(5, 2.0), "desk")
     assert out.sent["new"] == MON and out.requote_sent["rq1"] >= out.sent["new"]
+
+
+def test_low_odds_reorder_nothing_unless_switched_on():
+    reqs = [r("poor", 1.0, rate=0.05), r("good", 1.0, rate=0.5, received=MON + timedelta(days=1))]
+    out = rq.replay(reqs, cap(5, 1.0), "desk", shop_rate=0.4)
+    assert out.sent["poor"] <= out.sent["good"] and not desk.REORDER

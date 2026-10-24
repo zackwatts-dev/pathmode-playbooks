@@ -1755,7 +1755,7 @@ def queue_items(
                     ),
                     result=r,
                     request=next((o for o in opens if o.result is r), None),
-                    low_odds=bool(r.odds and r.odds.low),
+                    low_odds=desk.REORDER and bool(r.odds and r.odds.low),
                 )
             )
     return items
@@ -2111,10 +2111,17 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
     n = {g: len(v) for g, v in groups.items()}
     asked, to_person = len(incomplete["asked"]), len(incomplete["to a person"])
     held_by_key = total - free
+    # The quote desk's two kinds of request: lines only in an attached form or parts list, and re-quotes sent in.
+    right = set(groups[RIGHT])
+    attached = [f for f, k in key.items() if "attached RFQ form" in k["note"]]
+    repeats = [f for f, k in key.items() if k["note"].startswith("a repeat part")]
+    fast = sum(1 for r in results if r.mail.file in repeats and r.lines and all(ln.fast for ln in r.lines))
     rates = {
         "max_let_through_wrong": n[LET_THROUGH],
         "max_stopped_needlessly": n[STOPPED] / free if free else 0.0,
         "max_wrong_place": n[WRONG_PLACE] / total if total else 0.0,
+        "max_attached_not_right": 1 - len(right & set(attached)) / len(attached) if attached else 0.0,
+        "max_repeats_not_right": 1 - len(right & set(repeats)) / len(repeats) if repeats else 0.0,
     }
     baseline = {RIGHT: held_by_key, STOPPED: free, WRONG_PLACE: 0, LET_THROUGH: 0}
     thresholds = load_thresholds() if thresholds is None else thresholds
@@ -2148,6 +2155,12 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
         "|---|---:|---:|",
     ]
     md += [f"| {f} | {v['right']} | {v['wrong']} |" for f, v in fields.items()]
+    md += [
+        "",
+        f"Requests with their lines only in an attached RFQ form or parts list: {len(right & set(attached))} of "
+        f"{len(attached)} handled right. Re-quotes sent in by email: {len(right & set(repeats))} of {len(repeats)} "
+        f"handled right; {fast} of them fast-track (the history brief is enough to price from).",
+    ]
     if any(k["kind"] == AWARD and key_route(k) != k["route"] for k in key.values()):
         md += [
             "",
@@ -2158,6 +2171,12 @@ def score(results: list[Result], key_path: Path, thresholds: dict | None = None)
         "max_let_through_wrong": ("emails let through wrong", "{:.0f}", "{:.0f}"),
         "max_stopped_needlessly": ("of the emails the key doesn't stop, stopped", "{:.0%}", "{:.0%}"),
         "max_wrong_place": ("of all emails, sent to the wrong place", "{:.0%}", "{:.0%}"),
+        "max_attached_not_right": (
+            "of the requests with lines only in an attachment, not handled right",
+            "{:.0%}",
+            "{:.0%}",
+        ),
+        "max_repeats_not_right": ("of the re-quotes sent in by email, not handled right", "{:.0%}", "{:.0%}"),
     }
     if checks:
         md += ["", "Release thresholds (`release-thresholds.json`):", ""]

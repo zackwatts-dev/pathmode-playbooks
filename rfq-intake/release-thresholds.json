@@ -3,5 +3,8 @@
   "_how": "max_let_through_wrong is a count of emails; max_stopped_needlessly is a share of the emails the answer key doesn't send to a person (ready to quote, needs info, or not a request); max_wrong_place is a share of all emails scored, and includes a request that needed info whose drafted question asks for the wrong thing.",
   "max_let_through_wrong": 0,
   "max_stopped_needlessly": 0.1,
-  "max_wrong_place": 0.05
+  "max_wrong_place": 0.05,
+  "_desk": "Added 2026-10-24 for the quote desk, after its sample was recorded and before its held-back month (2024-11) was generated; the three limits above are unchanged. max_attached_not_right and max_repeats_not_right are shares of the requests of that kind in the answer key that weren't handled right.",
+  "max_attached_not_right": 0.1,
+  "max_repeats_not_right": 0.05
 }

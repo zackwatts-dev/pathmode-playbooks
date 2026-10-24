@@ -23,6 +23,9 @@ FAST_TRACK = 0.25  # a fast-track part is quoted in a quarter of the time: check
 PULL = 5  # a customer's record is pulled toward the shop's by this many quotes
 LOW_SHARE = 0.6  # bid odds below 60% of the shop's are low ...
 LOW_MIN = 8  # ... once the customer has at least this many closed new-part quotes
+# Low odds are shown to the estimator, not used to reorder the queue: in the queue replay, putting low-odds requests
+# behind the rest cost more on-time quotes than it gained, in all three years (README, Results).
+REORDER = False
 CLOSED = ("won", "lost", "expired", "no award")
 
 

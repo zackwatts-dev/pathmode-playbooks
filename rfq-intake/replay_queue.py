@@ -223,6 +223,7 @@ def replay(
     scale: float = 1.0,
     keying_minutes: float = KEYING_MINUTES,
     shop_rate: float | None = None,
+    reorder_low: bool | None = None,
 ) -> Outcome:
     """Day by day: the day's arrivals reach the inbox; on a reading day they're keyed and join the queue; answers
     that came back rejoin it; then the day's hours go first to the keying and the questions, and the rest to the
@@ -239,7 +240,8 @@ def replay(
 
     def low(r: Request) -> bool:
         """The desk's bid odds: a customer far below the shop's record waits behind the rest."""
-        return policy == "desk" and r.win_rate is not None and r.win_rate < desk.LOW_SHARE * rate
+        on = desk.REORDER if reorder_low is None else reorder_low
+        return on and policy == "desk" and r.win_rate is not None and r.win_rate < desk.LOW_SHARE * rate
 
     # With AI intake, most requests are read and keyed by the tool every morning, and a person spends a minute
     # checking each; the share it sends to a person is read and keyed by hand the next morning someone is in.
