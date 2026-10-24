@@ -10,7 +10,7 @@ from pathlib import Path
 import estimate_check as E
 import pytest
 
-from common.fake import OfflineModel, ScriptedModel
+from common.fake import OfflineModel
 
 SPEC = {
     "23 05 93": "SECTION 23 05 93 - TESTING\n\n1.3 TAB AGENCY\n\nThe Contractor shall engage an independent testing, adjusting, and balancing agency certified by NEBB. The TAB agency shall not be affiliated with the installing contractor.\n",
@@ -70,8 +70,7 @@ def test_by_others_needs_the_words_that_say_so():
     assert E.check(item, texts(), {}, "manual")[0] is None  # no status quote
     ok = {**item, "status_quote": "Controls are not in the mechanical contract"}
     assert E.check(ok, texts(), {}, "manual")[0].status == "by others"
-    vague = {**item, "status_quote": "furnish and install all control devices"}  # in the text, but doesn't say so
-    assert E.check(vague, texts(), {}, "manual")[0] is None
+    # whether the words say so is now the AI checker's to judge (test_status_words_are_the_checkers_to_judge...)
 
 
 def test_a_deletion_must_quote_an_addendum():
@@ -349,18 +348,18 @@ def test_an_addendum_after_the_first_read_deletes_from_the_list(tmp_path):
             ]
         }
     )
-    model = ScriptedModel([first, later])
+    model = Desk([first, later])
     r = E.run(folder, model)
     rv = r.reviews[0]
     assert rv.reads == 2 and [x.status for x in rv.accepted] == ["deleted"] and not rv.gaps
     assert (
-        "Already found" in model.calls[1][1] and "Testing" not in model.calls[1][1]
-    )  # the addendum read sees the list, not the manual
+        "Already found" in model.calls[2][1] and "Testing" not in model.calls[2][1]
+    )  # the addendum read (after the manual's read and its check) sees the list, not the manual
 
 
 def test_a_failed_reading_goes_to_a_person_and_nothing_is_dropped(tmp_path):
     folder = mini(tmp_path, addendum_after=False)
-    r = E.run(folder, ScriptedModel(["this is not json"]))
+    r = E.run(folder, Desk(["this is not json"]))
     assert r.reviews[0].referrals and "read it by hand" in r.reviews[0].referrals[0]
 
 
