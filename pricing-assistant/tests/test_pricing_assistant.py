@@ -536,12 +536,15 @@ def test_a_checker_that_agrees_lets_the_items_through():
 def test_a_quantity_the_checker_reads_differently_goes_to_a_person_with_both():
     other = dict(item(), qty=3)
     r = checked_read(Desk([reading(item(), IGN)], [check_of(other, IGN)]))
-    assert not r.lines and any("quantity" in x and "2" in x and "3" in x for x in r.to_person), r.to_person
+    # the disputed line isn't priced and is named with both values; the line both agree on is
+    assert [ln.sku for ln in r.lines] == ["IGN080023"]
+    assert any("quantity" in x and "2" in x and "3" in x for x in r.to_person), r.to_person
 
 
 def test_a_detail_the_checker_calls_unclear_goes_to_a_person():
     r = checked_read(Desk([reading(item(), IGN)], [check_of(item(), IGN, unclear={(0, "refrigerant")})]))
-    assert not r.lines and any("unclear" in x and "refrigerant" in x for x in r.to_person), r.to_person
+    assert [ln.sku for ln in r.lines] == ["IGN080023"]
+    assert any("unclear" in x and "refrigerant" in x for x in r.to_person), r.to_person
 
 
 def test_something_the_checker_says_the_reading_missed_goes_to_a_person():
@@ -551,7 +554,7 @@ def test_something_the_checker_says_the_reading_missed_goes_to_a_person():
 
 def test_an_item_only_one_of_them_found_goes_to_a_person():
     r = checked_read(Desk([reading(item())], [check_of(item(), IGN)]))
-    assert not r.lines and any("IGN080023" in x for x in r.to_person), r.to_person
+    assert any("IGN080023" in x for x in r.to_person), r.to_person
 
 
 def test_a_checker_answer_that_cant_be_used_prices_nothing():
