@@ -268,23 +268,28 @@ def echo_check(claims: list[dict]) -> str:
 
 
 def compare(r: Req, v) -> str | None:
-    """Why the checker's verdict doesn't let this requirement through, or None."""
-    reader = f"the reader read it as {KINDS[r.kind][0].lower()}, {r.status}"
+    """Why the checker's verdict doesn't let this requirement through, with its reason, or None."""
+    reader = f"{KINDS[r.kind][0].lower()}, {r.status}"
     if not isinstance(v, dict) or not isinstance(v.get("real"), bool) or not isinstance(v.get("clear"), bool):
         return "the checker's verdict on it can't be used"
+    why = " ".join(str(v.get("why") or "").split())[:240]
+    because = f": {why}" if why else ""
     if not v["real"]:
-        return f"the checker says it isn't a requirement of that kind ({reader})"
+        return f"the checker says it isn't a requirement of that kind (the reader read it as {reader}){because}"
     kind = str(v.get("kind") or r.kind).strip()  # "real" already answers "of that kind"
     status = str(v.get("status", "")).strip().lower().replace("’", "'")
+    checker = f"{KINDS[kind][0].lower()}, {status}" if kind in KINDS and status in STATUSES else ""
     if not v["clear"]:
-        said = f"{KINDS[kind][0].lower()}, " if kind in KINDS else ""
-        return f"the checker finds it unclear{': it reads it as ' + said + status if status in STATUSES else ''} ({reader})"
-    if kind not in KINDS or status not in STATUSES:
-        return f"the checker gave no kind or status it could use ({reader})"
+        both = f"both read it as {reader}" if checker == reader else f"the reader read it as {reader}"
+        if checker and checker != reader:
+            both += f", the checker as {checker}"
+        return f"the checker finds it unclear ({both}){because}"
+    if not checker:
+        return f"the checker gave no kind or status it could use (the reader read it as {reader})"
     if kind != r.kind:
-        return f"the checker reads it as {KINDS[kind][0].lower()} ({reader})"
+        return f"the checker reads it as {KINDS[kind][0].lower()} (the reader read it as {reader}){because}"
     if status != r.status:
-        return f"the checker reads its status as {status} ({reader})"
+        return f"the checker reads its status as {status} (the reader read it as {reader}){because}"
     return None
 
 

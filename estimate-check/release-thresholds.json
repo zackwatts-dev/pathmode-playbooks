@@ -1,8 +1,10 @@
 {
   "_note": "Set 2026-10-23, after the recorded sample year and before the held-back bids were generated or read. The held-back test is 40 bids due in 2025, chosen at random by code (seed 2025) before anything was read, in spec wording written after the code froze. A run that breaks any of these doesn't go live.",
-  "found_share_of_missed_cost_min": 0.80,
+  "found_share_of_missed_cost_min": 0.8,
   "wrong_gaps_per_bid_max": 0.35,
   "gaps_not_in_documents_max": 1,
   "priced_but_not_required_wrong_max": 0,
-  "failed_readings_max": 0
+  "failed_readings_max": 0,
+  "_note_2": "Added 2026-10-24 with the AI checker, before the sample was recorded with it and before the new held-back bids were generated: clauses sent to the chief estimator, a bid. Every earlier threshold is unchanged.",
+  "sent_to_a_person_per_bid_max": 0.5
 }
