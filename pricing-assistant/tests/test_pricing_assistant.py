@@ -614,3 +614,21 @@ def test_the_checker_is_paired_with_the_reading_by_order_not_by_its_wording():
     reworded["items"][0]["quote"] = "two Ashland condensers, 2.5 ton"
     r = checked_read(Desk([reading(item(), IGN)], [json.dumps(reworded)]))
     assert [ln.sku for ln in r.lines] == ["ASH-CO025143A", "IGN080023"] and not r.to_person, r.to_person
+
+
+def test_a_part_number_whose_catalog_entry_contradicts_the_details_beside_it_goes_to_a_person():
+    """Two items run together: a part number (an igniter) with a condenser's details. The catalog says they aren't one
+    thing, so nothing is priced from it and a person looks; the condenser is never silently lost."""
+    text = "Please quote:\n- 2 Ashland 2.5 ton 14.3 SEER2 condenser (454B)\nIGN080023 qty 3\n"
+    merged = dict(
+        item(), quote="2 Ashland 2.5 ton 14.3 SEER2 condenser (454B)\nIGN080023 qty 3", part_number="IGN080023"
+    )
+    r = checked_read(Desk([reading(merged)]), text)
+    assert not r.lines and any("IGN080023" in x for x in r.to_person), r.to_person
+
+
+def test_an_item_that_cant_be_checked_sends_the_request_to_a_person():
+    """A draft never goes out quietly missing an item: one that fails a check sends the whole request to a person."""
+    bad = dict(item(), part_number="ZZZ999999")  # not in the catalog
+    r = checked_read(Desk([reading(bad, IGN)]))
+    assert r.to_person and any("ZZZ999999" in x for x in r.to_person), r.to_person
