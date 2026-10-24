@@ -779,9 +779,15 @@ def score(r: Run, data: Data, key: Path) -> dict:
             s["won"] += 1
             s["missed_won"] += len(missed)
             s["missed_won_cost"] += sum(float(q["true_cost"]) for q in missed.values())
+        gap_kinds = {g.kind for g in rv.gaps}
         for k, q in missed.items():
             by_kind[k][2] += 1
             by_kind[k][3] += float(q["true_cost"])
+            if k not in gap_kinds:  # not a gap: in front of the chief estimator with its clause, or missed silently
+                label = KINDS[k][0]
+                seen = any(x.startswith(label) or f": {label} (" in x for x in rv.referrals)
+                s["missed_to_person" if seen else "missed_silently"] += 1
+                s["missed_to_person_cost" if seen else "missed_silently_cost"] += float(q["true_cost"])
         for g in rv.gaps:
             if g.kind in missed:
                 tc = float(missed[g.kind]["true_cost"])
@@ -853,6 +859,8 @@ def score_md(s: dict) -> str:
         f"sent to a person: {s['referrals']:.0f}; text addressed to an AI: {s['addressed']:.0f}.",
         f"- Missed requirements found: {s['found']:.0f} of {s['missed']:.0f}, {money(s['found_cost'])} of "
         f"{money(s['missed_cost'])} ({pct(s['found_cost'], s['missed_cost'])}); priced by the review at {money(s['priced_at'])}.",
+        f"- Missed requirements not found as gaps: {s['missed_to_person']:.0f} sent to a person with the clause quoted "
+        f"({money(s['missed_to_person_cost'])}), {s['missed_silently']:.0f} missed silently ({money(s['missed_silently_cost'])}).",
         f"- On the bids Halden won: {s['found_won']:.0f} of {s['missed_won']:.0f}, {money(s['found_won_cost'])} of "
         f"{money(s['missed_won_cost'])} ({pct(s['found_won_cost'], s['missed_won_cost'])}).",
         f"- Gaps that weren't: {s['false_gap']:.0f} already priced, {s['wrongly_required']:.0f} not in the base bid, "
