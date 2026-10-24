@@ -444,3 +444,95 @@ def test_a_premium_on_an_existing_line_is_priced_from_that_line_not_from_history
     )
     E.check_estimate(rv, data, FakeHist())
     assert rv.gaps[0].cost == pytest.approx(8_000)
+
+
+# --- The targeted AI checker (design step 3): each accepted requirement, with only the sections and addenda it cites,
+# is checked by a second call; code compares; a disagreement or anything unclear goes to the chief estimator ----------
+
+
+class Desk:
+    """Scripted readings, with the checker's calls answered by agreeing with what they're sent (E.echo_check), unless
+    a test gives checker answers. Keeps every call."""
+
+    name = "scripted"
+
+    def __init__(self, readings, checks=None):
+        self.readings, self.checks, self.calls = list(readings), list(checks or []), []
+
+    def complete(self, system, user, max_tokens=2000):
+        self.calls.append((system, user))
+        if system == E.CHECK_SYSTEM:
+            return self.checks.pop(0) if self.checks else E.echo_check(E.claims_sent(user))
+        return self.readings.pop(0)
+
+
+def verdicts(*vs) -> str:
+    """A checker's answer: one verdict per requirement, in order. Each is a dict with any of real, kind, status, clear."""
+    return json.dumps({"requirements": [{"real": True, "clear": True, **v} for v in vs], "addressed_to_ai": []})
+
+
+def one_bid(tmp_path, readings, checks=None):
+    folder = mini(tmp_path, addendum_after=False)
+    model = Desk(readings, checks)
+    return E.run(folder, model).reviews[0], model
+
+
+def test_the_checker_gets_each_requirement_with_only_the_sections_it_cites(tmp_path):
+    rv, model = one_bid(tmp_path, [json.dumps({"requirements": [tab()]})])
+    (s1, _), (s2, u2) = model.calls
+    assert s1 == E.SYSTEM and s2 == E.CHECK_SYSTEM
+    assert "TESTING" in u2 and "independent testing, adjusting, and balancing agency" in u2  # its own section
+    assert "SECTION 23 73 13" not in u2 and "SECTION 01 10 00" not in u2  # not the rest of the manual
+    for secret in ("Ductwork", "50000", "labor_rate", "base_bid"):
+        assert secret not in u2
+
+
+def test_a_checker_that_agrees_lets_the_requirement_through(tmp_path):
+    rv, _ = one_bid(tmp_path, [json.dumps({"requirements": [tab()]})])
+    assert [r.kind for r in rv.accepted] == ["tab"] and not rv.referrals
+
+
+def test_a_requirement_the_checker_says_isnt_one_goes_to_the_chief_estimator(tmp_path):
+    rv, _ = one_bid(tmp_path, [json.dumps({"requirements": [tab()]})], [verdicts({"real": False})])
+    assert not rv.accepted and any("checker" in x for x in rv.referrals), rv.referrals
+
+
+def test_a_status_the_checker_reads_differently_goes_to_the_chief_estimator(tmp_path):
+    rv, _ = one_bid(tmp_path, [json.dumps({"requirements": [tab()]})], [verdicts({"status": "by others"})])
+    assert not rv.accepted and any("by others" in x and "base bid" in x for x in rv.referrals), rv.referrals
+
+
+def test_a_requirement_the_checker_finds_unclear_goes_to_the_chief_estimator(tmp_path):
+    rv, _ = one_bid(tmp_path, [json.dumps({"requirements": [tab()]})], [verdicts({"clear": False})])
+    assert not rv.accepted and any("unclear" in x for x in rv.referrals), rv.referrals
+
+
+def test_a_checker_answer_that_cant_be_used_accepts_nothing_from_that_read(tmp_path):
+    for bad in ("not json", '{"requirements": "x"}', "{}"):
+        rv, _ = one_bid(
+            tmp_path / bad.replace('"', "").replace(" ", "")[:8], [json.dumps({"requirements": [tab()]})], [bad]
+        )
+        assert not rv.accepted and rv.referrals, bad
+
+
+def test_status_words_are_the_checkers_to_judge_not_a_word_list():
+    """A "by others" whose words are in the documents passes code's checks; whether they say so is the checker's call."""
+    item = {
+        "kind": "controls",
+        "source": "23 09 00",
+        "status": "by others",
+        "quote": "The Owner's Siemens Desigo vendor will furnish and install all control devices and wiring",
+        "status_quote": "furnish and install all control devices",
+    }
+    assert E.check(item, texts(), {}, "manual")[0].status == "by others"
+
+
+def test_two_calls_a_read_are_allowed_a_day():
+    assert E.CALLS_A_DAY == 80
+
+
+def test_the_offline_stand_in_answers_the_checker_by_agreeing(tmp_path):
+    folder = mini(tmp_path, addendum_after=False)
+    model = OfflineModel(E.offline)
+    E.run(folder, model)
+    assert any(s == E.CHECK_SYSTEM for s, _ in model.calls)
