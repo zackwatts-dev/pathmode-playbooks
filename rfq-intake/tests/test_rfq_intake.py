@@ -1518,3 +1518,12 @@ def test_a_dotted_date_that_reads_both_ways_with_nothing_to_settle_it_goes_to_a_
     assert one(slashed, A(lines=[sline])).status == ri.READY
     blank = dict(line, requested_date=F("", ""))  # the reading left it blank: code's own reading can't settle it
     assert one(alone, A(lines=[blank])).status == ri.REVIEW
+
+
+def test_a_drafted_question_opens_in_outlook_as_a_draft_ready_to_send():
+    """X-Unsent: 1 tells Outlook (and most mail programs) that the .eml is a message not yet sent: double-clicked,
+    it opens with a Send button, not as mail received. A person still reads it and sends it."""
+    row = "LUT-11111 need 6/3"
+    r = one(row + SIGN, A(lines=[L("LUT-11111", rev="", qty=None, quote=row, rq="", qq="")]))
+    msg = ri.question_email(r)
+    assert msg["X-Unsent"] == "1" and msg["To"].endswith(f"<{LUTZ}>") and "Date" not in msg
