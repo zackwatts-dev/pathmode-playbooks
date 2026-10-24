@@ -1,0 +1,154 @@
+file,kind,expected_status,route,customer_id,rfq_id,part_numbers,revisions,quantities,requested_dates,quote_due,outcome,note,missing
+1202-0747-rfq-4689.eml,new rfq,ready to quote,estimating,125,21689,PRU-96096;PRU-45251,A;A,16;63,2024-12-16;2025-01-02,2024-12-04,screened out,the lines are only in the attached RFQ form,
+1202-0931-rfq-4690.eml,new rfq,needs info,estimating,42,21690,IMH-17890,A,,2025-01-23,2024-12-09,lost late,no quantity for IMH-17890; the lines are only in the attached RFQ form,quantity
+1202-0938-requote-kes-28259.eml,new rfq,ready to quote,estimating,2,21695,KES-28259,A,2,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1202-0950-re-wendlow-quote-20835-for-gra-46826.eml,lost reply,not an rfq,sales,7,21634,GRA-46826;GRA-61269,,,,,lost,lost on quote 20835; domain shared by 2 customers: the email names the company,
+1202-1001-rfq-eck-35812-rev-a.eml,new rfq,ready to quote,estimating,12,21694,ECK-35812,A,16,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1202-1004-rfq-nag-13333-rev-a.eml,new rfq,ready to quote,estimating,134,21696,NAG-13333,A,53,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1202-1101-rfq-obe-93821-rev-b.eml,new rfq,ready to quote,estimating,283,21697,OBE-93821,B,3,2025-01-09,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1202-1128-rfq-attached.eml,new rfq,ready to quote,estimating,3,21691,STO-66875;STO-83007;STO-22381,A;A;A,116;74;32,2024-12-16;2025-01-23;2025-01-16,2024-12-13,screened out,,
+1202-1224-rfq-4693.eml,new rfq,needs info,estimating,12,21693,ECK-36986,A,,2025-01-30,2024-12-02,screened out,no quantity for ECK-36986,quantity
+1202-1419-20-off-carbide-end-mills-through-12-31.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+1202-1636-request-for-quote-kes-16427.eml,new rfq,needs info,estimating,2,21688,KES-16427;KES-29342;KES-52487,,10;14;19,2025-01-09;2025-01-09;2024-12-23,2024-12-09,lost late,"no revision stated, and the attachments don't carry one",revision
+1202-1648-pricing-request-eck-41814.eml,new rfq,ready to quote,estimating,8,21692,ECK-41814,A,6,2025-01-09,,won,,
+1203-0712-rfq-eck-29149-rev-c.eml,new rfq,ready to quote,estimating,8,21703,ECK-29149,C,48,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1203-0728-pricing-review-gra-37436.eml,new rfq,ready to quote,estimating,7,21705,GRA-37436,C,11,,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 2 customers: the email names the company",
+1203-0757-fab-notes-december-2024.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+1203-0940-rfq-kes-70054-rev-c.eml,new rfq,ready to quote,estimating,2,21709,KES-70054,C,3,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1203-1006-rfq-eck-34643-rev-b.eml,new rfq,ready to quote,estimating,12,21707,ECK-34643,B,128,,,lost,"a repeat part: the annual re-quote, sent in by the buyer",
+1203-1105-pricing-review-vog-89148.eml,new rfq,ready to quote,estimating,49,21708,VOG-89148,D,45,2025-01-10,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1203-1123-rfq-gra-29155-rev-b.eml,new rfq,ready to quote,estimating,7,21702,GRA-29155,B,16,2025-01-10,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 2 customers: the email names the company",
+1203-1257-request-for-quote-yod-39251.eml,new rfq,needs info,estimating,286,21699,YOD-39251;YOD-32598,A;A,24;,2024-12-26;2025-01-24,2024-12-20,won,no quantity for YOD-32598; the lines are only in the attached RFQ form,quantity
+1203-1523-pricing-request-pfe-69985.eml,new rfq,needs info,estimating,139,21700,PFE-69985;PFE-31209;PFE-17138,,34;47;10,2025-01-10;2024-12-26;2025-01-24,,won,"no revision stated, and the attachments don't carry one",revision
+1204-0703-pricing-request-hol-49515.eml,new rfq,ready to quote,estimating,1,21713,HOL-49515,A,7,2025-01-06,2024-12-06,lost,the lines are only in the attached RFQ form; domain shared by 3 customers: the email names the company,
+1204-0912-pricing-review-kes-50263.eml,new rfq,ready to quote,estimating,2,21714,KES-50263,B,11,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1204-1008-pricing-review-kes-24940.eml,new rfq,ready to quote,estimating,2,21715,KES-24940,D,79,2025-01-13,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1204-1142-re-request-for-quote-kes-16427.eml,revision,not an rfq,estimating,2,21688,KES-29342,B,,,,lost late,replaces rev A on open RFQ 21688: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+1204-1305-quote-needed-imh-60460.eml,new rfq,needs info,estimating,66,21711,IMH-60460;IMH-76310;IMH-65392,,6;54;19,2025-02-03;2024-12-27;2025-01-27,2024-12-05,screened out,"no revision stated, and the attachments don't carry one; domain shared by 2 customers: the email names the company",revision
+1204-1426-quote-needed-hol-31936-rev-a.eml,new rfq,needs info,estimating,1,21712,HOL-31936,A,22,2025-02-03,,lost,no drawing attached; domain shared by 3 customers: the email names the company,drawing
+1205-0821-request-for-quote-eck-66280.eml,new rfq,ready to quote,estimating,8,21719,ECK-66280;ECK-56155,A;A,17;4,2025-01-28;2024-12-19,,lost,,
+1205-0834-re-rfq-4676.eml,chaser,not an rfq,estimating,233,21676,HOL-97012;HOL-67771;HOL-19953,,,,,lost,"RFQ received 2024-11-26, still unquoted on 2024-12-05",
+1205-0922-re-request-for-quote-sto-39743.eml,chaser,not an rfq,estimating,3,21681,STO-39743;STO-23300,,,,,lost late,"RFQ received 2024-11-27, still unquoted on 2024-12-05",
+1205-1106-rfq-4718.eml,new rfq,ready to quote,estimating,5,21718,VOG-96753;VOG-96090;VOG-67312,A;A;A,4;2;21,2025-02-04;2025-01-21;2024-12-30,2024-12-11,won,,
+1205-1318-rfq-4716.eml,new rfq,needs info,estimating,6,21716,LUT-63368;LUT-44788,A;A,52;,2024-12-19;2025-01-14,2024-12-11,won,no quantity for LUT-44788,quantity
+1205-1318-rfq-attached.eml,new rfq,ready to quote,estimating,8,21717,ECK-99743;ECK-44015,A;A,5;44,2025-01-28;2025-01-07,,lost,,
+1205-1412-pricing-review-eck-16074.eml,new rfq,ready to quote,estimating,8,21723,ECK-16074,B,12,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1205-1612-requote-hol-79771.eml,new rfq,ready to quote,estimating,1,21728,HOL-79771,B,134,,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 3 customers: the email names the company",
+1205-1620-quote-needed-hol-41107-rev-a.eml,new rfq,needs info,estimating,349,21720,HOL-41107;HOL-84836;HOL-64434,A;A;A,36;26;,2024-12-19;2025-01-28;2024-12-19,,lost,no quantity for HOL-64434; the lines are only in the attached RFQ form; domain shared by 2 customers: the email names the company,quantity
+1206-0911-quote-needed-rei-28224-rev-a.eml,new rfq,ready to quote,estimating,183,21735,REI-28224,A,2,2025-01-29,,screened out,,
+1206-0925-quote-needed-gra-27022.eml,new rfq,needs info,estimating,7,21730,GRA-27022,,79,2025-01-29,2024-12-19,won,"no revision stated, and the attachments don't carry one; domain shared by 2 customers: the email names the company",revision
+1206-0941-rfq-4732.eml,new rfq,ready to quote,estimating,9,21732,CRO-98763,A,23,2025-01-29,2024-12-16,lost,,
+1206-0954-rfq-attached.eml,new rfq,ready to quote,estimating,6,21734,LUT-95544;LUT-90354;LUT-63438,A;A;A,49;15;8,2025-01-15;2024-12-20;2025-01-29,2024-12-10,lost,,
+1206-1221-still-quoting-from-spreadsheets.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+1206-1402-pricing-request-cob-19043.eml,new rfq,ready to quote,estimating,35,21737,COB-19043;COB-59746,A;A,36;86,2025-02-05;2025-01-08,2024-12-19,lost,domain shared by 2 customers: the email names the company,
+1206-1457-rfq-4733.eml,new rfq,ready to quote,estimating,236,21733,AMS-16654;AMS-41740;AMS-21223,A;A;A,27;62;25,2025-01-15;2024-12-20;2025-02-05,,won,,
+1206-1503-requote-gra-59333.eml,new rfq,ready to quote,estimating,7,21738,GRA-59333,B,3,,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 2 customers: the email names the company",
+1206-1513-pricing-request-zie-15486.eml,new rfq,ready to quote,estimating,53,21736,ZIE-15486;ZIE-94296;ZIE-74217,A;A;A,103;15;21,2025-01-29;2025-01-15;2025-01-29,,lost,,
+1206-1746-pricing-request-cro-17556.eml,new rfq,ready to quote,estimating,9,21731,CRO-17556;CRO-88065;CRO-99438,A;A;A,2;26;11,2025-02-05;2025-01-15;2025-02-05,,lost,,
+1209-1024-requote-mer-19187.eml,new rfq,ready to quote,estimating,160,21743,MER-19187,D,24,2025-01-16,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1209-1044-re-request-for-quote-kes-16427.eml,chaser,not an rfq,estimating,2,21688,KES-16427;KES-29342;KES-52487,,,,,lost late,"RFQ received 2024-12-02, still unquoted on 2024-12-09",
+1209-1100-rfq-attached.eml,new rfq,ready to quote,estimating,1,21742,HOL-23348;HOL-24033;HOL-20462,A;A;A,17;27;17,2025-01-09;2025-01-09;2024-12-23,2024-12-17,lost,domain shared by 3 customers: the email names the company,
+1209-1309-pricing-review-eck-53516.eml,new rfq,ready to quote,estimating,8,21747,ECK-53516,B,14,2025-01-16,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1209-1415-rfq-attached.eml,new rfq,needs info,estimating,8,21741,ECK-94518;ECK-39429;ECK-73810,,24;19;4,2025-01-02;2024-12-23;2025-01-02,2024-12-11,lost,"no revision stated, and the attachments don't carry one",revision
+1210-0808-pricing-request-eck-24634.eml,new rfq,needs info,estimating,8,21751,ECK-24634;ECK-67676;ECK-18371,,34;18;25,2024-12-26;2025-01-24;2025-01-31,,lost late,"no revision stated, and the attachments don't carry one",revision
+1210-0920-rfq-4754.eml,new rfq,needs info,estimating,28,21754,HOL-38285;HOL-81240,A;A,6;82,2025-01-31;2025-01-31,2024-12-13,won,no drawing attached; domain shared by 3 customers: the email names the company,drawing
+1210-0955-updated-drawing-ams-21223.eml,revision,not an rfq,estimating,236,21733,AMS-21223,B,,,,won,replaces rev A on open RFQ 21733: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+1210-1010-pricing-request-hol-44945.eml,new rfq,ready to quote,estimating,1,21755,HOL-44945;HOL-28557,A;A,6;40,2025-01-31;2024-12-26,2024-12-13,lost,domain shared by 3 customers: the email names the company,
+1210-1145-rfq-attached.eml,new rfq,ready to quote,estimating,6,21750,LUT-31328;LUT-71357;LUT-82782,A;A;A,16;47;28,2024-12-26;2025-01-24;2025-01-03,2025-01-20,won,,
+1210-1204-request-for-quote-kes-30347.eml,new rfq,needs info,estimating,2,21749,KES-30347;KES-50478,A;A,;176,2025-02-07;2025-01-03,2024-12-10,lost late,no quantity for KES-30347,quantity
+1210-1234-rfq-attached.eml,new rfq,needs a person,estimating,1,21753,HOL-35580;HOL-89521,,58;28,2025-01-03;2025-01-17,,lost,"no revision stated, and the attachments don't carry one; domain shared by 3 customers and the email doesn't name the company: a person must say which",revision
+1210-1422-rfq-attached.eml,new rfq,needs info,estimating,46,21748,WEL-48671;WEL-29311,A;A,4;29,2025-02-07;2025-01-03,,lost late,no drawing attached,drawing
+1210-1719-rfq-attached.eml,new rfq,ready to quote,estimating,12,21752,ECK-61755;ECK-80299,A;A,30;10,2025-01-24;2025-01-24,,lost,,
+1211-0720-re-wendlow-quote-20907-for-cro-17556.eml,lost reply,not an rfq,sales,9,21731,CRO-17556;CRO-88065;CRO-99438,,,,,lost,lost on quote 20907,
+1211-0751-quote-needed-nef-57838-rev-a.eml,new rfq,ready to quote,estimating,59,21762,NEF-57838;NEF-32115;NEF-39111,A;A;A,20;25;11,2025-01-27;2025-01-20;2025-01-20,2024-12-11,lost,,
+1211-0814-rfq-attached.eml,new rfq,ready to quote,estimating,352,21759,PFE-39982;PFE-80012;PFE-69416,A;A;A,21;57;5,2024-12-27;2024-12-27;2025-02-10,2025-01-29,won,,
+1211-1035-rfq-4760.eml,new rfq,needs info,estimating,6,21760,LUT-74665,A,,2025-01-20,2024-12-30,won,no quantity for LUT-74665; the lines are only in the attached RFQ form,quantity
+1211-1144-rfq-4761.eml,new rfq,needs info,estimating,5,21761,VOG-87915,A,20,2025-01-27,2024-12-30,lost,no drawing attached,drawing
+1211-1339-re-wendlow-quote-20541-for-pfe-79532.eml,award,not an rfq,sales,324,21330,PFE-79532;PFE-93796,,,,,won,award on quote 20541; customer PO PO-82402,
+1211-1451-pricing-request-gra-88394.eml,new rfq,needs info,estimating,7,21758,GRA-88394;GRA-30864,,16;20,2025-01-20;2024-12-27,2024-12-11,no award,"no revision stated, and the attachments don't carry one; domain shared by 2 customers: the email names the company",revision
+1211-1455-re-wendlow-quote-20903-for-lut-63368.eml,award,not an rfq,sales,6,21716,LUT-63368;LUT-44788,,,,,won,award on quote 20903; customer PO PO-82491,
+1211-1652-pricing-review-eck-68954.eml,new rfq,ready to quote,estimating,12,21766,ECK-68954,D,10,2025-01-20,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1212-0921-rfq-4769.eml,new rfq,ready to quote,estimating,1,21769,HOL-57764,A,236,2025-01-21,2025-01-13,won,domain shared by 3 customers: the email names the company,
+1212-0954-rfq-attached.eml,new rfq,ready to quote,estimating,237,21768,BRA-18920,A,9,2025-02-04,,screened out,,
+1212-1010-rfq-eck-64642-rev-b.eml,new rfq,ready to quote,estimating,12,21771,ECK-64642,B,133,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1212-1024-re-wendlow-quote-20876-for-eck-13554.eml,award,not an rfq,sales,8,21679,ECK-13554;ECK-48091;ECK-93159,,,,,won,award on quote 20876; customer PO PO-61546,
+1212-1143-december-plate-and-sheet-pricing.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+1212-1412-re-wendlow-quote-20880-for-eck-41814.eml,award,not an rfq,sales,8,21692,ECK-41814,,,,,won,award on quote 20880; customer PO PO-56803,
+1212-1637-rfq-attached.eml,new rfq,ready to quote,estimating,9,21767,CRO-66912;CRO-41530,A;A,96;11,2025-01-07;2025-01-14,2024-12-26,lost,,
+1213-0948-quote-needed-pfe-86468-rev-a.eml,new rfq,ready to quote,estimating,26,21777,PFE-86468,A,21,2025-02-12,,won,,
+1213-1334-updated-drawing-lut-74665.eml,revision,not an rfq,estimating,6,21760,LUT-74665,B,,,,won,replaces rev A on open RFQ 21760: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+1213-1349-pricing-request-fis-16429.eml,new rfq,needs info,estimating,4,21775,FIS-16429;FIS-11880,A;A,16;10,2025-01-15;2025-01-29,,lost,no drawing attached; the lines are only in the attached RFQ form,drawing
+1213-1635-rfq-attached.eml,new rfq,needs info,estimating,6,21776,LUT-31955;LUT-48064;LUT-37234,,4;29;18,2025-01-29;2025-01-15;2025-01-22,,won,"no revision stated, and the attachments don't carry one; the lines are only in the attached RFQ form",revision
+1213-1751-rfq-4774.eml,new rfq,needs a person,estimating,44,21774,WEL-56963;WEL-15765;WEL-77791,,20;39;17,2024-12-31;2025-01-29;2025-02-12,2024-12-31,won,"no revision stated, and the attachments don't carry one; domain shared by 3 customers and the email doesn't name the company: a person must say which",revision
+1216-0736-requote-fis-84529.eml,new rfq,ready to quote,estimating,4,21786,FIS-84529,B,13,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1216-0800-re-wendlow-quote-20908-for-cro-98763.eml,lost reply,not an rfq,sales,9,21732,CRO-98763,,,,,lost,lost on quote 20908,
+1216-0854-re-pricing-request-eck-24634.eml,chaser,not an rfq,estimating,8,21751,ECK-24634;ECK-67676;ECK-18371,,,,,lost late,"RFQ received 2024-12-10, still unquoted on 2024-12-16",
+1216-0907-rfq-vog-50001-rev-b.eml,new rfq,ready to quote,estimating,49,21789,VOG-50001,B,29,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1216-0935-quote-needed-hol-74072-rev-a.eml,new rfq,ready to quote,estimating,1,21783,HOL-74072;HOL-10109,A;A,32;26,2025-02-13;2025-01-23,2024-12-26,screened out,domain shared by 3 customers: the email names the company,
+1216-1222-rfq-attached.eml,new rfq,needs info,estimating,8,21782,ECK-55800,A,,2025-01-02,2024-12-30,lost,no quantity for ECK-55800,quantity
+1216-1228-request-for-quote-mau-35839.eml,new rfq,ready to quote,estimating,357,21781,MAU-35839;MAU-42692;MAU-38731,A;A;A,88;59;77,2025-01-09;2025-01-09;2025-01-30,,lost,,
+1216-1309-request-for-quote-hol-59568.eml,new rfq,ready to quote,estimating,1,21784,HOL-59568,A,17,2025-01-09,2024-12-27,lost,domain shared by 3 customers: the email names the company,
+1216-1440-re-pricing-request-gra-88394.eml,revision,not an rfq,estimating,7,21758,GRA-88394,B,,,,no award,replaces rev A on open RFQ 21758: update the RFQ before quoting (written to match; not in eng_drawing_revisions); domain shared by 2 customers: the email names the company,
+1216-1611-requote-vog-94428.eml,new rfq,ready to quote,estimating,60,21785,VOG-94428,A,24,,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 3 customers: the email names the company",
+1217-0759-pricing-request-eck-34516.eml,new rfq,ready to quote,estimating,8,21792,ECK-34516;ECK-86447;ECK-92062,A;A;A,16;17;29,2025-02-07;2025-02-07;2025-01-03,,won,,
+1217-0911-quote-needed-gra-95101-rev-a.eml,new rfq,needs info,estimating,7,21790,GRA-95101;GRA-25790;GRA-85167,A;A;A,12;23;,2025-01-03;2025-02-07;2025-01-10,2024-12-31,lost,no quantity for GRA-85167; the lines are only in the attached RFQ form; domain shared by 2 customers: the email names the company,quantity
+1217-1008-quote-needed-ick-92322.eml,new rfq,needs info,estimating,79,21791,ICK-92322;ICK-62341,,103;6,2025-01-17;2025-01-24,,screened out,"no revision stated, and the attachments don't carry one",revision
+1217-1045-requote-dun-18788.eml,new rfq,ready to quote,estimating,207,21795,DUN-18788,A,24,,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 2 customers: the email names the company",
+1217-1056-requote-gra-59461.eml,new rfq,ready to quote,estimating,7,21798,GRA-59461,B,67,,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 2 customers: the email names the company",
+1217-1224-pricing-review-tri-34053.eml,new rfq,ready to quote,estimating,32,21797,TRI-34053,C,23,2025-01-24,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1217-1635-re-pricing-request-gra-88394.eml,chaser,not an rfq,estimating,7,21758,GRA-88394;GRA-30864,,,,,no award,"RFQ received 2024-12-11, still unquoted on 2024-12-17; domain shared by 2 customers: the email names the company",
+1218-0839-rfq-attached.eml,new rfq,needs info,estimating,6,21800,LUT-75728;LUT-61368,A;A,31;78,2025-02-10;2025-01-13,2024-12-18,lost late,no drawing attached,drawing
+1218-1030-pricing-request-bra-55491.eml,new rfq,ready to quote,estimating,220,21799,BRA-55491;BRA-68170;BRA-72584,A;A;A,4;17;34,2025-02-17;2025-02-03;2025-01-06,2024-12-18,lost,,
+1218-1034-re-wendlow-quote-20909-for-ams-16654.eml,award,not an rfq,sales,236,21733,AMS-16654;AMS-41740;AMS-21223,,,,,won,award on quote 20909; customer PO PO-89080,
+1218-1212-rfq-attached.eml,new rfq,needs info,estimating,254,21801,YOD-43854,A,,2025-02-17,,lost,no quantity for YOD-43854,quantity
+1218-1501-rfq-eck-64146-rev-a.eml,new rfq,ready to quote,estimating,12,21802,ECK-64146,A,10,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1218-1616-rfq-eck-64650-rev-e.eml,new rfq,ready to quote,estimating,8,21804,ECK-64650,E,67,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1219-0722-rfq-vog-31475-rev-d.eml,new rfq,ready to quote,estimating,60,21810,VOG-31475,D,30,2025-01-28,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 3 customers: the email names the company",
+1219-0842-requote-lut-14627.eml,new rfq,ready to quote,estimating,6,21808,LUT-14627,C,14,2025-01-28,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1219-0909-quote-needed-cro-84548-rev-a.eml,new rfq,ready to quote,estimating,9,21806,CRO-84548;CRO-88480;CRO-98979,A;A;A,5;2;132,2025-01-28;2025-01-21;2025-02-04,,lost,,
+1219-1030-pricing-review-tri-87642.eml,new rfq,ready to quote,estimating,39,21813,TRI-87642,A,41,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1219-1343-rfq-4805.eml,new rfq,ready to quote,estimating,7,21805,GRA-95430;GRA-74271,A;A,20;23,2025-01-28;2025-01-21,,lost,domain shared by 2 customers: the email names the company,
+1219-1528-quote-needed-cro-11142-rev-a.eml,new rfq,needs info,estimating,117,21807,CRO-11142,A,37,2025-01-14,2025-02-05,lost,no drawing attached,drawing
+1219-1551-new-zinc-nickel-line-now-running.eml,vendor,not an rfq,nowhere,,,,,,,,,sales pitch or newsletter,
+1219-1552-re-wendlow-quote-20971-for-fis-16429.eml,lost reply,not an rfq,sales,4,21775,FIS-16429;FIS-11880,,,,,lost,lost on quote 20971,
+1220-0719-request-for-quote-sto-92789.eml,new rfq,ready to quote,estimating,3,21817,STO-92789,A,4,2025-01-15,,won,,
+1220-0726-re-wendlow-quote-20976-for-hol-38285.eml,award,not an rfq,sales,28,21754,HOL-38285;HOL-81240,,,,,won,award on quote 20976; customer PO 4556720; domain shared by 3 customers: the email names the company,
+1220-0838-rfq-4818.eml,new rfq,needs info,estimating,20,21818,NEF-23613;NEF-76575;NEF-18266,,223;14;72,2025-01-22;2025-01-29;2025-02-05,2024-12-30,lost,"no revision stated, and the attachments don't carry one; domain shared by 2 customers: the email names the company",revision
+1220-0936-requote-vog-43576.eml,new rfq,ready to quote,estimating,5,21819,VOG-43576,D,161,2025-01-29,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1220-1414-request-for-quote-kes-52795.eml,new rfq,ready to quote,estimating,2,21815,KES-52795;KES-13244,A;A,16;12,2025-02-12;2025-01-08,2024-12-30,won,,
+1220-1509-rfq-4814.eml,new rfq,needs info,estimating,9,21814,CRO-43769;CRO-29484;CRO-54640,A;A;A,33;;1,2025-01-29;2025-01-29;2025-01-29,,won,no quantity for CRO-29484; the lines are only in the attached RFQ form,quantity
+1220-1630-rfq-4816.eml,new rfq,ready to quote,estimating,6,21816,LUT-24103,A,11,2025-01-22,,won,the lines are only in the attached RFQ form,
+1220-1654-ship-date.eml,other,not an rfq,sales,188,21366,VOG-60419,,,,,won,order status question sent to quotes@; domain shared by 2 customers: the email names the company,
+1223-1305-pricing-request-eck-37935.eml,new rfq,ready to quote,estimating,19,21824,ECK-37935,A,13,2025-01-09,2024-12-30,no award,domain shared by 2 customers: the email names the company,
+1223-1343-re-rfq-attached.eml,chaser,not an rfq,estimating,8,21782,ECK-55800,,,,,lost,"RFQ received 2024-12-16, still unquoted on 2024-12-23",
+1223-1345-rfq-4823.eml,new rfq,needs info,estimating,95,21823,IMH-90041;IMH-14946,,42;209,2025-01-09;2025-02-13,2024-12-30,lost,"no revision stated, and the attachments don't carry one; domain shared by 2 customers: the email names the company",revision
+1223-1457-requote-kes-47850.eml,new rfq,ready to quote,estimating,11,21828,KES-47850,A,5,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1223-1528-rfq-attached.eml,new rfq,ready to quote,estimating,7,21822,GRA-62071;GRA-71058,A;A,27;2,2025-01-16;2025-02-20,2025-01-02,lost,domain shared by 2 customers: the email names the company,
+1223-1645-quote-needed-hol-99501-rev-a.eml,new rfq,needs a person,estimating,1,21825,HOL-99501,A,57,2025-01-09,,lost,domain shared by 3 customers and the email doesn't name the company: a person must say which,
+1226-0725-rfq-4830.eml,new rfq,needs info,estimating,8,21830,ECK-63788;ECK-66104;ECK-32904,,15;2;17,2025-01-17;2025-02-07;2025-01-10,2025-01-07,won,"no revision stated, and the attachments don't carry one",revision
+1226-1032-rfq-eck-38118-rev-b.eml,new rfq,ready to quote,estimating,195,21833,ECK-38118,B,28,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1226-1257-rfq-attached.eml,new rfq,ready to quote,estimating,2,21829,KES-62105;KES-55136;KES-79166,A;A;A,18;31;188,2025-02-07;2025-01-24;2025-01-10,2024-12-27,won,,
+1226-1311-re-wendlow-quote-21004-for-lut-24103.eml,award,not an rfq,sales,6,21816,LUT-24103,,,,,won,award on quote 21004; customer PO PO-97546,
+1226-1415-quote-needed-lut-55820-rev-a.eml,new rfq,needs info,estimating,375,21831,LUT-55820;LUT-70225,A;A,23;13,2025-01-10;2025-02-14,2024-12-26,won,no drawing attached; domain shared by 2 customers: the email names the company,drawing
+1226-1634-pricing-review-eck-23753.eml,new rfq,ready to quote,estimating,8,21834,ECK-23753,A,31,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1227-0941-pricing-request-ges-51637.eml,new rfq,ready to quote,estimating,309,21837,GES-51637,A,3,2025-02-17,,no award,the lines are only in the attached RFQ form,
+1227-1056-updated-drawing-eck-63788.eml,revision,not an rfq,estimating,8,21830,ECK-63788,B,,,,won,replaces rev A on open RFQ 21830: update the RFQ before quoting (written to match; not in eng_drawing_revisions),
+1227-1231-rfq-attached.eml,new rfq,needs a person,estimating,1,21838,HOL-40576;HOL-38871;HOL-12366,A;A;A,10;2;16,2025-01-20;2025-01-20;2025-02-03,,won,prompt injection: a person must read it; domain shared by 3 customers: the email names the company,
+1227-1256-rfq-attached.eml,new rfq,ready to quote,estimating,9,21835,CRO-89822,A,11,2025-02-17,,lost,the lines are only in the attached RFQ form,
+1227-1356-re-rfq-attached.eml,chaser,not an rfq,estimating,254,21801,YOD-43854,,,,,lost,"RFQ received 2024-12-18, still unquoted on 2024-12-27",
+1227-1500-requote-lut-65381.eml,new rfq,ready to quote,estimating,6,21841,LUT-65381,A,2,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1227-1623-rfq-hol-65551-rev-c.eml,new rfq,ready to quote,estimating,1,21844,HOL-65551,C,15,,,won,"a repeat part: the annual re-quote, sent in by the buyer; domain shared by 3 customers: the email names the company",
+1227-1754-rfq-4836.eml,new rfq,ready to quote,estimating,9,21836,CRO-76936;CRO-92367;CRO-18085,A;A;A,14;3;69,2025-02-10;2025-01-13;2025-02-03,2024-12-30,lost,,
+1230-0754-rfq-4845.eml,new rfq,ready to quote,estimating,4,21845,FIS-94619;FIS-22569,A;A,27;34,2025-02-11;2025-02-25,,lost,,
+1230-1431-rfq-4847.eml,new rfq,ready to quote,estimating,8,21847,ECK-48102,A,21,2025-02-04,2025-01-02,lost,,
+1230-1520-requote-lut-24436.eml,new rfq,ready to quote,estimating,6,21850,LUT-24436,B,3,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1230-1602-request-for-quote-eck-89082.eml,new rfq,needs info,estimating,8,21848,ECK-89082;ECK-71024;ECK-22138,A;A;A,15;;20,2025-02-18;2025-02-11;2025-01-28,,lost late,no quantity for ECK-71024,quantity
+1230-1616-rfq-4846.eml,new rfq,needs info,estimating,236,21846,AMS-73371;AMS-95467,,5;60,2025-02-25;2025-02-04,,lost late,"no revision stated, and the attachments don't carry one",revision
+1230-1640-re-rfq-attached.eml,chaser,not an rfq,estimating,6,21800,LUT-75728;LUT-61368,,,,,lost late,"RFQ received 2024-12-18, still unquoted on 2024-12-30",
+1231-0703-rfq-attached.eml,new rfq,ready to quote,estimating,13,21853,PRU-26879,A,19,2025-02-12,,lost,,
+1231-0725-requote-lut-48996.eml,new rfq,ready to quote,estimating,6,21855,LUT-48996,A,3,,,won,"a repeat part: the annual re-quote, sent in by the buyer",
+1231-0731-quote-needed-gra-49359-rev-a.eml,new rfq,ready to quote,estimating,7,21851,GRA-49359;GRA-29574;GRA-74519,A;A;A,274;19;17,2025-01-29;2025-02-19;2025-02-26,2025-01-03,won,domain shared by 2 customers: the email names the company,
+1231-1128-requote-imh-24816.eml,new rfq,ready to quote,estimating,42,21856,IMH-24816,A,8,,,lost,"a repeat part: the annual re-quote, sent in by the buyer",
+1231-1141-re-wendlow-quote-21002-for-wel-56963.eml,award,not an rfq,sales,44,21774,WEL-56963;WEL-15765;WEL-77791,,,,,won,award on quote 21002; customer PO 4535749; domain shared by 3 customers: the email names the company,
+1231-1323-rfq-4852.eml,new rfq,ready to quote,estimating,8,21852,ECK-19179;ECK-87549,A;A,94;130,2025-01-22;2025-02-19,2025-01-06,no award,,
+1231-1343-ship-date.eml,other,not an rfq,sales,10,21522,IMH-18095,,,,,won,order status question sent to quotes@,

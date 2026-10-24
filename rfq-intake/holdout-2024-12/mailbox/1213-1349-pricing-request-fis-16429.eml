@@ -1,0 +1,31 @@
+From: Morgan Ruhl <mruhl@fiskagequipment.example>
+To: quotes@wendlow.example
+Subject: Pricing request FIS-16429
+Date: Fri, 13 Dec 2024 13:49:00 -0400
+Message-ID: <202412131349.0043@fiskagequipment.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="==wendlow-0043=="
+
+--==wendlow-0043==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+Items to quote are listed in the attached file.
+
+Appreciate it
+Morgan Ruhl
+Fisk Ag Equipment Inc.
+
+--==wendlow-0043==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Fisk_RFQ_21775_parts.csv"
+MIME-Version: 1.0
+
+IyxJdGVtIE5vLixSZXYuLEl0ZW0gRGVzY3JpcHRpb24sUXR5LFByb21pc2UgRGF0ZQoxLEZJUy0x
+NjQyOSxBLG1vdW50aW5nIHBsYXRlLDE2LDEvMTUvMjAyNQoyLEZJUy0xMTg4MCxBLHN1cHBvcnQg
+c3RhbmQsMTAsMS8yOS8yMDI1Cg==
+
+--==wendlow-0043==--
