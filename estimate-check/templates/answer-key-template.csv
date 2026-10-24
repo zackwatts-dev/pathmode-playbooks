@@ -1,0 +1,4 @@
+bid,document,section,kind,quote,status,in_estimate,true_cost,note
+Example School 2026-03,project manual,23 05 93,independent balancing agency,"The Contractor shall engage an independent testing, adjusting, and balancing agency",base bid,no,8400,missed; found at buyout
+Example School 2026-03,project manual,23 09 00,controls,"Controls are not in the mechanical contract",by others,no,0,right to leave out
+Example School 2026-03,Addendum 2,,night work,"Work in occupied areas shall be performed between 10:00 p.m. and 6:00 a.m.",base bid,yes,21000,priced
