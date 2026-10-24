@@ -1,7 +1,8 @@
 """Record a real model on the pricing-assistant held-back year (holdout-2025/), the way tools/record.py records the
 sample. The thresholds in release-thresholds.json were set before the held-back year was generated.
 
-    python tools/record_holdout_pricing.py          # through the claude command line (Claude Sonnet 5.5)
+    python tools/record_holdout_pricing.py               # through the claude command line (Claude Sonnet 5.5)
+    python tools/record_holdout_pricing.py holdout-2023  # another held-back year
 """
 
 from __future__ import annotations
@@ -17,7 +18,8 @@ sys.path[:0] = [str(ROOT), str(ROOT / "tools"), str(ROOT / "pricing-assistant")]
 import pricing_assistant as pa  # noqa: E402
 import record  # noqa: E402
 
-HOLDOUT = ROOT / "pricing-assistant" / "holdout-2025"
+_ARGS = [a for a in sys.argv[1:] if not a.startswith("--")]
+HOLDOUT = ROOT / "pricing-assistant" / (_ARGS[0] if _ARGS else "holdout-2025")
 
 
 def main() -> None:
