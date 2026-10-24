@@ -1,0 +1,1097 @@
+sku,category,description,maker,type,tons,seer2,refrigerant,list_price,unit_cost,discontinued_on
+AIR080000,supplies,Air Filter variant 0,Palmer Electric,,,,,13.94,7.91,
+AIR080001,supplies,Air Filter variant 1,Okafor Wire & Cable,,,,,6.71,3.56,
+AIR080002,supplies,Air Filter variant 2,Vance Hydronics,,,,,9.75,5.36,
+AIR080003,supplies,Air Filter variant 3,Solway Refrigeration Parts,,,,,6.78,3.93,
+AIR080004,supplies,Air Filter variant 4,Redstone Controls,,,,,3.49,2.07,
+AIR080005,supplies,Air Filter variant 5,Westerly Thermostats,,,,,9.13,4.76,
+AIR080006,supplies,Air Filter variant 6,Thistle Ventilation,,,,,8.46,4.64,
+AIR080007,supplies,Air Filter variant 7,Garnet Hose & Fittings,,,,,8.53,4.86,
+AIR080008,supplies,Air Filter variant 8,Nadler Compressors,,,,,8.67,5.2,
+AIR080009,supplies,Air Filter variant 9,Auburn Fittings,,,,,9.99,5.69,
+AIR080010,supplies,Air Filter variant 10,Bramble Mounts & Pads,,,,,12.53,7.02,
+AIR080011,supplies,Air Filter variant 11,Redstone Controls,,,,,6.61,3.67,
+AIR080012,supplies,Air Filter variant 12,Okafor Wire & Cable,,,,,5.22,3.05,
+AIR080013,supplies,Air Filter variant 13,Tamsin Pumps,,,,,6.78,4.26,
+AIR080014,supplies,Air Filter variant 14,Nadler Compressors,,,,,7.05,3.8,
+AIR080015,supplies,Air Filter variant 15,Tamsin Pumps,,,,,10.5,5.65,
+AIR080016,supplies,Air Filter variant 16,Haverford Controls,,,,,7.48,4.2,
+AIR080017,supplies,Air Filter variant 17,Pruitt Duct Supply,,,,,5.91,3.53,
+AIR080018,supplies,Air Filter variant 18,Ostrander Motors,,,,,10.36,5.61,
+AIR080019,supplies,Air Filter variant 19,Larkspur Tools,,,,,3.98,2.24,
+AIR080020,supplies,Air Filter variant 20,Rook Hangers,,,,,16.17,9.46,
+AIR080021,supplies,Air Filter variant 21,Fennimore Tape & Sealants,,,,,6.75,3.64,
+AIR080022,supplies,Air Filter variant 22,Teague Insulation,,,,,7.56,4.46,
+AIR080023,supplies,Air Filter variant 23,Juniper Ridge Gauges,,,,,5.55,3.05,
+AIR080024,supplies,Air Filter variant 24,Haverford Controls,,,,,4.74,2.74,
+AIR080025,supplies,Air Filter variant 25,Auburn Fittings,,,,,9.48,5.02,
+ASH-AI015130X,equipment,Air Handler 1.5 ton SEER2 13.0,Ashland Climate,Air Handler,1.5,13.0,,717.2,491.73,2015-01-01
+ASH-AI015143X,equipment,Air Handler 1.5 ton SEER2 14.3,Ashland Climate,Air Handler,1.5,14.3,,824.77,555.43,2023-01-01
+ASH-AI015152X,equipment,Air Handler 1.5 ton SEER2 15.2,Ashland Climate,Air Handler,1.5,15.2,,826.8,581.53,
+ASH-AI015165X,equipment,Air Handler 1.5 ton SEER2 16.5,Ashland Climate,Air Handler,1.5,16.5,,852.94,603.01,
+ASH-AI015175X,equipment,Air Handler 1.5 ton SEER2 17.5,Ashland Climate,Air Handler,1.5,17.5,,958.22,665.85,
+ASH-AI015185X,equipment,Air Handler 1.5 ton SEER2 18.5,Ashland Climate,Air Handler,1.5,18.5,,1051.67,707.55,
+ASH-AI015200X,equipment,Air Handler 1.5 ton SEER2 20.0,Ashland Climate,Air Handler,1.5,20.0,,1041.69,726.89,
+ASH-AI020130X,equipment,Air Handler 2.0 ton SEER2 13.0,Ashland Climate,Air Handler,2.0,13.0,,793.05,569.87,2015-01-01
+ASH-AI020143X,equipment,Air Handler 2.0 ton SEER2 14.3,Ashland Climate,Air Handler,2.0,14.3,,986.94,659.2,2023-01-01
+ASH-AI020152X,equipment,Air Handler 2.0 ton SEER2 15.2,Ashland Climate,Air Handler,2.0,15.2,,1014.42,692.25,
+ASH-AI020165X,equipment,Air Handler 2.0 ton SEER2 16.5,Ashland Climate,Air Handler,2.0,16.5,,1119.17,752.44,
+ASH-AI020175X,equipment,Air Handler 2.0 ton SEER2 17.5,Ashland Climate,Air Handler,2.0,17.5,,1077.11,750.82,
+ASH-AI020185X,equipment,Air Handler 2.0 ton SEER2 18.5,Ashland Climate,Air Handler,2.0,18.5,,1206.7,807.32,
+ASH-AI020200X,equipment,Air Handler 2.0 ton SEER2 20.0,Ashland Climate,Air Handler,2.0,20.0,,1267.45,841.8,
+ASH-AI025130X,equipment,Air Handler 2.5 ton SEER2 13.0,Ashland Climate,Air Handler,2.5,13.0,,891.92,638.68,2015-01-01
+ASH-AI025143X,equipment,Air Handler 2.5 ton SEER2 14.3,Ashland Climate,Air Handler,2.5,14.3,,1026.94,704.1,2023-01-01
+ASH-AI025152X,equipment,Air Handler 2.5 ton SEER2 15.2,Ashland Climate,Air Handler,2.5,15.2,,1072.01,739.18,
+ASH-AI025165X,equipment,Air Handler 2.5 ton SEER2 16.5,Ashland Climate,Air Handler,2.5,16.5,,1156.91,805.33,
+ASH-AI025175X,equipment,Air Handler 2.5 ton SEER2 17.5,Ashland Climate,Air Handler,2.5,17.5,,1177.33,791.51,
+ASH-AI025185X,equipment,Air Handler 2.5 ton SEER2 18.5,Ashland Climate,Air Handler,2.5,18.5,,1237.63,829.54,
+ASH-AI025200X,equipment,Air Handler 2.5 ton SEER2 20.0,Ashland Climate,Air Handler,2.5,20.0,,1422.55,1005.43,
+ASH-AI030130X,equipment,Air Handler 3.0 ton SEER2 13.0,Ashland Climate,Air Handler,3.0,13.0,,1062.89,733.74,2015-01-01
+ASH-AI030143X,equipment,Air Handler 3.0 ton SEER2 14.3,Ashland Climate,Air Handler,3.0,14.3,,1101.76,774.95,2023-01-01
+ASH-AI030152X,equipment,Air Handler 3.0 ton SEER2 15.2,Ashland Climate,Air Handler,3.0,15.2,,1224.3,843.6,
+ASH-AI030165X,equipment,Air Handler 3.0 ton SEER2 16.5,Ashland Climate,Air Handler,3.0,16.5,,1232.47,856.22,
+ASH-AI030175X,equipment,Air Handler 3.0 ton SEER2 17.5,Ashland Climate,Air Handler,3.0,17.5,,1310.1,927.06,
+ASH-AI030185X,equipment,Air Handler 3.0 ton SEER2 18.5,Ashland Climate,Air Handler,3.0,18.5,,1412.17,963.15,
+ASH-AI030200X,equipment,Air Handler 3.0 ton SEER2 20.0,Ashland Climate,Air Handler,3.0,20.0,,1355.33,971.7,
+ASH-AI035130X,equipment,Air Handler 3.5 ton SEER2 13.0,Ashland Climate,Air Handler,3.5,13.0,,1152.55,784.61,2015-01-01
+ASH-AI035143X,equipment,Air Handler 3.5 ton SEER2 14.3,Ashland Climate,Air Handler,3.5,14.3,,1225.86,820.09,2023-01-01
+ASH-AI035152X,equipment,Air Handler 3.5 ton SEER2 15.2,Ashland Climate,Air Handler,3.5,15.2,,1301.83,910.63,
+ASH-AI035165X,equipment,Air Handler 3.5 ton SEER2 16.5,Ashland Climate,Air Handler,3.5,16.5,,1382.8,940.94,
+ASH-AI035175X,equipment,Air Handler 3.5 ton SEER2 17.5,Ashland Climate,Air Handler,3.5,17.5,,1395.05,993.16,
+ASH-AI035185X,equipment,Air Handler 3.5 ton SEER2 18.5,Ashland Climate,Air Handler,3.5,18.5,,1548.58,1056.0,
+ASH-AI035200X,equipment,Air Handler 3.5 ton SEER2 20.0,Ashland Climate,Air Handler,3.5,20.0,,1757.23,1190.42,
+ASH-AI040130X,equipment,Air Handler 4.0 ton SEER2 13.0,Ashland Climate,Air Handler,4.0,13.0,,1263.3,875.21,2015-01-01
+ASH-AI040143X,equipment,Air Handler 4.0 ton SEER2 14.3,Ashland Climate,Air Handler,4.0,14.3,,1341.42,925.7,2023-01-01
+ASH-AI040152X,equipment,Air Handler 4.0 ton SEER2 15.2,Ashland Climate,Air Handler,4.0,15.2,,1428.79,1012.26,
+ASH-AI040165X,equipment,Air Handler 4.0 ton SEER2 16.5,Ashland Climate,Air Handler,4.0,16.5,,1473.26,1041.69,
+ASH-AI040175X,equipment,Air Handler 4.0 ton SEER2 17.5,Ashland Climate,Air Handler,4.0,17.5,,1702.0,1140.89,
+ASH-AI040185X,equipment,Air Handler 4.0 ton SEER2 18.5,Ashland Climate,Air Handler,4.0,18.5,,1684.11,1157.49,
+ASH-AI040200X,equipment,Air Handler 4.0 ton SEER2 20.0,Ashland Climate,Air Handler,4.0,20.0,,1740.21,1212.64,
+ASH-AI050130X,equipment,Air Handler 5.0 ton SEER2 13.0,Ashland Climate,Air Handler,5.0,13.0,,1392.58,978.03,2015-01-01
+ASH-AI050143X,equipment,Air Handler 5.0 ton SEER2 14.3,Ashland Climate,Air Handler,5.0,14.3,,1510.9,1052.27,2023-01-01
+ASH-AI050152X,equipment,Air Handler 5.0 ton SEER2 15.2,Ashland Climate,Air Handler,5.0,15.2,,1628.76,1135.21,
+ASH-AI050165X,equipment,Air Handler 5.0 ton SEER2 16.5,Ashland Climate,Air Handler,5.0,16.5,,1780.04,1195.45,
+ASH-AI050175X,equipment,Air Handler 5.0 ton SEER2 17.5,Ashland Climate,Air Handler,5.0,17.5,,1836.17,1254.37,
+ASH-AI050185X,equipment,Air Handler 5.0 ton SEER2 18.5,Ashland Climate,Air Handler,5.0,18.5,,2055.06,1370.43,
+ASH-AI050200X,equipment,Air Handler 5.0 ton SEER2 20.0,Ashland Climate,Air Handler,5.0,20.0,,2128.34,1466.58,
+ASH-CO015130A,equipment,Condenser 1.5 ton SEER2 13.0 R-454B,Ashland Climate,Condenser,1.5,13.0,R-454B,1258.41,853.05,2015-01-01
+ASH-CO015130H,equipment,Condenser 1.5 ton SEER2 13.0 R-410A,Ashland Climate,Condenser,1.5,13.0,R-410A,1109.94,763.96,2015-01-01
+ASH-CO015143A,equipment,Condenser 1.5 ton SEER2 14.3 R-454B,Ashland Climate,Condenser,1.5,14.3,R-454B,1333.64,924.95,2023-01-01
+ASH-CO015143H,equipment,Condenser 1.5 ton SEER2 14.3 R-410A,Ashland Climate,Condenser,1.5,14.3,R-410A,1240.32,857.12,2023-01-01
+ASH-CO015152A,equipment,Condenser 1.5 ton SEER2 15.2 R-454B,Ashland Climate,Condenser,1.5,15.2,R-454B,1459.93,989.3,
+ASH-CO015152H,equipment,Condenser 1.5 ton SEER2 15.2 R-410A,Ashland Climate,Condenser,1.5,15.2,R-410A,1265.58,865.03,2025-01-01
+ASH-CO015165A,equipment,Condenser 1.5 ton SEER2 16.5 R-454B,Ashland Climate,Condenser,1.5,16.5,R-454B,1494.62,1046.54,
+ASH-CO015165H,equipment,Condenser 1.5 ton SEER2 16.5 R-410A,Ashland Climate,Condenser,1.5,16.5,R-410A,1380.22,964.86,2025-01-01
+ASH-CO015175A,equipment,Condenser 1.5 ton SEER2 17.5 R-454B,Ashland Climate,Condenser,1.5,17.5,R-454B,1534.89,1122.58,
+ASH-CO015175H,equipment,Condenser 1.5 ton SEER2 17.5 R-410A,Ashland Climate,Condenser,1.5,17.5,R-410A,1410.85,960.04,2025-01-01
+ASH-CO015185A,equipment,Condenser 1.5 ton SEER2 18.5 R-454B,Ashland Climate,Condenser,1.5,18.5,R-454B,1670.22,1115.23,
+ASH-CO015185H,equipment,Condenser 1.5 ton SEER2 18.5 R-410A,Ashland Climate,Condenser,1.5,18.5,R-410A,1379.98,963.92,2025-01-01
+ASH-CO015200A,equipment,Condenser 1.5 ton SEER2 20.0 R-454B,Ashland Climate,Condenser,1.5,20.0,R-454B,1817.72,1228.12,
+ASH-CO015200H,equipment,Condenser 1.5 ton SEER2 20.0 R-410A,Ashland Climate,Condenser,1.5,20.0,R-410A,1615.03,1126.71,2025-01-01
+ASH-CO020130A,equipment,Condenser 2.0 ton SEER2 13.0 R-454B,Ashland Climate,Condenser,2.0,13.0,R-454B,1410.99,993.27,2015-01-01
+ASH-CO020130H,equipment,Condenser 2.0 ton SEER2 13.0 R-410A,Ashland Climate,Condenser,2.0,13.0,R-410A,1234.25,873.42,2015-01-01
+ASH-CO020143A,equipment,Condenser 2.0 ton SEER2 14.3 R-454B,Ashland Climate,Condenser,2.0,14.3,R-454B,1551.38,1034.78,2023-01-01
+ASH-CO020143H,equipment,Condenser 2.0 ton SEER2 14.3 R-410A,Ashland Climate,Condenser,2.0,14.3,R-410A,1424.99,987.29,2023-01-01
+ASH-CO020152A,equipment,Condenser 2.0 ton SEER2 15.2 R-454B,Ashland Climate,Condenser,2.0,15.2,R-454B,1565.06,1063.71,
+ASH-CO020152H,equipment,Condenser 2.0 ton SEER2 15.2 R-410A,Ashland Climate,Condenser,2.0,15.2,R-410A,1454.82,981.84,2025-01-01
+ASH-CO020165A,equipment,Condenser 2.0 ton SEER2 16.5 R-454B,Ashland Climate,Condenser,2.0,16.5,R-454B,1756.27,1181.84,
+ASH-CO020165H,equipment,Condenser 2.0 ton SEER2 16.5 R-410A,Ashland Climate,Condenser,2.0,16.5,R-410A,1531.87,1020.49,2025-01-01
+ASH-CO020175A,equipment,Condenser 2.0 ton SEER2 17.5 R-454B,Ashland Climate,Condenser,2.0,17.5,R-454B,1844.05,1237.68,
+ASH-CO020175H,equipment,Condenser 2.0 ton SEER2 17.5 R-410A,Ashland Climate,Condenser,2.0,17.5,R-410A,1641.35,1131.6,2025-01-01
+ASH-CO020185A,equipment,Condenser 2.0 ton SEER2 18.5 R-454B,Ashland Climate,Condenser,2.0,18.5,R-454B,1826.52,1296.38,
+ASH-CO020185H,equipment,Condenser 2.0 ton SEER2 18.5 R-410A,Ashland Climate,Condenser,2.0,18.5,R-410A,1738.3,1207.37,2025-01-01
+ASH-CO020200A,equipment,Condenser 2.0 ton SEER2 20.0 R-454B,Ashland Climate,Condenser,2.0,20.0,R-454B,1986.05,1393.5,
+ASH-CO020200H,equipment,Condenser 2.0 ton SEER2 20.0 R-410A,Ashland Climate,Condenser,2.0,20.0,R-410A,1780.94,1228.7,2025-01-01
+ASH-CO025130A,equipment,Condenser 2.5 ton SEER2 13.0 R-454B,Ashland Climate,Condenser,2.5,13.0,R-454B,1505.56,1050.41,2015-01-01
+ASH-CO025130H,equipment,Condenser 2.5 ton SEER2 13.0 R-410A,Ashland Climate,Condenser,2.5,13.0,R-410A,1357.91,945.02,2015-01-01
+ASH-CO025143A,equipment,Condenser 2.5 ton SEER2 14.3 R-454B,Ashland Climate,Condenser,2.5,14.3,R-454B,1663.33,1152.75,2023-01-01
+ASH-CO025143H,equipment,Condenser 2.5 ton SEER2 14.3 R-410A,Ashland Climate,Condenser,2.5,14.3,R-410A,1538.34,1006.41,2023-01-01
+ASH-CO025152A,equipment,Condenser 2.5 ton SEER2 15.2 R-454B,Ashland Climate,Condenser,2.5,15.2,R-454B,1806.53,1237.7,
+ASH-CO025152H,equipment,Condenser 2.5 ton SEER2 15.2 R-410A,Ashland Climate,Condenser,2.5,15.2,R-410A,1647.24,1153.99,2025-01-01
+ASH-CO025165A,equipment,Condenser 2.5 ton SEER2 16.5 R-454B,Ashland Climate,Condenser,2.5,16.5,R-454B,1773.67,1252.67,
+ASH-CO025165H,equipment,Condenser 2.5 ton SEER2 16.5 R-410A,Ashland Climate,Condenser,2.5,16.5,R-410A,1684.12,1185.31,2025-01-01
+ASH-CO025175A,equipment,Condenser 2.5 ton SEER2 17.5 R-454B,Ashland Climate,Condenser,2.5,17.5,R-454B,1887.46,1287.87,
+ASH-CO025175H,equipment,Condenser 2.5 ton SEER2 17.5 R-410A,Ashland Climate,Condenser,2.5,17.5,R-410A,1720.81,1235.03,2025-01-01
+ASH-CO025185A,equipment,Condenser 2.5 ton SEER2 18.5 R-454B,Ashland Climate,Condenser,2.5,18.5,R-454B,2058.68,1442.0,
+ASH-CO025185H,equipment,Condenser 2.5 ton SEER2 18.5 R-410A,Ashland Climate,Condenser,2.5,18.5,R-410A,1752.88,1260.24,2025-01-01
+ASH-CO025200A,equipment,Condenser 2.5 ton SEER2 20.0 R-454B,Ashland Climate,Condenser,2.5,20.0,R-454B,2196.72,1528.22,
+ASH-CO025200H,equipment,Condenser 2.5 ton SEER2 20.0 R-410A,Ashland Climate,Condenser,2.5,20.0,R-410A,2084.88,1448.47,2025-01-01
+ASH-CO030130A,equipment,Condenser 3.0 ton SEER2 13.0 R-454B,Ashland Climate,Condenser,3.0,13.0,R-454B,1779.72,1197.18,2015-01-01
+ASH-CO030130H,equipment,Condenser 3.0 ton SEER2 13.0 R-410A,Ashland Climate,Condenser,3.0,13.0,R-410A,1579.61,1095.9,2015-01-01
+ASH-CO030143A,equipment,Condenser 3.0 ton SEER2 14.3 R-454B,Ashland Climate,Condenser,3.0,14.3,R-454B,1862.82,1258.8,2023-01-01
+ASH-CO030143H,equipment,Condenser 3.0 ton SEER2 14.3 R-410A,Ashland Climate,Condenser,3.0,14.3,R-410A,1786.78,1204.0,2023-01-01
+ASH-CO030152A,equipment,Condenser 3.0 ton SEER2 15.2 R-454B,Ashland Climate,Condenser,3.0,15.2,R-454B,1975.64,1333.44,
+ASH-CO030152H,equipment,Condenser 3.0 ton SEER2 15.2 R-410A,Ashland Climate,Condenser,3.0,15.2,R-410A,1826.68,1279.55,2025-01-01
+ASH-CO030165A,equipment,Condenser 3.0 ton SEER2 16.5 R-454B,Ashland Climate,Condenser,3.0,16.5,R-454B,2196.54,1456.95,
+ASH-CO030165H,equipment,Condenser 3.0 ton SEER2 16.5 R-410A,Ashland Climate,Condenser,3.0,16.5,R-410A,1872.35,1323.72,2025-01-01
+ASH-CO030175A,equipment,Condenser 3.0 ton SEER2 17.5 R-454B,Ashland Climate,Condenser,3.0,17.5,R-454B,2299.23,1615.08,
+ASH-CO030175H,equipment,Condenser 3.0 ton SEER2 17.5 R-410A,Ashland Climate,Condenser,3.0,17.5,R-410A,1967.67,1385.78,2025-01-01
+ASH-CO030185A,equipment,Condenser 3.0 ton SEER2 18.5 R-454B,Ashland Climate,Condenser,3.0,18.5,R-454B,2269.84,1555.56,
+ASH-CO030185H,equipment,Condenser 3.0 ton SEER2 18.5 R-410A,Ashland Climate,Condenser,3.0,18.5,R-410A,2138.82,1475.12,2025-01-01
+ASH-CO030200A,equipment,Condenser 3.0 ton SEER2 20.0 R-454B,Ashland Climate,Condenser,3.0,20.0,R-454B,2632.94,1761.87,
+ASH-CO030200H,equipment,Condenser 3.0 ton SEER2 20.0 R-410A,Ashland Climate,Condenser,3.0,20.0,R-410A,2301.02,1599.88,2025-01-01
+ASH-CO035130A,equipment,Condenser 3.5 ton SEER2 13.0 R-454B,Ashland Climate,Condenser,3.5,13.0,R-454B,2051.84,1364.27,2015-01-01
+ASH-CO035130H,equipment,Condenser 3.5 ton SEER2 13.0 R-410A,Ashland Climate,Condenser,3.5,13.0,R-410A,1723.81,1204.06,2015-01-01
+ASH-CO035143A,equipment,Condenser 3.5 ton SEER2 14.3 R-454B,Ashland Climate,Condenser,3.5,14.3,R-454B,2078.37,1416.57,2023-01-01
+ASH-CO035143H,equipment,Condenser 3.5 ton SEER2 14.3 R-410A,Ashland Climate,Condenser,3.5,14.3,R-410A,1994.1,1320.63,2023-01-01
+ASH-CO035152A,equipment,Condenser 3.5 ton SEER2 15.2 R-454B,Ashland Climate,Condenser,3.5,15.2,R-454B,2208.87,1472.28,
+ASH-CO035152H,equipment,Condenser 3.5 ton SEER2 15.2 R-410A,Ashland Climate,Condenser,3.5,15.2,R-410A,1981.08,1351.64,2025-01-01
+ASH-CO035165A,equipment,Condenser 3.5 ton SEER2 16.5 R-454B,Ashland Climate,Condenser,3.5,16.5,R-454B,2410.96,1613.52,
+ASH-CO035165H,equipment,Condenser 3.5 ton SEER2 16.5 R-410A,Ashland Climate,Condenser,3.5,16.5,R-410A,2054.5,1435.5,2025-01-01
+ASH-CO035175A,equipment,Condenser 3.5 ton SEER2 17.5 R-454B,Ashland Climate,Condenser,3.5,17.5,R-454B,2454.53,1645.8,
+ASH-CO035175H,equipment,Condenser 3.5 ton SEER2 17.5 R-410A,Ashland Climate,Condenser,3.5,17.5,R-410A,2191.51,1452.34,2025-01-01
+ASH-CO035185A,equipment,Condenser 3.5 ton SEER2 18.5 R-454B,Ashland Climate,Condenser,3.5,18.5,R-454B,2425.23,1688.44,
+ASH-CO035185H,equipment,Condenser 3.5 ton SEER2 18.5 R-410A,Ashland Climate,Condenser,3.5,18.5,R-410A,2378.57,1610.06,2025-01-01
+ASH-CO035200A,equipment,Condenser 3.5 ton SEER2 20.0 R-454B,Ashland Climate,Condenser,3.5,20.0,R-454B,2825.3,1993.04,
+ASH-CO035200H,equipment,Condenser 3.5 ton SEER2 20.0 R-410A,Ashland Climate,Condenser,3.5,20.0,R-410A,2521.88,1735.61,2025-01-01
+ASH-CO040130A,equipment,Condenser 4.0 ton SEER2 13.0 R-454B,Ashland Climate,Condenser,4.0,13.0,R-454B,2168.46,1456.03,2015-01-01
+ASH-CO040130H,equipment,Condenser 4.0 ton SEER2 13.0 R-410A,Ashland Climate,Condenser,4.0,13.0,R-410A,1937.63,1359.46,2015-01-01
+ASH-CO040143A,equipment,Condenser 4.0 ton SEER2 14.3 R-454B,Ashland Climate,Condenser,4.0,14.3,R-454B,2273.4,1594.89,2023-01-01
+ASH-CO040143H,equipment,Condenser 4.0 ton SEER2 14.3 R-410A,Ashland Climate,Condenser,4.0,14.3,R-410A,2189.33,1481.1,2023-01-01
+ASH-CO040152A,equipment,Condenser 4.0 ton SEER2 15.2 R-454B,Ashland Climate,Condenser,4.0,15.2,R-454B,2376.08,1607.42,
+ASH-CO040152H,equipment,Condenser 4.0 ton SEER2 15.2 R-410A,Ashland Climate,Condenser,4.0,15.2,R-410A,2130.24,1515.05,2025-01-01
+ASH-CO040165A,equipment,Condenser 4.0 ton SEER2 16.5 R-454B,Ashland Climate,Condenser,4.0,16.5,R-454B,2613.68,1770.73,
+ASH-CO040165H,equipment,Condenser 4.0 ton SEER2 16.5 R-410A,Ashland Climate,Condenser,4.0,16.5,R-410A,2240.45,1557.49,2025-01-01
+ASH-CO040175A,equipment,Condenser 4.0 ton SEER2 17.5 R-454B,Ashland Climate,Condenser,4.0,17.5,R-454B,2783.43,1901.32,
+ASH-CO040175H,equipment,Condenser 4.0 ton SEER2 17.5 R-410A,Ashland Climate,Condenser,4.0,17.5,R-410A,2420.05,1650.75,2025-01-01
+ASH-CO040185A,equipment,Condenser 4.0 ton SEER2 18.5 R-454B,Ashland Climate,Condenser,4.0,18.5,R-454B,2725.94,1877.41,
+ASH-CO040185H,equipment,Condenser 4.0 ton SEER2 18.5 R-410A,Ashland Climate,Condenser,4.0,18.5,R-410A,2471.76,1737.41,2025-01-01
+ASH-CO040200A,equipment,Condenser 4.0 ton SEER2 20.0 R-454B,Ashland Climate,Condenser,4.0,20.0,R-454B,3001.29,2117.39,
+ASH-CO040200H,equipment,Condenser 4.0 ton SEER2 20.0 R-410A,Ashland Climate,Condenser,4.0,20.0,R-410A,2596.16,1844.08,2025-01-01
+ASH-CO050130A,equipment,Condenser 5.0 ton SEER2 13.0 R-454B,Ashland Climate,Condenser,5.0,13.0,R-454B,2488.86,1689.47,2015-01-01
+ASH-CO050130H,equipment,Condenser 5.0 ton SEER2 13.0 R-410A,Ashland Climate,Condenser,5.0,13.0,R-410A,2187.41,1520.27,2015-01-01
+ASH-CO050143A,equipment,Condenser 5.0 ton SEER2 14.3 R-454B,Ashland Climate,Condenser,5.0,14.3,R-454B,2564.47,1761.85,2023-01-01
+ASH-CO050143H,equipment,Condenser 5.0 ton SEER2 14.3 R-410A,Ashland Climate,Condenser,5.0,14.3,R-410A,2329.38,1629.39,2023-01-01
+ASH-CO050152A,equipment,Condenser 5.0 ton SEER2 15.2 R-454B,Ashland Climate,Condenser,5.0,15.2,R-454B,2794.8,1927.68,
+ASH-CO050152H,equipment,Condenser 5.0 ton SEER2 15.2 R-410A,Ashland Climate,Condenser,5.0,15.2,R-410A,2545.69,1762.38,2025-01-01
+ASH-CO050165A,equipment,Condenser 5.0 ton SEER2 16.5 R-454B,Ashland Climate,Condenser,5.0,16.5,R-454B,3037.38,2050.57,
+ASH-CO050165H,equipment,Condenser 5.0 ton SEER2 16.5 R-410A,Ashland Climate,Condenser,5.0,16.5,R-410A,2611.47,1819.46,2025-01-01
+ASH-CO050175A,equipment,Condenser 5.0 ton SEER2 17.5 R-454B,Ashland Climate,Condenser,5.0,17.5,R-454B,3114.39,2153.31,
+ASH-CO050175H,equipment,Condenser 5.0 ton SEER2 17.5 R-410A,Ashland Climate,Condenser,5.0,17.5,R-410A,2745.59,1935.35,2025-01-01
+ASH-CO050185A,equipment,Condenser 5.0 ton SEER2 18.5 R-454B,Ashland Climate,Condenser,5.0,18.5,R-454B,3259.65,2239.2,
+ASH-CO050185H,equipment,Condenser 5.0 ton SEER2 18.5 R-410A,Ashland Climate,Condenser,5.0,18.5,R-410A,3013.5,2076.65,2025-01-01
+ASH-CO050200A,equipment,Condenser 5.0 ton SEER2 20.0 R-454B,Ashland Climate,Condenser,5.0,20.0,R-454B,3494.14,2482.1,
+ASH-CO050200H,equipment,Condenser 5.0 ton SEER2 20.0 R-410A,Ashland Climate,Condenser,5.0,20.0,R-410A,3102.35,2179.32,2025-01-01
+ASH-GA015130X,equipment,Gas Furnace 1.5 ton SEER2 13.0,Ashland Climate,Gas Furnace,1.5,13.0,,907.62,625.5,2015-01-01
+ASH-GA015143X,equipment,Gas Furnace 1.5 ton SEER2 14.3,Ashland Climate,Gas Furnace,1.5,14.3,,885.08,611.6,2023-01-01
+ASH-GA015152X,equipment,Gas Furnace 1.5 ton SEER2 15.2,Ashland Climate,Gas Furnace,1.5,15.2,,1024.77,699.98,
+ASH-GA015165X,equipment,Gas Furnace 1.5 ton SEER2 16.5,Ashland Climate,Gas Furnace,1.5,16.5,,1056.74,717.36,
+ASH-GA015175X,equipment,Gas Furnace 1.5 ton SEER2 17.5,Ashland Climate,Gas Furnace,1.5,17.5,,1097.85,770.75,
+ASH-GA015185X,equipment,Gas Furnace 1.5 ton SEER2 18.5,Ashland Climate,Gas Furnace,1.5,18.5,,1189.77,835.53,
+ASH-GA015200X,equipment,Gas Furnace 1.5 ton SEER2 20.0,Ashland Climate,Gas Furnace,1.5,20.0,,1231.73,855.9,
+ASH-GA020130X,equipment,Gas Furnace 2.0 ton SEER2 13.0,Ashland Climate,Gas Furnace,2.0,13.0,,960.85,661.32,2015-01-01
+ASH-GA020143X,equipment,Gas Furnace 2.0 ton SEER2 14.3,Ashland Climate,Gas Furnace,2.0,14.3,,1103.32,768.36,2023-01-01
+ASH-GA020152X,equipment,Gas Furnace 2.0 ton SEER2 15.2,Ashland Climate,Gas Furnace,2.0,15.2,,1181.74,811.66,
+ASH-GA020165X,equipment,Gas Furnace 2.0 ton SEER2 16.5,Ashland Climate,Gas Furnace,2.0,16.5,,1213.29,831.99,
+ASH-GA020175X,equipment,Gas Furnace 2.0 ton SEER2 17.5,Ashland Climate,Gas Furnace,2.0,17.5,,1250.79,855.91,
+ASH-GA020185X,equipment,Gas Furnace 2.0 ton SEER2 18.5,Ashland Climate,Gas Furnace,2.0,18.5,,1368.08,963.73,
+ASH-GA020200X,equipment,Gas Furnace 2.0 ton SEER2 20.0,Ashland Climate,Gas Furnace,2.0,20.0,,1420.28,996.27,
+ASH-GA025130X,equipment,Gas Furnace 2.5 ton SEER2 13.0,Ashland Climate,Gas Furnace,2.5,13.0,,1096.82,765.18,2015-01-01
+ASH-GA025143X,equipment,Gas Furnace 2.5 ton SEER2 14.3,Ashland Climate,Gas Furnace,2.5,14.3,,1157.66,797.73,2023-01-01
+ASH-GA025152X,equipment,Gas Furnace 2.5 ton SEER2 15.2,Ashland Climate,Gas Furnace,2.5,15.2,,1249.3,838.82,
+ASH-GA025165X,equipment,Gas Furnace 2.5 ton SEER2 16.5,Ashland Climate,Gas Furnace,2.5,16.5,,1405.99,973.91,
+ASH-GA025175X,equipment,Gas Furnace 2.5 ton SEER2 17.5,Ashland Climate,Gas Furnace,2.5,17.5,,1414.43,965.75,
+ASH-GA025185X,equipment,Gas Furnace 2.5 ton SEER2 18.5,Ashland Climate,Gas Furnace,2.5,18.5,,1436.34,986.98,
+ASH-GA025200X,equipment,Gas Furnace 2.5 ton SEER2 20.0,Ashland Climate,Gas Furnace,2.5,20.0,,1532.33,1067.68,
+ASH-GA030130X,equipment,Gas Furnace 3.0 ton SEER2 13.0,Ashland Climate,Gas Furnace,3.0,13.0,,1240.6,847.38,2015-01-01
+ASH-GA030143X,equipment,Gas Furnace 3.0 ton SEER2 14.3,Ashland Climate,Gas Furnace,3.0,14.3,,1350.95,930.62,2023-01-01
+ASH-GA030152X,equipment,Gas Furnace 3.0 ton SEER2 15.2,Ashland Climate,Gas Furnace,3.0,15.2,,1425.25,963.85,
+ASH-GA030165X,equipment,Gas Furnace 3.0 ton SEER2 16.5,Ashland Climate,Gas Furnace,3.0,16.5,,1517.56,1074.19,
+ASH-GA030175X,equipment,Gas Furnace 3.0 ton SEER2 17.5,Ashland Climate,Gas Furnace,3.0,17.5,,1498.65,1076.66,
+ASH-GA030185X,equipment,Gas Furnace 3.0 ton SEER2 18.5,Ashland Climate,Gas Furnace,3.0,18.5,,1704.7,1185.9,
+ASH-GA030200X,equipment,Gas Furnace 3.0 ton SEER2 20.0,Ashland Climate,Gas Furnace,3.0,20.0,,1759.64,1226.03,
+ASH-GA035130X,equipment,Gas Furnace 3.5 ton SEER2 13.0,Ashland Climate,Gas Furnace,3.5,13.0,,1376.17,926.47,2015-01-01
+ASH-GA035143X,equipment,Gas Furnace 3.5 ton SEER2 14.3,Ashland Climate,Gas Furnace,3.5,14.3,,1476.88,985.83,2023-01-01
+ASH-GA035152X,equipment,Gas Furnace 3.5 ton SEER2 15.2,Ashland Climate,Gas Furnace,3.5,15.2,,1597.17,1094.51,
+ASH-GA035165X,equipment,Gas Furnace 3.5 ton SEER2 16.5,Ashland Climate,Gas Furnace,3.5,16.5,,1602.45,1129.41,
+ASH-GA035175X,equipment,Gas Furnace 3.5 ton SEER2 17.5,Ashland Climate,Gas Furnace,3.5,17.5,,1749.35,1184.82,
+ASH-GA035185X,equipment,Gas Furnace 3.5 ton SEER2 18.5,Ashland Climate,Gas Furnace,3.5,18.5,,1783.11,1206.13,
+ASH-GA035200X,equipment,Gas Furnace 3.5 ton SEER2 20.0,Ashland Climate,Gas Furnace,3.5,20.0,,1889.29,1307.63,
+ASH-GA040130X,equipment,Gas Furnace 4.0 ton SEER2 13.0,Ashland Climate,Gas Furnace,4.0,13.0,,1516.47,1070.89,2015-01-01
+ASH-GA040143X,equipment,Gas Furnace 4.0 ton SEER2 14.3,Ashland Climate,Gas Furnace,4.0,14.3,,1598.32,1130.49,2023-01-01
+ASH-GA040152X,equipment,Gas Furnace 4.0 ton SEER2 15.2,Ashland Climate,Gas Furnace,4.0,15.2,,1629.52,1140.99,
+ASH-GA040165X,equipment,Gas Furnace 4.0 ton SEER2 16.5,Ashland Climate,Gas Furnace,4.0,16.5,,1857.4,1287.9,
+ASH-GA040175X,equipment,Gas Furnace 4.0 ton SEER2 17.5,Ashland Climate,Gas Furnace,4.0,17.5,,1889.02,1306.96,
+ASH-GA040185X,equipment,Gas Furnace 4.0 ton SEER2 18.5,Ashland Climate,Gas Furnace,4.0,18.5,,1927.18,1320.73,
+ASH-GA040200X,equipment,Gas Furnace 4.0 ton SEER2 20.0,Ashland Climate,Gas Furnace,4.0,20.0,,2027.7,1440.46,
+ASH-GA050130X,equipment,Gas Furnace 5.0 ton SEER2 13.0,Ashland Climate,Gas Furnace,5.0,13.0,,1721.21,1188.22,2015-01-01
+ASH-GA050143X,equipment,Gas Furnace 5.0 ton SEER2 14.3,Ashland Climate,Gas Furnace,5.0,14.3,,2049.75,1370.6,2023-01-01
+ASH-GA050152X,equipment,Gas Furnace 5.0 ton SEER2 15.2,Ashland Climate,Gas Furnace,5.0,15.2,,2092.67,1368.35,
+ASH-GA050165X,equipment,Gas Furnace 5.0 ton SEER2 16.5,Ashland Climate,Gas Furnace,5.0,16.5,,2160.06,1518.22,
+ASH-GA050175X,equipment,Gas Furnace 5.0 ton SEER2 17.5,Ashland Climate,Gas Furnace,5.0,17.5,,2193.79,1544.21,
+ASH-GA050185X,equipment,Gas Furnace 5.0 ton SEER2 18.5,Ashland Climate,Gas Furnace,5.0,18.5,,2352.1,1631.17,
+ASH-GA050200X,equipment,Gas Furnace 5.0 ton SEER2 20.0,Ashland Climate,Gas Furnace,5.0,20.0,,2419.89,1720.86,
+ASH-HE015130A,equipment,Heat Pump 1.5 ton SEER2 13.0 R-454B,Ashland Climate,Heat Pump,1.5,13.0,R-454B,1547.54,1040.07,2015-01-01
+ASH-HE015130H,equipment,Heat Pump 1.5 ton SEER2 13.0 R-410A,Ashland Climate,Heat Pump,1.5,13.0,R-410A,1347.48,961.97,2015-01-01
+ASH-HE015143A,equipment,Heat Pump 1.5 ton SEER2 14.3 R-454B,Ashland Climate,Heat Pump,1.5,14.3,R-454B,1716.72,1158.67,2023-01-01
+ASH-HE015143H,equipment,Heat Pump 1.5 ton SEER2 14.3 R-410A,Ashland Climate,Heat Pump,1.5,14.3,R-410A,1533.98,1064.86,2023-01-01
+ASH-HE015152A,equipment,Heat Pump 1.5 ton SEER2 15.2 R-454B,Ashland Climate,Heat Pump,1.5,15.2,R-454B,1684.69,1189.2,
+ASH-HE015152H,equipment,Heat Pump 1.5 ton SEER2 15.2 R-410A,Ashland Climate,Heat Pump,1.5,15.2,R-410A,1696.24,1136.32,2025-01-01
+ASH-HE015165A,equipment,Heat Pump 1.5 ton SEER2 16.5 R-454B,Ashland Climate,Heat Pump,1.5,16.5,R-454B,1991.87,1359.1,
+ASH-HE015165H,equipment,Heat Pump 1.5 ton SEER2 16.5 R-410A,Ashland Climate,Heat Pump,1.5,16.5,R-410A,1713.77,1187.97,2025-01-01
+ASH-HE015175A,equipment,Heat Pump 1.5 ton SEER2 17.5 R-454B,Ashland Climate,Heat Pump,1.5,17.5,R-454B,1971.4,1381.28,
+ASH-HE015175H,equipment,Heat Pump 1.5 ton SEER2 17.5 R-410A,Ashland Climate,Heat Pump,1.5,17.5,R-410A,1744.42,1201.96,2025-01-01
+ASH-HE015185A,equipment,Heat Pump 1.5 ton SEER2 18.5 R-454B,Ashland Climate,Heat Pump,1.5,18.5,R-454B,2166.36,1447.93,
+ASH-HE015185H,equipment,Heat Pump 1.5 ton SEER2 18.5 R-410A,Ashland Climate,Heat Pump,1.5,18.5,R-410A,1786.22,1253.63,2025-01-01
+ASH-HE015200A,equipment,Heat Pump 1.5 ton SEER2 20.0 R-454B,Ashland Climate,Heat Pump,1.5,20.0,R-454B,2226.53,1553.89,
+ASH-HE015200H,equipment,Heat Pump 1.5 ton SEER2 20.0 R-410A,Ashland Climate,Heat Pump,1.5,20.0,R-410A,1957.71,1368.09,2025-01-01
+ASH-HE020130A,equipment,Heat Pump 2.0 ton SEER2 13.0 R-454B,Ashland Climate,Heat Pump,2.0,13.0,R-454B,1787.8,1199.47,2015-01-01
+ASH-HE020130H,equipment,Heat Pump 2.0 ton SEER2 13.0 R-410A,Ashland Climate,Heat Pump,2.0,13.0,R-410A,1556.79,1095.35,2015-01-01
+ASH-HE020143A,equipment,Heat Pump 2.0 ton SEER2 14.3 R-454B,Ashland Climate,Heat Pump,2.0,14.3,R-454B,1957.04,1342.73,2023-01-01
+ASH-HE020143H,equipment,Heat Pump 2.0 ton SEER2 14.3 R-410A,Ashland Climate,Heat Pump,2.0,14.3,R-410A,1649.26,1174.75,2023-01-01
+ASH-HE020152A,equipment,Heat Pump 2.0 ton SEER2 15.2 R-454B,Ashland Climate,Heat Pump,2.0,15.2,R-454B,1985.94,1403.29,
+ASH-HE020152H,equipment,Heat Pump 2.0 ton SEER2 15.2 R-410A,Ashland Climate,Heat Pump,2.0,15.2,R-410A,1764.18,1255.7,2025-01-01
+ASH-HE020165A,equipment,Heat Pump 2.0 ton SEER2 16.5 R-454B,Ashland Climate,Heat Pump,2.0,16.5,R-454B,2300.98,1528.39,
+ASH-HE020165H,equipment,Heat Pump 2.0 ton SEER2 16.5 R-410A,Ashland Climate,Heat Pump,2.0,16.5,R-410A,1932.42,1347.3,2025-01-01
+ASH-HE020175A,equipment,Heat Pump 2.0 ton SEER2 17.5 R-454B,Ashland Climate,Heat Pump,2.0,17.5,R-454B,2326.37,1592.74,
+ASH-HE020175H,equipment,Heat Pump 2.0 ton SEER2 17.5 R-410A,Ashland Climate,Heat Pump,2.0,17.5,R-410A,1988.45,1418.08,2025-01-01
+ASH-HE020185A,equipment,Heat Pump 2.0 ton SEER2 18.5 R-454B,Ashland Climate,Heat Pump,2.0,18.5,R-454B,2298.16,1610.21,
+ASH-HE020185H,equipment,Heat Pump 2.0 ton SEER2 18.5 R-410A,Ashland Climate,Heat Pump,2.0,18.5,R-410A,2197.35,1490.66,2025-01-01
+ASH-HE020200A,equipment,Heat Pump 2.0 ton SEER2 20.0 R-454B,Ashland Climate,Heat Pump,2.0,20.0,R-454B,2403.13,1620.99,
+ASH-HE020200H,equipment,Heat Pump 2.0 ton SEER2 20.0 R-410A,Ashland Climate,Heat Pump,2.0,20.0,R-410A,2307.81,1517.33,2025-01-01
+ASH-HE025130A,equipment,Heat Pump 2.5 ton SEER2 13.0 R-454B,Ashland Climate,Heat Pump,2.5,13.0,R-454B,1951.26,1355.81,2015-01-01
+ASH-HE025130H,equipment,Heat Pump 2.5 ton SEER2 13.0 R-410A,Ashland Climate,Heat Pump,2.5,13.0,R-410A,1675.42,1210.69,2015-01-01
+ASH-HE025143A,equipment,Heat Pump 2.5 ton SEER2 14.3 R-454B,Ashland Climate,Heat Pump,2.5,14.3,R-454B,2095.4,1415.33,2023-01-01
+ASH-HE025143H,equipment,Heat Pump 2.5 ton SEER2 14.3 R-410A,Ashland Climate,Heat Pump,2.5,14.3,R-410A,1764.95,1280.26,2023-01-01
+ASH-HE025152A,equipment,Heat Pump 2.5 ton SEER2 15.2 R-454B,Ashland Climate,Heat Pump,2.5,15.2,R-454B,2292.18,1529.99,
+ASH-HE025152H,equipment,Heat Pump 2.5 ton SEER2 15.2 R-410A,Ashland Climate,Heat Pump,2.5,15.2,R-410A,2099.73,1451.46,2025-01-01
+ASH-HE025165A,equipment,Heat Pump 2.5 ton SEER2 16.5 R-454B,Ashland Climate,Heat Pump,2.5,16.5,R-454B,2542.54,1738.36,
+ASH-HE025165H,equipment,Heat Pump 2.5 ton SEER2 16.5 R-410A,Ashland Climate,Heat Pump,2.5,16.5,R-410A,2074.96,1400.5,2025-01-01
+ASH-HE025175A,equipment,Heat Pump 2.5 ton SEER2 17.5 R-454B,Ashland Climate,Heat Pump,2.5,17.5,R-454B,2638.53,1780.04,
+ASH-HE025175H,equipment,Heat Pump 2.5 ton SEER2 17.5 R-410A,Ashland Climate,Heat Pump,2.5,17.5,R-410A,2222.62,1528.47,2025-01-01
+ASH-HE025185A,equipment,Heat Pump 2.5 ton SEER2 18.5 R-454B,Ashland Climate,Heat Pump,2.5,18.5,R-454B,2823.71,1921.08,
+ASH-HE025185H,equipment,Heat Pump 2.5 ton SEER2 18.5 R-410A,Ashland Climate,Heat Pump,2.5,18.5,R-410A,2301.03,1632.39,2025-01-01
+ASH-HE025200A,equipment,Heat Pump 2.5 ton SEER2 20.0 R-454B,Ashland Climate,Heat Pump,2.5,20.0,R-454B,2675.93,1809.23,
+ASH-HE025200H,equipment,Heat Pump 2.5 ton SEER2 20.0 R-410A,Ashland Climate,Heat Pump,2.5,20.0,R-410A,2491.74,1709.92,2025-01-01
+ASH-HE030130A,equipment,Heat Pump 3.0 ton SEER2 13.0 R-454B,Ashland Climate,Heat Pump,3.0,13.0,R-454B,2164.98,1484.69,2015-01-01
+ASH-HE030130H,equipment,Heat Pump 3.0 ton SEER2 13.0 R-410A,Ashland Climate,Heat Pump,3.0,13.0,R-410A,2070.35,1458.53,2015-01-01
+ASH-HE030143A,equipment,Heat Pump 3.0 ton SEER2 14.3 R-454B,Ashland Climate,Heat Pump,3.0,14.3,R-454B,2394.72,1665.45,2023-01-01
+ASH-HE030143H,equipment,Heat Pump 3.0 ton SEER2 14.3 R-410A,Ashland Climate,Heat Pump,3.0,14.3,R-410A,2222.89,1569.33,2023-01-01
+ASH-HE030152A,equipment,Heat Pump 3.0 ton SEER2 15.2 R-454B,Ashland Climate,Heat Pump,3.0,15.2,R-454B,2504.03,1695.92,
+ASH-HE030152H,equipment,Heat Pump 3.0 ton SEER2 15.2 R-410A,Ashland Climate,Heat Pump,3.0,15.2,R-410A,2318.8,1595.79,2025-01-01
+ASH-HE030165A,equipment,Heat Pump 3.0 ton SEER2 16.5 R-454B,Ashland Climate,Heat Pump,3.0,16.5,R-454B,2700.63,1834.2,
+ASH-HE030165H,equipment,Heat Pump 3.0 ton SEER2 16.5 R-410A,Ashland Climate,Heat Pump,3.0,16.5,R-410A,2400.18,1640.73,2025-01-01
+ASH-HE030175A,equipment,Heat Pump 3.0 ton SEER2 17.5 R-454B,Ashland Climate,Heat Pump,3.0,17.5,R-454B,2787.43,1930.74,
+ASH-HE030175H,equipment,Heat Pump 3.0 ton SEER2 17.5 R-410A,Ashland Climate,Heat Pump,3.0,17.5,R-410A,2511.75,1743.53,2025-01-01
+ASH-HE030185A,equipment,Heat Pump 3.0 ton SEER2 18.5 R-454B,Ashland Climate,Heat Pump,3.0,18.5,R-454B,2839.63,1939.87,
+ASH-HE030185H,equipment,Heat Pump 3.0 ton SEER2 18.5 R-410A,Ashland Climate,Heat Pump,3.0,18.5,R-410A,2535.48,1781.98,2025-01-01
+ASH-HE030200A,equipment,Heat Pump 3.0 ton SEER2 20.0 R-454B,Ashland Climate,Heat Pump,3.0,20.0,R-454B,2920.93,2011.22,
+ASH-HE030200H,equipment,Heat Pump 3.0 ton SEER2 20.0 R-410A,Ashland Climate,Heat Pump,3.0,20.0,R-410A,2724.02,1891.79,2025-01-01
+ASH-HE035130A,equipment,Heat Pump 3.5 ton SEER2 13.0 R-454B,Ashland Climate,Heat Pump,3.5,13.0,R-454B,2425.82,1655.34,2015-01-01
+ASH-HE035130H,equipment,Heat Pump 3.5 ton SEER2 13.0 R-410A,Ashland Climate,Heat Pump,3.5,13.0,R-410A,2311.39,1565.98,2015-01-01
+ASH-HE035143A,equipment,Heat Pump 3.5 ton SEER2 14.3 R-454B,Ashland Climate,Heat Pump,3.5,14.3,R-454B,2538.81,1792.0,2023-01-01
+ASH-HE035143H,equipment,Heat Pump 3.5 ton SEER2 14.3 R-410A,Ashland Climate,Heat Pump,3.5,14.3,R-410A,2422.35,1665.27,2023-01-01
+ASH-HE035152A,equipment,Heat Pump 3.5 ton SEER2 15.2 R-454B,Ashland Climate,Heat Pump,3.5,15.2,R-454B,2726.84,1857.06,
+ASH-HE035152H,equipment,Heat Pump 3.5 ton SEER2 15.2 R-410A,Ashland Climate,Heat Pump,3.5,15.2,R-410A,2533.61,1709.42,2025-01-01
+ASH-HE035165A,equipment,Heat Pump 3.5 ton SEER2 16.5 R-454B,Ashland Climate,Heat Pump,3.5,16.5,R-454B,2725.13,1910.85,
+ASH-HE035165H,equipment,Heat Pump 3.5 ton SEER2 16.5 R-410A,Ashland Climate,Heat Pump,3.5,16.5,R-410A,2679.22,1818.6,2025-01-01
+ASH-HE035175A,equipment,Heat Pump 3.5 ton SEER2 17.5 R-454B,Ashland Climate,Heat Pump,3.5,17.5,R-454B,3064.13,2105.96,
+ASH-HE035175H,equipment,Heat Pump 3.5 ton SEER2 17.5 R-410A,Ashland Climate,Heat Pump,3.5,17.5,R-410A,2721.28,1917.87,2025-01-01
+ASH-HE035185A,equipment,Heat Pump 3.5 ton SEER2 18.5 R-454B,Ashland Climate,Heat Pump,3.5,18.5,R-454B,3240.92,2256.6,
+ASH-HE035185H,equipment,Heat Pump 3.5 ton SEER2 18.5 R-410A,Ashland Climate,Heat Pump,3.5,18.5,R-410A,2858.81,1999.26,2025-01-01
+ASH-HE035200A,equipment,Heat Pump 3.5 ton SEER2 20.0 R-454B,Ashland Climate,Heat Pump,3.5,20.0,R-454B,3253.59,2309.83,
+ASH-HE035200H,equipment,Heat Pump 3.5 ton SEER2 20.0 R-410A,Ashland Climate,Heat Pump,3.5,20.0,R-410A,3138.89,2177.94,2025-01-01
+ASH-HE040130A,equipment,Heat Pump 4.0 ton SEER2 13.0 R-454B,Ashland Climate,Heat Pump,4.0,13.0,R-454B,2592.7,1785.13,2015-01-01
+ASH-HE040130H,equipment,Heat Pump 4.0 ton SEER2 13.0 R-410A,Ashland Climate,Heat Pump,4.0,13.0,R-410A,2465.22,1687.18,2015-01-01
+ASH-HE040143A,equipment,Heat Pump 4.0 ton SEER2 14.3 R-454B,Ashland Climate,Heat Pump,4.0,14.3,R-454B,2911.62,1942.71,2023-01-01
+ASH-HE040143H,equipment,Heat Pump 4.0 ton SEER2 14.3 R-410A,Ashland Climate,Heat Pump,4.0,14.3,R-410A,2717.11,1827.7,2023-01-01
+ASH-HE040152A,equipment,Heat Pump 4.0 ton SEER2 15.2 R-454B,Ashland Climate,Heat Pump,4.0,15.2,R-454B,2922.12,2032.92,
+ASH-HE040152H,equipment,Heat Pump 4.0 ton SEER2 15.2 R-410A,Ashland Climate,Heat Pump,4.0,15.2,R-410A,2849.0,1903.43,2025-01-01
+ASH-HE040165A,equipment,Heat Pump 4.0 ton SEER2 16.5 R-454B,Ashland Climate,Heat Pump,4.0,16.5,R-454B,3278.41,2252.91,
+ASH-HE040165H,equipment,Heat Pump 4.0 ton SEER2 16.5 R-410A,Ashland Climate,Heat Pump,4.0,16.5,R-410A,3103.04,2063.11,2025-01-01
+ASH-HE040175A,equipment,Heat Pump 4.0 ton SEER2 17.5 R-454B,Ashland Climate,Heat Pump,4.0,17.5,R-454B,3243.65,2206.5,
+ASH-HE040175H,equipment,Heat Pump 4.0 ton SEER2 17.5 R-410A,Ashland Climate,Heat Pump,4.0,17.5,R-410A,2940.59,2077.0,2025-01-01
+ASH-HE040185A,equipment,Heat Pump 4.0 ton SEER2 18.5 R-454B,Ashland Climate,Heat Pump,4.0,18.5,R-454B,3526.9,2431.94,
+ASH-HE040185H,equipment,Heat Pump 4.0 ton SEER2 18.5 R-410A,Ashland Climate,Heat Pump,4.0,18.5,R-410A,3329.49,2275.26,2025-01-01
+ASH-HE040200A,equipment,Heat Pump 4.0 ton SEER2 20.0 R-454B,Ashland Climate,Heat Pump,4.0,20.0,R-454B,3737.24,2578.12,
+ASH-HE040200H,equipment,Heat Pump 4.0 ton SEER2 20.0 R-410A,Ashland Climate,Heat Pump,4.0,20.0,R-410A,3758.33,2495.23,2025-01-01
+ASH-HE050130A,equipment,Heat Pump 5.0 ton SEER2 13.0 R-454B,Ashland Climate,Heat Pump,5.0,13.0,R-454B,2904.59,2139.88,2015-01-01
+ASH-HE050130H,equipment,Heat Pump 5.0 ton SEER2 13.0 R-410A,Ashland Climate,Heat Pump,5.0,13.0,R-410A,2749.26,1854.63,2015-01-01
+ASH-HE050143A,equipment,Heat Pump 5.0 ton SEER2 14.3 R-454B,Ashland Climate,Heat Pump,5.0,14.3,R-454B,3374.71,2330.3,2023-01-01
+ASH-HE050143H,equipment,Heat Pump 5.0 ton SEER2 14.3 R-410A,Ashland Climate,Heat Pump,5.0,14.3,R-410A,3123.42,2109.27,2023-01-01
+ASH-HE050152A,equipment,Heat Pump 5.0 ton SEER2 15.2 R-454B,Ashland Climate,Heat Pump,5.0,15.2,R-454B,3371.73,2308.41,
+ASH-HE050152H,equipment,Heat Pump 5.0 ton SEER2 15.2 R-410A,Ashland Climate,Heat Pump,5.0,15.2,R-410A,2987.15,2182.25,2025-01-01
+ASH-HE050165A,equipment,Heat Pump 5.0 ton SEER2 16.5 R-454B,Ashland Climate,Heat Pump,5.0,16.5,R-454B,3624.31,2484.49,
+ASH-HE050165H,equipment,Heat Pump 5.0 ton SEER2 16.5 R-410A,Ashland Climate,Heat Pump,5.0,16.5,R-410A,3267.52,2293.01,2025-01-01
+ASH-HE050175A,equipment,Heat Pump 5.0 ton SEER2 17.5 R-454B,Ashland Climate,Heat Pump,5.0,17.5,R-454B,3768.58,2673.72,
+ASH-HE050175H,equipment,Heat Pump 5.0 ton SEER2 17.5 R-410A,Ashland Climate,Heat Pump,5.0,17.5,R-410A,3558.03,2505.02,2025-01-01
+ASH-HE050185A,equipment,Heat Pump 5.0 ton SEER2 18.5 R-454B,Ashland Climate,Heat Pump,5.0,18.5,R-454B,3900.29,2722.5,
+ASH-HE050185H,equipment,Heat Pump 5.0 ton SEER2 18.5 R-410A,Ashland Climate,Heat Pump,5.0,18.5,R-410A,4050.71,2673.96,2025-01-01
+ASH-HE050200A,equipment,Heat Pump 5.0 ton SEER2 20.0 R-454B,Ashland Climate,Heat Pump,5.0,20.0,R-454B,4415.86,3024.66,
+ASH-HE050200H,equipment,Heat Pump 5.0 ton SEER2 20.0 R-410A,Ashland Climate,Heat Pump,5.0,20.0,R-410A,3906.06,2772.94,2025-01-01
+BLO000000,parts,Blower Motor variant 0,Ironside Motors,,,,,89.29,45.4,
+BLO000001,parts,Blower Motor variant 1,Westerly Thermostats,,,,,171.29,85.3,
+BLO000002,parts,Blower Motor variant 2,Solway Refrigeration Parts,,,,,157.29,83.35,
+BLO000003,parts,Blower Motor variant 3,Palmer Electric,,,,,47.37,26.31,
+BLO000004,parts,Blower Motor variant 4,Haverford Controls,,,,,69.88,36.88,
+BLO000005,parts,Blower Motor variant 5,Kelvin Refrigerants,,,,,122.08,63.4,
+BLO000006,parts,Blower Motor variant 6,Nadler Compressors,,,,,85.62,41.02,
+BLO000007,parts,Blower Motor variant 7,Kelvin Refrigerants,,,,,156.24,84.36,
+BLO000008,parts,Blower Motor variant 8,Marlow Fasteners,,,,,78.21,42.33,
+BLO000009,parts,Blower Motor variant 9,Bramble Mounts & Pads,,,,,143.43,74.18,
+BLO000010,parts,Blower Motor variant 10,Harrow Grilles & Registers,,,,,113.48,56.02,
+BLO000011,parts,Blower Motor variant 11,Nadler Compressors,,,,,147.35,77.91,
+BLO000012,parts,Blower Motor variant 12,Ferris Supply,,,,,147.24,67.21,
+BLO000013,parts,Blower Motor variant 13,Vance Hydronics,,,,,106.3,61.83,
+BLO000014,parts,Blower Motor variant 14,Dellwood Controls Supply,,,,,121.11,71.78,
+BLO000015,parts,Blower Motor variant 15,Westerly Thermostats,,,,,192.89,103.32,
+BLO000016,parts,Blower Motor variant 16,Dellwood Controls Supply,,,,,124.99,64.22,
+BLO000017,parts,Blower Motor variant 17,Pell Capacitor Co.,,,,,68.48,35.05,
+BLO000018,parts,Blower Motor variant 18,Palmer Electric,,,,,94.43,53.34,
+BLO000019,parts,Blower Motor variant 19,Granite Coil,,,,,147.66,75.29,
+BLO000020,parts,Blower Motor variant 20,Granite Coil,,,,,212.79,108.14,
+BLO000021,parts,Blower Motor variant 21,Palmer Electric,,,,,144.65,82.7,
+BLO000022,parts,Blower Motor variant 22,Merriam Electrical Supply,,,,,166.47,83.16,
+BLO000023,parts,Blower Motor variant 23,Rook Hangers,,,,,73.67,37.64,
+BLO000024,parts,Blower Motor variant 24,Halvorsen Sheet Metal,,,,,188.78,102.73,
+BLO000025,parts,Blower Motor variant 25,Kelvin Refrigerants,,,,,247.99,130.94,
+BRI-AI020130X,equipment,Air Handler 2.0 ton SEER2 13.0,Brightwater Systems,Air Handler,2.0,13.0,,823.48,591.44,2015-01-01
+BRI-AI020143X,equipment,Air Handler 2.0 ton SEER2 14.3,Brightwater Systems,Air Handler,2.0,14.3,,914.95,637.58,2023-01-01
+BRI-AI020152X,equipment,Air Handler 2.0 ton SEER2 15.2,Brightwater Systems,Air Handler,2.0,15.2,,964.64,648.72,
+BRI-AI020165X,equipment,Air Handler 2.0 ton SEER2 16.5,Brightwater Systems,Air Handler,2.0,16.5,,1046.15,735.34,
+BRI-AI025130X,equipment,Air Handler 2.5 ton SEER2 13.0,Brightwater Systems,Air Handler,2.5,13.0,,959.05,671.26,2015-01-01
+BRI-AI025143X,equipment,Air Handler 2.5 ton SEER2 14.3,Brightwater Systems,Air Handler,2.5,14.3,,1005.67,702.49,2023-01-01
+BRI-AI025152X,equipment,Air Handler 2.5 ton SEER2 15.2,Brightwater Systems,Air Handler,2.5,15.2,,1085.19,748.8,
+BRI-AI025165X,equipment,Air Handler 2.5 ton SEER2 16.5,Brightwater Systems,Air Handler,2.5,16.5,,1222.11,827.66,
+BRI-AI030130X,equipment,Air Handler 3.0 ton SEER2 13.0,Brightwater Systems,Air Handler,3.0,13.0,,1004.83,695.95,2015-01-01
+BRI-AI030143X,equipment,Air Handler 3.0 ton SEER2 14.3,Brightwater Systems,Air Handler,3.0,14.3,,1098.61,763.96,2023-01-01
+BRI-AI030152X,equipment,Air Handler 3.0 ton SEER2 15.2,Brightwater Systems,Air Handler,3.0,15.2,,1208.04,839.56,
+BRI-AI030165X,equipment,Air Handler 3.0 ton SEER2 16.5,Brightwater Systems,Air Handler,3.0,16.5,,1337.11,913.76,
+BRI-AI035130X,equipment,Air Handler 3.5 ton SEER2 13.0,Brightwater Systems,Air Handler,3.5,13.0,,1262.18,853.09,2015-01-01
+BRI-AI035143X,equipment,Air Handler 3.5 ton SEER2 14.3,Brightwater Systems,Air Handler,3.5,14.3,,1263.78,863.06,2023-01-01
+BRI-AI035152X,equipment,Air Handler 3.5 ton SEER2 15.2,Brightwater Systems,Air Handler,3.5,15.2,,1233.56,870.56,
+BRI-AI035165X,equipment,Air Handler 3.5 ton SEER2 16.5,Brightwater Systems,Air Handler,3.5,16.5,,1464.31,1008.32,
+BRI-AI040130X,equipment,Air Handler 4.0 ton SEER2 13.0,Brightwater Systems,Air Handler,4.0,13.0,,1279.47,866.49,2015-01-01
+BRI-AI040143X,equipment,Air Handler 4.0 ton SEER2 14.3,Brightwater Systems,Air Handler,4.0,14.3,,1402.15,968.39,2023-01-01
+BRI-AI040152X,equipment,Air Handler 4.0 ton SEER2 15.2,Brightwater Systems,Air Handler,4.0,15.2,,1436.75,985.53,
+BRI-AI040165X,equipment,Air Handler 4.0 ton SEER2 16.5,Brightwater Systems,Air Handler,4.0,16.5,,1504.85,1040.67,
+BRI-CO020130A,equipment,Condenser 2.0 ton SEER2 13.0 R-454B,Brightwater Systems,Condenser,2.0,13.0,R-454B,1383.47,944.16,2015-01-01
+BRI-CO020130H,equipment,Condenser 2.0 ton SEER2 13.0 R-410A,Brightwater Systems,Condenser,2.0,13.0,R-410A,1395.0,939.9,2015-01-01
+BRI-CO020143A,equipment,Condenser 2.0 ton SEER2 14.3 R-454B,Brightwater Systems,Condenser,2.0,14.3,R-454B,1490.44,1010.81,2023-01-01
+BRI-CO020143H,equipment,Condenser 2.0 ton SEER2 14.3 R-410A,Brightwater Systems,Condenser,2.0,14.3,R-410A,1426.41,978.29,2023-01-01
+BRI-CO020152A,equipment,Condenser 2.0 ton SEER2 15.2 R-454B,Brightwater Systems,Condenser,2.0,15.2,R-454B,1639.26,1139.54,
+BRI-CO020152H,equipment,Condenser 2.0 ton SEER2 15.2 R-410A,Brightwater Systems,Condenser,2.0,15.2,R-410A,1554.32,1036.18,2025-01-01
+BRI-CO020165A,equipment,Condenser 2.0 ton SEER2 16.5 R-454B,Brightwater Systems,Condenser,2.0,16.5,R-454B,1666.75,1167.4,
+BRI-CO020165H,equipment,Condenser 2.0 ton SEER2 16.5 R-410A,Brightwater Systems,Condenser,2.0,16.5,R-410A,1571.89,1093.14,2025-01-01
+BRI-CO025130A,equipment,Condenser 2.5 ton SEER2 13.0 R-454B,Brightwater Systems,Condenser,2.5,13.0,R-454B,1557.92,1050.87,2015-01-01
+BRI-CO025130H,equipment,Condenser 2.5 ton SEER2 13.0 R-410A,Brightwater Systems,Condenser,2.5,13.0,R-410A,1398.05,978.28,2015-01-01
+BRI-CO025143A,equipment,Condenser 2.5 ton SEER2 14.3 R-454B,Brightwater Systems,Condenser,2.5,14.3,R-454B,1692.86,1159.62,2023-01-01
+BRI-CO025143H,equipment,Condenser 2.5 ton SEER2 14.3 R-410A,Brightwater Systems,Condenser,2.5,14.3,R-410A,1558.09,1051.38,2023-01-01
+BRI-CO025152A,equipment,Condenser 2.5 ton SEER2 15.2 R-454B,Brightwater Systems,Condenser,2.5,15.2,R-454B,1763.91,1231.69,
+BRI-CO025152H,equipment,Condenser 2.5 ton SEER2 15.2 R-410A,Brightwater Systems,Condenser,2.5,15.2,R-410A,1708.4,1207.7,2025-01-01
+BRI-CO025165A,equipment,Condenser 2.5 ton SEER2 16.5 R-454B,Brightwater Systems,Condenser,2.5,16.5,R-454B,1905.9,1269.64,
+BRI-CO025165H,equipment,Condenser 2.5 ton SEER2 16.5 R-410A,Brightwater Systems,Condenser,2.5,16.5,R-410A,1704.99,1211.83,2025-01-01
+BRI-CO030130A,equipment,Condenser 3.0 ton SEER2 13.0 R-454B,Brightwater Systems,Condenser,3.0,13.0,R-454B,1839.98,1223.23,2015-01-01
+BRI-CO030130H,equipment,Condenser 3.0 ton SEER2 13.0 R-410A,Brightwater Systems,Condenser,3.0,13.0,R-410A,1553.02,1094.67,2015-01-01
+BRI-CO030143A,equipment,Condenser 3.0 ton SEER2 14.3 R-454B,Brightwater Systems,Condenser,3.0,14.3,R-454B,1801.49,1280.63,2023-01-01
+BRI-CO030143H,equipment,Condenser 3.0 ton SEER2 14.3 R-410A,Brightwater Systems,Condenser,3.0,14.3,R-410A,1593.32,1104.2,2023-01-01
+BRI-CO030152A,equipment,Condenser 3.0 ton SEER2 15.2 R-454B,Brightwater Systems,Condenser,3.0,15.2,R-454B,2131.77,1495.78,
+BRI-CO030152H,equipment,Condenser 3.0 ton SEER2 15.2 R-410A,Brightwater Systems,Condenser,3.0,15.2,R-410A,1751.67,1188.51,2025-01-01
+BRI-CO030165A,equipment,Condenser 3.0 ton SEER2 16.5 R-454B,Brightwater Systems,Condenser,3.0,16.5,R-454B,2004.53,1436.36,
+BRI-CO030165H,equipment,Condenser 3.0 ton SEER2 16.5 R-410A,Brightwater Systems,Condenser,3.0,16.5,R-410A,1934.11,1314.47,2025-01-01
+BRI-CO035130A,equipment,Condenser 3.5 ton SEER2 13.0 R-454B,Brightwater Systems,Condenser,3.5,13.0,R-454B,1995.13,1337.8,2015-01-01
+BRI-CO035130H,equipment,Condenser 3.5 ton SEER2 13.0 R-410A,Brightwater Systems,Condenser,3.5,13.0,R-410A,1791.57,1239.81,2015-01-01
+BRI-CO035143A,equipment,Condenser 3.5 ton SEER2 14.3 R-454B,Brightwater Systems,Condenser,3.5,14.3,R-454B,1907.82,1334.25,2023-01-01
+BRI-CO035143H,equipment,Condenser 3.5 ton SEER2 14.3 R-410A,Brightwater Systems,Condenser,3.5,14.3,R-410A,1885.45,1309.61,2023-01-01
+BRI-CO035152A,equipment,Condenser 3.5 ton SEER2 15.2 R-454B,Brightwater Systems,Condenser,3.5,15.2,R-454B,2182.55,1490.44,
+BRI-CO035152H,equipment,Condenser 3.5 ton SEER2 15.2 R-410A,Brightwater Systems,Condenser,3.5,15.2,R-410A,1963.6,1353.62,2025-01-01
+BRI-CO035165A,equipment,Condenser 3.5 ton SEER2 16.5 R-454B,Brightwater Systems,Condenser,3.5,16.5,R-454B,2266.98,1567.78,
+BRI-CO035165H,equipment,Condenser 3.5 ton SEER2 16.5 R-410A,Brightwater Systems,Condenser,3.5,16.5,R-410A,2123.36,1490.96,2025-01-01
+BRI-CO040130A,equipment,Condenser 4.0 ton SEER2 13.0 R-454B,Brightwater Systems,Condenser,4.0,13.0,R-454B,2110.03,1477.69,2015-01-01
+BRI-CO040130H,equipment,Condenser 4.0 ton SEER2 13.0 R-410A,Brightwater Systems,Condenser,4.0,13.0,R-410A,1961.01,1365.29,2015-01-01
+BRI-CO040143A,equipment,Condenser 4.0 ton SEER2 14.3 R-454B,Brightwater Systems,Condenser,4.0,14.3,R-454B,2188.05,1542.51,2023-01-01
+BRI-CO040143H,equipment,Condenser 4.0 ton SEER2 14.3 R-410A,Brightwater Systems,Condenser,4.0,14.3,R-410A,1933.09,1380.03,2023-01-01
+BRI-CO040152A,equipment,Condenser 4.0 ton SEER2 15.2 R-454B,Brightwater Systems,Condenser,4.0,15.2,R-454B,2261.35,1549.95,
+BRI-CO040152H,equipment,Condenser 4.0 ton SEER2 15.2 R-410A,Brightwater Systems,Condenser,4.0,15.2,R-410A,2218.66,1491.91,2025-01-01
+BRI-CO040165A,equipment,Condenser 4.0 ton SEER2 16.5 R-454B,Brightwater Systems,Condenser,4.0,16.5,R-454B,2696.49,1812.29,
+BRI-CO040165H,equipment,Condenser 4.0 ton SEER2 16.5 R-410A,Brightwater Systems,Condenser,4.0,16.5,R-410A,2365.52,1659.87,2025-01-01
+BRI-GA020130X,equipment,Gas Furnace 2.0 ton SEER2 13.0,Brightwater Systems,Gas Furnace,2.0,13.0,,970.38,675.09,2015-01-01
+BRI-GA020143X,equipment,Gas Furnace 2.0 ton SEER2 14.3,Brightwater Systems,Gas Furnace,2.0,14.3,,1156.08,786.24,2023-01-01
+BRI-GA020152X,equipment,Gas Furnace 2.0 ton SEER2 15.2,Brightwater Systems,Gas Furnace,2.0,15.2,,1134.56,778.88,
+BRI-GA020165X,equipment,Gas Furnace 2.0 ton SEER2 16.5,Brightwater Systems,Gas Furnace,2.0,16.5,,1220.67,820.45,
+BRI-GA025130X,equipment,Gas Furnace 2.5 ton SEER2 13.0,Brightwater Systems,Gas Furnace,2.5,13.0,,1079.46,741.99,2015-01-01
+BRI-GA025143X,equipment,Gas Furnace 2.5 ton SEER2 14.3,Brightwater Systems,Gas Furnace,2.5,14.3,,1224.63,849.89,2023-01-01
+BRI-GA025152X,equipment,Gas Furnace 2.5 ton SEER2 15.2,Brightwater Systems,Gas Furnace,2.5,15.2,,1279.9,867.71,
+BRI-GA025165X,equipment,Gas Furnace 2.5 ton SEER2 16.5,Brightwater Systems,Gas Furnace,2.5,16.5,,1408.9,947.82,
+BRI-GA030130X,equipment,Gas Furnace 3.0 ton SEER2 13.0,Brightwater Systems,Gas Furnace,3.0,13.0,,1251.16,891.74,2015-01-01
+BRI-GA030143X,equipment,Gas Furnace 3.0 ton SEER2 14.3,Brightwater Systems,Gas Furnace,3.0,14.3,,1230.05,869.58,2023-01-01
+BRI-GA030152X,equipment,Gas Furnace 3.0 ton SEER2 15.2,Brightwater Systems,Gas Furnace,3.0,15.2,,1377.07,953.11,
+BRI-GA030165X,equipment,Gas Furnace 3.0 ton SEER2 16.5,Brightwater Systems,Gas Furnace,3.0,16.5,,1448.09,999.8,
+BRI-GA035130X,equipment,Gas Furnace 3.5 ton SEER2 13.0,Brightwater Systems,Gas Furnace,3.5,13.0,,1316.09,933.68,2015-01-01
+BRI-GA035143X,equipment,Gas Furnace 3.5 ton SEER2 14.3,Brightwater Systems,Gas Furnace,3.5,14.3,,1476.49,1000.79,2023-01-01
+BRI-GA035152X,equipment,Gas Furnace 3.5 ton SEER2 15.2,Brightwater Systems,Gas Furnace,3.5,15.2,,1526.95,1027.05,
+BRI-GA035165X,equipment,Gas Furnace 3.5 ton SEER2 16.5,Brightwater Systems,Gas Furnace,3.5,16.5,,1483.36,1070.3,
+BRI-GA040130X,equipment,Gas Furnace 4.0 ton SEER2 13.0,Brightwater Systems,Gas Furnace,4.0,13.0,,1487.62,1026.79,2015-01-01
+BRI-GA040143X,equipment,Gas Furnace 4.0 ton SEER2 14.3,Brightwater Systems,Gas Furnace,4.0,14.3,,1649.91,1115.55,2023-01-01
+BRI-GA040152X,equipment,Gas Furnace 4.0 ton SEER2 15.2,Brightwater Systems,Gas Furnace,4.0,15.2,,1684.78,1190.09,
+BRI-GA040165X,equipment,Gas Furnace 4.0 ton SEER2 16.5,Brightwater Systems,Gas Furnace,4.0,16.5,,1742.79,1230.28,
+BRI-HE020130A,equipment,Heat Pump 2.0 ton SEER2 13.0 R-454B,Brightwater Systems,Heat Pump,2.0,13.0,R-454B,1853.57,1249.79,2015-01-01
+BRI-HE020130H,equipment,Heat Pump 2.0 ton SEER2 13.0 R-410A,Brightwater Systems,Heat Pump,2.0,13.0,R-410A,1618.36,1086.41,2015-01-01
+BRI-HE020143A,equipment,Heat Pump 2.0 ton SEER2 14.3 R-454B,Brightwater Systems,Heat Pump,2.0,14.3,R-454B,1875.1,1318.69,2023-01-01
+BRI-HE020143H,equipment,Heat Pump 2.0 ton SEER2 14.3 R-410A,Brightwater Systems,Heat Pump,2.0,14.3,R-410A,1815.8,1265.86,2023-01-01
+BRI-HE020152A,equipment,Heat Pump 2.0 ton SEER2 15.2 R-454B,Brightwater Systems,Heat Pump,2.0,15.2,R-454B,1897.44,1371.97,
+BRI-HE020152H,equipment,Heat Pump 2.0 ton SEER2 15.2 R-410A,Brightwater Systems,Heat Pump,2.0,15.2,R-410A,2037.38,1361.07,2025-01-01
+BRI-HE020165A,equipment,Heat Pump 2.0 ton SEER2 16.5 R-454B,Brightwater Systems,Heat Pump,2.0,16.5,R-454B,2088.8,1445.62,
+BRI-HE020165H,equipment,Heat Pump 2.0 ton SEER2 16.5 R-410A,Brightwater Systems,Heat Pump,2.0,16.5,R-410A,1942.52,1299.01,2025-01-01
+BRI-HE025130A,equipment,Heat Pump 2.5 ton SEER2 13.0 R-454B,Brightwater Systems,Heat Pump,2.5,13.0,R-454B,1941.42,1337.51,2015-01-01
+BRI-HE025130H,equipment,Heat Pump 2.5 ton SEER2 13.0 R-410A,Brightwater Systems,Heat Pump,2.5,13.0,R-410A,1751.28,1213.2,2015-01-01
+BRI-HE025143A,equipment,Heat Pump 2.5 ton SEER2 14.3 R-454B,Brightwater Systems,Heat Pump,2.5,14.3,R-454B,2079.94,1403.2,2023-01-01
+BRI-HE025143H,equipment,Heat Pump 2.5 ton SEER2 14.3 R-410A,Brightwater Systems,Heat Pump,2.5,14.3,R-410A,2058.7,1378.84,2023-01-01
+BRI-HE025152A,equipment,Heat Pump 2.5 ton SEER2 15.2 R-454B,Brightwater Systems,Heat Pump,2.5,15.2,R-454B,2332.2,1589.3,
+BRI-HE025152H,equipment,Heat Pump 2.5 ton SEER2 15.2 R-410A,Brightwater Systems,Heat Pump,2.5,15.2,R-410A,1921.4,1291.33,2025-01-01
+BRI-HE025165A,equipment,Heat Pump 2.5 ton SEER2 16.5 R-454B,Brightwater Systems,Heat Pump,2.5,16.5,R-454B,2325.67,1594.6,
+BRI-HE025165H,equipment,Heat Pump 2.5 ton SEER2 16.5 R-410A,Brightwater Systems,Heat Pump,2.5,16.5,R-410A,2317.21,1568.16,2025-01-01
+BRI-HE030130A,equipment,Heat Pump 3.0 ton SEER2 13.0 R-454B,Brightwater Systems,Heat Pump,3.0,13.0,R-454B,2031.9,1413.58,2015-01-01
+BRI-HE030130H,equipment,Heat Pump 3.0 ton SEER2 13.0 R-410A,Brightwater Systems,Heat Pump,3.0,13.0,R-410A,2035.45,1431.6,2015-01-01
+BRI-HE030143A,equipment,Heat Pump 3.0 ton SEER2 14.3 R-454B,Brightwater Systems,Heat Pump,3.0,14.3,R-454B,2434.21,1631.9,2023-01-01
+BRI-HE030143H,equipment,Heat Pump 3.0 ton SEER2 14.3 R-410A,Brightwater Systems,Heat Pump,3.0,14.3,R-410A,2086.34,1430.86,2023-01-01
+BRI-HE030152A,equipment,Heat Pump 3.0 ton SEER2 15.2 R-454B,Brightwater Systems,Heat Pump,3.0,15.2,R-454B,2379.35,1679.38,
+BRI-HE030152H,equipment,Heat Pump 3.0 ton SEER2 15.2 R-410A,Brightwater Systems,Heat Pump,3.0,15.2,R-410A,2409.63,1636.51,2025-01-01
+BRI-HE030165A,equipment,Heat Pump 3.0 ton SEER2 16.5 R-454B,Brightwater Systems,Heat Pump,3.0,16.5,R-454B,2539.18,1758.41,
+BRI-HE030165H,equipment,Heat Pump 3.0 ton SEER2 16.5 R-410A,Brightwater Systems,Heat Pump,3.0,16.5,R-410A,2487.51,1704.78,2025-01-01
+BRI-HE035130A,equipment,Heat Pump 3.5 ton SEER2 13.0 R-454B,Brightwater Systems,Heat Pump,3.5,13.0,R-454B,2381.26,1621.31,2015-01-01
+BRI-HE035130H,equipment,Heat Pump 3.5 ton SEER2 13.0 R-410A,Brightwater Systems,Heat Pump,3.5,13.0,R-410A,2177.04,1480.99,2015-01-01
+BRI-HE035143A,equipment,Heat Pump 3.5 ton SEER2 14.3 R-454B,Brightwater Systems,Heat Pump,3.5,14.3,R-454B,2553.32,1758.57,2023-01-01
+BRI-HE035143H,equipment,Heat Pump 3.5 ton SEER2 14.3 R-410A,Brightwater Systems,Heat Pump,3.5,14.3,R-410A,2319.11,1622.61,2023-01-01
+BRI-HE035152A,equipment,Heat Pump 3.5 ton SEER2 15.2 R-454B,Brightwater Systems,Heat Pump,3.5,15.2,R-454B,2696.43,1849.96,
+BRI-HE035152H,equipment,Heat Pump 3.5 ton SEER2 15.2 R-410A,Brightwater Systems,Heat Pump,3.5,15.2,R-410A,2429.84,1687.14,2025-01-01
+BRI-HE035165A,equipment,Heat Pump 3.5 ton SEER2 16.5 R-454B,Brightwater Systems,Heat Pump,3.5,16.5,R-454B,2828.37,1971.91,
+BRI-HE035165H,equipment,Heat Pump 3.5 ton SEER2 16.5 R-410A,Brightwater Systems,Heat Pump,3.5,16.5,R-410A,2614.27,1853.81,2025-01-01
+BRI-HE040130A,equipment,Heat Pump 4.0 ton SEER2 13.0 R-454B,Brightwater Systems,Heat Pump,4.0,13.0,R-454B,2580.32,1761.38,2015-01-01
+BRI-HE040130H,equipment,Heat Pump 4.0 ton SEER2 13.0 R-410A,Brightwater Systems,Heat Pump,4.0,13.0,R-410A,2421.19,1685.48,2015-01-01
+BRI-HE040143A,equipment,Heat Pump 4.0 ton SEER2 14.3 R-454B,Brightwater Systems,Heat Pump,4.0,14.3,R-454B,2802.86,1890.19,2023-01-01
+BRI-HE040143H,equipment,Heat Pump 4.0 ton SEER2 14.3 R-410A,Brightwater Systems,Heat Pump,4.0,14.3,R-410A,2717.02,1849.65,2023-01-01
+BRI-HE040152A,equipment,Heat Pump 4.0 ton SEER2 15.2 R-454B,Brightwater Systems,Heat Pump,4.0,15.2,R-454B,2975.44,2072.28,
+BRI-HE040152H,equipment,Heat Pump 4.0 ton SEER2 15.2 R-410A,Brightwater Systems,Heat Pump,4.0,15.2,R-410A,2905.43,2007.05,2025-01-01
+BRI-HE040165A,equipment,Heat Pump 4.0 ton SEER2 16.5 R-454B,Brightwater Systems,Heat Pump,4.0,16.5,R-454B,3048.67,2146.79,
+BRI-HE040165H,equipment,Heat Pump 4.0 ton SEER2 16.5 R-410A,Brightwater Systems,Heat Pump,4.0,16.5,R-410A,2761.84,1921.67,2025-01-01
+CAP010000,parts,Capacitor variant 0,Larkspur Tools,,,,,22.19,11.01,
+CAP010001,parts,Capacitor variant 1,Haverford Controls,,,,,44.71,22.87,
+CAP010002,parts,Capacitor variant 2,Rook Hangers,,,,,8.92,4.98,
+CAP010003,parts,Capacitor variant 3,Fennimore Tape & Sealants,,,,,15.34,7.95,
+CAP010004,parts,Capacitor variant 4,Brennan Valve,,,,,21.47,11.53,
+CAP010005,parts,Capacitor variant 5,Westerly Thermostats,,,,,20.63,10.74,
+CAP010006,parts,Capacitor variant 6,Bramble Mounts & Pads,,,,,22.49,11.68,
+CAP010007,parts,Capacitor variant 7,Cobalt Line Sets,,,,,10.68,5.45,
+CAP010008,parts,Capacitor variant 8,Cobalt Line Sets,,,,,13.1,6.67,
+CAP010009,parts,Capacitor variant 9,Redstone Controls,,,,,23.92,11.58,
+CAP010010,parts,Capacitor variant 10,Harrow Grilles & Registers,,,,,17.52,9.85,
+CAP010011,parts,Capacitor variant 11,Granite Coil,,,,,18.37,10.44,
+CAP010012,parts,Capacitor variant 12,Sable Creek Chemical,,,,,36.52,19.31,
+CAP010013,parts,Capacitor variant 13,Okafor Wire & Cable,,,,,23.42,12.53,
+CAP010014,parts,Capacitor variant 14,Juniper Ridge Gauges,,,,,17.89,9.68,
+CAP010015,parts,Capacitor variant 15,Sable Creek Chemical,,,,,16.34,8.03,
+CAP010016,parts,Capacitor variant 16,Harrow Grilles & Registers,,,,,13.75,7.54,
+CAP010017,parts,Capacitor variant 17,Granite Coil,,,,,13.44,7.73,
+CAP010018,parts,Capacitor variant 18,Redstone Controls,,,,,25.04,13.98,
+CAP010019,parts,Capacitor variant 19,Teague Insulation,,,,,19.87,10.46,
+CAP010020,parts,Capacitor variant 20,Bramble Mounts & Pads,,,,,13.49,7.15,
+CAP010021,parts,Capacitor variant 21,Dellwood Controls Supply,,,,,22.83,12.2,
+CAP010022,parts,Capacitor variant 22,Ironside Motors,,,,,13.71,7.21,
+CAP010023,parts,Capacitor variant 23,Nadler Compressors,,,,,24.21,11.54,
+CAP010024,parts,Capacitor variant 24,Juniper Ridge Gauges,,,,,13.36,7.09,
+CAP010025,parts,Capacitor variant 25,Fennimore Tape & Sealants,,,,,19.71,10.25,
+COM050000,parts,Compressor variant 0,Whitlock Parts,,,,,645.25,337.99,
+COM050001,parts,Compressor variant 1,Westerly Thermostats,,,,,462.36,230.08,
+COM050002,parts,Compressor variant 2,Granite Coil,,,,,843.73,425.56,
+COM050003,parts,Compressor variant 3,Halvorsen Sheet Metal,,,,,375.19,194.97,
+COM050004,parts,Compressor variant 4,Redstone Controls,,,,,858.03,451.25,
+COM050005,parts,Compressor variant 5,Corbin Components,,,,,758.62,399.78,
+COM050006,parts,Compressor variant 6,Juniper Ridge Gauges,,,,,758.94,433.12,
+COM050007,parts,Compressor variant 7,Solway Refrigeration Parts,,,,,670.71,344.86,
+COM050008,parts,Compressor variant 8,Sable Creek Chemical,,,,,682.41,363.3,
+COM050009,parts,Compressor variant 9,Juniper Ridge Gauges,,,,,1303.44,676.99,
+COM050010,parts,Compressor variant 10,Juniper Ridge Gauges,,,,,618.69,315.02,
+COM050011,parts,Compressor variant 11,Harrow Grilles & Registers,,,,,652.5,333.48,
+COM050012,parts,Compressor variant 12,Pell Capacitor Co.,,,,,1136.05,616.49,
+COM050013,parts,Compressor variant 13,Teague Insulation,,,,,473.62,260.12,
+COM050014,parts,Compressor variant 14,Westerly Thermostats,,,,,1034.1,566.09,
+COM050015,parts,Compressor variant 15,Nadler Compressors,,,,,791.7,457.95,
+COM050016,parts,Compressor variant 16,Garnet Hose & Fittings,,,,,1735.13,969.49,
+COM050017,parts,Compressor variant 17,Whitlock Parts,,,,,1011.73,504.78,
+COM050018,parts,Compressor variant 18,Merriam Electrical Supply,,,,,873.0,461.43,
+COM050019,parts,Compressor variant 19,Fennimore Tape & Sealants,,,,,393.59,247.82,
+COM050020,parts,Compressor variant 20,Teague Insulation,,,,,1046.87,564.88,
+COM050021,parts,Compressor variant 21,Haverford Controls,,,,,1130.71,579.96,
+COM050022,parts,Compressor variant 22,Merriam Electrical Supply,,,,,531.83,276.76,
+COM050023,parts,Compressor variant 23,Rook Hangers,,,,,752.44,387.2,
+COM050024,parts,Compressor variant 24,Corbin Components,,,,,861.31,482.8,
+COM050025,parts,Compressor variant 25,Cobalt Line Sets,,,,,1084.16,593.26,
+CON020000,parts,Contactor variant 0,Halvorsen Sheet Metal,,,,,22.97,13.66,
+CON020001,parts,Contactor variant 1,Whitlock Parts,,,,,20.82,11.04,
+CON020002,parts,Contactor variant 2,Okafor Wire & Cable,,,,,42.29,22.99,
+CON020003,parts,Contactor variant 3,Redstone Controls,,,,,22.73,10.96,
+CON020004,parts,Contactor variant 4,Fennimore Tape & Sealants,,,,,26.44,13.9,
+CON020005,parts,Contactor variant 5,Cobalt Line Sets,,,,,41.24,22.1,
+CON020006,parts,Contactor variant 6,Halvorsen Sheet Metal,,,,,44.56,23.1,
+CON020007,parts,Contactor variant 7,Westerly Thermostats,,,,,76.83,38.87,
+CON020008,parts,Contactor variant 8,Palmer Electric,,,,,34.87,17.94,
+CON020009,parts,Contactor variant 9,Pell Capacitor Co.,,,,,24.06,11.92,
+CON020010,parts,Contactor variant 10,Cobalt Line Sets,,,,,20.43,10.14,
+CON020011,parts,Contactor variant 11,Marlow Fasteners,,,,,17.45,9.11,
+CON020012,parts,Contactor variant 12,Kelvin Refrigerants,,,,,49.03,24.98,
+CON020013,parts,Contactor variant 13,Calder Belts & Bearings,,,,,17.01,8.64,
+CON020014,parts,Contactor variant 14,Everly Condensate,,,,,19.77,10.88,
+CON020015,parts,Contactor variant 15,Harrow Grilles & Registers,,,,,37.18,20.31,
+CON020016,parts,Contactor variant 16,Pell Capacitor Co.,,,,,39.89,20.29,
+CON020017,parts,Contactor variant 17,Lindqvist Filters,,,,,24.45,13.73,
+CON020018,parts,Contactor variant 18,Thistle Ventilation,,,,,19.57,9.41,
+CON020019,parts,Contactor variant 19,Kelvin Refrigerants,,,,,39.04,19.2,
+CON020020,parts,Contactor variant 20,Westerly Thermostats,,,,,20.27,9.79,
+CON020021,parts,Contactor variant 21,Palmer Electric,,,,,40.18,22.07,
+CON020022,parts,Contactor variant 22,Nadler Compressors,,,,,13.23,7.29,
+CON020023,parts,Contactor variant 23,Calder Belts & Bearings,,,,,45.93,23.0,
+CON020024,parts,Contactor variant 24,Okafor Wire & Cable,,,,,29.06,15.62,
+CON020025,parts,Contactor variant 25,Garnet Hose & Fittings,,,,,10.7,6.01,
+CON030000,parts,Control Board variant 0,Lindqvist Filters,,,,,318.96,158.11,
+CON030001,parts,Control Board variant 1,Okafor Wire & Cable,,,,,419.7,211.66,
+CON030002,parts,Control Board variant 2,Haverford Controls,,,,,286.06,165.67,
+CON030003,parts,Control Board variant 3,Thistle Ventilation,,,,,221.17,123.22,
+CON030004,parts,Control Board variant 4,Quill Brazing Supply,,,,,307.66,156.46,
+CON030005,parts,Control Board variant 5,Thistle Ventilation,,,,,255.97,138.08,
+CON030006,parts,Control Board variant 6,Marlow Fasteners,,,,,430.62,229.35,
+CON030007,parts,Control Board variant 7,Okafor Wire & Cable,,,,,285.51,148.9,
+CON030008,parts,Control Board variant 8,Granite Coil,,,,,239.55,129.74,
+CON030009,parts,Control Board variant 9,Palmer Electric,,,,,350.48,177.63,
+CON030010,parts,Control Board variant 10,Rook Hangers,,,,,262.46,150.31,
+CON030011,parts,Control Board variant 11,Cobalt Line Sets,,,,,265.91,147.95,
+CON030012,parts,Control Board variant 12,Westerly Thermostats,,,,,484.09,254.34,
+CON030013,parts,Control Board variant 13,Haverford Controls,,,,,216.01,120.16,
+CON030014,parts,Control Board variant 14,Larkspur Tools,,,,,177.83,89.13,
+CON030015,parts,Control Board variant 15,Granite Coil,,,,,374.66,181.58,
+CON030016,parts,Control Board variant 16,Halvorsen Sheet Metal,,,,,208.22,108.15,
+CON030017,parts,Control Board variant 17,Cobalt Line Sets,,,,,224.84,118.17,
+CON030018,parts,Control Board variant 18,Fennimore Tape & Sealants,,,,,290.49,150.89,
+CON030019,parts,Control Board variant 19,Westerly Thermostats,,,,,314.27,162.64,
+CON030020,parts,Control Board variant 20,Merriam Electrical Supply,,,,,219.96,107.29,
+CON030021,parts,Control Board variant 21,Cobalt Line Sets,,,,,274.94,142.76,
+CON030022,parts,Control Board variant 22,Auburn Fittings,,,,,288.07,145.81,
+CON030023,parts,Control Board variant 23,Rook Hangers,,,,,183.73,93.37,
+CON030024,parts,Control Board variant 24,Okafor Wire & Cable,,,,,406.7,205.06,
+CON030025,parts,Control Board variant 25,Halvorsen Sheet Metal,,,,,255.32,130.79,
+CON120000,supplies,Condensate Pump variant 0,Lindqvist Filters,,,,,73.61,46.37,
+CON120001,supplies,Condensate Pump variant 1,Juniper Ridge Gauges,,,,,73.15,41.39,
+CON120002,supplies,Condensate Pump variant 2,Larkspur Tools,,,,,112.65,61.7,
+CON120003,supplies,Condensate Pump variant 3,Ferris Supply,,,,,72.66,42.46,
+CON120004,supplies,Condensate Pump variant 4,Redstone Controls,,,,,77.47,43.9,
+CON120005,supplies,Condensate Pump variant 5,Solway Refrigeration Parts,,,,,96.12,56.56,
+CON120006,supplies,Condensate Pump variant 6,Cobalt Line Sets,,,,,54.21,32.91,
+CON120007,supplies,Condensate Pump variant 7,Rook Hangers,,,,,41.08,22.05,
+CON120008,supplies,Condensate Pump variant 8,Thistle Ventilation,,,,,89.36,50.38,
+CON120009,supplies,Condensate Pump variant 9,Ferris Supply,,,,,112.13,66.56,
+CON120010,supplies,Condensate Pump variant 10,Juniper Ridge Gauges,,,,,58.8,33.78,
+CON120011,supplies,Condensate Pump variant 11,Corbin Components,,,,,86.24,50.25,
+CON120012,supplies,Condensate Pump variant 12,Haverford Controls,,,,,81.29,46.16,
+CON120013,supplies,Condensate Pump variant 13,Whitlock Parts,,,,,104.38,63.64,
+CON120014,supplies,Condensate Pump variant 14,Everly Condensate,,,,,89.71,49.41,
+CON120015,supplies,Condensate Pump variant 15,Thistle Ventilation,,,,,57.91,32.02,
+CON120016,supplies,Condensate Pump variant 16,Calder Belts & Bearings,,,,,148.43,91.41,
+CON120017,supplies,Condensate Pump variant 17,Dellwood Controls Supply,,,,,48.59,27.63,
+CON120018,supplies,Condensate Pump variant 18,Rook Hangers,,,,,117.17,62.82,
+CON120019,supplies,Condensate Pump variant 19,Solway Refrigeration Parts,,,,,72.87,41.81,
+CON120020,supplies,Condensate Pump variant 20,Kelvin Refrigerants,,,,,69.62,36.24,
+CON120021,supplies,Condensate Pump variant 21,Marlow Fasteners,,,,,102.41,53.59,
+CON120022,supplies,Condensate Pump variant 22,Everly Condensate,,,,,115.2,71.3,
+CON120023,supplies,Condensate Pump variant 23,Fennimore Tape & Sealants,,,,,81.85,44.99,
+CON120024,supplies,Condensate Pump variant 24,Quill Brazing Supply,,,,,119.18,67.91,
+CON120025,supplies,Condensate Pump variant 25,Nadler Compressors,,,,,81.7,45.13,
+COP110000,supplies,Copper Fitting variant 0,Tamsin Pumps,,,,,6.31,3.77,
+COP110001,supplies,Copper Fitting variant 1,Calder Belts & Bearings,,,,,4.67,2.79,
+COP110002,supplies,Copper Fitting variant 2,Vance Hydronics,,,,,7.66,4.3,
+COP110003,supplies,Copper Fitting variant 3,Corbin Components,,,,,4.48,2.76,
+COP110004,supplies,Copper Fitting variant 4,Quill Brazing Supply,,,,,7.93,4.82,
+COP110005,supplies,Copper Fitting variant 5,Whitlock Parts,,,,,3.57,1.98,
+COP110006,supplies,Copper Fitting variant 6,Okafor Wire & Cable,,,,,3.82,2.3,
+COP110007,supplies,Copper Fitting variant 7,Ironside Motors,,,,,5.01,2.85,
+COP110008,supplies,Copper Fitting variant 8,Wexford Ductless Accessories,,,,,4.81,2.87,
+COP110009,supplies,Copper Fitting variant 9,Everly Condensate,,,,,5.99,3.49,
+COP110010,supplies,Copper Fitting variant 10,Auburn Fittings,,,,,5.05,3.16,
+COP110011,supplies,Copper Fitting variant 11,Merriam Electrical Supply,,,,,3.87,2.39,
+COP110012,supplies,Copper Fitting variant 12,Redstone Controls,,,,,3.52,2.1,
+COP110013,supplies,Copper Fitting variant 13,Haverford Controls,,,,,2.57,1.49,
+COP110014,supplies,Copper Fitting variant 14,Marlow Fasteners,,,,,2.77,1.78,
+COP110015,supplies,Copper Fitting variant 15,Haverford Controls,,,,,2.91,1.63,
+COP110016,supplies,Copper Fitting variant 16,Corbin Components,,,,,7.26,4.14,
+COP110017,supplies,Copper Fitting variant 17,Quill Brazing Supply,,,,,7.79,4.4,
+COP110018,supplies,Copper Fitting variant 18,Fennimore Tape & Sealants,,,,,7.23,4.38,
+COP110019,supplies,Copper Fitting variant 19,Ironside Motors,,,,,7.84,4.24,
+COP110020,supplies,Copper Fitting variant 20,Larkspur Tools,,,,,4.68,2.71,
+COP110021,supplies,Copper Fitting variant 21,Granite Coil,,,,,3.55,2.01,
+COP110022,supplies,Copper Fitting variant 22,Corbin Components,,,,,5.39,2.89,
+COP110023,supplies,Copper Fitting variant 23,Wexford Ductless Accessories,,,,,3.72,2.15,
+COP110024,supplies,Copper Fitting variant 24,Calder Belts & Bearings,,,,,9.09,5.24,
+COP110025,supplies,Copper Fitting variant 25,Bramble Mounts & Pads,,,,,5.22,3.09,
+DUC130000,supplies,Duct Tape variant 0,Kelvin Refrigerants,,,,,9.7,5.43,
+DUC130001,supplies,Duct Tape variant 1,Palmer Electric,,,,,8.87,4.97,
+DUC130002,supplies,Duct Tape variant 2,Whitlock Parts,,,,,11.92,6.77,
+DUC130003,supplies,Duct Tape variant 3,Okafor Wire & Cable,,,,,10.67,6.22,
+DUC130004,supplies,Duct Tape variant 4,Brennan Valve,,,,,5.07,2.89,
+DUC130005,supplies,Duct Tape variant 5,Everly Condensate,,,,,16.12,8.72,
+DUC130006,supplies,Duct Tape variant 6,Auburn Fittings,,,,,15.69,8.47,
+DUC130007,supplies,Duct Tape variant 7,Everly Condensate,,,,,9.61,5.68,
+DUC130008,supplies,Duct Tape variant 8,Wexford Ductless Accessories,,,,,11.54,6.22,
+DUC130009,supplies,Duct Tape variant 9,Larkspur Tools,,,,,9.96,5.58,
+DUC130010,supplies,Duct Tape variant 10,Kelvin Refrigerants,,,,,12.72,7.69,
+DUC130011,supplies,Duct Tape variant 11,Nadler Compressors,,,,,12.46,6.89,
+DUC130012,supplies,Duct Tape variant 12,Sable Creek Chemical,,,,,7.56,4.17,
+DUC130013,supplies,Duct Tape variant 13,Marlow Fasteners,,,,,11.5,6.84,
+DUC130014,supplies,Duct Tape variant 14,Okafor Wire & Cable,,,,,15.71,9.34,
+DUC130015,supplies,Duct Tape variant 15,Corbin Components,,,,,12.94,7.02,
+DUC130016,supplies,Duct Tape variant 16,Westerly Thermostats,,,,,7.55,4.22,
+DUC130017,supplies,Duct Tape variant 17,Larkspur Tools,,,,,21.98,11.51,
+DUC130018,supplies,Duct Tape variant 18,Harrow Grilles & Registers,,,,,8.84,5.06,
+DUC130019,supplies,Duct Tape variant 19,Kelvin Refrigerants,,,,,15.04,8.19,
+DUC130020,supplies,Duct Tape variant 20,Brennan Valve,,,,,9.14,5.32,
+DUC130021,supplies,Duct Tape variant 21,Whitlock Parts,,,,,13.06,7.38,
+DUC130022,supplies,Duct Tape variant 22,Westerly Thermostats,,,,,13.89,7.93,
+DUC130023,supplies,Duct Tape variant 23,Fennimore Tape & Sealants,,,,,12.04,6.86,
+DUC130024,supplies,Duct Tape variant 24,Teague Insulation,,,,,14.6,8.62,
+DUC130025,supplies,Duct Tape variant 25,Everly Condensate,,,,,8.89,4.81,
+EVA040000,parts,Evaporator Coil variant 0,Merriam Electrical Supply,,,,,1001.99,536.5,
+EVA040001,parts,Evaporator Coil variant 1,Rook Hangers,,,,,1061.94,582.85,
+EVA040002,parts,Evaporator Coil variant 2,Redstone Controls,,,,,730.7,390.8,
+EVA040003,parts,Evaporator Coil variant 3,Garnet Hose & Fittings,,,,,635.86,352.67,
+EVA040004,parts,Evaporator Coil variant 4,Marlow Fasteners,,,,,459.69,248.83,
+EVA040005,parts,Evaporator Coil variant 5,Lindqvist Filters,,,,,969.28,538.02,
+EVA040006,parts,Evaporator Coil variant 6,Pruitt Duct Supply,,,,,360.57,203.96,
+EVA040007,parts,Evaporator Coil variant 7,Rook Hangers,,,,,890.16,461.09,
+EVA040008,parts,Evaporator Coil variant 8,Calder Belts & Bearings,,,,,345.79,182.05,
+EVA040009,parts,Evaporator Coil variant 9,Thistle Ventilation,,,,,875.53,467.56,
+EVA040010,parts,Evaporator Coil variant 10,Okafor Wire & Cable,,,,,990.84,528.44,
+EVA040011,parts,Evaporator Coil variant 11,Granite Coil,,,,,769.03,428.21,
+EVA040012,parts,Evaporator Coil variant 12,Palmer Electric,,,,,623.52,321.36,
+EVA040013,parts,Evaporator Coil variant 13,Bramble Mounts & Pads,,,,,522.13,268.39,
+EVA040014,parts,Evaporator Coil variant 14,Larkspur Tools,,,,,828.19,429.46,
+EVA040015,parts,Evaporator Coil variant 15,Marlow Fasteners,,,,,656.63,362.2,
+EVA040016,parts,Evaporator Coil variant 16,Whitlock Parts,,,,,543.4,292.51,
+EVA040017,parts,Evaporator Coil variant 17,Solway Refrigeration Parts,,,,,516.49,287.57,
+EVA040018,parts,Evaporator Coil variant 18,Palmer Electric,,,,,554.96,285.11,
+EVA040019,parts,Evaporator Coil variant 19,Nadler Compressors,,,,,457.28,258.3,
+EVA040020,parts,Evaporator Coil variant 20,Larkspur Tools,,,,,367.06,199.52,
+EVA040021,parts,Evaporator Coil variant 21,Nadler Compressors,,,,,349.79,185.56,
+EVA040022,parts,Evaporator Coil variant 22,Halvorsen Sheet Metal,,,,,568.01,270.31,
+EVA040023,parts,Evaporator Coil variant 23,Halvorsen Sheet Metal,,,,,905.5,466.57,
+EVA040024,parts,Evaporator Coil variant 24,Lindqvist Filters,,,,,1048.84,582.49,
+EVA040025,parts,Evaporator Coil variant 25,Okafor Wire & Cable,,,,,513.21,325.12,
+IGN060000,parts,Igniter variant 0,Wexford Ductless Accessories,,,,,31.97,16.19,
+IGN060001,parts,Igniter variant 1,Ostrander Motors,,,,,26.38,14.59,
+IGN060002,parts,Igniter variant 2,Pell Capacitor Co.,,,,,54.82,30.08,
+IGN060003,parts,Igniter variant 3,Larkspur Tools,,,,,56.7,29.61,
+IGN060004,parts,Igniter variant 4,Juniper Ridge Gauges,,,,,37.7,19.46,
+IGN060005,parts,Igniter variant 5,Calder Belts & Bearings,,,,,23.62,11.98,
+IGN060006,parts,Igniter variant 6,Everly Condensate,,,,,49.87,25.97,
+IGN060007,parts,Igniter variant 7,Nadler Compressors,,,,,51.27,27.21,
+IGN060008,parts,Igniter variant 8,Haverford Controls,,,,,50.52,28.62,
+IGN060009,parts,Igniter variant 9,Ferris Supply,,,,,38.38,20.14,
+IGN060010,parts,Igniter variant 10,Lindqvist Filters,,,,,42.01,21.97,
+IGN060011,parts,Igniter variant 11,Whitlock Parts,,,,,27.22,15.65,
+IGN060012,parts,Igniter variant 12,Quill Brazing Supply,,,,,45.84,24.08,
+IGN060013,parts,Igniter variant 13,Haverford Controls,,,,,57.79,32.05,
+IGN060014,parts,Igniter variant 14,Whitlock Parts,,,,,18.3,10.05,
+IGN060015,parts,Igniter variant 15,Solway Refrigeration Parts,,,,,37.79,22.39,
+IGN060016,parts,Igniter variant 16,Auburn Fittings,,,,,43.4,23.35,
+IGN060017,parts,Igniter variant 17,Ferris Supply,,,,,54.76,26.98,
+IGN060018,parts,Igniter variant 18,Ferris Supply,,,,,62.62,28.91,
+IGN060019,parts,Igniter variant 19,Wexford Ductless Accessories,,,,,31.6,16.48,
+IGN060020,parts,Igniter variant 20,Halvorsen Sheet Metal,,,,,33.14,18.81,
+IGN060021,parts,Igniter variant 21,Juniper Ridge Gauges,,,,,53.94,28.79,
+IGN060022,parts,Igniter variant 22,Redstone Controls,,,,,49.71,24.83,
+IGN060023,parts,Igniter variant 23,Ostrander Motors,,,,,61.8,33.41,
+IGN060024,parts,Igniter variant 24,Ferris Supply,,,,,28.33,14.34,
+IGN060025,parts,Igniter variant 25,Juniper Ridge Gauges,,,,,43.8,22.06,
+LIN090000,supplies,Line Set variant 0,Granite Coil,,,,,105.09,59.63,
+LIN090001,supplies,Line Set variant 1,Nadler Compressors,,,,,89.98,46.73,
+LIN090002,supplies,Line Set variant 2,Quill Brazing Supply,,,,,63.31,36.57,
+LIN090003,supplies,Line Set variant 3,Harrow Grilles & Registers,,,,,64.53,41.61,
+LIN090004,supplies,Line Set variant 4,Pruitt Duct Supply,,,,,120.19,64.71,
+LIN090005,supplies,Line Set variant 5,Larkspur Tools,,,,,119.91,66.68,
+LIN090006,supplies,Line Set variant 6,Brennan Valve,,,,,203.51,105.08,
+LIN090007,supplies,Line Set variant 7,Solway Refrigeration Parts,,,,,94.75,52.68,
+LIN090008,supplies,Line Set variant 8,Ferris Supply,,,,,72.94,40.27,
+LIN090009,supplies,Line Set variant 9,Pell Capacitor Co.,,,,,82.83,48.52,
+LIN090010,supplies,Line Set variant 10,Haverford Controls,,,,,81.8,46.12,
+LIN090011,supplies,Line Set variant 11,Kelvin Refrigerants,,,,,143.47,82.4,
+LIN090012,supplies,Line Set variant 12,Westerly Thermostats,,,,,103.19,58.17,
+LIN090013,supplies,Line Set variant 13,Dellwood Controls Supply,,,,,104.3,56.83,
+LIN090014,supplies,Line Set variant 14,Tamsin Pumps,,,,,74.14,42.26,
+LIN090015,supplies,Line Set variant 15,Solway Refrigeration Parts,,,,,176.18,93.76,
+LIN090016,supplies,Line Set variant 16,Vance Hydronics,,,,,125.24,68.97,
+LIN090017,supplies,Line Set variant 17,Dellwood Controls Supply,,,,,120.59,63.14,
+LIN090018,supplies,Line Set variant 18,Quill Brazing Supply,,,,,71.21,42.25,
+LIN090019,supplies,Line Set variant 19,Ferris Supply,,,,,115.68,63.52,
+LIN090020,supplies,Line Set variant 20,Brennan Valve,,,,,78.25,43.51,
+LIN090021,supplies,Line Set variant 21,Redstone Controls,,,,,61.1,34.15,
+LIN090022,supplies,Line Set variant 22,Westerly Thermostats,,,,,137.72,75.08,
+LIN090023,supplies,Line Set variant 23,Corbin Components,,,,,99.99,63.83,
+LIN090024,supplies,Line Set variant 24,Marlow Fasteners,,,,,131.07,70.21,
+LIN090025,supplies,Line Set variant 25,Garnet Hose & Fittings,,,,,38.0,25.28,
+NOR-AI020130X,equipment,Air Handler 2.0 ton SEER2 13.0,Northstar HVAC,Air Handler,2.0,13.0,,841.23,592.42,2015-01-01
+NOR-AI020143X,equipment,Air Handler 2.0 ton SEER2 14.3,Northstar HVAC,Air Handler,2.0,14.3,,913.1,660.0,2023-01-01
+NOR-AI020152X,equipment,Air Handler 2.0 ton SEER2 15.2,Northstar HVAC,Air Handler,2.0,15.2,,997.87,663.77,
+NOR-AI020165X,equipment,Air Handler 2.0 ton SEER2 16.5,Northstar HVAC,Air Handler,2.0,16.5,,990.86,684.91,
+NOR-AI025130X,equipment,Air Handler 2.5 ton SEER2 13.0,Northstar HVAC,Air Handler,2.5,13.0,,976.78,651.74,2015-01-01
+NOR-AI025143X,equipment,Air Handler 2.5 ton SEER2 14.3,Northstar HVAC,Air Handler,2.5,14.3,,1063.15,739.42,2023-01-01
+NOR-AI025152X,equipment,Air Handler 2.5 ton SEER2 15.2,Northstar HVAC,Air Handler,2.5,15.2,,1070.9,744.7,
+NOR-AI025165X,equipment,Air Handler 2.5 ton SEER2 16.5,Northstar HVAC,Air Handler,2.5,16.5,,1130.82,789.46,
+NOR-AI030130X,equipment,Air Handler 3.0 ton SEER2 13.0,Northstar HVAC,Air Handler,3.0,13.0,,1083.82,735.63,2015-01-01
+NOR-AI030143X,equipment,Air Handler 3.0 ton SEER2 14.3,Northstar HVAC,Air Handler,3.0,14.3,,1146.22,795.64,2023-01-01
+NOR-AI030152X,equipment,Air Handler 3.0 ton SEER2 15.2,Northstar HVAC,Air Handler,3.0,15.2,,1215.99,860.16,
+NOR-AI030165X,equipment,Air Handler 3.0 ton SEER2 16.5,Northstar HVAC,Air Handler,3.0,16.5,,1342.12,911.92,
+NOR-AI035130X,equipment,Air Handler 3.5 ton SEER2 13.0,Northstar HVAC,Air Handler,3.5,13.0,,1174.0,785.88,2015-01-01
+NOR-AI035143X,equipment,Air Handler 3.5 ton SEER2 14.3,Northstar HVAC,Air Handler,3.5,14.3,,1241.33,854.05,2023-01-01
+NOR-AI035152X,equipment,Air Handler 3.5 ton SEER2 15.2,Northstar HVAC,Air Handler,3.5,15.2,,1240.36,863.06,
+NOR-AI035165X,equipment,Air Handler 3.5 ton SEER2 16.5,Northstar HVAC,Air Handler,3.5,16.5,,1522.78,1036.38,
+NOR-AI040130X,equipment,Air Handler 4.0 ton SEER2 13.0,Northstar HVAC,Air Handler,4.0,13.0,,1229.26,844.06,2015-01-01
+NOR-AI040143X,equipment,Air Handler 4.0 ton SEER2 14.3,Northstar HVAC,Air Handler,4.0,14.3,,1414.59,972.04,2023-01-01
+NOR-AI040152X,equipment,Air Handler 4.0 ton SEER2 15.2,Northstar HVAC,Air Handler,4.0,15.2,,1403.7,967.05,
+NOR-AI040165X,equipment,Air Handler 4.0 ton SEER2 16.5,Northstar HVAC,Air Handler,4.0,16.5,,1527.33,1027.51,
+NOR-CO020130A,equipment,Condenser 2.0 ton SEER2 13.0 R-454B,Northstar HVAC,Condenser,2.0,13.0,R-454B,1415.98,978.44,2015-01-01
+NOR-CO020130H,equipment,Condenser 2.0 ton SEER2 13.0 R-410A,Northstar HVAC,Condenser,2.0,13.0,R-410A,1305.58,904.29,2015-01-01
+NOR-CO020143A,equipment,Condenser 2.0 ton SEER2 14.3 R-454B,Northstar HVAC,Condenser,2.0,14.3,R-454B,1488.71,1015.99,2023-01-01
+NOR-CO020143H,equipment,Condenser 2.0 ton SEER2 14.3 R-410A,Northstar HVAC,Condenser,2.0,14.3,R-410A,1415.61,960.35,2023-01-01
+NOR-CO020152A,equipment,Condenser 2.0 ton SEER2 15.2 R-454B,Northstar HVAC,Condenser,2.0,15.2,R-454B,1571.75,1093.93,
+NOR-CO020152H,equipment,Condenser 2.0 ton SEER2 15.2 R-410A,Northstar HVAC,Condenser,2.0,15.2,R-410A,1414.13,948.97,2025-01-01
+NOR-CO020165A,equipment,Condenser 2.0 ton SEER2 16.5 R-454B,Northstar HVAC,Condenser,2.0,16.5,R-454B,1686.08,1165.14,
+NOR-CO020165H,equipment,Condenser 2.0 ton SEER2 16.5 R-410A,Northstar HVAC,Condenser,2.0,16.5,R-410A,1605.13,1097.75,2025-01-01
+NOR-CO025130A,equipment,Condenser 2.5 ton SEER2 13.0 R-454B,Northstar HVAC,Condenser,2.5,13.0,R-454B,1465.57,1065.44,2015-01-01
+NOR-CO025130H,equipment,Condenser 2.5 ton SEER2 13.0 R-410A,Northstar HVAC,Condenser,2.5,13.0,R-410A,1401.95,980.38,2015-01-01
+NOR-CO025143A,equipment,Condenser 2.5 ton SEER2 14.3 R-454B,Northstar HVAC,Condenser,2.5,14.3,R-454B,1663.63,1144.88,2023-01-01
+NOR-CO025143H,equipment,Condenser 2.5 ton SEER2 14.3 R-410A,Northstar HVAC,Condenser,2.5,14.3,R-410A,1490.64,1046.67,2023-01-01
+NOR-CO025152A,equipment,Condenser 2.5 ton SEER2 15.2 R-454B,Northstar HVAC,Condenser,2.5,15.2,R-454B,1799.54,1254.33,
+NOR-CO025152H,equipment,Condenser 2.5 ton SEER2 15.2 R-410A,Northstar HVAC,Condenser,2.5,15.2,R-410A,1568.8,1061.79,2025-01-01
+NOR-CO025165A,equipment,Condenser 2.5 ton SEER2 16.5 R-454B,Northstar HVAC,Condenser,2.5,16.5,R-454B,1846.23,1284.38,
+NOR-CO025165H,equipment,Condenser 2.5 ton SEER2 16.5 R-410A,Northstar HVAC,Condenser,2.5,16.5,R-410A,1656.74,1161.06,2025-01-01
+NOR-CO030130A,equipment,Condenser 3.0 ton SEER2 13.0 R-454B,Northstar HVAC,Condenser,3.0,13.0,R-454B,1842.51,1248.67,2015-01-01
+NOR-CO030130H,equipment,Condenser 3.0 ton SEER2 13.0 R-410A,Northstar HVAC,Condenser,3.0,13.0,R-410A,1644.75,1118.99,2015-01-01
+NOR-CO030143A,equipment,Condenser 3.0 ton SEER2 14.3 R-454B,Northstar HVAC,Condenser,3.0,14.3,R-454B,1900.52,1318.45,2023-01-01
+NOR-CO030143H,equipment,Condenser 3.0 ton SEER2 14.3 R-410A,Northstar HVAC,Condenser,3.0,14.3,R-410A,1714.42,1185.75,2023-01-01
+NOR-CO030152A,equipment,Condenser 3.0 ton SEER2 15.2 R-454B,Northstar HVAC,Condenser,3.0,15.2,R-454B,2011.79,1359.55,
+NOR-CO030152H,equipment,Condenser 3.0 ton SEER2 15.2 R-410A,Northstar HVAC,Condenser,3.0,15.2,R-410A,1827.19,1262.94,2025-01-01
+NOR-CO030165A,equipment,Condenser 3.0 ton SEER2 16.5 R-454B,Northstar HVAC,Condenser,3.0,16.5,R-454B,2173.68,1502.54,
+NOR-CO030165H,equipment,Condenser 3.0 ton SEER2 16.5 R-410A,Northstar HVAC,Condenser,3.0,16.5,R-410A,1888.99,1307.37,2025-01-01
+NOR-CO035130A,equipment,Condenser 3.5 ton SEER2 13.0 R-454B,Northstar HVAC,Condenser,3.5,13.0,R-454B,1824.05,1326.72,2015-01-01
+NOR-CO035130H,equipment,Condenser 3.5 ton SEER2 13.0 R-410A,Northstar HVAC,Condenser,3.5,13.0,R-410A,1854.77,1256.55,2015-01-01
+NOR-CO035143A,equipment,Condenser 3.5 ton SEER2 14.3 R-454B,Northstar HVAC,Condenser,3.5,14.3,R-454B,2086.58,1483.33,2023-01-01
+NOR-CO035143H,equipment,Condenser 3.5 ton SEER2 14.3 R-410A,Northstar HVAC,Condenser,3.5,14.3,R-410A,1791.45,1252.75,2023-01-01
+NOR-CO035152A,equipment,Condenser 3.5 ton SEER2 15.2 R-454B,Northstar HVAC,Condenser,3.5,15.2,R-454B,2078.41,1426.48,
+NOR-CO035152H,equipment,Condenser 3.5 ton SEER2 15.2 R-410A,Northstar HVAC,Condenser,3.5,15.2,R-410A,1971.16,1356.43,2025-01-01
+NOR-CO035165A,equipment,Condenser 3.5 ton SEER2 16.5 R-454B,Northstar HVAC,Condenser,3.5,16.5,R-454B,2312.71,1575.15,
+NOR-CO035165H,equipment,Condenser 3.5 ton SEER2 16.5 R-410A,Northstar HVAC,Condenser,3.5,16.5,R-410A,2233.89,1517.54,2025-01-01
+NOR-CO040130A,equipment,Condenser 4.0 ton SEER2 13.0 R-454B,Northstar HVAC,Condenser,4.0,13.0,R-454B,2054.41,1399.08,2015-01-01
+NOR-CO040130H,equipment,Condenser 4.0 ton SEER2 13.0 R-410A,Northstar HVAC,Condenser,4.0,13.0,R-410A,1942.38,1316.71,2015-01-01
+NOR-CO040143A,equipment,Condenser 4.0 ton SEER2 14.3 R-454B,Northstar HVAC,Condenser,4.0,14.3,R-454B,2403.81,1603.57,2023-01-01
+NOR-CO040143H,equipment,Condenser 4.0 ton SEER2 14.3 R-410A,Northstar HVAC,Condenser,4.0,14.3,R-410A,2071.94,1427.01,2023-01-01
+NOR-CO040152A,equipment,Condenser 4.0 ton SEER2 15.2 R-454B,Northstar HVAC,Condenser,4.0,15.2,R-454B,2426.79,1666.32,
+NOR-CO040152H,equipment,Condenser 4.0 ton SEER2 15.2 R-410A,Northstar HVAC,Condenser,4.0,15.2,R-410A,2166.3,1468.6,2025-01-01
+NOR-CO040165A,equipment,Condenser 4.0 ton SEER2 16.5 R-454B,Northstar HVAC,Condenser,4.0,16.5,R-454B,2503.71,1771.42,
+NOR-CO040165H,equipment,Condenser 4.0 ton SEER2 16.5 R-410A,Northstar HVAC,Condenser,4.0,16.5,R-410A,2402.52,1639.13,2025-01-01
+NOR-GA020130X,equipment,Gas Furnace 2.0 ton SEER2 13.0,Northstar HVAC,Gas Furnace,2.0,13.0,,984.52,688.45,2015-01-01
+NOR-GA020143X,equipment,Gas Furnace 2.0 ton SEER2 14.3,Northstar HVAC,Gas Furnace,2.0,14.3,,1123.57,759.66,2023-01-01
+NOR-GA020152X,equipment,Gas Furnace 2.0 ton SEER2 15.2,Northstar HVAC,Gas Furnace,2.0,15.2,,1123.79,768.5,
+NOR-GA020165X,equipment,Gas Furnace 2.0 ton SEER2 16.5,Northstar HVAC,Gas Furnace,2.0,16.5,,1199.48,805.31,
+NOR-GA025130X,equipment,Gas Furnace 2.5 ton SEER2 13.0,Northstar HVAC,Gas Furnace,2.5,13.0,,1115.24,789.54,2015-01-01
+NOR-GA025143X,equipment,Gas Furnace 2.5 ton SEER2 14.3,Northstar HVAC,Gas Furnace,2.5,14.3,,1224.78,821.03,2023-01-01
+NOR-GA025152X,equipment,Gas Furnace 2.5 ton SEER2 15.2,Northstar HVAC,Gas Furnace,2.5,15.2,,1251.18,876.01,
+NOR-GA025165X,equipment,Gas Furnace 2.5 ton SEER2 16.5,Northstar HVAC,Gas Furnace,2.5,16.5,,1340.5,918.96,
+NOR-GA030130X,equipment,Gas Furnace 3.0 ton SEER2 13.0,Northstar HVAC,Gas Furnace,3.0,13.0,,1226.06,858.69,2015-01-01
+NOR-GA030143X,equipment,Gas Furnace 3.0 ton SEER2 14.3,Northstar HVAC,Gas Furnace,3.0,14.3,,1350.01,934.62,2023-01-01
+NOR-GA030152X,equipment,Gas Furnace 3.0 ton SEER2 15.2,Northstar HVAC,Gas Furnace,3.0,15.2,,1419.91,976.01,
+NOR-GA030165X,equipment,Gas Furnace 3.0 ton SEER2 16.5,Northstar HVAC,Gas Furnace,3.0,16.5,,1540.12,1037.48,
+NOR-GA035130X,equipment,Gas Furnace 3.5 ton SEER2 13.0,Northstar HVAC,Gas Furnace,3.5,13.0,,1462.24,989.81,2015-01-01
+NOR-GA035143X,equipment,Gas Furnace 3.5 ton SEER2 14.3,Northstar HVAC,Gas Furnace,3.5,14.3,,1584.17,1104.48,2023-01-01
+NOR-GA035152X,equipment,Gas Furnace 3.5 ton SEER2 15.2,Northstar HVAC,Gas Furnace,3.5,15.2,,1513.91,1078.8,
+NOR-GA035165X,equipment,Gas Furnace 3.5 ton SEER2 16.5,Northstar HVAC,Gas Furnace,3.5,16.5,,1651.22,1184.16,
+NOR-GA040130X,equipment,Gas Furnace 4.0 ton SEER2 13.0,Northstar HVAC,Gas Furnace,4.0,13.0,,1497.4,1013.63,2015-01-01
+NOR-GA040143X,equipment,Gas Furnace 4.0 ton SEER2 14.3,Northstar HVAC,Gas Furnace,4.0,14.3,,1678.92,1137.35,2023-01-01
+NOR-GA040152X,equipment,Gas Furnace 4.0 ton SEER2 15.2,Northstar HVAC,Gas Furnace,4.0,15.2,,1595.0,1116.25,
+NOR-GA040165X,equipment,Gas Furnace 4.0 ton SEER2 16.5,Northstar HVAC,Gas Furnace,4.0,16.5,,1866.26,1307.78,
+NOR-HE020130A,equipment,Heat Pump 2.0 ton SEER2 13.0 R-454B,Northstar HVAC,Heat Pump,2.0,13.0,R-454B,1815.8,1203.6,2015-01-01
+NOR-HE020130H,equipment,Heat Pump 2.0 ton SEER2 13.0 R-410A,Northstar HVAC,Heat Pump,2.0,13.0,R-410A,1578.63,1062.25,2015-01-01
+NOR-HE020143A,equipment,Heat Pump 2.0 ton SEER2 14.3 R-454B,Northstar HVAC,Heat Pump,2.0,14.3,R-454B,1892.93,1276.8,2023-01-01
+NOR-HE020143H,equipment,Heat Pump 2.0 ton SEER2 14.3 R-410A,Northstar HVAC,Heat Pump,2.0,14.3,R-410A,1773.97,1173.9,2023-01-01
+NOR-HE020152A,equipment,Heat Pump 2.0 ton SEER2 15.2 R-454B,Northstar HVAC,Heat Pump,2.0,15.2,R-454B,2117.66,1421.53,
+NOR-HE020152H,equipment,Heat Pump 2.0 ton SEER2 15.2 R-410A,Northstar HVAC,Heat Pump,2.0,15.2,R-410A,1685.87,1169.33,2025-01-01
+NOR-HE020165A,equipment,Heat Pump 2.0 ton SEER2 16.5 R-454B,Northstar HVAC,Heat Pump,2.0,16.5,R-454B,2053.56,1409.45,
+NOR-HE020165H,equipment,Heat Pump 2.0 ton SEER2 16.5 R-410A,Northstar HVAC,Heat Pump,2.0,16.5,R-410A,2081.21,1451.66,2025-01-01
+NOR-HE025130A,equipment,Heat Pump 2.5 ton SEER2 13.0 R-454B,Northstar HVAC,Heat Pump,2.5,13.0,R-454B,1942.0,1327.72,2015-01-01
+NOR-HE025130H,equipment,Heat Pump 2.5 ton SEER2 13.0 R-410A,Northstar HVAC,Heat Pump,2.5,13.0,R-410A,1793.19,1226.81,2015-01-01
+NOR-HE025143A,equipment,Heat Pump 2.5 ton SEER2 14.3 R-454B,Northstar HVAC,Heat Pump,2.5,14.3,R-454B,2137.71,1462.94,2023-01-01
+NOR-HE025143H,equipment,Heat Pump 2.5 ton SEER2 14.3 R-410A,Northstar HVAC,Heat Pump,2.5,14.3,R-410A,1929.11,1331.09,2023-01-01
+NOR-HE025152A,equipment,Heat Pump 2.5 ton SEER2 15.2 R-454B,Northstar HVAC,Heat Pump,2.5,15.2,R-454B,2139.79,1479.0,
+NOR-HE025152H,equipment,Heat Pump 2.5 ton SEER2 15.2 R-410A,Northstar HVAC,Heat Pump,2.5,15.2,R-410A,1974.22,1369.41,2025-01-01
+NOR-HE025165A,equipment,Heat Pump 2.5 ton SEER2 16.5 R-454B,Northstar HVAC,Heat Pump,2.5,16.5,R-454B,2325.51,1593.28,
+NOR-HE025165H,equipment,Heat Pump 2.5 ton SEER2 16.5 R-410A,Northstar HVAC,Heat Pump,2.5,16.5,R-410A,2255.01,1517.51,2025-01-01
+NOR-HE030130A,equipment,Heat Pump 3.0 ton SEER2 13.0 R-454B,Northstar HVAC,Heat Pump,3.0,13.0,R-454B,2190.45,1475.82,2015-01-01
+NOR-HE030130H,equipment,Heat Pump 3.0 ton SEER2 13.0 R-410A,Northstar HVAC,Heat Pump,3.0,13.0,R-410A,2067.15,1438.41,2015-01-01
+NOR-HE030143A,equipment,Heat Pump 3.0 ton SEER2 14.3 R-454B,Northstar HVAC,Heat Pump,3.0,14.3,R-454B,2225.53,1584.63,2023-01-01
+NOR-HE030143H,equipment,Heat Pump 3.0 ton SEER2 14.3 R-410A,Northstar HVAC,Heat Pump,3.0,14.3,R-410A,2239.44,1540.08,2023-01-01
+NOR-HE030152A,equipment,Heat Pump 3.0 ton SEER2 15.2 R-454B,Northstar HVAC,Heat Pump,3.0,15.2,R-454B,2364.75,1648.37,
+NOR-HE030152H,equipment,Heat Pump 3.0 ton SEER2 15.2 R-410A,Northstar HVAC,Heat Pump,3.0,15.2,R-410A,2372.01,1603.88,2025-01-01
+NOR-HE030165A,equipment,Heat Pump 3.0 ton SEER2 16.5 R-454B,Northstar HVAC,Heat Pump,3.0,16.5,R-454B,2624.56,1843.66,
+NOR-HE030165H,equipment,Heat Pump 3.0 ton SEER2 16.5 R-410A,Northstar HVAC,Heat Pump,3.0,16.5,R-410A,2367.91,1628.14,2025-01-01
+NOR-HE035130A,equipment,Heat Pump 3.5 ton SEER2 13.0 R-454B,Northstar HVAC,Heat Pump,3.5,13.0,R-454B,2480.48,1716.96,2015-01-01
+NOR-HE035130H,equipment,Heat Pump 3.5 ton SEER2 13.0 R-410A,Northstar HVAC,Heat Pump,3.5,13.0,R-410A,2239.54,1528.84,2015-01-01
+NOR-HE035143A,equipment,Heat Pump 3.5 ton SEER2 14.3 R-454B,Northstar HVAC,Heat Pump,3.5,14.3,R-454B,2672.08,1870.58,2023-01-01
+NOR-HE035143H,equipment,Heat Pump 3.5 ton SEER2 14.3 R-410A,Northstar HVAC,Heat Pump,3.5,14.3,R-410A,2349.34,1605.75,2023-01-01
+NOR-HE035152A,equipment,Heat Pump 3.5 ton SEER2 15.2 R-454B,Northstar HVAC,Heat Pump,3.5,15.2,R-454B,2883.48,1974.52,
+NOR-HE035152H,equipment,Heat Pump 3.5 ton SEER2 15.2 R-410A,Northstar HVAC,Heat Pump,3.5,15.2,R-410A,2384.3,1666.69,2025-01-01
+NOR-HE035165A,equipment,Heat Pump 3.5 ton SEER2 16.5 R-454B,Northstar HVAC,Heat Pump,3.5,16.5,R-454B,2863.81,2026.23,
+NOR-HE035165H,equipment,Heat Pump 3.5 ton SEER2 16.5 R-410A,Northstar HVAC,Heat Pump,3.5,16.5,R-410A,2578.56,1842.61,2025-01-01
+NOR-HE040130A,equipment,Heat Pump 4.0 ton SEER2 13.0 R-454B,Northstar HVAC,Heat Pump,4.0,13.0,R-454B,2466.32,1759.02,2015-01-01
+NOR-HE040130H,equipment,Heat Pump 4.0 ton SEER2 13.0 R-410A,Northstar HVAC,Heat Pump,4.0,13.0,R-410A,2430.11,1656.67,2015-01-01
+NOR-HE040143A,equipment,Heat Pump 4.0 ton SEER2 14.3 R-454B,Northstar HVAC,Heat Pump,4.0,14.3,R-454B,2774.16,1952.99,2023-01-01
+NOR-HE040143H,equipment,Heat Pump 4.0 ton SEER2 14.3 R-410A,Northstar HVAC,Heat Pump,4.0,14.3,R-410A,2416.28,1683.98,2023-01-01
+NOR-HE040152A,equipment,Heat Pump 4.0 ton SEER2 15.2 R-454B,Northstar HVAC,Heat Pump,4.0,15.2,R-454B,3050.4,2060.74,
+NOR-HE040152H,equipment,Heat Pump 4.0 ton SEER2 15.2 R-410A,Northstar HVAC,Heat Pump,4.0,15.2,R-410A,2789.23,1951.92,2025-01-01
+NOR-HE040165A,equipment,Heat Pump 4.0 ton SEER2 16.5 R-454B,Northstar HVAC,Heat Pump,4.0,16.5,R-454B,3359.05,2308.93,
+NOR-HE040165H,equipment,Heat Pump 4.0 ton SEER2 16.5 R-410A,Northstar HVAC,Heat Pump,4.0,16.5,R-410A,2899.9,2005.38,2025-01-01
+PRE070000,parts,Pressure Switch variant 0,Ostrander Motors,,,,,56.8,29.33,
+PRE070001,parts,Pressure Switch variant 1,Haverford Controls,,,,,73.97,40.04,
+PRE070002,parts,Pressure Switch variant 2,Granite Coil,,,,,57.76,31.51,
+PRE070003,parts,Pressure Switch variant 3,Larkspur Tools,,,,,68.81,38.62,
+PRE070004,parts,Pressure Switch variant 4,Dellwood Controls Supply,,,,,44.98,23.63,
+PRE070005,parts,Pressure Switch variant 5,Dellwood Controls Supply,,,,,44.94,22.55,
+PRE070006,parts,Pressure Switch variant 6,Vance Hydronics,,,,,34.75,18.32,
+PRE070007,parts,Pressure Switch variant 7,Pruitt Duct Supply,,,,,46.66,24.92,
+PRE070008,parts,Pressure Switch variant 8,Pell Capacitor Co.,,,,,69.35,38.75,
+PRE070009,parts,Pressure Switch variant 9,Okafor Wire & Cable,,,,,60.22,34.26,
+PRE070010,parts,Pressure Switch variant 10,Redstone Controls,,,,,51.77,25.92,
+PRE070011,parts,Pressure Switch variant 11,Pruitt Duct Supply,,,,,46.8,24.03,
+PRE070012,parts,Pressure Switch variant 12,Okafor Wire & Cable,,,,,35.84,20.31,
+PRE070013,parts,Pressure Switch variant 13,Granite Coil,,,,,32.41,16.47,
+PRE070014,parts,Pressure Switch variant 14,Lindqvist Filters,,,,,58.77,33.52,
+PRE070015,parts,Pressure Switch variant 15,Brennan Valve,,,,,94.56,49.02,
+PRE070016,parts,Pressure Switch variant 16,Solway Refrigeration Parts,,,,,37.06,20.27,
+PRE070017,parts,Pressure Switch variant 17,Pruitt Duct Supply,,,,,63.46,30.98,
+PRE070018,parts,Pressure Switch variant 18,Juniper Ridge Gauges,,,,,83.37,42.05,
+PRE070019,parts,Pressure Switch variant 19,Sable Creek Chemical,,,,,101.65,52.75,
+PRE070020,parts,Pressure Switch variant 20,Thistle Ventilation,,,,,76.65,41.4,
+PRE070021,parts,Pressure Switch variant 21,Thistle Ventilation,,,,,60.6,31.65,
+PRE070022,parts,Pressure Switch variant 22,Vance Hydronics,,,,,41.46,22.28,
+PRE070023,parts,Pressure Switch variant 23,Halvorsen Sheet Metal,,,,,20.26,11.02,
+PRE070024,parts,Pressure Switch variant 24,Corbin Components,,,,,49.86,26.32,
+PRE070025,parts,Pressure Switch variant 25,Palmer Electric,,,,,32.5,16.47,
+REC160000,refrigeration,Recovery Cylinder variant 0,Vance Hydronics,,,,,347.71,226.75,
+REC160001,refrigeration,Recovery Cylinder variant 1,Nadler Compressors,,,,,95.69,60.91,
+REC160002,refrigeration,Recovery Cylinder variant 2,Pell Capacitor Co.,,,,,153.75,99.69,
+REC160003,refrigeration,Recovery Cylinder variant 3,Thistle Ventilation,,,,,85.95,54.91,
+REC160004,refrigeration,Recovery Cylinder variant 4,Halvorsen Sheet Metal,,,,,114.73,70.82,
+REC160005,refrigeration,Recovery Cylinder variant 5,Granite Coil,,,,,127.67,87.47,
+REC160006,refrigeration,Recovery Cylinder variant 6,Granite Coil,,,,,118.84,73.41,
+REC160007,refrigeration,Recovery Cylinder variant 7,Auburn Fittings,,,,,166.03,114.04,
+REC160008,refrigeration,Recovery Cylinder variant 8,Haverford Controls,,,,,137.11,88.74,
+REC160009,refrigeration,Recovery Cylinder variant 9,Fennimore Tape & Sealants,,,,,106.72,66.28,
+REC160010,refrigeration,Recovery Cylinder variant 10,Sable Creek Chemical,,,,,227.3,142.0,
+REC160011,refrigeration,Recovery Cylinder variant 11,Westerly Thermostats,,,,,107.98,74.81,
+REC160012,refrigeration,Recovery Cylinder variant 12,Ostrander Motors,,,,,111.69,67.35,
+REC160013,refrigeration,Recovery Cylinder variant 13,Palmer Electric,,,,,69.32,45.66,
+REC160014,refrigeration,Recovery Cylinder variant 14,Quill Brazing Supply,,,,,151.81,95.12,
+REC160015,refrigeration,Recovery Cylinder variant 15,Thistle Ventilation,,,,,89.85,50.12,
+REC160016,refrigeration,Recovery Cylinder variant 16,Halvorsen Sheet Metal,,,,,168.65,109.48,
+REC160017,refrigeration,Recovery Cylinder variant 17,Granite Coil,,,,,140.91,84.71,
+REC160018,refrigeration,Recovery Cylinder variant 18,Calder Belts & Bearings,,,,,87.59,52.99,
+REC160019,refrigeration,Recovery Cylinder variant 19,Teague Insulation,,,,,120.79,81.6,
+REC160020,refrigeration,Recovery Cylinder variant 20,Okafor Wire & Cable,,,,,108.18,68.57,
+REC160021,refrigeration,Recovery Cylinder variant 21,Calder Belts & Bearings,,,,,179.44,100.56,
+REC160022,refrigeration,Recovery Cylinder variant 22,Ironside Motors,,,,,149.13,103.48,
+REC160023,refrigeration,Recovery Cylinder variant 23,Haverford Controls,,,,,86.68,53.7,
+REC160024,refrigeration,Recovery Cylinder variant 24,Merriam Electrical Supply,,,,,137.33,94.96,
+REC160025,refrigeration,Recovery Cylinder variant 25,Pell Capacitor Co.,,,,,377.66,251.54,
+REF140000,refrigeration,Refrigerant R-410A variant 0,Auburn Fittings,,,,,171.09,100.81,
+REF140001,refrigeration,Refrigerant R-410A variant 1,Haverford Controls,,,,,235.45,149.91,
+REF140002,refrigeration,Refrigerant R-410A variant 2,Calder Belts & Bearings,,,,,202.69,132.29,
+REF140003,refrigeration,Refrigerant R-410A variant 3,Ferris Supply,,,,,218.6,147.94,
+REF140004,refrigeration,Refrigerant R-410A variant 4,Dellwood Controls Supply,,,,,198.87,112.55,
+REF140005,refrigeration,Refrigerant R-410A variant 5,Westerly Thermostats,,,,,103.4,65.97,
+REF140006,refrigeration,Refrigerant R-410A variant 6,Brennan Valve,,,,,141.75,91.52,
+REF140007,refrigeration,Refrigerant R-410A variant 7,Solway Refrigeration Parts,,,,,91.79,58.96,
+REF140008,refrigeration,Refrigerant R-410A variant 8,Marlow Fasteners,,,,,287.07,171.95,
+REF140009,refrigeration,Refrigerant R-410A variant 9,Westerly Thermostats,,,,,226.33,159.48,
+REF140010,refrigeration,Refrigerant R-410A variant 10,Thistle Ventilation,,,,,243.57,149.84,
+REF140011,refrigeration,Refrigerant R-410A variant 11,Okafor Wire & Cable,,,,,201.19,126.37,
+REF140012,refrigeration,Refrigerant R-410A variant 12,Calder Belts & Bearings,,,,,175.38,112.06,
+REF140013,refrigeration,Refrigerant R-410A variant 13,Tamsin Pumps,,,,,175.74,106.82,
+REF140014,refrigeration,Refrigerant R-410A variant 14,Whitlock Parts,,,,,239.67,151.32,
+REF140015,refrigeration,Refrigerant R-410A variant 15,Thistle Ventilation,,,,,215.79,140.02,
+REF140016,refrigeration,Refrigerant R-410A variant 16,Brennan Valve,,,,,80.94,51.46,
+REF140017,refrigeration,Refrigerant R-410A variant 17,Kelvin Refrigerants,,,,,207.1,134.6,
+REF140018,refrigeration,Refrigerant R-410A variant 18,Lindqvist Filters,,,,,167.22,114.1,
+REF140019,refrigeration,Refrigerant R-410A variant 19,Halvorsen Sheet Metal,,,,,171.39,105.38,
+REF140020,refrigeration,Refrigerant R-410A variant 20,Ferris Supply,,,,,202.23,126.61,
+REF140021,refrigeration,Refrigerant R-410A variant 21,Okafor Wire & Cable,,,,,140.09,90.08,
+REF140022,refrigeration,Refrigerant R-410A variant 22,Solway Refrigeration Parts,,,,,141.28,92.4,
+REF140023,refrigeration,Refrigerant R-410A variant 23,Whitlock Parts,,,,,200.01,123.92,
+REF140024,refrigeration,Refrigerant R-410A variant 24,Ostrander Motors,,,,,183.36,117.02,
+REF140025,refrigeration,Refrigerant R-410A variant 25,Brennan Valve,,,,,187.59,118.2,
+REF150000,refrigeration,Refrigerant R-454B variant 0,Wexford Ductless Accessories,,,,,170.96,102.23,
+REF150001,refrigeration,Refrigerant R-454B variant 1,Brennan Valve,,,,,290.14,188.82,
+REF150002,refrigeration,Refrigerant R-454B variant 2,Brennan Valve,,,,,188.28,118.7,
+REF150003,refrigeration,Refrigerant R-454B variant 3,Vance Hydronics,,,,,286.87,174.36,
+REF150004,refrigeration,Refrigerant R-454B variant 4,Westerly Thermostats,,,,,116.65,74.67,
+REF150005,refrigeration,Refrigerant R-454B variant 5,Wexford Ductless Accessories,,,,,238.54,147.05,
+REF150006,refrigeration,Refrigerant R-454B variant 6,Pell Capacitor Co.,,,,,310.93,207.58,
+REF150007,refrigeration,Refrigerant R-454B variant 7,Halvorsen Sheet Metal,,,,,268.25,154.23,
+REF150008,refrigeration,Refrigerant R-454B variant 8,Wexford Ductless Accessories,,,,,243.22,153.29,
+REF150009,refrigeration,Refrigerant R-454B variant 9,Ostrander Motors,,,,,201.31,130.45,
+REF150010,refrigeration,Refrigerant R-454B variant 10,Merriam Electrical Supply,,,,,315.12,199.79,
+REF150011,refrigeration,Refrigerant R-454B variant 11,Ostrander Motors,,,,,244.23,153.2,
+REF150012,refrigeration,Refrigerant R-454B variant 12,Ferris Supply,,,,,344.81,195.05,
+REF150013,refrigeration,Refrigerant R-454B variant 13,Nadler Compressors,,,,,200.47,132.06,
+REF150014,refrigeration,Refrigerant R-454B variant 14,Dellwood Controls Supply,,,,,176.34,110.59,
+REF150015,refrigeration,Refrigerant R-454B variant 15,Juniper Ridge Gauges,,,,,252.25,145.62,
+REF150016,refrigeration,Refrigerant R-454B variant 16,Redstone Controls,,,,,465.52,305.47,
+REF150017,refrigeration,Refrigerant R-454B variant 17,Marlow Fasteners,,,,,170.3,102.09,
+REF150018,refrigeration,Refrigerant R-454B variant 18,Granite Coil,,,,,343.13,208.89,
+REF150019,refrigeration,Refrigerant R-454B variant 19,Bramble Mounts & Pads,,,,,350.7,214.52,
+REF150020,refrigeration,Refrigerant R-454B variant 20,Pruitt Duct Supply,,,,,207.97,120.75,
+REF150021,refrigeration,Refrigerant R-454B variant 21,Thistle Ventilation,,,,,404.53,260.3,
+REF150022,refrigeration,Refrigerant R-454B variant 22,Vance Hydronics,,,,,160.74,95.28,
+REF150023,refrigeration,Refrigerant R-454B variant 23,Marlow Fasteners,,,,,104.75,68.13,
+REF150024,refrigeration,Refrigerant R-454B variant 24,Kelvin Refrigerants,,,,,317.15,183.82,
+REF150025,refrigeration,Refrigerant R-454B variant 25,Redstone Controls,,,,,184.49,109.07,
+THE100000,supplies,Thermostat variant 0,Juniper Ridge Gauges,,,,,108.69,58.48,
+THE100001,supplies,Thermostat variant 1,Okafor Wire & Cable,,,,,104.92,58.41,
+THE100002,supplies,Thermostat variant 2,Bramble Mounts & Pads,,,,,124.71,68.82,
+THE100003,supplies,Thermostat variant 3,Corbin Components,,,,,212.63,109.08,
+THE100004,supplies,Thermostat variant 4,Garnet Hose & Fittings,,,,,177.46,98.15,
+THE100005,supplies,Thermostat variant 5,Quill Brazing Supply,,,,,124.28,71.8,
+THE100006,supplies,Thermostat variant 6,Nadler Compressors,,,,,90.42,54.41,
+THE100007,supplies,Thermostat variant 7,Vance Hydronics,,,,,105.89,59.41,
+THE100008,supplies,Thermostat variant 8,Vance Hydronics,,,,,91.69,55.18,
+THE100009,supplies,Thermostat variant 9,Ironside Motors,,,,,119.62,69.49,
+THE100010,supplies,Thermostat variant 10,Tamsin Pumps,,,,,120.83,71.6,
+THE100011,supplies,Thermostat variant 11,Teague Insulation,,,,,267.13,143.23,
+THE100012,supplies,Thermostat variant 12,Quill Brazing Supply,,,,,101.9,59.17,
+THE100013,supplies,Thermostat variant 13,Calder Belts & Bearings,,,,,101.99,53.14,
+THE100014,supplies,Thermostat variant 14,Solway Refrigeration Parts,,,,,90.56,50.47,
+THE100015,supplies,Thermostat variant 15,Harrow Grilles & Registers,,,,,120.0,72.39,
+THE100016,supplies,Thermostat variant 16,Thistle Ventilation,,,,,112.61,65.48,
+THE100017,supplies,Thermostat variant 17,Vance Hydronics,,,,,107.73,60.14,
+THE100018,supplies,Thermostat variant 18,Halvorsen Sheet Metal,,,,,142.39,79.92,
+THE100019,supplies,Thermostat variant 19,Tamsin Pumps,,,,,133.39,74.95,
+THE100020,supplies,Thermostat variant 20,Whitlock Parts,,,,,138.57,78.93,
+THE100021,supplies,Thermostat variant 21,Halvorsen Sheet Metal,,,,,100.49,59.61,
+THE100022,supplies,Thermostat variant 22,Calder Belts & Bearings,,,,,209.06,128.3,
+THE100023,supplies,Thermostat variant 23,Redstone Controls,,,,,90.51,55.45,
+THE100024,supplies,Thermostat variant 24,Westerly Thermostats,,,,,98.19,55.55,
+THE100025,supplies,Thermostat variant 25,Vance Hydronics,,,,,85.92,50.44,
+VAN-AI020130X,equipment,Air Handler 2.0 ton SEER2 13.0,Vantel,Air Handler,2.0,13.0,,933.05,617.23,2015-01-01
+VAN-AI020143X,equipment,Air Handler 2.0 ton SEER2 14.3,Vantel,Air Handler,2.0,14.3,,923.08,619.4,2023-01-01
+VAN-AI020152X,equipment,Air Handler 2.0 ton SEER2 15.2,Vantel,Air Handler,2.0,15.2,,979.34,689.44,
+VAN-AI020165X,equipment,Air Handler 2.0 ton SEER2 16.5,Vantel,Air Handler,2.0,16.5,,1071.75,722.02,
+VAN-AI025130X,equipment,Air Handler 2.5 ton SEER2 13.0,Vantel,Air Handler,2.5,13.0,,926.52,635.87,2015-01-01
+VAN-AI025143X,equipment,Air Handler 2.5 ton SEER2 14.3,Vantel,Air Handler,2.5,14.3,,1071.76,718.98,2023-01-01
+VAN-AI025152X,equipment,Air Handler 2.5 ton SEER2 15.2,Vantel,Air Handler,2.5,15.2,,1064.93,756.85,
+VAN-AI025165X,equipment,Air Handler 2.5 ton SEER2 16.5,Vantel,Air Handler,2.5,16.5,,1184.63,832.65,
+VAN-AI030130X,equipment,Air Handler 3.0 ton SEER2 13.0,Vantel,Air Handler,3.0,13.0,,1050.02,731.41,2015-01-01
+VAN-AI030143X,equipment,Air Handler 3.0 ton SEER2 14.3,Vantel,Air Handler,3.0,14.3,,1208.96,805.28,2023-01-01
+VAN-AI030152X,equipment,Air Handler 3.0 ton SEER2 15.2,Vantel,Air Handler,3.0,15.2,,1264.94,866.76,
+VAN-AI030165X,equipment,Air Handler 3.0 ton SEER2 16.5,Vantel,Air Handler,3.0,16.5,,1364.43,916.81,
+VAN-AI035130X,equipment,Air Handler 3.5 ton SEER2 13.0,Vantel,Air Handler,3.5,13.0,,1214.55,835.12,2015-01-01
+VAN-AI035143X,equipment,Air Handler 3.5 ton SEER2 14.3,Vantel,Air Handler,3.5,14.3,,1260.97,874.52,2023-01-01
+VAN-AI035152X,equipment,Air Handler 3.5 ton SEER2 15.2,Vantel,Air Handler,3.5,15.2,,1366.24,930.89,
+VAN-AI035165X,equipment,Air Handler 3.5 ton SEER2 16.5,Vantel,Air Handler,3.5,16.5,,1407.73,956.57,
+VAN-AI040130X,equipment,Air Handler 4.0 ton SEER2 13.0,Vantel,Air Handler,4.0,13.0,,1326.52,910.4,2015-01-01
+VAN-AI040143X,equipment,Air Handler 4.0 ton SEER2 14.3,Vantel,Air Handler,4.0,14.3,,1335.51,932.56,2023-01-01
+VAN-AI040152X,equipment,Air Handler 4.0 ton SEER2 15.2,Vantel,Air Handler,4.0,15.2,,1441.86,1013.29,
+VAN-AI040165X,equipment,Air Handler 4.0 ton SEER2 16.5,Vantel,Air Handler,4.0,16.5,,1573.25,1076.4,
+VAN-CO020130A,equipment,Condenser 2.0 ton SEER2 13.0 R-454B,Vantel,Condenser,2.0,13.0,R-454B,1412.15,948.74,2015-01-01
+VAN-CO020130H,equipment,Condenser 2.0 ton SEER2 13.0 R-410A,Vantel,Condenser,2.0,13.0,R-410A,1247.84,862.66,2015-01-01
+VAN-CO020143A,equipment,Condenser 2.0 ton SEER2 14.3 R-454B,Vantel,Condenser,2.0,14.3,R-454B,1438.31,978.41,2023-01-01
+VAN-CO020143H,equipment,Condenser 2.0 ton SEER2 14.3 R-410A,Vantel,Condenser,2.0,14.3,R-410A,1357.33,942.48,2023-01-01
+VAN-CO020152A,equipment,Condenser 2.0 ton SEER2 15.2 R-454B,Vantel,Condenser,2.0,15.2,R-454B,1633.57,1085.84,
+VAN-CO020152H,equipment,Condenser 2.0 ton SEER2 15.2 R-410A,Vantel,Condenser,2.0,15.2,R-410A,1490.52,1020.0,2025-01-01
+VAN-CO020165A,equipment,Condenser 2.0 ton SEER2 16.5 R-454B,Vantel,Condenser,2.0,16.5,R-454B,1728.99,1184.73,
+VAN-CO020165H,equipment,Condenser 2.0 ton SEER2 16.5 R-410A,Vantel,Condenser,2.0,16.5,R-410A,1634.26,1092.66,2025-01-01
+VAN-CO025130A,equipment,Condenser 2.5 ton SEER2 13.0 R-454B,Vantel,Condenser,2.5,13.0,R-454B,1415.65,1022.61,2015-01-01
+VAN-CO025130H,equipment,Condenser 2.5 ton SEER2 13.0 R-410A,Vantel,Condenser,2.5,13.0,R-410A,1446.73,980.04,2015-01-01
+VAN-CO025143A,equipment,Condenser 2.5 ton SEER2 14.3 R-454B,Vantel,Condenser,2.5,14.3,R-454B,1612.26,1119.3,2023-01-01
+VAN-CO025143H,equipment,Condenser 2.5 ton SEER2 14.3 R-410A,Vantel,Condenser,2.5,14.3,R-410A,1503.82,1073.1,2023-01-01
+VAN-CO025152A,equipment,Condenser 2.5 ton SEER2 15.2 R-454B,Vantel,Condenser,2.5,15.2,R-454B,1827.88,1262.66,
+VAN-CO025152H,equipment,Condenser 2.5 ton SEER2 15.2 R-410A,Vantel,Condenser,2.5,15.2,R-410A,1645.15,1113.62,2025-01-01
+VAN-CO025165A,equipment,Condenser 2.5 ton SEER2 16.5 R-454B,Vantel,Condenser,2.5,16.5,R-454B,1847.36,1283.86,
+VAN-CO025165H,equipment,Condenser 2.5 ton SEER2 16.5 R-410A,Vantel,Condenser,2.5,16.5,R-410A,1734.34,1198.5,2025-01-01
+VAN-CO030130A,equipment,Condenser 3.0 ton SEER2 13.0 R-454B,Vantel,Condenser,3.0,13.0,R-454B,1700.8,1182.89,2015-01-01
+VAN-CO030130H,equipment,Condenser 3.0 ton SEER2 13.0 R-410A,Vantel,Condenser,3.0,13.0,R-410A,1685.99,1120.01,2015-01-01
+VAN-CO030143A,equipment,Condenser 3.0 ton SEER2 14.3 R-454B,Vantel,Condenser,3.0,14.3,R-454B,1969.24,1368.67,2023-01-01
+VAN-CO030143H,equipment,Condenser 3.0 ton SEER2 14.3 R-410A,Vantel,Condenser,3.0,14.3,R-410A,1681.43,1134.55,2023-01-01
+VAN-CO030152A,equipment,Condenser 3.0 ton SEER2 15.2 R-454B,Vantel,Condenser,3.0,15.2,R-454B,2021.16,1364.34,
+VAN-CO030152H,equipment,Condenser 3.0 ton SEER2 15.2 R-410A,Vantel,Condenser,3.0,15.2,R-410A,1838.13,1253.27,2025-01-01
+VAN-CO030165A,equipment,Condenser 3.0 ton SEER2 16.5 R-454B,Vantel,Condenser,3.0,16.5,R-454B,2086.41,1466.74,
+VAN-CO030165H,equipment,Condenser 3.0 ton SEER2 16.5 R-410A,Vantel,Condenser,3.0,16.5,R-410A,1952.63,1311.34,2025-01-01
+VAN-CO035130A,equipment,Condenser 3.5 ton SEER2 13.0 R-454B,Vantel,Condenser,3.5,13.0,R-454B,1746.52,1249.46,2015-01-01
+VAN-CO035130H,equipment,Condenser 3.5 ton SEER2 13.0 R-410A,Vantel,Condenser,3.5,13.0,R-410A,1821.99,1273.93,2015-01-01
+VAN-CO035143A,equipment,Condenser 3.5 ton SEER2 14.3 R-454B,Vantel,Condenser,3.5,14.3,R-454B,2170.79,1473.3,2023-01-01
+VAN-CO035143H,equipment,Condenser 3.5 ton SEER2 14.3 R-410A,Vantel,Condenser,3.5,14.3,R-410A,1977.16,1351.1,2023-01-01
+VAN-CO035152A,equipment,Condenser 3.5 ton SEER2 15.2 R-454B,Vantel,Condenser,3.5,15.2,R-454B,2076.9,1442.01,
+VAN-CO035152H,equipment,Condenser 3.5 ton SEER2 15.2 R-410A,Vantel,Condenser,3.5,15.2,R-410A,1902.56,1335.66,2025-01-01
+VAN-CO035165A,equipment,Condenser 3.5 ton SEER2 16.5 R-454B,Vantel,Condenser,3.5,16.5,R-454B,2290.24,1543.67,
+VAN-CO035165H,equipment,Condenser 3.5 ton SEER2 16.5 R-410A,Vantel,Condenser,3.5,16.5,R-410A,2037.51,1403.18,2025-01-01
+VAN-CO040130A,equipment,Condenser 4.0 ton SEER2 13.0 R-454B,Vantel,Condenser,4.0,13.0,R-454B,2068.58,1418.07,2015-01-01
+VAN-CO040130H,equipment,Condenser 4.0 ton SEER2 13.0 R-410A,Vantel,Condenser,4.0,13.0,R-410A,1921.96,1345.86,2015-01-01
+VAN-CO040143A,equipment,Condenser 4.0 ton SEER2 14.3 R-454B,Vantel,Condenser,4.0,14.3,R-454B,2271.43,1537.6,2023-01-01
+VAN-CO040143H,equipment,Condenser 4.0 ton SEER2 14.3 R-410A,Vantel,Condenser,4.0,14.3,R-410A,1909.31,1331.48,2023-01-01
+VAN-CO040152A,equipment,Condenser 4.0 ton SEER2 15.2 R-454B,Vantel,Condenser,4.0,15.2,R-454B,2337.84,1623.43,
+VAN-CO040152H,equipment,Condenser 4.0 ton SEER2 15.2 R-410A,Vantel,Condenser,4.0,15.2,R-410A,2153.31,1499.63,2025-01-01
+VAN-CO040165A,equipment,Condenser 4.0 ton SEER2 16.5 R-454B,Vantel,Condenser,4.0,16.5,R-454B,2542.36,1744.36,
+VAN-CO040165H,equipment,Condenser 4.0 ton SEER2 16.5 R-410A,Vantel,Condenser,4.0,16.5,R-410A,2320.6,1613.19,2025-01-01
+VAN-GA020130X,equipment,Gas Furnace 2.0 ton SEER2 13.0,Vantel,Gas Furnace,2.0,13.0,,979.82,699.0,2015-01-01
+VAN-GA020143X,equipment,Gas Furnace 2.0 ton SEER2 14.3,Vantel,Gas Furnace,2.0,14.3,,1062.01,737.7,2023-01-01
+VAN-GA020152X,equipment,Gas Furnace 2.0 ton SEER2 15.2,Vantel,Gas Furnace,2.0,15.2,,1191.69,805.24,
+VAN-GA020165X,equipment,Gas Furnace 2.0 ton SEER2 16.5,Vantel,Gas Furnace,2.0,16.5,,1200.56,817.58,
+VAN-GA025130X,equipment,Gas Furnace 2.5 ton SEER2 13.0,Vantel,Gas Furnace,2.5,13.0,,1158.55,801.28,2015-01-01
+VAN-GA025143X,equipment,Gas Furnace 2.5 ton SEER2 14.3,Vantel,Gas Furnace,2.5,14.3,,1199.89,821.08,2023-01-01
+VAN-GA025152X,equipment,Gas Furnace 2.5 ton SEER2 15.2,Vantel,Gas Furnace,2.5,15.2,,1269.29,853.42,
+VAN-GA025165X,equipment,Gas Furnace 2.5 ton SEER2 16.5,Vantel,Gas Furnace,2.5,16.5,,1367.18,945.75,
+VAN-GA030130X,equipment,Gas Furnace 3.0 ton SEER2 13.0,Vantel,Gas Furnace,3.0,13.0,,1264.61,880.56,2015-01-01
+VAN-GA030143X,equipment,Gas Furnace 3.0 ton SEER2 14.3,Vantel,Gas Furnace,3.0,14.3,,1416.15,976.93,2023-01-01
+VAN-GA030152X,equipment,Gas Furnace 3.0 ton SEER2 15.2,Vantel,Gas Furnace,3.0,15.2,,1433.23,1012.13,
+VAN-GA030165X,equipment,Gas Furnace 3.0 ton SEER2 16.5,Vantel,Gas Furnace,3.0,16.5,,1577.82,1137.97,
+VAN-GA035130X,equipment,Gas Furnace 3.5 ton SEER2 13.0,Vantel,Gas Furnace,3.5,13.0,,1408.02,974.15,2015-01-01
+VAN-GA035143X,equipment,Gas Furnace 3.5 ton SEER2 14.3,Vantel,Gas Furnace,3.5,14.3,,1471.09,1025.29,2023-01-01
+VAN-GA035152X,equipment,Gas Furnace 3.5 ton SEER2 15.2,Vantel,Gas Furnace,3.5,15.2,,1528.17,1077.78,
+VAN-GA035165X,equipment,Gas Furnace 3.5 ton SEER2 16.5,Vantel,Gas Furnace,3.5,16.5,,1526.43,1086.32,
+VAN-GA040130X,equipment,Gas Furnace 4.0 ton SEER2 13.0,Vantel,Gas Furnace,4.0,13.0,,1394.21,987.46,2015-01-01
+VAN-GA040143X,equipment,Gas Furnace 4.0 ton SEER2 14.3,Vantel,Gas Furnace,4.0,14.3,,1644.41,1140.22,2023-01-01
+VAN-GA040152X,equipment,Gas Furnace 4.0 ton SEER2 15.2,Vantel,Gas Furnace,4.0,15.2,,1732.37,1209.82,
+VAN-GA040165X,equipment,Gas Furnace 4.0 ton SEER2 16.5,Vantel,Gas Furnace,4.0,16.5,,1848.15,1310.69,
+VAN-HE020130A,equipment,Heat Pump 2.0 ton SEER2 13.0 R-454B,Vantel,Heat Pump,2.0,13.0,R-454B,1804.97,1268.94,2015-01-01
+VAN-HE020130H,equipment,Heat Pump 2.0 ton SEER2 13.0 R-410A,Vantel,Heat Pump,2.0,13.0,R-410A,1615.95,1149.22,2015-01-01
+VAN-HE020143A,equipment,Heat Pump 2.0 ton SEER2 14.3 R-454B,Vantel,Heat Pump,2.0,14.3,R-454B,1959.67,1345.49,2023-01-01
+VAN-HE020143H,equipment,Heat Pump 2.0 ton SEER2 14.3 R-410A,Vantel,Heat Pump,2.0,14.3,R-410A,1775.65,1238.99,2023-01-01
+VAN-HE020152A,equipment,Heat Pump 2.0 ton SEER2 15.2 R-454B,Vantel,Heat Pump,2.0,15.2,R-454B,2018.04,1369.12,
+VAN-HE020152H,equipment,Heat Pump 2.0 ton SEER2 15.2 R-410A,Vantel,Heat Pump,2.0,15.2,R-410A,1944.71,1289.25,2025-01-01
+VAN-HE020165A,equipment,Heat Pump 2.0 ton SEER2 16.5 R-454B,Vantel,Heat Pump,2.0,16.5,R-454B,2145.74,1470.07,
+VAN-HE020165H,equipment,Heat Pump 2.0 ton SEER2 16.5 R-410A,Vantel,Heat Pump,2.0,16.5,R-410A,1912.5,1284.02,2025-01-01
+VAN-HE025130A,equipment,Heat Pump 2.5 ton SEER2 13.0 R-454B,Vantel,Heat Pump,2.5,13.0,R-454B,1952.35,1347.48,2015-01-01
+VAN-HE025130H,equipment,Heat Pump 2.5 ton SEER2 13.0 R-410A,Vantel,Heat Pump,2.5,13.0,R-410A,1795.52,1218.15,2015-01-01
+VAN-HE025143A,equipment,Heat Pump 2.5 ton SEER2 14.3 R-454B,Vantel,Heat Pump,2.5,14.3,R-454B,2096.49,1446.82,2023-01-01
+VAN-HE025143H,equipment,Heat Pump 2.5 ton SEER2 14.3 R-410A,Vantel,Heat Pump,2.5,14.3,R-410A,1993.35,1335.6,2023-01-01
+VAN-HE025152A,equipment,Heat Pump 2.5 ton SEER2 15.2 R-454B,Vantel,Heat Pump,2.5,15.2,R-454B,2264.51,1553.23,
+VAN-HE025152H,equipment,Heat Pump 2.5 ton SEER2 15.2 R-410A,Vantel,Heat Pump,2.5,15.2,R-410A,1951.27,1383.14,2025-01-01
+VAN-HE025165A,equipment,Heat Pump 2.5 ton SEER2 16.5 R-454B,Vantel,Heat Pump,2.5,16.5,R-454B,2422.44,1647.07,
+VAN-HE025165H,equipment,Heat Pump 2.5 ton SEER2 16.5 R-410A,Vantel,Heat Pump,2.5,16.5,R-410A,2118.93,1499.38,2025-01-01
+VAN-HE030130A,equipment,Heat Pump 3.0 ton SEER2 13.0 R-454B,Vantel,Heat Pump,3.0,13.0,R-454B,2248.47,1530.18,2015-01-01
+VAN-HE030130H,equipment,Heat Pump 3.0 ton SEER2 13.0 R-410A,Vantel,Heat Pump,3.0,13.0,R-410A,2132.42,1443.07,2015-01-01
+VAN-HE030143A,equipment,Heat Pump 3.0 ton SEER2 14.3 R-454B,Vantel,Heat Pump,3.0,14.3,R-454B,2340.25,1574.3,2023-01-01
+VAN-HE030143H,equipment,Heat Pump 3.0 ton SEER2 14.3 R-410A,Vantel,Heat Pump,3.0,14.3,R-410A,2156.02,1483.55,2023-01-01
+VAN-HE030152A,equipment,Heat Pump 3.0 ton SEER2 15.2 R-454B,Vantel,Heat Pump,3.0,15.2,R-454B,2281.18,1623.38,
+VAN-HE030152H,equipment,Heat Pump 3.0 ton SEER2 15.2 R-410A,Vantel,Heat Pump,3.0,15.2,R-410A,2311.23,1574.32,2025-01-01
+VAN-HE030165A,equipment,Heat Pump 3.0 ton SEER2 16.5 R-454B,Vantel,Heat Pump,3.0,16.5,R-454B,2628.43,1770.11,
+VAN-HE030165H,equipment,Heat Pump 3.0 ton SEER2 16.5 R-410A,Vantel,Heat Pump,3.0,16.5,R-410A,2555.5,1703.26,2025-01-01
+VAN-HE035130A,equipment,Heat Pump 3.5 ton SEER2 13.0 R-454B,Vantel,Heat Pump,3.5,13.0,R-454B,2308.48,1618.35,2015-01-01
+VAN-HE035130H,equipment,Heat Pump 3.5 ton SEER2 13.0 R-410A,Vantel,Heat Pump,3.5,13.0,R-410A,2265.6,1575.24,2015-01-01
+VAN-HE035143A,equipment,Heat Pump 3.5 ton SEER2 14.3 R-454B,Vantel,Heat Pump,3.5,14.3,R-454B,2536.86,1720.11,2023-01-01
+VAN-HE035143H,equipment,Heat Pump 3.5 ton SEER2 14.3 R-410A,Vantel,Heat Pump,3.5,14.3,R-410A,2400.21,1658.88,2023-01-01
+VAN-HE035152A,equipment,Heat Pump 3.5 ton SEER2 15.2 R-454B,Vantel,Heat Pump,3.5,15.2,R-454B,2895.02,1944.0,
+VAN-HE035152H,equipment,Heat Pump 3.5 ton SEER2 15.2 R-410A,Vantel,Heat Pump,3.5,15.2,R-410A,2325.76,1701.43,2025-01-01
+VAN-HE035165A,equipment,Heat Pump 3.5 ton SEER2 16.5 R-454B,Vantel,Heat Pump,3.5,16.5,R-454B,2777.2,1901.51,
+VAN-HE035165H,equipment,Heat Pump 3.5 ton SEER2 16.5 R-410A,Vantel,Heat Pump,3.5,16.5,R-410A,2729.24,1840.92,2025-01-01
+VAN-HE040130A,equipment,Heat Pump 4.0 ton SEER2 13.0 R-454B,Vantel,Heat Pump,4.0,13.0,R-454B,2604.42,1776.8,2015-01-01
+VAN-HE040130H,equipment,Heat Pump 4.0 ton SEER2 13.0 R-410A,Vantel,Heat Pump,4.0,13.0,R-410A,2342.26,1605.18,2015-01-01
+VAN-HE040143A,equipment,Heat Pump 4.0 ton SEER2 14.3 R-454B,Vantel,Heat Pump,4.0,14.3,R-454B,2988.01,2011.18,2023-01-01
+VAN-HE040143H,equipment,Heat Pump 4.0 ton SEER2 14.3 R-410A,Vantel,Heat Pump,4.0,14.3,R-410A,2725.08,1847.42,2023-01-01
+VAN-HE040152A,equipment,Heat Pump 4.0 ton SEER2 15.2 R-454B,Vantel,Heat Pump,4.0,15.2,R-454B,2956.07,2026.22,
+VAN-HE040152H,equipment,Heat Pump 4.0 ton SEER2 15.2 R-410A,Vantel,Heat Pump,4.0,15.2,R-410A,2608.05,1768.41,2025-01-01
+VAN-HE040165A,equipment,Heat Pump 4.0 ton SEER2 16.5 R-454B,Vantel,Heat Pump,4.0,16.5,R-454B,3212.75,2175.29,
+VAN-HE040165H,equipment,Heat Pump 4.0 ton SEER2 16.5 R-410A,Vantel,Heat Pump,4.0,16.5,R-410A,2715.79,1941.27,2025-01-01
