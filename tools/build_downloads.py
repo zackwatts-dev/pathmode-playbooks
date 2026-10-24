@@ -149,9 +149,8 @@ def for_your_ai(item: dict, page_md: str, instructions: str, readme: str, checke
     return "\n".join(parts)
 
 
-# Extra arguments a playbook's replay needs to reproduce the published run. The pricing assistant writes drafts
-# for a person by default; the published run bargained on its own, against simulated buyers only.
-REPLAY_ARGS = {"pricing-assistant": ["--autonomous"]}
+# Extra arguments a playbook's replay needs to reproduce the published run (none at present).
+REPLAY_ARGS: dict[str, list[str]] = {}
 # Where a playbook writes the dashboard to publish, when it isn't dashboard.html: account summary writes one per
 # person, and the published one is the general manager's, who may see everything.
 DASHBOARD = {"account-summary": "U1/dashboard.html"}
