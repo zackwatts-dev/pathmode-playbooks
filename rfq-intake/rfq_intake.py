@@ -929,8 +929,11 @@ def _item_blocks(text: str) -> list[tuple[int, int]]:
         if len(parts_in(ln)) != 1:
             continue
         j = i + 1
-        while j < len(lines) and lines[j].strip() and not parts_in(lines[j]) and (
-            _indent(lines[j]) > _indent(ln) or DETAIL_LINE.match(lines[j])
+        while (
+            j < len(lines)
+            and lines[j].strip()
+            and not parts_in(lines[j])
+            and (_indent(lines[j]) > _indent(ln) or DETAIL_LINE.match(lines[j]))
         ):
             j += 1
         if j > i + 1:
@@ -938,7 +941,9 @@ def _item_blocks(text: str) -> list[tuple[int, int]]:
     return out
 
 
-DETAIL_LINE = re.compile(r"^\s*[-*\u2022]?\s*(?:qty|quantity|rev(?:ision)?|due|need(?:ed)?|ship|deliver\w*|req)\b", re.I)
+DETAIL_LINE = re.compile(
+    r"^\s*[-*\u2022]?\s*(?:qty|quantity|rev(?:ision)?|due|need(?:ed)?|ship|deliver\w*|req)\b", re.I
+)
 
 
 def _indent(line: str) -> int:

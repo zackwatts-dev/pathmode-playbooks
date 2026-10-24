@@ -1482,8 +1482,12 @@ def test_a_part_number_only_in_the_subject_is_the_lines_part():
     line = L("", pq="", rq="rev A", qq="qty 10", nq="need 6/3")
     r = one(body, A(lines=[line]), subject="Pricing request LUT-11111", attachments=[])
     assert [ln.part for ln in r.lines] == ["LUT-11111"] and r.status == ri.INFO and r.missing == {"drawing"}, r.reasons
-    two = one(body.replace("bushing", "bushing (see also LUT-22222)"), A(lines=[line]),
-              subject="Pricing request LUT-11111", attachments=[])
+    two = one(
+        body.replace("bushing", "bushing (see also LUT-22222)"),
+        A(lines=[line]),
+        subject="Pricing request LUT-11111",
+        attachments=[],
+    )
     assert two.status == ri.REVIEW  # two parts named: which one is this line's isn't code's to guess
 
 
