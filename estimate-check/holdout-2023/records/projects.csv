@@ -1,0 +1,41 @@
+project_id,name,building_type,work_type,gross_sf,public_owner,county,delivery,bid_due,owner,general_contractor
+1293,Pellston Manufacturing: Cold Storage Building New Building,industrial,new construction,29519,0,Delaware,negotiated,2023-01-16,Pellston Manufacturing,Brightline Construction
+1289,Millbrook City Schools: High School Addition and Renovation,K-12 school,renovation,5612,1,Licking,hard bid,2023-01-19,Millbrook City Schools,Brightline Construction
+1300,Ashby College: Athletics Center New Building,higher-ed,new construction,12436,0,Franklin,hard bid,2023-01-23,Ashby College,Brightline Construction
+1319,Calvary Street Partners: Mixed-Use Building New Building,multifamily,new construction,5459,0,Franklin,hard bid,2023-02-07,Calvary Street Partners,Corwin Saye Construction
+1327,Calder Biosciences: Analytical Lab New Building,lab,new construction,2397,0,Fairfield,hard bid,2023-02-08,Calder Biosciences,Daventry Construction
+1316,Corrigan Logistics: Production Facility New Building,industrial,new construction,5848,0,Franklin,hard bid,2023-02-13,Corrigan Logistics,Ashlar Construction Managers
+1334,St. Brendan Medical Center: Surgery Center Renovation,healthcare,renovation,11957,0,Madison,hard bid,2023-02-28,St. Brendan Medical Center,Brightline Construction
+1342,Laurel Ridge Community College: Library New Building,higher-ed,new construction,9850,1,Pickaway,hard bid,2023-03-20,Laurel Ridge Community College,Brightline Construction
+1354,Fairway Plaza LLC: Restaurant Row Tenant Fit-Out,retail,renovation,20011,0,Franklin,hard bid,2023-03-20,Fairway Plaza LLC,Corwin Saye Construction
+1344,Sixty-Two West LLC: Municipal Building Core and Shell,office,new construction,13252,0,Delaware,hard bid,2023-03-21,Sixty-Two West LLC,Brightline Construction
+1364,Tolland Office Partners: Office Building Tenant Fit-Out,office,renovation,6174,0,Delaware,hard bid,2023-04-04,Tolland Office Partners,Vanterpool Builders
+1381,Cedar Run City Schools: Intermediate School New Building,K-12 school,new construction,5516,1,Knox,direct,2023-04-24,Cedar Run City Schools,Ashlar Construction Managers
+1389,Ardent Foods: Distribution Center New Building,industrial,new construction,7936,0,Licking,hard bid,2023-04-24,Ardent Foods,Brightline Construction
+1386,Tolland Office Partners: Municipal Building Core and Shell,office,new construction,4702,0,Union,hard bid,2023-05-05,Tolland Office Partners,Brightline Construction
+1406,Alder Creek Local Schools: High School New Building,K-12 school,new construction,1274,1,Franklin,hard bid,2023-05-08,Alder Creek Local Schools,Northgate Construction
+1418,Brookline Hills City Schools: Middle School New Building,K-12 school,new construction,16831,1,Franklin,hard bid,2023-05-15,Brookline Hills City Schools,Vanterpool Builders
+1417,Keswick Packaging: Distribution Center New Building,industrial,new construction,15435,0,Madison,hard bid,2023-05-17,Keswick Packaging,Rook Construction
+1446,Brightwater Commons LLC: Tenant Floors 3-5 Interior Renovation,office,renovation,3420,0,Franklin,hard bid,2023-06-21,Brightwater Commons LLC,Ashlar Construction Managers
+1453,Alder Creek City Schools: Elementary School New Building,K-12 school,new construction,27858,1,Franklin,hard bid,2023-06-22,Alder Creek City Schools,Stonefield Builders
+1468,Harbor Lane Retail: Retail Center New Store,retail,new construction,15963,0,Franklin,hard bid,2023-06-30,Harbor Lane Retail,Gilchrist & Hale
+1459,Union Mill Apartments LLC: Senior Living Renovation,multifamily,renovation,21249,0,Franklin,hard bid,2023-07-07,Union Mill Apartments LLC,Brightline Construction
+1466,Tolland Office Partners: Municipal Building Core and Shell,office,new construction,1573,0,Union,hard bid,2023-07-10,Tolland Office Partners,Moreland Construction
+1482,Sixty-Two West LLC: Office Building Interior Renovation,office,renovation,11519,0,Licking,hard bid,2023-07-24,Sixty-Two West LLC,Corwin Saye Construction
+1498,Alder Creek Local Schools: Elementary School Mechanical Upgrades,K-12 school,renovation,7076,1,Franklin,hard bid,2023-08-03,Alder Creek Local Schools,Ashlar Construction Managers
+1496,Union Mill Apartments LLC: Apartments New Building,multifamily,new construction,20011,0,Franklin,hard bid,2023-08-04,Union Mill Apartments LLC,Northgate Construction
+1534,Fairway Plaza LLC: Grocery Store New Store,retail,new construction,54617,0,Franklin,hard bid,2023-09-06,Fairway Plaza LLC,Brightline Construction
+1540,Sixty-Two West LLC: Tenant Floors 3-5 Interior Renovation,office,renovation,18201,0,Franklin,hard bid,2023-09-25,Sixty-Two West LLC,Marlow Construction Co.
+1548,Vantage Diagnostics: Research Laboratory Renovation,lab,renovation,4196,0,Franklin,negotiated,2023-09-27,Vantage Diagnostics,Ashlar Construction Managers
+1571,Calvary Street Partners: Mixed-Use Building Renovation,multifamily,renovation,100254,0,Pickaway,hard bid,2023-10-06,Calvary Street Partners,Brightline Construction
+1565,Calder Biosciences: Research Laboratory New Building,lab,new construction,3461,0,Union,hard bid,2023-10-09,Calder Biosciences,Gilchrist & Hale
+1581,Keswick Packaging: Cold Storage Building Office and Locker Renovation,industrial,renovation,80058,0,Franklin,hard bid,2023-10-30,Keswick Packaging,Corwin Saye Construction
+1591,Kettle Ridge City Schools: Elementary School New Building,K-12 school,new construction,3985,1,Delaware,hard bid,2023-10-30,Kettle Ridge City Schools,Brightline Construction
+1596,Tolland Office Partners: Office Building Interior Renovation,office,renovation,7797,0,Franklin,hard bid,2023-11-01,Tolland Office Partners,Gilchrist & Hale
+1610,Brookline Hills City Schools: Intermediate School New Building,K-12 school,new construction,9623,1,Delaware,hard bid,2023-11-20,Brookline Hills City Schools,Ridgeline Builders
+1614,Garland Institute of Technology: Science Hall Mechanical Renewal,higher-ed,renovation,7521,0,Franklin,hard bid,2023-11-20,Garland Institute of Technology,Marlow Construction Co.
+1625,Tolland Office Partners: Municipal Building Tenant Fit-Out,office,renovation,11936,0,Franklin,negotiated,2023-12-15,Tolland Office Partners,Brightline Construction
+1632,Kestrel Valley Health: Surgery Center New Building,healthcare,new construction,31879,0,Franklin,negotiated,2023-12-18,Kestrel Valley Health,Corwin Saye Construction
+1645,Granger Valley Local Schools: Middle School Addition and Renovation,K-12 school,renovation,29318,1,Franklin,hard bid,2023-12-18,Granger Valley Local Schools,Brightline Construction
+1650,Linden Row Residential: Senior Living New Building,multifamily,new construction,15103,0,Franklin,hard bid,2023-12-25,Linden Row Residential,Corwin Saye Construction
+1649,City of Millbrook: Headquarters Core and Shell,office,new construction,66120,1,Pickaway,negotiated,2023-12-27,City of Millbrook,Vanterpool Builders
