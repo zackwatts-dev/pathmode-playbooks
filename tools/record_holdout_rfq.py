@@ -1,7 +1,7 @@
 """Record a real model on RFQ intake's held-back months (holdout-2024-09/, holdout-2024-10/), the way tools/record.py
 records the sample. The thresholds in release-thresholds.json were set before these months were first run.
 
-    python tools/record_holdout_rfq.py 2024-09 [--keep]     # through the claude command line (Claude Sonnet 5.5)
+    python tools/record_holdout_rfq.py 2024-09 [--keep] [--parallel]   # Claude Sonnet 5.5, via the claude CLI
 """
 
 from __future__ import annotations
@@ -38,6 +38,8 @@ def main() -> None:
     path = folder / "recorded-run.json"
     keep = json.loads(path.read_text())["answers"] if "--keep" in sys.argv and path.exists() else {}
     model = record.Recording(inner, ri.replay_key, keep)
+    if "--parallel" in sys.argv:  # eight calls at a time: the same calls, each a real one in the recording
+        record.prefetch(ri, model, 8, run=lambda m, out: month_run(folder, m, out))
     with tempfile.TemporaryDirectory() as out:
         month_run(folder, model, Path(out))
     data = {

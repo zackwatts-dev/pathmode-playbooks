@@ -90,14 +90,15 @@ class _Collect:
         raise llm.ModelError("collecting")
 
 
-def prefetch(module, model: Recording, n: int) -> None:
-    """Ask every call the sample run makes, n at a time, into the recording, as real calls. The run afterwards finds
-    them answered, and asks anything that only comes up after an answer (a retry) itself."""
+def prefetch(module, model: Recording, n: int, run=None) -> None:
+    """Ask every call the sample run makes (or `run(model, out)`, if given), n at a time, into the recording, as real
+    calls. The run afterwards finds them answered, and asks anything that only comes up after an answer (a retry)
+    itself."""
     from concurrent.futures import ThreadPoolExecutor
 
     collect = _Collect(model.key, model.keep)
     with tempfile.TemporaryDirectory() as out:
-        module.sample_run(collect, Path(out))
+        (run or module.sample_run)(collect, Path(out))
 
     def ask(item):
         k, (system, user, max_tokens) = item
