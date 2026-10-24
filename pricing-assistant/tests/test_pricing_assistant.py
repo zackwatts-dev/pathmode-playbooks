@@ -599,3 +599,18 @@ def test_the_offline_stand_in_answers_the_checker_by_agreeing():
     model = OfflineModel(P.offline)
     r = checked_read(model)
     assert model.calls[1][0] == P.CHECK_SYSTEM and r.lines and not r.to_person
+
+
+def test_a_size_or_rating_written_with_its_unit_is_the_same_value():
+    assert P._norm("tons", "3.5T") == P._norm("tons", "3.5 tons") == P._norm("tons", "3.5") == 3.5
+    assert P._norm("seer2", "15.2 SEER2") == 15.2
+    it = dict(item(), tons="2.5T", seer2="14.3 SEER2")
+    line, question, _ = P.check_item(it, REQUEST, catalog())
+    assert line and line.sku == "ASH-CO025143A", question
+
+
+def test_the_checker_is_paired_with_the_reading_by_order_not_by_its_wording():
+    reworded = json.loads(check_of(item(), IGN))
+    reworded["items"][0]["quote"] = "two Ashland condensers, 2.5 ton"
+    r = checked_read(Desk([reading(item(), IGN)], [json.dumps(reworded)]))
+    assert [ln.sku for ln in r.lines] == ["ASH-CO025143A", "IGN080023"] and not r.to_person, r.to_person
