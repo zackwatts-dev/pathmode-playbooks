@@ -1,12 +1,24 @@
 # Pricing assistant
 
-A price on every equipment quote. An AI reads each quote request (an email, or the notes from a call) and lists each item with the words that ask for it. Code checks every item against the catalog, works out the agreed price, and suggests the extra discount with the most expected margin, from a win model trained on the distributor's own quotes. When the customer replies, the AI says what kind of reply it is and reads any competitor price; code decides to match, hold or ask the sales manager. The account manager decides and sends. Nothing here changes a price in the ERP or sends anything.
+A price on every equipment quote. An AI reader reads each quote request (an email, or the notes from a call) and lists each item with the words that ask for it, and an AI checker checks the reading. Code matches every item to the catalog, works out the agreed price, and suggests the extra discount with the most expected margin, from a win model trained on the distributor's own quotes. When the customer replies, the AI says what kind of reply it is and reads any competitor price; code decides to match, hold or ask the sales manager. The account manager decides and sends. Nothing here changes a price in the ERP or sends anything.
 
 The full playbook, worked through at Hartwell Supply (a simulated twelve-branch HVAC/R distributor) with the design, the plan an AI wrote from it, and the answers to its questions: **https://pathmode.com/playbooks/pricing-assistant/**
 
 ## Where it stands (2026-10-24)
 
-**The page and the code differ on one part, for now.** The published page describes the solution in five parts: an AI reader, an AI checker (a second call that checks every item against the request, as in RFQ intake), IT integration, a win model, and a person who approves. This code has the reader, the integration, the win model and the person. In place of the AI checker it still uses plain code that re-reads the request's words to confirm each item (step 2 below). That is being replaced by the AI checker next, then scored on a new held-back year; the sample's dates are also to move to 2026, as RFQ intake's did. The results on the page are this code's.
+**Five parts, as the published page describes them:** an AI reader; an AI checker (a second call to the model, sent the request and the reader's items, that says what the request itself says for each item, whether it's clear, and what the reading missed); IT integration (plain code that checks every quoted phrase is in the request, matches each item to exactly one catalog product, and holds the price limits); a win model; and a person who approves. Code compares the reader and the checker line by line: a line they disagree on goes to the account manager with the reason, and an item missed holds the whole request.
+
+**The sample is 2025.** Its files carry every date one year later than the simulation's (pathmode-corpus, `simulations/hartwell/scripts/playbook_pricing.py`). Recorded with the reader and the checker (Claude Sonnet 5.5): 87 of 87 items, no wrong items, 6 of 6 needed questions and none unneeded, 25 of 25 replies, 1.09 points more margin. Every release threshold passes.
+
+**Held-back years.** Each was generated after the code froze, in wording no earlier year used, recorded once and scored once. The release thresholds were set before the first and never changed. The first five were scored on code that re-read the request's words itself (three failed, then two passed after fixes); they're development data now. The sixth is the first with the AI checker:
+
+| Held-back year | Code | Items found | Wrong items | Unneeded questions | Margin gained | Thresholds |
+|---|---|---|---|---|---|---|
+| 2019 | 5bfe02f | 85 of 88 | 0 | 0 | 0.96 points | **pass** |
+
+Its three stops were the checker doing its job: the reader didn't know that a "fan coil" is an air handler, the checker did, and that line went to the account manager. Scores are in each `holdout-*/score-at-<commit>.md`.
+
+**Tests removed with the old checks** (496b52e), because the behavior they tested is now the checker's: `test_a_bare_part_number_is_a_quote`, `test_a_detail_the_model_adds_that_isnt_in_the_quote_doesnt_count`, `test_a_line_the_reading_left_out_is_read_again_and_never_dropped`, `test_a_part_number_from_another_line_is_dropped_and_the_written_details_decide`, `test_a_quantity_is_never_the_number_of_a_tonnage`, `test_a_quantity_not_in_the_quote_rejects_the_item`, `test_a_quantity_on_the_items_own_line_counts_and_not_one_from_another_line`, `test_a_quantity_written_with_an_x_or_at_the_end_of_a_sentence_is_in_the_quote`, `test_a_tonnage_or_a_part_number_is_still_not_a_quantity`, `test_a_unit_word_the_code_doesnt_know_is_settled_by_the_details_or_asked`, `test_details_that_dont_fit_the_part_number_are_checked_as_a_second_item`, `test_the_makers_name_is_not_the_customers_word_for_the_unit`, `test_the_second_read_never_prices_an_item_twice`. `test_a_part_number_from_another_line_is_dropped_and_the_written_details_decide` was among them by mistake and came back unchanged; its rule is about identifiers, not wording.
 
 ## What it does
 
