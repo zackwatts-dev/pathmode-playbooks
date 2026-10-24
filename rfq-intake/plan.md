@@ -1,131 +1,146 @@
-<!-- Written by Claude Sonnet 5.5 from plan-prompt.md and design.md on 2026-10-23, unedited. The review of it is on the playbook page, Step 3. -->
+# Build plan: quote intake for Wendlow
 
-# Build plan: Wendlow quote desk
-
-Module names, commands and numeric defaults below are my proposals. They are marked as assumptions where the design doesn't say.
+Python 3, standard library only. All commands run from the repo root. Module and command names are proposals; the agent should follow them unless the code already says otherwise.
 
 ## 1. Ground rules for the agent
 
-- Python standard library only, run on a version you name (see Q8). Tests use `unittest`.
-- Work on branch `quote-desk-v1`, in small commits. Each module gets two commits: tests first (red), then implementation (green).
-- **The agent may not edit `tests/`, `fixtures/` or `answer-key.csv` without approval.** `tests/LOCK.sha256` holds their hashes. `tools/check_lock.py` fails the gate if they differ, and only a person updates the lock. If a test looks wrong, the agent stops and asks.
-- The Claude API is the only network call, and it lives in one module. Every test uses a fake client, so no test calls the AI.
+- Work on branch `quote-intake-v1`, in small commits (one module or one rule group each, with its tests). Never commit to main.
+- **Tests come first.** Write a module's tests, see them fail, then write the code.
+- **The agent may not edit, delete, skip, or loosen any test or `answer-key.csv` without written approval.** If a test seems wrong, stop and ask. This applies to tests marked ★ below and to all others.
+- ★ marks tests a person must review before the code they cover is written. Review them in one sitting, at step 2 of the build order.
+- Run the checks in this order and stop at the first failure:
+  1. `python3 -m unittest discover -s tests -v`
+  2. `python3 -m compileall -q src && python3 -W error -m quoteintake.lint` (stdlib-only lint: unused names, bare `except`, `eval`/`exec`/`shell=True`, imports outside the standard library)
+  3. The security review in section 5.
+  4. Only then, an AI code review.
+- No test may call the AI. Downstream code is tested with hand-written reader and checker outputs in `tests/fixtures/`.
 
 ## 2. Parts and interfaces
 
-Each part is a pure function over plain dataclasses, except `ingest`, `extract` and `run`, which touch files or the network.
+Each part is a pure function or a small class on plain dataclasses. Parts 1 to 8 do no network calls except part 2. A part never reaches into another's internals.
 
-| Part | In → Out | Rules it owns |
+| # | Part | In → Out |
 |---|---|---|
-| `ingest` | `.eml` → `Message(id, sender, subject, body, attachments[name, text])` or `Unreadable(reason)` | Extracts text from xlsx and csv (zip and XML) and from PDFs. Rejects oversize files, zip bombs and XML with a DOCTYPE. No readable text → needs a person. |
-| `records` | CSVs → typed tables | Fails loudly on a missing column. |
-| `extract` | `Message` → `Extraction` or `Unusable` | Sends the email text and attachment text only, with no tools. Asks for kind, customer, and per-line part, revision, quantity, delivery date and due date. Each value comes with its exact quote and its source (email or attachment name). |
-| `verify` | `Extraction`, `Message` → `Verified` or a list of failures | Each quote appears verbatim in its named source, and each value appears in its quote. Detects instructions aimed at an AI. |
-| `match` | `Verified`, `records` → customer, part (known or new), open request | Exact matches only. Zero or several candidates → ask a person, never guess. |
-| `triage` | all of the above → pile, reason, drafted question | Ready / needs info / needs a person / not a request, with routing. The question asks only for what is missing. |
-| `history` | part, records → brief, fast-track flag | Same revision, quoted within 3 years, with job history → fast-track. |
-| `odds` | customer, records → rate, low-odds flag | Win rate on new-part quotes over 3 years, shrunk toward the shop rate. |
-| `queue` | ready requests, estimator hours → order, expected finish, at-risk | Order: due date, then key account, then oldest. A missing due date means 6 working days. At-risk is only a flag. |
-| `report` | results → `dashboard.html` | Order: needs-a-person, at-risk, ready queue, then 5 random ready requests. The random pick is seedable. |
-| `erp_export` | results → `erp_import.csv` | Fixed columns, one row per line. |
-| `run` | everything → outputs, log line | Cap of 200 emails to the AI per run. Overflow is listed and picked up next run. Nothing is dropped silently. |
-| `tools/score` | run output, `answer-key.csv` → weighted error report | Reports the three error types separately. |
+| 1 | `intake` | `.eml` path → `Message` (id, sender, date, subject, body text, attachments with extracted text or `unreadable`) |
+| 2 | `ai` | `Message` → `ReaderResult`, then `Message + ReaderResult` → `CheckerResult`. One `AIClient` interface; the real one uses `urllib` to the Anthropic API, the fake one is for tests. Sends the email text and nothing else, with no tools. |
+| 3 | `compare` | `ReaderResult + CheckerResult` → `agree` or a list of reasons |
+| 4 | `match` | `ReaderResult + records` → `Matches` (customer, per-part status, open request, drawing present, date checks, quote-phrase check, injection hit) |
+| 5 | `classify` | `Message + all results` → one pile with reasons |
+| 6 | `enrich` | requests + records → history brief, fast-track flag, bid odds, low-odds flag |
+| 7 | `schedule` | ready requests + hours file → order, expected finish, at-risk flag |
+| 8 | `outputs` | everything → `dashboard.html`, `erp-import.csv`, one run-log line |
+| 9 | `run` | orchestration: the 200-email cap, "couldn't process" handling, write outputs |
 
-## 3. Business rules to pin down in tests
+## 3. Business rules (each one gets a test)
 
-- **Fail closed.** Any failed check, ambiguity or unusable AI answer goes to a person, and the reason is shown.
-- **Error cost.** Let-through-wrong costs most, then wrong destination, then stopped needlessly. `score` reports the three counts and a weighted total.
-- **Nothing priced or declined by the tool.** Piles and flags have no "decline" state. The only prices in the output are historical ones in the brief.
-- **Odds** (assumed): `(wins + k·shop_rate) / (n + k)`, with k and the "far below" cutoff set in config (Q4).
-- **At-risk** (assumed): simulate the queue in order against this week's hours and flag anything finishing after its due date.
+**Reading and checking**
+- R1. Email kind is one of: new request, chaser, revision, award or no-thanks, other.
+- R2. For a request, each part has part number, revision, quantity, requested delivery date. The quote due date is optional. Every value carries its exact source words.
+- R3. Every source phrase must appear in the email or its attachment text word for word, or the email goes to a person.
+- R4. The checker returns per part and value: what the email says, and clear or ambiguous. It also returns anything left out and any line aimed at an AI.
+- R5. If reader and checker disagree, or the checker flags ambiguity or an omission, the email goes to a person with the reason.
 
-## 4. Tests first
+**Matching (exact matches only; more than one candidate means ask a person)**
+- R6. The sender maps to exactly one customer, or the email goes to a person.
+- R7. Each part is classified as made before at this revision, known at another revision, or new. A part on file as something else goes to a person.
+- R8. A chaser or revision maps to exactly one open request, or goes to a person.
+- R9. Every new part has a drawing attached.
+- R10. Dates are not before the email's date and not more than a year after it.
 
-Order of work:
-1. Fixtures. Build a small `.eml` set by hand, one per rule below plus some from the answer key.
-2. Unit tests per part.
-3. An end-to-end test using the fake AI.
-4. `score` run against the full answer key.
+**Piles**
+- R11. Pile order of precedence: needs a person, then not a request, then needs info, then ready. Needs a person covers: unplaceable sender, part on file as something else, instructions aimed at an AI, unreadable attachment, unusable AI answer, no readable text, and all disagreements.
+- R12. Needs info means a quantity, revision or drawing is missing. It comes with a drafted question asking only for what is missing.
+- R13. Not a request is routed to a destination: chaser to the request holder, revision to its request, award to sales, pitch to nowhere.
 
-**A person must review before the agent builds on them:**
-- `answer-key.csv` and the fixture set. Check that the labels are right and that every rule has a fixture.
-- All `verify`, `match` and `triage` tests. These are the let-through-wrong guards.
-- The security tests in section 5.
-- The `score` weights and the acceptance thresholds.
-- The expected values for `queue`, `odds` and `history`. The agent can't be trusted to compute these independently.
+**Enrichment**
+- R14. A repeat part is one made or quoted before. Its history brief holds the last quote (date, quantity, unit price, won or lost), the revision then against now, and estimated against actual hours on recent jobs.
+- R15. Fast-track needs all of: same revision, quoted in the last 3 years, job history present.
+- R16. Bid odds are the customer's new-part win share over 3 years, pulled toward the shop's rate when there are few quotes. Low odds means far below the shop's rate. It is display only and never changes order or declines.
 
-## 5. Security: rule, enforcement, proof
+**Order and risk**
+- R17. Ready queue order is: stated due date soonest first, then key accounts, then oldest first. With no due date, use received date plus 6 working days.
+- R18. Expected finish comes from each request's estimated quoting time (more lines and weldments mean longer) against the estimators' hours this week. A request that would miss its due date is flagged at risk and nothing else happens.
 
-| Rule | Enforced in | Test |
+**Outputs**
+- R19. The dashboard has, in order: pile counts, needs-a-person list with reasons, at-risk list, ready queue, and 5 random ready requests for spot-checking.
+- R20. The ERP file has one row per line for ready and waiting-on-answer requests, in a fixed column layout.
+- R21. Run limit is 200 emails to the AI per run. The excess is listed and picked up next run. Nothing is silently dropped. Each run appends one log line: time, model, email count, count per pile.
+
+## 4. Acceptance tests
+
+**Tests first, in this order:**
+
+1. ★ **Answer-key scorer** (`tests/test_score.py`). Loads `answer-key.csv` and a results file, and counts three error types: let through but wrong (worst), stopped needlessly, sent to the wrong place. It is tested on small hand-made result sets, including a weights check that "let through but wrong" always outranks the others.
+2. ★ **Rule tests R1 to R21**, one or more per rule, from the fixtures. Include these edge cases:
+   - ambiguous date `4.3.2025`
+   - quantity that could belong to two parts
+   - a quote phrase that is paraphrased, not exact
+   - two customers that could match one sender
+   - a drawing missing for one of three parts
+   - a due date in the past and one 13 months out
+   - the cap at 201 emails
+3. ★ **Security tests** (section 5).
+4. Output tests: dashboard sections in order, 5 spot-checks drawn from ready only (fixed seed in tests), ERP column layout matches the agreed file.
+5. Plain tests for `intake` (eml parsing, spreadsheet text, unreadable attachment) and `schedule` (working-day arithmetic).
+
+**Answer-key run (live AI, costs money, a person starts it):** `python3 -m quoteintake.run --mailbox <dir> --records <dir> --hours <file> --out <dir> && python3 -m quoteintake.score answer-key.csv <out>/results.csv`. The gate for going live is in open question 4. Re-run it after any change, including a new model version.
+
+## 5. Security: rule, where enforced, proof
+
+| Rule | Enforced in | Test that proves it |
 |---|---|---|
-| Read-only to the mailbox | `ingest` only reads `mailbox/`. There is no M365, IMAP or SMTP code. | AST scan bans `smtplib`, `imaplib`, `http.client` outside `extract`, and file writes to the input dirs. End-to-end run on a read-only copy of `mailbox/` and `records/`; hashes unchanged afterward. |
-| Credentials never in code | `config.py` reads `ANTHROPIC_API_KEY` from the environment. If it's missing, the run stops. | Regex scan of the repo for key patterns. Fake key never appears in the log or output. |
-| AI sees the email only | `extract` builds the payload from `Message` alone. | Fake client captures the request. Seeded record names and part numbers are absent, and there is no `tools` field. |
-| AI answer counts only after code checks | Type system: `triage` accepts only `Verified`. | Fabricated quote, value not in quote, wrong source name, and malformed JSON all → needs a person. |
-| Email is untrusted | `verify` flags injection phrases. `report` escapes all email-derived text. | A fake AI that "obeys" an injected email still ends up in needs-a-person. A `<script>` payload in subject, sender, filename, part number and quote appears escaped in the HTML. |
-| CSV injection (added by me) | `erp_export` neutralizes cells starting with `= + - @`. | A part number `=cmd|...` is written safely. |
-| Hostile attachments (added by me) | `ingest` limits size, ratio and entity use. | Zip-bomb and DOCTYPE fixtures → needs a person, no crash. |
-| Stdlib only | Import allowlist via `sys.stdlib_module_names`. | The test fails on any other import. |
-| Never sends, moves, writes to the ERP, prices or declines | No such code. The only writes are to the output dir and the log. | Import ban plus a filesystem-write check on the end-to-end run. The pile enum has no decline. |
-| Output folder restricted | `run` creates it with mode `0750`. | Mode assertion. Group ownership is a deploy step (Q9). |
-| Log has counts, no email content | `run` writes one line: time, model, emails, per-pile counts. | The log contains no sender, subject or body from fixtures. |
-| 200 per run, nothing dropped | `run` | 250 fixtures → 200 sent, 50 listed and handled next run, 0 lost. |
+| Read-only mailbox; can't send, move or delete | Tool only reads `mailbox/` files; no mail protocol code exists | Lint bans `smtplib`, `imaplib`, `poplib`, and Graph/MSAL imports; hash the mailbox dir before and after a run: unchanged |
+| Never writes to the ERP | `outputs` writes only to `--out` and the log | Run with `records/` read-only and check that only `--out` and the log file changed |
+| Credentials from environment or secret store | `ai.client` | Lint scan for key-shaped strings; missing key gives a clear error; key value never appears in outputs or log (plant a sentinel key) |
+| AI gets the email and nothing else, no tools | `ai.client` request builder | Plant a sentinel customer name in `records/`; with the fake client, assert the sent payload never contains it and has no `tools` field |
+| AI answer counts only after checker agrees and code matches it | `compare`, `match`, `classify` | Reader-only valid answer with checker missing or disagreeing never reaches ready |
+| Email is untrusted; instruction aimed at an AI goes to a person | Three detectors: reader, checker, code (`match`) | Three tests, each with only one detector firing, each ending in needs a person |
+| Email text is escaped on the dashboard and in the import file | `outputs` | Fixtures with `<script>`, `"><img onerror=…>`, and cells starting `=`, `+`, `-`, `@`; assert escaped HTML and neutralised CSV cells |
+| Standard library only | Lint | Every import is in `sys.stdlib_module_names` or is a local module |
+| Never sends, changes mail, writes to the ERP, prices, or declines | `classify`, `outputs` | No "declined" pile exists; no price field in either output; at-risk and low-odds do not change a request's pile |
+| Output readable only by estimating and sales | `run` creates the dir `0750` and files `0640`; the group itself is set by the server | Mode test on created files; the group itself is an ops task |
+| AI calls go only to the Anthropic API | `ai.client` | Test that the URL is allow-listed and that any other host is refused |
+| Log holds counts only | `run` | Log line contains no sender, subject or body text |
+| Hostile attachments (proposed addition) | `intake` | Size and decompression caps on spreadsheets and PDFs; an oversized or malformed file becomes `unreadable`, which goes to a person |
 
-## 6. Deterministic gate, before any AI review
+The security review (step 3 of the checks) is a person-or-agent read of `ai/`, `intake/` and `outputs/` against this table, with findings listed before any AI code review runs.
 
-Run this in order. All steps must pass before a commit is proposed for review:
+## 6. Build order (one commit group each)
 
-```
-python tools/check_lock.py                          # tests/answer key unchanged
-python -m compileall -q src tools                   # syntax
-python -m unittest discover -s tests -v             # all tests, fake AI
-python tools/score.py --key answer-key.csv --fake-ai fixtures/ai_answers/   # replay scoring
-```
+1. Skeleton, dataclasses, lint tool, import check, fixtures folder.
+2. **Stop: a person reviews all ★ tests.**
+3. `intake`.
+4. `match` (R3, R6 to R10, code injection check).
+5. `compare` and `classify` (R5, R11 to R13).
+6. `enrich` (R14 to R16).
+7. `schedule` (R17, R18).
+8. `ai` (fake client first, then the real one with the security tests).
+9. `outputs` (R19, R20).
+10. `run` (R21, cap, logging, permissions).
+11. Security review, then AI code review, then a person starts the answer-key run.
 
-Add a linter if Q8 allows one. Without one, the import-allowlist test and `compileall -W error` are the lint.
+## 7. Out of scope
 
-Then run `/security-review` on the branch, followed by a person's review. A real-model run of the answer key happens once at the end, outside the gate. It is required again after any change, including a model version bump.
+- Sending email, moving or deleting mail, or reading the live M365 mailbox (the copy step does that).
+- Writing to the ERP, the nightly ERP export, and maintaining the hours file.
+- Pricing, declining, and any action on at-risk or low-odds flags.
+- Scheduling and server setup (the 15-minute timer), and the folder's group permissions.
+- OCR of scanned documents.
+- The queue-replay evaluation (judging order, at-risk, fast-track and odds together). Build it after v1 if you want it.
 
-**Acceptance:** zero let-through-wrong on the answer key, stopped-needlessly at or below a threshold you set (Q6), and all tests green.
+## 8. Open questions before building
 
-## 7. Build order (each step is a test commit and an implementation commit)
-
-1. Scaffold, config, lock and gate scripts.
-2. `records`, `ingest`.
-3. `verify` (the core safety check).
-4. `extract` with a fake client, then `match`.
-5. `triage`.
-6. `history`, `odds`.
-7. `queue`.
-8. `report`, `erp_export`.
-9. `run`: cap, log, state across runs.
-10. `score`, then the full answer-key run with the real model.
-
-## 8. Out of scope
-
-- Sending email, including the drafted questions.
-- Writing to the ERP.
-- Pricing, declining, and any M365 integration. The copy step is separate.
-- The mailbox copy's retention.
-- The 15-minute scheduler and server setup, beyond a runnable `python -m quotedesk.run`.
-- The estimator-queue replay's data pipeline, beyond what `score` needs.
-- Learning or tuning from outcomes.
-
-## 9. Open questions to answer before building
-
-1. **PDFs.** The standard library can't reliably read PDFs. Options: (a) a minimal text-layer reader, with everything else going to a person; (b) allow one external tool such as `pdftotext` as a separate step; (c) pass the PDF to Claude, which breaks the "quote appears in the attachment" check. I recommend (b). How many answer-key emails depend on PDFs?
-2. **Answer key.** What are its columns? Does it include expected extractions or only the final pile? Can I hold out about 20% unseen until the end, to catch overfitting?
-3. **Email kind.** I assumed the AI classifies and code verifies it (a chaser must match an open request). Correct?
-4. **Numbers.**
-   - Shrinkage strength and the "far below" cutoff for bid odds.
-   - Which tier values count as key accounts.
-   - The holiday calendar for working days.
-   - How quoting time is calculated, and where "weldment" comes from.
-   - The format of the estimator-hours file.
-5. **ERP file.** What are the exact columns? Does "waiting on its answer" mean needs-info only?
-6. **Thresholds.** What stopped-needlessly rate is acceptable? What does the replay need to show to count as success?
-7. **Data to Anthropic.** Is sending customer emails and attachment text to the API approved? Which model ID? What happens if the API is down: retry, or leave the email for the next run?
-8. **Tooling.** Which Python version? Are dev-only tools (ruff, bandit) allowed, given "no third-party packages" is meant for runtime?
-9. **Mailbox access.** The tool never touches M365, so who confirms the copy step uses a read-only app permission? Who sets the output folder's group?
-10. **State.** How should it remember which emails it has handled across 15-minute runs? I'd use a small JSON file in the output dir. Is that fine? Also, what should happen when the same email is re-sent or edited?
-11. **Drafted questions.** Is a fixed template acceptable, or should the AI write them? An AI-written draft would need its own check that it asks only for the missing fields.
+1. **State between runs.** The tool runs every 15 minutes. How does it know which emails are new, and is the dashboard rebuilt from all open requests or only that run's emails? I'd suggest a small state file of processed email IDs and results, which means a rule for when old items drop off.
+2. **File layouts.** I need the `answer-key.csv` columns and labels, the CSV schemas in `records/`, the hours-file format, and the ERP import column layout. Without real samples the agent will invent them.
+3. **Missing numbers.** What are the values for:
+   - how far "pulled toward the shop's rate" goes (a minimum quote count would do);
+   - "far below" for low odds;
+   - quoting-time per line and per weldment;
+   - who counts as a key account (is it a tier value?);
+   - working-day holidays.
+4. **Go-live bar.** Is it zero "let through but wrong" on the answer key, or a rate? And what limits apply to the other two error types? I suggest zero for the worst error.
+5. **The 200 cap.** Is it 200 emails (up to 400 calls)? Does a non-request email get only the reader call, or both?
+6. **Lint and PDFs.** Standard library only rules out ruff and bandit, so the plan uses a homemade lint. Is that acceptable, or may dev-only tools be installed? Also, stdlib PDF text extraction handles only simple text PDFs; scanned or complex PDFs will go to a person. Is that fine for the roughly 20% of requests with a buyer form?
+7. **Injection patterns.** The code-side detector is a pattern list and will miss clever phrasing. Is that acceptable given the other two detectors, or do you want a stricter rule such as sending any email with attachments containing imperative phrases to a person?
+8. **CSV neutralising.** Part numbers can legitimately start with `-` or `+`. Should the import file prefix a quote character to such cells, or reject the row to a person?
+9. **Waiting-on-answer.** Does the import file include "needs info" requests before the buyer replies, and what happens to their rows when the answer arrives (new rows, or updates)?
