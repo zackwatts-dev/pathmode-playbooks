@@ -629,8 +629,9 @@ def test_a_part_number_whose_catalog_entry_contradicts_the_details_beside_it_goe
 
 def test_an_item_that_cant_be_checked_sends_the_request_to_a_person():
     """A draft never goes out quietly missing an item: one that fails a check sends the whole request to a person."""
-    bad = dict(item(), part_number="ZZZ999999")  # not in the catalog
-    r = checked_read(Desk([reading(bad, IGN)]))
+    text = REQUEST.replace("- IGN080023 qty 3", "- IGN080023 qty 3\n- ZZZ999999 qty 1")
+    bad = {"quote": "ZZZ999999 qty 1", "qty": 1, "part_number": "ZZZ999999"}  # not in the catalog
+    r = checked_read(Desk([reading(item(), IGN, bad)]), text)
     assert r.to_person and any("ZZZ999999" in x for x in r.to_person), r.to_person
 
 
