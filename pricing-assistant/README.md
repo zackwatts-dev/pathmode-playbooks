@@ -4,6 +4,10 @@ A price on every equipment quote. An AI reads each quote request (an email, or t
 
 The full playbook, worked through at Hartwell Supply (a simulated twelve-branch HVAC/R distributor) with the design, the plan an AI wrote from it, and the answers to its questions: **https://pathmode.com/playbooks/pricing-assistant/**
 
+## Where it stands (2026-10-24)
+
+**The page and the code differ on one part, for now.** The published page describes the solution in five parts: an AI reader, an AI checker (a second call that checks every item against the request, as in RFQ intake), IT integration, a win model, and a person who approves. This code has the reader, the integration, the win model and the person. In place of the AI checker it still uses plain code that re-reads the request's words to confirm each item (step 2 below). That is being replaced by the AI checker next, then scored on a new held-back year; the sample's dates are also to move to 2026, as RFQ intake's did. The results on the page are this code's.
+
 ## What it does
 
 For each new quote request:
