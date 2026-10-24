@@ -1,0 +1,31 @@
+From: Terry Stoltz <tstoltz@fiskagequipment.example>
+To: quotes@wendlow.example
+Subject: Request for quote - FIS-27878
+Date: Fri, 24 Apr 2026 13:39:00 -0400
+Message-ID: <202604241339.0058@fiskagequipment.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="==wendlow-0058=="
+
+--==wendlow-0058==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi,
+
+Attached is our formal RFQ. We need pricing by EOD Fri 5/1.
+
+Thanks
+Terry Stoltz
+Fisk Ag Equipment Inc.
+
+--==wendlow-0058==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Fisk_RFQ_20131_parts.csv"
+MIME-Version: 1.0
+
+Tm8uLEl0ZW0gQ29kZSxSZXYsSXRlbSBOYW1lLE9yZGVyIFF0eSxEdWUKMSxGSVMtMjc4NzgsQSxt
+b3VudGluZyBwbGF0ZSwzNiw4IEp1bmUgMjAyNgoyLEZJUy04MDUwNyxBLGNsaXAgYW5nbGUsMTEs
+MTUgTWF5IDIwMjYK
+
+--==wendlow-0058==--
