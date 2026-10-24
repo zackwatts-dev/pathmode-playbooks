@@ -34,7 +34,7 @@ import math
 import re
 import sys
 import threading
-from collections import defaultdict
+from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import date, timedelta
@@ -101,7 +101,7 @@ NUMBER_WORDS = {
     "nine": 9,
     "ten": 10,
 }
-ADDRESSEE = r"(\bAI\b|artificial intelligence|automated (quoting |pricing |rebate )?(system|tool|assistant)s?|language model|LLM|assistant reading|chatbot|quoting system|quoting software)"
+ADDRESSEE = r"(\bAI\b|\bassistants?\b|\bbots?\b|artificial intelligence|automated (quoting |pricing |rebate )?(system|tool|assistant)s?|language model|LLM|assistant reading|chatbot|quoting system|quoting software)"
 DIRECTIVE = r"(apply|approve|skip|ignore|disregard|do not|don't|treat|give|set|use|override|waive)"
 INSTRUCTION = re.compile(ADDRESSEE + r".{0,200}?" + DIRECTIVE, re.I | re.S)
 REPLY_KINDS = ("accepted", "too_high", "competitor_price", "not_now", "job_off", "other")
@@ -142,8 +142,15 @@ def num(text) -> float | None:
 class Catalog:
     def __init__(self, products: list[dict], markdowns: list[dict]):
         self.products = {p["sku"]: p for p in products}
-        self.markdown = {(m["sku"], m["month"]): float(m["markdown_pct"]) for m in markdowns}
+        # The price file's markdowns: by branch and day (what the ERP shows when the quote is written), or by month.
+        self.markdown = {
+            (m["sku"], m["branch"], m["date"]) if m.get("date") else (m["sku"], m["month"]): float(m["markdown_pct"])
+            for m in markdowns
+        }
         self.equipment = [p for p in products if p["category"] == "equipment"]
+
+    def markdown_on(self, sku: str, branch: str, day: str) -> float:
+        return self.markdown.get((sku, branch, day), self.markdown.get((sku, day[:7]), 0.0))
 
     def cost(self, sku: str) -> float:
         return float(self.products[sku]["unit_cost"])
@@ -168,7 +175,7 @@ class Catalog:
 def agreed_price(cat: Catalog, sku: str, customer: dict, day: str) -> float:
     """List, less the customer's agreed discount, less any markdown in effect that month."""
     p = cat.products[sku]
-    md = cat.markdown.get((sku, day[:7]), 0.0)
+    md = cat.markdown_on(sku, customer.get("branch", ""), day)
     return float(p["list_price"]) * (1 - float(customer["discount_pct"])) * (1 - md)
 
 
@@ -180,15 +187,16 @@ class Line:
     quote: str
 
 
+QTY = re.compile(r"(?<![\w.])x?(\d+)x?(?![\w]|\.\d|\s*-?\s*(?:tons?|t)\b)", re.I)
+TONNAGE_AT = re.compile(r"(?<![\w.])(\d+(?:\.\d+)?)\s*-?\s*(?:tons?|t)\b", re.I)
+
+
 def qty_in_quote(qty: int, quote: str) -> bool:
     """The quantity is a whole number in the quote, alone or written "x2", "2x" or at the end of a sentence; or a
-    number word. Never part of "2.5 ton", a SEER2 rating or a part number."""
+    number word. Never a tonnage ("3 ton", "2.5T"), a SEER2 rating or part of a part number."""
     low = re.sub(r"seer2?\s*\(?\d+(\.\d+)?", " ", quote.lower())
-    for tok in re.findall(r"[a-z0-9./-]+", low):
-        tok = tok.strip(".,;:)(")
-        m = re.fullmatch(r"x?(\d+)x?", tok)
-        if m and int(m.group(1)) == qty:
-            return True
+    if any(int(m.group(1)) == qty for m in QTY.finditer(low)):
+        return True
     return any(NUMBER_WORDS.get(w) == qty for w in re.findall(r"[a-z]+", low))
 
 
@@ -200,15 +208,25 @@ def written(value: str, quote: str) -> bool:
 
 
 def number_written(value, quote: str) -> float | None:
-    """A tonnage or SEER2 the model gave, if that number is in the quote ("3", "3.0", "3T" and "3 ton" are all 3)."""
+    """A SEER2 the model gave, if that number is in the quote and isn't a tonnage."""
     m = re.search(r"\d+(?:\.\d+)?", str(value or ""))
     if not m:
         return None
     v = float(m.group())
-    for t in re.findall(r"(?<![\w.])(\d+(?:\.\d+)?)", quote.replace("T ", " ").replace("T,", ",")):
-        if float(t) == v:
+    tonnages = {float(t) for t in TONNAGE_AT.findall(quote)}
+    for t in re.findall(r"(?<![\w.])(\d+(?:\.\d+)?)", quote):
+        if float(t) == v and v not in tonnages:
             return v
     return None
+
+
+def tonnage_written(value, quote: str) -> float | None:
+    """A tonnage the model gave, if the quote writes that number as a tonnage ("3 ton", "3T", "3-ton")."""
+    m = re.search(r"\d+(?:\.\d+)?", str(value or ""))
+    if not m:
+        return None
+    v = float(m.group())
+    return v if any(float(t) == v for t in TONNAGE_AT.findall(quote)) else None
 
 
 def own_segment(quote: str, text: str) -> str:
@@ -252,7 +270,13 @@ def match_details(it: dict, quote: str, cat: Catalog) -> tuple[dict | None, str 
     named = [k for k, words in TYPES.items() if any(w in low for w in words)]
     tw = str(it.get("type_words") or "").strip()
     cited = ""
-    if tw and not re.search(r"\d", tw) and written(tw, quote):  # the AI's kind, backed by the customer's words
+    makers = {p["maker"].split()[0].lower() for p in cat.equipment}
+    if (
+        tw
+        and not re.search(r"\d|seer|\bton|\bR-?4", tw, re.I)
+        and not any(w in makers for w in re.findall(r"[a-z]+", tw.lower()))
+        and written(tw, quote)
+    ):  # the AI's kind, backed by the customer's words for the unit (not a maker, a size or a rating)
         cited = CANONICAL.get(str(it.get("type") or "").strip().lower(), "")
     if len(named) == 1:
         kind = named[0]
@@ -262,10 +286,12 @@ def match_details(it: dict, quote: str, cat: Catalog) -> tuple[dict | None, str 
         kind = cited
     maker = str(it.get("maker") or "").split()[0] if it.get("maker") else ""
     maker = maker if written(maker, quote) else ""
-    tons = number_written(it.get("tons"), re.sub(r"(\d)\s*[tT]\b", r"\1", quote))
+    tons = tonnage_written(it.get("tons"), quote)
+    if tons is None and len(set(TONNAGE_AT.findall(quote))) == 1:  # the words say the size, whatever the AI gave
+        tons = float(TONNAGE_AT.findall(quote)[0])
     seer = number_written(it.get("seer2"), quote)
     ref = ref_code(it.get("refrigerant") or "")
-    ref = ref if ref and ref_code(quote) == ref else ""
+    ref = ref_code(quote) or ""  # the refrigerant the words name, if they name one
     if not kind and not (maker and tons):
         return None, f'On "{quote}": what kind of unit is it? A model number would settle it.'
     found = cat.match(maker, kind, tons, seer, ref)  # with no known word for the unit, the written details decide
@@ -433,10 +459,13 @@ def read_request(model, data: Data, req: dict, budget: Budget) -> Reading:
         return r
     handled: list[str] = []
 
-    def take(items) -> None:
+    def take(items, again: bool = False) -> None:
         for it in items:
             if not isinstance(it, dict):
                 continue
+            q = normalize(str(it.get("quote") or ""))
+            if again and any(q and (q in normalize(h) or normalize(h) in q) for h in handled):
+                continue  # read the first time already
             lines, questions, rejected = check_items(it, text, data.catalog)
             r.lines += lines
             r.questions += questions
@@ -455,7 +484,7 @@ def read_request(model, data: Data, req: dict, budget: Budget) -> Reading:
         )
         try:
             more = parse_json(model.complete(READ_SYSTEM, again, max_tokens=1500))
-            take(more.get("items") or [] if isinstance(more, dict) else [])
+            take(more.get("items") or [] if isinstance(more, dict) else [], again=True)
         except (BadAnswer, llm.ModelError):
             pass
         left = uncovered(text, handled, data.catalog)
@@ -655,16 +684,22 @@ class Decision:
 
 
 def respond(
-    kind: str, amount: float | None, lines: list[Priced], curve: dict[float, float], quoted_extra: float
+    kind: str,
+    amount: float | None,
+    lines: list[Priced],
+    curve: dict[float, float],
+    quoted_extra: float,
+    quoted_total: float | None = None,
 ) -> Decision:
+    """quoted_total is the price the customer was actually quoted, when it's known; the answer starts from it."""
     A, Ax, K = totals(lines)
-    now = price_at(lines, quoted_extra)
+    now = quoted_total if quoted_total is not None else price_at(lines, quoted_extra)
     if kind != "competitor_price" or not amount:
         return Decision("no change", quoted_extra, "no competitor price to answer", now)
     if not Ax:
         return Decision("hold", quoted_extra, "every line is on clearance: the price is final", now)
     need = (A - amount) / Ax
-    if need <= quoted_extra + 1e-9:
+    if amount >= now - 0.005:
         return Decision("hold", quoted_extra, "our quote is already at or under their price", now)
     if need > MAX_EXTRA + 1e-9 or need > floor_limit(lines) + 1e-9:
         return Decision(
@@ -673,8 +708,8 @@ def respond(
             f"matching needs {pct(need)} extra, past the {pct(MAX_EXTRA)} limit or the cost floor",
             now,
         )
-    hold = at(curve, whole(lines, quoted_extra)) * (now - K)
-    match = at(curve, whole(lines, need)) * (amount - K)
+    hold = at(curve, 1 - now / A) * (now - K)
+    match = at(curve, 1 - amount / A) * (amount - K)
     if match <= hold:
         return Decision(
             "hold", quoted_extra, f"matching at {money(amount)} earns less expected margin than holding", now
@@ -837,16 +872,12 @@ def draft_request(model, data: Data, models: Models, req: dict, budget: Budget) 
                 float(data.catalog.products[ln.sku]["list_price"]),
                 agreed_price(data.catalog, ln.sku, cust, r.received),
                 data.catalog.cost(ln.sku),
-                (ln.sku, r.received[:7]) in data.catalog.markdown,
+                data.catalog.markdown_on(ln.sku, cust["branch"], r.received) > 0,
             )
         )
     A = sum(p.qty * p.agreed for p in d.priced)
     L = sum(p.qty * p.list_price for p in d.priced)
-    md = (
-        sum(p.qty * p.list_price for p in d.priced if data.catalog.markdown.get((p.sku, r.received[:7]))) / L
-        if L
-        else 0.0
-    )
+    md = sum(p.qty * p.list_price for p in d.priced if p.marked) / L if L else 0.0
     wm = models.for_day(r.received)
     ctx = Context(cust["customer_id"], cust["trade"], data.large(cust["customer_id"], r.received), A, md)
     d.suggestion = suggest(d.priced, wm.curve(ctx))
@@ -855,7 +886,7 @@ def draft_request(model, data: Data, models: Models, req: dict, budget: Budget) 
         for p in models.past
         if p.customer_id == cust["customer_id"]
         and about_price(p)
-        and p.date < r.received
+        and p.date < (date.fromisoformat(r.received) - timedelta(days=CLOSED_AFTER)).isoformat()
         and p.date >= f"{int(r.received[:4]) - HISTORY_YEARS}{r.received[4:]}"
     ]
     s = d.suggestion
@@ -913,7 +944,14 @@ def answer_reply(model, data: Data, models: Models, rp: dict, budget: Budget) ->
     if kind == "competitor_price" and a.amount is None:
         a.to_person.append("a competitor price that couldn't be checked against the reply's words")
     ctx, priced, extra = data.quote_context(rp["quote_id"])
-    a.decision = respond(kind, a.amount, priced, models.for_day(rp["received"]).curve(ctx), max(extra, 0.0))
+    a.decision = respond(
+        kind,
+        a.amount,
+        priced,
+        models.for_day(rp["received"]).curve(ctx),
+        max(extra, 0.0),
+        quoted_total=float(data.quotes[rp["quote_id"]]["total"]),
+    )
     if a.decision.action in ("match", "hold", "sales manager") and kind == "competitor_price" and budget.take():
         facts = {"decision": a.decision.action, "price": round(a.decision.price, 2), "their_price": a.amount}
         try:
@@ -1019,11 +1057,11 @@ def score(r: Run, data: Data, models: Models, key: Path) -> dict:
     for d in r.drafts:
         rid = d.reading.request_id
         k = reqs[rid]
-        got = {(ln.sku, ln.qty) for ln in d.reading.lines}
-        want = items[rid]
-        found += len(got & want)
-        wrong += len(got - want)
-        miss = len(want - got)
+        got = Counter((ln.sku, ln.qty) for ln in d.reading.lines)
+        want = Counter(items[rid])
+        found += sum((got & want).values())
+        wrong += sum((got - want).values())
+        miss = sum((want - got).values())
         if k["needs_question"] == "1":
             needed += 1
             if d.reading.questions:
