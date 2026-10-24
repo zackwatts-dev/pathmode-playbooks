@@ -289,3 +289,24 @@ def test_a_value_in_a_sentence_about_one_part_belongs_to_it():
     text = "We need 276 of LUT-21398 at revision A (bracket), delivered 20DEC24. We need 33 of LUT-24767 (plate), delivered 11DEC24."
     span = (text.index("20DEC24"), text.index("20DEC24") + 7)
     assert ri.owner(span, text, ri._clauses(text)) == ri.squash("LUT-21398")
+
+
+# --- Added after the desk's second held-back month failed (holdout-2024-12/score-at-caffb9e.md) -------------------
+def test_a_quantity_written_x116_and_a_revision_after_a_slash_count():
+    assert ri.quantity_in_quote(116, "STO-66875", "STO-66875/A bracket x116 by 12/20")
+    assert ri.revision_in_quote("A", "STO-66875", "STO-66875/A bracket x116")
+
+
+def test_a_year_first_date_is_read():
+    found, _ = ri.read_dates("needed by 2025/02/03", date(2024, 12, 4))
+    assert found == [date(2025, 2, 3)]
+
+
+@pytest.mark.parametrize("text", ["Bids accepted through 12/4.", "Final day for quotes: Fri 12/6."])
+def test_more_ways_of_saying_quotes_are_due(text):
+    assert ri.DUE_WORDS.search(text)
+
+
+def test_the_next_release_of_a_part_isnt_a_release_quantity_but_releases_of_50_are():
+    assert not ri.ANNUAL.search("Next release of LUT-11111 rev A is 24 pieces")
+    assert ri.ANNUAL.search("releases of 50 through the year")
