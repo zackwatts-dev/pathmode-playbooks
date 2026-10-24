@@ -1992,6 +1992,7 @@ def question_email(r: Result, signature: str = SIGNATURE) -> EmailMessage:
     # formataddr quotes the display name, so a name like '"x@evil.example, Pat"' stays one recipient.
     msg["To"] = email.utils.formataddr((one_line(r.mail.sender_name), one_line(r.mail.sender)))
     msg["Subject"] = "Re: " + one_line(r.mail.subject)
+    msg["X-Unsent"] = "1"  # opens in Outlook as a draft with a Send button, for a person to read and send
     if r.mail.message_id:
         msg["In-Reply-To"] = one_line(r.mail.message_id)
     first = r.mail.sender_name.split()[0] if r.mail.sender_name else "there"
