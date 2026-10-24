@@ -1,0 +1,4 @@
+file,kind,expected_pile,customer,part_numbers,revisions,quantities,requested_dates,quote_due,missing,note
+example-0501-0930.eml,new rfq,ready to quote,Example Industries,ABC-1001;ABC-1002,A;B,25;10,2026-06-15;2026-06-30,2026-05-08,,two parts in a table
+example-0501-1014.eml,new rfq,needs info,Example Industries,ABC-1003,,40,2026-06-20,,revision,no revision stated
+example-0501-1102.eml,chaser,not a request,Example Industries,ABC-0990,,,,,,asks about last week's request

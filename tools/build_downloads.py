@@ -10,7 +10,9 @@ For every playbook in the site's src/_data/playbooks.json, writes into the site:
 - .../<slug>-<company>-files.zip: the playbook's sample data (Summit unless the item sets `company`),
   for a worked example ("sample" set in the JSON);
 - .../<slug>-design.md and <slug>-plan.md: a worked example's design and the AI-written build plan, if any;
-- .../<slug>-dashboard.html: the worked example's dashboard, from its recorded run ("dashboard" set in the JSON).
+- .../<slug>-dashboard.html: the worked example's dashboard, from its recorded run ("dashboard" set in the JSON);
+- .../<slug>-<name>: each file in the playbook's templates/ folder, if it has one (a design template, an answer key
+  to fill in, a pass-mark sheet, a go-live checklist).
 
 The printable guide (PDF) is made afterwards by the site's scripts/print-playbooks.mjs, from the built page.
 """
@@ -208,6 +210,12 @@ def main() -> None:
                 (args.site / "src/_includes/playbooks" / f"{slug}-{doc}.md").write_text(src.read_text())
                 (out / f"{slug}-{doc}.md").write_text(src.read_text())
                 made += f", {doc}"
+        templates = folder / "templates"
+        if templates.is_dir():  # fill-in templates for the reader's own version: copied as they are
+            for src in sorted(templates.iterdir()):
+                if src.is_file():
+                    shutil.copyfile(src, out / f"{slug}-{src.name}")
+            made += ", templates"
         if item.get("dashboard"):
             dashboard(folder, slug, out / f"{slug}-dashboard.html")
             made += ", dashboard"
