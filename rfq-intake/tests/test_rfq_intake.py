@@ -1334,3 +1334,9 @@ def test_the_offline_stand_in_answers_the_checker_by_agreeing():
     reading = json.loads(GOOD)
     agreed = json.loads(ri.offline(ri.CHECK, ri.check_prompt(mail(ROW + SIGN), reading)))
     assert agreed["lines"][0]["quantity"] == {"says": 10, "clear": True} and agreed["missed"] == []
+
+
+def test_for_an_award_only_the_kind_is_compared_not_the_parts():
+    award = A(kind="award", lines=[L("LUT-11111")])
+    r = checked_one("Congrats, we're going with Wendlow on LUT-11111." + SIGN, award, check([], kind="award"))
+    assert not any("checker" in x for x in r.reasons), r.reasons
