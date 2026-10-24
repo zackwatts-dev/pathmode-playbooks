@@ -96,10 +96,6 @@ def prefetch(module, model: Recording, n: int, run=None) -> None:
     itself."""
     from concurrent.futures import ThreadPoolExecutor
 
-    collect = _Collect(model.key, model.keep)
-    with tempfile.TemporaryDirectory() as out:
-        (run or module.sample_run)(collect, Path(out))
-
     def ask(item):
         k, (system, user, max_tokens) = item
         try:
@@ -107,11 +103,18 @@ def prefetch(module, model: Recording, n: int, run=None) -> None:
         except Exception:  # noqa: BLE001 - left for the run afterwards to ask again
             return k, None
 
-    with ThreadPoolExecutor(n) as pool:
-        for k, answer in pool.map(ask, collect.asks.items()):
-            if answer is not None:
-                model.answers[k] = answer
-                model.calls += 1
+    # Calls that depend on an earlier answer (a checker that reads the reader's answer) show up on the next pass.
+    for _ in range(4):
+        collect = _Collect(model.key, {**model.keep, **model.answers})
+        with tempfile.TemporaryDirectory() as out:
+            (run or module.sample_run)(collect, Path(out))
+        if not collect.asks:
+            break
+        with ThreadPoolExecutor(n) as pool:
+            for k, answer in pool.map(ask, collect.asks.items()):
+                if answer is not None:
+                    model.answers[k] = answer
+                    model.calls += 1
 
 
 def load(slug: str):
