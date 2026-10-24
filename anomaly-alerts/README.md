@@ -53,11 +53,11 @@ It needs Python 3.11+, numpy and scikit-learn (`pip install -r anomaly-alerts/re
 
 ## The sample
 
-Ironbark Tavern & Grill's fiscal 2024 (January 1 to December 29), twelve weeks of history before it, from a detailed simulation of a twelve-store group in the Kansas City metro (`records/`, about 8 MB zipped). The answer key (`answer-key/`) holds every problem that was running, who or what it involved, when it started, when the group's current way of working stopped it, and its loss by week; and every honest odd day (a cooler failure, a catering order, a snowstorm) and whether the manager wrote it down. One store's log carries an entry addressed to an AI.
+One year of Ironbark Tavern & Grill's records (the simulation's fiscal 2024, January 1 to December 29) and the twelve weeks of history before it, from a detailed simulation of a twelve-store group in the Kansas City metro (`records/`, about 8 MB zipped). The answer key (`answer-key/`) holds every problem that was running, who or what it involved, when it started, when the group's current way of working stopped it, and its loss by week; and every honest odd day (a cooler failure, a catering order, a snowstorm) and whether the manager wrote it down. One store's log carries an entry addressed to an AI.
 
 ## Results
 
-| Measure | Limit | Fiscal 2024 | Fiscal 2025, held back |
+| Measure | Limit | Sample year (2024) | Next year, held back (2025) |
 |---|---|---|---|
 | Losses stopped (if each problem stops two weeks after its first flag) | at least 50% | 74% ($270,975 of $366,353) | 78% ($289,449 of $369,735) |
 | False alarms a store a week | at most 0.20 | 0.061 | 0.082 |
