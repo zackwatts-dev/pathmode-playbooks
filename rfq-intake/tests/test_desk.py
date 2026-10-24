@@ -37,8 +37,15 @@ def test_a_parts_list_attachment_is_read_and_its_words_count_as_evidence(tmp_pat
     m = ri.read_mail(
         eml(tmp_path, "Parts list attached, please quote.", [("Lutz_RFQ_1_parts.csv", "text/csv", csv_text)])
     )
-    assert "1,LUT-11111,A,bracket,25,2024-06-03" in m.source
-    assert "Lutz_RFQ_1_parts.csv" in m.attachments
+    row = next(ln for ln in m.source.splitlines() if "LUT-11111" in ln)
+    assert row.split() == ["1", "LUT-11111", "A", "bracket", "25", "2024-06-03"]
+    assert "Lutz_RFQ_1_parts.csv" in m.attachments and "Lutz_RFQ_1_parts.csv" in m.documents
+
+
+def test_a_parts_list_is_laid_out_in_columns_so_its_cells_are_checked_like_a_table():
+    t = ri.csv_as_table("Item,Part number,Rev,Qty\n1,LUT-11111,A,25\n")
+    head, row = t.splitlines()
+    assert head.index("Rev") == row.index("A") and head.index("Qty") == row.index("25")
 
 
 def test_a_drawing_named_for_a_part_is_listed_not_read(tmp_path):
