@@ -35,7 +35,10 @@ import hashlib
 import json
 import random
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 from bisect import bisect_left
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta
@@ -46,6 +49,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import desk  # noqa: E402
 from records import WELD_FAMILIES, Customer, Records, name_key, squash  # noqa: E402
 
 from common.evidence import quote_found, value_in_quote  # noqa: E402
@@ -260,6 +264,37 @@ def local_time(header: str) -> datetime | None:
     return when.replace(tzinfo=None)
 
 
+def pdf_text(data: bytes) -> str | None:
+    """A PDF's text layer, by pdftotext (poppler), or None if it has none or the tool isn't installed."""
+    tool = shutil.which("pdftotext")
+    if not tool:
+        return None
+    with tempfile.TemporaryDirectory() as tmp:
+        src = Path(tmp) / "a.pdf"
+        src.write_bytes(data)
+        try:
+            out = subprocess.run(
+                [tool, "-layout", str(src), "-"], capture_output=True, text=True, timeout=30, check=False
+            )
+        except (OSError, subprocess.SubprocessError):
+            return None
+    text = out.stdout if out.returncode == 0 else ""
+    return text if text.strip() else None
+
+
+def attachment_text(name: str, kind: str, part) -> str | None | bool:
+    """The text of the buyer's own document: a spreadsheet (CSV) or a PDF that isn't a drawing. False for a drawing
+    or anything else we don't read; None for a document we tried and couldn't read (it goes to a person)."""
+    low = name.lower()
+    if PART_PATTERN.search(name.upper()) and low.rsplit(".", 1)[-1] in ("pdf", "step", "stp", "dwg", "dxf", "igs"):
+        return False  # a drawing or model, named for its part
+    if kind == "text/csv" or low.endswith(".csv"):
+        return part_text(part)
+    if kind == "application/pdf" or low.endswith(".pdf"):
+        return pdf_text(part.get_payload(decode=True) or b"")
+    return False
+
+
 def read_mail(path: Path) -> Email:
     with path.open("rb") as f:
         msg = email.message_from_binary_file(f, policy=email.policy.default)
@@ -273,11 +308,17 @@ def read_mail(path: Path) -> Email:
         elif kind == "text/html" and not name:
             html.append(html_to_text(part_text(part)))
         else:
-            # Drawings (PDF, STEP) and anything else attached are listed by name, never opened: the model sees the
-            # name, a person opens the file.
+            # Drawings (a PDF or STEP named for a part) are listed by name, never opened: the model sees the name, a
+            # person opens the file. The buyer's own RFQ form or parts list (any other PDF, or a spreadsheet) is read.
             name = one_line(name or f"an unnamed {kind} part")
             names.append(name)
-            attached.append(f"\n[Attachment not read: {name}]")
+            text_of = attachment_text(name, kind, part)
+            if text_of is False:
+                attached.append(f"\n[Attachment not read: {name}]")
+            elif text_of is None:
+                attached.append(f"\n[Attachment could not be read: {name}]")
+            else:
+                attached.append(f"\n=== Attachment: {name} ===\n{text_of.strip()}\n=== End of attachment ===")
     text = body if any(b.strip() for b in body) else html
     readable = any(t.strip() for t in text)
     sender_name, sender = email.utils.parseaddr(one_line(msg.get("From", "")))
@@ -685,6 +726,8 @@ class Line:
     family: str = ""  # a repeat's from its record; a new part's from its description (customer-parts.csv)
     revised: str = ""  # a later revision that arrived for this part, from a revision email
     missing: list[str] = field(default_factory=list)  # what the buyer still has to send: part number, revision, ...
+    brief: desk.Brief | None = None  # a repeat part's history, from the records
+    fast: bool = False  # fast-track: same revision, quoted in the last three years, a job behind it
 
 
 @dataclass
@@ -719,6 +762,7 @@ class Result:
     reasons: list[str] = field(default_factory=list)  # why a person must look
     questions: list[str] = field(default_factory=list)  # what to ask the buyer
     notes: list[str] = field(default_factory=list)
+    odds: desk.Odds | None = None  # bid odds, from the customer's record
 
     @property
     def due(self) -> date | None:
@@ -1049,6 +1093,10 @@ def process(mail: Email, model, records: Records, opens: list[OpenRequest] | Non
         return r
     if mail.truncated:
         r.status, r.reasons = REVIEW, [f"too long to read in full (over {MAX_TEXT:,} characters): read it yourself"]
+        return r
+    if "[Attachment could not be read: " in mail.text:
+        name = re.search(r"\[Attachment could not be read: ([^\]]+)\]", mail.text).group(1)
+        r.status, r.reasons = REVIEW, [f"the attachment {name} has no text we could read: open it yourself"]
         return r
     if not mail.readable or not mail.text.strip():
         files = f" (attachments: {', '.join(mail.attachments)})" if mail.attachments else ""
@@ -1481,12 +1529,14 @@ class QueueItem:
     protected: bool = False  # already being worked on: never taken out of the forecast
     result: Result | None = None
     request: OpenRequest | None = None
+    low_odds: bool = False
 
 
 def order_key(item: QueueItem) -> tuple:
-    """The ready queue's order: due date (stated, or six working days after arrival), soonest first; then key
-    accounts; then oldest first. The reference breaks the last tie, so the order never depends on input order."""
-    return (item.due, not item.key_account, item.received, item.ref)
+    """The ready queue's order: a low-odds request with no stated due date waits behind the others; then due date
+    (stated, or six working days after arrival), soonest first; then key accounts; then oldest first. The reference
+    breaks the last tie, so the order never depends on input order."""
+    return (item.low_odds and not item.due_stated, item.due, not item.key_account, item.received, item.ref)
 
 
 EPS = 1e-9
@@ -1628,6 +1678,22 @@ def forecast_with_removal(items: list[QueueItem], hours_on, start: date, end: da
     return Plan([(x, done_on[x.ref]) for x in sorted(kept, key=order_key)], at_risk, start, end)
 
 
+def desk_notes(results: list[Result], records: Records) -> None:
+    """The quote desk's notes on each request: bid odds from the customer's record, and for each repeat part, the
+    history brief and whether it's fast-track. From the records as of the day the email arrived."""
+    h = records.history
+    if h is None:
+        return
+    for r in results:
+        if r.kind != NEW or not r.customer or not r.mail.received:
+            continue
+        r.odds = desk.odds(h, r.customer.id, r.mail.received)
+        for ln in r.lines:
+            if ln.part and str(ln.status).startswith("repeat"):
+                ln.brief = desk.brief(h, r.customer.id, ln.part, r.mail.received)
+                ln.fast = desk.fast_track(ln.brief, ln.status)
+
+
 def queue_items(
     results: list[Result], opens: list[OpenRequest], records: Records, start: date, junior: bool = False
 ) -> list[QueueItem]:
@@ -1666,9 +1732,12 @@ def queue_items(
                     max(r.mail.received, start),
                     r.due,
                     r.due_stated,
-                    quote_hours(len(r.lines), r.weld, junior),
+                    desk.desk_hours(
+                        quote_hours(len(r.lines), r.weld, junior), bool(r.lines) and all(ln.fast for ln in r.lines)
+                    ),
                     result=r,
                     request=next((o for o in opens if o.result is r), None),
+                    low_odds=bool(r.odds and r.odds.low),
                 )
             )
     return items
@@ -1771,6 +1840,8 @@ def request_row(r: Result) -> dict:
         "requested_dates": ";".join(str(ln.requested or "") for ln in r.lines),
         "quote_due": r.quote_due or "",
         "due_used": r.due if r.kind == NEW else "",
+        "bid_odds": r.odds.text() if r.odds else "",
+        "fast_track": ";".join("yes" if ln.fast else "" for ln in r.lines) if any(ln.fast for ln in r.lines) else "",
         "why": " | ".join([*r.reasons, *r.questions, *r.notes]),
     }
 
@@ -1820,6 +1891,8 @@ def erp_import_rows(results: list[Result]) -> list[dict]:
                     "new_or_repeat": _new_or_repeat(ln),
                     "drawings": "; ".join(a for a in r.mail.attachments if _drawing_for(ln.part, [a])),
                     "missing": ", ".join(ln.missing) if r.status == INFO else "",
+                    "fast_track": "yes" if ln.fast else "",
+                    "history": ln.brief.text() if ln.brief else "",
                 }
             )
     return rows
@@ -2159,6 +2232,7 @@ def run(
                 Result(m, status=FAILED, reasons=[f"over this run's limit of {max_emails} emails: run again"])
             )
     assert len(results) == len(mails)  # nothing silently dropped
+    desk_notes(results, records)
     plan = plan_queue(results, opens, records, plan_from or default_plan_from(records, mails, as_of))
     written = []
     for n, r in enumerate((r for r in results if r.status == INFO), 1):
@@ -2221,6 +2295,8 @@ IMPORT_COLUMNS = [
     "new_or_repeat",
     "drawings",
     "missing",
+    "fast_track",
+    "history",
 ]
 QUEUE_COLUMNS = [
     "place",

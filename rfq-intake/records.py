@@ -25,6 +25,8 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
+import desk
+
 TIERS = ("key", "regular", "occasional")
 SENIORITY = ("junior", "senior")
 # The families the quoting-time formula charges 1.5x for (the owner's answer to the plan's question on quoting time).
@@ -105,6 +107,7 @@ class Records:
     families: dict[str, str]  # a part description -> its family, where every part with it is in one family
     requote_hours: dict[date, float] | None = None  # hours spent on re-quotes each day, when the ERP exports it
     look_alikes: dict[str, list[Customer]] = field(default_factory=dict)  # customer id -> near-identical records
+    history: object = None  # desk.History: quote and job history, when the ERP exports them
 
     @classmethod
     def load(cls, folder: Path) -> Records:
@@ -191,6 +194,7 @@ class Records:
             families,
             requotes,
             look,
+            desk.History.load(folder),
         )
 
     # --- matching ----------------------------------------------------------------------------------------------
