@@ -27,7 +27,7 @@ The labor has the same problem in a quieter form. Each estimator has habits, and
    - the project manual's sections and every addendum issued so far, as text;
    - the estimate by cost code, its labor rate and its alternates;
    - the project's facts (building type, new or renovation, public owner, county, square feet).
-2. **Reads the documents** (AI). An AI model (Claude, through Anthropic's API) reads the whole manual and the addenda. It lists every requirement of the kinds below that the documents put on the mechanical contractor, each with:
+2. **Reads the documents** (AI reader). An AI model (Claude, through Anthropic's API) reads the whole manual and the addenda. It lists every requirement of the kinds below that the documents put on the mechanical contractor, each with:
    - its kind, from a fixed list (in Inputs);
    - the section or addendum;
    - the words, quoted exactly;
@@ -35,12 +35,7 @@ The labor has the same problem in a quieter form. Each estimator has habits, and
    - its particulars (warranty years, the named manufacturer, insulation thickness, work hours).
 
    For an addendum issued after the first read, it reads the addendum against the earlier list and says what the addendum adds, changes or deletes.
-3. **Checks the reading** (code). A requirement is accepted only when:
-   - its quote is found word for word in the section or addendum it names;
-   - its kind is on the list;
-   - a "by others", "doesn't apply" or "deleted" status quotes the words that say so (a deletion must quote the addendum).
-
-   An answer that fails a check goes to the chief estimator with the section, unread. Text addressed to an AI is reported and does nothing.
+3. **Checks the reading** (code, then the AI checker). Code accepts a requirement only when its quote is found word for word in the section or addendum it names, and its kind is on the list. Then a second, separate call to the model (the AI checker) gets each accepted requirement with only the sections and addenda it cites, not the whole manual, and is asked a different question: is this really a requirement of that kind on the mechanical contractor, what is its status by the documents' own words (base bid, alternate, by others, doesn't apply, deleted), and is that clear? Code compares the two. A requirement the checker says isn't one, a different kind or status, or one it finds unclear goes to the chief estimator with both answers, not into the gaps. Text addressed to an AI, found by the reader, the checker or a check in code, is reported and does nothing, and a part of the documents carrying it can't supply a "by others", "doesn't apply" or "deleted".
 4. **Checks the estimate** (code). Each accepted base-bid requirement is priced when the estimate has a line on its cost code with an amount, or a line whose description names it. For three kinds the evidence is particular:
    - **prevailing wage:** a labor rate at the prevailing rate, or a prevailing wage line;
    - **a named manufacturer:** the equipment line names that manufacturer;
@@ -113,7 +108,7 @@ Exports from estimating and document control, as CSV:
 ## How it runs
 
 - **Every 30 minutes** during the working day, on a server we control, for estimates newly marked ready and addenda newly issued. A review is ready within the hour.
-- **One AI read per bid, plus one for each later addendum.** At most 40 reads a day; anything over that goes to a person.
+- **One AI read per bid, plus one for each later addendum, and a check of each read** (the checker sees only the sections and addenda the read cites). At most 80 calls a day; anything over that goes to a person.
 - **Nothing is silently dropped:** a bid with a missing section list, or an addendum that can't be read, is named at the top of the review.
 - **Every run adds a line to a log:** when, which model, bids read, requirements found, gaps, sent to a person.
 - **Estimators mark each gap real or not;** those marks tune the rules.
