@@ -488,3 +488,18 @@ def test_a_grade_may_quote_the_finding_and_the_key() -> None:
          "why": "The analyst's $3,391 against the truth's $3,412."}
     assert B.check_grade(g, truth)
     assert B.check_grade(g, truth, quoted=[3391.0]) == []
+
+
+# --- added after development run 2 (Hartwell): the checks run when a finding is saved, so the analyst can fix ---
+
+
+def test_saving_a_finding_reports_what_the_checks_would_hold(session: T.Session) -> None:
+    session.save("prediction.json", "{}")
+    shown = session.query("select sum(amount) as total from invoices where year = 2025")
+    qid = shown.split(":")[0]
+    bad = finding(title="2025 billing", conclusion="Billed $3,495.50 in 2025, up 40%.", size_query=qid,
+                  dollars_a_year=3495.5, claims=[{"text": "Billed $3,495.50.", "queries": [qid]}])
+    reply = session.save("finding.json", json.dumps(bad))
+    assert "40%" in reply and (session.folder / "finding.json").exists()
+    good = dict(bad, conclusion="Billed $3,495.50 in 2025.")
+    assert session.save("finding.json", json.dumps(good)) == "Saved finding.json."

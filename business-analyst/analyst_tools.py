@@ -206,7 +206,27 @@ class Session:
                 return f"Not saved: that isn't valid JSON ({e}). Fix it and save again."
         (self.folder / name).write_text(content)
         self.ledger.append({"kind": "save", "session": self.session, "file": name})
+        if name == "finding.json":
+            problems = self.finding_problems(json.loads(content))
+            if problems:
+                return (f"Saved {name}, but code's checks would hold it back from the report:\n- "
+                        + "\n- ".join(problems[:20]) + "\nFix each one (cite the query the number came from, run "
+                        "the arithmetic as a query, or make the query deterministic and re-run it) and save again.")
         return f"Saved {name}."
+
+    def finding_problems(self, f: dict) -> list[str]:
+        """The same number, replay and size checks the report applies, run at save time so the analyst can fix
+        what it can. The checks after the run are unchanged."""
+        import business_analyst as B  # the checks live with the rest of the playbook
+
+        if not isinstance(f, dict):
+            return ["a finding is one JSON object"]
+        k = self.session.split("-", 1)[-1]
+        sessions = {f"inv-{k}", f"ch-{k}", f"rev-{k}", "orient", "propose"}
+        ledger = self.ledger.entries()
+        if self.con is None:
+            self.con = connect(self.warehouse)
+        return B.check_numbers(f, ledger, sessions) + B.check_replay(f, ledger, self.con) + B.check_size(f, ledger)
 
 
 TOOLS = [

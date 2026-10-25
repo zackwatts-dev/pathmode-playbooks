@@ -26,4 +26,5 @@ Then save `finding.json`. Every number in title, conclusion and claims must come
  "claims": [{{"text": "one supporting fact, with its numbers and denominators", "queries": ["q12", "q13"]}}],
  "confidence": "high | medium | low", "not_evidence_of": "what a reader might over-read", "could_not_tell": "what the records couldn't answer",
  "next_step": "what to check or change next", "dead_ends": ["what you tested that didn't hold"], "incomplete": false}}
+When you save finding.json, code runs the report's checks on it and tells you anything it would hold back (a number no query produced, a query that doesn't re-run the same, a size that isn't a query's value). Fix each and save again.
 If the hypothesis doesn't hold, say so in the finding: that is a result. Then title and conclusion say it doesn't hold, and dollars_a_year is null.
