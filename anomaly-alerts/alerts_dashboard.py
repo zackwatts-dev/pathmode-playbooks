@@ -46,6 +46,8 @@ def _card(x, data, show_store: bool) -> str:
         body = f'<p class="why">For a person: {_e("; ".join(x.problems))}</p>'
     else:
         body = f"<p>{_e(x.explanation)}</p><p><b>Next:</b> {_e(x.next_step)}</p>"
+        if x.note:  # the reader and the log checker read the log differently: the flag stays up
+            body += f'<p class="muted"><b>The log, read twice:</b> {_e(x.note)}</p>'
     rows = [
         [
             _e(r.get("record", "")),
