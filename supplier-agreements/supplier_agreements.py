@@ -28,7 +28,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from common import llm  # noqa: E402
-from common.evidence import numbers_in, quote_found, to_float  # noqa: E402
+from common.evidence import NUMBER, normalize, numbers_in, quote_found, to_float  # noqa: E402
 from common.fake import OfflineModel  # noqa: E402
 from common.util import BadAnswer, parse_json, read_csv, write_csv, write_text  # noqa: E402
 
@@ -281,9 +281,54 @@ def iso(value) -> bool:
     return isinstance(value, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", value) is not None
 
 
-def on_one_line(values: list[float], text: str) -> bool:
-    """True if some line of the document shows every one of the values: a row of a table."""
-    return any(all(in_quote(v, line) for v in values) for line in text.splitlines())
+def values_at(text: str) -> list[tuple[int, int, float, bool]]:
+    """Every number in the text: where it starts and ends, its value, and whether it's in dollars."""
+    out = []
+    for m in NUMBER.finditer(text):
+        try:
+            out.append(
+                (m.start(), m.end(), to_float(m.group()), "$" in m.group() or text[m.start() - 1 : m.start()] == "$")
+            )
+        except ValueError:
+            continue
+    return out
+
+
+def same(a: float, b: float) -> bool:
+    return abs(a - b) <= max(abs(b) * 1e-9, 1e-9)
+
+
+def row_in(threshold: float, rate: float, text: str) -> bool:
+    """True if the document gives this tier: its threshold, then its rate within a few words, with no other dollar
+    figure between them. However the PDF lays it out (a table row, or a sentence wrapped across lines)."""
+    flat = " ".join(text.split())
+    nums = values_at(flat)
+    for i, (_a, end, v, _d) in enumerate(nums):
+        if not same(v, threshold):
+            continue
+        for start, _e, w, dollars in nums[i + 1 :]:
+            if start - end > 80 or (dollars and not same(w, threshold)):
+                break
+            if not dollars and same(w, rate):
+                return True
+    return False
+
+
+def line_in(quote: str, amount: float, text: str, reach: int = 300) -> bool:
+    """True if a statement line is in the document: its amount is there, and every word of the line as quoted is
+    near it, however the PDF wraps the table's columns."""
+    want = set(normalize(quote).split())
+    for start, end, v, _d in values_at(text):
+        if same(v, amount) and want <= set(normalize(text[max(0, start - reach) : end + reach]).split()):
+            return True
+    return False
+
+
+def passages_found(quote: str, text: str) -> bool:
+    """True if every passage of the quote is in the document. Passages joined by "..." may come from anywhere in it:
+    what they mean together is the checker's to confirm, not their distance apart."""
+    pieces = [p_ for p_ in re.split(r"\.\.\.|…", quote) if p_.strip()]
+    return bool(pieces) and all(quote_found(p_, text) for p_ in pieces)
 
 
 def in_quote(value: float, quote: str) -> bool:
@@ -312,7 +357,7 @@ def check_term(supplier: str, t: dict, docs: dict[str, Doc]) -> Term | Person:
     doc = docs.get(name)
     if doc is None or doc.statement:
         return Person(supplier, what, "names a document that isn't on file", quote, name)
-    if not quote_found(quote, doc.text):
+    if not passages_found(quote, doc.text):
         return Person(supplier, what, "the quoted words aren't in the document", quote, name)
     missing = [n for n in numbers_of(t) if not in_quote(n, quote)]
     if missing:
@@ -320,7 +365,7 @@ def check_term(supplier: str, t: dict, docs: dict[str, Doc]) -> Term | Person:
             supplier, what, "numbers not in the quoted words: " + ", ".join(f"{n:g}" for n in missing), quote, name
         )
     tiers = t.get("tiers") or []
-    rows = [r for r in tiers if not on_one_line([float(r[0]), float(r[1])], doc.text)]
+    rows = [r for r in tiers if not row_in(float(r[0]), float(r[1]), doc.text)]
     if rows:
         return Person(
             supplier,
@@ -371,9 +416,7 @@ def check_statement(supplier: str, s: dict | None, docs: dict[str, Doc], credite
     by_kind: dict[str, float] = defaultdict(float)
     for ln in s.get("lines") or []:
         q = str(ln.get("quote", ""))
-        if not any(
-            in_quote(float(ln["amount"]), line) and quote_found(q, line, min_words=2) for line in doc.text.splitlines()
-        ):
+        if not line_in(q, float(ln["amount"]), doc.text):
             return Person(
                 supplier,
                 "statement",

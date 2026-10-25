@@ -754,3 +754,33 @@ def test_a_second_kind_for_a_statement_line_counts_only_with_words_that_support_
         )
         _, st, _ = sa.read_supplier("Acme", list(docs().values()), m, 25000.0)
         assert (st is not None) is settled, words
+
+
+# --- code's exact checks don't depend on how the PDF lays out the words -------------------------------------------
+
+
+def test_a_tier_row_wrapped_across_lines_is_found_but_not_a_rate_from_another_row():
+    text = "applied to all purchases: $1,500,000\nand above at 1.50%; $2,800,000 and above at 2.25%."
+    assert sa.row_in(1_500_000, 1.5, text) and sa.row_in(2_800_000, 2.25, text)
+    assert not sa.row_in(1_500_000, 2.25, text)  # another threshold comes between them
+
+
+def test_a_statement_line_whose_columns_wrap_is_found_near_its_amount():
+    text = (
+        "Tiered rebate on equipment - basis $44,154,980, rate\n          Exhibit B tiers      $772,712.16\n"
+        "1.75%\nTotal credited $772,712.16"
+    )
+    q = "Tiered rebate on equipment - basis $44,154,980, rate 1.75% Exhibit B tiers $772,712.16"
+    assert sa.line_in(q, 772712.16, text)
+    assert not sa.line_in("Growth bonus over 2021 - basis $44,154,980", 772712.16, text)
+    assert not sa.line_in(q, 1000.0, text)
+
+
+def test_passages_joined_by_an_ellipsis_can_come_from_anywhere_in_the_document():
+    text = (
+        "Article VI. A restocking charge of 20% applies save as Article VIII provides.\n"
+        + "x " * 300
+        + ("Article VIII. Stock rotation: up to 5% of the prior year's purchases may be sent back free of the charge.")
+    )
+    assert sa.passages_found("up to 5% of the prior year's purchases ... a restocking charge of 20% applies", text)
+    assert not sa.passages_found("up to 5% of the prior year's purchases ... a restocking charge of 10% applies", text)
