@@ -1,0 +1,28 @@
+supplier,term,detail,source,effective,informal
+Ashland Climate,volume tiers,"{'base': 'equipment purchases, net of returns, excluding freight', 'tiers': [(24000000.0, 1.0), (35000000.0, 1.75), (50000000.0, 2.25)], 'retroactive': True}",ashland-climate-distributor-agreement.pdf,2020-01-01,no
+Ashland Climate,volume tiers,"{'base': 'equipment purchases, net of returns, excluding freight', 'tiers': [(24000000.0, 1.0), (35000000.0, 1.75), (41500000.0, 2.25)], 'retroactive': True, 'replaces': 'Exhibit B, section 2'}",ashland-climate-amendment-2020-06.pdf,2020-01-01,no
+Ashland Climate,line incentive,"{'line': 'R-454B equipment', 'rate': 1.5}",ashland-climate-amendment-2020-06.pdf,2020-07-01,no
+Ashland Climate,co-op,"{'accrual': 1.0, 'base': 'equipment purchases', 'reimburse': 50, 'claim_by': '2021-04-30'}",ashland-climate-distributor-agreement.pdf,2020-01-01,no
+Ashland Climate,freight prepaid,{'min_order': 5000.0},ashland-climate-distributor-agreement.pdf,2020-01-01,no
+Northstar HVAC,volume tiers,"{'base': 'all purchases, net of returns', 'tiers': [(3700000.0, 0.5), (5900000.0, 1.0), (7000000.0, 1.5)], 'retroactive': True}",northstar-hvac-program-2020.pdf,2020-01-01,no
+Northstar HVAC,co-op,"{'accrual': 2.0, 'base': 'all purchases', 'reimburse': 50, 'claim_by': '2021-04-30'}",northstar-hvac-program-2020.pdf,2020-01-01,no
+Vantel,volume tiers,"{'base': 'purchases by eligible locations (Schedule 1)', 'tiers': [(3100000.0, 1.25), (5100000.0, 2.25)], 'retroactive': True}",vantel-program-2020.pdf,2020-01-01,no
+Vantel,eligible locations,"{'added': ['Pittsburgh', 'Louisville'], 'per': 'section 4.2 notice'}",vantel-locations-email.eml,2020-03-03,no
+Vantel,growth,"{'rate': 1.0, 'over': 'total 2019 net purchases'}",vantel-program-2020.pdf,2020-01-01,no
+Brightwater Systems,volume tiers,"{'base': 'all purchases, net of returns', 'tiers': [(2700000.0, 1.0), (4700000.0, 1.5), (6100000.0, 2.0)], 'retroactive': False}",brightwater-systems-distributor-agreement.pdf,2020-01-01,no
+Brightwater Systems,stock rotation,"{'allowance': 5.0, 'of': 'prior-year purchases', 'restocking_fee': 10.0, 'age_limit_months': 18, 'request_by': '2021-03-31'}",brightwater-systems-distributor-agreement.pdf,2020-01-01,no
+Granite Coil,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1200000.0, 1.5)], 'retroactive': True}",granite-coil-program-sheet-2020.pdf,2020-01-01,no
+Granite Coil,growth,"{'rate': 2.0, 'over': '2019 net purchases'}",granite-coil-program-sheet-2020.pdf,2020-01-01,no
+Westerly Thermostats,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(2300000.0, 0.75), (3900000.0, 1.25)], 'retroactive': True}",westerly-thermostats-terms-and-conditions-2020.pdf,2020-01-01,no
+Garnet Hose & Fittings,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1700000.0, 1.0), (3100000.0, 1.5)], 'retroactive': True}",garnet-hose-fittings-program-sheet-2020.pdf,2020-01-01,no
+Garnet Hose & Fittings,growth,"{'rate': 1.0, 'over': '2019 net purchases'}",garnet-hose-fittings-program-sheet-2020.pdf,2020-01-01,no
+Rook Hangers,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1500000.0, 0.75), (2600000.0, 1.25)], 'retroactive': True}",rook-hangers-terms-and-conditions-2020.pdf,2020-01-01,no
+Merriam Electrical Supply,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1300000.0, 1.0), (2300000.0, 1.5)], 'retroactive': True}",merriam-electrical-supply-program-sheet-2020.pdf,2020-01-01,no
+Merriam Electrical Supply,growth,"{'rate': 1.0, 'over': '2019 net purchases'}",merriam-electrical-supply-program-sheet-2020.pdf,2020-01-01,no
+Pell Capacitor Co.,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1600000.0, 1.25)], 'retroactive': True}",pell-capacitor-co-program-sheet-2020.pdf,2020-01-01,no
+Pell Capacitor Co.,freight prepaid,{'min_order': 1500.0},pell-capacitor-co-program-sheet-2020.pdf,2020-01-01,no
+Solway Refrigeration Parts,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1200000.0, 1.0), (2000000.0, 1.75)], 'retroactive': True}",solway-refrigeration-parts-program-sheet-2020.pdf,2020-01-01,no
+Solway Refrigeration Parts,informal promise,"{'rate': 1.0, 'if_over': 2200000.0, 'said': 'an extra point on the year'}",solway-refrigeration-parts-rep-email.eml,2020-01-01,yes
+Thistle Ventilation,volume tiers,"{'base': 'purchases, net of returns', 'tiers': [(1200000.0, 1.5)], 'retroactive': True}",thistle-ventilation-terms-and-conditions-2020.pdf,2020-01-01,no
+Thistle Ventilation,freight prepaid,{'min_order': 1000.0},thistle-ventilation-terms-and-conditions-2020.pdf,2020-01-01,no
+Thistle Ventilation,stock rotation,"{'allowance': 5.0, 'of': 'prior-year purchases', 'restocking_fee': 0, 'request_by': '2021-03-31'}",thistle-ventilation-terms-and-conditions-2020.pdf,2020-01-01,no
