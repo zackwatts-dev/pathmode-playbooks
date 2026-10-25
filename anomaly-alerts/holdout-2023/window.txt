@@ -1,0 +1,1 @@
+run window 2023-03-27 to 2023-12-31; history from 2023-01-02

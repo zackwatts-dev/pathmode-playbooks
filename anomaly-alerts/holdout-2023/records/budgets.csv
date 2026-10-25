@@ -1,0 +1,573 @@
+period,store_id,account,amount
+2023-P01,1,beverage cost,9584.56
+2023-P01,1,food cost,77666.98
+2023-P01,1,labor,106333.26
+2023-P01,1,net sales,291324.0
+2023-P01,2,beverage cost,7987.13
+2023-P01,2,food cost,64722.48
+2023-P01,2,labor,88611.05
+2023-P01,2,net sales,242770.0
+2023-P01,3,beverage cost,8386.49
+2023-P01,3,food cost,67958.61
+2023-P01,3,labor,93041.6
+2023-P01,3,net sales,254908.5
+2023-P01,4,beverage cost,7188.42
+2023-P01,4,food cost,58250.23
+2023-P01,4,labor,79749.94
+2023-P01,4,net sales,218493.0
+2023-P01,5,beverage cost,7028.68
+2023-P01,5,food cost,56955.78
+2023-P01,5,labor,77977.72
+2023-P01,5,net sales,213637.6
+2023-P01,6,beverage cost,7348.16
+2023-P01,6,food cost,59544.68
+2023-P01,6,labor,81522.17
+2023-P01,6,net sales,223348.4
+2023-P01,7,beverage cost,9185.2
+2023-P01,7,food cost,74430.85
+2023-P01,7,labor,101902.71
+2023-P01,7,net sales,279185.5
+2023-P01,8,beverage cost,7827.39
+2023-P01,8,food cost,63428.03
+2023-P01,8,labor,86838.83
+2023-P01,8,net sales,237914.6
+2023-P01,9,beverage cost,7587.78
+2023-P01,9,food cost,61486.36
+2023-P01,9,labor,84180.5
+2023-P01,9,net sales,230631.5
+2023-P01,10,beverage cost,8785.85
+2023-P01,10,food cost,71194.73
+2023-P01,10,labor,97472.16
+2023-P01,10,net sales,267047.0
+2023-P01,11,beverage cost,7747.52
+2023-P01,11,food cost,62780.81
+2023-P01,11,labor,85952.72
+2023-P01,11,net sales,235486.9
+2023-P02,1,beverage cost,9584.56
+2023-P02,1,food cost,77666.98
+2023-P02,1,labor,106333.26
+2023-P02,1,net sales,291324.0
+2023-P02,2,beverage cost,7987.13
+2023-P02,2,food cost,64722.48
+2023-P02,2,labor,88611.05
+2023-P02,2,net sales,242770.0
+2023-P02,3,beverage cost,8386.49
+2023-P02,3,food cost,67958.61
+2023-P02,3,labor,93041.6
+2023-P02,3,net sales,254908.5
+2023-P02,4,beverage cost,7188.42
+2023-P02,4,food cost,58250.23
+2023-P02,4,labor,79749.94
+2023-P02,4,net sales,218493.0
+2023-P02,5,beverage cost,7028.68
+2023-P02,5,food cost,56955.78
+2023-P02,5,labor,77977.72
+2023-P02,5,net sales,213637.6
+2023-P02,6,beverage cost,7348.16
+2023-P02,6,food cost,59544.68
+2023-P02,6,labor,81522.17
+2023-P02,6,net sales,223348.4
+2023-P02,7,beverage cost,9185.2
+2023-P02,7,food cost,74430.85
+2023-P02,7,labor,101902.71
+2023-P02,7,net sales,279185.5
+2023-P02,8,beverage cost,7827.39
+2023-P02,8,food cost,63428.03
+2023-P02,8,labor,86838.83
+2023-P02,8,net sales,237914.6
+2023-P02,9,beverage cost,7587.78
+2023-P02,9,food cost,61486.36
+2023-P02,9,labor,84180.5
+2023-P02,9,net sales,230631.5
+2023-P02,10,beverage cost,8785.85
+2023-P02,10,food cost,71194.73
+2023-P02,10,labor,97472.16
+2023-P02,10,net sales,267047.0
+2023-P02,11,beverage cost,7747.52
+2023-P02,11,food cost,62780.81
+2023-P02,11,labor,85952.72
+2023-P02,11,net sales,235486.9
+2023-P03,1,beverage cost,9584.56
+2023-P03,1,food cost,77666.98
+2023-P03,1,labor,106333.26
+2023-P03,1,net sales,291324.0
+2023-P03,2,beverage cost,7987.13
+2023-P03,2,food cost,64722.48
+2023-P03,2,labor,88611.05
+2023-P03,2,net sales,242770.0
+2023-P03,3,beverage cost,8386.49
+2023-P03,3,food cost,67958.61
+2023-P03,3,labor,93041.6
+2023-P03,3,net sales,254908.5
+2023-P03,4,beverage cost,7188.42
+2023-P03,4,food cost,58250.23
+2023-P03,4,labor,79749.94
+2023-P03,4,net sales,218493.0
+2023-P03,5,beverage cost,7028.68
+2023-P03,5,food cost,56955.78
+2023-P03,5,labor,77977.72
+2023-P03,5,net sales,213637.6
+2023-P03,6,beverage cost,7348.16
+2023-P03,6,food cost,59544.68
+2023-P03,6,labor,81522.17
+2023-P03,6,net sales,223348.4
+2023-P03,7,beverage cost,9185.2
+2023-P03,7,food cost,74430.85
+2023-P03,7,labor,101902.71
+2023-P03,7,net sales,279185.5
+2023-P03,8,beverage cost,7827.39
+2023-P03,8,food cost,63428.03
+2023-P03,8,labor,86838.83
+2023-P03,8,net sales,237914.6
+2023-P03,9,beverage cost,7587.78
+2023-P03,9,food cost,61486.36
+2023-P03,9,labor,84180.5
+2023-P03,9,net sales,230631.5
+2023-P03,10,beverage cost,8785.85
+2023-P03,10,food cost,71194.73
+2023-P03,10,labor,97472.16
+2023-P03,10,net sales,267047.0
+2023-P03,11,beverage cost,7747.52
+2023-P03,11,food cost,62780.81
+2023-P03,11,labor,85952.72
+2023-P03,11,net sales,235486.9
+2023-P04,1,beverage cost,9584.56
+2023-P04,1,food cost,77666.98
+2023-P04,1,labor,106333.26
+2023-P04,1,net sales,291324.0
+2023-P04,2,beverage cost,7987.13
+2023-P04,2,food cost,64722.48
+2023-P04,2,labor,88611.05
+2023-P04,2,net sales,242770.0
+2023-P04,3,beverage cost,8386.49
+2023-P04,3,food cost,67958.61
+2023-P04,3,labor,93041.6
+2023-P04,3,net sales,254908.5
+2023-P04,4,beverage cost,7188.42
+2023-P04,4,food cost,58250.23
+2023-P04,4,labor,79749.94
+2023-P04,4,net sales,218493.0
+2023-P04,5,beverage cost,7028.68
+2023-P04,5,food cost,56955.78
+2023-P04,5,labor,77977.72
+2023-P04,5,net sales,213637.6
+2023-P04,6,beverage cost,7348.16
+2023-P04,6,food cost,59544.68
+2023-P04,6,labor,81522.17
+2023-P04,6,net sales,223348.4
+2023-P04,7,beverage cost,9185.2
+2023-P04,7,food cost,74430.85
+2023-P04,7,labor,101902.71
+2023-P04,7,net sales,279185.5
+2023-P04,8,beverage cost,7827.39
+2023-P04,8,food cost,63428.03
+2023-P04,8,labor,86838.83
+2023-P04,8,net sales,237914.6
+2023-P04,9,beverage cost,7587.78
+2023-P04,9,food cost,61486.36
+2023-P04,9,labor,84180.5
+2023-P04,9,net sales,230631.5
+2023-P04,10,beverage cost,8785.85
+2023-P04,10,food cost,71194.73
+2023-P04,10,labor,97472.16
+2023-P04,10,net sales,267047.0
+2023-P04,11,beverage cost,7747.52
+2023-P04,11,food cost,62780.81
+2023-P04,11,labor,85952.72
+2023-P04,11,net sales,235486.9
+2023-P05,1,beverage cost,9584.56
+2023-P05,1,food cost,77666.98
+2023-P05,1,labor,106333.26
+2023-P05,1,net sales,291324.0
+2023-P05,2,beverage cost,7987.13
+2023-P05,2,food cost,64722.48
+2023-P05,2,labor,88611.05
+2023-P05,2,net sales,242770.0
+2023-P05,3,beverage cost,8386.49
+2023-P05,3,food cost,67958.61
+2023-P05,3,labor,93041.6
+2023-P05,3,net sales,254908.5
+2023-P05,4,beverage cost,7188.42
+2023-P05,4,food cost,58250.23
+2023-P05,4,labor,79749.94
+2023-P05,4,net sales,218493.0
+2023-P05,5,beverage cost,7028.68
+2023-P05,5,food cost,56955.78
+2023-P05,5,labor,77977.72
+2023-P05,5,net sales,213637.6
+2023-P05,6,beverage cost,7348.16
+2023-P05,6,food cost,59544.68
+2023-P05,6,labor,81522.17
+2023-P05,6,net sales,223348.4
+2023-P05,7,beverage cost,9185.2
+2023-P05,7,food cost,74430.85
+2023-P05,7,labor,101902.71
+2023-P05,7,net sales,279185.5
+2023-P05,8,beverage cost,7827.39
+2023-P05,8,food cost,63428.03
+2023-P05,8,labor,86838.83
+2023-P05,8,net sales,237914.6
+2023-P05,9,beverage cost,7587.78
+2023-P05,9,food cost,61486.36
+2023-P05,9,labor,84180.5
+2023-P05,9,net sales,230631.5
+2023-P05,10,beverage cost,8785.85
+2023-P05,10,food cost,71194.73
+2023-P05,10,labor,97472.16
+2023-P05,10,net sales,267047.0
+2023-P05,11,beverage cost,7747.52
+2023-P05,11,food cost,62780.81
+2023-P05,11,labor,85952.72
+2023-P05,11,net sales,235486.9
+2023-P06,1,beverage cost,9584.56
+2023-P06,1,food cost,77666.98
+2023-P06,1,labor,106333.26
+2023-P06,1,net sales,291324.0
+2023-P06,2,beverage cost,7987.13
+2023-P06,2,food cost,64722.48
+2023-P06,2,labor,88611.05
+2023-P06,2,net sales,242770.0
+2023-P06,3,beverage cost,8386.49
+2023-P06,3,food cost,67958.61
+2023-P06,3,labor,93041.6
+2023-P06,3,net sales,254908.5
+2023-P06,4,beverage cost,7188.42
+2023-P06,4,food cost,58250.23
+2023-P06,4,labor,79749.94
+2023-P06,4,net sales,218493.0
+2023-P06,5,beverage cost,7028.68
+2023-P06,5,food cost,56955.78
+2023-P06,5,labor,77977.72
+2023-P06,5,net sales,213637.6
+2023-P06,6,beverage cost,7348.16
+2023-P06,6,food cost,59544.68
+2023-P06,6,labor,81522.17
+2023-P06,6,net sales,223348.4
+2023-P06,7,beverage cost,9185.2
+2023-P06,7,food cost,74430.85
+2023-P06,7,labor,101902.71
+2023-P06,7,net sales,279185.5
+2023-P06,8,beverage cost,7827.39
+2023-P06,8,food cost,63428.03
+2023-P06,8,labor,86838.83
+2023-P06,8,net sales,237914.6
+2023-P06,9,beverage cost,7587.78
+2023-P06,9,food cost,61486.36
+2023-P06,9,labor,84180.5
+2023-P06,9,net sales,230631.5
+2023-P06,10,beverage cost,8785.85
+2023-P06,10,food cost,71194.73
+2023-P06,10,labor,97472.16
+2023-P06,10,net sales,267047.0
+2023-P06,11,beverage cost,7747.52
+2023-P06,11,food cost,62780.81
+2023-P06,11,labor,85952.72
+2023-P06,11,net sales,235486.9
+2023-P07,1,beverage cost,9584.56
+2023-P07,1,food cost,77666.98
+2023-P07,1,labor,106333.26
+2023-P07,1,net sales,291324.0
+2023-P07,2,beverage cost,7987.13
+2023-P07,2,food cost,64722.48
+2023-P07,2,labor,88611.05
+2023-P07,2,net sales,242770.0
+2023-P07,3,beverage cost,8386.49
+2023-P07,3,food cost,67958.61
+2023-P07,3,labor,93041.6
+2023-P07,3,net sales,254908.5
+2023-P07,4,beverage cost,7188.42
+2023-P07,4,food cost,58250.23
+2023-P07,4,labor,79749.94
+2023-P07,4,net sales,218493.0
+2023-P07,5,beverage cost,7028.68
+2023-P07,5,food cost,56955.78
+2023-P07,5,labor,77977.72
+2023-P07,5,net sales,213637.6
+2023-P07,6,beverage cost,7348.16
+2023-P07,6,food cost,59544.68
+2023-P07,6,labor,81522.17
+2023-P07,6,net sales,223348.4
+2023-P07,7,beverage cost,9185.2
+2023-P07,7,food cost,74430.85
+2023-P07,7,labor,101902.71
+2023-P07,7,net sales,279185.5
+2023-P07,8,beverage cost,7827.39
+2023-P07,8,food cost,63428.03
+2023-P07,8,labor,86838.83
+2023-P07,8,net sales,237914.6
+2023-P07,9,beverage cost,7587.78
+2023-P07,9,food cost,61486.36
+2023-P07,9,labor,84180.5
+2023-P07,9,net sales,230631.5
+2023-P07,10,beverage cost,8785.85
+2023-P07,10,food cost,71194.73
+2023-P07,10,labor,97472.16
+2023-P07,10,net sales,267047.0
+2023-P07,11,beverage cost,7747.52
+2023-P07,11,food cost,62780.81
+2023-P07,11,labor,85952.72
+2023-P07,11,net sales,235486.9
+2023-P08,1,beverage cost,9584.56
+2023-P08,1,food cost,77666.98
+2023-P08,1,labor,106333.26
+2023-P08,1,net sales,291324.0
+2023-P08,2,beverage cost,7987.13
+2023-P08,2,food cost,64722.48
+2023-P08,2,labor,88611.05
+2023-P08,2,net sales,242770.0
+2023-P08,3,beverage cost,8386.49
+2023-P08,3,food cost,67958.61
+2023-P08,3,labor,93041.6
+2023-P08,3,net sales,254908.5
+2023-P08,4,beverage cost,7188.42
+2023-P08,4,food cost,58250.23
+2023-P08,4,labor,79749.94
+2023-P08,4,net sales,218493.0
+2023-P08,5,beverage cost,7028.68
+2023-P08,5,food cost,56955.78
+2023-P08,5,labor,77977.72
+2023-P08,5,net sales,213637.6
+2023-P08,6,beverage cost,7348.16
+2023-P08,6,food cost,59544.68
+2023-P08,6,labor,81522.17
+2023-P08,6,net sales,223348.4
+2023-P08,7,beverage cost,9185.2
+2023-P08,7,food cost,74430.85
+2023-P08,7,labor,101902.71
+2023-P08,7,net sales,279185.5
+2023-P08,8,beverage cost,7827.39
+2023-P08,8,food cost,63428.03
+2023-P08,8,labor,86838.83
+2023-P08,8,net sales,237914.6
+2023-P08,9,beverage cost,7587.78
+2023-P08,9,food cost,61486.36
+2023-P08,9,labor,84180.5
+2023-P08,9,net sales,230631.5
+2023-P08,10,beverage cost,8785.85
+2023-P08,10,food cost,71194.73
+2023-P08,10,labor,97472.16
+2023-P08,10,net sales,267047.0
+2023-P08,11,beverage cost,7747.52
+2023-P08,11,food cost,62780.81
+2023-P08,11,labor,85952.72
+2023-P08,11,net sales,235486.9
+2023-P09,1,beverage cost,9584.56
+2023-P09,1,food cost,77666.98
+2023-P09,1,labor,106333.26
+2023-P09,1,net sales,291324.0
+2023-P09,2,beverage cost,7987.13
+2023-P09,2,food cost,64722.48
+2023-P09,2,labor,88611.05
+2023-P09,2,net sales,242770.0
+2023-P09,3,beverage cost,8386.49
+2023-P09,3,food cost,67958.61
+2023-P09,3,labor,93041.6
+2023-P09,3,net sales,254908.5
+2023-P09,4,beverage cost,7188.42
+2023-P09,4,food cost,58250.23
+2023-P09,4,labor,79749.94
+2023-P09,4,net sales,218493.0
+2023-P09,5,beverage cost,7028.68
+2023-P09,5,food cost,56955.78
+2023-P09,5,labor,77977.72
+2023-P09,5,net sales,213637.6
+2023-P09,6,beverage cost,7348.16
+2023-P09,6,food cost,59544.68
+2023-P09,6,labor,81522.17
+2023-P09,6,net sales,223348.4
+2023-P09,7,beverage cost,9185.2
+2023-P09,7,food cost,74430.85
+2023-P09,7,labor,101902.71
+2023-P09,7,net sales,279185.5
+2023-P09,8,beverage cost,7827.39
+2023-P09,8,food cost,63428.03
+2023-P09,8,labor,86838.83
+2023-P09,8,net sales,237914.6
+2023-P09,9,beverage cost,7587.78
+2023-P09,9,food cost,61486.36
+2023-P09,9,labor,84180.5
+2023-P09,9,net sales,230631.5
+2023-P09,10,beverage cost,8785.85
+2023-P09,10,food cost,71194.73
+2023-P09,10,labor,97472.16
+2023-P09,10,net sales,267047.0
+2023-P09,11,beverage cost,7747.52
+2023-P09,11,food cost,62780.81
+2023-P09,11,labor,85952.72
+2023-P09,11,net sales,235486.9
+2023-P10,1,beverage cost,9584.56
+2023-P10,1,food cost,77666.98
+2023-P10,1,labor,106333.26
+2023-P10,1,net sales,291324.0
+2023-P10,2,beverage cost,7987.13
+2023-P10,2,food cost,64722.48
+2023-P10,2,labor,88611.05
+2023-P10,2,net sales,242770.0
+2023-P10,3,beverage cost,8386.49
+2023-P10,3,food cost,67958.61
+2023-P10,3,labor,93041.6
+2023-P10,3,net sales,254908.5
+2023-P10,4,beverage cost,7188.42
+2023-P10,4,food cost,58250.23
+2023-P10,4,labor,79749.94
+2023-P10,4,net sales,218493.0
+2023-P10,5,beverage cost,7028.68
+2023-P10,5,food cost,56955.78
+2023-P10,5,labor,77977.72
+2023-P10,5,net sales,213637.6
+2023-P10,6,beverage cost,7348.16
+2023-P10,6,food cost,59544.68
+2023-P10,6,labor,81522.17
+2023-P10,6,net sales,223348.4
+2023-P10,7,beverage cost,9185.2
+2023-P10,7,food cost,74430.85
+2023-P10,7,labor,101902.71
+2023-P10,7,net sales,279185.5
+2023-P10,8,beverage cost,7827.39
+2023-P10,8,food cost,63428.03
+2023-P10,8,labor,86838.83
+2023-P10,8,net sales,237914.6
+2023-P10,9,beverage cost,7587.78
+2023-P10,9,food cost,61486.36
+2023-P10,9,labor,84180.5
+2023-P10,9,net sales,230631.5
+2023-P10,10,beverage cost,8785.85
+2023-P10,10,food cost,71194.73
+2023-P10,10,labor,97472.16
+2023-P10,10,net sales,267047.0
+2023-P10,11,beverage cost,7747.52
+2023-P10,11,food cost,62780.81
+2023-P10,11,labor,85952.72
+2023-P10,11,net sales,235486.9
+2023-P11,1,beverage cost,9584.56
+2023-P11,1,food cost,77666.98
+2023-P11,1,labor,106333.26
+2023-P11,1,net sales,291324.0
+2023-P11,2,beverage cost,7987.13
+2023-P11,2,food cost,64722.48
+2023-P11,2,labor,88611.05
+2023-P11,2,net sales,242770.0
+2023-P11,3,beverage cost,8386.49
+2023-P11,3,food cost,67958.61
+2023-P11,3,labor,93041.6
+2023-P11,3,net sales,254908.5
+2023-P11,4,beverage cost,7188.42
+2023-P11,4,food cost,58250.23
+2023-P11,4,labor,79749.94
+2023-P11,4,net sales,218493.0
+2023-P11,5,beverage cost,7028.68
+2023-P11,5,food cost,56955.78
+2023-P11,5,labor,77977.72
+2023-P11,5,net sales,213637.6
+2023-P11,6,beverage cost,7348.16
+2023-P11,6,food cost,59544.68
+2023-P11,6,labor,81522.17
+2023-P11,6,net sales,223348.4
+2023-P11,7,beverage cost,9185.2
+2023-P11,7,food cost,74430.85
+2023-P11,7,labor,101902.71
+2023-P11,7,net sales,279185.5
+2023-P11,8,beverage cost,7827.39
+2023-P11,8,food cost,63428.03
+2023-P11,8,labor,86838.83
+2023-P11,8,net sales,237914.6
+2023-P11,9,beverage cost,7587.78
+2023-P11,9,food cost,61486.36
+2023-P11,9,labor,84180.5
+2023-P11,9,net sales,230631.5
+2023-P11,10,beverage cost,8785.85
+2023-P11,10,food cost,71194.73
+2023-P11,10,labor,97472.16
+2023-P11,10,net sales,267047.0
+2023-P11,11,beverage cost,7747.52
+2023-P11,11,food cost,62780.81
+2023-P11,11,labor,85952.72
+2023-P11,11,net sales,235486.9
+2023-P12,1,beverage cost,9584.56
+2023-P12,1,food cost,77666.98
+2023-P12,1,labor,106333.26
+2023-P12,1,net sales,291324.0
+2023-P12,2,beverage cost,7987.13
+2023-P12,2,food cost,64722.48
+2023-P12,2,labor,88611.05
+2023-P12,2,net sales,242770.0
+2023-P12,3,beverage cost,8386.49
+2023-P12,3,food cost,67958.61
+2023-P12,3,labor,93041.6
+2023-P12,3,net sales,254908.5
+2023-P12,4,beverage cost,7188.42
+2023-P12,4,food cost,58250.23
+2023-P12,4,labor,79749.94
+2023-P12,4,net sales,218493.0
+2023-P12,5,beverage cost,7028.68
+2023-P12,5,food cost,56955.78
+2023-P12,5,labor,77977.72
+2023-P12,5,net sales,213637.6
+2023-P12,6,beverage cost,7348.16
+2023-P12,6,food cost,59544.68
+2023-P12,6,labor,81522.17
+2023-P12,6,net sales,223348.4
+2023-P12,7,beverage cost,9185.2
+2023-P12,7,food cost,74430.85
+2023-P12,7,labor,101902.71
+2023-P12,7,net sales,279185.5
+2023-P12,8,beverage cost,7827.39
+2023-P12,8,food cost,63428.03
+2023-P12,8,labor,86838.83
+2023-P12,8,net sales,237914.6
+2023-P12,9,beverage cost,7587.78
+2023-P12,9,food cost,61486.36
+2023-P12,9,labor,84180.5
+2023-P12,9,net sales,230631.5
+2023-P12,10,beverage cost,8785.85
+2023-P12,10,food cost,71194.73
+2023-P12,10,labor,97472.16
+2023-P12,10,net sales,267047.0
+2023-P12,11,beverage cost,7747.52
+2023-P12,11,food cost,62780.81
+2023-P12,11,labor,85952.72
+2023-P12,11,net sales,235486.9
+2023-P13,1,beverage cost,9584.56
+2023-P13,1,food cost,77666.98
+2023-P13,1,labor,106333.26
+2023-P13,1,net sales,291324.0
+2023-P13,2,beverage cost,7987.13
+2023-P13,2,food cost,64722.48
+2023-P13,2,labor,88611.05
+2023-P13,2,net sales,242770.0
+2023-P13,3,beverage cost,8386.49
+2023-P13,3,food cost,67958.61
+2023-P13,3,labor,93041.6
+2023-P13,3,net sales,254908.5
+2023-P13,4,beverage cost,7188.42
+2023-P13,4,food cost,58250.23
+2023-P13,4,labor,79749.94
+2023-P13,4,net sales,218493.0
+2023-P13,5,beverage cost,7028.68
+2023-P13,5,food cost,56955.78
+2023-P13,5,labor,77977.72
+2023-P13,5,net sales,213637.6
+2023-P13,6,beverage cost,7348.16
+2023-P13,6,food cost,59544.68
+2023-P13,6,labor,81522.17
+2023-P13,6,net sales,223348.4
+2023-P13,7,beverage cost,9185.2
+2023-P13,7,food cost,74430.85
+2023-P13,7,labor,101902.71
+2023-P13,7,net sales,279185.5
+2023-P13,8,beverage cost,7827.39
+2023-P13,8,food cost,63428.03
+2023-P13,8,labor,86838.83
+2023-P13,8,net sales,237914.6
+2023-P13,9,beverage cost,7587.78
+2023-P13,9,food cost,61486.36
+2023-P13,9,labor,84180.5
+2023-P13,9,net sales,230631.5
+2023-P13,10,beverage cost,8785.85
+2023-P13,10,food cost,71194.73
+2023-P13,10,labor,97472.16
+2023-P13,10,net sales,267047.0
+2023-P13,11,beverage cost,7747.52
+2023-P13,11,food cost,62780.81
+2023-P13,11,labor,85952.72
+2023-P13,11,net sales,235486.9

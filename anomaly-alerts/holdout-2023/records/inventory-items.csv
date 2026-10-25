@@ -1,0 +1,70 @@
+inv_id,name,category,count_unit,units_per_case
+1,Ground chuck 80/20,protein,lb,40.0
+2,"Ribeye, choice, 14 oz cut",protein,lb,20.0
+3,"Sirloin, top, 8 oz cut",protein,lb,20.0
+4,"Short rib, boneless",protein,lb,20.0
+5,"Chicken breast, boneless",protein,lb,40.0
+6,"Chicken wings, jumbo",protein,lb,40.0
+7,Pork belly / bacon,protein,lb,15.0
+8,"Pork chop, bone-in",protein,lb,20.0
+9,"Salmon fillet, Atlantic",protein,lb,10.0
+10,"Shrimp 16/20, raw",protein,lb,10.0
+11,Cod loin,protein,lb,10.0
+12,Romaine hearts,produce,lb,18.0
+13,Mixed greens,produce,lb,6.0
+14,"Tomatoes, 5x6",produce,lb,25.0
+15,"Onions, yellow",produce,lb,50.0
+16,"Potatoes, russet",produce,lb,50.0
+17,Avocados,produce,each,48.0
+18,Lemons,produce,each,115.0
+19,Limes,produce,each,150.0
+20,Mushrooms,produce,lb,10.0
+21,Broccoli crowns,produce,lb,20.0
+22,"Peppers, mixed",produce,lb,25.0
+23,"Herbs, mixed",produce,bunch,24.0
+24,Apples,produce,lb,40.0
+25,"Berries, mixed",produce,lb,8.0
+26,"Eggs, large",dairy,dozen,15.0
+27,Butter,dairy,lb,36.0
+28,"Cheddar, shredded",dairy,lb,20.0
+29,"American cheese, sliced",dairy,lb,20.0
+30,"Parmesan, grated",dairy,lb,10.0
+31,Heavy cream,dairy,qt,12.0
+32,"Milk, whole",dairy,gal,4.0
+33,Sour cream,dairy,lb,10.0
+34,"Ice cream, vanilla",dairy,gal,3.0
+35,"Fries, frozen",frozen,lb,30.0
+36,Fryer oil,dry,lb,35.0
+37,Flour,dry,lb,50.0
+38,Rice,dry,lb,50.0
+39,"Pasta, dry",dry,lb,20.0
+40,Tortilla chips,dry,lb,15.0
+41,Sauces and dressings,dry,qt,12.0
+42,Spices and seasoning,dry,lb,10.0
+43,Sugar,dry,lb,50.0
+44,Chocolate and baking,dry,lb,10.0
+45,"Coffee, ground",na_bev,lb,24.0
+46,Soda syrup (bag-in-box),na_bev,gal,5.0
+47,Iced tea,na_bev,gal,24.0
+48,"Juice, assorted",na_bev,qt,12.0
+49,To-go containers and paper,paper,case,1.0
+50,Brioche buns,bakery,each,48.0
+51,Sourdough loaves,bakery,each,12.0
+52,Flour tortillas,bakery,each,72.0
+53,"Vodka, well",liquor,bottle,12.0
+54,"Vodka, premium",liquor,bottle,12.0
+55,"Gin, well",liquor,bottle,12.0
+56,"Rum, well",liquor,bottle,12.0
+57,"Tequila, blanco",liquor,bottle,12.0
+58,"Bourbon, well",liquor,bottle,12.0
+59,"Bourbon, premium",liquor,bottle,6.0
+60,"Whiskey, Irish",liquor,bottle,12.0
+61,Triple sec and liqueurs,liquor,bottle,12.0
+62,"Wine, house red",wine,bottle,12.0
+63,"Wine, house white",wine,bottle,12.0
+64,"Wine, cabernet",wine,bottle,12.0
+65,"Wine, sparkling",wine,bottle,12.0
+66,"Draft beer, domestic (oz)",beer,oz,1984.0
+67,"Draft beer, craft IPA (oz)",beer,oz,1984.0
+68,"Bottled beer, assorted",beer,bottle,24.0
+69,Mixers and garnish,liquor,qt,12.0

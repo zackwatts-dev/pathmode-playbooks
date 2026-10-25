@@ -1,0 +1,51 @@
+item_id,name,category,revenue_class
+1,"Wings, eight",starter,food
+2,Spinach artichoke dip,starter,food
+3,Loaded potato skins,starter,food
+4,Shrimp cocktail,starter,food
+5,"Chips, salsa, guacamole",starter,food
+6,Soup of the day,starter,food
+7,Caesar salad,salad,food
+8,Grilled chicken salad,salad,food
+9,Steak salad,salad,food
+10,Classic burger,burger,food
+11,Bacon cheddar burger,burger,food
+12,Mushroom Swiss burger,burger,food
+13,Crispy chicken sandwich,sandwich,food
+14,French dip,sandwich,food
+15,Fish tacos,sandwich,food
+16,"Ribeye, 14 oz",entree,food
+17,"Top sirloin, 8 oz",entree,food
+18,Braised short rib,entree,food
+19,Grilled salmon,entree,food
+20,Fish and chips,entree,food
+21,Chicken alfredo,entree,food
+22,Shrimp pasta,entree,food
+23,Pork chop,entree,food
+24,Chicken fajitas,entree,food
+25,Weekend brunch plate,brunch,food
+26,"Side, fries",side,food
+27,"Side, vegetables",side,food
+28,Kids meal,kids,food
+29,Chocolate cake,dessert,food
+30,Apple crisp,dessert,food
+31,Cheesecake,dessert,food
+32,Soft drink,na_bev,bev_na
+33,Iced tea,na_bev,bev_na
+34,Coffee,na_bev,bev_na
+35,Lemonade,na_bev,bev_na
+36,"Draft domestic, pint",beer,bev_alc
+37,"Draft craft IPA, pint",beer,bev_alc
+38,Bottled beer,beer,bev_alc
+39,"House red, glass",wine,bev_alc
+40,"House white, glass",wine,bev_alc
+41,"Cabernet, glass",wine,bev_alc
+42,"Sparkling, glass",wine,bev_alc
+43,"Cabernet, bottle",wine,bev_alc
+44,Margarita,cocktail,bev_alc
+45,Old fashioned,cocktail,bev_alc
+46,Moscow mule,cocktail,bev_alc
+47,Well highball,cocktail,bev_alc
+48,Premium vodka soda,cocktail,bev_alc
+49,"Bourbon, neat",spirit,bev_alc
+50,Irish whiskey shot,spirit,bev_alc
