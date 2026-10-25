@@ -656,7 +656,12 @@ def test_a_start_of_january_first_is_the_same_as_no_start():
 
 def test_a_term_with_a_second_reading_not_binding_or_missing_goes_to_a_person():
     for answer, word in (
-        (as_checked(other_reading={"field": "retroactive", "value": False}, why="could be by band"), "two readings"),
+        (
+            as_checked(
+                other_reading={"field": "retroactive", "value": False, "words": "the highest tier achieved"}, why="?"
+            ),
+            "two readings",
+        ),
         (as_checked(applies="informal", why="a rep's promise"), "outside the agreement"),
         (as_checked(applies="not 2025", why="next year's offer"), "doesn't apply"),
         ({"terms": []}, "found no"),
@@ -725,3 +730,10 @@ def test_text_addressed_to_an_ai_is_reported_once_for_each_document():
     m = Desk(reading(tier_term(), coop), check=lambda p: dict(as_checked(), addressed_to_ai=note))
     _, _, people = sa.read_supplier("Acme", list(docs().values()), m, 25000.0)
     assert sum("addressed to an AI" in p.reason for p in people) == 1
+
+
+def test_a_second_reading_counts_only_with_words_from_the_document_that_support_it():
+    unsupported = as_checked(other_reading={"field": "retroactive", "value": False, "words": "only within its band"})
+    m = Desk(reading(tier_term()), check=lambda p: unsupported)
+    terms, _, _ = sa.read_supplier("Acme", list(docs().values()), m, 25000.0)
+    assert [t.kind for t in terms] == ["volume tiers"]
