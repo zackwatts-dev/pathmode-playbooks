@@ -338,7 +338,7 @@ def run_session(run: Path, session: str, stage: str, text: str, biz: Business, m
     cfg.write_text(json.dumps({"mcpServers": {"analyst": {"command": server[0], "args": server[1:]}}}))
     (folder / "prompt.md").write_text(text)
     empty = tempfile.mkdtemp(prefix="analyst-")
-    done = subprocess.run(cli_args(cfg, model, budget), input=text, capture_output=True, text=True, cwd=empty,
+    done = subprocess.run(cli_args(cfg.resolve(), model, budget), input=text, capture_output=True, text=True, cwd=empty,
                           timeout=timeout)
     (folder / "transcript.jsonl").write_text(done.stdout)
     result = {}
