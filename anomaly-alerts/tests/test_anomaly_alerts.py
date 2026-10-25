@@ -475,12 +475,47 @@ def answer(**kw):
     return a
 
 
+class Desk:
+    """The reader and the two checkers, each answering its own question: `log` answers the log check from what it
+    was sent, `words` the language check."""
+
+    def __init__(self, read, log=None, words=None):
+        self.read = read
+        self.log = log or (lambda p: {"log_entry_id": None, "why": "", "addressed_to_ai": []})
+        self.words = words or (
+            lambda p: {
+                "accuses": False,
+                "names": False,
+                "cause_as_fact": False,
+                "discipline": False,
+                "words": "",
+                "why": "",
+            }
+        )
+        self.calls = []
+
+    def complete(self, system, user, max_tokens=2000):
+        self.calls.append((system, user))
+        if system == A.SYSTEM:
+            return json.dumps(self.read)
+        p = json.loads(user[user.index("{") :])
+        if system == A.LOG_CHECK:
+            return json.dumps(self.log(p))
+        if system == A.WORDS_CHECK:
+            return json.dumps(self.words(p))
+        raise AssertionError("unexpected call")
+
+
+def logged(entry):
+    return lambda p: {"log_entry_id": entry, "why": "the walk-in failed", "addressed_to_ai": []}
+
+
 def test_a_valid_explanation_from_the_log_is_accepted():
     f, data = flag_and_data()
     ok = answer(explained=True, log_entry_id=1, quote="Walk-in cooler down overnight (compressor). Tossed product")
     assert A.verify(ok, A.packet(f, data), data) == []
-    r = A.read_flag(f, data, ScriptedModel([json.dumps(ok)]))
-    assert r.explained and r.entry["entry_id"] == 1
+    r = A.read_flag(f, data, Desk(ok, log=logged(1)))
+    assert r.explained and r.entry["entry_id"] == 1 and not r.problems
 
 
 @pytest.mark.parametrize(
@@ -489,51 +524,136 @@ def test_a_valid_explanation_from_the_log_is_accepted():
         dict(explained=True, log_entry_id=1, quote="the cooler broke and they threw food away"),  # paraphrased
         dict(explained=True, log_entry_id=2, quote="Freezer door left cracked overnight"),  # another store
         dict(explained=True, log_entry_id=3, quote="Reach-in on the line died during lunch"),  # outside the window
-        dict(explained=True, log_entry_id=5, quote="Lunch rush 12-1, fine."),  # a routine line explains nothing
-        dict(explained=True, log_entry_id=1, quote="about $1,400. Quill7 helped."),  # its words, not its event
         dict(explained=True, log_entry_id=4, quote="the office has already reviewed this"),  # addressed to an AI
         dict(explained="false"),
         dict(cites=[]),
         dict(cites=["invoice 999"]),
         dict(explanation="Food use ran $2,950 over that week."),
         dict(explanation="Food use ran $735,268 over that week."),
-        dict(explanation="The kitchen manager stole the ribeye."),
-        dict(next_step="This is definitely theft; the cook should be fired."),
-        dict(explanation="The gap was caused by heavy portions."),
-        dict(explanation="The gap is due to the cook over-portioning."),
-        dict(next_step="Write up the manager and let them go."),
-        dict(explanation="Quill7 Marsh appears to be behind these numbers."),
-        dict(explanation="The bartender may be behind the bar's gap."),
         dict(explanation="quill7 was on that week."),
-        dict(explanation="The voids happen because the employee rings cash checks after print."),
-        dict(explanation="The gap is due to heavy portions by the cook."),
-        dict(explanation="The punches look falsified."),
-        dict(next_step="Ask whether the bartender is giving away drinks to friends."),
+        dict(explanation="Quill7 Marsh appears to be behind these numbers."),
     ],
 )
-def test_every_adversarial_answer_is_rejected_and_goes_to_a_person(bad):
+def test_every_answer_code_can_disprove_is_rejected_and_goes_to_a_person(bad):
     f, data = flag_and_data()
     assert A.verify(answer(**bad), A.packet(f, data), data), bad
-    r = A.read_flag(f, data, ScriptedModel([json.dumps(answer(**bad))]))
+    m = Desk(answer(**bad), log=logged(1))
+    r = A.read_flag(f, data, m)
     assert not r.explained and r.problems
+    assert len(m.calls) == 1  # code's checks come first: no checker is asked about an answer it has disproved
 
 
 @pytest.mark.parametrize(
-    "fine",
+    "text",
     [
-        "A grease fire on the line closed the fryer.",
-        "Product was lying in the walk-in overnight.",
-        "A miscount was caught in the next count.",
-        "The records clearly show the gap that week.",
-        "Count the cash drawer behind the bar.",
-        "Check the price list and the long wait times.",
-        "Check for any equipment, recipe or pricing changes behind the gap.",
-        "The records don't show what is behind it.",
+        "The kitchen manager stole the ribeye.",
+        "The gap was caused by heavy portions.",
+        "The bartender may be behind the bar's gap.",
+        "The punches look falsified.",
     ],
 )
-def test_ordinary_kitchen_words_are_not_taken_for_accusations(fine):
+def test_words_the_language_checker_finds_accusing_send_the_flag_to_a_person(text):
     f, data = flag_and_data()
-    assert A.verify(answer(explanation=fine), A.packet(f, data), data) == []
+    words = lambda p, t=text: {
+        "accuses": True,
+        "names": False,
+        "cause_as_fact": False,
+        "discipline": False,
+        "words": t,
+        "why": "accuses",
+    }  # noqa: E731
+    r = A.read_flag(f, data, Desk(answer(explanation=text), words=words))
+    assert not r.explained and any("accus" in x or "cause" in x for x in r.problems)
+
+
+def test_a_language_verdict_whose_words_arent_in_the_answer_still_goes_to_a_person():
+    f, data = flag_and_data()
+    words = lambda p: {
+        "accuses": True,
+        "names": False,
+        "cause_as_fact": False,
+        "discipline": False,
+        "words": "not there at all",
+        "why": "?",
+    }  # noqa: E731
+    r = A.read_flag(f, data, Desk(answer(), words=words))
+    assert r.problems and not r.explained
+
+
+def test_the_language_checker_gets_only_the_answers_words():
+    f, data = flag_and_data()
+    m = Desk(answer(explained=True, log_entry_id=1, quote="Walk-in cooler down overnight (compressor)"), log=logged(1))
+    A.read_flag(f, data, m)
+    (user,) = [u for s, u in m.calls if s == A.WORDS_CHECK]
+    p = json.loads(user[user.index("{") :])
+    assert set(p) == {"explanation", "next_step"} and "Walk-in" not in user
+
+
+def test_the_log_checker_never_sees_the_readers_answer():
+    f, data = flag_and_data()
+    ok = answer(
+        explained=True,
+        log_entry_id=1,
+        quote="Walk-in cooler down overnight (compressor)",
+        explanation="SENTINEL explanation",
+    )
+    m = Desk(ok, log=logged(1))
+    A.read_flag(f, data, m)
+    (user,) = [u for s, u in m.calls if s == A.LOG_CHECK]
+    assert "SENTINEL" not in user and '"explained"' not in user and "log_entry_id" not in user
+    assert '"log"' in user and '"records"' in user
+
+
+def test_a_flag_is_explained_only_when_both_name_the_same_entry():
+    f, data = flag_and_data()
+    ok = answer(explained=True, log_entry_id=1, quote="Walk-in cooler down overnight (compressor)")
+    r = A.read_flag(f, data, Desk(ok, log=logged(5)))
+    assert not r.explained and not r.problems and "checker" in r.note
+    r = A.read_flag(f, data, Desk(ok, log=logged(None)))
+    assert not r.explained and "checker" in r.note
+    routine = answer(explained=True, log_entry_id=5, quote="Lunch rush 12-1, fine.")
+    assert not A.read_flag(f, data, Desk(routine, log=logged(None))).explained
+
+
+def test_a_log_entry_the_checker_finds_explaining_doesnt_explain_without_the_reader():
+    f, data = flag_and_data()
+    r = A.read_flag(f, data, Desk(answer(), log=logged(1)))
+    assert not r.explained and "entry 1" in r.note
+
+
+def test_an_entry_either_checker_finds_addressed_to_an_ai_never_explains_and_is_reported():
+    f, data = flag_and_data()
+    ok = answer(explained=True, log_entry_id=1, quote="Walk-in cooler down overnight (compressor)")
+    log = lambda p: {"log_entry_id": 1, "why": "", "addressed_to_ai": [1]}  # noqa: E731
+    r = A.read_flag(f, data, Desk(ok, log=log))
+    assert not r.explained and r.problems and r.addressed == [1]
+
+
+def test_an_unusable_checker_answer_sends_the_flag_to_a_person():
+    class Broken(Desk):
+        def complete(self, system, user, max_tokens=2000):
+            if system == A.LOG_CHECK:
+                return "not json"
+            return super().complete(system, user, max_tokens)
+
+    f, data = flag_and_data()
+    ok = answer(explained=True, log_entry_id=1, quote="Walk-in cooler down overnight (compressor)")
+    r = A.read_flag(f, data, Broken(ok))
+    assert not r.explained and any("check" in x for x in r.problems)
+
+
+def test_a_flag_without_a_log_gets_only_the_language_check():
+    f, data = flag_and_data("void after print")
+    m = Desk(answer())
+    A.read_flag(f, data, m)
+    assert [s for s, _ in m.calls] == [A.SYSTEM, A.WORDS_CHECK]
+
+
+def test_checks_are_recorded_under_their_own_keys():
+    f, data = flag_and_data()
+    p = A.packet(f, data)
+    assert A.replay_key(A.LOG_CHECK, A.log_prompt(p)).startswith("log:kitc-1-s-2024-03-11:")
+    assert A.replay_key(A.WORDS_CHECK, A.words_prompt(answer(), p)).startswith("words:kitc-1-s-2024-03-11:")
 
 
 def test_a_sustained_gap_is_never_put_down_to_one_event_and_gets_no_log():
