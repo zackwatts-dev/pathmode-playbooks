@@ -409,7 +409,9 @@ Return JSON only:
   "applies": "yes" if it's part of the agreed {year} program; "informal" if it's promised outside the agreement \
 (a rep's personal email, say) rather than agreed in the program; "not {year}" if it has expired or is an offer \
 for {next}; "pays nothing" if it doesn't pay the distributor money back,
-  "clear": false only if the words could fairly be read two ways about how much is owed; otherwise true,
+  "clear": false only if the words could fairly be read two ways about how much is owed; otherwise true. A term \
+isn't unclear because it leaves something unsaid or doesn't repeat a definition: read it the way the supplier's \
+rebate team would, with the document's own definitions,
   "why": one short sentence,
   and the fields for its kind:
   volume tiers: "tiers": [[threshold dollars, rate percent], ...] the full table, lowest first, and "retroactive": \
@@ -537,7 +539,7 @@ def checked_terms(
     groups: dict[tuple[str, str], list[Term]] = defaultdict(list)
     for t in terms:
         groups[(t.doc, t.kind)].append(t)
-    ok, people = [], []
+    ok, people, reported = [], [], set()
     for (name, kind), ts in groups.items():
         try:
             ans = parse_json(model.complete(check_system(year), check_prompt(supplier, kind, by_name[name]), 3000))
@@ -547,7 +549,10 @@ def checked_terms(
                 Person(supplier, f"{t.kind} ({t.doc})", f"the check failed ({str(e)[:80]})", t.quote, t.doc) for t in ts
             ]
             continue
-        people += ai_lines(ans, supplier, name)
+        for p_ in ai_lines(ans, supplier, name):  # once for each document, however many checks saw it
+            if name not in reported:
+                reported.add(name)
+                people.append(p_)
         for t in ts:
             what = f"{t.kind} ({t.doc})"
             if not seen:
