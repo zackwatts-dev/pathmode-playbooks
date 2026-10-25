@@ -1,0 +1,4 @@
+problem,kind,location,who_or_what,started_on,found_on,how_found,loss
+1,register voids after print,Store 3,a server (by id),2025-02-12,2025-08-30,the server left,4788
+2,kitchen over-portioning,Store 7,the line,2025-01-01,,still running,16900
+3,vendor over the price list,all,Produce vendor,2024-11-01,2025-02-20,annual invoice review,2100
