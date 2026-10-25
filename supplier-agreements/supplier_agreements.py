@@ -28,7 +28,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from common import llm  # noqa: E402
-from common.evidence import NUMBER, numbers_in, quote_found, to_float  # noqa: E402
+from common.evidence import numbers_in, quote_found, to_float  # noqa: E402
 from common.fake import OfflineModel  # noqa: E402
 from common.util import BadAnswer, parse_json, read_csv, write_csv, write_text  # noqa: E402
 
@@ -655,9 +655,9 @@ def checked_lines(supplier: str, st: Statement, doc: Doc, model) -> list[Person]
 
 def resolve(terms: list[Term]) -> tuple[list[Term], list[Person]]:
     """A later document's term of the same kind replaces an earlier one, except for terms that add to each other
-    (line incentives, added locations). An amendment to one tier must say "from" the value the table has "to" the
-    new one; one that doesn't, or that leaves the table out of order, goes to a person with the table it was
-    meant to change, so nothing is worked out on a guess."""
+    (line incentives, added locations). An amendment to one tier must name a tier the table has and change it;
+    one that doesn't, or that leaves the table out of order, goes to a person with the table it was meant to
+    change, so nothing is worked out on a guess."""
     keep: dict[tuple, Term] = {}
     out, people = [], []
     for t in sorted(terms, key=lambda t: (t.doc_date or "0000", t.doc)):
@@ -688,16 +688,6 @@ def resolve(terms: list[Term]) -> tuple[list[Term], list[Person]]:
     return out + list(keep.values()), people
 
 
-def first_at(value: float, text: str) -> int:
-    for m in NUMBER.finditer(text):
-        try:
-            if abs(to_float(m.group()) - value) <= max(abs(value) * 1e-9, 1e-9):
-                return m.start()
-        except ValueError:
-            continue
-    return -1
-
-
 def amendment_problem(base: Term | None, t: Term) -> str:
     """Why an amendment can't be applied to the table it changes, or "" if it can."""
     if base is None:
@@ -714,10 +704,9 @@ def amendment_problem(base: Term | None, t: Term) -> str:
     for k, j in (("threshold", 0), ("rate", 1)):
         if ch.get(k) is None:
             continue
-        old, new = float(tiers[i][j]), float(ch[k])
-        a, b = first_at(old, t.quote), first_at(new, t.quote)
-        if old == new or a < 0 or b < 0 or a > b:
-            return f"the amendment's words don't say the {k} changes from {old:,.10g} to {new:,.10g}"
+        # Its new value is in its words (check_term), and the checker read the same change from the document alone.
+        if float(tiers[i][j]) == float(ch[k]):
+            return f"an amendment that leaves the {k} of tier {i + 1} at {float(ch[k]):,.10g}"
         changed = True
     if not changed:
         return "an amendment that changes nothing"

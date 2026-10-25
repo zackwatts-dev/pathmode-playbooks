@@ -411,10 +411,14 @@ def test_an_amendment_changes_only_the_tier_it_names():
     assert t.doc == "a.pdf, as amended by b.pdf"
 
 
-def test_an_amendment_must_say_from_the_old_value_to_the_new():
-    for quote in ("the second tier is now $2,000,000", "raised from $2,000,000 to $3,000,000"):
-        terms, people = sa.resolve([amendment(quote), base_tiers()])
-        assert not terms and people and "don't say" in people[0].reason
+def test_an_amendment_can_say_its_change_in_any_order():
+    (t,), people = sa.resolve([amendment("tier 2 now starts at $2,000,000 (previously $3,000,000)"), base_tiers()])
+    assert not people and t.get("tiers") == [[1e6, 1.0], [2e6, 2.0]]
+
+
+def test_an_amendment_that_changes_nothing_goes_to_a_person():
+    terms, people = sa.resolve([amendment("tier 2 stays at $3,000,000", tier=2, threshold=3e6), base_tiers()])
+    assert not terms and people and "leaves the threshold" in people[0].reason
 
 
 def test_an_amendment_to_a_tier_that_isnt_there_goes_to_a_person():
