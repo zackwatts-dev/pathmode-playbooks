@@ -29,11 +29,11 @@ The records that would show each of these are in different systems: the point of
    - A one-week jump that reverses the next week (a miscount) isn't flagged unless it's large.
    - Each flag is built only from what was known that morning.
 3. **Reads the records, and the log where it can explain** (AI). For each new flag, or one whose dollars a week have grown by half since it was last read, code gathers the records behind it as of that morning. For a store-level flag (the kitchen, the bar, the store's hours), it adds the store's log entries for the same days, with people's names taken out. An AI model (Claude, through Anthropic's API) says whether the log explains it (the walk-in failed, a catering order went out, a snowstorm), quoting the entry. For every flag it writes a short plain-English explanation and a next step for the general manager, citing the records. An employee's pattern, a vendor's prices or a closer's cash are never "explained" by the log.
-4. **Checks the AI's answer** (code):
-   - a quoted log entry must be one it was given, its words found in that entry, the entry describing an event of a kind that could account for the flag, and not addressed to an AI;
-   - it must cite at least one record, every record it cites must exist, and every amount it uses must be one of those records' amounts;
-   - it may not accuse, name anyone, state a cause as fact, or suggest discipline;
-   - an answer that fails any check goes to a person with the flag, unexplained.
+4. **Checks the AI's answer** (an AI checker, and code):
+   - **An AI checker reads the log again.** For a store-level flag with a log, a second AI call gets the flag, its records and the same log entries, never the reader's answer, and says which entry, if any, describes an ordinary event that accounts for the flag. Code compares: the flag counts as explained only if both name the same entry. Where they differ, the flag stays up, with both readings noted for the general manager.
+   - **An AI checker reads the answer's words.** For every answer, a second AI call gets the explanation and next step and says whether they accuse anyone, name anyone, state a cause as fact, or suggest discipline, quoting the words. Any of those, with its words found in the answer, sends the flag to a person, unexplained.
+   - **Code checks what code can check exactly:** a quoted log entry must be one it was given, its words found in that entry; the answer must cite at least one record, every record it cites must exist, and every amount it uses must be one of those records' amounts; it may not use the name of anyone in the employee list. Both AI calls, and code, look for log entries addressed to an AI; such an entry is reported to the director and can never explain a flag.
+   - An answer that fails any check, or a checker answer that can't be used, goes to a person with the flag, unexplained.
 5. **Writes the briefs:**
    - **each general manager:** their store's flags, money first, each with its evidence, the AI's explanation and next step;
    - **the director of operations:** the group view, every store's flags ranked by dollars a week, and what the log explained away;
@@ -68,7 +68,7 @@ Nightly CSV exports:
 ## Security and privacy
 
 - **Read-only:** it reads exports and writes the briefs. It changes nothing in any system and can't send anything.
-- **The AI sees only one flag at a time:** the records behind it and, for a store-level flag, that store's log entries for those days with names taken out. Employees appear by id. It has no tools.
+- **The AI sees only one flag at a time:** the records behind it and, for a store-level flag, that store's log entries for those days with names taken out. Employees appear by id. The log checker never sees the reader's answer; the language checker sees only the answer's words. None of the calls has tools.
 - **The log is data, not instructions.** An entry that tells the AI to do something is ignored, and can never clear a flag.
 - **Employee flags go to that store's GM and the director of operations only.** The controller's brief has vendors and cash, not servers.
 - **Everything shown is escaped.** Credentials come from the environment.
@@ -77,7 +77,7 @@ Nightly CSV exports:
 ## How it runs
 
 - **Daily,** on a server we control, after the overnight exports; the kitchen and bar on Mondays. Each run looks back 90 days to know which flags are already open, so only new or grown flags are read.
-- **At most 6 AI reads per store per run, and 40 for the group;** every flag is still listed.
+- **At most 6 AI reads per store per run, and 40 for the group,** each with its checker calls; every flag is still listed.
 - **Nothing is silently dropped:** an export that's missing or late is named at the top of every brief.
 - **Every run adds a line to a log:** when, which model, flags by kind, explained, sent to a person.
 - **Managers mark each flag real or not;** those marks tune the thresholds.
