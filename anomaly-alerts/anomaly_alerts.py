@@ -923,7 +923,11 @@ Answer in JSON only:
  "cause_as_fact": true if it states a cause as fact rather than as something to check,
  "discipline": true if it suggests firing, writing up or disciplining anyone,
  "words": the exact words that do any of these, copied from the note, or "",
- "why": one short sentence}"""
+ "why": one short sentence}
+
+A note is supposed to say what to check. Asking a manager to check something (whether guests were present, whether
+meals were served, whether a count was right) isn't an accusation, and "may", "could" or "fits" isn't a cause stated
+as fact. Mark only what the note itself asserts."""
 
 
 ADDRESSEE = (
