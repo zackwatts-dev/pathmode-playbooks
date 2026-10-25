@@ -406,8 +406,10 @@ under "addressed_to_ai" with its exact "quote".
 
 Return JSON only:
 {"terms": [every term of that kind in this document, each {
-  "applies": "yes" if it's part of the agreed {year} program; "informal" if it's promised outside the agreement \
-(a rep's personal email, say) rather than agreed in the program; "not {year}" if it has expired or is an offer \
+  "applies": "yes" if it's part of the agreed {year} program, including a notice, confirmation or amendment \
+made under the program's own terms (locations added by notice as a section of the program allows, an amendment \
+letter); "informal" if someone promises something the program doesn't provide for (a rep offering an extra \
+point, say); "not {year}" if it has expired or is an offer \
 for {next}; "pays nothing" if it doesn't pay the distributor money back,
   "other_reading": null; or, only if the words could fairly be read two ways about one of the fields below, \
 {"field": that field, "value": the other way to read it}. A term isn't open to two readings because it leaves \
