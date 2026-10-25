@@ -1,0 +1,61 @@
+{
+ "id": "F7",
+ "hypothesis": "H9",
+ "title": "Rep win-rate gaps reflect which customers a rep holds (trade x branch), not customer discount or a separable rep effect; markdowns on discontinued equipment are a stock-clearance mechanism tied to higher win rates, not a measured giveaway",
+ "conclusion": "Revised after challenge. (1) Rep spread, which holds and is strengthened: customer discount_pct does not track win rate (customer-level corr -0.0105, 2,099 customers, q302). Trade does (commercial 0.3172 vs residential 0.4937, q303). The quote-weighted SD of rep win rate is 0.0295 raw, 0.0272 after discount band and 0.0174 after trade x branch (q292, q308). That 0.0174 is close to the 0.0166 expected from each rep's customer mix plus binomial noise alone (q401, q405). Every quote's rep and branch equal the customer's assigned rep and branch (551,951 quotes, 5,602 customers, q364), so a rep effect cannot be separated from a customer effect. Raw rep win rates should not be used to compare reps. (2) Markdowns, revised: my earlier claim that markdowns buy no wins is withdrawn. It pooled stocked clearance lines with special-order lines. Markdowns on past-discontinued equipment sit almost only on lines the branch holds in stock (89.11% at 1-10x the quoted qty on hand, 96.17% at 10x+, 4.82% with none; 159,735 lines, q377). On stocked single-line quotes, any markdown coincides with a win rate of about 0.44 vs 0.1543 without one (q393), and +0.3252 within SKU x year x branch (468 cells, q396). Marked-down won lines mostly sold below unit_cost (79.22% in 2023-2025, q397). Interpretation: this looks like a clearance mechanism, not margin given away. It is not proven causal (see not_evidence_of). Action: do not run the 'customer discount only' pilot I proposed. Compare reps only within trade x branch at the customer level. If pricing wants to test markdown depth, vary depth at a fixed age since discontinuation.",
+ "dollars_a_year": 3163084.85,
+ "size_query": "q405",
+ "claims": [
+  {
+   "text": "Customer discount_pct does not track quote win rate: across bands from 0.01% to 42%, win rates are 0.417-0.4394 (532,949 quotes, 2016-2025). Customer-level corr is -0.0105 (2,099 customers with at least 50 quotes). The lower 0% band (0.3625, 19,002 quotes) is concentrated in 2 mixed-trade Troy customers (7,418 quotes at 0.2819).",
+   "queries": ["q285", "q350", "q302", "q309"]
+  },
+  {
+   "text": "Trade drives win propensity: commercial 0.3172 (140,397 quotes), mixed 0.4047 (123,101), residential 0.4937 (288,453). Customer win rates vary far beyond chance (variance 0.01267 vs 0.00222 binomial).",
+   "queries": ["q303", "q299"]
+  },
+  {
+   "text": "Across 36 outside reps (551,951 quotes, 2016-2025), the quote-weighted SD of rep win rate is 0.0295 raw, 0.0272 after discount band and 0.0174 after trade x branch. Observed rep-residual variance is 0.0003011 (SD 0.0174) vs 0.0002764 (SD 0.0166) expected from customer heterogeneity (customer variance 0.00499; reps hold 46-286 customers) plus noise. That leaves an excess SD of about 0.005.",
+   "queries": ["q292", "q308", "q401", "q405"]
+  },
+  {
+   "text": "Customers are never reassigned: every quote's rep_id and branch match the customer's assigned rep and branch (551,951 quotes, 5,602 customers). The 0.6459 time-half correlation of rep residuals (q295) is therefore expected from the same customers appearing in both halves.",
+   "queries": ["q364", "q295"]
+  },
+  {
+   "text": "Markdowns stack on the customer discount. They sit almost only on equipment quoted after discontinued_on, and within that almost only where the branch holds stock: share marked down is 0.0482 with none on hand (79,057 lines), 0.8911 at 1-10x qty (68,838) and 0.9617 at 10x+ (11,840). Won marked-down stocked lines were filled from stock 0.9993 of the time (31,985 of 32,009). Won no-markdown, no-stock lines were mostly special orders (30,293).",
+   "queries": ["q316", "q318", "q377", "q388", "q421"]
+  },
+  {
+   "text": "On stocked, single-line, past-discontinued quotes, the win rate is 0.1543 with no markdown (1,640 quotes) vs 0.4402 / 0.4342 / 0.4464 / 0.4396 at <20% / 20-30% / 30-40% / 40%+ (2,924 / 562 / 1,165 / 11,315). Within SKU the difference is +0.2892 (155 SKUs). Within SKU x year x branch it is +0.3252 (468 cells, 2,354 vs 1,187 quotes). Out of stock the sign reverses (-0.2932, 112 SKUs), which is why pooled comparisons showed no effect (0.4265 vs 0.4354, q362).",
+   "queries": ["q393", "q386", "q396", "q362"]
+  },
+  {
+   "text": "Depth tracks age since discontinuation: average 4.6 months at <20% vs 66.2 months at 40%+ (q393), and average depth rises from 0.0606 at <3 months to 0.42 at 24+ months (q370). Depth and age cannot be separated.",
+   "queries": ["q393", "q370"]
+  },
+  {
+   "text": "Markdown on won quotes was $9,489,254.54 in 2023-2025, an average of $3,163,084.85 a year. This is markdown against list x (1 - discount), not lost margin. 79.22% of those lines (100% in 2016-2022) sold below unit_cost, with a gross margin of -$4,174,119.06 for 2023-2025. Quote-linked markdown is a small part of all sales-order markdown (implied $58,552,796.44 over 2016-2025 on 84,092 lines, 42.54% below cost).",
+   "queries": ["q397", "q405", "q366"]
+  },
+  {
+   "text": "Skipping the markdown on stocked discontinued lines is spread across all 36 reps (no-markdown share 0.0596-0.1486, median 0.0955, at least 74 lines each, 80,678 lines). It is not one rep's practice. A rep's markdown share is unrelated to that rep's adjusted win residual (corr 0.0789).",
+   "queries": ["q408", "q339"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "That markdowns cause wins. Why some stocked lines go unmarked is not recorded. The stock measure is imperfect: won 'in-stock' no-markdown lines were filled from stock only 0.1747 of the time (236 of 1,351, q421), and 837 of 864 'no stock' marked-down won lines were filled from stock (q388). So some of the 0.15 vs 0.44 contrast may separate stock that was truly available (marked down and sold from the shelf) from stock that was committed or unusable. That the markdown depth is right: depth moves with age. That clearance is profitable: unit_cost is static, and holding and write-off costs are absent. That reps make no difference: an excess SD of about 0.005 cannot be ruled out. Nothing here concerns any individual rep. dollars_a_year ($3,163,084.85) is the annual volume of markdown on won quotes, the scale of the practice. It is not a loss or a recoverable amount.",
+ "could_not_tell": "Whether discontinued stock would have sold without markdowns, or what it would be worth written off (needs current valuation and holding cost). Why stocked lines are sometimes quoted without a markdown. Whether on-hand stock was committed or reserved at quote time (no allocation records). Rep effects separately from customer effects (needs account-reassignment history). The 190 marked-down quotes on non-discontinued SKUs with zero wins (days 1729-2268, q338) remain a small data concern.",
+ "next_step": "Ask pricing who sets the markdown schedule on discontinued stock and whether depth follows age by rule. If they want to test whether shallower markdowns clear stock as well, vary depth for SKUs at the same age since discontinuation. Ask branches why some stocked discontinued lines are quoted without a markdown, and whether that stock was committed. Compare reps only within trade x branch at the customer level.",
+ "dead_ends": [
+  "Customer discount_pct as the driver of win rate (corr -0.0105, q302)",
+  "Discount control narrowing rep spread (SD 0.0295 -> 0.0272, q292)",
+  "Zero-discount effect as a general pattern: it comes from 2 Troy customers (q309)",
+  "Pooled markdown vs no-markdown comparison: confounded by stock and fulfilment (q362 vs q386)",
+  "Markdown depth dose-response: confounded with age since discontinuation (q393, q370)",
+  "Rep markdown propensity explaining rep win residuals (corr 0.0789, q339)"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted on the markdown half. The challenger's stock-at-quote-time split shows my pooled and within-SKU comparisons averaged two opposite effects: +0.2892 in stock vs -0.2932 out of stock within SKU (q386), and +0.3252 within SKU x year x branch for stocked lines (q396). The 'markdowns buy no wins' headline, the '$3.16M of margin given away' framing and the proposed customer-discount-only pilot are withdrawn. Those lines already sell mostly below unit_cost (q397). I also accept that the flat depth response is confounded by age (q393, q370). One caveat, from a new query: the challenger's 'cleaner' in-stock contrast is also affected by misclassification. Won in-stock no-markdown lines were filled from stock only 0.1747 of the time (q421, from q388), so the 0.15 vs 0.44 contrast may partly reflect stock that wasn't really available. I therefore describe markdowns as coinciding with clearance wins, not causing them. Accepted, and adopted, on the rep half: the variance decomposition (q401, q405) and no-reassignment check (q364) are stronger evidence than my split-half correlations. The revised finding leads with the rep conclusion and keeps a narrower, observational markdown claim. dollars_a_year is restated as the scale of the markdown practice (q405), not a loss.",
+ "accepted": true
+}

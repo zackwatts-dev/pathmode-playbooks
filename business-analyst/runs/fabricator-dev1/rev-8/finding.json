@@ -1,0 +1,74 @@
+{
+ "id": "F8",
+ "hypothesis": "H10",
+ "title": "Late material is linked to about 2.8 times the late-shipment rate at the same planned slack, but it does not explain the 2016 and 2021 spikes. 2016 was a delay inside the plant. About four tenths of the 2021 excess came from vendor lead times that roughly doubled",
+ "conclusion": "Observed: compared at the same promised year and the same planned slack (promise date minus the last PO due date, in weeks, capped at 6+), jobs with a receipt after the PO due date shipped late 0.3573 of the time against 0.1263 for other jobs. That is 2.83 times as often, with all 3,524 late-receipt order jobs matched (promised 2016-2025). It comes to about 814 extra late shipments over 10 years, or 81.4 a year (q366). My earlier figures of about ninefold and 111.9 a year did not control for slack and overstated the effect (q367). Late receipts cluster in tightly planned jobs. In non-spike years, 0.5129 of late-receipt jobs had 14 days or less of planned slack, against 0.1766 of other jobs (q367), and most of the effect sits in that band: 0.5471 (1,453 jobs) vs 0.0869 (10,234) (q364). Late-receipt jobs were flat across years and carried only 0.1486 (2016) and 0.177 (2021) of late shipments (q282). The spikes are periods, not seasons: no calendar month in other years averages above 0.0379 (q368). The two spikes differ. In 2016, slack at release was normal (0.1 of jobs with on-time material released with 14 days or less, the same as other years), yet jobs ran late far more often at every slack level. For example, with more than 35 days of slack the rate was 0.1842 against 0.0039 (q360, q362). In 2021, PO lead times (due minus ordered) roughly doubled: steel 5.6 calendar days against 3.2-3.7, aluminium 13.9 against 6.7-7.3, stainless 12.2 against 6.0-7.7 (q357). Release waits for the last receipt: release equals the last receipt date on 0.9953-1.0 of jobs, and none are released earlier (q352). So create-to-release rose to 9.1 days, against 5.5-6.2 in other years (q344), and 0.1921 of jobs with on-time material were released with 14 days or less of slack (q362). Under one ordering of a non-additive decomposition, about 0.394 of the 2021 excess among jobs with on-time material comes from that tighter slack mix and 0.606 from higher lateness at the same slack (q362, q367). In every year, every late shipment was on a job completed after its promise date (share 1.0, q344). So the delay at the same slack was before job completion, not between completion and shipping. Interpretation: 2016 was a post-release, pre-completion problem inside the plant. 2021 was partly that and partly a material-supply problem. Receipts were measured against PO due dates that had themselves been pushed out, so the late-receipt flag could not see it. For action: measure material timeliness against the job's need date as well as the PO due date. Protect slack on jobs planned with 14 days or less. Look at pre-completion flow in Sep-Dec 2016 and Mar-Oct 2021.",
+ "dollars_a_year": null,
+ "size_query": null,
+ "claims": [
+  {
+   "text": "At the same year and planned-slack week, late-receipt jobs shipped late 0.3573 vs 0.1263 (ratio 2.83; 3,524 of 3,524 matched), about 814 extra late shipments over 10 years, 81.4 a year. This replaces the unadjusted 8.96x (0.3575/0.0399) and 111.9 a year, a difference of 30.5 a year.",
+   "queries": ["q366", "q367"]
+  },
+  {
+   "text": "Late receipts concentrate in tightly planned jobs. In non-spike years, 0.5129 of late-receipt jobs vs 0.1766 of others had 14 days or less of planned slack. Within slack bands: 14 days or less, 0.5471 (1,453) vs 0.0869 (10,234); 15-21 days, 0.0984 (549) vs 0.0001 (15,752); 22-28 days, 0.0355 (451) vs 0.0004 (11,592); more than 28 days, 0.0026 (380) vs 0.0012 (20,359).",
+   "queries": ["q364", "q367"]
+  },
+  {
+   "text": "The late rate rises with receipt delay: on time 0.0394 (71,812 jobs), 1-3 days late 0.2051 (390), 4-7 days 0.2736 (1,334), 8-14 days 0.4359 (1,661), more than 14 days 0.6475 (139). This gradient is not adjusted for planned slack.",
+   "queries": ["q311"]
+  },
+  {
+   "text": "Late-receipt jobs are flat at 323-394 a year and carry only 0.1486 (2016) and 0.177 (2021) of late shipments, against 0.3769-0.6076 in other years. Monthly, they stay at 20-38 inside the spikes.",
+   "queries": ["q282", "q308"]
+  },
+  {
+   "text": "The spikes are not seasonal. In non-spike years, no calendar month averages above 0.0379 and no single month-year exceeds 0.0799.",
+   "queries": ["q368"]
+  },
+  {
+   "text": "2016: among jobs with on-time material, the share released with 14 days or less of slack was 0.1, the same as other years. Re-weighting 2016 to other years' slack mix leaves its late rate at 0.118 (actual 0.1152, other years 0.0159). At the same slack, 2016 was far worse: 15-21 days 0.0623 vs 0.0007; more than 35 days 0.1842 vs 0.0039.",
+   "queries": ["q362", "q360"]
+  },
+  {
+   "text": "2021: PO lead rose to 5.6 days (steel), 13.9 (aluminium) and 12.2 (stainless), against 3.2-3.7, 6.7-7.3 and 6.0-7.7 in other years. Release equals the last receipt date on 0.9953-1.0 of jobs with receipts, and no job is released before its last receipt. Create-to-release was 9.1 days vs 5.5-6.2. Average slack at release was 23.8 days vs 26.4-27.6.",
+   "queries": ["q357", "q352", "q344"]
+  },
+  {
+   "text": "Among jobs with on-time material in 2021, 0.1921 were released with 14 days or less of slack, against 0.1 elsewhere. Actual 2021 late rate 0.1593. With other years' slack mix it would have been 0.1028, against 0.0159 in other years. About 0.394 of the excess is slack mix and 0.606 is within-slack (one ordering of a non-additive decomposition).",
+   "queries": ["q362", "q367"]
+  },
+  {
+   "text": "Across 120 months, the late rate of jobs with on-time material correlates 0.648 with create-to-release, 0.663 with PO lead and 0.493 with release-to-completion. Create-to-release and PO lead correlate 0.996 with each other, so they are effectively one signal.",
+   "queries": ["q356"]
+  },
+  {
+   "text": "In every year, the share of late shipments on jobs completed after the promise date is 1.0, and completion to shipment averages 0.03-0.21 days. The lateness arises before job completion, not in shipping.",
+   "queries": ["q344"]
+  },
+  {
+   "text": "Clocked labour in 2021 was 109,740 h, below 2017-2019 (114,170-120,946). The monthly late rate correlates 0.135 with clocked hours and 0.169 with overtime hours (120 months). Clocked hours are posting-dated. These were not re-tested by the challenger.",
+   "queries": ["q302", "q298"]
+  },
+  {
+   "text": "The 2021 spike among jobs with on-time material is broad: 0.1547-0.1664 in all five segments, against 0.0137-0.0181 in non-spike years.",
+   "queries": ["q325"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "Not evidence that late receipts cause late shipments. Even the slack-matched 81.4 a year is an association: rushed orders could produce both short PO due dates and late vendors. Not evidence that 2021 material supply was fine: 'on time' was measured against PO due dates that had lengthened. Not evidence of which work centre held jobs. Release-to-completion time is a weak measure of flow: it fell over the decade from 21.4 days (2016) to 8.6 (2025), and 2017 ran 18.4 days with a late rate of only 0.0307 (q344). Not evidence about vendors whose receipts are often unrecorded. The unreceived share is 0.4416 for vendor 1, 0.3881 for aluminium, 0.4274 for stainless and 1.0 for both outside processors (q338). Outside-processing jobs ran late 0.6602 (2016) and 0.6807 (2021) and can never carry a late-receipt flag (q341). Not evidence that capacity was adequate: clocked hours are posting-dated and measure neither skill nor queues.",
+ "could_not_tell": "Which operation or work centre slowed jobs at the same slack in 2016 and 2021: operations carry only completion dates. Whether vendor lead times rose in 2021 because vendors quoted longer or because Wendlow set later due dates: POs record only ordered and due dates. Whether unreceived POs (flat at 0.2884-0.3115 a year, q337) were cancelled or received without a record. Jobs with an unreceived PO and no recorded late receipt ran late 0.0521, against 0.0331 for fully received jobs (q336), so some late material is probably hidden there. The 428 order jobs promised in 2016 with no PO (late 0.1262, q336) reflect PO data starting 2016-01-05 while releases start 2015-11-27 (q335). They slightly inflate early-2016 rates but not the Sep-Dec spike. No dollar figure is supported: direct cost is small and expedited freight is billed to customers (prior q76, q82, q98).",
+ "next_step": "(1) For jobs with on-time material in Sep-Dec 2016 and Mar-Oct 2021, compare the gaps between successive operation completions with 2019 at the same slack at release, to find where elapsed time grew. (2) Add a need-date measure: last receipt against (promise date minus the estimated routing time), so that material delay is visible even when PO due dates move. (3) Ask purchasing whether the 2021 PO due dates reflected vendor quotes. (4) Close the receipt-recording gap for vendor 1, aluminium, stainless and the outside processors, so their timeliness can be measured. (5) Check the 2021 tenure signal (0.172 of hours worked by staff with under a year's tenure, q327) against timecard headcount. This is suggestive only.",
+ "dead_ends": [
+  "Job size as a confounder: late-receipt jobs have about the same PO and operation counts, and the effect survives stratification (q287). Planned slack, however, was a confounder: adjusting for it cuts the ratio from 8.96 to 2.83 (q366, q367).",
+  "More late receipts in spike years: counts are flat (q282, q308).",
+  "High clocked load in spike years: 2021 load was below 2017-2019, and monthly correlation is 0.135 (q298, q302).",
+  "Spike concentrated in one segment: it is spread across all five (q325).",
+  "Seasonality: no calendar month in other years averages above 0.0379 (q368).",
+  "Release-to-completion time as the signature of the spikes: 2017 matched 2021 on it with a low late rate (q344, q348).",
+  "Shipping-side delay: every late shipment was on a job completed after its promise date (q344)."
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted in full. (1) Planned slack confounds the late-receipt effect. I did not stratify on it, and late-receipt jobs are much more often tightly planned (0.5129 vs 0.1766, q367). Planned slack comes from PO due dates set before any receipt, so it is a legitimate pre-treatment control. The headline is now 2.83x and 81.4 extra late shipments a year (q366), replacing about ninefold and 111.9. The receipt-delay gradient (q311) is kept but labelled unadjusted. (2) 'The spikes came from jobs whose material arrived on time' was misleading for 2021. Release is gated on the last receipt (q352), PO lead times roughly doubled (q357), and about 0.394 of the 2021 excess comes from tighter slack at release (q362, q367). The conclusion now separates 2016 (in-plant only) from 2021 (partly supply). (3) I drop release-to-completion time as evidence of slow flow, given its decade-long decline and the 2017 counterexample (q344, q348). The post-release component is now shown by higher lateness at the same slack at release (q360). I narrowed it with one addition from the challenger's own q344: the share of late shipments on jobs completed after promise is 1.0 in every year. So the delay is before completion, not in shipping. (4) Uneven receipt recording by vendor and unmeasurable outside processing are now stated as limits on the late-receipt effect (q336, q338, q341). (5) The early-2016 truncation is noted (q335, q336). Confidence is lowered from high to medium, because the size of the material effect moved by a factor of three under one added control. I ran no new queries: the challenger's queries settle each point, and I found nothing in them to dispute.",
+ "accepted": true
+}

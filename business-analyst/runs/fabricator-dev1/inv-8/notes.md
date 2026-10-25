@@ -1,0 +1,11 @@
+# H10 notes
+- Definitions: order jobs, late = last shipment date > so_line promised_date; late receipt = any receipt on job's POs after PO due_on; year = promised year.
+- q282: per-job effect strong every year (2021 0.6969 vs 0.1593; 2019 0.3095 vs 0.0098), but late-receipt jobs flat 323-394/yr, and carry only 14.9% (2016) / 17.7% (2021) of late shipments vs 38-61% in normal years.
+- q287: stratified year x family x #PO x #ops x est-hours quartile: 0.3575 vs 0.0399 (3,522 of 3,524 LR jobs matched). LR jobs are not bigger (1.432 vs 1.396 POs; 4.106 vs 4.041 ops). Size confound dead.
+- q311: dose-response on receipt delay 0.0394 -> 0.6475.
+- q298: monthly corr late rate vs LR share -0.026, vs clocked hours 0.135, vs OT 0.169 (120 months). Neither explains spike.
+- q302: clocked h 2021 = 109,740, below 2017-2019; 2016 highest 124,657. Shop days released->completed for non-LR jobs 21.9 (2016), 17.6 (2021) vs 12-14 → slower flow, not more hours.
+- q308: monthly: spike Sep-Dec 2016 (peak Oct 0.361), Mar-Oct 2021; LR jobs 20-38/mo flat. Jan 2016 0.141 likely edge (2015 carry-in).
+- q325: spike broad across all 5 segments.
+- q327: 2021 share of hours by <1yr tenure staff 0.172 (highest); 2016 value 0.0334 likely artefact of hire dates pre-window. Suggestive only.
+- Dead ends: size confound; clocked-load explanation; LR count rising in spike years.

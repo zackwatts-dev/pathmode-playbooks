@@ -1,0 +1,57 @@
+{
+ "finding": "F5",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Duplicates could sit on a different job, not the same one. q228 only compared POs within the same job, so a buy keyed twice under two job numbers would be missed.",
+   "test": "For each PO, look for an exact twin (same vendor, same material, same pounds) on another job within 0-5 days. Compare that count with a control window of 30-35 days. Real duplicates would cluster close in time; chance matches would not.",
+   "result": "Not supported. 3,207 unreceived material POs have a cross-job twin within 0-5 days, against 3,863 within 30-35 days. For received POs the counts are 274 vs 276. There is no excess near in time, so the twins look like coincidental pound values on small replacement lots (2016-2025).",
+   "queries": ["q297", "q304"]
+  },
+  {
+   "explanation": "Mis-ranking and edge effects. The 132 unreceived 'first POs' from Jan 2016 (on jobs carried in from before the records start) might not be first buys at all. They could be scrap-replacement buys whose real first PO is older than the records.",
+   "test": "Match the scrap reports that have no follow-up PO, and every unreceived PO on those carry-in jobs, to scrap reports by order of occurrence.",
+   "result": "Confirmed, and it corrects the finding. The only scrap reports without a matching follow-up are 132 reports (187 pieces), all on jobs whose 'first' PO is unreceived, all in 2016. The 149 unreceived POs on those jobs all match a scrap report on the same day. Their median is 42.5 lb and they total $8,442, of which $7,549 was ranked 'first'. So every one of the 30,802 scrap reports has a same-day unreceived PO, and the replacement buys number 30,802 at $2,366,230, not 30,670 at $2,358,681. The 86 open Dec-2025 first POs hold up as an edge effect: only 2 were past due at 2025-12-31 (max 9 days), and 2,374 of 76,049 received first POs (3.12%) came in after their due date.",
+   "queries": ["q284", "q288", "q306", "q310", "q321"]
+  },
+  {
+   "explanation": "Definitions. The match of GL material to all PO dollars at 1.0000 is a fact about how the ledger is posted, not evidence that the cost is real or 'correctly charged'.",
+   "test": "Compare GL material, and GL outside processing, with PO dollars by the month the PO was placed.",
+   "result": "Both match exactly in all 120 months, 2016-01 to 2025-12. GL outside processing is $1,718,008 and outside-processing PO dollars are also $1,718,008. The ledger books material when the PO is placed, not on receipt or invoice. The match is therefore true by construction and cannot tell an arrived replacement buy from an unfilled or cancelled one. If any replacement POs were never filled, GL material is overstated by their value, up to $2,366,230 over 10 years. That is the scenario F5 called 'not an overstatement'.",
+   "queries": ["q277", "q310"]
+  },
+  {
+   "explanation": "Missing data / confounding. 'The job shipped in full, so the replacement material arrived' may not follow. The re-run work could have used stock or drops already on hand, in which case shipment says nothing about the PO.",
+   "test": "On jobs with follow-ups, compare when rework labour starts with when the replacement PO was placed and when it was due.",
+   "result": "Rework labour starts a median 0 days after the replacement PO is placed. It starts before the PO's due date on 24,314 of 25,274 jobs with follow-ups (96.2%). Median due lead is 1 day for both first and follow-up POs. 224 jobs were completed before their last replacement PO was due, and 937 have no rework entry. The pieces were re-run before the PO material could have arrived, so shipping in full does not show that the PO material arrived. Interpretation: the replacement PO may be restocking, or it may never have been filled. These records cannot tell the two apart.",
+   "queries": ["q272", "q273", "q321"]
+  },
+  {
+   "explanation": "The replacement material might have been received under the first PO's receipt (over-receipt), and never as its own receipt.",
+   "test": "Compare received pounds with PO pounds on first POs, for jobs with and without follow-ups.",
+   "result": "Received pounds equal PO pounds on every received first PO. The median ratio is 1.0 and p10 and p90 are both 1.0. None is more than 2% over; 2 of the no-follow-up group are under. Replacement pounds were not folded into the first receipt. Receipts here always equal the PO exactly, so the receipt record looks like it is generated from the PO rather than weighed on arrival. That limits what 'received' proves even for first POs.",
+   "queries": ["q269"]
+  },
+  {
+   "explanation": "The money. Replacement buys might carry a small-lot premium, which would be a recoverable price gap rather than pure scrap cost.",
+   "test": "Compare each follow-up's price per lb with the price on the job's first PO.",
+   "result": "No premium. The median ratio is 1.0026 (p10 0.9356, p90 1.077). Follow-up dollars are $2,358,681, against $2,353,753 at first-PO prices. The cost is the scrap itself, not pricing.",
+   "queries": ["q310"]
+  },
+  {
+   "explanation": "Scope. H6 concerns unreceived POs, and F5 silently dropped outside processing. Every outside-processing PO is unreceived.",
+   "test": "Count unreceived POs and dollars split by outside processing vs material, and check outside-processing POs for repeats within a job.",
+   "result": "All 1,234 outside-processing POs ($1,718,008) are unreceived, against 30,888 of 106,937 material POs ($2,489,397). Each job has exactly one outside-processing PO, so there are no in-job repeats. Receipts simply aren't used for outside processing, so 'no receipt' tells you nothing about duplication there. It is a recording convention and should be stated as such, not ignored.",
+   "queries": ["q314", "q318", "q277"]
+  },
+  {
+   "explanation": "Scrap memo vs follow-up dollars. The memo might value scrap differently, for example at first-PO cost per piece, which would explain the 0.5-16% gap.",
+   "test": "Value each year's scrap reports at quantity × the first PO's dollars per job piece and compare with the scrap memo.",
+   "result": "Still unexplained. The memo is 0.9941-1.1623 times this estimate, and no scrap report falls on a job without a material PO. The gap does not bear on duplicates.",
+   "queries": ["q280"]
+  }
+ ],
+ "what_changed": "1) The 132 Jan-2016 'unreceived first POs' are not edge-effect first buys. They are scrap-replacement buys on carry-in jobs whose original PO predates the records. Replacement buys are therefore 30,802 POs, one per scrap report, at $2,366,230 over 2016-2025: $236,623/yr and 2.6% of GL material (q288, q310). All 30,888 unreceived material POs are now accounted for: 30,802 replacement buys plus 86 Dec-2025 POs not yet due, totalling $2,489,397 (q318, q321). 2) The GL = PO-dollars match is dropped as support. The ledger posts material at PO placement in every month (q277), so it cannot show that the cost is real. If replacement POs went unfilled, GL material is overstated by up to that amount. 3) 'Jobs shipped in full, so material arrived' is withdrawn. Rework starts the same day the replacement PO is placed and before it is due on 96.2% of jobs (q272), so the shipment doesn't depend on the PO material. Whether replacement material arrived is now open. 4) The scope note is added: outside-processing POs are never receipted (1,234, $1,718,008; q318). 5) Confidence on 'not duplicates' stays high (q228, q304). Confidence on 'real, correctly charged scrap cost' falls to unknown.",
+ "revised_conclusion": "Unreceived material POs are not duplicate buys. Every one of the 30,888 unreceived material POs (2016-2025) is either a scrap-replacement buy or an order placed in Dec 2025 and not yet due. There are 30,802 replacement buys, exactly one per scrap report: same day, sized to the scrapped pieces, at the same price per lb as the first PO. They total $2,366,230, about $236,623/yr. The 86 Dec-2025 orders total $123,167. No near-in-time duplicates were found within a job or across jobs. Replacement buys are never receipted. The ledger books every PO as material when it is placed, so the $2.37M sits in GL material whether or not the material came. The pieces were re-run before the replacement material was due, so it was probably drawn from stock (interpretation). The records cannot show whether the replacement POs were filled, restocked inventory, or were left open or cancelled. If they were not filled, GL material is overstated by up to that amount. Outside-processing POs are never receipted either ($1,718,008), which is a recording convention. Action: get vendor invoices or AP for a sample of replacement POs from vendors 1, 3 and 4 to see whether they were billed. Have replacement buys receipted or tagged. Pursue the cost through scrap reduction.",
+ "not_evidence_of": "It is not evidence that replacement material arrived, or that the $2.37M is a correctly charged cost. Because the GL posts on PO placement, its match to PO dollars proves nothing either way. It is also not evidence of overstatement: nothing shows the POs went unfilled. It is not evidence that vendor 1, receiving, or any person is failing; the vendor skew comes from where replacement buys are sent. It is not evidence about outside-processing duplication, because receipts are never used there. The $236,623/yr is not recoverable spend. At most it is the material cost of scrap, reducible only by reducing scrap."
+}

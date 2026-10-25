@@ -1,0 +1,119 @@
+[
+ {
+  "finding": "F1",
+  "grade": "full",
+  "problem": "P4",
+  "truth_queries": [
+   "t399",
+   "t400"
+  ],
+  "why": "The truth puts material bought over the quoted material at $3,029,316 in 2021 (by year bought), $728,185 in 2022 and $769,433 in 2018, with 2019-20 and 2023-24 under quote (-$505,497 in 2023, -$346,047 in 2024) (t399). The finding's 2021 shortfall of $2,913,379, its small 2022 figure and its recovery from 2023 match this, and so does its mechanism: repeat-part prices held at the old level while steel was bought at higher prices, with the surcharge recovering only a little. It misses the smaller 2018 episode, and its $1.09M-a-year size is lower than the truth's average of about $1.88M a year over 2021-22, but the effect, timing and cause are right.",
+  "rank": 1,
+  "dollars_a_year": 1090041.0,
+  "grade_problems": [
+   "$1.88M isn't in a cited truth query"
+  ]
+ },
+ {
+  "finding": "F9",
+  "grade": "true, not planted",
+  "problem": null,
+  "truth_queries": [
+   "t404",
+   "t405"
+  ],
+  "why": "Slack paid time from falling workload is not one of the six planted problems. The truth backs the finding's main claim. In every year 2016-2025, clocked hours run 1.006-1.008 times the true operation hours (t404), so the clocked figures are honest. True work fell from 121,721 h (2016) and 117,890 h (2017) to 106,265 h (2025) while paid hours held, so the growing unclocked time is real idle capacity. The 2016 drop is real: true/estimate fell within the year (laser 0.989 to 0.807, brake 1.057 to 0.855, Jan to Dec) while clocked/true stayed about 1.00-1.01 (t405). That settles the booking-versus-efficiency question the analyst left open: it was efficiency, not a booking change.",
+  "rank": 2,
+  "dollars_a_year": 255110.0,
+  "grade_problems": []
+ },
+ {
+  "finding": "F3",
+  "grade": "true, not planted",
+  "problem": null,
+  "truth_queries": [
+   "t408",
+   "t410",
+   "t411"
+  ],
+  "why": "No problem in the key is about late payment or receivables. The truth does confirm the pattern: truth.customer_traits gives every customer a pay_habit, and customers 6 and 7 are in the 20-day group, customer 36 in the 45-day group (t408). Median days late run 0, 4, 10, 24 and 53 across the habit groups 0/3/8/20/45 (t410). The above-PO effect also holds within each habit group: above-PO invoices are more than 30 days late 62-89% of the time against 15-79% for matching ones, with medians of 37-87.5 days late against 0-50 (t411). The finding's $113,095/yr is a carrying cost at an assumed 8% rate, and the truth has no figure to check it against.",
+  "rank": 3,
+  "dollars_a_year": 113095.0,
+  "grade_problems": []
+ },
+ {
+  "finding": "F10",
+  "grade": "full",
+  "problem": "P5",
+  "truth_queries": [
+   "t416",
+   "t417",
+   "t418"
+  ],
+  "why": "The truth records 305 jobs built to an old revision (170 email named no job, 91 traveller already printed, 44 engineering behind), 81 escaped (t416), and all 137 'wrong revision' scrap reports are truly wrong-revision (t417). The analyst's 330 at-risk jobs contain 299 of the 305 missed jobs and 80 of the 81 escapes: the 82 superseded-at-release jobs are the 44 'engineering behind' plus 38 'email named no job', and the 248 mid-job-no-ECO jobs include 127 'email named no job' and 90 'traveller already printed', with 31 not missed (t418). So the finding finds the planted mechanism, a revision that never reaches the job, together with its escapes. The dollar figure is the analyst's own estimate; the key has none.",
+  "rank": 4,
+  "dollars_a_year": 69682.0,
+  "grade_problems": [
+   "330 isn't in a cited truth query",
+   "299 isn't in a cited truth query"
+  ]
+ },
+ {
+  "finding": "F6",
+  "grade": "partly",
+  "problem": "P1",
+  "truth_queries": [
+   "t422",
+   "t424",
+   "t425",
+   "t426"
+  ],
+  "why": "The truth backs the finding's main claim. In the 14 months where 115 sent 9 or more new quotes, 37.7% of other quoters' quotes were lost because the buyer had already decided (reason 'late'), against 21.2% in months with no 115 quotes (t424, t425). Nothing in the truth marks 115 as a weak quoter: skill 0.987 against 0.995 for estimator 109 (t426), and their estimate biases look like everyone else's (t422). That matches the effect in P1, slow quotes losing work, and one of its causes, the estimator vacancies. But the key says the delay comes mostly from the twice-a-week inbox and requests missing information, and the finding never mentions either, so it covers only the secondary part of P1.",
+  "rank": 5,
+  "dollars_a_year": 20872.0,
+  "grade_problems": []
+ },
+ {
+  "finding": "F2",
+  "grade": "true, not planted",
+  "problem": null,
+  "truth_queries": [
+   "t430",
+   "t431",
+   "t432"
+  ],
+  "why": "None of the key's six problems covers new-hire scrap (P6 is about senior know-how and first articles). But the truth tables do contain a 'new hire' scrap cause: 4,005 scrap reports and 5,811 pieces over 2016-2025, present in every year (269-1,058 pieces a year) (t430, t432). The truth also backs the finding's labelling point: 4,277 of those 5,811 pieces were coded 'operator error' and none 'dimension out of tolerance', while most DOT scrap is true 'process' scrap (18,356 pieces) (t430). The finding's 353.8 excess pieces a year is the right effect, but smaller than the truth's roughly 581 a year.",
+  "rank": 6,
+  "dollars_a_year": 18914.0,
+  "grade_problems": [
+   "581 isn't in a cited truth query"
+  ]
+ },
+ {
+  "finding": "F4",
+  "grade": "true, not planted",
+  "problem": null,
+  "truth_queries": [
+   "t436",
+   "t437",
+   "t438"
+  ],
+  "why": "Customer and family profitability under different cost allocations is not one of the six planted problems. The truth backs the main claim: on true cost, won quote lines carry a 15.98% margin overall, and only 5 of 285 customers are below true cost, all of them small (the largest has $39,554 of won price) (t436, t437, t438). Family 1, which the finding says could go either way, is profitable on true cost (19.87% margin, 0.11% of won lines below cost, t436), so the finding was right not to call it a loss. The weakest families in the truth are 3 and 4 (12.17% and 9.94%, the P2 weld drift), which the finding does not identify.",
+  "rank": 7,
+  "dollars_a_year": 8295.4,
+  "grade_problems": []
+ },
+ {
+  "finding": "F8",
+  "grade": "partly",
+  "problem": "P3",
+  "truth_queries": [
+   "t442",
+   "t443"
+  ],
+  "why": "The finding picks out the planted late-delivery spikes. Order jobs with a weld operation shipped on time 0.8016 of the time in 2016 and 0.851 in 2021, against 0.9846-0.9978 in other years; jobs without weld were 0.9154 in 2016 and 0.7898 in 2021 (t442). It also correctly says 2016 was a delay inside the plant that is not explained by material. But it never reaches the planted cause: due dates set from a standard lead time with no check on the load at the bottleneck work centres. It says it could not tell which work centre held jobs, and it puts about 0.39 of the 2021 excess on vendor lead times. Truth hours by work centre are completion-dated and do not by themselves settle the bottleneck question (weld 50,379 h in 2016 and 47,166 h in 2021, against 42,488-49,672 h in other years, t443). So this is the right effect with the mechanism missing.",
+  "rank": 8,
+  "dollars_a_year": null,
+  "grade_problems": []
+ }
+]

@@ -1,0 +1,12 @@
+# H1 notes
+- q101: outside-processing PO lines carry $1,718,008 of amount despite 0 lb / 0 price; map said $0. Excluded from material. Worth correcting in map.
+- q107: job-level material share (non-outside POs / shipped qty x PO price) by first-ship year: 0.2484-0.315 2016-2020, 0.4023 2021, 0.3942 2022, 0.3332 2023, ~0.32 2024-25. Received-only POs give nearly the same share (0.3916 in 2021), so the 28.9% unreceived POs are small dollars here -> not the driver. GL timing alone does NOT explain the gap (weaken test failed).
+- q111: carbon jobs split first / repeat_same (price = previous order) / repeat_changed. 2021 repeat_same share 0.3893 vs first 0.317.
+- q117: pooled baseline mixed carbon with non-carbon (non-carbon structurally ~0.5 share) -> misleading; dead end, replaced by per-material baseline q123.
+- q123: per-material baselines 0.2572 carbon, 0.4679 other. Non-carbon baseline is distorted by 2016 (0.298) - don't lean on non-carbon excess.
+- q128: repeat-part prices vs each part's last 2020 price: median 1.0 in 2021 (59.7% unchanged, 6,210 lines), 1.3588 in 2022 (12.4% unchanged). Carbon $/lb 0.3131 (2020) -> 0.508 -> 0.5907 -> 0.4735 (2025). PPI WPU1017.
+- q135: quarterly by order date: carbon share peaks 0.4554 in 2021Q4, back to ~0.30 by 2023. Uplift peaks 2022Q2 (611 of 1,793 invoices).
+- q140/q149: spread across all 5 segments; top-10 customers 63.6% of excess vs 65.2% of revenue -> no concentration beyond size.
+- q146: buggy FILTER placement (b1620=0.6702) - discarded; fixed in q152.
+- q152: sizing. 2021-23 carbon excess $7,569,388, uplift $730,154 (0.0965), net $2,279,745/yr avg; 2024-25 still $972,905/yr (baseline 2017-20: $855,360).
+- Prediction mostly right; prices reset within ~1 year (2022), so "lag" is 2021 mostly; the 2024-25 residual is a lower margin structure, not a lag.

@@ -1,0 +1,63 @@
+{
+ "finding": "F6",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Role/assignment confound: quoter 115 is not an estimator. The quotes may be overflow work handed to them when the estimating desk is short-staffed, so they come from bad periods rather than reflecting how 115 quotes.",
+   "test": "Look up the quoters' roles and departure dates in HR. Then see which months 115's quotes fall in.",
+   "result": "HR lists 115 as an engineer who is still employed. 108 (estimator) retired 2024-03-01, 109 (estimator) resigned 2021-04-15 and 114 (engineer) resigned 2018-02-23 (q276). In 14 months 115 sent 9 or more new quotes. Those months hold 217 of 115's 430 new quotes (0.505), and they cluster right after those departures: 2018-03/05, 2021-04 to 2021-10 and 2024-03/04 (q299, q300, q320). In those 14 months the other quoters won 0.187 and average turnaround was 8.13 days. In the 58 months with no 115 quotes, others won 0.272 with 5.13 days (q299).",
+   "queries": ["q276", "q299", "q300", "q320"]
+  },
+  {
+   "explanation": "Seasonality and period within the year: a customer x year cell compares 115's 2021 quotes, sent in the worst months (Apr-Sep 2021), with peers' quotes from better months of the same year.",
+   "test": "Re-run the comparison with peers from the same calendar month (year-month), and with customer x quarter. Then break the month-matched gap out by year.",
+   "result": "Matched by month, 115's gap shrinks from -0.071 to -0.031 (n=430, SE 0.019). By customer x quarter it is -0.030 (n=331, SE 0.02) (q290). Matched by month, 2021 is +0.006 (115 0.125 vs expected 0.119, n=144), not the -0.071 the customer x year cell gives. The original 2021 deficit was a timing artifact. The month-matched gap is negative in 2019 (-0.076, n=50), 2022 (-0.215, n=37, 2 wins), 2023 (-0.045, n=72) and 2024 (-0.062, n=53), and positive in 2018, 2020 and 2025 (q315).",
+   "queries": ["q290", "q315"]
+  },
+  {
+   "explanation": "Is 115 then still an outlier? With timing controlled, the large estimators may be as far apart as 115 is from them.",
+   "test": "Compare month-matched gaps across quoters, with month x turnaround band and month x segment cells.",
+   "result": "Matched by month: 108 +0.033, 109 -0.038, 115 -0.031, 254 -0.021, 327 +0.027 (q290). 108 minus 109 is 0.071 (q320). Month x turnaround band gives 115 -0.041 and 109 -0.030. Month x segment gives 115 -0.031 and 109 -0.040 (q305). With timing controlled, 115 is no further below peers than full-time estimator 109 (2,675 quotes).",
+   "queries": ["q290", "q305", "q320"]
+  },
+  {
+   "explanation": "Is anything left once 2021 is removed?",
+   "test": "Drop 2021 and re-run the customer x year and year-month comparisons.",
+   "result": "Without 2021, the customer x year gap is -0.071 (n=263, SE 0.025) and the year-month gap is -0.049 (n=286, SE 0.025) (q305). A smaller gap, about 2 SE, survives outside the 2021 coverage period. It rests partly on 2022, where 115 won 2 of 37 (q315).",
+   "queries": ["q305", "q315"]
+  },
+  {
+   "explanation": "Clustering: the quoted standard errors treat quotes as independent, but quotes to the same customer are correlated.",
+   "test": "Compute customer-clustered SEs of 115's residual (won minus peer rate).",
+   "result": "Customer x year: -0.071, clustered SE 0.022 across 92 customers, z about 3.2. Year-month: -0.031, clustered SE 0.017 across 120 customers, z about 1.8 (q312, q320). The finer-time version is not conventionally significant.",
+   "queries": ["q312", "q320"]
+  },
+  {
+   "explanation": "Mix within customer: 115 may get bigger or more complex RFQs.",
+   "test": "Compare lines, log estimated hours, log price, outside-processing share and work-centre count with same customer-year peers. Add a price tercile to the cell.",
+   "result": "115's quotes are smaller than peers' within cells: log price -0.312, log hours -0.318, work centres -0.317 (n=389). That is similar to 109 and 254, while 108 is larger (+0.564 log price) (q279). Smaller quotes won slightly more overall (q250). A customer x year x size cell leaves 115 at -0.062 (q290). Size and complexity don't explain the gap.",
+   "queries": ["q279", "q290"]
+  },
+  {
+   "explanation": "Definitions: 115's 'won' status could be under-recorded, a different validity window could let quotes expire sooner, or lost quotes could have become orders later.",
+   "test": "Match status to sales orders, compare validity days by quoter, look for orders for the same part within a year of a non-won quote, and check RFQ-to-quote multiplicity.",
+   "result": "Every won new quote has a sales order and no non-won one does, for every quoter (q283). Validity averages 30.1 days for 115's new quotes, the same as others (q281). No expired, lost or no-award quote from 108/109/115/254/327 had the part ordered within 365 days (q286). Every RFQ has exactly one quote (q285). None of 115's quotes have a null status (q275). The status data look sound.",
+   "queries": ["q275", "q281", "q283", "q285", "q286"]
+  },
+  {
+   "explanation": "The turnaround effect could itself be a period effect, with slow months being low-win months for other reasons.",
+   "test": "Compare each quote's win to the rest of the same month, by turnaround quintile.",
+   "result": "It survives. Relative to same-month quotes: 0-2 days +0.078, then +0.041, +0.018, -0.045, and -0.092 for 8-30 days (about 2,190 quotes each) (q317). That is still correlation: slow quotes may be harder RFQs.",
+   "queries": ["q317"]
+  },
+  {
+   "explanation": "Money: the size depends on the comparison, it is quoted revenue rather than margin, and the counterfactual (peers quoting these RFQs) didn't exist when 115 was covering.",
+   "test": "Re-size with month-matched expectations.",
+   "result": "Customer x year reproduces 27.7 missing wins, $257,449, $33,837 a year over 7.61 years. Month-matched gives 13.2 wins, $158,802, $20,872 a year (q312). Both are quoted value, not margin. Half of 115's quotes were sent when no estimator was available to send them instead.",
+   "queries": ["q312"]
+  }
+ ],
+ "what_changed": "The cited numbers reproduce (q312 matches q238/q258), and the status data are sound. What changed is the explanation. Quoter 115 is an engineer whose new quotes cluster in the months right after estimators left: half (217 of 430) fall in 14 months where everyone else won 0.187 instead of 0.272. Matching on calendar month instead of year halves the gap, from -0.071 to -0.031 (customer-clustered SE 0.017, about 1.8 SE). 2021, a third of 115's quotes, goes from a deficit to parity (+0.006). Under that control, 115 is no further below peers than full-time estimator 109 (-0.038). The 108 vs 109 spread (0.071) is larger than 115's gap, so 'one quoter is singularly below peers' does not hold. A smaller residual (-0.049 outside 2021, about 2 SE) remains and can't be resolved further. The dollar figure falls to $20,872 a year of quoted value (not margin), and much of it isn't recoverable because it accrued while the estimating desk was short-staffed. The turnaround pattern survives a same-month control.",
+ "revised_conclusion": "Quoter 115 (an engineer, not an estimator) has a lower new-quote hit rate than peers, but most of the apparent gap comes from when they quote. Their quotes cluster in the months after estimators left (2018-03, Apr-Oct 2021, Mar-Apr 2024), when the whole shop quoted slowly and won less. Against same-month peers the gap is -0.031 (n=430, clustered SE 0.017), about $20,872 a year of quoted value (q312). It is comparable to estimator 109's -0.038 and smaller than the 0.071 between 108 and 109 (q290, q320). In 2021, 115 matched peers month for month. A modest residual (-0.049 outside 2021, about 2 SE) remains and is worth a look at a sample of quotes, but it is not a robust individual pattern. Interpretation: the more useful finding is about coverage. When an estimator leaves, quoting falls to non-estimators and turnaround slips, and quote turnaround predicts winning even within the same month (q317). The shop's lever is estimating capacity and backfill, more than any one quoter.",
+ "not_evidence_of": "Not evidence that quoter 115 quotes badly or is at fault: they were covering estimator vacancies, and their month-matched gap is in the same range as a full-time estimator's. Not evidence that faster quoting causes wins: slow quotes may be harder or less wanted RFQs. The dollar figures are quoted revenue under an assumed peer rate, not margin, and not recoverable where no estimator was available. How RFQs are assigned, follow-up activity and loss reasons are not recorded, so the residual gap can't be attributed to how the quotes were built."
+}

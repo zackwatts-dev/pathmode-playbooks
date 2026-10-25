@@ -1,0 +1,16 @@
+# H8 notes
+- q236 raw new-quote hit by estimator (final status only). Matches q84.
+- q238 indirect standardisation vs other estimators in same customer×year cell: 115 -0.071 (SE~0.019, n=389), 108 +0.027, 327 +0.032, 109 -0.026, 118 -0.017 (raw gap mostly mix), 113 -0.042 (SE 0.025).
+- q241 115 gap by year: negative in 2019, 2021-2024; positive 2018, 2020, 2025 (small n). Not one period.
+- q242 status mix: 118 expired 0.669 (high), 115 expired 0.523.
+- q245 relative price/hr, markup, lead weeks, turnaround vs same cust-year others: 115 price +3.7% per hr, markup +0.7%, lead -0.44 wk -> not slower or pricier in a meaningful way. 118 turnaround +3.63 days.
+- DEAD END q248: within cust-year, relative markup and lead weeks do not predict winning monotonically (markup quintile hits 0.226/0.251/0.292/0.255/0.233; lead 0.262/0.188/0.263/0.269/0.273). Price/lead is not the mechanism.
+- q250 turnaround (RFQ received->quote sent) strongly predicts winning: 0.342 (0-2 d) to 0.131 (8-30 d). Quote value weakly.
+- q252 118: 69.4% quotes >8 days; 115: 29.8%; but 115 fast quotes (<=4 d) still hit 0.195 vs 0.294-0.359 for 108/109/254/327.
+- q259 2021 systemwide slow: avg tat 8.42, 46.4% >8 days, hit 0.181. 118 worked mostly then -> mix/period.
+- q254 adjusting customer×year×turnaround band: 115 -0.064 (SE 0.02), 108 +0.033, 327 +0.027, 118 +0.023 (gap gone).
+- q255 head-to-head 108 vs 109 in 370 shared customer-year cells: 3.0 points (under 5). 
+- q256 115 gap negative in all 5 segments (-4.1 to -12.3).
+- q263 year×part family adjustment: 115 still -0.051.
+- q258 115 shortfall vs expected: 27.7 wins, $257,449 total quote value over 7.61 years = $33,837/yr.
+- Caveat: SEs ignore uncertainty in expected rates and clustering by customer; won/lost status is buyer-reported; "expired" = silence.

@@ -1,0 +1,51 @@
+{
+ "finding": "F3",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions/mix: the 2025 margin collapse isn't an R-410A refrigerant-transition effect. It is a general rule: every equipment SKU sells from stock below cost once it passes its erp_products.discontinued_on date. 2025 is simply the year when all R-410A SKUs had passed that date.",
+   "test": "Split equipment stock and transfer lines by refrigerant (R-410A, R-454B, none) and by whether the order date is before or after the SKU's discontinued_on date, for 2016-2025.",
+   "result": "Observed: after discontinuation, stock and transfer lines sell at 0.73x cost (R-410A discontinued 2015, 5,322 units), 0.8513x (R-410A discontinued 2023), 0.7413x (R-454B discontinued 2015), 0.8516x (R-454B discontinued 2023), 0.7224x (no refrigerant, discontinued 2015) and 0.8438x (no refrigerant, discontinued 2023). Before discontinuation, every group sells at 1.2103-1.2221x (q231). In 2025 every R-410A stock or transfer line was post-discontinuation (5,417 units, $7,601,582.71 cost, 0.9397x). Active equipment held up in 2025: R-454B 1.2102x and no-refrigerant 1.1995x (q241). The R-410A SKUs are not one cohort: 44 have discontinued_on 2015-01-01, 44 have 2023-01-01 and 130 have 2025-01-01 (q203). The 2015 group has sold from stock at 0.7159-0.7589x cost every year from 2016 to 2025 (q220). In 2025 the 2015 and 2023 groups lost $218,496.24 and $547,810.66. The 2025 group still made +$308,303.26 at 1.0646x (q214).",
+   "queries": ["q231", "q241", "q203", "q220", "q214"]
+  },
+  {
+   "explanation": "Confounded comparator: the finding's 'shared trend' (no-refrigerant equipment falling from 1.1916x to 1.1174x cost) is the same post-discontinuation mix effect, not a market-wide price decline. So the 'R-410A-specific' $1,357,642.67 compares one mix shift against another.",
+   "test": "Re-run the comparator using only active (not yet discontinued) SKUs.",
+   "result": "Active no-refrigerant equipment went from 1.2108x in 2022 to 1.1995x in 2025. Post-discontinuation no-refrigerant lines grew from 1,288 units in 2022 to 4,715 in 2025 at 0.718-0.7654x (q241). Active R-410A in 2022 (1.2115x) and active R-454B in 2025 (1.2102x) differ by 0.0013 (q241, q245). The finding's spread of 0.1786 (q245) is therefore an artifact of its comparison. Separately, the 'a year' framing doesn't fit a finite sell-down of discontinued stock.",
+   "queries": ["q241", "q245", "q172"]
+  },
+  {
+   "explanation": "Missing or stale cost: below-cost could be an artifact of a static master cost that overstates what Hartwell actually paid.",
+   "test": "Compare sales-line, PO-line and vendor-bill unit costs with erp_products.unit_cost.",
+   "result": "Sales-line cost equals master cost on every R-410A line, 2022-2025 (q197). PO cost equals master cost in every year, 2020-2025 (q199). Billed cost runs at 1.0008-1.0015x master on 2022-2025 vendor bills (q227). So the below-cost result isn't caused by a stale master cost: vendors billed at or slightly above it. Rebates or price protection outside the bills can't be checked; the data has no record of them.",
+   "queries": ["q197", "q199", "q227"]
+  },
+  {
+   "explanation": "The price drop is a channel-specific stock-pricing rule, not a market price. If the market had fallen, special orders of the same SKUs would have fallen too.",
+   "test": "Compare stock and special-order prices for the same SKU in the same 2025 quarter, and compare price/cost by fulfilment within each discontinuation group.",
+   "result": "In 2025 the median stock/special price ratio for the same SKU and quarter was 0.8601 in Q2 (165 SKU-quarters) and 0.8078 in Q3 (149) (q208). From 2022 to 2025, the 2015-discontinued R-410A SKUs sold at 1.2022x on special orders and 1.1942x on transfers, but 0.692x from stock (q224). Special-order price/list stayed about 0.83 while the recorded markdown_pct rose to 0.34 (q202), so markdown_pct doesn't describe the price actually charged. That is a definitions concern for anyone using it. Interpretation: stock lines of discontinued SKUs seem to get clearance pricing while the same items ordered specially do not. What sets that price isn't recorded.",
+   "queries": ["q208", "q224", "q202"]
+  },
+  {
+   "explanation": "Selection in the purchasing story: the 2025 stock POs are mostly for SKUs discontinued years earlier, not the 2025 group. Buying of discontinued equipment is a long-running, company-wide pattern.",
+   "test": "Split stock POs by discontinuation group, and count stock POs placed after a SKU's discontinued_on date across all equipment.",
+   "result": "Of the 2,967 R-410A stock PO units in 2025 (q249), 699 were for the 2015-discontinued SKUs, 1,686 for the 2023 group (more than the 1,679 bought in 2024) and 582 for the 2025 group (q221). Across all equipment, stock POs placed after discontinuation ran at 1,346-2,698 units a year in 2016-2022, then 4,188 in 2023, 8,929 in 2024 and 10,001 ($11,212,307.23) in 2025 (q235). Post-discontinuation stock sales lost $2,379,417.20 in 2025 (q235), of which R-410A was 0.192 (q249). The loss was $4,815,667.17 over 2023-2025, an average of $1,605,222.39 a year (q249).",
+   "queries": ["q221", "q235", "q249"]
+  },
+  {
+   "explanation": "Timing: the unexplained $728,969.46 gap between 2025 returns to vendor and vendor credits is a lag at the data cut-off, not a shortfall.",
+   "test": "Compare returns to vendor with vendor credits by year, for all products and for R-410A over 2023-2024.",
+   "result": "In 2024 credits were 6.88x returns to vendor, because 2023 returns were credited in 2024 (q244). Over 2023-2024: all products 883 units returned and 871 credited (q249). R-410A 323 units returned and 323 credited, though credit value was 0.8 of returned cost ($346,332.78 against $432,916.00) (q249, q161). So most of the 2025 gap is probably credits not yet issued by the cut-off (interpretation). On the 2023-2024 pattern, a residual of about 20% of value may never be credited. That needs the 2026 credits or the vendor return terms to confirm.",
+   "queries": ["q244", "q249", "q161"]
+  },
+  {
+   "explanation": "Oversizing: the claim that stock is not oversized could fail at SKU level.",
+   "test": "Re-check the year-end series and how the on-hand stock splits across discontinuation groups.",
+   "result": "Survives. Year-end 2025 is 5,601 units and $7,925,627.94, the lowest of 2016-2025 (q140). On hand: 2015 group 655 units ($816,087.80), 2023 group 1,375 ($1,841,588.18), 2025 group 3,571 ($5,267,951.96) (q214). The title's wording 'stock bought in 2025 adds to $7,925,627.94 left on hand' is wrong: that is all R-410A on hand, and 2025 stock POs were only 2,967 units (q175).",
+   "queries": ["q140", "q214", "q175"]
+  }
+ ],
+ "what_changed": "Survives: R-410A stock is the lowest year-end level in ten years. R-410A stock and transfer lines lost $458,003.64 in 2025 at 0.9397x master cost. Master cost matches billed cost. Retracted: (1) that this is an R-410A or refrigerant-transition effect. Every equipment SKU, of any refrigerant or none, sells from stock below cost after its discontinued_on date, and active equipment kept about 1.20x in 2025. (2) The 'R-410A-specific' $1,357,642.67 a year. Its comparator is contaminated by the same discontinued-SKU mix, and a finite sell-down isn't an annual figure. (3) 'Price, not mix'. Within-SKU prices did fall, but because the SKUs crossed their discontinuation date. Across the three R-410A discontinuation groups, the loss is in the 2015 and 2023 groups, while the 2025 group stayed profitable. (4) 'Stock bought in 2025' as a description of the $7,925,627.94. (5) The $728,969.46 'unexplained' vendor-credit gap is probably credit lag at the cut-off. Changed: the purchasing lead is stronger and broader than stated. Stock POs keep replenishing SKUs that are already discontinued and then sell below cost, including R-410A SKUs discontinued in 2015 and 2023.",
+ "revised_conclusion": "Hartwell isn't oversized on R-410A: year-end 2025 stock is 5,601 units ($7,925,627.94), a ten-year low (q140). R-410A stock sales did lose $458,003.64 in 2025 (q158). But that is one instance of a company-wide pattern, not a refrigerant-transition effect. Once any equipment SKU passes its discontinued_on date, stock sales of it run at roughly 0.72-0.85x cost, while special orders of the same SKUs keep about 1.20x (q231, q224). Stock POs keep replenishing those discontinued SKUs: 10,001 units and $11,212,307.23 in 2025 (q235). Post-discontinuation stock sales lost $2,379,417.20 in 2025 and averaged $1,605,222.39 a year over 2023-2025 (q235, q249). R-410A was 0.192 of the 2025 loss (q249). Next step: find out what rule prices discontinued stock lines and why replenishment still treats discontinued SKUs as stockable. The 2015-discontinued R-410A SKUs are the clearest case: bought every year and sold below cost every year since 2016 (q220, q221). Also check whether those discontinued_on dates are correct, since a SKU 'discontinued' in 2015 that is still bought and sold in 2025 is just as likely a master-data error.",
+ "not_evidence_of": "Not evidence that the R-410A phase-down caused the losses, or that R-410A prices fell in the market: special-order prices for the same SKUs held (q208, q224). Not evidence of over-buying R-410A in aggregate. Not evidence that the losses are fully avoidable: without the restocked units, sales and customer goodwill would also change, and demand without restocking isn't observable. Not evidence about rebates or price protection, which aren't recorded. Not evidence that any person or branch decided these prices or POs: the records hold no pricing-rule, reorder-trigger or approval data. Whether the discontinued_on dates are real or a master-data error can't be told from these records. The product manager or vendor catalogs would settle it."
+}

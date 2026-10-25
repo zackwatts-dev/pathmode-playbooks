@@ -1,0 +1,51 @@
+{
+ "finding": "F6",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions/legitimate second bill: the '-R' bill is a separate charge for a second shipment or a back-ordered remainder, not a duplicate.",
+   "test": "Bills per PO, and WMS receipt quantity against PO quantity for every '-R' PO (wms_inventory_transactions reason='receipt', ref_id=po_id).",
+   "result": "No PO has more than 2 bills. 1,429 POs have exactly 2 (1 original + 1 '-R'), and 365,296 have 1 (q324). For all 944 stock '-R' POs, the quantity received equals the PO quantity exactly. None was over-received (636 paid, 308 unpaid, q341). So no second delivery exists for stock POs. Special POs have no WMS receipt at all (485, q341), so for the 327 paid special '-R' bills ($408,531.39, q353) a second delivery cannot be ruled out from these records.",
+   "queries": ["q324", "q341", "q353"]
+  },
+  {
+   "explanation": "Money: AP already clawed the duplicates back by short-paying later bills from the same vendor, so the loss is overstated.",
+   "test": "Find every short-paid bill and look for short-pay amounts that exactly equal a paid '-R' amount at the same vendor, paid after the '-R'.",
+   "result": "Short-paying is common: 12,026 non-'-R' bills were paid $2,249,435.22 below their amount (q322). The largest group is 539 bills paid at exactly 50% (q326). There are 352 exact amount matches to paid '-R' bills (105 '-R' bills with a match paid later), but none is on the same PO. They are mostly 50%, 25% and 33% fractions of other bills, and lags run from -2,370 to +2,279 operating days, i.e. before as often as after (q334, q330). That looks like coincidence from repeated standard amounts, not targeted recovery (interpretation). No sign of offset. Separately, the reason for the 12,026 short-pays is itself unexplained and worth its own finding.",
+   "queries": ["q322", "q326", "q330", "q334"]
+  },
+  {
+   "explanation": "Money: the size double-counts where the original was itself short-paid, so the true excess is smaller than the '-R' amount.",
+   "test": "For each paid '-R' bill, net the '-R' payment against any shortfall on its original.",
+   "result": "934 paid '-R' bills have an original paid in full: $2,670,334.82 excess. 29 have a short-paid original: $61,951.56 paid on the '-R' against $5,102.58 short on the original, net $56,848.98 (q346). Net excess is $2,727,183.80, $272,718.38 a year over 10 years (q352). That is a small correction to $2,732,286.38. Every '-R' payment equals its bill amount exactly, and no bill has more than one payment (q322).",
+   "queries": ["q346", "q352", "q322"]
+  },
+  {
+   "explanation": "Trend/period: the $273k/yr average hides a change. What can practically be recovered depends on how old the payments are.",
+   "test": "Paid '-R' dollars by payment year band, at a 2025-12-29 cut-off.",
+   "result": "2016-2021: 579 paid, $1,787,028.39, $297,838.07/yr. 2022-2023: 181, $439,458.19, $219,729.10/yr. 2024-2025: 203, $505,799.80, $252,899.90/yr (q347). The current run-rate is below the 10-year average. Most of the dollars are more than 4 years old, and those are the least likely to be recoverable from vendors (interpretation).",
+   "queries": ["q347"]
+  },
+  {
+   "explanation": "Selection/mechanism: the '-R' gets caught when the original is already paid, so payment is a lapse in a working control rather than a missing control.",
+   "test": "Paid rate of '-R' bills by whether the original was paid before the '-R' was entered, and the payment lag of '-R' bills.",
+   "result": "If the original was paid before the '-R' was entered: 226 of 331 paid (0.6828). If it was paid after: 737 of 1,094 (0.6737). In 4 cases the original was unpaid, and none of those 4 '-R' bills was paid (q340). Every paid '-R' was paid exactly 21, 31 or 41 operating days after entry, i.e. on terms (q340). Whether the original was already settled makes no difference to whether the duplicate is held. That is consistent with no duplicate check at release, and with q294's flat rates (interpretation).",
+   "queries": ["q340"]
+  },
+  {
+   "explanation": "Definitions/scope: '-R' is only one form of duplicate. Others (same invoice number, same content on a different PO) would make the finding too small, or the suffix may be a records artefact.",
+   "test": "Duplicate invoice numbers within a vendor, with and without the '-R' suffix. Same vendor + same amount on a different PO within 30 days.",
+   "result": "No vendor invoice number repeats exactly. Stripping '-R' yields exactly 1,429 duplicate base numbers (q352). Same vendor + same amount on different POs within 30 days gives 727,402 pairs (q352). That is far too many to be duplicates and reflects repeat orders of standard quantities, so content-only duplicates can't be separated from real repeat buying with this data. Bill amounts equal lines plus freight for all 1,429 '-R' bills, and their lines match PO value on 1,356 (q333).",
+   "queries": ["q352", "q333"]
+  },
+  {
+   "explanation": "Vendor credits offset the duplicates (re-check of q280/q290).",
+   "test": "Accepted the original analyst's credit matching. The short-pay channel was tested above as the other way an offset could happen.",
+   "result": "No new evidence of an offset in the records. Refunds by cheque or statement netting outside finance_* still can't be seen.",
+   "queries": ["q330"]
+  }
+ ],
+ "what_changed": "1) Size: net excess is $2,727,183.80 ($272,718.38/yr), not $2,732,286.38, after netting $5,102.58 short-paid on 29 originals (q346, q352). 2) The 10-year average overstates the current rate: 2022-2023 ran at $219,729.10/yr and 2024-2025 at $252,899.90/yr, against $297,838.07/yr in 2016-2021 (q347). Recoverable money is likely concentrated in recent years. 3) The 'no second delivery' evidence covers only stock POs: $2,323,754.99 of 636 paid bills (q353, q341). The $408,531.39 on 327 special POs has no receipt records either way. 4) New: '-R' bills are released on fixed terms whether or not the original was already paid (q340), which locates the gap at payment release. 5) Tested and rejected: recovery through short-pays (q330, q334). Not re-run by me: q269/q275/q279 descriptive counts. q324 and q352 corroborate the pairing.",
+ "revised_conclusion": "Hartwell paid 963 '-R' re-bills whose originals on the same PO, for the same amount, were also paid. The net excess is $2,727,183.80 over 2016-2025, $272,718.38 a year on average, running at about $220k-$253k a year in 2022-2025 (q346, q352, q347). For 636 stock POs ($2,323,754.99) WMS shows exactly the PO quantity received, so the second payment bought nothing (q341, q353). For 327 special POs ($408,531.39) there are no receipt records, so a second shipment can't be ruled out. Vendor confirmation is needed there. No offset shows up in vendor credits or in short-payments on later bills (q330, q334). The '-R' bills are paid on standard terms whether or not the original was already paid (q340), which points to no duplicate check at payment release (interpretation). Action is unchanged: a pre-payment block on same PO + same amount and on invoice number = existing number + '-R'. Claims start with the most recent payments and with stock POs, where the evidence is strongest.",
+ "not_evidence_of": "Not evidence of bad faith by any vendor or employee: rates are near-uniform across vendors and years, and payment behaviour does not depend on the original's status, which fits a process gap (interpretation). Not evidence that $2.73M can be recovered today: older payments may be past claim windows, and refunds or statement netting outside these records would not be seen. Not evidence for special-order POs that no second shipment occurred. The uniform rates, exact amounts and fixed payment lags also leave open that '-R' is partly an artefact of how the records were produced. Vendor statements are needed to confirm the bills were real."
+}

@@ -1,0 +1,86 @@
+{
+ "id": "F8",
+ "hypothesis": "H6",
+ "title": "Shipped lines that were never invoiced cost about $285k a year in revenue (about $72k margin). The loss is a channel effect: counter lines drop at 1.1241% vs about 0.15% for email/phone and 0 for EDI/web. Lines drop one at a time, and no keyer, branch or customer stands out",
+ "conclusion": "Observed: leaving out 947 lines whose ship_day falls after the last record day 2520 (cut-off), 4,985 shipped order lines worth $2,840,528.65 never appear on any invoice, 2016-2025 (q325). Invoices bill at exactly the order-line price and shipped qty (0 differences on 2,558,500 invoice lines, q400). Every invoice line maps to an order line, and invoice headers never carry the missing value (q357, q359, q360). So line price is what was not billed. By ship year it runs at 434-627 lines and $252,827.81-$348,493.66 a year, an average of $285,468.20 a year for 2016-2024, or $71,523.61 a year of margin at static cost, 25.05% of the revenue (q325, q424). Every invoiced line is billed on its ship day (lag 0 at the max in every channel, q369), and the rate in the last 20 days matches earlier days (q371). So these lines were never billed, not billed late. Counter lines go uninvoiced at 1.1241% (2,500 of 222,392), email at 0.1548%, phone at 0.1477%, and EDI/web at 0 of 716,011 (q306, q424). The gap holds within the same 5,520 customers (1.1244% vs 0.1531%, 7.34x; q394, q412), within every trade (q391), within every fulfilment type (q395), in every month (q392) and in every year (q315). Lines drop one at a time. 1,131 of the 1,135 whole-order misses are single-line orders (q385), and the counter rate is the same on single-line and multi-line orders, 1.1272% vs 1.1232% (q381). Across the 48 keyers, the channel-adjusted spread is what chance alone produces (q387). Interpretation: the step that turns a manually keyed order into invoice lines loses lines at random, far more often for counter orders. The data cannot show why. Nearly 80% of the value is from 2016-2023 (79.98%, q424). The near-term billable pool is the 2025 lines ($271,314.82) plus the 2024 lines of still-active customers ($285,621.84), $556,936.66 together (q406, q412).",
+ "dollars_a_year": 285468.2,
+ "size_query": "q325",
+ "claims": [
+  {
+   "text": "By order year, uninvoiced shipped lines are 0.1805-0.2164% of shipped lines in 2016-2024 (e.g. 445 of 246,497 in 2016). 2025 shows 0.5662% (1,437 of 253,796), which includes cut-off lines. No line was partially invoiced.",
+   "queries": ["q296"]
+  },
+  {
+   "text": "Cut-off: 947 lines (special 772, transfer 175) carry ship_day 2521-2591, after the last record day 2520, and are excluded. Invoices are always raised on the ship day (lag 0 at p50, p99 and max in every channel), and the rate for ship days 2501-2520 matches earlier days (counter 0.953% of 2,938 vs 1.1264% of 219,454). So the in-window lines are genuinely unbilled and not just pending.",
+   "queries": ["q300", "q369", "q371"]
+  },
+  {
+   "text": "Invoice lines are the complete billing record. All 2,558,500 map to an order line, none has a null line_id and none is duplicated. Header and line sums differ by at most $0.03. On the 3,815 partly invoiced orders, no header contains the missing value. Billed price and qty equal order-line price and shipped qty on every line.",
+   "queries": ["q357", "q359", "q360", "q361", "q400"]
+  },
+  {
+   "text": "Size: by ship year 2016-2024 averages 499.4 lines and $285,468.20 a year at billed price, and $71,523.61 a year of margin at static cost (25.05% of the revenue). The 2016-2025 in-window total is $2,840,528.65.",
+   "queries": ["q325", "q424"]
+  },
+  {
+   "text": "Channel effect: counter 1.1241% (2,500 of 222,392), email 0.1548%, phone 0.1477%, EDI 0 of 461,656, web 0 of 254,355. Counter is 50.15% of uninvoiced lines but 8.68% of shipped lines. Counter is 0.977-1.247% in every year 2016-2025.",
+   "queries": ["q306", "q315", "q329", "q412", "q424"]
+  },
+  {
+   "text": "The channel effect is not customer mix. Among 5,520 customers who order both ways, counter lines are uninvoiced at 1.1244% (2,500 of 222,347) vs 0.1531% (2,478 of 1,618,133) on their email/phone lines, 7.34x. Within trade, counter is 1.1074-1.1855% and non-counter 0.1476-0.1633%.",
+   "queries": ["q394", "q391", "q412"]
+  },
+  {
+   "text": "The channel effect is not fulfilment or seasonal mix. Counter is 1.1222-1.1597% across stock, special and transfer. By calendar month, counter is 0.975-1.212% and other channels 0.077-0.116%. The winter peak in counts (758 in January vs 193 in September) follows counter volume (31,613 vs 8,685 lines).",
+   "queries": ["q395", "q392"]
+  },
+  {
+   "text": "One mechanism, not two. 1,131 of the 1,135 orders with nothing invoiced (99.65%) are single-line orders; only 4 multi-line orders lost every line, and 35 orders lost 2+ lines. Counter single-line orders lose 1.1272% and multi-line orders 1.1232% of lines; email 0.1546% vs 0.1549%.",
+   "queries": ["q381", "q385", "q412"]
+  },
+  {
+   "text": "No keyer, branch or customer stands out beyond chance. Channel-adjusted, the 48 keyers' counter rates (0.762-1.6361%, pooled 1.1241%) give chi-square 36.51 on 47 df, and their non-counter rates (0.1047-0.234%, pooled 0.1529%) give 46.91 on 47 df, with 0 keyers beyond the 99% band in either. Branches run 0.1655-0.2188%. The top 100 customers hold 23.38% of uninvoiced value vs 24.07% of shipped value.",
+   "queries": ["q387", "q382", "q306", "q320", "q321"]
+  },
+  {
+   "text": "The missing lines look like ordinary lines, not duplicates or free goods: 0 zero-price lines, mean value $569.82 in both groups, median $246.75 vs $251.62. A same-sku sibling line appears on 1.24% of uninvoiced counter lines vs 1.35% of invoiced counter lines.",
+   "queries": ["q375", "q376"]
+  },
+  {
+   "text": "Physical shipment: all 4,751 uninvoiced stock and transfer lines have a WMS sale movement, as do 100% of all stock (2,313,827) and transfer (122,474) shipped lines. Special lines almost never post to WMS (46 of 127,184), so the 234 uninvoiced special lines ($341,631.34, 12.03% of the value) rest on ERP qty_shipped alone.",
+   "queries": ["q311", "q409", "q412"]
+  },
+  {
+   "text": "No sign of collection through AR. Counter orders are paid by ACH and check like every other channel, with no cash method. There are 0 payments without an invoice. Of the 4,950 affected orders, 4,899 were paid exactly what was invoiced, 51 were underpaid and 0 were overpaid or paid invoiced plus missing.",
+   "queries": ["q365", "q367"]
+  },
+  {
+   "text": "Age: $1,740,801.83 shipped 2016-2021 and $531,175.17 in 2022-2023 ($2,271,977.00 together, 79.98%). 2024 lines total $297,236.84, of which $285,621.84 belongs to customers active in the last 252 operating days. 2025 lines total $271,314.82, all with active customers. 2025 plus active-customer 2024 comes to $556,936.66.",
+   "queries": ["q406", "q412", "q424"]
+  },
+  {
+   "text": "16 never-billed lines were later returned and credited: 16 memos totalling $4,618.18 against $4,618.19 of return value at line price, with no other returns on those order-days.",
+   "queries": ["q399"]
+  }
+ ],
+ "confidence": "high",
+ "not_evidence_of": "Wrongdoing or carelessness by any keyer, branch or customer: channel-adjusted, the keyer spread is what chance produces. Not evidence that $2.84M can be collected: 79.98% of it is from 2016-2023. Not lost profit equal to revenue: margin at static cost is about a quarter of the value. Not evidence that the 234 special-order lines physically shipped, since special lines have no WMS record. Not evidence that counter customers went unbilled outside this ledger. The 2025 order-year count of 1,437 overstates the leak because of the cut-off.",
+ "could_not_tell": "Why a line drops out (no invoice-run log, batch log or edit history). Whether counter goods were paid off-ledger through a POS or cash drawer that never reaches finance; the finance data argues against it but cannot rule it out. Whether the special-order lines really shipped (needs vendor drop-ship or delivery confirmations). Whether old lines can still be collected (needs credit or collections policy and customer agreements). Needs counter POS/cash records, invoicing job logs and special-order delivery records.",
+ "next_step": "Compare a sample of counter orders with uninvoiced lines against counter POS/cash receipts. If they were not paid there, add a daily shipped-not-invoiced exception report. Because invoices are always raised on ship day, any shipped line without an invoice line by end of day is an exact exception. Then consider billing the 2025 lines ($271,314.82) and the 2024 lines of active customers ($285,621.84), after confirming delivery for special-order lines.",
+ "dead_ends": [
+  "Header bills what lines miss: ruled out (q357, q359, q360, q361, q400)",
+  "Invoicing lag / not yet billed: lag is always 0 (q369, q371)",
+  "Customer or trade mix behind counter effect: holds within the same customers and every trade (q394, q391)",
+  "Fulfilment type clustering, overall and within channel: flat (q305, q395)",
+  "Seasonality: rate flat by month, the count follows volume (q392)",
+  "Two mechanisms (dropped line vs missed order): one mechanism (q381, q385)",
+  "Duplicate or zero-price lines: uninvoiced lines look like ordinary lines (q375, q376)",
+  "Keyer concentration, channel-adjusted: within chance (q387)",
+  "Branch, customer and line-position concentration: none beyond volume (q306, q320, q321, q317)",
+  "Collected through AR anyway: no overpayment and no unapplied payments (q365, q367)",
+  "2016 fractional opening-balance artefact: 9 lines (q305)"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted in full. The challenge's tests are sound and every one came back narrowing or strengthening the finding; none contradicts it. (1) I withdraw the 'two mechanisms' reading. Whole-order misses are almost all single-line orders (1,131 of 1,135, q385), and the counter line rate is the same on single- and multi-line orders (q381), so it is one random line-drop process. (2) I replaced the keyer evidence, whose raw range mixed in channel, with the challenger's channel-adjusted dispersion test (q387: chi-square 36.51 and 46.91 on 47 df, 0 outliers). (3) The channel claim now rests on the within-customer, within-trade, within-fulfilment and by-month tests (q394, q391, q395, q392) rather than raw rates alone. (4) Header billing, lag, duplicate or zero-price lines and AR collection are ruled out with the challenger's queries (q357-q361, q400, q369, q371, q375, q376, q365, q367); off-ledger POS cash stays open in could_not_tell. (5) I added that the 234 special lines ($341,631.34) have no independent shipment evidence (q409, q412). (6) The money is restated by age. One correction to the challenger's revised conclusion: it said to bill 2024's $297,236.84 'with active customers', but the active-customer part of 2024 is $285,621.84 (q406), and the near-term pool is $556,936.66 (q412). I ran q424 to compute the older-value total the challenger described only as '$2.27M' ($2,271,977.00, 79.98%) and the margin share (25.05%). The annual size, $285,468.20 at billed price (q325), stands, and q400 confirms it is the right price basis.",
+ "accepted": true
+}

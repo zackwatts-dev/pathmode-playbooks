@@ -1,0 +1,56 @@
+{
+ "id": "F1",
+ "hypothesis": "H1",
+ "title": "Narrowed: Wendlow absorbed the 2021 carbon-steel jump on repeat parts, about $1.09M a year over 2021-2022; prices have more than covered material since 2023, so no material gap remains to requote",
+ "conclusion": "Observed: on the same carbon parts at their 2020 shipped quantities, the price index in 2021 was 1.0007 while material per unit was 1.5475 times 2020, so margin over material fell $2,077,947 across 1,686 parts (q176). The rise in material per unit on those parts came from $/lb, not weight: the pounds index stayed between 0.997 and 1.0087 (q176), and carbon cost $0.3123/lb in 2020, $0.4857 in 2021 and $0.5959 in 2022 (q173). Prices reset in 2022 (index 1.2271), and margin over material on the matched parts was about even that year (+$166,479). It was above 2020 from 2023 on: +$1,526,003 in 2023, +$1,312,006 in 2024 and +$949,945 in 2025 (q176). The result holds when 2019 is the base year instead: -$1,358,121 in 2021, then +$958,869 to +$1,364,746 a year in 2023-2025 (q215). Across all carbon order jobs, steel cost added versus 2020 $/lb exceeded the estimated price gain by $2,913,379 in 2021. Prices gained $733,298 more than steel cost in 2022, which leaves a net shortfall of $1,090,041 a year over 2021-2022 (q188, q213). Interpretation: repeat-part prices lagged steel by about a year. Material's share of price (about 0.29-0.31 in 2024-2025 against about 0.25 in 2020; q173, q176) stays higher because prices passed steel through dollar for dollar, not because cost is going unrecovered. My earlier $972,905-a-year ongoing gap was produced by measuring material against a fixed share, and I retract it. Action: a steel-indexed price clause, or a surcharge line recorded on repeat POs, so that the next steel spike reaches prices within a quarter rather than a year.",
+ "dollars_a_year": 1090041.0,
+ "size_query": "q213",
+ "claims": [
+  {
+   "text": "Matched carbon parts at 2020 quantities: in 2021, price index 1.0007 and material index 1.5475, margin over material -$2,077,947 (1,686 parts). In 2022, price 1.2271, material 1.9243, +$166,479 (1,305 parts). In 2023-2025, +$1,526,003, +$1,312,006 and +$949,945 (1,012, 804 and 643 parts).",
+   "queries": ["q176"]
+  },
+  {
+   "text": "With 2019 as the base instead of 2020, the pattern is the same: -$1,358,121 in 2021 (1,322 parts, price index 0.9986, material 1.3929), +$439,532 in 2022, and +$958,869 to +$1,364,746 a year in 2023-2025. The 2020 baseline is not driving the sign.",
+   "queries": ["q215"]
+  },
+  {
+   "text": "On matched parts, material per unit rose because of $/lb, not pounds: pounds index 0.997-1.0087 over 2020-2025. Carbon $/lb was 0.3123 (2020), 0.4857 (2021), 0.5959 (2022), 0.5158 (2023), 0.4793 (2024) and 0.4706 (2025). Shipped quantity equalled job quantity in every year (ratio 1.0).",
+   "queries": ["q173", "q176"]
+  },
+  {
+   "text": "Repeat-part prices against each part's last 2020 price: median 1.0 in 2021 (59.7% of 6,210 lines unchanged), 1.3588 in 2022 (12.4% of 4,746 unchanged).",
+   "queries": ["q128"]
+  },
+  {
+   "text": "All carbon order jobs (estimate that applies the matched-part price index to all jobs): steel cost added versus 2020 was $3,132,703 in 2021 and $5,135,591 in 2022. Against estimated price gains of $219,324 and $5,868,889, the net shortfall was $2,913,379 in 2021 and the net gain $733,298 in 2022, for $1,090,041 a year over 2021-2022. In 2024-2025 prices exceed steel cost added by $3,814,537 a year.",
+   "queries": ["q188", "q213"]
+  },
+  {
+   "text": "Invoices priced above the PO price appear in high-steel years: 790 in 2021 and 1,793 in 2022, against 28 in 2024 and 2 in 2025. Some of them trace to quote lines with the surcharge flag set (91 in 2021, 212 in 2022). Freight is recorded separately and is not the uplift.",
+   "queries": ["q183", "q184"]
+  },
+  {
+   "text": "Carbon material share by first-ship year was 0.2373-0.2788 in 2016-2020, 0.3792 in 2021, 0.3714 in 2022 and 0.2898-0.2927 in 2024-2025. Because a dollar-for-dollar pass-through raises the share, the share is not a measure of unrecovered cost.",
+   "queries": ["q173"]
+  },
+  {
+   "text": "The 2021-2022 squeeze was not concentrated in one segment or customer: carbon share rose in all five segments, and the top 10 customers held 0.6356 of the excess against 0.6523 of revenue.",
+   "queries": ["q140", "q149"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "This measures margin over material only. Labour, outside processing and overhead are not in it. The hours-weighted pay rate rose by a factor of 1.2328 from 2020 to 2025 (q193, q195), so the over-recovery on material since 2023 does not show that total margin is back to 2020 levels. The all-jobs figure (q188, q213) applies the price index of the surviving matched parts to all carbon work, which is an assumption. The matched set shrinks from 2,395 parts to 643 (q176). It does not show that steel caused the price changes (they coincide in time only), or that the invoice uplift is a steel surcharge, although the surcharge flag matches some of it (q184).",
+ "could_not_tell": "Why prices were held through 2021 (contract, blanket PO, or a choice to keep volume). Whether parts that dropped out after the 2022 reset were lost because of the reset. Labour hours and overhead per job, which would show whether total contribution has recovered. What the invoice uplift on untraced repeat orders is.",
+ "next_step": "Do not run a requote campaign on carbon repeat parts on material grounds; the records show no current material gap. Put a steel index clause or a recorded surcharge line on repeat POs so that recovery lag can be measured next time. Test whether the post-2022 price level covers labour as well, using shop labour hours per unit on matched parts. Correct the map: outside-processing PO lines carry $1,718,008 of amount (q101), not $0.",
+ "dead_ends": [
+  "Fixed-share sizing (q152): material above 0.2572 of price, counted as unrecovered, gave $2,279,745 a year for 2021-2023 and $972,905 a year for 2024-2025. It is wrong as a dollar measure because full pass-through also raises the share. Retracted after the challenge (q176, q188).",
+  "A pooled 2016-2020 baseline across all materials (0.2849) mixed carbon with non-carbon (q117).",
+  "Timing explanation (material ordered in 2021 for 2022 shipments): does not hold at job level (q107).",
+  "Unreceived POs inflating material: does not hold; the share on received POs only is within about 0.01 (q107).",
+  "q146 had a FILTER-clause error and was discarded."
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted the main point. The ongoing $972,905 a year (and the $2.28M a year for 2021-2023) came from treating material above a fixed share of price as unrecovered cost. The challenger's same-part dollar comparison (q176) shows prices covering material from 2022 and over-recovering it from 2023, so I retract the ongoing gap and the requote recommendation. I checked whether the reversal depends on the low-steel 2020 base. Re-running the matched-part test with a 2019 base (q215) gives the same signs: -$1,358,121 in 2021 and +$958,869 to +$1,364,746 a year in 2023-2025. I re-ran the all-jobs sizing as positive values (q213), and it reproduces the challenger's $1,090,041 a year shortfall over 2021-2022 ($2,913,379 in 2021 alone). That is the new dollars_a_year, limited to 2021-2022, not ongoing. Also accepted: mix and yield are ruled out on matched parts (q173, q176); the baseline share varied with steel prices in 2016-2020 (q173); the surcharge flag partly explains the uplift (q184); and labour inflation means total margin recovery remains open (q193, q195).",
+ "accepted": true
+}

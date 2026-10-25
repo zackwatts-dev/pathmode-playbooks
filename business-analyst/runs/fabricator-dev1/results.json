@@ -1,0 +1,818 @@
+{
+ "findings": [
+  {
+   "id": "F1",
+   "hypothesis": "H1",
+   "title": "Narrowed: Wendlow absorbed the 2021 carbon-steel jump on repeat parts, about $1.09M a year over 2021-2022; prices have more than covered material since 2023, so no material gap remains to requote",
+   "conclusion": "Observed: on the same carbon parts at their 2020 shipped quantities, the price index in 2021 was 1.0007 while material per unit was 1.5475 times 2020, so margin over material fell $2,077,947 across 1,686 parts (q176). The rise in material per unit on those parts came from $/lb, not weight: the pounds index stayed between 0.997 and 1.0087 (q176), and carbon cost $0.3123/lb in 2020, $0.4857 in 2021 and $0.5959 in 2022 (q173). Prices reset in 2022 (index 1.2271), and margin over material on the matched parts was about even that year (+$166,479). It was above 2020 from 2023 on: +$1,526,003 in 2023, +$1,312,006 in 2024 and +$949,945 in 2025 (q176). The result holds when 2019 is the base year instead: -$1,358,121 in 2021, then +$958,869 to +$1,364,746 a year in 2023-2025 (q215). Across all carbon order jobs, steel cost added versus 2020 $/lb exceeded the estimated price gain by $2,913,379 in 2021. Prices gained $733,298 more than steel cost in 2022, which leaves a net shortfall of $1,090,041 a year over 2021-2022 (q188, q213). Interpretation: repeat-part prices lagged steel by about a year. Material's share of price (about 0.29-0.31 in 2024-2025 against about 0.25 in 2020; q173, q176) stays higher because prices passed steel through dollar for dollar, not because cost is going unrecovered. My earlier $972,905-a-year ongoing gap was produced by measuring material against a fixed share, and I retract it. Action: a steel-indexed price clause, or a surcharge line recorded on repeat POs, so that the next steel spike reaches prices within a quarter rather than a year.",
+   "dollars_a_year": 1090041.0,
+   "size_query": "q213",
+   "claims": [
+    {
+     "text": "Matched carbon parts at 2020 quantities: in 2021, price index 1.0007 and material index 1.5475, margin over material -$2,077,947 (1,686 parts). In 2022, price 1.2271, material 1.9243, +$166,479 (1,305 parts). In 2023-2025, +$1,526,003, +$1,312,006 and +$949,945 (1,012, 804 and 643 parts).",
+     "queries": [
+      "q176"
+     ]
+    },
+    {
+     "text": "With 2019 as the base instead of 2020, the pattern is the same: -$1,358,121 in 2021 (1,322 parts, price index 0.9986, material 1.3929), +$439,532 in 2022, and +$958,869 to +$1,364,746 a year in 2023-2025. The 2020 baseline is not driving the sign.",
+     "queries": [
+      "q215"
+     ]
+    },
+    {
+     "text": "On matched parts, material per unit rose because of $/lb, not pounds: pounds index 0.997-1.0087 over 2020-2025. Carbon $/lb was 0.3123 (2020), 0.4857 (2021), 0.5959 (2022), 0.5158 (2023), 0.4793 (2024) and 0.4706 (2025). Shipped quantity equalled job quantity in every year (ratio 1.0).",
+     "queries": [
+      "q173",
+      "q176"
+     ]
+    },
+    {
+     "text": "Repeat-part prices against each part's last 2020 price: median 1.0 in 2021 (59.7% of 6,210 lines unchanged), 1.3588 in 2022 (12.4% of 4,746 unchanged).",
+     "queries": [
+      "q128"
+     ]
+    },
+    {
+     "text": "All carbon order jobs (estimate that applies the matched-part price index to all jobs): steel cost added versus 2020 was $3,132,703 in 2021 and $5,135,591 in 2022. Against estimated price gains of $219,324 and $5,868,889, the net shortfall was $2,913,379 in 2021 and the net gain $733,298 in 2022, for $1,090,041 a year over 2021-2022. In 2024-2025 prices exceed steel cost added by $3,814,537 a year.",
+     "queries": [
+      "q188",
+      "q213"
+     ]
+    },
+    {
+     "text": "Invoices priced above the PO price appear in high-steel years: 790 in 2021 and 1,793 in 2022, against 28 in 2024 and 2 in 2025. Some of them trace to quote lines with the surcharge flag set (91 in 2021, 212 in 2022). Freight is recorded separately and is not the uplift.",
+     "queries": [
+      "q183",
+      "q184"
+     ]
+    },
+    {
+     "text": "Carbon material share by first-ship year was 0.2373-0.2788 in 2016-2020, 0.3792 in 2021, 0.3714 in 2022 and 0.2898-0.2927 in 2024-2025. Because a dollar-for-dollar pass-through raises the share, the share is not a measure of unrecovered cost.",
+     "queries": [
+      "q173"
+     ]
+    },
+    {
+     "text": "The 2021-2022 squeeze was not concentrated in one segment or customer: carbon share rose in all five segments, and the top 10 customers held 0.6356 of the excess against 0.6523 of revenue.",
+     "queries": [
+      "q140",
+      "q149"
+     ]
+    }
+   ],
+   "confidence": "medium",
+   "not_evidence_of": "This measures margin over material only. Labour, outside processing and overhead are not in it. The hours-weighted pay rate rose by a factor of 1.2328 from 2020 to 2025 (q193, q195), so the over-recovery on material since 2023 does not show that total margin is back to 2020 levels. The all-jobs figure (q188, q213) applies the price index of the surviving matched parts to all carbon work, which is an assumption. The matched set shrinks from 2,395 parts to 643 (q176). It does not show that steel caused the price changes (they coincide in time only), or that the invoice uplift is a steel surcharge, although the surcharge flag matches some of it (q184).",
+   "could_not_tell": "Why prices were held through 2021 (contract, blanket PO, or a choice to keep volume). Whether parts that dropped out after the 2022 reset were lost because of the reset. Labour hours and overhead per job, which would show whether total contribution has recovered. What the invoice uplift on untraced repeat orders is.",
+   "next_step": "Do not run a requote campaign on carbon repeat parts on material grounds; the records show no current material gap. Put a steel index clause or a recorded surcharge line on repeat POs so that recovery lag can be measured next time. Test whether the post-2022 price level covers labour as well, using shop labour hours per unit on matched parts. Correct the map: outside-processing PO lines carry $1,718,008 of amount (q101), not $0.",
+   "dead_ends": [
+    "Fixed-share sizing (q152): material above 0.2572 of price, counted as unrecovered, gave $2,279,745 a year for 2021-2023 and $972,905 a year for 2024-2025. It is wrong as a dollar measure because full pass-through also raises the share. Retracted after the challenge (q176, q188).",
+    "A pooled 2016-2020 baseline across all materials (0.2849) mixed carbon with non-carbon (q117).",
+    "Timing explanation (material ordered in 2021 for 2022 shipments): does not hold at job level (q107).",
+    "Unreceived POs inflating material: does not hold; the share on received POs only is within about 0.01 (q107).",
+    "q146 had a FILTER-clause error and was discarded."
+   ],
+   "incomplete": false,
+   "response_to_challenge": "Accepted the main point. The ongoing $972,905 a year (and the $2.28M a year for 2021-2023) came from treating material above a fixed share of price as unrecovered cost. The challenger's same-part dollar comparison (q176) shows prices covering material from 2022 and over-recovering it from 2023, so I retract the ongoing gap and the requote recommendation. I checked whether the reversal depends on the low-steel 2020 base. Re-running the matched-part test with a 2019 base (q215) gives the same signs: -$1,358,121 in 2021 and +$958,869 to +$1,364,746 a year in 2023-2025. I re-ran the all-jobs sizing as positive values (q213), and it reproduces the challenger's $1,090,041 a year shortfall over 2021-2022 ($2,913,379 in 2021 alone). That is the new dollars_a_year, limited to 2021-2022, not ongoing. Also accepted: mix and yield are ruled out on matched parts (q173, q176); the baseline share varied with steel prices in 2016-2020 (q173); the surcharge flag partly explains the uplift (q184); and labour inflation means total margin recovery remains open (q193, q195).",
+   "accepted": true,
+   "verdict": "stands with changes"
+  },
+  {
+   "id": "F2",
+   "hypothesis": "H5",
+   "title": "Scrap is not concentrated in fixable parts, families, first runs or people once volume and routing are allowed for; the one robust pattern is a first-year learning curve (about 1.8x the tenured rate), worth roughly $18,900 a year at cost",
+   "conclusion": "The hypothesis does not hold in its testable form. Observed: the top 10% of parts carry 69.4% of 'dimension out of tolerance' (DOT) plus 'operator error' (OE) scrap value ($4,716,749, 2016-2025, 4,986 of 7,725 parts with order jobs). But the top 10% of parts by sales value already carry 62.11% of it (q109), and part x work-centre combinations scrap in proportion to throughput (58.65% of scrap vs 57.75% of throughput, q159). Part differences after routing are weak and do not repeat: half-period correlation 0.0409 (258 parts, q153); odd/even job split correlation -0.0249 on pieces and 0.1144 on scrap events (516 parts), event overdispersion chi2/df 1.255 (445 parts) (q218). Parts in the top quintile on even jobs (event O/E 1.429) ran at 1.017x events and 0.965x pieces on odd jobs (q219). So there is a weak real part signal in event counts, but nothing that can be found ahead of time and fixed. Family differences disappear once routing is allowed for (0.946-1.033, q154). First runs are not worse: for parts created 2017+, first runs run at 0.984x (DOT+OE, 4,800 jobs) against 1.007x for run 4 onward (q222). Employee differences are work-centre mix (correlation within work centre -0.1682, 56 employees, q151). What holds is tenure. First-year staff scrap 1.804x a work-centre x year baseline set by staff with a year or more (7,940 vs 4,402 pieces, 900,795 pieces worked, q260, q262). The ratio stays about the same within part x work centre x job-size band (1.827x, q214) and within work centre x month x overtime (1.811x, q217). It also holds within the same people: 47 hires who stayed 3+ years ran at 1.787x in year 1, 1.001x in years 2-3 and 0.968x from year 4 (q212). So it is a learning curve, not selection. The excess is 3,538 pieces over 10 years, 353.8 a year (q262). At cost (GL scrap-material memo ratio 0.327 plus rework labour at the GL memo rate) that is about $18,914 a year (q225). At selling price it is at most $54,971 a year (q168), an upper bound, not a recoverable cost. Interpretation: the reason codes, entered at the machine, cannot say what kind of defect new hires make. On ops worked only by first-year staff, OE runs at 5.94x the tenured rate and DOT at 0.509x (q210), which suggests the label depends on who is reporting. Action: give new hires first-piece checks and paired setups, and judge them on total scrap per piece against a work-centre baseline, not on operator-error counts. The gain is modest.",
+   "dollars_a_year": 18914.0,
+   "size_query": "q225",
+   "claims": [
+    {
+     "text": "Top 10% of the 7,725 parts with order jobs carry 69.4% of DOT+OE scrap value ($4,716,749, 2016-2025), but the top 10% by sales value already carry 62.11%. The concentration follows volume and value.",
+     "queries": [
+      "q109"
+     ]
+    },
+    {
+     "text": "Of 23,406 part x work-centre combinations (9,076 with any DOT+OE scrap), the top 10% by throughput hold 58.65% of scrap vs 57.75% of throughput. Scrap is proportional; the 78.22% top-decile share by scrap value reflects zero-heavy data.",
+     "queries": [
+      "q159"
+     ]
+    },
+    {
+     "text": "Part-level scrap persists only weakly after routing. Half-period correlation 0.0409 (258 parts); odd/even job correlation -0.0249 on pieces and 0.1144 on events (516 parts); event overdispersion chi2/df 1.255 (445 parts). The top even-job quintile (O/E 1.429) runs at 1.017x events and 0.965x pieces on odd jobs.",
+     "queries": [
+      "q153",
+      "q218",
+      "q219"
+     ]
+    },
+    {
+     "text": "Family scrap is explained by routing (O/E 0.946-1.033). For parts created 2017+, first runs are at 0.984x (DOT+OE, 4,800 jobs) and 0.974x (all reasons), against 1.007x and 0.984x for run 4 onward.",
+     "queries": [
+      "q154",
+      "q222"
+     ]
+    },
+    {
+     "text": "Employee scrap rates correlate 0.8751 across halves raw (49 employees), but -0.1682 within work-centre mix (56 employees).",
+     "queries": [
+      "q143",
+      "q151"
+     ]
+    },
+    {
+     "text": "First-year staff: 7,940 scrap pieces against 4,402 expected at the tenured work-centre x year rate (1.804x, 900,795 pieces, 2016-2025). 1.827x within part x work centre x job-size band; 1.811x within work centre x month x overtime. Tenured overtime entries carry no scrap (0.0 vs 0.00424 regular).",
+     "queries": [
+      "q260",
+      "q262",
+      "q214",
+      "q217"
+     ]
+    },
+    {
+     "text": "Within the same people: 47 hires who stayed 3+ years ran at 1.787x in year 1, 1.001x in years 2-3 and 0.968x from year 4. 51 who stayed 1-3 years went from 1.798x to 1.05x. 23 who left within a year ran at 2.094x (685 vs 327 pieces). Learning, not survivorship.",
+     "queries": [
+      "q212"
+     ]
+    },
+    {
+     "text": "The pattern holds in every year 2016-2025 (1.477-2.519x), and 110 of 112 first-year hires are above expected (median 1.783x).",
+     "queries": [
+      "q156",
+      "q158"
+     ]
+    },
+    {
+     "text": "On ops worked only by first-year staff (865,968 pieces), OE runs at 5.94x the tenured rate (4,704 vs 792) and DOT at 0.509x (1,356 vs 2,663); DOT+OE combined at 1.754x (6,060 vs 3,455). Interpretation: the label appears to depend on tenure, so the codes cannot separate defect types.",
+     "queries": [
+      "q210",
+      "q225"
+     ]
+    },
+    {
+     "text": "1,186 ops (7,474 of 46,931 scrap-report pieces) have scrap reports but no rework entry, mostly wrong revision (2,061 pieces). First-year staff did 12.61% of original pieces there, against 9.68% on scrap-free ops, so leaving them out does not inflate the tenure effect.",
+     "queries": [
+      "q205",
+      "q207",
+      "q227"
+     ]
+    },
+    {
+     "text": "Excess 3,538 pieces over 10 years (353.8 a year). Cost basis: the GL scrap-material memo is 0.327 of all scrap-report value at selling price ($2,474,799 / $7,568,632), giving $17,974 a year in material. Adding 685 rework hours over 10 years at $13.73 per hour ($940 a year) gives $18,914 a year. At selling price the upper bound is $54,971 a year.",
+     "queries": [
+      "q223",
+      "q224",
+      "q225",
+      "q262",
+      "q168"
+     ]
+    }
+   ],
+   "confidence": "medium",
+   "not_evidence_of": "Not evidence that any individual new hire is a problem: the effect is broad (110 of 112) and fades within the same people. Not evidence that out-of-tolerance scrap is a process issue separate from operator experience, or that operator error is the new-hire defect type: the reason codes look like tenure-dependent labels. Not evidence of where defects originate (scrap is booked where found). Not evidence that $54,971 a year is recoverable: it is a selling-price upper bound, and onboarding could at most close the gap to the tenured rate. The high top-decile shares (69.4%, 78.22%) are not evidence of fixable hot spots.",
+   "could_not_tell": "What defect types new hires actually make (reason codes are entered at the machine and appear to depend on who enters them; an independent inspector classification would be needed). Where out-of-tolerance defects originate (no cause-operation coding). Whether new hires are supervised differently. Lost capacity and late-remake cost of scrap. Wrong-revision, paint and weld scrap without rework entries (7,474 pieces) is largely outside the labour-based analysis.",
+   "next_step": "Trial structured onboarding (first-piece verification, paired setups) for new hires and track each hire's total scrap per piece over their first 12 months against the tenured work-centre baseline (expected about 1.8x falling to about 1.0x). Have inspection, not the operator, assign the reason code on a sample of scrap reports to test whether DOT vs OE labelling depends on tenure. Add cause-operation coding to scrap reports.",
+   "dead_ends": [
+    "Part Pareto: concentration follows sales volume (q109, q159)",
+    "Persistent problem parts: weak event signal only, regresses on held-out jobs (q153, q218, q219)",
+    "Part family: explained by routing (q154)",
+    "First runs of a part: not worse, with left-censoring and routing allowed for (q222)",
+    "Individual employees: differences are work-centre mix (q151)",
+    "Reason-code split OE vs DOT as defect types: labels look tenure-dependent (q210)"
+   ],
+   "incomplete": false,
+   "response_to_challenge": "Accepted all eight points. (1) Survivorship, job size, timing/overtime, missing rework entries and first-run censoring: the challenger's tests (q212, q214, q217, q227, q222) support the tenure effect and the first-run result, and they are now in the claims. (2) Reason codes: accepted. My claim that 'DOT is process-wide, OE is onboarding' (53.09%/7.17% shares) is withdrawn. On new-only ops, OE at 5.94x and DOT at 0.509x (q210) means the code entered at the machine cannot separate defect types. The recommendation is now judged on total scrap per piece. (3) Part persistence: softened to 'weak, not recoverable' (q218, q219). (4) Money: accepted. My 0.4276 ratio divided the GL memo by labour-recorded scrap only; against all scrap-report value it is 0.327 (q223). The size is now the cost-basis $18,914 a year (q225), and $54,971 is labelled a selling-price upper bound. I checked the challenger's 4,402 expected pieces in q225: it matches a work-centre x year tenured baseline (q260), giving 1.804x and 3,538 excess pieces (q262).",
+   "accepted": true,
+   "verdict": "stands with changes"
+  },
+  {
+   "id": "F3",
+   "hypothesis": "H7",
+   "title": "Late payment costs about $1.41M in excess receivables and splits into three parts: invoices billed above the customer's PO price (22.67% of overdue dollar-days on 7.32% of invoices), customers 6 and 7, and a broad background tail on correctly priced invoices",
+   "conclusion": "Observed, for 69,850 invoices dated 2016-01-05 to 2024-12-31, each with exactly one payment and none unpaid (q165): measured against due_on, excess receivables average $1,413,693. At an assumed 8% cost of capital that is $113,095/yr (q199). The 2024 run-rate is similar at $1,398,641, or $111,891/yr (q199). The working-day due date doesn't create the lateness, because due_on falls 0.23 days after the calendar terms (q110). Invoices are never dated before shipment (q170). The excess splits into three parts that sum to the total (q202). (a) $320,443 sits on invoices billed more than 0.5% above shipped qty x PO unit price. These are 5,113 of 69,850 invoices (7.32%) but carry 22.67% of overdue dollar-days (q199, q211). Outside customers 6 and 7, 65.28% of them are paid more than 30 days late, against 16.74% of matching invoices (q181). The gap holds within the same customer: across 99 customers with at least 5 of each kind, above-PO invoices are more than 30 days late 65.5% of the time against 16.32% for the same customers' matching invoices. Above-PO invoices are worse for 97.98% of those customers, and the median within-customer gap is 37 days (q221). They are usually paid in full eventually: 80.42% exactly, at a median uplift of 1.0288 (q186). (b) $421,661 sits on matching invoices of customers 6 and 7. Of that, $247,935 is above the rest's 11.99-day pace, worth $19,835/yr at 8% (q199). (c) $671,588 sits on everyone else's matching invoices (q199). Their payment timing has two humps: 62.24% are paid within 5 days of due, and there is a second hump at 31-90 days (q175, q211). That hump is spread evenly. The 145 customers with a 10-25% rate of invoices over 30 days late hold 92.22% of matching billing (q189). Partial shipments, returns, late shipments and short payments barely move it (q187, q196). Interpretation: (a) looks like invoices held until a price discrepancy is resolved, so the lever is price agreement between invoice and PO, not collections. (b) is a persistent customer pattern whose cause is unknown. (c) is the only part a general collections process plausibly addresses.",
+   "dollars_a_year": 113095.0,
+   "size_query": "q199",
+   "claims": [
+    {
+     "text": "69,850 invoices dated 2016-01-05 to 2024-12-31 all have exactly one payment (76,053 payments on 76,053 invoices overall), and none is unpaid. The 1,024 unpaid invoices are all dated in 2025.",
+     "queries": [
+      "q165"
+     ]
+    },
+    {
+     "text": "Amount-weighted days past due are 18.11 against due_on and 18.50 against calendar terms. 68.3% of invoices are paid late. due_on averages 0.23 days later than the calendar terms date. No invoice is dated before its shipment, and the invoice lag averages 1.15-1.19 days for every group.",
+     "queries": [
+      "q110",
+      "q170"
+     ]
+    },
+    {
+     "text": "Excess AR is $1,413,693, or $113,095/yr at an assumed 8%. The 2024 run-rate is $1,398,641, or $111,891/yr, with customers 6 and 7 holding 34.1% of 2024 overdue dollar-days.",
+     "queries": [
+      "q139",
+      "q199"
+     ]
+    },
+    {
+     "text": "Decomposition: $320,443 (22.67%) on above-PO invoices, $421,661 (29.83%) on matching invoices of customers 6 and 7, and $671,588 (47.51%) on matching invoices of everyone else. The parts sum to $1,413,692, which is the total up to rounding.",
+     "queries": [
+      "q199",
+      "q202"
+     ]
+    },
+    {
+     "text": "Above-PO invoices are 5,113 of 69,850 (7.32%). Outside customers 6 and 7, the 4,110 above-PO invoices have a median of 40 days late and a 65.28% rate of more than 30 days late. The 50,622 matching invoices have a median of 2 days and a rate of 16.74%. For customers 6 and 7, weighted lateness is 54.67 days on above-PO invoices and 29.09 on matching ones.",
+     "queries": [
+      "q181",
+      "q211"
+     ]
+    },
+    {
+     "text": "The above-PO effect holds within customers. For 99 customers outside 6 and 7 with at least 5 above-PO and 5 matching invoices, the rate of invoices more than 30 days late is 0.655 on above-PO invoices against 0.1632 on the same customers' matching invoices (weighted to the above-PO mix). 97.98% of those customers are worse on above-PO invoices, with a median within-customer gap of 37 days.",
+     "queries": [
+      "q221"
+     ]
+    },
+    {
+     "text": "Above-PO invoices have a median uplift of 1.0288 (p90 1.1165). 80.42% are paid exactly as billed, and none is paid at PO value plus freight.",
+     "queries": [
+      "q186"
+     ]
+    },
+    {
+     "text": "Customers 6 and 7 (both on recorded 30-day terms) paid 26.33-41.68 days late in every year from 2016 to 2024. On matching invoices alone they ran 26.67-32.54 weighted days late every year, against 9.45-14.81 for the rest. Their days to pay have a median of 54-55 and a p10 of 37, with only 3.38-3.57% paid on time. Lateness is spread evenly across 6-40 days, with no weekday payment pattern.",
+     "queries": [
+      "q119",
+      "q182",
+      "q174",
+      "q175",
+      "q172"
+     ]
+    },
+    {
+     "text": "Customer lateness persists: the year-to-year correlation is 0.80-0.95, or 0.71-0.94 excluding customers 6 and 7, among customers with at least 30 invoices in both years.",
+     "queries": [
+      "q124"
+     ]
+    },
+    {
+     "text": "Outside customers 6 and 7, payment timing has two humps: 39.51% of invoices are paid on time and 22.73% 1-5 days late (62.24% within 5 days), and a second hump sits at 31-90 days (5.04%, 5.89%, 3.84% and 5.34% across successive buckets).",
+     "queries": [
+      "q175",
+      "q211"
+     ]
+    },
+    {
+     "text": "On matching invoices outside customers 6 and 7, the tail is broad. The 145 customers with a 10-25% rate of invoices over 30 days late hold 92.22% of billing and 86.09% of overdue dollar-days. Customer 36 is the clear exception among customers with 200+ invoices, at 77.78%. Partial shipments (19.36% vs 16.66%), return authorisations (16.18% vs 16.74%) and shipping after the promised date (18.07% vs 16.64%) barely move the rate, and neither do short or over-payments.",
+     "queries": [
+      "q189",
+      "q192",
+      "q196",
+      "q187"
+     ]
+    },
+    {
+     "text": "The 2022 peak combined two things. The above-PO share of non-6/7 invoices was 13.83% in 2021-H2, 27.93% in 2022-H1 and 3.69% in 2023-H1. Matching invoices also slowed: 9.29 to 17.78 weighted days late, with the share over 30 days rising from 12.87% to 25.16%, then back to 10.49 days by 2023-H1. The 2019 rise is mostly mix: above-PO invoices were 19.16% of invoices, and matching lateness was 12.48 days.",
+     "queries": [
+      "q182",
+      "q200"
+     ]
+    },
+    {
+     "text": "Lateness doesn't vary with invoice size (16.57-17.98 weighted days by quartile) or invoice month (15.51-19.18).",
+     "queries": [
+      "q132"
+     ]
+    }
+   ],
+   "confidence": "medium",
+   "not_evidence_of": "Not evidence that above-PO invoices were disputed: there are no dispute, hold or remittance-reason records, only timing and amounts. Not evidence that the uplifts were wrong charges; they may be agreed surcharges invoiced before the PO was amended. Not evidence that customers 6 and 7 act in bad faith or are in financial difficulty. Their lag is a wide spread (p10 37 to p90 96-97 days to pay), not a fixed cycle, so it doesn't by itself show a terms mismatch or a payment run. Not evidence that a reminder would shorten the background tail. The dollar figures are carrying costs at an assumed 8%, not cash lost, and only part of them is recoverable.",
+   "could_not_tell": "Why above-PO invoices are paid late: dispute or hold records, customer AP correspondence, or PO amendment history would be needed. Why invoices are priced above the PO: invoice line detail and price-change approvals would be needed. Whether customers 6 and 7 have agreed terms other than the recorded 30 days. What drives the background 31-90-day hump on correctly priced invoices: there is no dunning or collections history. Reasons for short payments.",
+   "next_step": "1. Price agreement: before invoicing, check invoice price against PO price, and get a PO amendment or customer approval for any uplift. Then measure lateness on the formerly above-PO population. Its baseline is 65.28% over 30 days late (outside customers 6 and 7, q181). 2. Ask customers 6 and 7 about their agreed terms and when invoices reach their AP. Then either record and price the real terms or enforce net 30. 3. Test a reminder at due date + 15 days on matching invoices and measure the share over 30 days late. Its baseline is 16.74% outside customers 6 and 7 (q181).",
+   "dead_ends": [
+    "Join fan-out or survivorship: one payment per invoice, and no unpaid invoices before 2025 (q165).",
+    "Invoices dated before shipment, or freight disagreements: none (q170).",
+    "The due_on working-day conversion as a source of lateness: due_on is 0.23 days later than calendar terms (q110).",
+    "Above-PO lateness being only a customer-mix effect: it holds within customers (q221).",
+    "Short payments concentrated in late payers: no (q129, q136, q187).",
+    "Partial shipments, returns or late shipments driving the background tail: barely move it (q196).",
+    "Invoice size or season: flat (q132).",
+    "A weekly payment run for customers 6 and 7: payments are spread evenly across weekdays (q172)."
+   ],
+   "incomplete": false,
+   "response_to_challenge": "Accepted all three changes. (1) The 'long tail' isn't one thing. 22.67% of overdue dollar-days ($320,443 of excess AR) sit on the 7.32% of invoices billed above PO price, and those are a pricing/invoicing matter rather than collections (q181, q199, q202, q211). I added one test of my own (q221): above-PO invoices could have been concentrated in customers who pay late anyway. Within 99 customers that have both kinds of invoice, they are still more than 30 days late 65.5% of the time against 16.32% for matching invoices, and worse for 97.98% of those customers. The effect is not customer mix. (2) The 2022 peak is partly a burst of above-PO invoices (27.93% in 2022-H1) and partly a real, temporary slowdown on matching invoices, from 9.29 to 17.78 days and back to 10.49 (q200). I had called it purely period-wide behaviour; that is withdrawn. (3) The excess for customers 6 and 7 over the rest is now measured on matching invoices: $247,935, or $19,835/yr at 8% (q199), replacing $270,734. I also withdraw the word 'consistent' for their lag: it is a wide spread (q174, q175). The headline size is unchanged at $113,095/yr, now cited to q199, which reproduces q139. The checks that confirmed the original (q165, q170, q172, q187, q189, q192, q196) are carried into the claims and dead ends.",
+   "accepted": true,
+   "verdict": "stands with changes"
+  },
+  {
+   "id": "F4",
+   "hypothesis": "H9",
+   "title": "No large customer loses money under any cost allocation tested; whether low-dollar family 1 work loses money depends on how indirect labour is charged, which the records cannot settle",
+   "conclusion": "Observed: none of the 51 customers with at least $500k of 2016-2025 revenue ($249,667,938 of revenue, 66,246 jobs) has negative contribution after PO material (outside processing included) and conversion cost. That holds with all conversion charged per clocked hour, and with half or all of indirect labour charged per invoiced job instead (q198). Margin for this group is 17.81% on the hour basis and 17.95% with indirect labour charged per job (q198). 2021 was the one broad dip: operating margin was 5.36% against 14.63%-20.26% in other years (q106), and 2021 GL material was $10.89M against $26.11M of revenue (q179). Below the customer level the result depends on how indirect labour ($31.57M over 10 years, q179) is allocated. Charged per clocked hour, every family and quantity band is positive, and 22 of 1,151 repeat parts lose $82,954 over ten years (q204). Charged per invoiced job ($346-$536 a job, q190), family 1 turns negative. Family 1 is 39,862 of 76,219 jobs (52.3%), with a median job of $902 and 3.88 clocked hours a job; it goes from +$11.71M to -$444,827 (q185, q191, q209). Jobs under $1k (23,747, 31.16% of jobs, $14.77M revenue) go from +$2.60M to -$1.31M (half charged per job) or -$5.21M (all charged per job) (q197, q209). Repeat parts below zero become 13 (half per job) or 41 (all per job; $3.10M revenue, -$231,741, 24 of them family 1) (q208). Jobs of 1-5 pieces stay positive under every basis (+$1.87M with all indirect labour charged per job, q185). My original ranking (family 6 and small-quantity work weakest) was therefore a product of the per-hour rule. New test (q232): year to year, indirect labour does not follow either candidate driver. It rose 36.7% from 2016 to 2025 while invoiced jobs fell 7.3% and clocked hours fell 12.8% (q234), and it stayed at 0.75-0.87 of direct labour every year (q232). Interpretation: indirect labour behaves like a wage-driven fixed cost, not a cost that scales with jobs or hours, so neither allocation is right by construction. Action (interpretation): no customer needs repricing on this evidence. If a minimum or setup charge is considered, base it on job value, not quantity, and look at family 1 first, but only after measuring what indirect staff actually spend their time on.",
+   "dollars_a_year": 8295.4,
+   "size_query": "q234",
+   "claims": [
+    {
+     "text": "Customers with at least $500k: 51 of 288, $249,667,938 revenue, 66,246 jobs; 0 negative on the hour basis, with half of indirect labour per job, or with all of it per job; margin 17.81% (hour basis) vs 17.95% (all per job).",
+     "queries": [
+      "q198"
+     ]
+    },
+    {
+     "text": "Operating margin 5.36% in 2021 vs 14.63%-20.26% in other years; 2021 GL material $10.89M on $26.11M revenue.",
+     "queries": [
+      "q106",
+      "q179"
+     ]
+    },
+    {
+     "text": "Indirect labour is $31.57M over 10 years; per invoiced job it ran $346-$536 a year.",
+     "queries": [
+      "q179",
+      "q190"
+     ]
+    },
+    {
+     "text": "Family 1: 39,862 of 76,219 jobs (52.3%), median job $902, 3.88 clocked h per job; contribution +$11,713,995 on the hour basis, -$444,827 (-0.97% of revenue) with indirect labour charged per job. With all of it charged per job, negative in 5 of 10 years; with half, negative only in 2021.",
+     "queries": [
+      "q185",
+      "q190",
+      "q191",
+      "q209"
+     ]
+    },
+    {
+     "text": "Jobs under $1k: 23,747 (31.16% of jobs), $14,773,429 revenue; contribution +$2,600,113 on the hour basis, -$1,306,041 with half per job, -$5,212,195 with all per job.",
+     "queries": [
+      "q197",
+      "q209"
+     ]
+    },
+    {
+     "text": "Jobs of 1-5 pieces stay positive with indirect labour charged per job (+$1,865,880, 4.94% margin).",
+     "queries": [
+      "q185"
+     ]
+    },
+    {
+     "text": "Repeat parts (at least 3 invoice years and $50k each, 1,151 parts) below zero: 22 on the hour basis (-$82,954, $8,295.4 a year; 19 parts and -$72,189 on received material only); 13 with half per job (-$38,736); 41 with all per job ($3,095,536 revenue, -$231,741, $23,174.1 a year; 24 in family 1).",
+     "queries": [
+      "q204",
+      "q208",
+      "q234"
+     ]
+    },
+    {
+     "text": "Outside processing ($1,718,008, all on job POs) lowers family 3 contribution from $10.08M to $8.82M and family 4 from $5.98M to $5.54M; no family or band changes sign.",
+     "queries": [
+      "q163",
+      "q185"
+     ]
+    },
+    {
+     "text": "Indirect labour rose 36.7% from 2016 to 2025 ($2,810,490 to $3,841,144) while invoiced jobs fell 7.3% (7,732 to 7,171) and clocked hours fell 12.8%; indirect labour stayed at 0.751-0.869 of direct labour.",
+     "queries": [
+      "q232",
+      "q234"
+     ]
+    },
+    {
+     "text": "Clocked hours fell from 75.5% to 65.6% of paid timecard hours (2016-2025). Conversion cost per paid hour rose 27.6% ($77.6 to $99.0) and per clocked hour 46.8% ($102.8 to $150.9).",
+     "queries": [
+      "q169",
+      "q201",
+      "q209"
+     ]
+    },
+    {
+     "text": "29.7% of PO lines (= POs, 108,171) have no receipt, but they are $4,207,405 of $92,758,289 (4.54%). PO material equals GL material in every year.",
+     "queries": [
+      "q169",
+      "q203",
+      "q209",
+      "q230"
+     ]
+    }
+   ],
+   "confidence": "medium",
+   "not_evidence_of": "That low-dollar or family 1 work is profitable, or that it loses money: the sign depends on an allocation rule the data cannot settle (q185, q197, q232). Nor that the 22 (or 41) parts are recoverable losses: dropping or repricing them would not remove the fixed indirect cost. Nor that costs rose by the full 46.8% rise in the clocked-hour rate; part of it is lower hour capture (q201). Nor that small-quantity jobs under-clock setup: 1-5 piece jobs clocked 0.983 of estimated hours vs 0.759 for 100+ pieces (q177). The 10,557 negative single jobs (q141) are not losses either: labour postings run up to 208 h (q162).",
+   "could_not_tell": "Which allocation of indirect labour is right. The records have no activity drivers (time by task for indirect staff, number of POs, inspections, shipments or invoices handled per job). Year-level totals show it follows neither job count nor hours (q232). Premium freight ($78,124, q179) exists only in the GL. The conversion rate is one plant-wide average with no work-centre rates. Not explained: 217 jobs created 2016-2024 that were completed but never invoiced, carrying $565,008 of PO material (q180, q220). That is either an unmeasured cost or unbilled revenue.",
+   "next_step": "Sample what indirect staff (purchasing, scheduling, inspection, shipping, billing) spend time on per job, by job value band, to pick the allocation. Until then, report family 1 and jobs under $1k under both bases. Review the 217 completed but uninvoiced jobs (q220) separately.",
+   "dead_ends": [
+    "Customer-level losses: 0 of 51 large customers negative on any basis tested (q198); no customer-year below the loaded rate in 2+ years (q137)",
+    "Small-quantity (1-5 piece) work as a loser: positive on every basis (q185), and not under-clocked against estimates (q177)",
+    "Outside processing or unreceived POs creating spurious losers: no sign changes (q185, q204)",
+    "Indirect labour driven by job count or hours: it rose while both fell (q232, q234)"
+   ],
+   "incomplete": false,
+   "response_to_challenge": "Accepted: (1) Allocation. The 'every family clears its cost' result and the family 6 / family 3 small-quantity action came from charging indirect labour per clocked hour. Charged per job, family 1 and jobs under $1k turn negative (q185, q197, q208). The title, conclusion and action are rewritten around job value and family 1, with both bases reported. I added q232/q234 to test which basis the data supports. Indirect labour rose 36.7% while jobs fell 7.3% and hours 12.8%, so neither driver is supported, and the question stays open rather than being settled in either direction. (2) Outside processing is on job POs (q163); my 'could not tell' was wrong and is corrected. It changes no sign (q185, q204). (3) My figure of 28.9% unreceived POs was wrong. q230 shows POs and PO lines are the same 108,171 records, 29.7% with no receipt, which matches q203. They are only 4.54% of PO dollars (q209). (4) Falling hour capture inflates the rise in the clocked-hour rate (q201); the 'loaded rate rising faster than prices' framing is dropped. (5) The 217 completed but uninvoiced jobs (q220) are added as an open item. Kept: no customer of $500k or more is negative under any basis (q198), and 2021 is a period effect (q106, q179). Every small-quantity check reached the same answer as the challenger's (q177, q185). dollars_a_year is the hour-basis repeat-part loss ($8,295.4, q234); under all-per-job allocation it would be $23,174.1 (q234). It is a sizing of the tail, not money recoverable by repricing.",
+   "accepted": true,
+   "verdict": "stands with changes"
+  },
+  {
+   "id": "F6",
+   "hypothesis": "H8",
+   "title": "Mostly timing, not the person: quoter 115's lower new-quote hit rate is largely explained by quoting in months when estimators had just left. Matched by month, the gap is about 3 points, in line with a full-time estimator's. The bigger lever is estimating coverage and quote turnaround.",
+   "conclusion": "Observed: quoter 115 is an engineer, not an estimator, and is still employed. Estimators 108 (retired 2024-03-01) and 109 (resigned 2021-04-15) and engineers 114 (resigned 2018-02-23) and 113 (resigned 2021-05-07) have left (q276). Half of 115's new quotes (217 of 430, 0.505) fall in 14 months in which they sent 9 or more. Most of those months come right after a departure: 2018-03 and 2018-05, Apr-Oct 2021, and Mar-Apr 2024. Three do not: 2019-12, 2022-12 and 2023-08 (q300, q320). In those 14 months the other quoters won 0.187 with an average turnaround of 8.13 days. In the 58 months with no 115 quotes they won 0.272 with 5.13 days (q299). Against peers' quotes from the same calendar month, 115's gap is -0.031 (n=430, customer-clustered SE 0.017, z about -1.8), against the -0.071 that customer x year gave (q290, q312, q320; reproduced in q334). By customer x quarter it is -0.030 (n=331) (q290). On the month-matched measure 115 sits near full-time estimator 109 (-0.038, n=2,675) and below 108 (+0.033, n=4,223); 108 minus 109 is 0.071 (q290, q320, q334). In 2021, a third of 115's quotes (0.335), 115 matched peers month for month: 0.125 against an expected 0.119 (q315, q320). A smaller residual remains outside 2021: -0.049 month-matched (n=286, SE 0.025). It rests partly on 2022, when 115 won 2 of 37 (q305, q315). Turnaround predicts winning even against quotes from the same month: +0.078 for quotes sent in 0-2 days and -0.092 for 8-30 days (about 2,190 quotes per quintile, q317). Interpretation: the gap I first attributed to estimator 115 mostly comes from when they quoted. They covered quoting in the months after estimators left, when the whole shop quoted slowly and won less. The more useful finding is about coverage. When estimating capacity drops, quoting falls to non-estimators and turnaround slips, and slower quotes go with fewer wins. Valued at month-matched peer rates, 115's shortfall is 13.2 wins, or $158,802 of quoted value over 7.61 years: $20,872 a year (q312). That is quoted revenue, not margin, and much of it accrued when no estimator was available to send those quotes.",
+   "dollars_a_year": 20872.0,
+   "size_query": "q312",
+   "claims": [
+    {
+     "text": "Quoter roles from HR: 115 is an engineer and still employed. 108 (estimator) retired 2024-03-01, 109 (estimator) resigned 2021-04-15, 113 (engineer) resigned 2021-05-07, 114 (engineer) resigned 2018-02-23, 118 (sales) resigned 2022-04-20. Estimators 254 and 327 were hired 2021-09-21 and 2024-05-10.",
+     "queries": [
+      "q276"
+     ]
+    },
+    {
+     "text": "In 14 months 115 sent 9 or more new quotes. Those months hold 217 of 115's 430 new quotes (0.505). In them, other quoters won 0.187 with an average turnaround of 8.13 days. In the 58 months with no 115 quotes, others won 0.272 with 5.13 days, a gap of 0.085. Of the 14 months, 2018-03/05, 2021-04 to 2021-10 and 2024-03/04 follow departures; 2019-12, 2022-12 and 2023-08 do not.",
+     "queries": [
+      "q299",
+      "q300",
+      "q320"
+     ]
+    },
+    {
+     "text": "Peers matched by calendar month: 115 -0.031 (n=430, SE 0.019; customer-clustered SE 0.017 across 120 customers, z about -1.8). For comparison, customer x year gives -0.071 (n=389, clustered SE 0.022, z about -3.2) and customer x quarter -0.030 (n=331, SE 0.02).",
+     "queries": [
+      "q290",
+      "q312",
+      "q320",
+      "q334"
+     ]
+    },
+    {
+     "text": "Month-matched gaps for other quoters: 108 +0.033 (n=4,223), 109 -0.038 (n=2,675), 254 -0.021 (n=2,196), 327 +0.027 (n=847). 108 minus 109 is 0.071. With month x turnaround band, 115 is -0.041 and 109 -0.030; with month x segment, 115 is -0.031 and 109 -0.040.",
+     "queries": [
+      "q290",
+      "q305",
+      "q320",
+      "q334"
+     ]
+    },
+    {
+     "text": "115's month-matched gap by year: 2018 +0.024 (n=49), 2019 -0.076 (50), 2020 +0.101 (18), 2021 +0.006 (144; 0.125 vs expected 0.119), 2022 -0.215 (37, 2 wins), 2023 -0.045 (72), 2024 -0.062 (53), 2025 +0.163 (7).",
+     "queries": [
+      "q315"
+     ]
+    },
+    {
+     "text": "Excluding 2021: customer x year -0.071 (n=263, SE 0.025); year-month -0.049 (n=286, SE 0.025).",
+     "queries": [
+      "q305"
+     ]
+    },
+    {
+     "text": "Quote size doesn't explain the gap. Within customer x year cells, 115's quotes are smaller than peers' (log price -0.312, log hours -0.318, work centres -0.317, n=389), similar to 109 and 254. A customer x year x size-tercile cell leaves 115 at -0.062 (n=343).",
+     "queries": [
+      "q279",
+      "q290"
+     ]
+    },
+    {
+     "text": "The status data look sound. Every won new quote has a sales order and no non-won quote does, for every quoter. 115's validity window averages 30.1 days, like everyone else's. No expired, lost or no-award quote from 108/109/115/254/327 had its part ordered within 365 days. Every RFQ has exactly one quote, and 115 has no null statuses.",
+     "queries": [
+      "q275",
+      "q281",
+      "q283",
+      "q285",
+      "q286"
+     ]
+    },
+    {
+     "text": "Turnaround against same-month quotes, by quintile (2,189-2,190 quotes each): 0-2 days +0.078, 2-4 days +0.041, 4-6 days +0.018, 6-8 days -0.045, 8-30 days -0.092. Raw hit rates are 0.342 to 0.131.",
+     "queries": [
+      "q317",
+      "q250"
+     ]
+    },
+    {
+     "text": "Sizing at month-matched peer rates: 13.2 missing wins, $158,802 of quoted value over 7.61 years, $20,872 a year. Under customer x year it was 27.7 wins, $257,449, $33,837 a year.",
+     "queries": [
+      "q312"
+     ]
+    }
+   ],
+   "confidence": "medium",
+   "not_evidence_of": "Not evidence that quoter 115 quotes badly or is at fault. They were an engineer covering quoting, mostly in months after estimators left, and their month-matched gap is in the same range as full-time estimator 109's. Not evidence that faster quoting causes wins: slow quotes may be harder or less wanted RFQs. The dollar figure is quoted revenue under an assumed peer win rate, not margin, and is largely not recoverable for months when no estimator was available. Departures and the low-win months coincide in time, but the records don't show that the departures caused the slowdown (2021 also had other conditions).",
+   "could_not_tell": "Why quotes were lost: there is no loss reason or competitor price, and 'expired' means the buyer never replied. How RFQs are assigned between estimators and engineers, whether quotes were followed up, and whether 115 got the leftover or harder RFQs within a month. What drove the -0.049 residual outside 2021, which is about 2 SE and leans on 2022's 2 wins in 37. The standard errors don't account for uncertainty in the peer rates.",
+   "next_step": "Treat estimating coverage as the issue. Track RFQ-to-quote turnaround and who sent each quote, month by month, and plan backfill or cross-training before an estimator leaves. Record an assignment reason and a loss reason when a quote's status is entered. If the remaining residual is worth checking, review a small sample of 115's 2022-2024 lost and expired new quotes next to same-month peer quotes for the same customer.",
+   "dead_ends": [
+    "Higher markup or longer lead weeks at low-hit quoters: 115 is at +0.007 log markup and -0.44 lead weeks, and neither predicts winning within customer-year (q245, q248).",
+    "115 getting bigger or more complex RFQs: their quotes are smaller than peers', and a size cell leaves -0.062 (q279, q290).",
+    "Status recording or validity-window differences: none found (q281, q283, q286).",
+    "115 as a singular outlier: matched by month, they are no further below peers than estimator 109, and 108 minus 109 is 0.071 (q290, q320).",
+    "Estimator 118's low raw hit rate: explained by period and turnaround (q254, q259, q290)."
+   ],
+   "incomplete": false,
+   "response_to_challenge": "Accepted on every point. I re-ran the month-matched comparison myself and it reproduces: 115 -0.031, 109 -0.038, 108 +0.033 (q334, matching q290). The challenger's other numbers come from queries they ran, which I cite. What I accepted: (1) My customer x year cell compared 115's quotes from the worst months of 2021 with peers' quotes from better months of the same year. Month matching halves the gap to -0.031, z about -1.8 with customer clustering (q290, q312). (2) 115 is an engineer covering quoting after estimators left (q276, q299, q300). (3) With timing controlled, 115 is not an outlier relative to 109, so my title's 'one estimator stays 6-7 points below peers' was wrong (q290, q320). (4) The dollar figure drops from $33,837 to $20,872 a year of quoted value, and that is not recoverable money (q312). What I kept: the status data are sound (q283, q286); quote size and price don't explain the gap (q279, q248); and turnaround's link to winning survives a same-month control (q317). I added one note: 3 of the 14 heavy-115 months (2019-12, 2022-12, 2023-08) don't follow a departure (q300), so the coverage story explains most of the clustering, not all of it. I still report the residual outside 2021 (-0.049, about 2 SE, q305) but don't treat it as a robust individual pattern.",
+   "accepted": true,
+   "verdict": "stands with changes"
+  },
+  {
+   "id": "F8",
+   "hypothesis": "H10",
+   "title": "Late material is linked to about 2.8 times the late-shipment rate at the same planned slack, but it does not explain the 2016 and 2021 spikes. 2016 was a delay inside the plant. About four tenths of the 2021 excess came from vendor lead times that roughly doubled",
+   "conclusion": "Observed: compared at the same promised year and the same planned slack (promise date minus the last PO due date, in weeks, capped at 6+), jobs with a receipt after the PO due date shipped late 0.3573 of the time against 0.1263 for other jobs. That is 2.83 times as often, with all 3,524 late-receipt order jobs matched (promised 2016-2025). It comes to about 814 extra late shipments over 10 years, or 81.4 a year (q366). My earlier figures of about ninefold and 111.9 a year did not control for slack and overstated the effect (q367). Late receipts cluster in tightly planned jobs. In non-spike years, 0.5129 of late-receipt jobs had 14 days or less of planned slack, against 0.1766 of other jobs (q367), and most of the effect sits in that band: 0.5471 (1,453 jobs) vs 0.0869 (10,234) (q364). Late-receipt jobs were flat across years and carried only 0.1486 (2016) and 0.177 (2021) of late shipments (q282). The spikes are periods, not seasons: no calendar month in other years averages above 0.0379 (q368). The two spikes differ. In 2016, slack at release was normal (0.1 of jobs with on-time material released with 14 days or less, the same as other years), yet jobs ran late far more often at every slack level. For example, with more than 35 days of slack the rate was 0.1842 against 0.0039 (q360, q362). In 2021, PO lead times (due minus ordered) roughly doubled: steel 5.6 calendar days against 3.2-3.7, aluminium 13.9 against 6.7-7.3, stainless 12.2 against 6.0-7.7 (q357). Release waits for the last receipt: release equals the last receipt date on 0.9953-1.0 of jobs, and none are released earlier (q352). So create-to-release rose to 9.1 days, against 5.5-6.2 in other years (q344), and 0.1921 of jobs with on-time material were released with 14 days or less of slack (q362). Under one ordering of a non-additive decomposition, about 0.394 of the 2021 excess among jobs with on-time material comes from that tighter slack mix and 0.606 from higher lateness at the same slack (q362, q367). In every year, every late shipment was on a job completed after its promise date (share 1.0, q344). So the delay at the same slack was before job completion, not between completion and shipping. Interpretation: 2016 was a post-release, pre-completion problem inside the plant. 2021 was partly that and partly a material-supply problem. Receipts were measured against PO due dates that had themselves been pushed out, so the late-receipt flag could not see it. For action: measure material timeliness against the job's need date as well as the PO due date. Protect slack on jobs planned with 14 days or less. Look at pre-completion flow in Sep-Dec 2016 and Mar-Oct 2021.",
+   "dollars_a_year": null,
+   "size_query": null,
+   "claims": [
+    {
+     "text": "At the same year and planned-slack week, late-receipt jobs shipped late 0.3573 vs 0.1263 (ratio 2.83; 3,524 of 3,524 matched), about 814 extra late shipments over 10 years, 81.4 a year. This replaces the unadjusted 8.96x (0.3575/0.0399) and 111.9 a year, a difference of 30.5 a year.",
+     "queries": [
+      "q366",
+      "q367"
+     ]
+    },
+    {
+     "text": "Late receipts concentrate in tightly planned jobs. In non-spike years, 0.5129 of late-receipt jobs vs 0.1766 of others had 14 days or less of planned slack. Within slack bands: 14 days or less, 0.5471 (1,453) vs 0.0869 (10,234); 15-21 days, 0.0984 (549) vs 0.0001 (15,752); 22-28 days, 0.0355 (451) vs 0.0004 (11,592); more than 28 days, 0.0026 (380) vs 0.0012 (20,359).",
+     "queries": [
+      "q364",
+      "q367"
+     ]
+    },
+    {
+     "text": "The late rate rises with receipt delay: on time 0.0394 (71,812 jobs), 1-3 days late 0.2051 (390), 4-7 days 0.2736 (1,334), 8-14 days 0.4359 (1,661), more than 14 days 0.6475 (139). This gradient is not adjusted for planned slack.",
+     "queries": [
+      "q311"
+     ]
+    },
+    {
+     "text": "Late-receipt jobs are flat at 323-394 a year and carry only 0.1486 (2016) and 0.177 (2021) of late shipments, against 0.3769-0.6076 in other years. Monthly, they stay at 20-38 inside the spikes.",
+     "queries": [
+      "q282",
+      "q308"
+     ]
+    },
+    {
+     "text": "The spikes are not seasonal. In non-spike years, no calendar month averages above 0.0379 and no single month-year exceeds 0.0799.",
+     "queries": [
+      "q368"
+     ]
+    },
+    {
+     "text": "2016: among jobs with on-time material, the share released with 14 days or less of slack was 0.1, the same as other years. Re-weighting 2016 to other years' slack mix leaves its late rate at 0.118 (actual 0.1152, other years 0.0159). At the same slack, 2016 was far worse: 15-21 days 0.0623 vs 0.0007; more than 35 days 0.1842 vs 0.0039.",
+     "queries": [
+      "q362",
+      "q360"
+     ]
+    },
+    {
+     "text": "2021: PO lead rose to 5.6 days (steel), 13.9 (aluminium) and 12.2 (stainless), against 3.2-3.7, 6.7-7.3 and 6.0-7.7 in other years. Release equals the last receipt date on 0.9953-1.0 of jobs with receipts, and no job is released before its last receipt. Create-to-release was 9.1 days vs 5.5-6.2. Average slack at release was 23.8 days vs 26.4-27.6.",
+     "queries": [
+      "q357",
+      "q352",
+      "q344"
+     ]
+    },
+    {
+     "text": "Among jobs with on-time material in 2021, 0.1921 were released with 14 days or less of slack, against 0.1 elsewhere. Actual 2021 late rate 0.1593. With other years' slack mix it would have been 0.1028, against 0.0159 in other years. About 0.394 of the excess is slack mix and 0.606 is within-slack (one ordering of a non-additive decomposition).",
+     "queries": [
+      "q362",
+      "q367"
+     ]
+    },
+    {
+     "text": "Across 120 months, the late rate of jobs with on-time material correlates 0.648 with create-to-release, 0.663 with PO lead and 0.493 with release-to-completion. Create-to-release and PO lead correlate 0.996 with each other, so they are effectively one signal.",
+     "queries": [
+      "q356"
+     ]
+    },
+    {
+     "text": "In every year, the share of late shipments on jobs completed after the promise date is 1.0, and completion to shipment averages 0.03-0.21 days. The lateness arises before job completion, not in shipping.",
+     "queries": [
+      "q344"
+     ]
+    },
+    {
+     "text": "Clocked labour in 2021 was 109,740 h, below 2017-2019 (114,170-120,946). The monthly late rate correlates 0.135 with clocked hours and 0.169 with overtime hours (120 months). Clocked hours are posting-dated. These were not re-tested by the challenger.",
+     "queries": [
+      "q302",
+      "q298"
+     ]
+    },
+    {
+     "text": "The 2021 spike among jobs with on-time material is broad: 0.1547-0.1664 in all five segments, against 0.0137-0.0181 in non-spike years.",
+     "queries": [
+      "q325"
+     ]
+    }
+   ],
+   "confidence": "medium",
+   "not_evidence_of": "Not evidence that late receipts cause late shipments. Even the slack-matched 81.4 a year is an association: rushed orders could produce both short PO due dates and late vendors. Not evidence that 2021 material supply was fine: 'on time' was measured against PO due dates that had lengthened. Not evidence of which work centre held jobs. Release-to-completion time is a weak measure of flow: it fell over the decade from 21.4 days (2016) to 8.6 (2025), and 2017 ran 18.4 days with a late rate of only 0.0307 (q344). Not evidence about vendors whose receipts are often unrecorded. The unreceived share is 0.4416 for vendor 1, 0.3881 for aluminium, 0.4274 for stainless and 1.0 for both outside processors (q338). Outside-processing jobs ran late 0.6602 (2016) and 0.6807 (2021) and can never carry a late-receipt flag (q341). Not evidence that capacity was adequate: clocked hours are posting-dated and measure neither skill nor queues.",
+   "could_not_tell": "Which operation or work centre slowed jobs at the same slack in 2016 and 2021: operations carry only completion dates. Whether vendor lead times rose in 2021 because vendors quoted longer or because Wendlow set later due dates: POs record only ordered and due dates. Whether unreceived POs (flat at 0.2884-0.3115 a year, q337) were cancelled or received without a record. Jobs with an unreceived PO and no recorded late receipt ran late 0.0521, against 0.0331 for fully received jobs (q336), so some late material is probably hidden there. The 428 order jobs promised in 2016 with no PO (late 0.1262, q336) reflect PO data starting 2016-01-05 while releases start 2015-11-27 (q335). They slightly inflate early-2016 rates but not the Sep-Dec spike. No dollar figure is supported: direct cost is small and expedited freight is billed to customers (prior q76, q82, q98).",
+   "next_step": "(1) For jobs with on-time material in Sep-Dec 2016 and Mar-Oct 2021, compare the gaps between successive operation completions with 2019 at the same slack at release, to find where elapsed time grew. (2) Add a need-date measure: last receipt against (promise date minus the estimated routing time), so that material delay is visible even when PO due dates move. (3) Ask purchasing whether the 2021 PO due dates reflected vendor quotes. (4) Close the receipt-recording gap for vendor 1, aluminium, stainless and the outside processors, so their timeliness can be measured. (5) Check the 2021 tenure signal (0.172 of hours worked by staff with under a year's tenure, q327) against timecard headcount. This is suggestive only.",
+   "dead_ends": [
+    "Job size as a confounder: late-receipt jobs have about the same PO and operation counts, and the effect survives stratification (q287). Planned slack, however, was a confounder: adjusting for it cuts the ratio from 8.96 to 2.83 (q366, q367).",
+    "More late receipts in spike years: counts are flat (q282, q308).",
+    "High clocked load in spike years: 2021 load was below 2017-2019, and monthly correlation is 0.135 (q298, q302).",
+    "Spike concentrated in one segment: it is spread across all five (q325).",
+    "Seasonality: no calendar month in other years averages above 0.0379 (q368).",
+    "Release-to-completion time as the signature of the spikes: 2017 matched 2021 on it with a low late rate (q344, q348).",
+    "Shipping-side delay: every late shipment was on a job completed after its promise date (q344)."
+   ],
+   "incomplete": false,
+   "response_to_challenge": "Accepted in full. (1) Planned slack confounds the late-receipt effect. I did not stratify on it, and late-receipt jobs are much more often tightly planned (0.5129 vs 0.1766, q367). Planned slack comes from PO due dates set before any receipt, so it is a legitimate pre-treatment control. The headline is now 2.83x and 81.4 extra late shipments a year (q366), replacing about ninefold and 111.9. The receipt-delay gradient (q311) is kept but labelled unadjusted. (2) 'The spikes came from jobs whose material arrived on time' was misleading for 2021. Release is gated on the last receipt (q352), PO lead times roughly doubled (q357), and about 0.394 of the 2021 excess comes from tighter slack at release (q362, q367). The conclusion now separates 2016 (in-plant only) from 2021 (partly supply). (3) I drop release-to-completion time as evidence of slow flow, given its decade-long decline and the 2017 counterexample (q344, q348). The post-release component is now shown by higher lateness at the same slack at release (q360). I narrowed it with one addition from the challenger's own q344: the share of late shipments on jobs completed after promise is 1.0 in every year. So the delay is before completion, not in shipping. (4) Uneven receipt recording by vendor and unmeasurable outside processing are now stated as limits on the late-receipt effect (q336, q338, q341). (5) The early-2016 truncation is noted (q335, q336). Confidence is lowered from high to medium, because the size of the material effect moved by a factor of three under one added control. I ran no new queries: the challenger's queries settle each point, and I found nothing in them to dispute.",
+   "accepted": true,
+   "verdict": "stands with changes"
+  },
+  {
+   "id": "F9",
+   "hypothesis": "H2",
+   "title": "From 2017 to 2025, paid time not clocked to jobs grew by about 10,361 to 14,085 h a year (about $255,110 to $349,162 at 2025 rates) as estimated work fell while paid hours held, mostly in lathe, mill and laser. It is spread across whole roles, not a few employees, and it is an opportunity value of fixed payroll, not a cost that grew.",
+   "conclusion": "The hypothesis holds in a narrower form. Total paid hours barely moved from 2016 to 2025 (+511.3 h, q391), and annual clocked hours are labour on operations completed that year, with little truncation at the end of the series (q371, q372, q373, q375). The original 2016 baseline overstated the trend. During 2016, clocked hours per estimated hour fell from about 1.0 to about 0.81-0.88 (e.g. laser 0.992 in Jan-2016 to 0.811 in Dec-2016; q374), on the same parts with unchanged estimates (q389). 58.5% of the 2016-2025 fall in clocked hours comes from that ratio effect (q385, q391). Measured from 2017, the picture is cleaner: estimated work on completed operations fell (load effect -14,314 clocked-hour equivalents), while clocked hours per estimated hour held or rose slightly (ratio effect +2,342; shop-wide 0.883 in 2017, 0.903 in 2025; q383, q385). Unclocked paid time grew by 14,085 h (2017 vs 2025), or by 10,361 h a year comparing the 2017-19 and 2023-25 averages (q379, q395). Each role books only to its own work centre (q382). The rise moves the whole within-role distribution (q349). The largest pieces against 2017 are lathe (1.73 FTE-equivalents), mill (1.64) and laser (1.49) (q390). Interpretation: capacity did not follow a falling workload. In mill and lathe, load fell while paid hours were held (mill -104 h) or added (lathe +1,272 h). Laser lost load while paid hours rose 1,896 h, partly by deliberate backlog hiring (2 backlog requisitions, 2016-08-01 and 2021-01-25; q386). Priced at 2025 median rates, this is $255,110 a year on 3-year averages, of which mill plus lathe is $116,772 (q395). The 2017 baseline gives $349,162 (q379). It is an opportunity value of hours already paid: about 7.92 FTE spread across 8 roles, with none above 1.73 (q390). It becomes savings only by matching hours to load through attrition, cross-training or bringing in work. The 2016 step is a separate question: it could be real efficiency or labour no longer booked to jobs, and the records can't tell which.",
+   "dollars_a_year": 255110.0,
+   "size_query": "q395",
+   "claims": [
+    {
+     "text": "Annual clocked hours are a sound measure. Between 96.5% (2016) and 98.0% (2025) of labour entries are dated on their operation's completion date, with 0 completion-year mismatches. Every operation completed 2016-2025 has labour, and open operations at the end of 2025 hold only 43.2 h of labour. Timecards cover 49-50 weeks a year.",
+     "queries": [
+      "q370",
+      "q371",
+      "q372",
+      "q373",
+      "q375"
+     ]
+    },
+    {
+     "text": "2016 is a transition year. Act/est fell within 2016 (laser 0.992 to 0.811, paint 1.02 to 0.878, brake 1.069 to 0.864, Jan to Dec), on identical parts whose estimates per piece were essentially unchanged by 2018 (median ratio 1.01-1.019, 409-941 parts per work centre), while clocked hours per piece fell (median 0.761-0.858). Of the 15,739 h fall in clocked hours 2016-2025, 9,209 h (58.5%) is this ratio effect.",
+     "queries": [
+      "q374",
+      "q389",
+      "q385",
+      "q391"
+     ]
+    },
+    {
+     "text": "From 2017 the fall in clocked hours is a workload fall: load effect -14,314 h, ratio effect +2,342 h (shop-wide act/est 0.883 in 2017, 0.903 in 2025).",
+     "queries": [
+      "q385",
+      "q383"
+     ]
+    },
+    {
+     "text": "Unclocked paid time grew by 14,085 h (2025 vs 2017) or 10,361 h a year (2023-25 vs 2017-19 averages). Against 2017: lathe +3,269 h (paid +1,272, clocked -1,997), mill +2,832 h (paid -104, clocked -2,936), laser +2,823 h (paid +1,896, clocked -927), brake +1,672 h, assembler +1,435 h, painter +1,303 h (paid only +213), welder +442 h, inspector +308 h.",
+     "queries": [
+      "q379",
+      "q390"
+     ]
+    },
+    {
+     "text": "The shift is role-wide, not driven by a few people. For example, mill machinists' median unclocked share went 0.366 (2016, n=16) to 0.561 (2025, n=15), and laser operators' p10 went -0.118 to 0.188. Each role books 100% of its labour to its own work centre.",
+     "queries": [
+      "q349",
+      "q382"
+     ]
+    },
+    {
+     "text": "Priced at 2025 median role rates: $255,110 a year on 3-year averages (mill $63,079, laser $63,772, lathe $53,693, mill plus lathe $116,772) and $349,162 on a 2017 baseline. That equals 7.92 FTE across 8 roles, at most 1.73 in any one role.",
+     "queries": [
+      "q395",
+      "q379",
+      "q390"
+     ]
+    }
+   ],
+   "confidence": "medium",
+   "not_evidence_of": "Not evidence that any employee is idle or under-recording: whole roles move, and individual shares below zero in 2016 (q349) show that attributing hours to people is imperfect. Not evidence that a recording change happened in 2016, or that estimates were right; the 2016 drop could be genuine efficiency. Not a cost that grew: payroll changed by +511.3 h (q391), and the slack is under 2 FTE per role (q390). Not evidence of what the unclocked time was spent on.",
+   "could_not_tell": "What the unclocked hours were spent on: there are no indirect clock codes. Whether the 2016 fall in clocked hours per piece was efficiency or a change in booking practice. Why lathe and inspector shares stay high in every year. Whether unclocked time rises in low-load weeks: work_date is effectively the completion date, so weekly load can't be measured reliably. Role changes over time: hr_employees holds only the current role. Benefits are excluded from the dollars.",
+   "next_step": "Introduce indirect clock codes for mill, lathe and laser, and review staffing in those centres against estimated hours, using attrition (mill and lathe each had 18 replacement requisitions, q386) and cross-training rather than reductions. Ask the plant and accounting whether labour-booking practice changed during 2016 before treating that step as capacity.",
+   "dead_ends": [
+    "Concentration in a few employees: within-role percentiles moved together (q349).",
+    "Cross-booking to other work centres: 100% own-centre for every role (q382).",
+    "End-of-series truncation or carry-in distorting annual totals: negligible after 2015 (q371, q372, q373).",
+    "Estimate inflation as the cause of the 2016 step: estimates on identical parts were unchanged (q389).",
+    "Paint as a 'staffing added' case: from 2017, painter paid hours rose only 213 h (q390)."
+   ],
+   "incomplete": false,
+   "response_to_challenge": "I accepted every point, re-ran the sizing and checked it. (1) Definitions: the challenger showed (q370-q375) that annual labour equals labour on operations completed that year, with negligible truncation. That supports the annual grain, and I now cite it. (2) Baseline: accepted. 2016 is a transition year, and 58.5% of the 2016-2025 clocked fall is a ratio effect (q385, q391) on unchanged estimates (q389). I dropped the 2016 baseline, rebuilt the trend from 2017, and withdrew 'clocking hasn't slipped' for 2016. It holds only from 2017 (q383). (3) Laser and paint: accepted. Their 'flat workload' rested on 2016. Paint drops out as a staffing-added case (+213 h paid, q390). Laser stays in, with load falling and paid hours up 1,896 h, partly through backlog hiring (q386). (4) Money: accepted. I re-ran the pricing as q395 and size the finding at $255,110 a year (2017-19 vs 2023-25 averages), with the 2017 single-year baseline ($349,162, q379) as an upper reference. Both figures are an opportunity value of fixed paid hours (7.92 FTE across 8 roles, q390), not a growing cost. The machining story (mill plus lathe $116,772, q395) survives every baseline. I found nothing in the challenge to rebut with new evidence.",
+   "accepted": true,
+   "verdict": "stands with changes"
+  },
+  {
+   "id": "F10",
+   "hypothesis": "H11",
+   "title": "Wrong-revision scrap sits almost entirely on jobs that a new drawing revision missed: 99 of 137 reports are on 248 jobs where a revision arrived mid-job and no ECO was logged against the job. Release lag alone explains only 34. About $69,682/yr at cost, including fit/dimension/nonconforming credits",
+   "conclusion": "Observed, released jobs only, 2015-11 to 2025-12: all 137 'wrong revision' scrap reports were filed after a revision newer than the one issued had been received (q378). Every one scrapped the whole job quantity, none of those jobs shipped, and all 137 had a remake on the same sales-order line (q388). 34 reports are on the 82 jobs released on a revision older than the latest one received by the release date (q355). 99 are on 248 jobs released on the current revision where a newer revision was received before the job completed and no ECO was logged against the job: 39.919% of those jobs. The comparison groups are 4 of 709 mid-job-revision jobs with an ECO (0.564%) and 0 of 51,122 jobs with no mid-job revision (q359). The gap between no-ECO and ECO jobs holds within the same 43 customers (40.3% v 0.7%) and the same 65 parts (48.1% v 1.1%) (q394). It holds whether or not engineering released the revision before the job finished (44.0% v 0.7% where it did, 31.3% v 0.0% where it didn't), with similar median job lengths (q380). It also holds where an ECO for the same revision was logged against a sibling job: 26 of those 49 jobs still have wrong-revision scrap (q381). Separately, returns go to different jobs from the scrap. None of the 137 scrapped jobs has a return, and all 81 return authorisations are on other jobs (q388). 57 of the 58 fit/dimension/nonconforming returns and 80 of the 81 credit memos are on other at-risk jobs that shipped (q359, q361, q384). Valued at cost, the scrapped runs cost $331,519 in material and $60,427 in labour (2,420 hours at the average pay rate of $24.97, unloaded). Adding $304,873 of fit/dimension/nonconforming credits gives $69,682/yr over 10 years: $39,195 from scrap and $30,487 from credits (q387, q393). The pattern appears in every year from 2016 to 2025 (q363). Interpretation: the main pattern is a revision that arrives while a job is open and is not tied to that job by an ECO. Revisions that reach the floor late at release are a smaller part. The control should be per job and run at receipt: when a revision is received, check every open job for the part. Also hold release of new jobs while a received revision is still unreleased.",
+   "dollars_a_year": 69682.0,
+   "size_query": "q393",
+   "claims": [
+    {
+     "text": "All 137 wrong-revision reports (2,852 pieces; the code has no variant spellings) were filed after a revision newer than the one issued had been received. Each scrapped the full job quantity. None of those jobs shipped or has a return, and all 137 have a remake on the same SO line.",
+     "queries": [
+      "q377",
+      "q378",
+      "q388"
+     ]
+    },
+    {
+     "text": "Jobs released on a revision older than the latest received by the release date: 82. 34 of them have wrong-revision scrap (982 pieces). Current-revision jobs on parts with revisions: 103 of 52,079. Jobs on parts with no revisions: 0 of 24,463. The 82 depends on the definition: 136 if logged date is the reference, 347 if the reference is the job's creation date. None of these reconciles with q26's 158.",
+     "queries": [
+      "q353",
+      "q355",
+      "q392"
+     ]
+    },
+    {
+     "text": "Mid-job revision with no ECO on the job: 99 of 248 jobs with wrong-revision scrap (39.919%). With an ECO: 4 of 709 (0.564%). No mid-job revision: 0 of 51,122.",
+     "queries": [
+      "q359"
+     ]
+    },
+    {
+     "text": "The no-ECO v ECO gap holds within customers (43 customers: 93 of 231, 40.3%, v 4 of 613, 0.7%) and within parts (65 parts: 38 of 79, 48.1%, v 1 of 88, 1.1%). It holds where the revision was released before completion (74 of 168, 44.0%, v 4 of 548, 0.7%) and after (25 of 80, 31.3%, v 0 of 161). Median job length is 24 v 25 days and 11 v 11. No mid-job revision has an unlinked ECO. Where an ECO for the same revision was on a sibling job, 26 of 49 jobs still had wrong-revision scrap; where no ECO existed for the revision, 73 of 199 did.",
+     "queries": [
+      "q380",
+      "q381",
+      "q394"
+     ]
+    },
+    {
+     "text": "Credits: 81 memos total $381,885, one per return authorisation, with no fan-out in the join. 80 of the 81 are on at-risk jobs ($110,705 superseded-at-release, $260,898 mid-job without an ECO, $10,283 on all other jobs). 57 of the 58 fit/dimension/nonconforming returns are on at-risk jobs. These jobs are different from the scrapped ones.",
+     "queries": [
+      "q361",
+      "q384",
+      "q388",
+      "q393"
+     ]
+    },
+    {
+     "text": "Size at cost: 133 at-risk jobs have wrong-revision scrap, worth $544,560 at PO price, which equals those jobs' full revenue. Their cost is $331,519 material plus $60,427 labour, $391,946 in total (72.0% of the price value). Adding $304,873 of fit/dimension/nonconforming credits gives $69,682/yr over 10 years ($39,195 scrap, $30,487 credits), against $84,943/yr originally at PO price. The top 10 jobs hold 34.6% of the scrap value; the median job is $2,077.",
+     "queries": [
+      "q365",
+      "q387",
+      "q393"
+     ]
+    },
+    {
+     "text": "Not a single period: superseded-at-release jobs run 4-11 a year and mid-job-without-ECO jobs 9-41 a year from 2016 to 2025. ECO coverage of mid-job revisions is 67.4%-82.7% a year with no trend. None of the 181 open jobs is classed as at risk.",
+     "queries": [
+      "q363",
+      "q392"
+     ]
+    }
+   ],
+   "confidence": "medium",
+   "not_evidence_of": "That parts were physically made to the wrong drawing: 'wrong revision' is a self-entered code, and the revision actually machined is not recorded. That logging an ECO causes the protection: the ECO and the avoided scrap may share a cause, namely someone noticing the revision in time. That returns on at-risk jobs were caused by the revision: they are on different jobs from the scrap, 23 of the 81 are coded 'per buyer', and return reasons are reported by the buyer. That $69,682/yr is fully avoidable. Credits are an upper bound. Labour at an unloaded average wage is roughly a floor. Remaking returned parts is not included. Any person's conduct: a missing ECO is a pattern in how changes are recorded.",
+   "could_not_tell": "Whether the floor used old prints or the job packet was never updated. When the scrapped pieces were made relative to the revision's arrival, since labour work_date is a posting date. Loaded labour and overhead cost. Why 51 jobs were issued a revision older than one already released. The exact split between superseded-at-release and mid-job, which depends on the reference date (82 v 136) and does not reconcile with q26's 158; the combined at-risk population is the more robust object. Separating 'ECO protects' from 'ECO records that the change was caught' would need timestamps on when job packets and travellers were updated, and revision checks at first article or final inspection.",
+   "next_step": "When a revision is received (not when it is released), list every open job for that part and require an ECO or an explicit disposition for each job. An ECO on one sibling job is not enough. Hold release of new jobs for a part while a received revision is unreleased. Record the revision checked at first article. Then track wrong-revision scrap on mid-job-revision jobs, with and without a per-job disposition, to see whether the control works.",
+   "dead_ends": [
+    "The release-lag window alone (received but not yet released when the job was released) holds 31 jobs and 14 wrong-revision scrap reports: real but small.",
+    "No wrong-revision scrap on parts that never had a revision (0 of 24,463).",
+    "No trend and no single bad year.",
+    "Date strings are ISO format of fixed length, so the string comparisons are valid (q376). Duration, release lag, customer mix, part mix and unlinked ECOs do not explain the ECO gap (q380, q381, q394)."
+   ],
+   "incomplete": false,
+   "response_to_challenge": "I accepted every change. (1) Size: all 137 wrong-revision jobs were scrapped whole and remade, and the remake shipped (q388), so the PO-price revenue was not lost. I restated the size at cost: $69,682/yr (q393) replaces $84,943/yr, with size_query now q393. I've labelled the labour cost an unloaded floor and the credits an upper bound. (2) Scrap and returns are separate populations with no job overlap (q388, q384). The conclusion now says scrap is what was caught in-house and returns are what got out, not that they are the same events. (3) I added the challenger's robustness tests to the evidence: within customer and within part (q394), revision released before or after completion with matched job lengths (q380), ECO on a sibling job (q381), and timing (q378). The per-job control in next_step is now explicit, because a sibling ECO did not protect jobs (26 of 49). (4) The superseded-at-release count depends on the definition (82 received, 136 logged, q392) and still does not reconcile with q26. I moved that to could_not_tell and made the combined at-risk population the headline object. (5) I adopted the challenger's caveat that an ECO may record the catch rather than cause the protection. I ran no new queries because I found nothing in the challenge to dispute.",
+   "accepted": true,
+   "verdict": "stands with changes"
+  }
+ ],
+ "held": [],
+ "not_true": [
+  {
+   "id": "F5",
+   "title": "Unreceived material POs are not duplicates: all 30,888 are either one scrap-replacement buy per scrap report (30,802, $2,366,230) or Dec-2025 orders not yet due (86). Whether the replacement buys were ever filled can't be told from these records",
+   "why": "The hypothesis does not hold. The 2016-2025 records account for every one of the 30,888 unreceived material POs ($2,489,397; q318, q321). 30,802 are scrap-replacement buys, exactly one per scrap report: 30,652 of the 30,670 follow-up POs are dated the same day as the matching scrap report (q237), and all 149 unreceived POs on jobs carried in from before 2016 match a same-day scrap report (q288). They are sized to the scrapped pieces (median pound ratio 0.994, p10-p90 0.917-1.07; q239) and priced like the job's first PO (median price-per-lb ratio 1.0026; q310). Together they total $2,366,230, or $236,623/yr and 2.6% of GL material (q310). The other 86 were ordered 2025-12-11 to 12-31 and total $123,167 (q246, q321). Only 2 of those were past due at 2025-12-31, by at most 9 days (q306). No duplicates were found. Within a job, only 304 of 30,888 unreceived POs are within 10% of a received PO's pounds (q228). Across jobs, exact twins are no more common within 0-5 days than within 30-35 days (3,207 vs 3,863; q304). What is open is whether the replacement material came. The ledger books material when the PO is placed (GL material and GL outside processing match PO dollars in all 120 months; q277), so the GL can't show it. Rework labour starts a median 0 days after the replacement PO is placed, and before the PO is due on 24,314 of 25,274 jobs (96.2%; q272, q321). So shipping in full doesn't show that the PO material arrived. Interpretation: the re-runs were probably cut from stock, and the replacement PO is either restocking or was never filled. If it was never filled, GL material is overstated by up to $2,366,230 over 10 years. Separately, outside-processing POs are never receipted (1,234 POs, $1,718,008, one per job; q314, q318). That is a recording convention, not a sign of duplication. Action: pull vendor invoices/AP for a sample of replacement POs from vendors 1, 3 and 4. Have replacement buys receipted or tagged. Pursue the cost through scrap reduction."
+  },
+  {
+   "id": "F7",
+   "title": "H4 does not hold. New-part quotes are not over-estimated: first jobs run at or above quoted hours, weld at 1.267x excluding rework. Quotes with more hours than their peers are not lost more often. The low shop-wide actual/estimate ratios come from repeat runs of the same parts getting faster on routings that are never updated.",
+   "why": "The hypothesis fails on both legs. Observed: this covers all won new quotes, 2,764 orders out of 2,764 won new quotes. Every won new quote has an order and no other quote does (q289). That is 5,390 completed jobs, every one of them the first job for its part (q292), from quote years 2016-2025. On each of them the job routing copies the quote exactly. Actual hours excluding rework meet or exceed quoted hours at every quoted work centre except lathe: laser 1.006 (5,118 ops), brake 1.013 (3,788), mill 1.042 (333), paint 1.061 (3,663), assembly 1.125 (1,043), weld 1.267 (2,373), and lathe 0.935 (117) (q301). There is no duplication from the joins. Inspect is never quoted and runs at 1.06 against its routing (q303). Rework is 0-1.09% of hours by work centre (q295). On the hit-rate side, new quote lines were compared with peers of the same part family, material, quantity decile and year (21,851 lines). Lines that carry more hours than their peers win at 0.2442-0.253 across quintiles, which is flat. Hit rate does fall with relative price, from 0.2624 to 0.2288 (q313). Among quotes where the buyer actually decided (won vs lost, excluding expired), the labour-heavy quintiles win more often, not less: 0.4865 in the lowest hours-per-material quintile vs 0.5597-0.5794 in the rest (q332). The low shop-wide actual/estimate ratios come from repeats. In a fixed panel of parts with 11+ jobs, laser falls from 0.925 on the part's first job to 0.736 on its 11th and later, brake from 0.972 to 0.733, paint from 1.024 to 0.783 and weld from 1.181 to 0.909. Over the same jobs inspect stays at 1.053-1.066, average quantities are flat, and setup and run-per-piece estimates stay within 1.000-1.033x of the first job (q322). The ordering holds within every creation year 2016-2025 (q326) and on true first runs of parts created from 2017 on (q324). Interpretation: this is consistent with learning on routings that are set once and never updated. The records can't show the mechanism. Two things are worth acting on instead of padded hours: weld is under-quoted on new parts, and repeat-part routings stay at first-run hours."
+  }
+ ],
+ "incomplete": [],
+ "concerns": [
+  "Overtime stops completely in 2025: zero overtime hours in labour, timecards and GL memo and zero authorisations, after 320-5,095 h/yr in 2016-2024 (q38). This could be a policy change or a recording gap; the records can't tell which.",
+  "GL memo accounts are missing months instead of showing zero: rework labour is present in 101 of 120 months, overtime in 61 (q3, q38).",
+  "Labour entry 'hours' are not daily: 8,078 entries are over 24 h, the largest 208.25 h, and one employee-date totals 229.7 h (q40, q42, q74). work_date can't be used to measure daily load. 7 entries have hours <= 0 (q39).",
+  "Scrap is recorded where it was found, not where it was caused: weld defects are never booked at weld, and wrong-revision scrap shows up at paint, assembly and brake (q46). Scrap reports total 46,931 pieces against 36,362 on labour entries; 1,186 ops have a scrap report with no labour scrap, concentrated in weld defect, paint and wrong revision (q43, q45, q74).",
+  "The scrap note field is blank on all 30,802 rows (q5). Credit memo reason is 'return' on all 81 rows (q3). Termination reason is 'resigned' for 209 of 210 leavers (q3). These columns barely vary.",
+  "First-article inspections (967) all have a null inspector_id (q9).",
+  "Engineering revision turnaround looks too uniform: received-to-released p90 is exactly 5.0 days in every year 2016-2025, with recv->log 1.5-1.6 and log->release 2.1-2.3 every year (q28).",
+  "Invoices exceed qty x PO price by more than 0.5% on 5,115 of 77,077 invoices (max ratio 1.787). None before 2018-07-12; they cluster in 2018-2019 and 2021-2022 and almost vanish by 2024-2025 (q20, q21). No column says what the extra charge is. [Interpretation, untested: it looks like a material surcharge, given the quote_lines surcharge flag on 9,444 lines (q52).]",
+  "28.9% of material POs have no receipt (28.0%-30.2% by year, q49, q74), yet 76,049 of 76,730 jobs have at least one received PO (q50); the GL books those unreceived POs as material cost (q59). Cancelled or duplicate POs can't be identified.",
+  "Outside-processing POs carry 0 lb and $0 (q48) and never have receipts (q47). Outside cost exists only as a GL total, so it can't be attributed to jobs.",
+  "Late shipments vs promise (960 in 2016, 1,384 in 2021) coincide with spikes in chase emails (898 and 1,160) and overtime (q38, q51, q66). This is co-occurrence only.",
+  "2021 also shows fewer quotes (1,971) and fewer orders carrying a quote_id (193) (q11), along with the most hires (36) and the longest time to fill (152.0 days in 2021, 162.4 in 2022) (q69).",
+  "Customer part_number is not unique per customer: 200 duplicate groups with different descriptions (q72, q73). Use part_id.",
+  "Customer PO numbers repeat across orders, up to 7 times (q65).",
+  "Edge effects at the ends of the data: 504 orders and their jobs date from Nov-Dec 2015, before the calendar starts (q1, q11). At the end, 287 jobs are incomplete, 106 unreleased, 70 quotes have no status (q2, q3) and 287 lines from 2025 are unshipped (q51). Invoice due_on is capped at 2025-12-31 (764 invoices, q16, q74).",
+  "Timecard week_of falls on a Thursday, Friday or Wednesday for 4,251 rows around holidays; it is a 5-working-day block, not a calendar week (q35, q36, q74).",
+  "QCEW 332313 shows pay of 0 in suppressed rows (8 of 10 flagged). Treat these as missing, not zero (q68).",
+  "Headcount: HR shows 131-141 active at year end, but only 95-103 employees have timecards and 94-104 have labour entries per year (q37). The owner's 'about 150' presumably includes salaried staff and isn't reconciled here.",
+  "No text in the records addresses an AI or gives instructions: searched mail subjects, part descriptions, customer names and RFQ buyers (q7, q8)."
+ ],
+ "cannot_answer": [
+  "Why a quote was lost: status is only what the buyer reported, 'expired' means silence, and there is no loss reason or competitor price. Would need win/loss reasons captured at status entry.",
+  "Which work centre made a job late: operations have completion dates but no start or queue times, and labour work_date is a posting date (q42). Would need operation start/stop timestamps or queue/dispatch records.",
+  "Whether an estimate was right, directly: quote hours are per piece and job hours are job totals, and quotes link to orders by key for only 2,764 orders (q9, q53, q54). This can only be approximated by matching on customer+part, and it ignores the quantity actually run.",
+  "Whether a part was made to the wrong revision: no record of the revision actually machined. revision_issued can be compared with released revisions (32,214 of 32,372 jobs match, q26), and 'wrong revision' scrap is self-reported (137 reports, q4). Would need revision verification at first article or final inspection.",
+  "Where a defect originated, as opposed to where it was found (q46). Would need cause-operation coding on scrap reports.",
+  "Job- or customer-level margin including outside processing and freight allocation: outside cost is not on POs (q48), and GL revenue doesn't tie to invoices monthly (q61).",
+  "What the invoice uplift over PO price is for (q20). Would need invoice line detail.",
+  "What happened to unreceived POs (q49). Would need a PO status/cancellation field.",
+  "Indirect labour by activity (40,400-59,559 paid hours/yr not clocked to jobs, q74). Would need indirect clock codes.",
+  "Email content (RFQ specs, expedite reasons): only metadata is held."
+ ],
+ "summary": "**Narrowed: Wendlow absorbed the 2021 carbon-steel jump on repeat parts, about $1.09M a year over 2021-2022; prices have more than covered material since 2023, so no material gap remains to requote**\nRepeat carbon-part prices lagged steel by about a year, leaving a net shortfall of $1,090,041 a year over 2021-2022. Prices have been above material cost since 2023, and the earlier $972,905-a-year \"ongoing gap\" is retracted. Confidence is medium. The next step is not to run a requote campaign on material grounds, but to put a steel index clause or a recorded surcharge line on repeat POs and to test whether post-2022 prices also cover labour.\n\n**From 2017 to 2025, paid time not clocked to jobs grew by about 10,361 to 14,085 h a year (about $255,110 to $349,162 at 2025 rates) as estimated work fell while paid hours held, mostly in lathe, mill and laser. It is spread across whole roles, not a few employees, and it is an opportunity value of fixed payroll, not a cost that grew.**\nWorkload fell while paid hours held, leaving about 7.92 FTE of unclocked time across 8 roles, with no role above 1.73. This is worth $255,110 a year, and it becomes savings only if hours are matched to load. Confidence is medium. The next step is to introduce indirect clock codes for mill, lathe and laser and to review staffing against estimated hours through attrition and cross-training rather than reductions.\n\n**Late payment costs about $1.41M in excess receivables and splits into three parts: invoices billed above the customer's PO price (22.67% of overdue dollar-days on 7.32% of invoices), customers 6 and 7, and a broad background tail on correctly priced invoices**\nThe $1,413,693 of excess receivables carries a cost of $113,095/yr at an assumed 8%; that is a carrying cost, not cash lost. Above-PO invoices are 65.28% over 30 days late against 16.74% for matching ones. Confidence is medium. The next steps are to check invoice price against PO price before invoicing, ask customers 6 and 7 about their agreed terms, and test a reminder at due date + 15 days.\n\n**Wrong-revision scrap sits almost entirely on jobs that a new drawing revision missed: 99 of 137 reports are on 248 jobs where a revision arrived mid-job and no ECO was logged against the job. Release lag alone explains only 34. About $69,682/yr at cost, including fit/dimension/nonconforming credits**\nAt cost, scrap accounts for $39,195 a year and credits for $30,487, and the credits are an upper bound. Confidence is medium. The next step is that when a revision is received, every open job for that part gets an ECO or an explicit disposition. Release of new jobs should also be held while a received revision is unreleased.\n\n**Mostly timing, not the person: quoter 115's lower new-quote hit rate is largely explained by quoting in months when estimators had just left. Matched by month, the gap is about 3 points, in line with a full-time estimator's. The bigger lever is estimating coverage and quote turnaround.**\nThe shortfall is $20,872 a year of quoted revenue, not margin, and most of it is not recoverable. Faster quotes go with more wins. Confidence is medium. The next step is to track turnaround and who sent each quote, plan backfill or cross-training before an estimator leaves, and record assignment and loss reasons.\n\n**Scrap is not concentrated in fixable parts, families, first runs or people once volume and routing are allowed for; the one robust pattern is a first-year learning curve (about 1.8x the tenured rate), worth roughly $18,900 a year at cost**\nFirst-year staff scrap at 1.804x the tenured rate, falling to about the tenured rate within the same people. That excess is worth $18,914 a year at cost, against an upper bound of $54,971 a year at selling price. Confidence is medium. The next step is to trial first-piece verification and paired setups for new hires and to track each hire's total scrap per piece over 12 months.\n\n**No large customer loses money under any cost allocation tested; whether low-dollar family 1 work loses money depends on how indirect labour is charged, which the records cannot settle**\nOn the hour basis, 22 repeat parts fall below zero, worth $8,295.4 a year, but this is not a recoverable loss. Confidence is medium. The next step is to sample what indirect staff spend time on per job before choosing an allocation. Separately, the 217 completed but uninvoiced jobs should be reviewed.\n\n**Late material is linked to about 2.8 times the late-shipment rate at the same planned slack, but it does not explain the 2016 and 2021 spikes. 2016 was a delay inside the plant. About four tenths of the 2021 excess came from vendor lead times that roughly doubled**\nThis amounts to about 81.4 extra late shipments a year, and no dollar figure is supported. Confidence is medium. The next steps are to compare operation timing in Sep-Dec 2016 and Mar-Oct 2021 with 2019, and to measure material against the job's need date as well as the PO due date.\n\nSeveral things were tested and found not to hold:\n- The ongoing carbon material gap of $972,905 a year was retracted.\n- Scrap does not concentrate in particular parts, families, first runs or employees once volume and routing are allowed for.\n- Quoter 115's gap shrinks to -0.031 once quotes are matched by month.\n- No customer with at least $500k of revenue loses money, and the earlier ranking of small-quantity work as weakest came from the per-hour rule.\n- The unadjusted ninefold late-material effect (8.96x) fell to 2.83x once planned slack was matched.\n- Unclocked time is not a cost that grew.\n\nThe records cannot answer several questions:\n- Why prices were held through 2021.\n- Whether total margin, including labour and overhead, has recovered.\n- What unclocked hours were spent on, and whether the 2016 drop in clocked hours was efficiency or a change in booking practice.\n- Why above-PO invoices are paid late, and whether customers 6 and 7 have terms other than the recorded 30 days.\n- How indirect labour should be allocated.\n- Why quotes were lost.\n- Which work centre slowed jobs in 2016 and 2021.\n- Whether the floor worked from old prints.",
+ "summary_problems": []
+}

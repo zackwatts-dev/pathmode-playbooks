@@ -1,0 +1,14 @@
+# H7 notes
+- q105: due_on is 21/32/42 working days after invoice; payment amount includes freight -> billed = amount+freight.
+- q110: 2016-2024 invoices 69,850, all paid, 265 customers. due_on - invoice date averages 0.23 cal days *later* than terms_days. So working-day conversion is NOT the source of lateness (weakener rejected). Amount-weighted days late 18.11 vs due_on, 18.50 vs calendar terms. 68.3% of invoices are paid after due_on.
+- q112: overdue dollar-days track billing: top 10 customers 71.6% dd vs 67.6% billed; top 27 86.1% vs 82.0%. 4 customers = half of dd, but that's revenue concentration, not lateness.
+- q115: customers 7 (30.86 d) and 6 (32.25 d) are outliers among the big accounts (others 10-21 d). Both on 30-day terms.
+- q119: 6 and 7 are late every year 2016-2024 (26-42 d) vs the rest at 11.4-23.1 d. They hold 0.28-0.44 of dd on 0.16-0.27 of billing. 2022 is up for everyone.
+- q120: 75% of dd comes from invoices >30 days late (0.4127+0.3384). Median lateness for the rest is 2 d (q142), so the bulk is a long tail.
+- q124: customer lateness persists, year-to-year corr 0.80-0.95 (14-25 customers with >=30 inv/yr); 0.71-0.94 excluding 6,7.
+- q126: 28 customers over 30 d hold 0.4116 of dd on 0.2275 of billing (matches q95). 122 customers at 10-20 d hold 0.4762.
+- DEAD END q129/q136: short payments $167,867.66 on 2,088 invoices, 156 customers; 6,7 hold 15.5% of short dollars on 21.6% of invoices; >30d customers hold 17.7% of short on 22.8% billed; corr -0.089. Short payments are NOT concentrated in late payers.
+- q132: no size or season effect (size quartiles 16.57-17.98 d; months 15.5-19.2 d).
+- q144: outside 6,7, the rate of invoices >30 d late is 20.4%, spread: 30 customers with >=200 invoices range 0.13-0.79, mean 0.21, corr with size -0.013.
+- q147: 2022-H1 spike (26.43 d weighted, 37.9% >30 d) across 167 customers, back to 12.12 by 2023-H1: a period-wide event, not a customer one.
+- q139: excess AR = dd / 3,288 days = $1,413,693; at 8% = $113,095/yr. 6+7 alone $505,351; above the rest's rate $270,734 -> $21,659/yr.

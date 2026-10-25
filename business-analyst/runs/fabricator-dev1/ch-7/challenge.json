@@ -1,0 +1,69 @@
+{
+ "finding": "F7",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Join or definition artefact: q261's quote-to-job join could duplicate rows, drop work centres, or measure jobs that aren't first runs.",
+   "test": "Re-run q261 counting distinct jobs and quote lines. Find routing work centres that have no quote-hours row. Check where the linked jobs fall in their part's job sequence.",
+   "result": "No duplication: n = jobs = quote lines at every work centre, with no zero-actual ops (q301). The only centre dropped by the inner join is inspect, which is never quoted. It has 5,390 ops, actual/routing 1.06 (q303). All 5,390 linked jobs are job #1 for their part (q292). Every won new quote has an order and every non-won one has none (q289), so the 2,764 linked orders are the complete set of won new quotes, not a subset. The claim that 'only 2,764 orders link' understates the coverage.",
+   "queries": ["q301", "q303", "q292", "q289"]
+  },
+  {
+   "explanation": "Actual hours include rework, so first-run overruns could be scrap re-runs rather than an estimating shortfall.",
+   "test": "Exclude labour entries flagged rework and recompute actual/quote.",
+   "result": "Rework is 0-1.09% of hours by work centre (q295). Without it, weld is 1.267 and the others are 0.935-1.125 (q301). The conclusion does not change.",
+   "queries": ["q295", "q301"]
+  },
+  {
+   "explanation": "Winner's curse or selection: won quotes may be the ones whose hours came out low by chance, so actual >= quote on won work says nothing about lost quotes. Lost parts never run (q307), so their true hours can't be seen.",
+   "test": "A direct test of the H4 mechanism. Compare each new quote line's estimated hours with peers of the same part family, material, quantity decile and year (21,851 lines), then look at hit rate by quintile of that residual. Do the same for relative price.",
+   "result": "Hit rate is flat by relative hours: 0.253, 0.2465, 0.2485, 0.2481, 0.2442. Lost rate is 0.1947-0.2059. By relative price, hit rate does fall, from 0.2624 to 0.2288 (q313). Buyers respond somewhat to price, but quotes that carry more hours than their peers are not lost more often. This supports the finding's hit-rate leg on a better-controlled basis. It cannot rule out every quote being padded by the same amount.",
+   "queries": ["q307", "q313"]
+  },
+  {
+   "explanation": "Definitions: 'expired' (no word from the buyer) is 47% of decided quotes. Counting it as a loss could hide a price effect among quotes where the buyer actually decided.",
+   "test": "Recompute q266 as won/(won+lost), excluding expired and no-award.",
+   "result": "Expired is about 1,022-1,037 per quintile, so it is evenly spread. Win vs lost is 0.4865 in the lowest hours/material quintile and 0.5757, 0.5597, 0.57, 0.5794 above it (q332). The direction is unchanged: labour-heavy quotes are not lost more.",
+   "queries": ["q332"]
+  },
+  {
+   "explanation": "Mix or survivorship in the learning curve: parts that get reordered 11+ times may be inherently fast parts. Repeat jobs may also have larger quantities that spread setup, or routings may be re-estimated.",
+   "test": "Use a fixed panel of parts with >=11 completed jobs. Compare actual/estimate, average quantity, and setup and run-per-piece estimates against each part's own first job.",
+   "result": "Within the same parts, laser falls from 0.925 to 0.736, brake 0.972 to 0.733, paint 1.024 to 0.783, weld 1.181 to 0.909, while inspect stays at 1.053-1.066. Average quantity is flat (e.g. laser 22.9-24.0). Setup and run-per-piece estimates are 1.000-1.033x the first job's, so the routing is essentially unchanged (q322). The pattern is not part mix, quantity or re-estimation.",
+   "queries": ["q322"]
+  },
+  {
+   "explanation": "Calendar trend: high-sequence jobs are concentrated in later years, so the decline could be a shop-wide productivity trend rather than per-part repetition.",
+   "test": "Laser actual/estimate by job sequence within each creation year.",
+   "result": "In every year 2016-2025 the ordering holds: job #1 is 0.947-1.052 and jobs #11+ are 0.707-0.766 (q326). Jobs created in 2015 show implausible ratios (job #1 laser 0.228, n=401), which suggests labour is truncated before 2016. q265 includes them. The trend is therefore not calendar time.",
+   "queries": ["q326"]
+  },
+  {
+   "explanation": "Left-censoring: for parts made before 2016, the first job in the data is not their first run.",
+   "test": "Split by part creation date (before 2017 vs 2017 on).",
+   "result": "For parts created 2017 on, first jobs run laser 1.009, brake 1.02, weld 1.283. For older parts the 'first' job is laser 0.87, brake 0.97, weld 1.11, which is already partway down the curve (q324). The curve is confirmed on true first runs. q265's first-job ratios are diluted by older parts.",
+   "queries": ["q324"]
+  },
+  {
+   "explanation": "Weld overrun caused by something other than estimating: engineering changes on the first job, or an outlier tail.",
+   "test": "Compare jobs with and without an ECO logged against them. Look at the share of weld ops over quote and the interquartile range of the ratio.",
+   "result": "Without an ECO, weld is 1.278 (n=2,337). With one, it is 1.208 (n=36) (q328). Between 72.6% and 82.8% of first-job weld ops run over quote each year, and the 25th percentile is 0.981-1.087 (q330). The overrun is broad-based, not a tail or ECO effect.",
+   "queries": ["q328", "q330"]
+  },
+  {
+   "explanation": "Estimator mix: the 'widening' weld gap could be a change in who quotes rather than in how weld is estimated.",
+   "test": "Weld actual/quote by year for estimator 108 alone, and for long-tenured estimators (108, 109) vs others by half-period. Also check whether repeat weld jobs got slower over time.",
+   "result": "Estimator 108 runs 1.201-1.265 in 2016-2023 with no clear trend, and has 0 quotes in 2025 (q330). Between 2016-2020 and 2021-2025, estimators 108/109 go from 1.239 to 1.264 and the others from 1.31 to 1.349. The others' share of weld ops grows from 61 to 683 (q331). Weld on repeat jobs (#4+) is flat at 0.911-0.974 (q329). Most of the rise from about 1.22 to 1.33 is a shift toward estimators whose weld quotes run shorter, with a smaller within-group rise. Every estimator runs over at weld: 1.216-1.413 (q328).",
+   "queries": ["q329", "q330", "q331", "q328"]
+  },
+  {
+   "explanation": "The money: the 1,004.5 h/yr weld figure includes rework, covers first jobs only, and is hours already worked, not recoverable dollars.",
+   "test": "Recompute without rework.",
+   "result": "Without rework it is 966.5 h/yr (9,665 h over 10 quote years). That is 21.05% of first-job weld actuals (q333). These hours were spent. What could be recovered is price on future new-part quotes, which depends on markup and win-rate response (hit rate does fall with relative price, q313). It is not sized here and should not be presented as savings.",
+   "queries": ["q333", "q313"]
+  }
+ ],
+ "what_changed": "1) The weld gap is real, broad-based and present for every estimator. 'Rising' should be restated: it is mostly a shift in estimator mix (q330, q331), with only a small rise within each estimator group. 2) The learning curve survives a fixed-panel test, a within-year test and a true-first-run test (q322, q326, q324). q265's first-job ratios are diluted by pre-2016 parts and 2015 jobs with truncated labour. 3) The hit-rate leg is strengthened by a peer-relative hours test (q313) and a won-vs-lost-only test (q332). 4) The linked sample is all 2,764 won new quotes (5,390 jobs), not a subset (q289, q292). 5) The weld size is 966.5 h/yr excluding rework (q333). It is labour already spent, not recoverable dollars.",
+ "revised_conclusion": "H4 does not hold. On all won new quotes (2,764 orders, 5,390 first jobs, quote years 2016-2025), routings copy the quote exactly, and actual hours excluding rework meet or exceed quoted hours everywhere except lathe: assembly 1.125, brake 1.013, laser 1.006, mill 1.042, paint 1.061, weld 1.267, lathe 0.935 (q301). Quotes carrying more hours than comparable quotes (same family, material, quantity decile and year) are not lost more often: hit rate is 0.2442-0.253 across quintiles (q313), although hit rate does fall with relative price, 0.2624 to 0.2288. Weld is under-quoted on new parts. Between 72.6% and 82.8% of first-job weld ops run over quote each year (q330), which is about 966.5 weld hours a year above quote, excluding rework (q333). The apparent increase over time is mostly a change in which estimators quote (q331). The low shop-wide actual/estimate ratios come from repeat runs of the same parts getting faster: in a fixed panel of parts with 11+ jobs, laser falls from 0.925 to 0.736 and brake from 0.972 to 0.733, with routings within 3.3% of the first job and quantities flat. Inspect stays flat as a control (q322). This holds within every calendar year (q326). Interpretation: this is consistent with learning on routings that are never updated. The records can't show the mechanism (operator experience, fixtures, CAM proving).",
+ "not_evidence_of": "That new-part quotes are priced competitively. Lost parts never run (q307), so their true hours are unknown, and a uniform padding across all quotes would not show up in a peer-relative test. It is also not evidence of why any quote was lost, since there is no loss reason or competitor price. The weld overrun says nothing about whether a particular estimator (people are referred to by id) is at fault. The estimator differences in q328/q331 overlap with time and part mix and are a pattern worth a conversation, not a conclusion. The 966.5 h/yr is labour already spent on first jobs, not dollars that can be recovered. Learning-curve ratios for parts made before 2016 understate first-run hours because their first jobs fall before the data starts."
+}

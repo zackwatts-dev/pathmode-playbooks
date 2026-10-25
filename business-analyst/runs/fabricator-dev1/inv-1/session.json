@@ -1,0 +1,42 @@
+{
+ "stage": "investigate",
+ "model": "claude-opus-5-5",
+ "returncode": 0,
+ "cost_usd": 0.7471310000000001,
+ "usage": {
+  "input_tokens": 32,
+  "cache_creation_input_tokens": 40730,
+  "cache_read_input_tokens": 414015,
+  "output_tokens": 16918,
+  "output_tokens_details": {
+   "thinking_tokens": 2654
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 40730,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "global",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 1309,
+    "cache_read_input_tokens": 39393,
+    "cache_creation_input_tokens": 2674,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 2674
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "turns": 20,
+ "error": null
+}

@@ -1,0 +1,45 @@
+{
+ "finding": "F9",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions: labour work_date is a posting date, so 'clocked hours by year' may be a property of how labour is booked, not of when work was done (carry-in at the start of the data, WIP left open at the end).",
+   "test": "Compare each labour entry's work_date with its operation's completed_on, count completed operations with no labour, and size open (uncompleted) operations at the end of 2025.",
+   "result": "Between 96.5% (2016) and 98.0% (2025) of labour entries are dated on the operation's completion date, and every labour entry's year matches its operation's completion year (0 mismatches, 2016-2025). Every operation completed 2016-2025 has labour; the 656 operations completed in 2015 have none, because labour records start in 2016. Open operations at the end of 2025 hold only 43.2 h of posted labour and small estimated workloads (e.g. mill 620 est h, weld 1,423 est h). Timecards cover 49-50 weeks a year, and the 2025 timecards end on the week of 2025-12-18. So annual clocked hours are labour on operations completed that year. End-of-series truncation is small. The annual grain the finding uses is the right one.",
+   "queries": ["q370", "q371", "q372", "q373", "q375"]
+  },
+  {
+   "explanation": "Period, not trend: 2016 is a transition year. Clocked hours per estimated hour fell sharply during 2016, so using 2016 as the baseline mixes a one-off change in recorded hours per job into a 'work fell' story.",
+   "test": "Act/est by month in 2016. Split the 2016-to-2025 fall in clocked hours into a load effect (change in estimated hours) and a ratio effect (change in clocked per estimated hour). Repeat with a 2017 baseline.",
+   "result": "Act/est starts 2016 near 1 (laser 0.992 in Jan-2016, paint 1.02, brake 1.069) and falls through the year to about 0.81-0.88 by Dec-2016, near its later level (laser 0.798 in Jun-2017). Shop-wide act/est went 0.979 (2016) to 0.883 (2017), then 0.903 (2025). Of the 15,739 h fall in clocked hours on completed operations from 2016 to 2025, 9,209 h (58.5%) is the ratio effect and only 6,530 h is lower workload. Measured from 2017, the picture flips: load -14,314 h, ratio +2,342 h. For laser and paint the 2016-based clocked fall is all ratio (laser -1,402 of -1,210, paint -1,013 of -866). Their 'workload stayed flat' rests on 2016: from 2017, laser load fell by 1,121 h-equivalent and paint by 763.",
+   "queries": ["q374", "q383", "q385", "q391"]
+  },
+  {
+   "explanation": "The 2016 drop in hours per job could be a change in estimating (estimates going up) rather than in work or clocking.",
+   "test": "For the same part at the same work centre, compare estimated and clocked hours per piece in H1-2016 with 2018.",
+   "result": "On identical parts, estimates per piece are essentially unchanged (median 2018/H1-2016 ratio 1.01-1.019 across brake, laser, paint and weld; 409-941 parts each). Clocked hours per piece fell (medians 0.761 laser, 0.791 brake, 0.799 weld, 0.858 paint). So in 2016-2017, recorded labour per job fell on the same work. Two things could produce that: real efficiency gains, or labour no longer being booked to jobs. The records can't separate them. This contradicts the finding's claim that 'clocking against the work hasn't slipped' for the 2016 step. The claim holds only from 2017 on.",
+   "queries": ["q389"]
+  },
+  {
+   "explanation": "Mix and partial years: 2016 laser and paint crews were short-staffed and on overtime, so their 2016 unclocked share (0.021, 0.058) is an unusually tight baseline, not a norm.",
+   "test": "Employee-weeks on timecards by role, overtime by role, and paid-hour change from a 2017 baseline.",
+   "result": "Laser employee-weeks went 301 (2016), 343 (2017), 392 (2025); painter 268, 307, 340. In 2016, laser averaged 41.9 paid h/week with 1,072 OT h and painters 42.2 h/week with 1,038 OT h (q349). From 2017, painter paid hours rose only 213 h, not 1,762. Laser rose 1,896 h. Laser had 'backlog' requisitions (2, opened 2016-08-01 and 2021-01-25), so some of the added laser capacity was deliberate.",
+   "queries": ["q379", "q390", "q386", "q349"]
+  },
+  {
+   "explanation": "Role or work-centre misattribution: unclocked hours in one role might really be clocked at another work centre.",
+   "test": "Share of each role's labour booked to its own work centre, across all years, with no 200 h filter.",
+   "result": "100% for every role (e.g. lathe machinists 39,204 h, all at lathe). No cross-booking hides the gap. Caveat: hr_employees holds a single current role, so a role change over time can't be seen.",
+   "queries": ["q382"]
+  },
+  {
+   "explanation": "Endpoint sensitivity and the money: $405,555 comes from one baseline year, and unclocked hours on flat payroll are not a cost that grew.",
+   "test": "Re-price using a 2017 baseline and 3-year averages (2017-19 vs 2023-25) at the same 2025 median rates. Express the hours as FTE-equivalents per role.",
+   "result": "Total paid hours barely moved 2016 to 2025 (+511.3 h). Clocked fell 16,017.6 h, so the 'growth' is lost clocked work, not added cost. Growth in unclocked hours is 16,529 h (2016 base), 14,085 h (2017 base) and 10,361 h a year (3-year averages). Priced: $405,555, $349,162 and $255,110. Against 2017, the 14,085 h equals 7.92 FTE spread over 8 roles, and no role exceeds 1.73 FTE (lathe 1.73, mill 1.64, laser 1.49, brake 1.07; the rest under 1). Recovering cash needs fewer paid hours (attrition: mill and lathe each had 18 replacement requisitions) or more work routed to those centres. Fractional FTEs per role are not cash a manager can pull out directly.",
+   "queries": ["q379", "q390", "q391", "q386"]
+  }
+ ],
+ "what_changed": "Size: $405,555 a year becomes about $255,110 to $349,162 (3-year average vs 2017 baseline; q379). It is an opportunity value of fixed paid hours, about 7.92 FTE spread across 8 roles (q390), not a cost that grew. Mechanism: the 2016 baseline is a transition year. 58.5% of the 2016-to-2025 fall in clocked hours comes from fewer clocked hours per estimated hour (q385), mostly within 2016, on the same parts with unchanged estimates (q389). Whether that was efficiency or labour no longer booked to jobs can't be told. 'Clocking hasn't slipped' holds only from 2017. Laser and paint: 'workload flat, paid +2,504 h / +1,762 h' rests on understaffed, overtime-heavy 2016. From 2017, laser load fell while paid rose 1,896 h. Paint paid rose only 213 h, so paint drops out as a 'staffing added' case. The machining story (mill and lathe load falling while paid hours held, lathe paid +1,272 h vs 2017) survives with any baseline.",
+ "revised_conclusion": "From 2017 to 2025, total paid hours stayed flat. Estimated work on completed operations fell (load effect -14,314 clocked-hour equivalents) while clocked hours per estimated hour held or rose slightly, so paid time not booked to jobs grew by about 10,361 to 14,085 h a year (q379, q385). Each role books only to its own work centre (q382). The growth is spread across roles and within them (q349). It is largest in lathe (1.73 FTE-equivalents), mill (1.64) and laser (1.49), where load fell and paid hours were held or added (laser had backlog hires) (q390, q386). Interpretation: capacity did not follow a falling workload, mostly in machining. Priced at 2025 median rates, that is about $255,110 to $349,162 a year of paid time not on jobs (q379). It can only be turned into savings by matching hours to load through attrition, cross-training, or bringing in work. A separate, earlier step in 2016 (act/est from about 1.0 to about 0.81-0.88 within the year, on unchanged estimates; q374, q389) also raised the unclocked share. It shouldn't be counted as idle capacity until someone checks whether booking practice changed then.",
+ "not_evidence_of": "Not evidence that any employee is idle or under-recording. The distribution moves for whole roles, and 2016 individual shares below zero (q349) show that hour-to-person attribution is imperfect. Not evidence that a recording change happened in 2016, or that estimates were right: the 2016 drop in clocked hours per piece could be genuine efficiency. Not evidence that the dollars can be saved: payroll did not grow (+511.3 h, q391), and the slack is under 2 FTE per role. Not evidence of what the unclocked time was spent on; there are no indirect codes. Not evidence about why lathe and inspector shares are above 0.69 in every year (q342). Answering that needs indirect clock codes, or a floor study of how time is booked in those roles."
+}

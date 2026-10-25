@@ -1,0 +1,52 @@
+{
+ "finding": "F3",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Join fan-out or survivorship: invoices with several payments could be double-counted, and unpaid (open) invoices could be dropped, which would bias lateness down.",
+   "test": "Count payments per invoice, and count unpaid invoices dated before and from 2025.",
+   "result": "Ruled out. There are 76,053 payments on 76,053 distinct invoices, so there is no fan-out. None of the 69,850 invoices dated before 2025 is unpaid. The 1,024 unpaid invoices are all dated in 2025, which the finding excludes, and payments run to 2025-12-31.",
+   "queries": ["q165"]
+  },
+  {
+   "explanation": "Definition: Wendlow might date invoices before they ship, or invoice late, so that customers' clocks start later than due_on assumes.",
+   "test": "Compare invoiced_on with shipments.shipped_on for customers 6, 7 and the rest. Also check freight agreement between invoices and shipments.",
+   "result": "Ruled out. No invoice is dated before its shipment. The invoice lag averages 1.16, 1.19 and 1.15 days for customers 6, 7 and the rest (range 0-6 days). Invoice and shipment freight match in every case.",
+   "queries": ["q170"]
+  },
+  {
+   "explanation": "Confounding by invoice accuracy: invoices billed above the customer's PO price (the 'uplift' the finding itself flags as untested) could be held for dispute or approval. That would make part of the 'long tail' an invoicing problem, not a payment-discipline problem a reminder would fix.",
+   "test": "Join invoices to shipment lines and SO lines and compare invoice amount with the sum of shipped qty x PO unit price (above = more than 0.5% over). Compare lateness for above-PO and matching invoices, overall and within customers 6/7 vs the rest.",
+   "result": "Partly overturns the finding. Outside customers 6 and 7, 4,110 above-PO invoices had a median of 40 days late and 65.28% were more than 30 days late. The 50,622 matching invoices had a median of 2 days and a rate of 16.74% (q181). The gap is 0.4854 (q202). Customers 6 and 7 show the same split: weighted lateness is 54.67 on above-PO invoices and 29.09 on matching ones. Above-PO invoices are 5,113 of 69,850 (7.32%, q211) but carry 22.67% of overdue dollar-days, $320,443 of the $1,413,693 excess AR (q199, q202). They are usually paid in full eventually: 80.42% exactly, with a median uplift of 1.0288 (q186). Interpretation: this fits invoices being held until a price discrepancy is resolved. The data has no dispute records, so that can't be confirmed.",
+   "queries": ["q178", "q181", "q186", "q199", "q202", "q211"]
+  },
+  {
+   "explanation": "Period vs behaviour: the 2022 'period-wide shift' could be a change in the mix of above-PO invoices, not a change in how customers pay.",
+   "test": "Above-PO share and lateness by year and half-year, split into matching and above-PO invoices.",
+   "result": "Partly mix. The above-PO share of non-6/7 invoices was 24.29% in 2022 against 0.41% in 2024 and 0-19.16% in other years (q182). By half-year, the share was 13.83% in 2021-H2, 27.93% in 2022-H1 and 3.69% in 2023-H1. Matching invoices also got later in 2022-H1: weighted days late rose from 9.29 to 17.78, and the share over 30 days from 12.87% to 25.16%, falling back to 10.49 days by 2023-H1 (q200). So 2022-H1 is a real but short payment slowdown amplified by a burst of above-PO invoices. The 2019 rise (12.48 days on matching invoices vs 16.94 overall in q119) is mostly the above-PO mix: 19.16% of invoices that year.",
+   "queries": ["q182", "q200"]
+  },
+  {
+   "explanation": "Terms definition: customers 6 and 7 could actually be on longer terms (net 45/60 or a monthly payment run) than the recorded 30 days. Their 'lateness' would then be a fact about the ERP terms field, not their behaviour.",
+   "test": "Days-to-pay distribution for customers 6 and 7 compared with net-30, net-45 and net-60 customers. Payment weekday for 6, 7 and 8.",
+   "result": "Can't be settled, but the shape argues against a simple terms mismatch. Customers 6 and 7 pay at a median of 55 and 54 days (p10 37, p90 96-97), only 3.4-3.6% on time (q174). Their days late are spread evenly across 6-40 days with no spike (q175). That doesn't look like net-30 customers with tight clustering (p25 30, median 33) or net-60 customers (p25 61, median 63). Payments fall evenly on weekdays (q172), so there's no sign of a weekly payment run. The finding's 'consistent ~24-day lag' is a median over a wide spread, not a fixed cycle. Agreed terms still need to be asked about.",
+   "queries": ["q172", "q174", "q175"]
+  },
+  {
+   "explanation": "Two-humped distribution: the 'long tail' might not be a smooth tail of general slowness. If it is a second cluster, it points to a specific mechanism.",
+   "test": "Days-late histogram for customers 6/7 and the rest. Then, among PO-matching invoices for the rest, test whether the share of invoices over 30 days late is concentrated in a few customers or linked to partial shipments, returns or late shipments.",
+   "result": "Bimodal. For the rest, 62.24% of invoices are paid within 5 days of due (q211; 39.51% on time, 22.73% 1-5 days late). Few fall at 11-30 days, and a second hump sits at 31-90 days (5.04%, 5.89%, 3.84% and 5.34% in successive buckets) (q175). Among matching invoices that hump is broad, not concentrated. The 145 customers with a 10-25% rate hold 92.22% of billing and 86.09% of overdue dollar-days. Most customers with 200+ invoices sit at 11-21%, and customer 36 is the clear exception at 77.78% (q189, q192). Partial shipments (19.36% vs 16.66%), return authorisations and shipping after the promised date (18.07% vs 16.64%) barely move the rate (q196). Short and over-payments don't either (q187). The background tail of matching invoices is not explained by anything in the records.",
+   "queries": ["q175", "q187", "q189", "q192", "q196", "q211"]
+  },
+  {
+   "explanation": "The money: the excess-AR arithmetic could be wrong, or the 9-year average might not describe today's position.",
+   "test": "Re-run q139's method, decompose it by invoice type and customer group, and compute it for 2024 invoices alone.",
+   "result": "The arithmetic reproduces: $1,413,693, or $113,095/yr at 8% (q199). The 2024 run-rate is similar: $1,398,641, or $111,891/yr at 8%, with customers 6 and 7 holding 34.1% (q199). Breakdown: $320,443 on above-PO invoices; $421,661 on matching invoices of customers 6 and 7; $671,588 on matching invoices of everyone else (q199, the parts sum to the total in q202). Measured on matching invoices against the rest's 11.99-day pace, customers 6 and 7 carry $247,935 extra ($19,835/yr at 8%). The finding had $270,734. The 8% is an assumption, and carrying cost is not cash lost.",
+   "queries": ["q139", "q199", "q202"]
+  }
+ ],
+ "what_changed": "Three changes. (1) The 'long tail spread across accounts' is not one thing. 22.67% of overdue dollar-days ($320,443 of excess AR) sit on the 7.32% of invoices billed above the customer's PO price. These are paid a median 40 days late (rest) against 2 days for matching invoices, so for this part the lever is invoice/PO price agreement, not collections. (2) The 2022 spike is partly mix (above-PO invoices rose to 27.93% of non-6/7 invoices in 2022-H1) and partly a real, short-lived slowdown on matching invoices (9.29 to 17.78 days, back to 10.49 by 2023-H1). It is not just a period-wide behaviour shift. (3) The 6/7 excess over the rest is $247,935 ($19,835/yr at 8%) when measured on matching invoices, not $270,734. The rest of the finding was checked and stands: data integrity, the working-day due date, persistent lateness for 6 and 7, and broad rather than concentrated lateness among ordinary invoices. One gap in the finding: it calls 6/7's lag 'consistent', but it is a wide spread, not a fixed cycle. Data source: invoices dated 2016-01-05 to 2024-12-31 (n=69,850).",
+ "revised_conclusion": "Observed, for 69,850 invoices dated 2016-2024 (all paid, one payment each): excess receivables over due_on average $1,413,693, which is $113,095/yr at an assumed 8%. The 2024 run-rate is similar at $1,398,641 (q199). They split into three roughly separable parts. (a) Invoices billed above the customer's PO price: 7.32% of invoices, 22.67% of overdue dollar-days, $320,443 of excess AR. Outside customers 6 and 7, these are more than 30 days late 65.28% of the time vs 16.74% for matching invoices, and they are usually paid in full eventually. Interpretation: likely held pending price resolution. That would be a pricing/invoicing fix, not a collections one, but dispute records would be needed to confirm it. (b) Customers 6 and 7 on matching invoices: $421,661, of which $247,935 is above the rest's 11.99-day pace ($19,835/yr at 8%). They pay late every year with a broad spread (median 54-55 days to pay, only 3.4-3.6% on time), and the cause is unknown. (c) Everyone else's matching invoices: $671,588. These are bimodal: 62.24% are paid within 5 days of due, with a second hump at 31-90 days spread evenly across most customers (10-25% of invoices each), plus customer 36 as a small outlier. That hump is not explained by partial shipments, returns, late shipments or short payments. A general due-date reminder test is still reasonable for (c). The 2022 peak combined a burst of above-PO invoices with a real, temporary slowdown in 2022-H1.",
+ "not_evidence_of": "Not evidence that above-PO invoices are disputed: there are no dispute, hold or remittance-reason records, only timing and amount. Not evidence that customers 6 and 7 act in bad faith or are in financial trouble, or that their agreed terms are net 30. Not evidence that the uplifts were wrong charges; they may be agreed surcharges invoiced before the PO was amended. Not evidence that a reminder would shorten the background tail. The dollar figures are carrying costs at an assumed 8%, not cash lost, and only part is recoverable.",
+ "data_concerns": "None found in the records addressed to an AI. Short payments are very small (median paid/billed ratio rounds to 1.0) and unrelated to lateness (q186, q187)."
+}

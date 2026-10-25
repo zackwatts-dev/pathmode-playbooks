@@ -1,0 +1,67 @@
+{
+ "id": "F5",
+ "hypothesis": "H8",
+ "title": "Customer lapse differs modestly by branch after size, trade, year and tenure: Pittsburgh is persistently high and Toledo/Akron persistently low. No avoidable-revenue figure is supported, and neither stockouts, rep workload nor individual account managers explain the pattern",
+ "conclusion": "Observed: each year 2016-2024, about 10% of active customers placed no order the following year. Most were small accounts (18.49% lapse at 1-5 orders a year vs 3.95% at 151+, q258), and most never came back (q263). After adjusting for size band, trade, year and tenure, branches differ by more than chance. The chi-square is 42.71 on 11 df (q273) and still 38.97 (WH z 3.83) with customer-clustered variance (q374). Pittsburgh is the highest. Its O/E is 1.145 under the original adjustment (q273) and 1.118 (z 2.42) when the prior year's months-active is also controlled (q358), and it is above 1 in both 2016-19 and 2020-24 (q266). Its lapsed customers are also the least likely to return (20 of 360, 5.56%, for 2016-2022 lapses, q384). Toledo is lowest at 0.744 (z -3.03) with the prior-year control (q358), and Toledo and Akron are low in both periods (q266). Branch lapse rises with branch size. So do accounts per rep, because every branch has 3 account managers (q343; branch-level r 0.85, q351), and so does month-adjusted short-line share (Pittsburgh 1.308x, Fort Wayne 0.515x, q383). With 12 branches these cannot be separated. Within branches, neither rep load (r -0.295, q351) nor year-to-year shortage (r -0.059 across 108 branch-years, q389) tracks lapse. Taken together, account managers within a branch differ somewhat more than chance (chi-square 41.75 on 24 df, WH z 2.2, q301), but no single rep stands out after 36 tests, and rep_id is today's assignment. The dollars are not distinguishable from noise. Pittsburgh's net excess lapsed prior-year revenue is $148,162.26 a year, but the 95% interval runs from -$129,792.69 to $426,117.21 (q414). The sum of positive branch excesses ($245,657.67) is below the $477,304.92 chance alone would produce (q378). Interpretation: there is a real but modest branch-level difference, concentrated in Pittsburgh (high) and Toledo/Akron (low). Its cause cannot be identified from these records. It is a reason to look at Pittsburgh, not a sized opportunity.",
+ "dollars_a_year": 0.0,
+ "size_query": "q414",
+ "claims": [
+  {
+   "text": "Definitions hold: every year 2016-2025 has 252 operating days, and 2025 runs to 2025-12-29, so the 2024 lapse flag is complete (q344). 100% of orders carry the customer's home branch (q342).",
+   "queries": ["q344", "q342"]
+  },
+  {
+   "text": "Lapse is mostly permanent. Of 2023's 300 lapsed customers 47 ordered again later, and of 2016's 465, 29 did (q263). Raw branch lapse 2016-2024 ranges from 7.71% (Fort Wayne, 62 of 804 customer-years) to 10.70% (Pittsburgh, 443 of 4,139) (q257).",
+   "queries": ["q263", "q257"]
+  },
+  {
+   "text": "Size is the main driver: 18.49% lapse (1,086 of 5,873) at 1-5 orders a year, 9.74% at 6-20, 6.87% at 21-60, 5.66% at 61-150 and 3.95% (56 of 1,419) at 151+ (q258). This is not onboarding churn. Customers onboarded within the records lapse less than pre-2016 customers in the same band (1-5 orders: 17.65% vs 23.63%) (q270).",
+   "queries": ["q258", "q270"]
+  },
+  {
+   "text": "The branch difference survives the challenge's tests. Adjusted chi-square: 42.71 on 11 df (q273); 38.97 cluster-robust, WH z 3.83, with variance ratios 0.926-1.208 (q374); 43.41 with finer order bands (q355); 29.5 with prior-year months-active on the 2017-2024 subsample, where it was 36.15 without that control (q358). Pittsburgh's O/E is 1.145 (q273), 1.126 (q355) and 1.118, z 2.42 (q358). Toledo's is 0.719 (q273) and 0.744, z -3.03 (q358). With one year per customer (4,784 customers, about a sixth of the data), no branch differs (chi-square 7.93, q368). That is weak evidence against the effect, not a refutation.",
+   "queries": ["q273", "q374", "q355", "q358", "q368"]
+  },
+  {
+   "text": "Controlling for same-year months-active cuts Pittsburgh to 1.045 (z 1.48) and puts Indianapolis highest at 1.094 (q354). However, that control partly absorbs the outcome. Customers active in 1-4 months lapse at 37.82% and their last order falls earlier in the year (average month 8.45 vs 11.99 for 11-12 months) (q356). It is therefore not the preferred specification.",
+   "queries": ["q354", "q356"]
+  },
+  {
+   "text": "Persistence: Pittsburgh's O/E is 1.18 in 2016-19 and 1.068 in 2020-24. Toledo's is 0.833 and 0.676, and Akron's 0.877 and 0.761. Indianapolis moves from 0.974 to 1.195 (q266). Pittsburgh's lapsers return least (5.56%, 20 of 360) and Toledo's most (19.48%, 15 of 77), 2016-2022 lapses (q384).",
+   "queries": ["q266", "q384"]
+  },
+  {
+   "text": "Shortage is a real branch trait and not a month-mix artefact. All branches have 49-52% of lines in peak months, yet Pittsburgh's short-line share is 1.308x its month-mix expectation and Fort Wayne's 0.515x (q383). It lines up with lapse across branches (r 0.471 within year), but not within a branch over time (r -0.059, slope -0.134, 108 branch-years) (q389).",
+   "queries": ["q383", "q389"]
+  },
+  {
+   "text": "Account load: across 12 branches, accounts per rep and lapse O/E correlate at r 0.85. Within branches the correlation is -0.295 (36 reps), so reps carrying more accounts inside a branch do not lapse more (q351, q348).",
+   "queries": ["q351", "q348", "q343"]
+  },
+  {
+   "text": "Account managers: within-branch rep chi-square is 41.75 on 24 df (WH z 2.2), so reps differ somewhat more than chance taken together. The largest single deviation is z 2.35 among 36 reps, which is consistent with multiple testing (q301). The cluster variance ratios of up to 1.208 (q374) would shrink the omnibus statistic somewhat.",
+   "queries": ["q301", "q374"]
+  },
+  {
+   "text": "Money: no branch's excess lapsed revenue is significant. Pittsburgh is +$148,162.26 a year (z 1.04) and Cincinnati +$74,051.98 (z 0.59). The sum of positive deviations, $245,657.67 a year, is below the chance level of $477,304.92 (q378). Pittsburgh's 95% interval is -$129,792.69 to $426,117.21 a year in revenue and -$21,440.76 to $123,899.97 in gross margin, so the supported floor is $0 (q414). For scale, lapsing customers' prior-year revenue company-wide averages $8,436,543.84 a year (q307). That is the base rate, not avoidable revenue.",
+   "queries": ["q378", "q414", "q307"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "That any amount, including the previously stated $245,657.67 a year, is recoverable. The branch excess is within chance (q378, q414), and prior-year revenue is not recoverable revenue. That stockouts cause lapse: the link is cross-sectional only and does not hold within branches over time (q389). That rep workload causes lapse: it does not hold within branches (q351). That any account manager is driving customers away: rep_id is today's assignment, no single rep stands out after multiple testing, and the modest omnibus rep variation is a prompt for a conversation with sales management, not a conclusion about a person.",
+ "could_not_tell": "Why customers stopped: there is no closure date, reason or competitor data. Who managed the account when it lapsed: there is no assignment history. Whether short lines became lost orders: there is no backorder link. Whether the branch effect is size, accounts per rep or stock availability: all three move together across only 12 branches, and every branch has 3 reps (q343). Separating them would need assignment history, rep headcount changes over time, or branch-level interventions.",
+ "next_step": "Exploratory, not a sized opportunity: compare Pittsburgh's lapsed 6-60-order accounts with retained peers on shortage history, service contacts and quote outcomes. Ask sales management for account-assignment history and closure reasons, so that rep, workload and cause can be tested properly. Watch whether Indianapolis's 2020-24 rise (q266) persists.",
+ "dead_ends": [
+  "Individual rep concentration: no single rep stands out after 36 tests (q301)",
+  "Rep workload within branch: r -0.295 (q351)",
+  "Onboarding churn: new customers lapse less, not more (q270)",
+  "Stockouts within branch over time: r -0.059 (q389)",
+  "Temporary gaps inflating Pittsburgh: its lapsers return least (q384)",
+  "Returns per order are no higher for lapsers (q276)",
+  "Shortages just before leaving: 6.19% in the last 63 operating days vs 5.71% earlier (q289)",
+  "Dollar sizing of the branch excess: indistinguishable from chance (q378, q414)"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted in full; the challenge's own queries are sound and I found nothing to rebut. (1) The $245,657.67 a year figure is retracted. It is a one-sided sum below its chance level of $477,304.92 (q378). A new query (q414) puts Pittsburgh's net excess at $148,162.26 a year with a 95% interval of -$129,792.69 to $426,117.21, so dollars_a_year is now the supported floor of $0 (q414). (2) The rep claim is corrected. The omnibus WH z of 2.2 (q301) does mean reps differ somewhat in aggregate. The original wording 'not distinguishable from chance' was wrong. The claim is now that no individual rep stands out and none can be attributed with current assignments. (3) The stockout interpretation is dropped as a driver. Branch shortage is real (q383) but does not co-move with lapse within branches (q389), and it is confounded with size and accounts per rep (q343, q351). (4) Pittsburgh's magnitude is restated as 1.118 under the prior-year frequency control (q358). The same-year months-active result of 1.045 (q354) is reported but not preferred because it partly controls away the outcome (q356). (5) The strengthening results are adopted: the cluster-robust chi-square of 38.97 (q374), the persistence across both periods (q266) and Pittsburgh's low return rate (q384). The one-year-per-customer test (q368) is reported as weak counter-evidence. The finding is now narrower: a real but modest branch difference with an unknown cause and no supported dollar size.",
+ "accepted": true
+}

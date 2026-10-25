@@ -1,0 +1,13 @@
+{
+ "72a5fa6dd5f9d717b0988584d71126980b5cf02bd2a25e7d64010fd8529c1655": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "5abd8d611180e01258c49caa8db3f58e6df57f37669466c210177e9bd552a611": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "224c7f3cd9f50b4898ba8a942603fa2bf023bc7cfb401abbbaa91da3ae8751e9": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "d7c2f4bf865f8ae521bcfe897bd7755261ab23d8f3aa09489d989f977789d10c": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "5354cdd7aa5436e19d75fd0d35e2cfae649cca02066d7296c651b0b524a863a4": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "7e1ef734378cac552aa76725ce92bf2eb1b9f3bcd13d49a2a7c7246c6208b741": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "5d436b1aeae5a58c1df24e8f4f6e3adb22612a904deff90771134cb1f3d0457f": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "5dceb190984b9f8a24686e235069a2154b03b759e48529e8812e2010d1c9eaab": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "d332bdcb65f4e58b185a2403a220a58d1b7eb77a0a0e17dd3ccb3a9533c14bd2": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "f95d493f852cc80f887d8af7aac3ce42ff34996115c3ce8126eed94ac9c911bd": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": false, \"discipline\": false, \"words\": []}",
+ "9bce9f2c088d267332238927828feb7af52f4f0e26d84283292dc1b32d826a32": "{\"accuses\": false, \"names\": false, \"cause_as_fact\": true, \"discipline\": false, \"words\": [\"The cause is that accounts with discounts under 10% stop ordering faster\", \"low-discount accounts in every cohort stop buying faster, not because accounts were repriced or new accounts signed at bigger discounts\"]}"
+}

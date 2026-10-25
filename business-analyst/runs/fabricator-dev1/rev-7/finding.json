@@ -1,0 +1,67 @@
+{
+ "id": "F7",
+ "hypothesis": "H4",
+ "title": "H4 does not hold. New-part quotes are not over-estimated: first jobs run at or above quoted hours, weld at 1.267x excluding rework. Quotes with more hours than their peers are not lost more often. The low shop-wide actual/estimate ratios come from repeat runs of the same parts getting faster on routings that are never updated.",
+ "conclusion": "The hypothesis fails on both legs. Observed: this covers all won new quotes, 2,764 orders out of 2,764 won new quotes. Every won new quote has an order and no other quote does (q289). That is 5,390 completed jobs, every one of them the first job for its part (q292), from quote years 2016-2025. On each of them the job routing copies the quote exactly. Actual hours excluding rework meet or exceed quoted hours at every quoted work centre except lathe: laser 1.006 (5,118 ops), brake 1.013 (3,788), mill 1.042 (333), paint 1.061 (3,663), assembly 1.125 (1,043), weld 1.267 (2,373), and lathe 0.935 (117) (q301). There is no duplication from the joins. Inspect is never quoted and runs at 1.06 against its routing (q303). Rework is 0-1.09% of hours by work centre (q295). On the hit-rate side, new quote lines were compared with peers of the same part family, material, quantity decile and year (21,851 lines). Lines that carry more hours than their peers win at 0.2442-0.253 across quintiles, which is flat. Hit rate does fall with relative price, from 0.2624 to 0.2288 (q313). Among quotes where the buyer actually decided (won vs lost, excluding expired), the labour-heavy quintiles win more often, not less: 0.4865 in the lowest hours-per-material quintile vs 0.5597-0.5794 in the rest (q332). The low shop-wide actual/estimate ratios come from repeats. In a fixed panel of parts with 11+ jobs, laser falls from 0.925 on the part's first job to 0.736 on its 11th and later, brake from 0.972 to 0.733, paint from 1.024 to 0.783 and weld from 1.181 to 0.909. Over the same jobs inspect stays at 1.053-1.066, average quantities are flat, and setup and run-per-piece estimates stay within 1.000-1.033x of the first job (q322). The ordering holds within every creation year 2016-2025 (q326) and on true first runs of parts created from 2017 on (q324). Interpretation: this is consistent with learning on routings that are set once and never updated. The records can't show the mechanism. Two things are worth acting on instead of padded hours: weld is under-quoted on new parts, and repeat-part routings stay at first-run hours.",
+ "dollars_a_year": null,
+ "size_query": null,
+ "claims": [
+  {
+   "text": "All 2,764 won new quotes have an order, and no expired, lost, no-award or requote has one. The linked set is therefore every won new quote, not a subset.",
+   "queries": ["q289"]
+  },
+  {
+   "text": "The 5,390 linked completed jobs are all job #1 for their part.",
+   "queries": ["q292"]
+  },
+  {
+   "text": "On these first jobs, actual hours excluding rework divided by quoted hours are: assembly 1.125 (n=1,043), brake 1.013 (3,788), laser 1.006 (5,118), lathe 0.935 (117), mill 1.042 (333), paint 1.061 (3,663), weld 1.267 (2,373). For each work centre, ops = distinct jobs = distinct quote lines, and no op has zero actual hours. Inspect is never quoted (5,390 ops) and runs at 1.06 against its routing. Rework is 0-1.09% of hours by work centre.",
+   "queries": ["q301", "q303", "q295"]
+  },
+  {
+   "text": "Weld under-quoting is broad-based. Each quote year 2016-2025, between 72.6% and 82.8% of first-job weld ops ran over quote, with a 25th percentile of 0.981-1.087. Without an ECO the ratio is 1.278 (n=2,337) and with one it is 1.208 (n=36). Every estimator id runs over at weld, at 1.216-1.413.",
+   "queries": ["q330", "q328"]
+  },
+  {
+   "text": "The first-job weld ratio rose between 2016-2020 and 2021-2025, from 1.232 to 1.300 excluding rework. Of that 0.068 change, 0.044 comes from a shift in the mix of estimator ids (108/109 vs others) and 0.023 from change within those groups. In the second period, the other estimators' share of weld ops grows from 61 to 683. Weld on repeat jobs (#4+) stays at 0.911-0.974 in every year.",
+   "queries": ["q346", "q331", "q329"]
+  },
+  {
+   "text": "Excluding rework, weld actuals on first jobs exceed quoted weld hours by 966.5 hours a year: 45,915 actual vs 36,250 quoted over 10 quote years. The excess is 21.05% of first-job weld actuals. These are hours already worked, not recoverable dollars.",
+   "queries": ["q301", "q333"]
+  },
+  {
+   "text": "Peer-relative test on 21,851 decided new quote lines. Hit rate by quintile of hours relative to peers is 0.253, 0.2465, 0.2485, 0.2481, 0.2442, and the lost rate is 0.1947-0.2059. By quintile of price relative to peers it is 0.2624, 0.257, 0.2533, 0.2387, 0.2288.",
+   "queries": ["q313"]
+  },
+  {
+   "text": "Decided new quotes in quintiles of estimated hours per material dollar (10,948 quotes, about 2,190 per quintile). Raw hit rates are 0.2224, 0.2621, 0.2525, 0.2604, 0.265. The within customer-year slope is +0.0143. Won/(won+lost), with expired evenly spread at 1,022-1,037 per quintile, is 0.4865, 0.5757, 0.5597, 0.57, 0.5794. By non-material share of price the hit rate is flat at 0.2356-0.2653.",
+   "queries": ["q266", "q267", "q332", "q270"]
+  },
+  {
+   "text": "Learning curve on a fixed panel of parts with at least 11 completed jobs, from the part's first job to its 11th and later. Laser falls 0.925 to 0.736 (2,210 parts), brake 0.972 to 0.733 (1,700), paint 1.024 to 0.783 (1,597), weld 1.181 to 0.909 (994). Inspect stays at 1.053-1.066. Average quantity is flat (laser 22.9-24.0). Setup and run-per-piece estimates are 1.000-1.033x the first job's.",
+   "queries": ["q322"]
+  },
+  {
+   "text": "Within every job-creation year 2016-2025, laser job #1 runs 0.947-1.052 and job #11+ runs 0.707-0.766. For parts created from 2017 on, true first jobs run laser 1.009, brake 1.02 and weld 1.283, against 0.748, 0.736 and 0.924 on the 11th and later jobs. For parts created before 2017, the 'first' job in the data is already partway down the curve: laser 0.87, brake 0.97, weld 1.11.",
+   "queries": ["q326", "q324"]
+  }
+ ],
+ "confidence": "high",
+ "not_evidence_of": "That new-part quotes are priced competitively. Lost parts never run (q307), so their true hours can't be observed. If every quote were padded by the same amount, a peer-relative test would not show it. Not evidence of why any quote was lost, since there is no loss reason or competitor price. The estimator-id differences (q328, q331, q346) overlap with time and part mix. They are a pattern worth a conversation about weld estimating standards, not a judgement about any person. The 966.5 h/yr is labour already spent on first jobs, not savings. Any recovery would come through price on future new-part quotes, which depends on markup and on how win rate responds to price (q313); that is not sized here.",
+ "could_not_tell": "Why new quotes are lost: there is no loss reason and no competitor price. Whether the lost parts would have run long or short. What drives the speed-up on repeats (operator experience, fixtures, proven CAM programs); the records don't record it. Whether requotes on repeat parts reprice from the lower actual hours: requote hours were not compared with prior actuals here. The dollar value of the weld under-quote, which would need the labour rate and markup used in quoting plus a price-response estimate. q265's first-job ratios are diluted by parts created before 2016 and by 2015 jobs whose labour appears truncated (laser job #1 at 0.228, n=401; q326). q322 and q324 replace it as the evidence for the learning curve.",
+ "next_step": "1) Feed actual weld hours from first jobs back into weld estimating for new parts, and agree a common weld standard across estimators, since all of them run 1.2-1.4x. 2) Check whether requotes and repeat routings still use first-run hours. If they do, repeat-part margin is better than job costing shows, and planned capacity at laser and brake overstates the load by roughly a quarter after a part's 4th run (q322 ratios 0.733-0.759). 3) Record a loss reason and competitor price when a quote is marked lost.",
+ "dead_ends": [
+  "Hours per material dollar vs hit rate: no negative gradient, raw, within customer-year, or won-vs-lost only (q266, q267, q332)",
+  "Hours relative to peers (family, material, quantity decile, year) vs hit rate: flat (q313)",
+  "Non-material share of price vs hit rate: flat (q270)",
+  "Over-estimation at laser, brake, mill, paint or assembly on new parts: not present (q301)",
+  "Rework as the explanation for first-job overruns: 0-1.09% of hours, which does not change the ratios (q295, q301)",
+  "ECOs as the explanation for the weld overrun: no (q328)",
+  "Part mix, quantity, re-estimation or calendar trend as the explanation for the learning curve: no (q322, q326)",
+  "work_date posting truncation: irrelevant, because hours were summed per operation"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted, all of it. (1) Coverage: the linked set is every won new quote (q289) and every linked job is the part's first (q292). The earlier note that 'only 2,764 orders link' was wrong and has been removed. (2) Rework: ratios are now stated excluding rework (q301), and the weld excess is restated as 966.5 h/yr instead of 1,004.5 (q333), presented as hours already spent rather than savings. (3) 'Weld rising': I accepted that this is mostly estimator mix, and sized the split with a new decomposition (q346). Excluding rework, the first-job weld ratio goes from 1.232 to 1.300 between 2016-2020 and 2021-2025. 0.044 of that is mix and 0.023 is change within groups. The claim of a widening estimating gap has been dropped. (4) Learning curve: q265 is replaced by the challenger's fixed-panel, within-year and true-first-run tests (q322, q326, q324). The q265 figures included 2015 jobs whose labour appears truncated. (5) Hit-rate leg: rebuilt on the challenger's peer-relative test (q313) and the won-vs-lost-only test (q332). I added the point that hit rate does respond to relative price, so the finding no longer says price doesn't matter. It says only that higher-hour quotes are not lost more often. (6) Added the winner's-curse and uniform-padding limits to not_evidence_of (q307). Nothing in the challenge needed rebutting.",
+ "accepted": true
+}

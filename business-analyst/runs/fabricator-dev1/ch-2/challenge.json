@@ -1,0 +1,57 @@
+{
+ "finding": "F2",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Survivorship / selection: the tenure gradient could come from high-scrap hires leaving early, so the people still there at 3+ years were always better, with no learning involved.",
+   "test": "Follow the same people over time. For employees hired 2016 or later who stayed 3+ years, compare their own first-year scrap with their later scrap, each against a work-centre baseline set by staff with a year or more. Look at early leavers separately.",
+   "result": "The learning curve is real within the same people. The 47 hires who stayed 3+ years ran at 1.787x in year 1 (3,739 vs 2,092 expected pieces), 1.001x in years 2-3 and 0.968x from year 4. The 51 who stayed 1-3 years went from 1.798x to 1.05x. The 23 who left within a year ran at 2.094x (685 vs 327 pieces), slightly higher, but too few to drive the result. Hires before 2016 run at 1.0x from year 4 (87 people, 4,773,739 pieces). Survives.",
+   "queries": ["q212"]
+  },
+  {
+   "explanation": "Confounding by job size: if scrap per run is roughly fixed (setup pieces), staff on small jobs would show higher per-piece rates. New hires might be given small jobs.",
+   "test": "Split by job-quantity band (<10, 10-24, 25-49, 50-99, 100+). Compare new and tenured rates within each band, then within part x work centre x band.",
+   "result": "New hires scrap about twice the tenured rate in every band (for example 0.00897 vs 0.00423 at 10-24 pieces, 0.00823 vs 0.00341 at 100+). Within part x work centre x band they run at 1.827x (2,793 pieces; baseline needs at least 500 tenured pieces per cell). Not a job-size effect. Survives.",
+   "queries": ["q214"]
+  },
+  {
+   "explanation": "Timing / workload: new hires arrive in busy periods and may work more overtime, so they may simply be working when everyone scraps more.",
+   "test": "Re-base expected scrap on tenured staff in the same work centre, the same calendar month and the same overtime flag.",
+   "result": "1.811x (7,940 vs 4,384 expected pieces, 2016-2025). Overtime entries carry no scrap even for tenured staff (rate 0.0 vs 0.00424 regular), so overtime can't explain the excess. Survives.",
+   "queries": ["q217"]
+  },
+  {
+   "explanation": "Definitions: the reason code may be a label that depends on who is at the machine, not a separate defect type. If a new hire's out-of-tolerance part tends to be booked as 'operator error', the finding's split ('DOT is process-wide, OE is onboarding') would be an artefact of how scrap is recorded.",
+   "test": "Classify each op as worked only by first-year staff, only by tenured staff, or mixed. Then compare scrap by reason code on new-only ops with the tenured-only rate in the same work centre.",
+   "result": "On new-only ops (865,968 pieces), 'operator error' runs at 5.94x the tenured rate (4,704 vs 792 pieces). 'Dimension out of tolerance' runs at only 0.509x (1,356 vs 2,663). 'Material' runs at 1.502x and 'other' at 1.54x. A new operator producing half the out-of-tolerance scrap of an experienced one is not a believable behaviour. It suggests (interpretation) that new hires' defects are relabelled from DOT to OE, and that 'material' and 'other' are not cleanly operator-independent either. DOT+OE combined on new-only ops is 1.754x (6,060 vs 3,455). So the total first-year excess survives, but the claim that OE is a new-hire problem and DOT a process-wide one does not: the codes cannot separate them.",
+   "queries": ["q210", "q225"]
+  },
+  {
+   "explanation": "Missing data: labour scrap exists only where a rework entry was made. Scrap with no rework entry (unattributable to a person) could hide a different tenure mix.",
+   "test": "Reconcile scrap reports with rework entries by op, then compare the first-year share of pieces on ops with and without rework entries.",
+   "result": "29,420 ops have both. 1,186 ops (7,474 pieces of 46,931 scrap-report pieces) have a scrap report but no rework entry. These are mostly wrong revision (2,061 pieces), material, operator error, weld and paint. First-year staff did 12.61% of original pieces on those ops, against 9.68% on ops without scrap and 18.34% on reworked-scrap ops. Leaving them out does not inflate the tenure effect; if anything it slightly understates first-year scrap. Wrong-revision and paint/weld scrap mostly fall outside the labour-based analysis. Survives.",
+   "queries": ["q205", "q207", "q227"]
+  },
+  {
+   "explanation": "Low power: the part-persistence correlation of 0.0409 (258 parts with at least 5 expected pieces) may say more about noise than about whether parts differ. Lumpy multi-piece scrap reports make piece-level rates very noisy.",
+   "test": "Split each part's jobs into odd and even job ids over the whole period, and correlate routing-adjusted O/E on both pieces and scrap events. Run an overdispersion test on events per part (chi-square/df) and a quintile check: do parts high on even jobs stay high on odd jobs?",
+   "result": "There is some real but weak part heterogeneity. Events overdispersion chi2/df = 1.255 (445 parts, at least 10 expected events). The odd/even correlation is 0.1144 on events but -0.0249 on pieces (516 parts). Parts in the top quintile on even jobs (O/E 1.429) run at 1.017x events and 0.965x pieces on odd jobs, against 0.825x and 1.068x for the bottom quintile. The conclusion that there are no fixable part hot spots survives. 'Does not persist at all' is slightly too strong: there is a weak, unrecoverable signal in event counts.",
+   "queries": ["q218", "q219"]
+  },
+  {
+   "explanation": "Left censoring: 'first run' is the first job in the window, so parts already running before 2016 get their first in-window job counted as a first run. The finding's first-run comparison (q121) also does not allow for routing.",
+   "test": "Restrict to parts created in 2017 or later, adjust for work-centre routing, and repeat with all reason codes (including 'first article').",
+   "result": "For parts created 2017+, first runs are at 0.984x (DOT+OE, 4,800 jobs) and 0.974x (all reasons), against 1.007x and 0.984x for run 4 onward. First runs are not worse. Survives.",
+   "queries": ["q222"]
+  },
+  {
+   "explanation": "The money: the material-basis figure uses the GL scrap memo divided by labour-recorded scrap value only. But the GL memo covers all scrap, and scrapped pieces are re-run, so selling price is not what is lost.",
+   "test": "Re-compute the memo ratio against the value of all scrap reports. Add the rework labour on the excess pieces, using the GL rework-labour memo per rework hour.",
+   "result": "The GL scrap material memo ($2,474,799, 2016-01 to 2025-12) is 0.327 of all scrap-report value at selling price ($7,568,632, 46,931 pieces), not 0.4276. That puts the excess at about $17,974 a year at material cost, not $23,504. Excess pieces are 3,538 over 10 years. At 0.1935 rework hours per first-year scrap piece that is 685 hours, about $940 a year at the GL rework memo rate ($13.73 per hour, $108,569 total). Cost-basis excess is about $18,914 a year. The $54,971 a year at selling price is an upper bound on revenue-equivalent value, not a recoverable cost, and onboarding could at best bring first-year staff to the tenured rate.",
+   "queries": ["q223", "q224", "q225"]
+  }
+ ],
+ "what_changed": "1) The reason-code split is withdrawn as a finding about the process. On new-hire-only ops, DOT runs at 0.509x and OE at 5.94x the tenured rate (q210), which suggests the code for the same defect depends on who made it. 'DOT is process-wide, OE is onboarding' is therefore not supported; the 53.09%/7.17% shares describe recording, not cause. 2) The material-cost size is corrected from about $23,504 to about $17,974 a year: the ratio is 0.327 against all scrap-report value, not 0.4276. A cost-basis estimate including rework labour is about $18,914 a year (q225). The headline $54,971 a year at selling price should be labelled an upper bound, not the size. 3) 'Part scrap does not persist' is softened to 'persists only weakly' (events overdispersion 1.255, odd/even event correlation 0.1144, q218). 4) The tenure effect is strengthened. It holds within the same people (1.787x falling to 0.968x, q212), within job-size bands (1.827x, q214) and against a month x work-centre x overtime baseline (1.811x, q217).",
+ "revised_conclusion": "Scrap (DOT+OE, 2016-2025) is not concentrated in fixable parts, families, first runs or individuals once volume and routing are allowed for. Parts show a weak, real but practically unrecoverable signal in scrap events, and top-quintile parts regress to about 1.0x in held-out jobs (q219). The one robust pattern is first-year employees. They scrap about 1.8x the tenured rate for the same work centre and month (1.811x, q217), the same part x work centre x job size (1.827x, q214), and in every year. The same employees fall to about 1.0x after year one (47 hires followed through 3+ years, q212), so this is a learning curve, not selection. By cost it is small: about $18,000-19,000 a year in material plus rework labour (q225), against GL scrap material of about $247,480 a year. At selling price it is up to $54,971 a year. Reason codes cannot say what kind of defect new hires make, because the DOT/OE label appears to depend on tenure, so onboarding measures (first-piece checks, paired setups) should be judged on total scrap per piece against a work-centre baseline, not on operator-error counts.",
+ "not_evidence_of": "Not evidence that any individual new hire is a problem: the effect is broad and fades within the same people. Not evidence that out-of-tolerance scrap is a process issue separate from operator experience, or that operator error is the new-hire defect type: the reason codes look tenure-dependent labels. Not evidence of where defects originate (scrap is booked where found, with no cause-operation coding). Not evidence that $54,971 a year is recoverable: cost-basis excess is about $18,914 a year, and onboarding could at most close the gap to the tenured rate. Wrong-revision, paint and weld scrap without rework entries (7,474 pieces) is largely outside the labour-based analysis."
+}

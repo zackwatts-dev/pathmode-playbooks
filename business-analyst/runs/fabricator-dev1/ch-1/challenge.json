@@ -1,0 +1,45 @@
+{
+ "finding": "F1",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions / the money: the 'unrecovered' figure measures material above a fixed share of price (0.2572). A shop that passes the full dollar rise in steel through to its prices still shows 'excess' under that measure, because the higher price pushes material's share up. So the $972,905 a year for 2024-2025 could be a side effect of measuring by share, not money the shop failed to recover.",
+   "test": "Same part, same volume: for carbon parts shipped in 2020 and again in a later year, price each later year at the part's 2020 shipped quantity and compare the dollar change in invoiced price per unit with the dollar change in carbon material per unit (q176). Then repeat for all carbon jobs: steel cost added = pounds x ($/lb that year - 2020 $/lb of 0.3123), set against the price gain estimated from the matched-part price index plus invoice uplift (q183, q188).",
+   "result": "Matched parts, at 2020 quantities: in 2021 the price index was 1.0007 against a material index of 1.5475, so margin over material fell $2,077,947 (1,686 parts). In 2022 it was about even (+$166,479; price 1.2271, material 1.9243). From 2023 on, margin over material was ABOVE 2020: +$1,526,003 in 2023, +$1,312,006 in 2024 and +$949,945 in 2025 (804 and 643 parts). Material share still reads 0.3005-0.3072 against 0.2564-0.262, which is exactly the share illusion (q176). All carbon jobs: steel cost vs 2020 prices averages $2,859,564 a year in 2024-2025 against an estimated price gain of $6,674,101, so net +$3,814,537 a year. For 2021-2022 combined it is -$2,180,081, or -$1,090,041 a year (q188, q195). The ongoing $972,905 a year does not survive. The 2021 squeeze does.",
+   "queries": ["q176", "q183", "q188", "q195"]
+  },
+  {
+   "explanation": "Mix and yield: material per job could have risen because parts got heavier, the shop bought extra stock for scrap or remakes, or jobs shipped only partly against material bought for the whole job. None of those would be steel price.",
+   "test": "Break carbon material per shipped unit into pounds and $/lb by year, and compare shipped quantity with job quantity (q173). On matched parts, track a pounds-per-unit index (q176).",
+   "result": "Shipped quantity equals job quantity in every year (ratio 1.0), so partial shipments are ruled out. Across all jobs, pounds per unit rose from 84.218 (2020) to 94.82 (2025), a shift toward heavier parts. On matched parts, though, the pounds index stays between 0.997 and 1.0087, so the 2021-2022 rise in material per unit on the same parts is $/lb (0.3123 to 0.4857 and 0.5959), not yield or scrap. The steel-price explanation survives for 2021-2022.",
+   "queries": ["q173", "q176"]
+  },
+  {
+   "explanation": "Baseline choice: 2016-2020 is not a flat reference. Carbon-only material share varied with steel prices in those years.",
+   "test": "Carbon-only material share by first-ship year (q173).",
+   "result": "Share ranged from 0.2373 (2016) to 0.2788 (2018). The 2024 share of 0.2898 is close to 2018, a year of high steel prices. Any share-based gap depends heavily on which baseline year is chosen. That is one more reason to measure in dollars against the same parts rather than against a share.",
+   "queries": ["q173"]
+  },
+  {
+   "explanation": "What the invoice uplift is: it could be freight or some other charge rather than a steel surcharge.",
+   "test": "Compare uplift with the freight columns. Count invoices with an uplift by year and how many trace to a quote line flagged surcharge (q183, q184).",
+   "result": "Freight is recorded separately and equals shipment freight, so it is not the uplift. Uplifted invoices appear only in years of high steel prices: 536 and 1,488 in 2018-2019, 790 and 1,793 in 2021-2022, then 28 in 2024 and 2 in 2025. Some of them trace to quotes with the surcharge flag set (91 of 790 in 2021, 212 of 1,793 in 2022). Most repeat orders have no quote to trace. This partly supports the surcharge reading; it is still not proof.",
+   "queries": ["q183", "q184"]
+  },
+  {
+   "explanation": "The price rises since 2022 may also have had to cover labour inflation, so 'material over-recovered' does not mean 'margin over all costs restored'.",
+   "test": "Hours-weighted average pay rate from timecards and effective pay rates (q193).",
+   "result": "The average rate went from $20.10 (2020) to $24.78 (2025), a ratio of 1.2328, while matched-part prices rose by a factor of 1.2969 and steel $/lb by 1.5069 (q176, q195). Labour hours per unit and overhead were not measured, so whether total contribution is back to 2020 levels is still open.",
+   "queries": ["q193", "q195", "q176"]
+  },
+  {
+   "explanation": "Survivorship: the matched-part comparison covers only parts still ordered in each later year, and that set shrinks from 2,395 parts (2020) to 643 (2025). Parts whose customers left after a price rise drop out of it.",
+   "test": "Compare the material share of the matched set with that of all carbon jobs in 2024-2025 (q173 vs q176).",
+   "result": "The matched set's share (0.3005 in 2024, 0.3072 in 2025) is close to the full population's (0.2898, 0.2927), so the matched set does not look unusual on this measure. Whether lost parts were lost because of repricing is not recorded.",
+   "queries": ["q173", "q176"]
+  }
+ ],
+ "what_changed": "Kept: carbon steel cost rose sharply in 2021, repeat-part prices did not move that year, and the shop absorbed it. On the same parts, margin over material fell $2,077,947 in 2021 (q176). Across all carbon jobs, steel cost added versus 2020 exceeded price gains by $2,180,081 over 2021-2022 (q188). Material per unit rose on the same parts because of $/lb, not pounds (q173, q176). Retracted: the claim that about $0.97M a year is still unrecovered in 2024-2025, and the 2021-2023 figure of $2.28M a year. Both come from treating material above a fixed 0.2572 share of price as unrecovered cost. Measured in dollars on the same parts, prices since 2023 have risen more than material cost: margin over material was +$949,945 to +$1,526,003 a year above 2020 (q176), and about +$3.8M a year across all carbon jobs on the index estimate (q188). 2023 swings from 'unrecovered' to 'over-recovered'. The 'nothing records the uplift' point is softened: the quote lines carry a surcharge flag that matches some uplifted invoices (q184).",
+ "revised_conclusion": "Wendlow absorbed the 2021 jump in carbon steel. Repeat-part prices stayed flat through 2021 (matched-part price index 1.0007) while material per unit on the same parts rose by a factor of 1.5475, a loss of $2,077,947 of margin over material on matched parts that year. Across all carbon jobs, the net shortfall was about $2.18M over 2021-2022, or about $1.09M a year (q176, q188, q195). The roughly one-third price reset in 2022 caught up in dollar terms by 2022 and has more than covered material since: on the same parts, margin over material was $0.95M-$1.53M a year above 2020 in 2023-2025 (q176). The higher material share since then (about 0.29-0.31 against 0.25) is what any dollar-for-dollar pass-through produces, not a recurring loss. The lesson is about speed: prices lagged steel by about a year. A steel-indexed clause or a recorded surcharge on repeat POs would have cut the 2021 loss. There is no current annual material gap on carbon repeat work to requote. dollars_a_year should be about $1.09M a year, for 2021-2022 only, not an ongoing $972,905.",
+ "not_evidence_of": "Not evidence that 2024-2025 prices leave material cost unrecovered. Not evidence that total margin is restored: labour rates rose by a factor of 1.2328 (2020-2025, q193, q195), and labour hours, outside processing and overhead per job were not measured. The all-jobs dollar estimate (q188) applies the price index of surviving matched parts to all carbon work, which is an assumption. Nothing shows why prices were held in 2021 (contracts, blanket POs or a choice to keep volume), or whether customers left after the 2022 reset. Timing alongside PPI steel is not proof that steel caused the price changes."
+}

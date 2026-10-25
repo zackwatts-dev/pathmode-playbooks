@@ -1,0 +1,48 @@
+{
+ "id": "F9",
+ "hypothesis": "H2",
+ "title": "From 2017 to 2025, paid time not clocked to jobs grew by about 10,361 to 14,085 h a year (about $255,110 to $349,162 at 2025 rates) as estimated work fell while paid hours held, mostly in lathe, mill and laser. It is spread across whole roles, not a few employees, and it is an opportunity value of fixed payroll, not a cost that grew.",
+ "conclusion": "The hypothesis holds in a narrower form. Total paid hours barely moved from 2016 to 2025 (+511.3 h, q391), and annual clocked hours are labour on operations completed that year, with little truncation at the end of the series (q371, q372, q373, q375). The original 2016 baseline overstated the trend. During 2016, clocked hours per estimated hour fell from about 1.0 to about 0.81-0.88 (e.g. laser 0.992 in Jan-2016 to 0.811 in Dec-2016; q374), on the same parts with unchanged estimates (q389). 58.5% of the 2016-2025 fall in clocked hours comes from that ratio effect (q385, q391). Measured from 2017, the picture is cleaner: estimated work on completed operations fell (load effect -14,314 clocked-hour equivalents), while clocked hours per estimated hour held or rose slightly (ratio effect +2,342; shop-wide 0.883 in 2017, 0.903 in 2025; q383, q385). Unclocked paid time grew by 14,085 h (2017 vs 2025), or by 10,361 h a year comparing the 2017-19 and 2023-25 averages (q379, q395). Each role books only to its own work centre (q382). The rise moves the whole within-role distribution (q349). The largest pieces against 2017 are lathe (1.73 FTE-equivalents), mill (1.64) and laser (1.49) (q390). Interpretation: capacity did not follow a falling workload. In mill and lathe, load fell while paid hours were held (mill -104 h) or added (lathe +1,272 h). Laser lost load while paid hours rose 1,896 h, partly by deliberate backlog hiring (2 backlog requisitions, 2016-08-01 and 2021-01-25; q386). Priced at 2025 median rates, this is $255,110 a year on 3-year averages, of which mill plus lathe is $116,772 (q395). The 2017 baseline gives $349,162 (q379). It is an opportunity value of hours already paid: about 7.92 FTE spread across 8 roles, with none above 1.73 (q390). It becomes savings only by matching hours to load through attrition, cross-training or bringing in work. The 2016 step is a separate question: it could be real efficiency or labour no longer booked to jobs, and the records can't tell which.",
+ "dollars_a_year": 255110.0,
+ "size_query": "q395",
+ "claims": [
+  {
+   "text": "Annual clocked hours are a sound measure. Between 96.5% (2016) and 98.0% (2025) of labour entries are dated on their operation's completion date, with 0 completion-year mismatches. Every operation completed 2016-2025 has labour, and open operations at the end of 2025 hold only 43.2 h of labour. Timecards cover 49-50 weeks a year.",
+   "queries": ["q370", "q371", "q372", "q373", "q375"]
+  },
+  {
+   "text": "2016 is a transition year. Act/est fell within 2016 (laser 0.992 to 0.811, paint 1.02 to 0.878, brake 1.069 to 0.864, Jan to Dec), on identical parts whose estimates per piece were essentially unchanged by 2018 (median ratio 1.01-1.019, 409-941 parts per work centre), while clocked hours per piece fell (median 0.761-0.858). Of the 15,739 h fall in clocked hours 2016-2025, 9,209 h (58.5%) is this ratio effect.",
+   "queries": ["q374", "q389", "q385", "q391"]
+  },
+  {
+   "text": "From 2017 the fall in clocked hours is a workload fall: load effect -14,314 h, ratio effect +2,342 h (shop-wide act/est 0.883 in 2017, 0.903 in 2025).",
+   "queries": ["q385", "q383"]
+  },
+  {
+   "text": "Unclocked paid time grew by 14,085 h (2025 vs 2017) or 10,361 h a year (2023-25 vs 2017-19 averages). Against 2017: lathe +3,269 h (paid +1,272, clocked -1,997), mill +2,832 h (paid -104, clocked -2,936), laser +2,823 h (paid +1,896, clocked -927), brake +1,672 h, assembler +1,435 h, painter +1,303 h (paid only +213), welder +442 h, inspector +308 h.",
+   "queries": ["q379", "q390"]
+  },
+  {
+   "text": "The shift is role-wide, not driven by a few people. For example, mill machinists' median unclocked share went 0.366 (2016, n=16) to 0.561 (2025, n=15), and laser operators' p10 went -0.118 to 0.188. Each role books 100% of its labour to its own work centre.",
+   "queries": ["q349", "q382"]
+  },
+  {
+   "text": "Priced at 2025 median role rates: $255,110 a year on 3-year averages (mill $63,079, laser $63,772, lathe $53,693, mill plus lathe $116,772) and $349,162 on a 2017 baseline. That equals 7.92 FTE across 8 roles, at most 1.73 in any one role.",
+   "queries": ["q395", "q379", "q390"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "Not evidence that any employee is idle or under-recording: whole roles move, and individual shares below zero in 2016 (q349) show that attributing hours to people is imperfect. Not evidence that a recording change happened in 2016, or that estimates were right; the 2016 drop could be genuine efficiency. Not a cost that grew: payroll changed by +511.3 h (q391), and the slack is under 2 FTE per role (q390). Not evidence of what the unclocked time was spent on.",
+ "could_not_tell": "What the unclocked hours were spent on: there are no indirect clock codes. Whether the 2016 fall in clocked hours per piece was efficiency or a change in booking practice. Why lathe and inspector shares stay high in every year. Whether unclocked time rises in low-load weeks: work_date is effectively the completion date, so weekly load can't be measured reliably. Role changes over time: hr_employees holds only the current role. Benefits are excluded from the dollars.",
+ "next_step": "Introduce indirect clock codes for mill, lathe and laser, and review staffing in those centres against estimated hours, using attrition (mill and lathe each had 18 replacement requisitions, q386) and cross-training rather than reductions. Ask the plant and accounting whether labour-booking practice changed during 2016 before treating that step as capacity.",
+ "dead_ends": [
+  "Concentration in a few employees: within-role percentiles moved together (q349).",
+  "Cross-booking to other work centres: 100% own-centre for every role (q382).",
+  "End-of-series truncation or carry-in distorting annual totals: negligible after 2015 (q371, q372, q373).",
+  "Estimate inflation as the cause of the 2016 step: estimates on identical parts were unchanged (q389).",
+  "Paint as a 'staffing added' case: from 2017, painter paid hours rose only 213 h (q390)."
+ ],
+ "incomplete": false,
+ "response_to_challenge": "I accepted every point, re-ran the sizing and checked it. (1) Definitions: the challenger showed (q370-q375) that annual labour equals labour on operations completed that year, with negligible truncation. That supports the annual grain, and I now cite it. (2) Baseline: accepted. 2016 is a transition year, and 58.5% of the 2016-2025 clocked fall is a ratio effect (q385, q391) on unchanged estimates (q389). I dropped the 2016 baseline, rebuilt the trend from 2017, and withdrew 'clocking hasn't slipped' for 2016. It holds only from 2017 (q383). (3) Laser and paint: accepted. Their 'flat workload' rested on 2016. Paint drops out as a staffing-added case (+213 h paid, q390). Laser stays in, with load falling and paid hours up 1,896 h, partly through backlog hiring (q386). (4) Money: accepted. I re-ran the pricing as q395 and size the finding at $255,110 a year (2017-19 vs 2023-25 averages), with the 2017 single-year baseline ($349,162, q379) as an upper reference. Both figures are an opportunity value of fixed paid hours (7.92 FTE across 8 roles, q390), not a growing cost. The machining story (mill plus lathe $116,772, q395) survives every baseline. I found nothing in the challenge to rebut with new evidence.",
+ "accepted": true
+}

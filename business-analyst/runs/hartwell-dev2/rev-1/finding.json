@@ -1,0 +1,54 @@
+{
+ "id": "F1",
+ "hypothesis": "H1",
+ "title": "H1 explains only part of it. The 2022-2025 markdown rise ($4,059,115 on stock lines) is mostly the mixed-refrigerant 2023 cohort, which Hartwell keeps stocking and sells below cost. A real R-410A clearance began in 2025, and its cost arrives mainly in 2026",
+ "conclusion": "Observed: Every equipment markdown follows one rule, 2.1% a month after the SKU's discontinued_on date, capped at 42% from month 20. A check over every month, cohort and fulfilment type found 0 off-rule lines (q150, q204). The markdown lowers the billed price only on stock lines. Special and transfer lines carry markdown_pct but are invoiced at the unreduced order price, with 0 price differences across 6,354 marked special lines in 2025 (q171, q212). Stock-line markdown went from $1,320,450 in 2022 to $5,379,566 in 2025, up $4,059,115 (q238). The 2023-01-01 cohort accounts for 0.8509 of that rise (q256). That cohort is split evenly across R-410A, R-454B and non-refrigerant SKUs, 44/44/44 (q145), and its 2025 markdown splits the same way: $980,654, $1,069,154 and $1,404,266 (q180). The rise is therefore not an R-410A clearance, and H1 fails as an explanation of 2022-2025. The 2015 and 2023 cohorts carry $4,735,079 of 2025 stock-line markdown. Hartwell stocks them to meet steady demand: 2015-cohort receipts were 2,755 against 2,645 units sold in 2025. The 2023 cohort was phased out in 2023 (823 units returned to vendors) and then restocked in 2024-2025 (q215, q217). Both sell below a buy cost that hasn't changed (q205, q210, q228), for a 2025 stock-line margin of -$2,789,637 (q238). H1 does hold for one cohort: the 129 R-410A SKUs discontinued 2025-01-01 are being cleared. Stock buying fell from 10,326 units in 2024 to 582 (q160), 995 units went back to vendors and on-hand stock fell from 7,099 to 3,442 units (q215, q239). Its markdown is still ramping, at 0.1129 on average in 2025 for $644,487 (q232). Interpretation: R-410A clearance cost grows in 2026. On the 2026 schedule (months 12-23) at 2025's monthly volume, it would be $2,079,237, an average of 0.3643, with margin -$1,128,836. The 3,442 units on hand would carry $2,544,097 of markdown at the 42% cap (q255). Either way, R-410A would be about half of real markdown: 0.5042 on the 2026 schedule (q256), 0.5263 at the cap (q238), against 0.372 in 2025 and 0.3005 in 2022. These are re-pricings of 2025 volume, not forecasts. Action: for the 264 SKUs in the 2015 and 2023 cohorts, decide with purchasing and pricing whether each is really discontinued. Stopping stocking avoids a $2,789,637 yearly loss (q256). Resetting discontinued_on recovers up to $4,735,079 only if volume holds at full price, which these records can't test. For the R-410A cohort, track the 3,442 units still on hand as the markdown deepens.",
+ "dollars_a_year": 2789637.0,
+ "size_query": "q256",
+ "claims": [
+  {
+   "text": "Markdowns appear only on equipment, every year 2016-2025, and were already split across R-410A, R-454B and non-refrigerant SKUs before the refrigerant transition.",
+   "queries": ["q128"]
+  },
+  {
+   "text": "markdown_pct = 0.021 x months since discontinued_on for months 1-19, 0.42 from month 20, 0 at month 0 and earlier. 0 off-rule lines in every cohort, band and fulfilment type, sales 2016-2025. It can't vary by channel, order-taker or customer.",
+   "queries": ["q150", "q204"]
+  },
+  {
+   "text": "Three discontinued cohorts: 2015-01-01 (44 R-410A / 44 R-454B / 44 none), 2023-01-01 (44/44/44), 2025-01-01 (129 R-410A).",
+   "queries": ["q145", "q139"]
+  },
+  {
+   "text": "Only stock lines are actually discounted. In 2025, price over line cost was 0.7996 on marked stock lines against 1.2013 unmarked, and 1.2002 on marked special lines against 1.2019 unmarked. Invoice price equals order price on every equipment line in 2022 and 2025 (0 differences). So $6,620,818 of 2025 recorded markdown on non-stock lines was never given.",
+   "queries": ["q205", "q212", "q174"]
+  },
+  {
+   "text": "Stock-line markdown: $1,320,450 in 2022, $5,379,566 in 2025, up $4,059,115. The 2023 cohort is 0.8509 of the rise. R-410A share of real markdown: 0.3005 in 2022, 0.372 in 2025 ($2,001,346 of $5,379,566).",
+   "queries": ["q238", "q256"]
+  },
+  {
+   "text": "2015 cohort: receipts track sales (2,755 against 2,645 in 2025), on-hand stock held at about 1,600-1,760 units, ordered units about 5,600-5,800 a year since 2018. 2023 cohort: phased out in 2023 (receipts 2,013, 823 returned to vendors, on-hand 6,878 to 3,288, ordered 16,108 to 5,757), then restocked (receipts 5,594 and 6,941 in 2024-2025, ordered 9,743 and 10,602). The recovery is the same in all three refrigerant groups. On-hand stock at the end of 2025 was 3,898.",
+   "queries": ["q215", "q217", "q233", "q239"]
+  },
+  {
+   "text": "Buy cost is flat. Sales-line cost and PO cost equal product cost (ratio 1.0). Vendor bills average 1.0013-1.0019 of product cost. So below-cost sales are real: 2025 stock-line margin on the 2015 and 2023 cohorts was -$2,789,637, and would be +$1,945,442 at the same volume without the markdown. Vendor credits are small in 2025 ($7,805 and $33,198).",
+   "queries": ["q205", "q210", "q228", "q226", "q238"]
+  },
+  {
+   "text": "R-410A 2025 cohort: 3,243 stock units in 2025, average markdown 0.1129, $644,487. Volume peaked in months 5-7 at 8.4-12.6% off. Re-priced at the 2026 schedule, the same volume carries $2,079,237 (average 0.3643, margin -$1,128,836). At the 42% cap it carries $2,397,009. The 3,442 units on hand would carry $2,544,097 at 42%, a margin of -$1,535,376. R-410A share on these bases: 0.5042 (2026 schedule) and 0.5263 (cap).",
+   "queries": ["q232", "q255", "q256", "q238", "q239"]
+  }
+ ],
+ "confidence": "high",
+ "not_evidence_of": "Not evidence that anyone priced lines by hand or favoured customers: the rate is identical within each cohort-month. Not evidence that the $6,620,818 on special and transfer lines was given away: invoices show it wasn't. Not evidence that resetting discontinued_on would recover $4,735,079, since demand at full price can't be measured here. The 2026 R-410A figures re-price 2025 volume and are not forecasts. 2026 volume is limited by the 3,442 units on hand and the halt in buying.",
+ "could_not_tell": "What discontinued_on means to the business, and why the 2015 and 2023 cohorts are still stocked (the 2023 cohort's buying resumed in 2024). Whether volume would hold at full price, and so how much of the $4,735,079 is recoverable. Why markdown_pct doesn't reach the price on special and transfer lines (pricing-rule configuration). How fast the remaining R-410A stock will sell in 2026. Answering these needs product lifecycle records, vendor end-of-life notices, the pricing-rule configuration and 2026 sales.",
+ "next_step": "List the 264 SKUs in the 2015 and 2023 cohorts from erp_products and review each with purchasing and pricing: stop replenishment, or correct discontinued_on. Ask how markdown_pct is meant to apply on special and transfer lines, and count stock lines only in markdown reporting. Re-run q232 and q239 monthly in 2026 to track the R-410A cohort's markdown and remaining stock.",
+ "dead_ends": [
+  "Comparing markdown rates by channel, taken_by and account manager: moot, because the rate is fixed per SKU-month (q150, q204).",
+  "My first claim that the 2023 cohort was 'bought again every year': wrong for 2023, when it was phased out (q215). Restocking resumed in 2024.",
+  "Treating the 42% cap as the 2026 R-410A cost: overstated. The 2026 cooling season falls in months 17-19 (0.357-0.399), so the 2026-schedule re-pricing ($2,079,237, q255) is the better scenario."
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted: (1) The rule and the stock-only discount survive. q204 and q212 confirm them more firmly than the original. (2) The cost caveat falls away: PO, bill and sales-line costs match product cost (q205, q210, q228), so the below-cost margins are real. (3) The 2023 cohort was phased out in 2023 and restocked from 2024, not bought every year (q215, q217). Corrected. (4) $4,735,079 is gross markdown, not recoverable money. dollars_a_year is now the loss avoided by not stocking these cohorts, $2,789,637 (q256, the same value as q238's -2,789,637), with $4,735,079 as the upper bound if demand holds. (5) 'H1 doesn't hold' was too broad. The 2025 R-410A cohort is a real clearance and its cost is still to come. Answered with new queries: the challenger's 42% re-pricing overstates 2026, because the cooling-season months, when most volume sells, fall at months 17-19 in 2026. Re-pricing 2025's monthly volume on the actual 2026 schedule gives $2,079,237 and an R-410A share of 0.5042 (q255, q256), against $2,397,009 and 0.5263 at the cap. The 3,442 units on hand bound 2026 volume: at 42% they would carry $2,544,097 (q255). I keep one part of the original verdict, with evidence: the observed 2022-2025 rise is not an R-410A clearance, since 0.8509 of it is the evenly split 2023 cohort (q256, q145, q180). The revised headline is therefore that H1 fails for the past rise and holds for the 2026 outlook.",
+ "accepted": true
+}

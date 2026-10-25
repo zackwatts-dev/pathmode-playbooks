@@ -1,0 +1,14 @@
+# H6 notes
+- q296: uninvoiced shipped lines by order year, ~0.18-0.22% of shipped lines 2016-2024; 2025 0.5662%. None partially invoiced: all are lines with zero invoice qty.
+- q300: 947 of the 2025 lines have ship_day > 2520 (special 772 up to day 2591, transfer 175 at 2521), i.e. future/scheduled ship days beyond cut-off, so cut-off and not a leak. Excluded. In-window base = 4,985 lines.
+- q297: monthly ship 2024-25 follows volume seasonality.
+- q305: fulfilment rate is flat (special 0.184, stock 0.1957, transfer 0.1813%), so no fulfilment cluster (dead end). Fractional qty only 9 lines (weaken-test fails). Partial ship 64.
+- q306: branch flat 0.1655-0.2188%. CHANNEL: counter 1.1241%, email 0.1548, phone 0.1477, edi 0 and web 0 (all 0 on 461k + 254k lines).
+- q310: 1,135 orders with nothing invoiced; 3,815 orders where one line was dropped from an otherwise invoiced order (630 with 2+ invoices). Base rate of multi-invoice orders not computed; multi-ship pattern not the driver.
+- q311: WMS sale exists for 4,751/4,751 stock+transfer lines (special lines never post to WMS by design).
+- q313: all 48 inside keyers 0.21-0.36%; spread evenly, so not a person pattern.
+- q315: counter rate 0.977-1.247% every year; email/phone 0.125-0.182%.
+- q317: line position not concentrated; 69 same sku billed on another line of the order (could be duplicate lines); 16 returned.
+- q320/q321: customer concentration matches volume (top100 23.4% vs 24.1%).
+- q325: by ship year, 2016-2024 average $285,468.20/yr, 499.4 lines; counter $137,555.05/yr; static-cost margin $71,523.61/yr. 2025 in-window $271,314.82.
+- q329: counter is 50.15% of uninvoiced vs 8.68% of shipped lines; rate is 7.35x email/phone. Credits of $4,618.18 issued on order-days with returns of 16 never-billed lines.

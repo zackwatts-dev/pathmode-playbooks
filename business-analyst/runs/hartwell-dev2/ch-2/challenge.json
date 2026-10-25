@@ -1,0 +1,51 @@
+{
+ "finding": "F2",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions/system artifact: special-order units might be received into WMS without a matching WMS sale. That would make R-454B stock build up on paper.",
+   "test": "Join 2025 R-454B WMS receipts to PO purpose (ref_id = po_id). Compare WMS sales to order lines by fulfilment.",
+   "result": "Ruled out. All 2,890 R-454B WMS receipts in 2025 (11,148 units) are on stock POs, and none are special (q216). Special-order POs (7,693 units) do not pass through WMS (q207). The build is real stock-PO volume.",
+   "queries": ["q216", "q207", "q218"]
+  },
+  {
+   "explanation": "The late receipts could be vendor delays, not ordering timing.",
+   "test": "For stock POs containing R-454B equipment in 2024-2025, compare PO day, expected_day and first receipt day.",
+   "result": "Ruled out. Vendors delivered on the quoted day: late_by is 0.0 in every month and the actual lead was about 25-38 operating days (q223). Stock POs were placed in May-Nov 2025 and none before April. 8,845 units were ordered in Jun-Jul alone, against 9,437 units of full-year 2025 stock-route demand (q207, q254). The timing comes from when POs were raised. Why they were raised then is not recorded.",
+   "queries": ["q223", "q207", "q254"]
+  },
+  {
+   "explanation": "Wrong yardstick: two years of WMS sales understates demand because shorts never post to WMS. If so, much of the 'flagged' R-454B is not excess at all, which is a stronger version of the finding's own point.",
+   "test": "Re-flag R-454B positions against 2025 stock-route demand (stock + transfer + short lines) by SKU-branch, then by branch. Check whether short lines double-count demand when customers re-order.",
+   "result": "Confirms and strengthens the finding. Active R-454B positions hold 6,524 units against 6,852 units of 2025 stock-route demand, a cover of 0.952 (q240, q254). On that yardstick only $1,891,676 of the $10,520,600 active R-454B stock sits in positions holding more than two years, against $7,249,785 on the WMS-sales yardstick. The part above two years is $1,051,349. No branch holds more than 1.81 years of its 2025 R-454B stock-route demand (q251). Re-ordering inflates the shorts only a little: 424 of 4,852 short lines (8.7%) were re-ordered for the same SKU by the same customer within 21 operating days (q225, q254). One caveat: 2025 stock-route demand includes lost sales, which may not recur.",
+   "queries": ["q240", "q251", "q225", "q254"]
+  },
+  {
+   "explanation": "Benchmark choice: the $5.04M above-benchmark figure depends on using 2021-2024 cover as 'normal'.",
+   "test": "Recompute year-end refrigerant-equipment stock divided by stock-route demand for 2016-2025.",
+   "result": "Survives. In 2017-2020 cover was 0.618-0.684, so 0.713 (2023) is still the highest from 2017 to 2024. 2016 (1.022) is the first year of records (q243). Using the 0.713 high is the conservative choice. The 20% carrying rate is still an assumption.",
+   "queries": ["q243"]
+  },
+  {
+   "explanation": "Survivorship/selection in the 'past excess sold through' test: next-year sales relative to stock can be high while the stock itself is replenished and never falls.",
+   "test": "For positions flagged at each year-end from 2017 to 2024, compare the stock value at the next year-end with the value at flagging.",
+   "result": "Partly undermines the claim. A year later, flagged positions still held 0.525-0.80 of their flagged value ($758,086-$2,604,850) (q253). This is because they were replenished: next-year receipts were $538,536-$3,370,189 (q148). Positions mostly stopped being flagged because sales caught up, not because the stock cleared. The past blocks were also $1.39M-$3.38M, much smaller than 2025 and with no refrigerant transition, so they say little about how the 2025 block will behave.",
+   "queries": ["q253", "q148"]
+  },
+  {
+   "explanation": "Mix and definitions in the R-410A slice: the finding treats only the 347 flagged R-410A positions ($2,333,698) as 'stranded'. But the problem is the refrigerant, not the position. The discontinued_on field may also not mean what it says.",
+   "test": "Total R-410A equipment on hand, 2025 sales and receipts, and receipts after discontinued_on, by discontinuation year.",
+   "result": "Changes the finding. Every R-410A equipment SKU carries a discontinued_on date. 5,601 units ($7,925,628) are on hand against 5,132 units sold in 2025 (cover 1.091) and 5,815 units of stock-route demand (q246, q254). R-410A is 0.373 of all refrigerant-equipment stock (q254). R-410A stock still received $3,973,282 in 2025 (q250, q254), and 2,832 units arrived in Jul-Oct, after the June sales peak of 2,322 units (q247). discontinued_on is not a reliable lifecycle marker: SKUs dated 2015 (both R-410A and R-454B) kept receiving stock and selling through 2025 (q250). R-454B equipment carrying a 2015 date is implausible for that refrigerant. The finding's active/discontinued split for R-454B (66 positions, $481,529) therefore rests on a doubtful field. R-410A still sold strongly in 2025, so the data do not show it is 'stranded'. Whether it can be installed in 2026 is a regulatory question the warehouse cannot answer. If it cannot, the exposure is the full $7.93M, not $2.33M.",
+   "queries": ["q246", "q247", "q250", "q254"]
+  },
+  {
+   "explanation": "Reproducibility: the headline count depends on floating-point summation order of fractional quantities.",
+   "test": "Re-run q129 verbatim and with quantities rounded to 4 decimals. Count positions sitting exactly at 2x cover.",
+   "result": "There is a minor reproducibility issue. One run gave 1,267 positions and $10,415,876.29 (q229, q237). The rounded comparison gives the cited 1,266 and $10,402,200.93, so the swing is $13,675.36 (q237, q254). 162 positions ($908,336.32) sit exactly at onhand = 2x 2025 sales, and 903 positions have fractional on-hand quantities of equipment and other goods. The headline should use a rounded comparison.",
+   "queries": ["q237", "q229", "q254"]
+  }
+ ],
+ "what_changed": "Survived: the build is real stock-PO volume, not a recording artifact. It was ordered in-season, and vendors delivered on time. The $10.4M is mostly first-season R-454B, not long-standing excess. The $5.04M above the historical cover high holds on a 2017-2024 benchmark. Strengthened: measured against stock-route demand, active R-454B is under one year of cover (0.952). Only $1.89M sits in positions holding more than two years, and no branch is above 1.81 years. Weakened: 'past excess sold through' is overstated. Flagged positions kept 53-80% of their value a year later through replenishment. Changed: the R-410A risk is not just 347 flagged positions. All $7.93M of R-410A equipment is in a transitioning refrigerant and still took $3.97M of receipts in 2025, much of it after the peak. Its saleability in 2026 is unknown. discontinued_on is unreliable, so the active/discontinued split should be dropped. The headline should use rounded comparisons ($13.7K float swing).",
+ "revised_conclusion": "H10 as stated, a persistent structural excess of $10.4M over two years of supply, does not hold. 96.8% of the flagged value is refrigerant equipment. Measured against 2025 stock-route demand, which counts the 4,852 R-454B lines that went short, R-454B stock is about one season (0.952 years for active SKUs). Only $1.89M of active R-454B is in SKU-branches holding more than two years. What the records do show is a timing pattern: R-454B stock POs were not raised until May-July 2025, vendors delivered on schedule about 30 operating days later, and stock landed in Jul-Oct after the June-July shortages. Refrigerant-equipment stock at year-end is 0.935 years of stock-route demand, against a 2017-2024 high of 0.713. That is about $5.04M above the historical cover, or about $1.0M a year at an assumed 20% carrying rate. The bigger open risk is R-410A, not R-454B: $7.93M on hand (about 1.09 years of 2025 sales), including $3.97M received during 2025. If R-410A equipment cannot be sold or installed in 2026, that whole amount is at risk, not the $2.33M the original test flagged. Actions: review when seasonal stock POs are triggered (pre-season ordering), confirm R-410A saleability and return-to-vendor options, and stop R-410A stock POs. Re-test R-454B cover after the 2026 May-Aug season.",
+ "not_evidence_of": "Not evidence that the $10.4M, or any part of it, is dead stock: records end 2025-12-29, before the 2026 season. Not evidence that R-410A is legally unsellable. That depends on regulation outside the warehouse. Not evidence of why POs were raised late. There are no forecast or approval records, and a pattern in ordering is a question for the replenishment process, not about any person. Not evidence that short lines were lost sales: there is no backorder link, and 96 of 4,852 were filled on a re-order within 21 days (q225). The carrying cost depends on an assumed 20% rate and a static master cost (master and transaction cost give the same valuation, q229). Book stock is assumed accurate; there are no cycle counts. discontinued_on cannot be used to tell live from end-of-life SKUs."
+}

@@ -1,0 +1,14 @@
+# H11 notes
+- q425: all 6,025 paying customers. Top 10% by late $-days hold 70.58% of late $-days vs top 10% by billed holding 57.52% of billed. So late $-days are more concentrated than revenue.
+- q427: terms 0 (601 customers) never late (pay same day). Terms 30 vs 45: wdl 5.64 vs 5.74, late rate 0.675 vs 0.688. Terms don't separate lateness. DEAD END.
+- q428: trade: wdl 4.81-5.6. Weak.
+- q426/q434: the per-customer dollar-weighted days late falls into discrete classes: ~2.43 (2,680 cust), ~8.65 (932), ~31.12 (226), with almost nothing between. Looks like a per-customer parameter, i.e. generated.
+- q431/q432: halves (day<1260 vs later), customers with >=30 invoices in each: corr 0.987; 1,154 normal->normal, 496 slow->slow, only 10 switch. Persistent trait.
+- q435: by year, slow group 12.61-13.84, normal 2.40-2.47; flat over time.
+- q437: groups: normal 3,813 (70.3% cust, 70.11% billed, 30.17% late $-days); slow 1,285 (23.69/23.84/36.54); very slow 326 (6.01/6.05/33.29). Credit limit median, terms, invoice size identical across groups -> no master-data attribute predicts the class.
+- q438: very slow pay 98.7% of invoices late, median 31 days late; the lateness is on every invoice, not a few big misses.
+- q439: very slow share by branch 0.036-0.084; spread evenly. DEAD END for branch.
+- q444/q447: rep share 0.022-0.167; top rep 52 has 7 of 42 vs 2.5 expected; with 36 reps a max like that is plausibly chance. Not a finding.
+- q442: credit limit: very slow median avg open AR 4,020 vs limit 14,565 (0.254); late balance 0.143 of limit. 68 very slow customers' average open AR exceeds limit, vs 351 normal (normal group is bigger). Credit limits aren't binding for most.
+- q448: sizing. Total late cost at 8% = 232,193/yr (matches q107). Excess over the normal 2.435-day rate: slow 61,015 + very slow 71,241 = 132,256/yr.
+- Caveat: payments look generated (orient q18), and the discrete classes back that up.

@@ -1,0 +1,69 @@
+{
+ "id": "F2",
+ "hypothesis": "H5",
+ "title": "Scrap is not concentrated in fixable parts, families, first runs or people once volume and routing are allowed for; the one robust pattern is a first-year learning curve (about 1.8x the tenured rate), worth roughly $18,900 a year at cost",
+ "conclusion": "The hypothesis does not hold in its testable form. Observed: the top 10% of parts carry 69.4% of 'dimension out of tolerance' (DOT) plus 'operator error' (OE) scrap value ($4,716,749, 2016-2025, 4,986 of 7,725 parts with order jobs). But the top 10% of parts by sales value already carry 62.11% of it (q109), and part x work-centre combinations scrap in proportion to throughput (58.65% of scrap vs 57.75% of throughput, q159). Part differences after routing are weak and do not repeat: half-period correlation 0.0409 (258 parts, q153); odd/even job split correlation -0.0249 on pieces and 0.1144 on scrap events (516 parts), event overdispersion chi2/df 1.255 (445 parts) (q218). Parts in the top quintile on even jobs (event O/E 1.429) ran at 1.017x events and 0.965x pieces on odd jobs (q219). So there is a weak real part signal in event counts, but nothing that can be found ahead of time and fixed. Family differences disappear once routing is allowed for (0.946-1.033, q154). First runs are not worse: for parts created 2017+, first runs run at 0.984x (DOT+OE, 4,800 jobs) against 1.007x for run 4 onward (q222). Employee differences are work-centre mix (correlation within work centre -0.1682, 56 employees, q151). What holds is tenure. First-year staff scrap 1.804x a work-centre x year baseline set by staff with a year or more (7,940 vs 4,402 pieces, 900,795 pieces worked, q260, q262). The ratio stays about the same within part x work centre x job-size band (1.827x, q214) and within work centre x month x overtime (1.811x, q217). It also holds within the same people: 47 hires who stayed 3+ years ran at 1.787x in year 1, 1.001x in years 2-3 and 0.968x from year 4 (q212). So it is a learning curve, not selection. The excess is 3,538 pieces over 10 years, 353.8 a year (q262). At cost (GL scrap-material memo ratio 0.327 plus rework labour at the GL memo rate) that is about $18,914 a year (q225). At selling price it is at most $54,971 a year (q168), an upper bound, not a recoverable cost. Interpretation: the reason codes, entered at the machine, cannot say what kind of defect new hires make. On ops worked only by first-year staff, OE runs at 5.94x the tenured rate and DOT at 0.509x (q210), which suggests the label depends on who is reporting. Action: give new hires first-piece checks and paired setups, and judge them on total scrap per piece against a work-centre baseline, not on operator-error counts. The gain is modest.",
+ "dollars_a_year": 18914.0,
+ "size_query": "q225",
+ "claims": [
+  {
+   "text": "Top 10% of the 7,725 parts with order jobs carry 69.4% of DOT+OE scrap value ($4,716,749, 2016-2025), but the top 10% by sales value already carry 62.11%. The concentration follows volume and value.",
+   "queries": ["q109"]
+  },
+  {
+   "text": "Of 23,406 part x work-centre combinations (9,076 with any DOT+OE scrap), the top 10% by throughput hold 58.65% of scrap vs 57.75% of throughput. Scrap is proportional; the 78.22% top-decile share by scrap value reflects zero-heavy data.",
+   "queries": ["q159"]
+  },
+  {
+   "text": "Part-level scrap persists only weakly after routing. Half-period correlation 0.0409 (258 parts); odd/even job correlation -0.0249 on pieces and 0.1144 on events (516 parts); event overdispersion chi2/df 1.255 (445 parts). The top even-job quintile (O/E 1.429) runs at 1.017x events and 0.965x pieces on odd jobs.",
+   "queries": ["q153", "q218", "q219"]
+  },
+  {
+   "text": "Family scrap is explained by routing (O/E 0.946-1.033). For parts created 2017+, first runs are at 0.984x (DOT+OE, 4,800 jobs) and 0.974x (all reasons), against 1.007x and 0.984x for run 4 onward.",
+   "queries": ["q154", "q222"]
+  },
+  {
+   "text": "Employee scrap rates correlate 0.8751 across halves raw (49 employees), but -0.1682 within work-centre mix (56 employees).",
+   "queries": ["q143", "q151"]
+  },
+  {
+   "text": "First-year staff: 7,940 scrap pieces against 4,402 expected at the tenured work-centre x year rate (1.804x, 900,795 pieces, 2016-2025). 1.827x within part x work centre x job-size band; 1.811x within work centre x month x overtime. Tenured overtime entries carry no scrap (0.0 vs 0.00424 regular).",
+   "queries": ["q260", "q262", "q214", "q217"]
+  },
+  {
+   "text": "Within the same people: 47 hires who stayed 3+ years ran at 1.787x in year 1, 1.001x in years 2-3 and 0.968x from year 4. 51 who stayed 1-3 years went from 1.798x to 1.05x. 23 who left within a year ran at 2.094x (685 vs 327 pieces). Learning, not survivorship.",
+   "queries": ["q212"]
+  },
+  {
+   "text": "The pattern holds in every year 2016-2025 (1.477-2.519x), and 110 of 112 first-year hires are above expected (median 1.783x).",
+   "queries": ["q156", "q158"]
+  },
+  {
+   "text": "On ops worked only by first-year staff (865,968 pieces), OE runs at 5.94x the tenured rate (4,704 vs 792) and DOT at 0.509x (1,356 vs 2,663); DOT+OE combined at 1.754x (6,060 vs 3,455). Interpretation: the label appears to depend on tenure, so the codes cannot separate defect types.",
+   "queries": ["q210", "q225"]
+  },
+  {
+   "text": "1,186 ops (7,474 of 46,931 scrap-report pieces) have scrap reports but no rework entry, mostly wrong revision (2,061 pieces). First-year staff did 12.61% of original pieces there, against 9.68% on scrap-free ops, so leaving them out does not inflate the tenure effect.",
+   "queries": ["q205", "q207", "q227"]
+  },
+  {
+   "text": "Excess 3,538 pieces over 10 years (353.8 a year). Cost basis: the GL scrap-material memo is 0.327 of all scrap-report value at selling price ($2,474,799 / $7,568,632), giving $17,974 a year in material. Adding 685 rework hours over 10 years at $13.73 per hour ($940 a year) gives $18,914 a year. At selling price the upper bound is $54,971 a year.",
+   "queries": ["q223", "q224", "q225", "q262", "q168"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "Not evidence that any individual new hire is a problem: the effect is broad (110 of 112) and fades within the same people. Not evidence that out-of-tolerance scrap is a process issue separate from operator experience, or that operator error is the new-hire defect type: the reason codes look like tenure-dependent labels. Not evidence of where defects originate (scrap is booked where found). Not evidence that $54,971 a year is recoverable: it is a selling-price upper bound, and onboarding could at most close the gap to the tenured rate. The high top-decile shares (69.4%, 78.22%) are not evidence of fixable hot spots.",
+ "could_not_tell": "What defect types new hires actually make (reason codes are entered at the machine and appear to depend on who enters them; an independent inspector classification would be needed). Where out-of-tolerance defects originate (no cause-operation coding). Whether new hires are supervised differently. Lost capacity and late-remake cost of scrap. Wrong-revision, paint and weld scrap without rework entries (7,474 pieces) is largely outside the labour-based analysis.",
+ "next_step": "Trial structured onboarding (first-piece verification, paired setups) for new hires and track each hire's total scrap per piece over their first 12 months against the tenured work-centre baseline (expected about 1.8x falling to about 1.0x). Have inspection, not the operator, assign the reason code on a sample of scrap reports to test whether DOT vs OE labelling depends on tenure. Add cause-operation coding to scrap reports.",
+ "dead_ends": [
+  "Part Pareto: concentration follows sales volume (q109, q159)",
+  "Persistent problem parts: weak event signal only, regresses on held-out jobs (q153, q218, q219)",
+  "Part family: explained by routing (q154)",
+  "First runs of a part: not worse, with left-censoring and routing allowed for (q222)",
+  "Individual employees: differences are work-centre mix (q151)",
+  "Reason-code split OE vs DOT as defect types: labels look tenure-dependent (q210)"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted all eight points. (1) Survivorship, job size, timing/overtime, missing rework entries and first-run censoring: the challenger's tests (q212, q214, q217, q227, q222) support the tenure effect and the first-run result, and they are now in the claims. (2) Reason codes: accepted. My claim that 'DOT is process-wide, OE is onboarding' (53.09%/7.17% shares) is withdrawn. On new-only ops, OE at 5.94x and DOT at 0.509x (q210) means the code entered at the machine cannot separate defect types. The recommendation is now judged on total scrap per piece. (3) Part persistence: softened to 'weak, not recoverable' (q218, q219). (4) Money: accepted. My 0.4276 ratio divided the GL memo by labour-recorded scrap only; against all scrap-report value it is 0.327 (q223). The size is now the cost-basis $18,914 a year (q225), and $54,971 is labelled a selling-price upper bound. I checked the challenger's 4,402 expected pieces in q225: it matches a work-centre x year tenured baseline (q260), giving 1.804x and 3,538 excess pieces (q262).",
+ "accepted": true
+}

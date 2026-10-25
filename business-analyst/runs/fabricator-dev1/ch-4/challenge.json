@@ -1,0 +1,51 @@
+{
+ "finding": "F4",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions / allocation basis: F4 charges all conversion cost (direct + indirect labour + benefits + overhead) per clocked hour. Costs that scale with the number of jobs (scheduling, purchasing, inspection, shipping, invoicing) would then be under-charged to many cheap, short jobs. If so, the 'no family loses money' result is a product of the allocation rule, not a fact about the business.",
+   "test": "Re-cost every invoiced job with indirect labour ($31.57M over 10 years, q179) charged per invoiced job in its year ($346-$536 a job, q190) instead of per hour. Run it at 100% and at 50% per job, by family, quantity band, job-value band, customer and repeat part.",
+   "result": "Family 1 changes sign. It has 39,862 of 76,219 jobs (52.3%, q209), $1,156 of revenue and 3.88 clocked hours per job (q191). On the hour basis it contributes +$11.71M over 10 years; with indirect labour charged per job it contributes -$444,827 (-0.97% of revenue, q185). With the full per-job charge it is negative in 5 of 10 years; with half the charge it is negative only in 2021 (q190). By job value: the 23,747 jobs under $1k (31.16% of jobs, $14.77M revenue) contribute +$2.60M on the hour basis, -$1.31M with half the charge per job and -$5.21M with the full charge (q197, q209). By quantity band, 1-5 piece jobs stay positive (+$1.87M, q185). Repeat parts below zero: 22 on the hour basis, 13 with half the charge per job, 41 with the full charge ($3.10M revenue, -$231,741), 24 of those 41 in family 1 (q208). Customers with at least $500k are robust: 0 of 51 are negative on any basis (q198). The data has no activity drivers for indirect labour, so it cannot say which basis is right.",
+   "queries": ["q179", "q185", "q190", "q191", "q197", "q198", "q208", "q209"]
+  },
+  {
+   "explanation": "Missing costs: outside processing was dropped from material and never charged to jobs, which flatters the families that use it.",
+   "test": "Charge outside-processing PO lines to their jobs.",
+   "result": "Outside processing is $1.72M over 10 years and is fully on job POs (q163). Family 3 contribution drops from $10.08M to $8.82M and family 4 from $5.98M to $5.54M; no family or quantity band changes sign (q185). The 22 persistently negative parts are unchanged (q204). On the 'could not tell' point, outside cost IS on POs, so job-level outside cost is available.",
+   "queries": ["q163", "q185", "q204"]
+  },
+  {
+   "explanation": "Missing data: material counted at PO amount includes POs that were never received, which could overstate cost and create spurious losers.",
+   "test": "Recompute the repeat-part losers using received POs only.",
+   "result": "29.7% of PO lines have no receipt, but they are only $4.21M of $92.76M (4.54%, q203, q209). On received material only, 19 parts are negative (-$72,189) instead of 22 (-$82,954) (q204). PO material equals GL material in every year (q169), so the GL books material the same way. F4's figure of 28.9% is not reproduced here; q203 gives 29.7% of lines.",
+   "queries": ["q169", "q203", "q204"]
+  },
+  {
+   "explanation": "Selection: only invoiced jobs and customers with at least $500k were tested.",
+   "test": "Count costs on non-invoiced jobs and test the 237 smaller customers.",
+   "result": "511 order jobs have no invoice ($1.13M of PO material, 6,477 h, q160). 294 of them were created in 2025 and only 7 of those are complete, so most are work in progress (q180). But 2016-2024 has 217 completed but uninvoiced jobs carrying $565,008 of PO material, about $35k-$98k a year (q180, q220). That is an unmeasured cost, or possibly unbilled revenue. Of the 237 customers under $500k ($31.50M revenue), 19 are negative on the hour basis (-$20,325), 43 with half the charge per job and 64 with the full charge (-$160,401) (q198). The small losers are real but small in dollars.",
+   "queries": ["q160", "q180", "q198", "q220"]
+  },
+  {
+   "explanation": "Definitions / trend: the loaded rate per clocked hour may be rising because hours are captured less completely, not because cost is rising.",
+   "test": "Compare clocked hours with paid timecard hours by year, and the rate per paid hour.",
+   "result": "Clocked hours fell from 75.5% of paid hours in 2016 to 65.6% in 2025. The rate per paid hour rose 27.6% ($77.6 to $99.0); the rate per clocked hour rose 46.8% ($102.8 to $150.9) (q169, q201, q209). Interpretation: part of the 'loaded rate rising faster than prices' trend in F4's action is a change in how hours are booked. Entries over 24 h are 30.9% of clocked hours, but they track the estimate per operation (median ratio 0.87-0.90, q162, q166), so they look like batch postings, not junk.",
+   "queries": ["q162", "q166", "q169", "q201", "q209"]
+  },
+  {
+   "explanation": "Hours captured unevenly by quantity: small jobs might under-clock setup, so the hour basis would under-charge them.",
+   "test": "Compare clocked hours with the estimated routing hours by quantity band.",
+   "result": "The reverse holds. Jobs of 1-5 pieces clocked 0.983 of their estimated hours and jobs over 100 pieces clocked 0.759 (q177). Small jobs are not under-clocked relative to their estimates, so this does not undermine the quantity gradient.",
+   "queries": ["q177"]
+  },
+  {
+   "explanation": "Period vs pattern: the 2021 dip could be a one-off material spike rather than a structural loss.",
+   "test": "Reconcile invoice revenue to the GL and look at the cited yearly series.",
+   "result": "Invoice revenue ties to GL revenue each year (q169). 2021 GL material was $10.89M against $26.11M revenue (q179). This is consistent with F4: a period effect, not a persistent pattern. The family 6 small-job gap in 2020 is $1.9/h (q201).",
+   "queries": ["q169", "q179", "q201"]
+  }
+ ],
+ "what_changed": "The customer claims survive every test: no customer with at least $500k is negative under any allocation (q198). So do the 2021-as-period reading, the outside-processing and receipt checks (q185, q204), and the cited numbers in q106-q150. What did not survive is the claim that every part family clears its cost, and the action that follows from it. That result depends on charging indirect labour per clocked hour. Charge it per job and family 1 (52.3% of jobs, about $1.16k each) goes negative over 10 years, jobs under $1k swing from +$2.60M to between -$1.31M and -$5.21M, and repeat-part losers rise from 22 to as many as 41 (q185, q197, q208). So the minimum-charge target is low-dollar jobs, mostly family 1, not small-quantity family 6 or family 3. Part of the rising loaded rate reflects falling hour capture (q201). 'Outside cost not on POs' is wrong: it is on POs (q163).",
+ "revised_conclusion": "No customer with at least $500k of 2016-2025 revenue loses money under any allocation tested: the hour basis, or half or all of indirect labour charged per job (51 customers, 88.8% of revenue; q198, q216). 2021 was the one broad period dip. With all conversion cost charged per clocked hour, every family and quantity band clears its cost, and 22 of 1,151 repeat parts lose $82,954 over ten years (q204). That ranking is an artefact of the allocation rule. If job-count-driven indirect labour is charged per job, low-dollar work is where money is lost: family 1 (median job $902) and jobs under $1k (31% of jobs) turn negative, and up to 41 repeat parts (-$231,741 over ten years) do too (q185, q191, q197, q208). The records cannot say which allocation is right. Recommendation (interpretation): base any minimum or setup charge on job value, not quantity, and test it on family 1 first. Before repricing, measure what indirect labour actually scales with.",
+ "not_evidence_of": "That low-dollar or small-quantity work is profitable, or that it loses money: the sign depends on an allocation rule the data cannot settle. Nor that the 22 (or 41) parts are recoverable losses: dropping or repricing them would not remove fixed overhead. Nor that costs rose by the full 46.8% increase in the clocked-hour rate (q209); part of it is lower hour capture. The 217 completed but uninvoiced jobs from 2016-2024 (q180, q220) are unexplained and need a separate look; they are not shown to be lost revenue."
+}

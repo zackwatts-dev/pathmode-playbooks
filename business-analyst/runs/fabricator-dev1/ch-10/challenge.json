@@ -1,0 +1,69 @@
+{
+ "finding": "F10",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions/recording: the dates are strings, so comparisons could be lexical, and 'wrong revision' could have variant spellings that were missed.",
+   "test": "Check the date format and length in jobs and revisions. List every scrap reason_code.",
+   "result": "All dates are ISO 'YYYY-MM-DD' (length 10 to 10), so string comparison orders them correctly. Revisions run B-M as single letters. There are 8 clean reason codes, and 'wrong revision' has 137 reports and 2,852 pieces, with no variants. Not an explanation.",
+   "queries": ["q376", "q377"]
+  },
+  {
+   "explanation": "Timing/reverse order: the scrap could have been reported before the newer revision arrived, so the revision could not have caused it.",
+   "test": "For each wrong-revision report, compare reported_on with the first mid-job revision received, with the ECO date, and with the latest revision received by the report date.",
+   "result": "All 137 reports came after a revision newer than the one issued had been received: 33 + 1 on superseded-at-release jobs, and 99 + 3 + 1 after the mid-job revision arrived. On the 4 ECO jobs with scrap, the ECO came before the scrap in 3 and after it in 1. The timing is consistent with the finding.",
+   "queries": ["q378"]
+  },
+  {
+   "explanation": "Confounding by job length or engineering release lag: no-ECO jobs might be the long jobs, or jobs where engineering had not released the new revision before the job finished. In that case 'no ECO' would just stand in for 'no chance to issue one'.",
+   "test": "Within current-revision jobs that got a mid-job revision, split by whether that revision was released to the floor before job completion. Compare median job length and days from revision receipt to completion.",
+   "result": "The gap holds in both strata. Where the revision was released before completion: 74 of 168 no-ECO jobs (44.0%) against 4 of 548 ECO jobs (0.7%). Where it was released after: 25 of 80 (31.3%) against 0 of 161. Median job length (24 v 25 days and 11 v 11) and median receipt-to-release (4 days) match. Not explained by duration or release lag.",
+   "queries": ["q380"]
+  },
+  {
+   "explanation": "Mix by customer or part: no-ECO jobs could cluster on customers or parts that are scrap-prone for other reasons.",
+   "test": "Restrict to customers, and then to parts, that have both ECO and no-ECO mid-job-revision jobs.",
+   "result": "Within the same 43 customers: 93 of 231 no-ECO jobs (40.3%) against 4 of 613 ECO jobs (0.7%). Within the same 65 parts: 38 of 79 (48.1%) against 1 of 88 (1.1%). The gap survives.",
+   "queries": ["q394"]
+  },
+  {
+   "explanation": "Definitions/linkage: an ECO may exist for the revision but not be linked to the job (6,643 of 7,761 ECOs have no job). If so, 'no ECO' would be a linkage artefact.",
+   "test": "For no-ECO mid-job jobs, check whether any ECO exists for the same mid-job revision, linked or unlinked.",
+   "result": "None of the mid-job revisions has an unlinked ECO. 49 no-ECO jobs had an ECO for the same revision logged against a different job, and 26 of those 49 still have wrong-revision scrap. The other 199 had no ECO for the revision at all (73 with scrap). Covering one sibling job did not protect the others, which supports the per-job check the finding recommends.",
+   "queries": ["q381"]
+  },
+  {
+   "explanation": "The money (1): scrap and credits could be double-counted on the same jobs, or the credit join could fan out.",
+   "test": "Reconcile the credit memos and check the overlap between wrong-revision scrap jobs and return jobs.",
+   "result": "81 memos total $381,885, with one return authorisation per job, 81 joined rows and 81 distinct memos. The three buckets in q361 sum to it, off by $1 from rounding. All 137 wrong-revision jobs scrapped their full job quantity, none shipped, all had a remake on the same SO line, and none has a return. All 81 returns are on other jobs. No double count. Scrap is what was caught in-house; returns are what escaped.",
+   "queries": ["q384", "q388", "q393"]
+  },
+  {
+   "explanation": "The money (2): valuing scrap at PO price overstates the loss. Every scrapped job was remade and the remake shipped and billed, so the revenue was not lost; the loss is the cost of the scrapped run.",
+   "test": "Value the scrap at the scrapped jobs' own material POs and non-rework labour hours. Labour is priced at the average pay-rate row (an unloaded wage, so it understates labour cost).",
+   "result": "On the 133 at-risk jobs with wrong-revision scrap, PO-price value is $544,560, equal to those jobs' full revenue. Material cost is $331,519, and 2,420 labour hours at $24.97 come to $60,427. Scrap at cost is $391,946 (72.0% of the price value). With $304,873 in fit/dimension/nonconforming credits, the total is $69,682/yr over 10 years ($39,195 scrap + $30,487 credits) instead of $84,943. The top 10 jobs carry 34.6% of the scrap value; the median job is $2,077.",
+   "queries": ["q387", "q393"]
+  },
+  {
+   "explanation": "Selection: open or unreleased jobs might be counted as at risk through the '9999' completion default.",
+   "test": "Count at-risk jobs with no completion date.",
+   "result": "0 of the 181 open jobs are at risk. The 106 unreleased jobs are excluded by design. Not a factor.",
+   "queries": ["q392"]
+  },
+  {
+   "explanation": "Definition sensitivity: the 82 'superseded at release' depends on the reference date. The orient query q26 found 158, which was not reconciled.",
+   "test": "Recount superseded jobs against the revision received by job creation, the revision logged by release, and the part master revision.",
+   "result": "Received by release: 82. Logged by release: 136. Received by creation: 347. Differs from the part master: 35,189 (that field is not a usable reference). None of these reproduces 158, so the discrepancy is still unreconciled. The split between 'superseded at release' and 'mid-job' depends on the definition; the combined at-risk population is the more robust object.",
+   "queries": ["q392"]
+  },
+  {
+   "explanation": "Trend or single period: the pattern could be one bad stretch.",
+   "test": "Re-read the per-year breakdown in q363.",
+   "result": "As the original analyst reported, at-risk jobs and wrong-revision scrap appear every year from 2016 to 2025 (2015 has only 2 months). ECO coverage of mid-job revisions is 67.4%-82.7% with no trend. Not re-run; I had no reason to doubt it.",
+   "queries": ["q363"]
+  }
+ ],
+ "what_changed": "1) The size is restated on a cost basis: $69,682/yr (q393), not $84,943/yr. All 137 wrong-revision jobs were scrapped whole and remade (q388), so the PO-price value was billed on the remake; the loss is material plus labour, and the labour is priced at an unloaded wage. 2) Scrap and returns are separate populations with no job overlap: scrap is caught in-house, returns escape. The finding should say so, not imply they are the same events. 3) The ECO/no-ECO gap is stronger than the original evidence showed. It holds within customer (40.3% v 0.7%) and within part (48.1% v 1.1%), whether or not the revision was released before the job finished, and with matched job lengths (q380, q394). An ECO on a sibling job did not protect a job (26 of 49, q381). 4) The 82 superseded-at-release count depends on the definition (136 if 'logged' is the reference) and still does not reconcile with q26's 158.",
+ "revised_conclusion": "Observed, 2015-11 to 2025-12, released jobs only: all 137 'wrong revision' scrap reports came after a revision newer than the one issued had been received (q378). Each scrapped the whole job, and every one was remade (q388). 34 are on 82 jobs released on a superseded revision. 99 are on 248 jobs released on the current revision where a newer revision arrived before completion and no ECO was logged against the job (39.919%), against 4 of 709 mid-job-revision jobs with an ECO and 0 of 51,122 without a mid-job revision (q359). The no-ECO v ECO gap holds within the same customers (40.3% v 0.7%) and the same parts (48.1% v 1.1%), whether or not engineering had released the revision before the job finished, and with similar job lengths (q380, q394). It also holds where an ECO for the same revision was logged against a different job (26 of 49) (q381). Separately, 57 of 58 fit/dimension/nonconforming returns, and 80 of 81 credit memos, are on other at-risk jobs that shipped (q384, q388). At cost, scrapped material ($331,519) plus labour at average wage ($60,427), together with $304,873 of fit/dimension/nonconforming credits, comes to about $69,682/yr over 10 years (q387, q393). That is an upper bound on what can be avoided for credits and roughly a floor for labour; remaking returned parts is not included. Interpretation: a revision arriving during an open job without a per-job ECO is the dominant pattern. The control should check every open job for the part when a revision is received, and hold release while a received revision is unreleased.",
+ "not_evidence_of": "That the parts were physically made to the wrong drawing: 'wrong revision' is a self-entered code, and the revision actually machined is not recorded. That logging an ECO causes the protection. An ECO may simply record that the change was caught in time, so the ECO and the avoided scrap could share a cause, which is someone noticing the revision. Telling these apart needs timestamps on when job packets and travellers were updated, and revision verification at first-article or final inspection. That returns on at-risk jobs were caused by the revision: they are on different jobs from the scrap, 23 are coded 'per buyer', and return reasons are buyer-reported. The precise split between superseded-at-release and mid-job, which depends on whether received or logged dates are the reference and still does not reconcile with q26. Any person's conduct: a missing ECO is a pattern in how changes are recorded."
+}

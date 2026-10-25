@@ -1,0 +1,45 @@
+{
+ "finding": "F1",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions: the markdown may not be one mechanical rule. Some lines or channels could break it, or the months-since-discontinued pattern could hold only for the months q150 showed (it was cut off at 24 months and its sample output was truncated).",
+   "test": "Re-ran the rule over every month after discontinued_on for all three cohorts and every fulfilment type. Counted lines whose markdown differs from 0.021 x months for months 1-19, and zero-markdown lines after the date.",
+   "result": "Survives. Every cohort, band and fulfilment type has 0 off-rule lines. Months 20 and later are always 0.42. Month 0 and earlier are always 0. Only month 0 is unmarked, for example 306 stock lines of the 2023 cohort. Sales 2016-2025.",
+   "queries": ["q204"]
+  },
+  {
+   "explanation": "Recording artefact: the special and transfer lines might in fact be billed at the marked-down price, with the ERP order price simply not updated. If so, the 'flag-only' $6.6M would be real money.",
+   "test": "Joined order lines to finance_invoice_lines on line_id and compared invoiced unit_price with the order unit_price, by fulfilment type and marked/unmarked, for 2022 and 2025.",
+   "result": "Survives, and is firmer. The invoice price matches the order price on every line: 0 differences, including 6,354 marked special lines in 2025. Special and transfer lines are billed without the markdown. Price over line cost is 1.2002 on marked special lines against 1.2019 unmarked in 2025, against 0.7996 on marked stock lines.",
+   "queries": ["q212", "q205"]
+  },
+  {
+   "explanation": "Cost: the below-cost result could be an artefact of applying today's product cost to past years. The finding said cost history is unknown.",
+   "test": "Compared the sales line unit_cost, PO line unit_cost and vendor bill line unit_cost with erp_products.unit_cost, by cohort and year.",
+   "result": "The caveat mostly falls away. Sales-line cost equals product cost on every line (ratio 1.0). PO cost equals product cost in 2016, 2019, 2022 and 2025. Vendor bills average 1.0013-1.0019 of product cost, with a maximum of 1.08. Hartwell's buy cost really has been flat, so the below-cost sales are real. Vendor credits on these SKUs are small and don't offset the losses: $7,805 for the 2015 cohort and $33,198 for the 2023 cohort in 2025.",
+   "queries": ["q205", "q210", "q228", "q226"]
+  },
+  {
+   "explanation": "Period/trend: rejecting H1 rests on 2025, the first year of the R-410A cohort's ramp. Most of its 2025 volume sold in months 5-7 (the cooling season) at only 8.4-12.6% off. The cohort reaches 42% from month 20, around September 2026, so the R-410A clearance cost is still ahead.",
+   "test": "Re-priced 2025 stock lines of the 2025-01-01 (R-410A) cohort at the 42% cap. Recomputed the R-410A share of real markdown on that basis.",
+   "result": "Weakens the finding. Actual 2025 stock-line markdown on this cohort was $644,487 on 3,243 units, at an average markdown of 0.1129. The same volume at 42% would be $2,397,009, with a margin of -$1,446,608. On that basis the R-410A share of 2025 real markdown would be 0.5263, against the reported 0.372 (and 0.3005 in 2022). The cohort also shows the signs of a real clearance: stock buying fell from 10,326 units in 2024 to 582 in 2025 (finding's q160, receipts 585 in q215), 995 units went back to vendors, and on-hand stock fell from 7,099 to 3,442 units. The 3,442 units still on hand will sell at the deepest markdown.",
+   "queries": ["q232", "q238", "q215", "q239"]
+  },
+  {
+   "explanation": "Mix/selection: 'restocked every year' could describe replenishment that just tracks demand, or the build-up of dead stock. The 2023 cohort may also have been really discontinued and then reintroduced, rather than restocked throughout.",
+   "test": "WMS receipts against sales and on-hand stock by cohort and year, plus units ordered by cohort and year.",
+   "result": "Partly changes the story. 2015 cohort: receipts track sales (2,755 against 2,645 in 2025), on-hand stock is flat at about 1,600-1,760 units, and units ordered have held at about 5,600-5,800 a year since 2018. That is steady demand for a SKU that has been 'discontinued' all decade. 2023 cohort: in 2023 it was handled like a real phase-out. Receipts fell to 2,013 units, 823 went back to vendors, on-hand stock dropped from 6,878 to 3,288 and units ordered fell from 16,108 to 5,757. Buying resumed in 2024-2025 (receipts 5,594 and 6,941) as orders recovered to 9,743 and 10,602, the same in R-410A, R-454B and non-refrigerant SKUs. Stock is not piling up: on-hand stock was 3,898 units at the end of 2025.",
+   "queries": ["q215", "q217", "q233", "q239"]
+  },
+  {
+   "explanation": "The money: $4,735,079 is the markdown on list price at today's volume. It isn't what stopping restocking or resetting discontinued_on would recover.",
+   "test": "2025 gross margin on stock lines of the 2015 and 2023 cohorts, actual and with the markdown added back at the same volume.",
+   "result": "The size changes. Actual 2025 stock-line margin on these two cohorts was -$2,789,637, the loss avoided if they stopped being stocked and sold. Without the markdown at the same volume it would have been +$1,945,442. Keeping the full $4,735,079 needs volume to hold at full price, which these records can't test. Weak evidence on both sides: the 2023 cohort sold more at full price before 2023 (12,409 stock units in 2022) than at 42% off in 2025 (6,126). Its 2024-2025 recovery came as the markdown deepened, which fits demand responding to price but doesn't establish it.",
+   "queries": ["q238", "q217", "q233"]
+  }
+ ],
+ "what_changed": "Checks that held: the markdown rule (0 off-rule lines), that only stock lines are really discounted (confirmed in invoices, 0 price differences), the 2022-2025 stock-line rise of $4,059,115, and the 2025 restocked-cohort markdown of $4,735,079 (all re-run in q238). Below cost: firmer than the original claimed. PO and vendor-bill costs match product cost, so the 'static cost' caveat largely falls away. The verdict on H1 needs changing. The R-410A 2025 cohort is a refrigerant-specific clearance in progress: buying cut, vendor returns, inventory halved, markdown ramping. Priced at 42% on the same 2025 volume, its markdown would be $2,397,009, not $644,487, and the R-410A share would be 0.5263, not 0.372. 'H1 doesn't hold' is premature: the R-410A cost is still to come. The 2023 cohort was not 'bought again every year'. It was phased out in 2023 (823 units back to vendors) and restocked from 2024. The headline $4.7M is gross markdown, not recoverable money. The loss avoided by not stocking these cohorts is $2,789,637 a year. Margin with no markdown at the same volume would be $1,945,442, which depends on demand holding. These replace the $4.7M as the range at stake.",
+ "revised_conclusion": "Equipment markdowns follow one mechanical rule: 2.1% a month after discontinued_on, capped at 42% from month 20. The markdown cuts the billed price only on stock lines. Real markdown on stock lines rose from $1,320,450 in 2022 to $5,379,566 in 2025, up $4,059,115. Most of the 2025 total ($4,735,079) is on the 2015 and 2023 cohorts. Hartwell keeps stocking them to meet steady demand and sells them below a cost that hasn't changed, at a 2025 stock-line margin of -$2,789,637. That pattern is mixed across refrigerants and isn't an R-410A clearance. But H1 isn't rejected. The 129-SKU R-410A cohort discontinued on 2025-01-01 is being cleared: buying cut, vendor returns, on-hand stock halved to 3,442 units. Its markdown is still ramping. At the 42% cap, 2025's volume would carry $2,397,009 of markdown, making R-410A 0.5263 of real markdown. Expect the R-410A clearance cost to grow through 2026. Action: for the 2015 and 2023 cohorts, decide with purchasing and pricing whether each SKU is truly discontinued. At stake: between avoiding a $2.79M yearly loss and recovering up to $4.74M if demand holds at full price. For the R-410A cohort, watch the remaining inventory and the ramp.",
+ "not_evidence_of": "Not evidence that anyone priced lines by hand or favoured particular customers: the rate is identical for every line in a given cohort and month. Not evidence that the $6.6M of 2025 markdown on special and transfer lines was given away: invoices show it was not. Not evidence that resetting discontinued_on would recover $4.7M: how demand responds to price can't be measured here. Not evidence about why these SKUs carry a discontinued_on date or why buying resumed for the 2023 cohort in 2024: that needs the product lifecycle records, vendor end-of-life notices and the pricing-rule configuration. The 2026 R-410A figure is a re-pricing of 2025 volume, not a forecast."
+}

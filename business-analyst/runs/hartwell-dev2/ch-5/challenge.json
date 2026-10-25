@@ -1,0 +1,63 @@
+{
+ "finding": "F5",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions and coverage: lapse in 2024 depends on a complete 2025, and a 'branch' could mean the customer's home branch or the branch that took the order. If those differed, branch rates would be mis-attributed.",
+   "test": "Count operating days per year. Check what share of each customer's orders were placed at their home branch.",
+   "result": "Every year from 2016 to 2025 has 252 operating days, and 2025 runs to 2025-12-29, so the 2024 lapse flag is complete (q344). 100% of orders in every branch carry the customer's home branch (q342). The definitions hold.",
+   "queries": ["q344", "q342"]
+  },
+  {
+   "explanation": "Confounding of branch with account load. Every branch has exactly 3 account managers ('outside' role), so a large branch means more accounts per rep: Pittsburgh has 924 customers on 3 reps, Fort Wayne 151 (q343). The 'branch effect' could be a workload effect.",
+   "test": "Correlate rep-level adjusted O/E with average active accounts per rep per year, across all 36 reps, within branches (demeaned) and across the 12 branches.",
+   "result": "Across the 12 branches, load and O/E correlate at r 0.85; across all 36 reps, r 0.556. Within branches the correlation is negative (r -0.295), so the reps carrying more accounts inside a branch do not lapse more (q351, rep detail q348). Load does not explain the pattern within branches. Across branches, size, accounts per rep and short-line rate all move together, and 12 branches cannot separate them.",
+   "queries": ["q343", "q348", "q351"]
+  },
+  {
+   "explanation": "Coarse size bands: within the 1-5 / 6-20 bands, Pittsburgh may have more of the most intermittent buyers.",
+   "test": "(a) Re-fit expectations with exact order count up to 20 plus finer bands above, with and without same-year months-active. (b) Because same-year months-active partly records the customer drifting away (it is close to the outcome), re-fit instead with the prior year's months-active, on customers active in both t-1 and t.",
+   "result": "Finer order bands alone change little: Pittsburgh O/E 1.126 (z 2.77), Toledo 0.736, chi-square 43.41 (q355). Adding same-year months-active cuts Pittsburgh to 1.045 (z 1.48), with chi-square 35.83 and Indianapolis now highest at 1.094 (q354). Months-active is very predictive (lapse 37.82% at 1-4 months vs 1.34% at 11-12 for 6-60-order customers), and low-months customers' last order comes earlier in the year (avg month 8.45 vs 11.99) (q356), so this control absorbs part of the outcome. With the clean prior-year control, Pittsburgh stays at 1.118 (z 2.42) and Toledo at 0.744 (z -3.03). Chi-square falls from 36.15 to 29.5 on this 2017-2024 subsample (q358). Pittsburgh's excess partly reflects a more intermittent ordering profile, but not entirely.",
+   "queries": ["q355", "q354", "q356", "q358"]
+  },
+  {
+   "explanation": "Non-independence: customer-years from the same customer are pooled, so the binomial z-scores could be overstated.",
+   "test": "(a) Cluster-robust variance: sum (obs-exp)^2 per customer within branch. (b) Keep one deterministic year per customer and re-fit cells on that subsample.",
+   "result": "(a) The variance ratio ranges from 0.926 to 1.208. The cluster-robust chi-square is 38.97 (WH z 3.83), Pittsburgh z 2.93 and Toledo z -3.32 (q374). The clustering caveat is minor. (b) With one year per customer (4,784 customers, cells re-fit), no branch differs: chi-square 7.93 on 11 df and Pittsburgh O/E 1.018 (q368). This test has about one-sixth of the data and sparse cells, so it is weak evidence against the effect, not a refutation. (A first attempt that reused full-sample cell rates was biased by design and is not used: q363.)",
+   "queries": ["q374", "q368", "q363"]
+  },
+  {
+   "explanation": "Period vs pattern: the branch ranking could come from a few years.",
+   "test": "Reviewed q266 (O/E by half).",
+   "result": "Pittsburgh is above 1 in both halves (1.18, then 1.068) and Toledo below in both (0.833, then 0.676). Indianapolis moves from 0.974 to 1.195. The Pittsburgh and Toledo positions are persistent, and Indianapolis is a recent shift (cited q266, not re-run).",
+   "queries": ["q266"]
+  },
+  {
+   "explanation": "Lapse vs temporary gap: perhaps Pittsburgh's extra lapses are customers who skip a year and return, which would mean less money lost.",
+   "test": "Return rate after lapse by branch, for 2016-2022 lapses (at least two later years observable).",
+   "result": "The reverse holds. Pittsburgh's lapsers are the least likely to return (20 of 360, 5.56%), and Toledo's the most likely (15 of 77, 19.48%) (q384). This alternative fails, and Pittsburgh's lapses look more permanent.",
+   "queries": ["q384"]
+  },
+  {
+   "explanation": "Stockouts as the mechanism, vs. a shared branch-size factor. The finding suggests branch short-line share drives lapse but warns that this is partly month mix.",
+   "test": "(a) Compare each branch's short-line share with the share implied by its month mix (company-wide year-month rates). (b) In a branch-year panel (108 branch-years), test whether years with more shortage in a branch are years with more lapse in that branch.",
+   "result": "(a) Month mix does not explain branch shortage. All branches have 49-52% of lines in peak months, yet Pittsburgh runs 1.308x its month-mix expectation and Fort Wayne 0.515x (q383). The finding's month-mix caveat applies to customers, not to branches. (b) Across branches within a year, shortage and lapse correlate (r 0.471). Within a branch over time they do not (r -0.059, slope -0.134) (q389). Shortage and lapse share a cross-sectional ordering by branch size but do not move together over time, so the data give no support to stockouts driving lapse.",
+   "queries": ["q383", "q389"]
+  },
+  {
+   "explanation": "Rep conclusion overstated: the finding says reps are 'not distinguishable from chance' based on the largest single z.",
+   "test": "Read the omnibus statistic in q301 rather than the maximum |z|.",
+   "result": "The within-branch rep chi-square is 41.75 on 24 df, with WH z 2.2. That exceeds the one-sided 5% threshold of 1.645, so taken together the reps do differ more than chance, even though no single rep stands out after 36 tests (q301). The cluster correction (variance ratios up to 1.208, q374) would shrink this somewhat. rep_id is the current assignment, so it cannot be tied to the rep in charge when the lapse happened.",
+   "queries": ["q301", "q374"]
+  },
+  {
+   "explanation": "The money: the $245,657.67 a year is the sum of positive branch deviations only, which is positive even when nothing is going on, and it is prior-year revenue, not recoverable revenue.",
+   "test": "Per-branch net revenue and margin excess with binomial z, and the expected sum of positive deviations under no branch effect (sum of 0.399*SD).",
+   "result": "No branch's revenue excess is significant: Pittsburgh +$148,162.26 a year (z 1.04), Cincinnati +$74,051.98 (z 0.59). The observed sum of positive revenue deviations, $245,657.67 a year, is below the $477,304.92 a year that chance alone would produce. On gross margin, the observed $147,884.25 is close to the chance level of $127,755.73 (q378). The dollar size cannot be told apart from noise. Even if it were real, prior-year revenue overstates what retention would recover.",
+   "queries": ["q378"]
+  }
+ ],
+ "what_changed": "1) Retracted: the $245,657.67 a year 'avoidable excess'. It is a one-sided sum below what chance produces ($477,304.92), and no branch's revenue excess is significant (q378). 2) Corrected: the account-manager claim. The omnibus test (WH z 2.2, q301) suggests some within-branch rep variation. The defensible statement is that rep differences are smaller than branch differences and cannot be attributed with today's assignments, not that reps are indistinguishable from chance. 3) Weakened: the stockout interpretation. Branch shortage is a real branch trait, not month mix (q383), but it does not co-move with lapse within a branch over time (q389), and it is confounded with branch size and accounts per rep (every branch has 3 reps, q343). 4) Qualified: the Pittsburgh magnitude depends on how ordering frequency is controlled. 1.145 becomes 1.118 with prior-year months-active (q358) and 1.045 with same-year months-active (q354), and the latter partly controls away the outcome. 5) Strengthened: the branch heterogeneity survives cluster-robust variance (chi-square 38.97, q374), and Pittsburgh's lapses are the least likely to return (5.56% vs Toledo 19.48%, q384).",
+ "revised_conclusion": "About 10% of active customers each year 2016-2024 place no order the next year, mostly small accounts (q258), and most never return (q263). After adjusting for size, trade, year and tenure, lapse differs modestly by branch, beyond chance even with customer-clustered variance (chi-square 38.97 on 11 df, q374). Toledo and Akron are persistently low. Pittsburgh is persistently high (O/E 1.118 with a prior-year frequency control, q358), and its lapsed customers rarely come back (5.56%, q384). Branch lapse rises with branch size, and so do accounts per rep (all branches have 3 reps) and month-adjusted short-line rates (q343, q351, q383). With 12 branches these cannot be separated. Within branches, neither rep load (r -0.295, q351) nor year-to-year shortage (r -0.059, q389) tracks lapse. That argues against both workload and stockouts as the main driver, but does not rule them out. Account managers may differ somewhat within branches (WH z 2.2, q301), but with only current assignments no individual difference can be attributed. The dollar value of the branch excess cannot be distinguished from chance (q378), so no avoidable-revenue figure is supported. The practical step stays: compare Pittsburgh's lapsed 6-60-order accounts with retained peers (shortage history, service contacts, quote outcomes). It should be treated as exploratory, not as a sized opportunity.",
+ "not_evidence_of": "That roughly $0.25M a year (or any stated amount) is recoverable: the excess is within chance (q378), and prior-year revenue is not recoverable revenue. That stockouts cause lapse: the link is cross-sectional only and confounded with branch size (q389, q383). That rep workload causes lapse: it does not hold within branches (q351). That any account manager is driving customers away: rep_id is today's assignment, no single rep stands out after multiple testing, and any within-branch rep variation is a prompt for a conversation with sales management, not a conclusion about a person. Why customers lapse: there are no closure or competitor records, and no account-assignment history."
+}

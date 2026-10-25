@@ -1,0 +1,51 @@
+{
+ "finding": "F9",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions/snapshot: discount_pct is a current snapshot. If surviving customers had their discounts raised after 2016 (or history was restated), survivors would look high-discount and 'flat same-customer prices' would be circular.",
+   "test": "(a) Compare ERP line prices with the separately recorded accounting invoice lines for 2016 and 2025. (b) Check whether 2016 prices already match the current discount: the residual price/(list*(1-discount)) by year, and separately for continuing and lapsed customers. If surviving customers' discounts had been raised, their 2016 residual would sit above the 2025 residual and above the lapsed customers' residual.",
+   "result": "Invoice lines match ERP prices exactly: 246,052 matched lines in 2016 and 252,359 in 2025, 0 price differences, ratio 1.0 (q446). The list-weighted residual is flat every year from 2016 to 2025, between 0.98342 and 0.98387 (q456). In 2016 it is the same for continuing customers (ptl 0.8308 / keep 0.8448) and for customers who later lapsed (0.8543 / 0.8683) (q436). Recorded prices are consistent with today's discount having applied throughout, for survivors and lapsers alike. This survives. It cannot exclude the case where both systems' history was rewritten, and only a discount change log could do that.",
+   "queries": ["q446", "q456", "q436"]
+  },
+  {
+   "explanation": "Confounding by size: discounts are often volume-based, and small accounts churn more. Low-discount accounts could lapse because they are small, not because of their discount.",
+   "test": "Retention 2016→2025 by discount tier within quartiles of each customer's 2016 list value.",
+   "result": "The gradient holds in every size quartile. Under 10% discount retains 0.2763 / 0.291 / 0.3038 / 0.2983 from the smallest to the largest quartile. The 20%+ tier retains 0.4916 / 0.4056 / 0.5109 / 0.5132. Average 2016 list value is similar across tiers within each quartile. Each cell has 173-260 customers, 3,364 in total (q440). Size does not explain it.",
+   "queries": ["q440"]
+  },
+  {
+   "explanation": "Confounding by trade or branch (Simpson's paradox): low-discount accounts could sit in a trade or branch that shrank.",
+   "test": "Retention of customers under 10% vs 10%+ discount within each trade and within each branch.",
+   "result": "Within each trade, under-10% vs 10%+ retention is: commercial 0.2609 (n=184) vs 0.4473 (n=474), mixed 0.3296 (179) vs 0.4606 (432), residential 0.2904 (637) vs 0.4431 (1,458) (q441). Low-discount retention is lower in all 12 branches. Examples: Toledo 0.3429 vs 0.6139, Pittsburgh 0.2517 vs 0.3976 (q443). This survives.",
+   "queries": ["q441", "q443"]
+  },
+  {
+   "explanation": "A period, not a trend: a single event (one year, an ERP migration) could produce the shift.",
+   "test": "Year-by-year list-weighted keep (1 - discount) and residual for non-markdown lines. Last order year of 2016-active customers by tier.",
+   "result": "Keep falls in every year, 0.8583 (2016) to 0.8479 (2025), with no step (q456). Lapses are spread across years. For the under-10% tier, last orders fall in 2016: 147, 2017: 123, 2018: 101 ... 2024: 43, and 292 are still active in 2025 (q445). It is a steady attrition, not an event.",
+   "queries": ["q456", "q445"]
+  },
+  {
+   "explanation": "Mix, but of a different kind: 'new accounts are not priced more generously' rests on per-head cohort averages. The 2025 active pool could still be more discounted per dollar, which would put part of the shift on the entry side rather than on lapses alone.",
+   "test": "Split 2016 and 2025 non-markdown list value into continuing customers (active both years), customers who exited after 2016, and customers who entered by 2025. Decompose the keep change and its dollars. Check discount-weighted vs unweighted averages, and retention by tier among customers onboarded in 2016-2020.",
+   "result": "Continuers' list-weighted keep barely moved, 0.8448→0.8433 (1,346 customers). The 2,016 exiters had keep 0.8683, and the 2,049 customers active in 2025 but not 2016 have 0.8526 (q436). Of the $1,428,556.44 mix effect, $102,408.39 is continuers, $245,867.49 is the continuers' growing weight (0.4269→0.5025 of list), and $1,080,280.56 is entrants being more discounted than the exiters they replaced (q449). That gap is not generous onboarding. Discount is barely related to volume (corr 0.0158 for post-2016 customers) (q450). The same lapse gradient appears inside the new cohorts: of customers onboarded 2016-2020 who ever ordered, 0.5022 of the under-10% tier are active in 2025 vs 0.6483 of the 20%+ tier (q451). Entrants arrive at normal discounts, and the low-discount ones then lapse faster too. The mechanism survives, but it is churn across all cohorts, not just loss of pre-2016 accounts.",
+   "queries": ["q436", "q449", "q450", "q451"]
+  },
+  {
+   "explanation": "Causal direction: low-discount accounts may leave because they pay more (price-driven churn), which the finding says the records cannot address.",
+   "test": "Quote outcomes and loss reasons in CRM by discount tier, 2016-01-01 to 2025-12-29.",
+   "result": "Under-10% customers lose slightly more quotes: loss rate 0.2869 vs 0.275-0.2777 for the other tiers. When a reason was entered, they cite price more often: 0.5488 of 32,443 lost quotes, vs 0.5076-0.5191 for the other tiers (q452, q454). The only reasons recorded are price and job cancelled, plus blanks (q453). Interpretation: this is a modest pattern consistent with some price sensitivity. It is not proof that price drove the lapses, since reasons are rep-entered and quote-level, not churn-level.",
+   "queries": ["q452", "q453", "q454"]
+  },
+  {
+   "explanation": "The money: $1.43M is presented as what the mix shift 'cost' in 2025, implying it is recoverable through retention.",
+   "test": "Reproduce the sizing and check what it measures.",
+   "result": "Reproduced: non-markdown 2025 list value is $140,533,485.01 and keep is 0.8583→0.8479. The decomposition sums to $1,428,556.44 (q449, q456). It is a counterfactual: what the 2025 volume would have brought at the 2016 discount mix. It holds 2025 volume fixed. Retaining low-discount accounts would not raise prices on that volume. It would add volume, and its value depends on the margin of that volume, which the records cannot give (cost is static). Non-markdown list value also fell from $150,035,570.01 in 2016 to $140,533,485.01 in 2025 (q456), so the larger cost of the churn is likely lost volume, not rate. The $1.43M is a valid size for the price erosion. It is not a recoverable amount.",
+   "queries": ["q449", "q456"]
+  }
+ ],
+ "what_changed": "The core result holds against snapshot, size, trade, branch and timing tests: non-markdown price-to-list fell because the discount mix of active customers shifted, with same-customer rates flat. Three changes. (1) The mechanism is broader than 'pre-2016 low-discount accounts stopped buying'. Most of the mix dollars ($1,080,280.56 of $1,428,556.44, q449) come from customers active in 2025 but not 2016 being more discounted per dollar than the 2016 accounts that exited. That happens because low-discount accounts lapse faster in the new cohorts too (q451), not because new accounts are signed at higher discounts. (2) The $1.43M measures price erosion against the 2016 mix on fixed 2025 volume. It is not money that retention would recover. The value of retention is margin on retained volume and is not measurable here. (3) Quote data gives modest evidence that low-discount customers are more price-sensitive. In-session evidence that recorded prices match current discounts (finance = ERP, flat residual) weakens, but does not eliminate, the snapshot concern.",
+ "revised_conclusion": "Outside equipment markdowns, non-markdown price-to-list fell from 0.8442 (2016) to 0.8343 (2025) (q456) with a flat price residual (0.98342-0.98387 each year). Continuing customers' list-weighted discount barely changed (keep 0.8448→0.8433, q436), and invoice prices match ERP prices (q446). The decline is a steady, multi-year shift in the active customer mix toward higher-discount accounts. Accounts under 10% discount stop ordering faster than others. The gap holds within every size quartile, trade and branch, and among customers onboarded 2016-2020 as well as pre-2016 ones (q440, q441, q443, q451). On 2025 non-markdown volume ($140,533,485.01 list), the shift equals $1,428,556.44 a year of price erosion against the 2016 mix (q449). That is a measure of erosion, not a recoverable sum. Interpretation: the issue is retention of standard-price accounts, and a review of discount grants is not indicated. The value of retaining them depends on margin data the records lack. Low-discount customers lose slightly more quotes and cite price slightly more (q452, q454), which is a reason to ask lapsed accounts whether price was a factor.",
+ "not_evidence_of": "Not evidence that reps or managers granted larger discounts, or that new accounts were signed at worse terms: continuers' rates are flat and onboarding discounts are flat. Not evidence that price caused low-discount accounts to leave: the quote loss-reason gap is small and rep-entered, and there are no churn dates or reasons. Not evidence that $1.43M can be won back. Not a margin measure, since cost is a static snapshot. Not proof that discount_pct never changed: matching ERP and finance prices fit an unchanged discount, but only a discount change log could rule out restated history. Quote and account-level patterns are by customer and tier only, and nothing here points at any individual."
+}

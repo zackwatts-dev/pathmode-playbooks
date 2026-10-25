@@ -1,0 +1,79 @@
+{
+ "id": "F3",
+ "hypothesis": "H7",
+ "title": "Late payment costs about $1.41M in excess receivables and splits into three parts: invoices billed above the customer's PO price (22.67% of overdue dollar-days on 7.32% of invoices), customers 6 and 7, and a broad background tail on correctly priced invoices",
+ "conclusion": "Observed, for 69,850 invoices dated 2016-01-05 to 2024-12-31, each with exactly one payment and none unpaid (q165): measured against due_on, excess receivables average $1,413,693. At an assumed 8% cost of capital that is $113,095/yr (q199). The 2024 run-rate is similar at $1,398,641, or $111,891/yr (q199). The working-day due date doesn't create the lateness, because due_on falls 0.23 days after the calendar terms (q110). Invoices are never dated before shipment (q170). The excess splits into three parts that sum to the total (q202). (a) $320,443 sits on invoices billed more than 0.5% above shipped qty x PO unit price. These are 5,113 of 69,850 invoices (7.32%) but carry 22.67% of overdue dollar-days (q199, q211). Outside customers 6 and 7, 65.28% of them are paid more than 30 days late, against 16.74% of matching invoices (q181). The gap holds within the same customer: across 99 customers with at least 5 of each kind, above-PO invoices are more than 30 days late 65.5% of the time against 16.32% for the same customers' matching invoices. Above-PO invoices are worse for 97.98% of those customers, and the median within-customer gap is 37 days (q221). They are usually paid in full eventually: 80.42% exactly, at a median uplift of 1.0288 (q186). (b) $421,661 sits on matching invoices of customers 6 and 7. Of that, $247,935 is above the rest's 11.99-day pace, worth $19,835/yr at 8% (q199). (c) $671,588 sits on everyone else's matching invoices (q199). Their payment timing has two humps: 62.24% are paid within 5 days of due, and there is a second hump at 31-90 days (q175, q211). That hump is spread evenly. The 145 customers with a 10-25% rate of invoices over 30 days late hold 92.22% of matching billing (q189). Partial shipments, returns, late shipments and short payments barely move it (q187, q196). Interpretation: (a) looks like invoices held until a price discrepancy is resolved, so the lever is price agreement between invoice and PO, not collections. (b) is a persistent customer pattern whose cause is unknown. (c) is the only part a general collections process plausibly addresses.",
+ "dollars_a_year": 113095.0,
+ "size_query": "q199",
+ "claims": [
+  {
+   "text": "69,850 invoices dated 2016-01-05 to 2024-12-31 all have exactly one payment (76,053 payments on 76,053 invoices overall), and none is unpaid. The 1,024 unpaid invoices are all dated in 2025.",
+   "queries": ["q165"]
+  },
+  {
+   "text": "Amount-weighted days past due are 18.11 against due_on and 18.50 against calendar terms. 68.3% of invoices are paid late. due_on averages 0.23 days later than the calendar terms date. No invoice is dated before its shipment, and the invoice lag averages 1.15-1.19 days for every group.",
+   "queries": ["q110", "q170"]
+  },
+  {
+   "text": "Excess AR is $1,413,693, or $113,095/yr at an assumed 8%. The 2024 run-rate is $1,398,641, or $111,891/yr, with customers 6 and 7 holding 34.1% of 2024 overdue dollar-days.",
+   "queries": ["q139", "q199"]
+  },
+  {
+   "text": "Decomposition: $320,443 (22.67%) on above-PO invoices, $421,661 (29.83%) on matching invoices of customers 6 and 7, and $671,588 (47.51%) on matching invoices of everyone else. The parts sum to $1,413,692, which is the total up to rounding.",
+   "queries": ["q199", "q202"]
+  },
+  {
+   "text": "Above-PO invoices are 5,113 of 69,850 (7.32%). Outside customers 6 and 7, the 4,110 above-PO invoices have a median of 40 days late and a 65.28% rate of more than 30 days late. The 50,622 matching invoices have a median of 2 days and a rate of 16.74%. For customers 6 and 7, weighted lateness is 54.67 days on above-PO invoices and 29.09 on matching ones.",
+   "queries": ["q181", "q211"]
+  },
+  {
+   "text": "The above-PO effect holds within customers. For 99 customers outside 6 and 7 with at least 5 above-PO and 5 matching invoices, the rate of invoices more than 30 days late is 0.655 on above-PO invoices against 0.1632 on the same customers' matching invoices (weighted to the above-PO mix). 97.98% of those customers are worse on above-PO invoices, with a median within-customer gap of 37 days.",
+   "queries": ["q221"]
+  },
+  {
+   "text": "Above-PO invoices have a median uplift of 1.0288 (p90 1.1165). 80.42% are paid exactly as billed, and none is paid at PO value plus freight.",
+   "queries": ["q186"]
+  },
+  {
+   "text": "Customers 6 and 7 (both on recorded 30-day terms) paid 26.33-41.68 days late in every year from 2016 to 2024. On matching invoices alone they ran 26.67-32.54 weighted days late every year, against 9.45-14.81 for the rest. Their days to pay have a median of 54-55 and a p10 of 37, with only 3.38-3.57% paid on time. Lateness is spread evenly across 6-40 days, with no weekday payment pattern.",
+   "queries": ["q119", "q182", "q174", "q175", "q172"]
+  },
+  {
+   "text": "Customer lateness persists: the year-to-year correlation is 0.80-0.95, or 0.71-0.94 excluding customers 6 and 7, among customers with at least 30 invoices in both years.",
+   "queries": ["q124"]
+  },
+  {
+   "text": "Outside customers 6 and 7, payment timing has two humps: 39.51% of invoices are paid on time and 22.73% 1-5 days late (62.24% within 5 days), and a second hump sits at 31-90 days (5.04%, 5.89%, 3.84% and 5.34% across successive buckets).",
+   "queries": ["q175", "q211"]
+  },
+  {
+   "text": "On matching invoices outside customers 6 and 7, the tail is broad. The 145 customers with a 10-25% rate of invoices over 30 days late hold 92.22% of billing and 86.09% of overdue dollar-days. Customer 36 is the clear exception among customers with 200+ invoices, at 77.78%. Partial shipments (19.36% vs 16.66%), return authorisations (16.18% vs 16.74%) and shipping after the promised date (18.07% vs 16.64%) barely move the rate, and neither do short or over-payments.",
+   "queries": ["q189", "q192", "q196", "q187"]
+  },
+  {
+   "text": "The 2022 peak combined two things. The above-PO share of non-6/7 invoices was 13.83% in 2021-H2, 27.93% in 2022-H1 and 3.69% in 2023-H1. Matching invoices also slowed: 9.29 to 17.78 weighted days late, with the share over 30 days rising from 12.87% to 25.16%, then back to 10.49 days by 2023-H1. The 2019 rise is mostly mix: above-PO invoices were 19.16% of invoices, and matching lateness was 12.48 days.",
+   "queries": ["q182", "q200"]
+  },
+  {
+   "text": "Lateness doesn't vary with invoice size (16.57-17.98 weighted days by quartile) or invoice month (15.51-19.18).",
+   "queries": ["q132"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "Not evidence that above-PO invoices were disputed: there are no dispute, hold or remittance-reason records, only timing and amounts. Not evidence that the uplifts were wrong charges; they may be agreed surcharges invoiced before the PO was amended. Not evidence that customers 6 and 7 act in bad faith or are in financial difficulty. Their lag is a wide spread (p10 37 to p90 96-97 days to pay), not a fixed cycle, so it doesn't by itself show a terms mismatch or a payment run. Not evidence that a reminder would shorten the background tail. The dollar figures are carrying costs at an assumed 8%, not cash lost, and only part of them is recoverable.",
+ "could_not_tell": "Why above-PO invoices are paid late: dispute or hold records, customer AP correspondence, or PO amendment history would be needed. Why invoices are priced above the PO: invoice line detail and price-change approvals would be needed. Whether customers 6 and 7 have agreed terms other than the recorded 30 days. What drives the background 31-90-day hump on correctly priced invoices: there is no dunning or collections history. Reasons for short payments.",
+ "next_step": "1. Price agreement: before invoicing, check invoice price against PO price, and get a PO amendment or customer approval for any uplift. Then measure lateness on the formerly above-PO population. Its baseline is 65.28% over 30 days late (outside customers 6 and 7, q181). 2. Ask customers 6 and 7 about their agreed terms and when invoices reach their AP. Then either record and price the real terms or enforce net 30. 3. Test a reminder at due date + 15 days on matching invoices and measure the share over 30 days late. Its baseline is 16.74% outside customers 6 and 7 (q181).",
+ "dead_ends": [
+  "Join fan-out or survivorship: one payment per invoice, and no unpaid invoices before 2025 (q165).",
+  "Invoices dated before shipment, or freight disagreements: none (q170).",
+  "The due_on working-day conversion as a source of lateness: due_on is 0.23 days later than calendar terms (q110).",
+  "Above-PO lateness being only a customer-mix effect: it holds within customers (q221).",
+  "Short payments concentrated in late payers: no (q129, q136, q187).",
+  "Partial shipments, returns or late shipments driving the background tail: barely move it (q196).",
+  "Invoice size or season: flat (q132).",
+  "A weekly payment run for customers 6 and 7: payments are spread evenly across weekdays (q172)."
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted all three changes. (1) The 'long tail' isn't one thing. 22.67% of overdue dollar-days ($320,443 of excess AR) sit on the 7.32% of invoices billed above PO price, and those are a pricing/invoicing matter rather than collections (q181, q199, q202, q211). I added one test of my own (q221): above-PO invoices could have been concentrated in customers who pay late anyway. Within 99 customers that have both kinds of invoice, they are still more than 30 days late 65.5% of the time against 16.32% for matching invoices, and worse for 97.98% of those customers. The effect is not customer mix. (2) The 2022 peak is partly a burst of above-PO invoices (27.93% in 2022-H1) and partly a real, temporary slowdown on matching invoices, from 9.29 to 17.78 days and back to 10.49 (q200). I had called it purely period-wide behaviour; that is withdrawn. (3) The excess for customers 6 and 7 over the rest is now measured on matching invoices: $247,935, or $19,835/yr at 8% (q199), replacing $270,734. I also withdraw the word 'consistent' for their lag: it is a wide spread (q174, q175). The headline size is unchanged at $113,095/yr, now cited to q199, which reproduces q139. The checks that confirmed the original (q165, q170, q172, q187, q189, q192, q196) are carried into the claims and dead ends.",
+ "accepted": true
+}

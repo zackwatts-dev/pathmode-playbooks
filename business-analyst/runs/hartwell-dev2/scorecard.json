@@ -1,0 +1,15 @@
+{
+ "problems": 7,
+ "found": 0,
+ "partly": 1,
+ "missed": 6,
+ "found_share": 0.07142857142857142,
+ "dollars_share": 0.0,
+ "wrong": 0,
+ "wrong_top": null,
+ "true_not_planted": 1,
+ "sizing": {},
+ "by_problem": {
+  "P6": "F1"
+ }
+}

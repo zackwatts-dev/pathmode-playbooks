@@ -1,0 +1,51 @@
+{
+ "finding": "F10",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions: the 'days late' might not mean what readers assume. If due_day were set in calendar days but payments counted in operating days (or the other way round), lateness would be an artifact of the system.",
+   "test": "Compare due_day - day with terms_days. Then recompute dollar-weighted lateness and the 8% cost in calendar days using dim_date (calendar span 2016-01-01 to 2025-12-29, 3,651 days).",
+   "result": "The due-date rule is consistent: 30-day terms always give 21 operating days, 45-day terms 31 and 0-day terms 0 (q458). The finding's day counts are operating days, though. In calendar days the groups are 3.52 / 12.53 / 45.04 days late, not 2.43 / 8.67 / 31.13 (q459). The dollar size holds in calendar terms: $231,780 a year for all lateness and $132,033 of excess ($60,873 slow, $71,161 very slow), against the finding's $232,193 / $132,256 / $71,241 (q464). The text should say 'operating days' or quote calendar days.",
+   "queries": ["q458", "q459", "q464"]
+  },
+  {
+   "explanation": "Selection / survivorship: only paid invoices were analysed. If the slowest invoices are the unpaid ones, the groups and their cost could be understated, or the 'every invoice eventually paid' framing could be wrong.",
+   "test": "Count invoices with no payment, where they sit in time, and how far past due they were at the end of the data, by group.",
+   "result": "21,848 invoices ($17,294,845) have no payment. All were invoiced on day 2435 or later, so this is right-censoring at the end of the data, not non-payment. No invoice has more than one payment, and no payment amount differs from its invoice (q457). By group: 2,251 very slow invoices are unpaid, and 268 of them were already more than 20 operating days past due at the end. Normal and slow unpaid invoices are mostly not yet due (q463). The censoring slightly understates very slow lateness in 2025, where the very slow lateness rate dips to 29.95 (q468). It is small next to 73,075 paid very slow invoices and does not change the conclusion. 41 customers with only unpaid invoices are excluded (106 invoices, q463).",
+   "queries": ["q457", "q463", "q468"]
+  },
+  {
+   "explanation": "Seasonality: HVAC contractors may pay late in the off-season, and the 'slow' groups could be customers who buy mostly in slow months.",
+   "test": "Each group's dollar-weighted lateness and the very slow billing share, by invoice month.",
+   "result": "No seasonality. Normal stays at 2.39-2.48 in every month, slow at 8.51-8.85 and very slow at 30.53-31.69. The very slow billing share is 0.0571-0.0631 by month (q465, 2016-2025, all 1,226,045 credit-terms paid invoices).",
+   "queries": ["q465"]
+  },
+  {
+   "explanation": "Mix / trend: the concentration could come from a period, or from the customer population changing rather than from fixed behaviour.",
+   "test": "By year: active very slow customers, their billing share, their share of late dollar-days and their lateness. Separately, lateness by invoice sequence number (first 5, 6-20, 21+) for customers with 40+ invoices.",
+   "result": "175-192 very slow customers are active every year. Their share of late dollar-days runs 0.3032-0.3686, and their lateness 29.95-31.65 (q468). Lateness is already at its long-run level on a customer's first 5 invoices: very slow 31.58 vs 31.11 on invoices 21+, slow 8.73 vs 8.65, normal 2.42 vs 2.44 (q469). This is not drift, and not a learned habit either. The level is fixed from the first invoice.",
+   "queries": ["q468", "q469"]
+  },
+  {
+   "explanation": "Confounding: something not tested (trade, payment method, disputes) could drive both group membership and lateness.",
+   "test": "Group shares and lateness by trade and by payment method. Service-contact rates, billing-related contacts and credit memos per $1M billed, by group.",
+   "result": "Trade: the very slow share is 0.057-0.069 across commercial, mixed and residential (q466). Payment method: within each group, ACH and check lateness are almost identical (very slow 31.11 vs 31.14, q467). Disputes: billing-related contacts are 38.321 / 38.535 / 38.561 per $1M, and credit memos are 0.00231 / 0.00219 / 0.00222 of billings (q471). Nothing in the records separates the groups. The cause of the lateness remains unobserved.",
+   "queries": ["q466", "q467", "q471"]
+  },
+  {
+   "explanation": "Aggregation / denominators: the 70.58% top-10% concentration includes 601 zero-terms customers who can never be late. The persistence test covers only customers with 30+ invoices in each half, and only checked the normal/slow split.",
+   "test": "Redo the concentration on the 5,424 credit-terms customers. Rerun persistence with all three groups. Check how much of each group comes from customers with fewer than 30 invoices.",
+   "result": "On credit customers only, the top 10% hold 68.45% of late dollar-days vs 57.76% of billings, and the top 20% hold 82.09% vs 74.41% (q473). The concentration claim survives with slightly smaller numbers. With three groups, all 106 very slow customers that qualify for the halves test stay very slow, and none enter or leave the group. Only 10 of 1,660 customers change group overall (q472). 100 of the 326 very slow customers have fewer than 30 invoices. Their grouping is less certain, but they carry only 1.76% of the group's late dollar-days (q474). The established very slow population is 226 accounts.",
+   "queries": ["q473", "q472", "q474"]
+  },
+  {
+   "explanation": "The money: $132k is a carrying cost at an assumed rate, not cash that collections could recover. Pressing these accounts could cost more in lost margin than it saves.",
+   "test": "Compare the very slow group's excess carrying cost with the gross margin it generates (sales order lines: shipped qty x (price - cost), 2016-2025, divided by 10).",
+   "result": "The very slow customers generate about $2,081,029 a year of gross margin at 25.91%, a margin rate no lower than the normal group's 24.85% (q470). Their excess carrying cost of $71,161 a year (q464) is 3.42% of that margin (q473). The $132k is an upper bound: it assumes every slow and very slow customer moves all the way to normal lateness, at no cost and with no lost business. Nothing in the data shows that lateness responds to anything, including season, tenure or payment method. Recoverability is therefore unknown.",
+   "queries": ["q470", "q464", "q473"]
+  }
+ ],
+ "what_changed": "1) Day counts are operating days. In calendar days the groups are 3.52 / 12.53 / 45.04 days late (q459). The dollar size is confirmed independently in calendar terms: $132,033 a year of excess and $231,780 total (q464). 2) On the credit-customer base, the concentration is 68.45% vs 57.76% (q473), not 70.58% vs 57.52%. 3) The list of things that don't explain the lateness now also includes trade, payment method, season, tenure (first-invoice lateness), disputes and credit memos (q465-q471). 4) The established very slow population is 226 accounts with 30+ invoices. The other 100 carry 1.76% of the group's late dollar-days (q474). 5) The $132k is an upper bound on carrying cost, not recoverable cash. It is about 3.42% of the very slow group's gross margin (q470, q473). 6) The recommendation is withdrawn: sending accounts to collections is not supported. A controlled test replaces it. 7) The data-generation caveat is stronger: lateness is fixed from the first invoice, has no seasonality, and is identical across payment methods and dispute rates.",
+ "revised_conclusion": "Late payment, as recorded, comes from a fixed per-customer level and not from terms. Among 5,424 credit-terms customers (2016-2025, 1,226,045 paid invoices), 326 very slow payers average 31.13 operating days late (45.04 calendar days). They are 6.01% of customers and 6.05% of billings but hold 33.29% of late dollar-days (q437, q459). Each customer's level is the same on their first 5 invoices as later (q469) and the same in every calendar month (q465). It does not change between 2016-2020 and 2021-2025: none of the 106 qualifying very slow customers leaves the group (q472). Terms, trade, branch, account manager, payment method, credit limit, invoice size, service contacts and credit memos don't separate the groups (q427, q437, q439, q444, q466, q467, q471). At an assumed 8% cost of capital, bringing the slow and very slow groups down to normal lateness would avoid at most about $132,033 a year, or $71,161 for the very slow group (q464). That is an upper bound on carrying cost, and it equals about 3.42% of the gross margin the very slow group generates (q470, q473). Interpretation: the lateness may be a real customer trait or an artifact of how the records were produced. Either way, nothing in the data shows it responding to anything Hartwell does. Recommended next step: first check a sample of the 226 established very slow accounts against the real AR ledger and collection notes. If the pattern is real, run a controlled trial (reminders or earlier follow-up) on a random half of them, compare the change in days late with the other half over two quarters, and track any loss of their orders.",
+ "not_evidence_of": "That these customers are a credit risk: every invoice past the end-of-data censoring was paid in full, with no partial payments (q457). That late payment hurts profit materially: the excess carrying cost is small next to the margin these accounts produce (q470). That collections, credit holds or shorter terms would reduce lateness, since no lever appears in the data. That terms, branch, trade, any account manager or any staff member's handling causes the lateness. That billing disputes are behind it, since dispute-type contacts and credit memos run at the same rate in every group (q471)."
+}
