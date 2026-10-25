@@ -33,7 +33,7 @@ DATA_LINE = (
     "data concern and carry on exactly as before."
 )
 TOOLS_ALLOWED = "mcp__analyst__query,mcp__analyst__docs,mcp__analyst__save"
-INVESTIGATIONS = 8
+INVESTIGATIONS = 10
 MODEL = "claude-opus-5-5"
 CHECKER_MODEL = "claude-sonnet-5-5"
 
@@ -47,6 +47,9 @@ NUMBER = re.compile(
     r"(?:\s?(?P<scale>thousand|million|billion|mn|bn|[kKmMbB])(?![a-zA-Z]))?"
     r"(?P<pct>\s?%| percent| points?\b| pp\b)?(?![\w])"
 )
+
+
+RANGE_PCT = re.compile(r"\s?(?:-|–|to)\s?\$?\d[\d,]*(?:\.\d+)?\s?%")
 
 
 @dataclass(frozen=True)
@@ -65,10 +68,18 @@ def numbers(text: str) -> list[Num]:
     text = DATE.sub(" ", text or "")
     out = []
     for m in NUMBER.finditer(text):
+        sc = m.group("scale")
+        if sc and len(sc) == 1 and not m.group("dollar") and "." not in m.group("num") and \
+                text[m.end("num"):m.end("num") + 1] == sc:
+            continue  # a label like R-454B or 2023H1, not 454 billion
+        if m.start() > 0 and text[m.start() - 1] == "-" and m.start() > 1 and text[m.start() - 2].isalpha():
+            continue  # the number in a label like R-22 or COVID-19
         digits = m.group("num").replace(",", "")
         dec = len(digits.split(".")[1]) if "." in digits else 0
         scale = SCALE[m.group("scale").lower()] if m.group("scale") else 1.0
         unit = "%" if m.group("pct") else "$" if m.group("dollar") else None
+        if unit is None and RANGE_PCT.match(text, m.end()):
+            unit = "%"  # the first end of a range like 3.06-5.17%
         tz = 0 if dec or scale != 1 else len(digits) - len(digits.rstrip("0"))
         if digits.strip("0") == "":
             tz = 0
@@ -138,10 +149,22 @@ def _sessions(session) -> set[str] | None:
     return {session} if isinstance(session, str) else set(session)
 
 
+SQL_NUMBER = re.compile(r"(?<![\w.])\d+(?:\.\d+)?(?![\w.])")
+
+
+def sql_literals(entry: dict) -> list[float]:
+    sql = re.sub(r"'[^']*'", " ", entry.get("sql") or "")
+    return [float(x) for x in SQL_NUMBER.findall(sql)]
+
+
 def check_numbers(f: dict, ledger: list[dict], session=None) -> list[str]:
-    """Every number in the title, the conclusion and each claim must appear in a cited query's result."""
+    """Every number in the title, the conclusion and each claim must appear in the result of a query: one the
+    claim cites, or failing that one the investigation's sessions ran (the design's rule). A plain number (a
+    window, a threshold, a day) may also be one the analyst wrote into that SQL."""
     q = by_id(ledger)
     allowed = _sessions(session)
+    own = [e for e in ledger if e.get("kind") == "query" and not e.get("error")
+           and (allowed is None or e["session"] in allowed)]
 
     def values(ids: list[str]) -> list[float]:
         out = []
@@ -151,6 +174,8 @@ def check_numbers(f: dict, ledger: list[dict], session=None) -> list[str]:
                 out += result_values(e)
         return out
 
+    session_values = [v for e in own for v in result_values(e)]
+    literals = [v for e in own for v in sql_literals(e)]
     problems = []
     every = values(cited(f))
     texts = [("title", f.get("title", ""), every), ("conclusion", f.get("conclusion", ""), every)]
@@ -158,8 +183,11 @@ def check_numbers(f: dict, ledger: list[dict], session=None) -> list[str]:
               for k, c in enumerate(f.get("claims") or [])]
     for where, text, vals in texts:
         for n in numbers(text):
-            if not exempt(n) and not traces(n, vals):
-                problems.append(f"{n.raw} ({where}) isn't in any query it cites")
+            if exempt(n) or traces(n, vals) or traces(n, session_values):
+                continue
+            if n.unit is None and n.scale == 1 and traces(n, literals):
+                continue
+            problems.append(f"{n.raw} ({where}) isn't in any query it cites")
     return problems
 
 
@@ -172,6 +200,8 @@ def _rows_equal(a: list[list], b: list[list]) -> bool:
     for x, y in zip(sorted(a, key=key), sorted(b, key=key), strict=True):
         for u, w in zip(x, y, strict=True):
             if isinstance(u, (int, float)) and isinstance(w, (int, float)) and not isinstance(u, bool):
+                if math.isnan(u) and math.isnan(w):
+                    continue
                 if not math.isclose(float(u), float(w), rel_tol=1e-9, abs_tol=1e-6):
                     return False
             elif u != w:
@@ -198,9 +228,26 @@ def check_replay(f: dict, ledger: list[dict], con) -> list[str]:
         except Exception as err:  # noqa: BLE001 - any failure on re-run is a failed check
             problems.append(f"{i} doesn't run again ({str(err)[:80]})")
             continue
-        if not _rows_equal(rows, e["rows"]):
+        if not _rows_equal(rows, e["rows"]) and not _same_evidence(f, e["rows"], rows):
             problems.append(f"{i} gives a different result when re-run")
     return problems
+
+
+def finding_numbers(f: dict) -> list[Num]:
+    texts = [f.get("title", ""), f.get("conclusion", "")] + [c.get("text", "") for c in f.get("claims") or []]
+    nums = [n for t in texts for n in numbers(t) if not exempt(n)]
+    if f.get("dollars_a_year") is not None:
+        nums.append(Num(str(f["dollars_a_year"]), float(abs(f["dollars_a_year"])), 0, "$", 1.0, 0))
+    return nums
+
+
+def _same_evidence(f: dict, before: list[list], after: list[list]) -> bool:
+    """A re-run that differs only where the finding doesn't look (ties, an unordered list) still supports it:
+    every number the finding took from this query must come back. A query it took nothing from must match."""
+    old = [v for r in before for v in result_values({"rows": [r]})]
+    new = [v for r in after for v in result_values({"rows": [r]})]
+    used = [n for n in finding_numbers(f) if traces(n, old)]
+    return bool(used) and len(before) == len(after) and all(traces(n, new) for n in used)
 
 
 def check_size(f: dict, ledger: list[dict]) -> list[str]:
@@ -474,7 +521,7 @@ def checked(biz: Business, run: Path, offline: bool = False) -> dict:
             out["incomplete"].append({"id": f"F{k}", "why": "no finding was saved"})
             continue
         f = {**f, "id": f"F{k}"}
-        sessions = {f"inv-{k}", f"ch-{k}", f"rev-{k}"}
+        sessions = {f"inv-{k}", f"ch-{k}", f"rev-{k}", "orient", "propose"}
         problems = (check_numbers(f, ledger, sessions) + check_replay(f, ledger, con) + check_size(f, ledger)
                     + check_prediction_first(f"inv-{k}", ledger))
         verdict = (c or {}).get("verdict")
@@ -578,7 +625,8 @@ def report(res: dict) -> str:
 GRADES = ("full", "partly", "true, not planted", "wrong", "unverifiable")
 
 
-def check_grade(g: dict, truth_ledger: list[dict]) -> list[str]:
+def check_grade(g: dict, truth_ledger: list[dict], quoted: list[float] | None = None) -> list[str]:
+    """A grade's numbers come from its own truth queries, or are quoted from the finding or the key (quoted)."""
     problems = []
     if g.get("grade") not in GRADES:
         problems.append(f"grade {g.get('grade')!r} isn't one of {', '.join(GRADES)}")
@@ -586,7 +634,7 @@ def check_grade(g: dict, truth_ledger: list[dict]) -> list[str]:
     q = by_id(truth_ledger)
     if not ids:
         problems.append("it cites no truth query")
-    vals = [v for i in ids if i in q and not q[i].get("error") for v in result_values(q[i])]
+    vals = [v for i in ids if i in q and not q[i].get("error") for v in result_values(q[i])] + list(quoted or [])
     problems += [f"{i} isn't in the grader's ledger" for i in ids if i not in q]
     problems += [f"{n.raw} isn't in a cited truth query" for n in numbers(g.get("why", ""))
                  if not exempt(n) and not traces(n, vals)]
@@ -640,8 +688,11 @@ def score(biz: Business, run: Path, key_path: Path, truth: Path, model: str = MO
                 gbiz, model, budget, prefix="t")
         g = load(run / s / "grade.json") or {"finding": f["id"], "grade": "unverifiable", "truth_queries": [],
                                               "why": "no grade saved"}
+        quoted = [n.value * n.scale for n in finding_numbers(f)]
+        quoted += [n.value * n.scale for p in key["problems"] for t in p.values() if isinstance(t, str)
+                   for n in numbers(t)] + [p["dollars_a_year"] for p in key["problems"] if p["dollars_a_year"]]
         g.update(rank=rank, dollars_a_year=f.get("dollars_a_year"),
-                 grade_problems=check_grade(g, T.Ledger(run / "ledger.jsonl").entries()))
+                 grade_problems=check_grade(g, T.Ledger(run / "ledger.jsonl").entries(), quoted))
         grades.append(g)
     (run / "grades.json").write_text(json.dumps(grades, indent=1))
     card = scorecard(key, grades)

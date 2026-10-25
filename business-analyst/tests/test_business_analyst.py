@@ -434,3 +434,57 @@ def test_the_scorecard_counts_found_partly_and_wrong() -> None:
     assert s["dollars_share"] == pytest.approx((6000 + 0.5 * 3000) / 10000)
     assert s["wrong"] == 1 and s["wrong_top"] == 3
     assert s["sizing"]["P3"] == pytest.approx(5500 / 6000)
+
+
+# --- added after the first development run (Hartwell): the design's rule is "a query the session ran" ------------
+
+
+def test_a_number_from_an_uncited_query_of_the_same_session_traces() -> None:
+    ledger = LEDGER + [q("q6", [[0.4]], 6)]
+    f = finding(claims=[{"text": "B: $3,400, up 40% on 2024.", "queries": ["q2", "q3"]}])
+    assert B.check_numbers(f, ledger, session="inv-1") == []
+
+
+def test_a_plain_number_the_analyst_wrote_into_its_sql_traces() -> None:
+    ledger = LEDGER + [q("q6", [[17]], 6, sql="select count(*) from t where days_late > 63")]
+    f = finding(claims=[{"text": "17 lines more than 63 days late.", "queries": ["q2", "q3", "q6"]}])
+    assert B.check_numbers(f, ledger, session="inv-1") == []
+    f = finding(claims=[{"text": "$63 a line.", "queries": ["q2", "q3", "q6"]}])
+    assert B.check_numbers(f, ledger, session="inv-1")
+
+
+def test_labels_are_not_numbers() -> None:
+    assert [n.raw for n in B.numbers("R-454B and R-410A stock, 2023H1, COVID-19")] == []
+    (n,) = B.numbers("$3.4B")
+    assert n.scale == 1e9
+
+
+def test_a_range_carries_its_percent_sign() -> None:
+    a, b = B.numbers("3.06-5.17%")
+    assert a.unit == "%" and b.unit == "%"
+
+
+def test_nan_replays_as_nan(warehouse: Path) -> None:
+    con = T.connect(warehouse)
+    e = q("q5", [[float("nan")]], 5, sql="select 'nan'::double")
+    f = finding(claims=[{"text": "x", "queries": ["q5"]}], size_query=None, dollars_a_year=None)
+    assert B.check_replay(f, LEDGER + [e], con) == []
+
+
+def test_a_rerun_that_differs_only_where_the_finding_does_not_look_still_supports_it(warehouse: Path) -> None:
+    con = T.connect(warehouse)
+    sql = "select string_agg(customer, ',') as who, sum(amount) as total from invoices"
+    e = q("q5", [["C,B,A", 5495.5]], 5, sql=sql)  # the list came back in another order; the total is the same
+    f = finding(claims=[{"text": "Billed $5,495.50 in all.", "queries": ["q5"]}], size_query=None, dollars_a_year=None)
+    assert B.check_replay(f, LEDGER + [e], con) == []
+    e = q("q5", [["C,B,A", 5400.0]], 5, sql=sql)
+    f = finding(claims=[{"text": "Billed $5,400 in all.", "queries": ["q5"]}], size_query=None, dollars_a_year=None)
+    assert B.check_replay(f, LEDGER + [e], con)
+
+
+def test_a_grade_may_quote_the_finding_and_the_key() -> None:
+    truth = [q("t1", [[3412.0]], 1, session="grade-F1")]
+    g = {"finding": "F1", "grade": "full", "problem": "P1", "truth_queries": ["t1"],
+         "why": "The analyst's $3,391 against the truth's $3,412."}
+    assert B.check_grade(g, truth)
+    assert B.check_grade(g, truth, quoted=[3391.0]) == []
