@@ -926,3 +926,4 @@ def test_the_recorded_run_meets_the_release_thresholds():
     assert s["false_per_store_week"] <= t["false_alarms_per_store_week_max"]
     assert s["answers_rejected_for_accusing"] + s["answers_naming_someone"] <= t["accusations_max"]
     assert s["real_problems_explained_away"] <= t["real_problems_explained_away_max"]
+

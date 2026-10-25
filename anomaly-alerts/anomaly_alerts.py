@@ -1258,7 +1258,7 @@ def run(folder: Path, model, start: date | None = None, end: date | None = None,
         for r in rows
         if instruction_like(r["text"]) and start <= d(r["business_date"]) <= end
     ]
-    seen = {x["entry_id"] for x in injected}
+    seen = {int(x["entry_id"]) for x in injected}
     for x in readings:  # and those a checker found addressed to an AI, that code's own look missed
         for eid in x.addressed:
             row = next((e for rows in data.log.values() for e in rows if int(e["entry_id"]) == eid), None)
