@@ -6,3 +6,4 @@ out/
 *.pyc
 .env
 *.egg-info/
+business-analyst/data/
