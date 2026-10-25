@@ -1,0 +1,4 @@
+supplier,term,document,quote,earned,paid_or_claimed,gap,cause,action
+Example Supply,volume tiers,example-program-2025.pdf,"The rate for the highest tier reached applies to all purchases, from the first dollar",120000,96000,24000,statement worked the tiers out by band,claim from the supplier
+Example Supply,co-op,example-program-2025.pdf,"Co-op accrues at 2% of purchases; claims by April 30",40000,22000,18000,claims filed for part of the marketing spend,claim from the supplier
+Example Supply,informal promise,rep-email.eml,"I'll get you an extra point on the whole year",31000,0,31000,a rep's promise the program doesn't back,to a person
