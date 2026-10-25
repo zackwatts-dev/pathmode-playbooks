@@ -86,7 +86,8 @@ def dashboard(r) -> str:
 <style>{STYLE}{MORE}</style></head><body><main>
 <h1>Supplier agreements, 2025 program year</h1>
 <p class="muted">Model: {_e(r.model_name)}. Every term below was found, word for word, in the supplier's own documents,
-and every amount is worked out from our records. Nothing has been sent.</p>{missed}{tiles}
+and read the same way by an AI checker from that document alone; every amount is worked out from our records.
+Nothing has been sent.</p>{missed}{tiles}
 <h2>Claims, largest first</h2>{
         _table(["Supplier", "Term", "Due", "How it's worked out", "Where it's written"], claim_rows, {2})
     }
