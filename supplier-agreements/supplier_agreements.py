@@ -317,7 +317,7 @@ def row_in(threshold: float, rate: float, text: str) -> bool:
 def line_in(quote: str, amount: float, text: str, reach: int = 300) -> bool:
     """True if a statement line is in the document: its amount is there, and every word of the line as quoted is
     near it, however the PDF wraps the table's columns."""
-    want = set(normalize(quote).split())
+    want = set(normalize(re.sub(r"\.\.\.|…", " ", quote)).split())  # "label ... amount": the words, not the dots
     for start, end, v, _d in values_at(text):
         if same(v, amount) and want <= set(normalize(text[max(0, start - reach) : end + reach]).split()):
             return True

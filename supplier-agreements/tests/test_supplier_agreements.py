@@ -772,6 +772,7 @@ def test_a_statement_line_whose_columns_wrap_is_found_near_its_amount():
     )
     q = "Tiered rebate on equipment - basis $44,154,980, rate 1.75% Exhibit B tiers $772,712.16"
     assert sa.line_in(q, 772712.16, text)
+    assert sa.line_in("Tiered rebate on equipment ... $772,712.16", 772712.16, text)
     assert not sa.line_in("Growth bonus over 2021 - basis $44,154,980", 772712.16, text)
     assert not sa.line_in(q, 1000.0, text)
 
