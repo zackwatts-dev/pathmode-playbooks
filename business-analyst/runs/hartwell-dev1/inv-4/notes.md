@@ -1,0 +1,12 @@
+# H4 notes
+- q91: 1,429 POs with exactly 2 bills, same amount, 2 invoice nos. No PO has >2.
+- q94: first bills 1,425/1,429 paid (48 short-paid); second bills 963/1,429 paid, 2,732,286.38 of 4,196,810.04 billed. Never paid twice per bill.
+- q97: 944 stock POs, each with exactly 1 receipt; 485 special POs, no receipts (special never get receipts, so this check can't apply to them).
+- q101: both bills carry identical lines (sku/qty/cost) on all 1,429; freight identical; 1,407 second bills equal PO qty (22 differ: overbilling on both bills).
+- q104: per year 130-153 second bills, paid rate 0.582-0.736; 2025 lowest, probably partly an end effect.
+- q107: all 44 vendors; dup rate 0.24%-0.64% of each vendor's bills; paid rate 0.5-0.875; top vendor 38% of $ (big-ticket OEM). q111: OEM 56.1% of $.
+- q113/q116: vendor credits: 6.96% of paid dup-bills have a same-vendor credit within ±1% amount in 250 days, vs 6.94% baseline for ordinary bills = chance. 0 match amount AND sku. No recovery is visible.
+- q121: gap between bills is 10-29 days; paid rate 0.66-0.77 by band, no strong pattern.
+- q123/q128: KEY. Every second invoice no = first + '-R', and the only '-R' bills in the whole table are these 1,429. One rule catches all. Second bill arrives before the first is paid in 1,094 cases; paid rate the same either way (q131: 0.6737 vs 0.6828), so the 3-way match doesn't depend on whether the first bill has already been paid.
+- Dead ends: gap or timing doesn't explain which get held; credits don't recover anything; no second-delivery explanation (identical lines, single receipt).
+- Suspicion: the '-R' suffix being so uniform looks like a generated pattern; in reality '-R' may mean 'reissue/reminder'. Either way the copy has the same lines and the same PO.

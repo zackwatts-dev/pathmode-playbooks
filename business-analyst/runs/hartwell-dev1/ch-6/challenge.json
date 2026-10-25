@@ -1,0 +1,69 @@
+{
+ "finding": "F6",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions: a 'short' line may not be a real unfilled sale. It could be a cancelled line, or something invoiced some other way.",
+   "test": "Profile short lines: quantity shipped, invoice links and channel.",
+   "result": "Survives. All 155,280 short lines have qty_shipped = 0, with 318,646 units ordered and 0 shipped. None appears in finance_invoice_lines (0 of 155,280). The short rate is flat across channels: 5.63% for EDI up to 5.74% for counter and phone. So shortness does not come from one entry path. A real unfilled sale on Hartwell's side, yes. Whether the demand was real can't be shown.",
+   "queries": ["q294", "q296", "q295"]
+  },
+  {
+   "explanation": "Mix (aggregation). The pooled 6.30% vs 6.26% 'no bump' could be a blend of two opposite effects. Equipment, with a low re-order baseline, makes up 47% of short lines but a much smaller share of stock lines.",
+   "test": "Compare short vs stock within each category, reweighting stock lines to the short lines' category x year x month mix.",
+   "result": "Partly changes the finding. Standardised, pooled is 5.98% vs 5.76% (n=137,127 short lines, days 22-2498), so the pooled 'no bump' holds. But it hides opposite signs. Equipment is 1.03% vs 2.50%, below baseline. Parts are 10.89% vs 9.34%, refrigeration 10.74% vs 8.49% and supplies 12.43% vs 9.85%, all above. 'No backorder-style bump' is true only for equipment.",
+   "queries": ["q335", "q256"]
+  },
+  {
+   "explanation": "Seasonality. Equipment short lines bunch into peak months, when buying is about to fall anyway. A post-short drop in buying (or a low re-order rate) could be the season, not the stock-out.",
+   "test": "Count equipment short lines by calendar month. Compare the customer's equipment value shipped in the 21 days after vs the 21 days before, for short and stock lines, unadjusted and reweighted by year-month.",
+   "result": "Seasonality explains most of the drop, but not all. Equipment short lines are concentrated in June (12,512), July (19,555), October (8,843) and November (23,675). Unadjusted, customers' equipment value moves -5,758.70 after a short line vs +365.69 after a stock line (n=71,230 / 382,048). Reweighted to the same year-month mix it is -5,645.37 vs -3,665.82 (n=72,633 short). After the seasonal correction, the remaining gap per short line is still larger than the average short-line value (1,430.10). So customers do not make up the shortfall with other equipment in the next 21 days. The SKU re-order gap for equipment also survives reweighting (1.03% vs 2.50%).",
+   "queries": ["q330", "q332", "q335"]
+  },
+  {
+   "explanation": "Selection / regression to the mean. A stock-out happens because the customer-SKU pair has just been buying heavily. A lower after-rate could be that activity returning to normal, not a lost sale.",
+   "test": "Compare each line's own before-window rate with its after-window rate (10 and 63 days), short vs stock.",
+   "result": "Confirmed as a selection effect, and it cuts both ways. Short lines come after elevated buying. For equipment, the 10-day rate before is 2.95%, against 2.46% for stock lines. Parts are 12.43% vs 6.70%. After a short line, equipment drops to 1.04% at 10 days and to 8.77% at 63 days (from 13.11% before). Non-equipment rises at 63 days: parts go from 32.0% to 38.1%, while stock lines stay flat. So against its own history, equipment shows no recovery. Non-equipment recovers mostly after 10 days.",
+   "queries": ["q304"]
+  },
+  {
+   "explanation": "Window too short. Re-orders may be impossible within 10 days because the stock-out lasts longer than that. The 'not recovered' share would then be an artefact of the window.",
+   "test": "Measure days from each short line to the next inbound receipt or transfer at the branch. Then look at re-order and re-short rates at 10 and 63 days.",
+   "result": "Partly changes the finding. Equipment's median time to the next inbound is 10 days, and only 50.97% of equipment short lines are restocked within 10 days. For parts, refrigeration and supplies it is 2-3 days, with about 96-97% restocked within 10 days. Within 10 days, 2.98% of equipment short lines are followed by another short line for the same customer-SKU (0.40% after stock lines): some customers do come back and hit the same stock-out again. At 63 days, equipment re-shipment is 8.69% vs 9.28% for stock lines, so a longer window does not rescue equipment. For non-equipment, shipped-within-63-day rates are 35.7-40.2% after short lines vs 23.7-26.0% after stock lines. That recovery is clearly larger than the '3-4 points' the 10-day window shows.",
+   "queries": ["q309", "q352"]
+  },
+  {
+   "explanation": "Product life cycle. Equipment short lines could be SKUs being discontinued or superseded, with the customer moved to a successor model rather than lost.",
+   "test": "Share of equipment short vs stock lines ordered after the SKU's discontinued_on date or within the year before it. Separately, same-tonnage substitution (q267 and q263, accepted as run).",
+   "result": "Rejected. Of short lines on SKUs that were ever discontinued, 12.26% were ordered after discontinuation and 6.17% within the year before it. For stock lines the figures are 19.83% and 11.17%. Short lines are less tied to phase-outs, not more. Only 4,935 equipment short lines were placed after discontinuation.",
+   "queries": ["q307", "q300", "q299"]
+  },
+  {
+   "explanation": "Trend / regime. Averaging 2017-2024 may hide a change. Excluding 2025 as an 'end effect' may drop the most relevant year.",
+   "test": "Short rate by year. Equipment short lines by refrigerant for 2016 and 2023-2025.",
+   "result": "Changes the sizing framing. The short rate goes from 3.25% in 2023 to 4.98% in 2024 and 6.63% in 2025. The 2025 increase is concentrated in R-454B equipment: 4,852 short lines of 17,130 (28.32%), with 1,635,424 of short-line margin at recorded prices. 2025 is a full year in dim_date. Its 10-day end effect touches only its last 10 operating days, so excluding the whole year as an 'end effect' is not justified. The current run-rate is higher than the 2017-2024 average and looks tied to a refrigerant changeover. Interpretation: a period effect, not a steady rate.",
+   "queries": ["q321", "q319", "q265"]
+  },
+  {
+   "explanation": "Money, part 1: price. Short lines may be priced in a way that overstates the margin.",
+   "test": "Compare unit_price / list_price and its link to markdown_pct on short, stock and transfer lines.",
+   "result": "This is a data definition problem, and it changes the size. On stock lines, unit_price reflects markdown_pct: lines with markdown above 5% average 0.5329 of list (corr -0.896). On short lines it does not: lines with a markdown above 5% still average 0.8339 of list (corr 0.017). The 4,935 short lines carrying a markdown (average 41.12%) are therefore priced as if undiscounted. Lines without a markdown price the same whether short or stock (0.8413 vs 0.842). In 2024, equipment short lines show a 16.28% margin against 8.26% on stock lines in the same group. F6 used the recorded price, which overstates the margin.",
+   "queries": ["q348", "q344", "q340"]
+  },
+  {
+   "explanation": "Money, part 2: double counting. A customer who retries the same SKU within days creates several short lines for one demand.",
+   "test": "Flag short lines that have an earlier short line for the same customer-SKU within the previous 10 days, or a duplicate short on the same day. Re-size with markdown applied and the duplicates removed.",
+   "result": "Changes the size. The average for 2017-2024 falls from 2,165,946.53 to 1,946,363.33 with markdown applied, and to 1,863,423.16 with retries also removed. It is 1,985,515.54 if markdowned clearance lines are left out instead of counted at negative margin. 2024 falls from 1,886,231.28 to 1,036,894.61. 2025 is 2,233,380.86, against 3,106,344.62 as originally computed. Equipment remains the largest part: 1,346,950.19 of 1,863,423.16. F6's 2024 figure is wrong by a large margin.",
+   "queries": ["q350", "q342", "q265"]
+  },
+  {
+   "explanation": "Money, part 3: is all of it recoverable? Some short lines had stock on hand, and some were for SKUs the branch never carried.",
+   "test": "Repeat q251 broken down by category and by 2016.",
+   "result": "This is a caveat, not a reversal. 11,368 equipment short lines had no WMS history at the branch; 7,079 of them are from 2016. 1,692 equipment and 4,694 non-equipment short lines had enough stock on hand. For those, 'short' is a recording question, not a stock-out, and fixing availability would not recover them. Re-shipments within 10 days that only match the normal baseline are not real recoveries either. Strictly, they should not be subtracted. This is a small effect: the average including them is 2,243,947.56 vs 2,165,946.53.",
+   "queries": ["q353", "q265"]
+  }
+ ],
+ "what_changed": "1) Size: the 2,165,946.53 a year at recorded prices drops to 1,863,423.16 (2017-2024 average) once short-line prices get the line's own markdown and retry duplicates are removed (q350). The 2024 figure drops from 1,886,231.28 to 1,036,894.61. The cause is a data definition issue: on short lines, unit_price does not apply markdown_pct (q348). 2) Period: 2025 should not be dropped. It is a full year, with 2,233,380.86 on the revised basis. Its rise is concentrated in R-454B equipment, so the money depends on the period rather than being a steady annual rate (q319, q321). 3) 'No backorder bump' is true only for equipment. Pooled 5.98% vs 5.76% hides equipment below baseline (1.03% vs 2.50%) and parts, refrigeration and supplies above it (q335). Non-equipment recovers substantially at 63 days: shipped 35.7-40.2% vs 23.7-26.0% (q352). So 'only a small slice comes back' understates their recovery. 4) Seasonality explains most of the drop in customers' equipment buying after a short line, but a gap larger than the average line value remains (q335, q332). 5) Survived: short lines are real zero-shipment, never-invoiced lines; they are not tied to discontinuation; same-day and same-order cover is negligible; equipment shows no recovery at 10 or 63 days.",
+ "revised_conclusion": "Equipment short lines are mostly not recovered. Within 10 days the same customer gets the same SKU after 1.03% of equipment short lines, against 2.50% for stock lines in the same year and month (n=72,633, days 22-2498; q335). At 63 days it is 8.69% vs 9.28% (q352). The customer's other equipment purchases in the next 21 days do not make up the gap, even after seasonal adjustment (q335). Parts, refrigeration and supplies short lines are partly recovered, mostly beyond 10 days: shipped within 63 days after 35.7-40.2% of short lines vs 23.7-26.0% after stock lines (q352). Part of that excess reflects the higher activity before these lines (q304). Sizing: margin on short lines not re-shipped within 10 days, with each line's markdown applied and retry duplicates removed, averaged 1,863,423.16 a year over 2017-2024, of which equipment was 1,346,950.19. It was 1,036,894.61 in 2024 and 2,233,380.86 in 2025 (q350). This is an upper bound at standard cost. It moves with period and refrigerant transition, and it includes about 6,386 short lines that had stock on hand, which better stocking would not fix (q353). The action still holds: start with equipment availability, especially the 2025 R-454B stock-outs. Size the case on the revised figures and on the current year, not on 2,165,946.53.",
+ "not_evidence_of": "Not evidence that customers bought elsewhere, that jobs were cancelled, or that accounts churned. The records carry no lost-sale or backorder link, and later buying of the SKU does not fall (q254). Not evidence that 1.86M a year is recoverable. It is standard-cost margin at the recorded price with markdown applied, it ignores the cost of holding the extra stock, and it counts stock-outs that may be recording artefacts (lines with stock on hand, SKUs the branch never carried). Not evidence that 10-day non-recovery means a lost sale for parts, refrigeration or supplies: those recover at 63 days. Not evidence of anything about the staff who keyed the orders. To tell lost sales from deferred or competitor-filled demand, Hartwell would need a lost-sale or backorder reason captured on short lines, or CRM contact records linked to them."
+}

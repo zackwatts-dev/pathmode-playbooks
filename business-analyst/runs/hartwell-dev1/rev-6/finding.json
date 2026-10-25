@@ -1,0 +1,70 @@
+{
+ "id": "F6",
+ "hypothesis": "H2",
+ "title": "Equipment short lines are mostly not recovered (1.03% re-shipped within 10 days vs 2.50% after stock lines; 8.69% vs 9.28% at 63 days). Parts, refrigeration and supplies short lines are partly recovered after 10 days. After applying markdown and removing retry duplicates, standard-cost margin on short lines not re-shipped within 10 days averaged 1,863,423.16 a year over 2017-2024 (equipment 1,346,950.19). It was 2,233,380.86 in 2025, driven by R-454B equipment stock-outs.",
+ "conclusion": "Narrowed and re-sized after challenge. Observed: short lines are real unfilled lines on Hartwell's side. All 155,280 have qty_shipped = 0, none is invoiced, and the short rate is flat across channels at 5.63%-5.74% (q294, q296, q295). Most were real stock-outs at the branch: 134,229 of 155,280 had zero WMS on-hand (q251). The pooled 'no backorder bump' (5.98% vs 5.76%, mix-standardised, n=137,127, days 22-2498; q335) hides opposite results by category. EQUIPMENT: 1.03% of short lines are re-shipped to the same customer and SKU within 10 days, against 2.50% for stock lines reweighted to the same year-month mix (n=72,633; q335). At 63 days it is 8.69% vs 9.28% (n=70,863; q352). Against the lines' own history, equipment falls from 13.11% (63 days before) to 8.77% (63 days after), while stock lines stay flat at 9.15% to 9.30% (q304). The longer window does not rescue equipment, even though only 50.97% of equipment short lines see an inbound at the branch within 10 days (q309). Customers' other equipment buying in the next 21 days does not fill the gap either. After year-month reweighting, the change is -5,645.37 after short lines vs -3,665.82 after stock lines, and the difference is larger than the average short-line value of 1,430.10 (q335, q330). Short lines are not tied to discontinued SKUs (12.26% after discontinuation vs 19.83% for stock lines; q307), and same-tonnage substitution runs below baseline (q267). PARTS, REFRIGERATION, SUPPLIES: these recover, mostly after 10 days. Within 63 days 35.7%-40.2% of short lines are followed by a shipped line, against 23.7%-26.0% after stock lines (q352). Measured against the lines' own pre-period, parts go from 32.0% to 38.1% (q304), so part of the raw gap is selection, but there is real recovery. SIZING: in F6, short lines were priced at a unit_price that does not apply markdown_pct. On stock lines price tracks markdown (corr -0.896); on short lines it does not (corr 0.017) (q348). With each line's markdown applied and retry duplicates removed, margin on short lines not re-shipped within 10 days averaged 1,863,423.16 a year over 2017-2024, of which equipment was 1,346,950.19. It was 1,036,894.61 in 2024 and 2,233,380.86 in 2025 (q350). Repricing at same-year stock prices gives nearly the same result: 1,864,229.04 on average (q342). Interpretation: the money is concentrated in equipment and depends on the period. The 2025 short rate of 6.63% (from 3.25% in 2023; q321) is concentrated in R-454B equipment: 4,852 of 17,130 lines are short (q319). This looks like a refrigerant changeover effect, not a steady rate. Action: put equipment availability first, starting with R-454B. For non-equipment, the case is weaker, because much of that demand comes back within about 63 days.",
+ "dollars_a_year": 1863423.16,
+ "size_query": "q350",
+ "claims": [
+  {
+   "text": "Short lines are real unfilled lines. All 155,280 have qty_shipped = 0 (318,646 units ordered, 0 shipped), none of them is in finance_invoice_lines, and the short rate runs from 5.63% (EDI) to 5.74% (counter and phone) across channels.",
+   "queries": ["q294", "q296", "q295"]
+  },
+  {
+   "text": "Mix-standardised 10-day same-customer same-SKU re-shipment: pooled 5.98% short vs 5.76% stock (n=137,127 short lines, days 22-2498). Equipment 1.03% vs 2.50% (n=72,633), parts 10.89% vs 9.34%, refrigeration 10.74% vs 8.49%, supplies 12.43% vs 9.85%. Stock rates are reweighted to the short lines' category x year x month mix.",
+   "queries": ["q335"]
+  },
+  {
+   "text": "At 63 days (days 2-2457), equipment short lines are re-shipped 8.69% of the time vs 9.28% for stock lines (n=70,863 short). Parts are 35.7% vs 24.6%, refrigeration 36.1% vs 23.7%, supplies 40.2% vs 26.0%. Within 10 days, 2.98% of equipment short lines are followed by another short line for the same customer and SKU, against 0.40% after stock lines.",
+   "queries": ["q352"]
+  },
+  {
+   "text": "Selection: short lines follow elevated buying. Equipment 63-day rate before vs after: short 13.11% to 8.77%, stock 9.15% to 9.30%. Parts: short 32.0% to 38.1%, stock 24.8% to 24.6% (days 64-2510).",
+   "queries": ["q304"]
+  },
+  {
+   "text": "Equipment restocking is slow. The median time to the next inbound at the branch is 10 days, and 50.97% are restocked within 10 days. For parts, refrigeration and supplies the median is 2-3 days and about 96%-97% are restocked within 10 days.",
+   "queries": ["q309"]
+  },
+  {
+   "text": "Equipment value shipped to the customer in the 21 days after minus the 21 days before, reweighted by year-month: -5,645.37 after short lines vs -3,665.82 after stock lines (n=72,633 short). Unadjusted: -5,758.70 vs +365.69. The average equipment short-line value is 1,430.10. Equipment short lines peak in June (12,512), July (19,555), October (8,843) and November (23,675).",
+   "queries": ["q335", "q330", "q332"]
+  },
+  {
+   "text": "Not a phase-out effect. 12.26% of equipment short lines were ordered after the SKU's discontinuation, against 19.83% of stock lines. Same-tonnage substitution is below baseline: 19.2% vs 24.1% on the same order.",
+   "queries": ["q307", "q300", "q267"]
+  },
+  {
+   "text": "unit_price on short lines does not apply markdown_pct. Short lines with markdown above 5% (n=4,935, average markdown 41.12%) average 0.8339 of list (corr 0.017). The equivalent stock lines average 0.5329 (corr -0.896).",
+   "queries": ["q348", "q344"]
+  },
+  {
+   "text": "Margin on short lines not re-shipped within 10 days, with markdown applied and retry duplicates removed: 2017-2024 average 1,863,423.16 a year (equipment 1,346,950.19, parts 312,611.02, refrigeration 96,822.94, supplies 107,039.02). 2024: 1,036,894.61. 2025: 2,233,380.86. For comparison, F6's original basis gave 2,165,946.53, 1,886,231.28 and 3,106,344.62. Excluding markdowned clearance lines instead gives 1,985,515.54. Repricing at same-year stock prices gives 1,864,229.04.",
+   "queries": ["q350", "q342", "q265"]
+  },
+  {
+   "text": "The short rate is 3.25% in 2023, 4.98% in 2024 and 6.63% in 2025. In 2025, 4,852 of 17,130 R-454B equipment lines were short (28.32%).",
+   "queries": ["q321", "q319"]
+  },
+  {
+   "text": "Not every short line is a fixable stock-out. 1,692 equipment and 4,694 non-equipment short lines had enough WMS stock on hand. 11,368 equipment short lines had no WMS history at the branch, 7,079 of them in 2016.",
+   "queries": ["q353", "q251"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "Not evidence that customers bought elsewhere, cancelled jobs, or churned. There is no lost-sale or backorder link, and customers' later buying of the SKU does not fall (1.033 vs 1.010; q254). Not evidence that 1,863,423.16 a year is recoverable. It is an upper bound at standard cost. It ignores the cost of carrying the extra stock, it subtracts re-shipments that only match the normal baseline, and it includes short lines that had stock on hand or were for SKUs the branch never carried. A 10-day non-recovery for parts, refrigeration or supplies is not evidence of a lost sale, because much of that demand comes back within 63 days. The analysis says nothing about the staff who keyed the orders.",
+ "could_not_tell": "Whether unrecovered equipment demand was lost to a competitor, deferred, or met another way. That would need a lost-sale or backorder reason on short lines, or CRM contacts linked to them. Why unit_price on short lines ignores markdown_pct: is the stored price a list-derived placeholder for a line that never invoiced? Why 6,386 short lines had stock on hand: allocation, timing, or recording. Whether the 2025 R-454B level will persist after the changeover.",
+ "next_step": "Rank R-454B and other equipment SKUs by unrecovered short-line margin (q350 basis) and review safety stock and branch-to-branch transfer rules for those SKUs. Ask branch staff what happens after an equipment short line. Add a lost-sale/backorder reason code to short lines. Ask ERP owners how unit_price is set on short lines.",
+ "dead_ends": [
+  "Same-order cover by a transfer or stock line: 352 of 155,280 (q250)",
+  "Later special order of the same SKU: about zero (q258)",
+  "Equipment substitution by same tonnage: below baseline (q263, q267)",
+  "Customers buying less of the SKU afterwards: not seen, ratio 1.033 vs 1.010 (q254)",
+  "Discontinuation or successor-model explanation: short lines are less tied to phase-outs than stock lines (q307)",
+  "Entry-channel artefact: short rate flat across channels (q295)",
+  "Category-level re-buy within 10 days can't tell substitution from routine buying (q252)"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted in full; no rebuttal was needed, and every point was checked against the challenger's queries. (1) Mix: accepted. The pooled 'no bump' hides equipment below baseline and non-equipment above it (q335). The finding is now stated by category. (2) Window: accepted. Non-equipment recovers at 63 days (35.7%-40.2% vs 23.7%-26.0%; q352), so 'only a small slice comes back' is withdrawn. Equipment still shows no recovery at 63 days (8.69% vs 9.28%), and none against its own pre-period either (q304). The equipment conclusion is therefore kept. (3) Seasonality: accepted that it explains most of the post-short drop in equipment buying. The residual gap after reweighting (q335) is kept, labelled as observed rather than causal. (4) Pricing: accepted as a data-definition error in F6. unit_price on short lines does not apply markdown_pct (q348). The sizing now uses q350, with markdown applied and retry duplicates removed: 1,863,423.16 a year for 2017-2024, replacing 2,165,946.53. The challenger's alternative repricing at stock prices (q342, 1,864,229.04) gives nearly the same figure, which supports the revision. F6's 2024 figure of 1,886,231.28 is replaced by 1,036,894.61. (5) Period: accepted that excluding 2025 as an end effect was not justified. 2025 is reported separately (2,233,380.86) and tied to R-454B equipment (q319, q321). The 2017-2024 average stays the headline because 2025 looks like a changeover period; it is not treated as the steady rate. 2016 stays excluded as start-up (7,079 equipment short lines with no WMS history; q353). (6) Recoverability: accepted as a caveat (q353). Confidence stays medium: the direction for equipment is robust across five tests, but the dollar figure is an upper bound and the cause of non-recovery can't be observed.",
+ "accepted": true
+}

@@ -1,0 +1,51 @@
+{
+ "finding": "F2",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions / missing data: the claim 'receipts always equal PO qty, so the qty billed above the PO was never received' may be true only where a receipt exists. Special-order POs may never be received into the warehouse.",
+   "test": "Join receipt movements to PO lines on po_id+sku, split by PO purpose. Receipt transactions carry po_id in ref_id (all 470,300 join on po_id; only 314,434 join on receipt_id), so join on that.",
+   "result": "Partly fails. On stock POs every billed line has a receipt equal to PO qty (paid in full 446,852 of 446,852; short 15,162; unpaid 8,349), so the stock part holds. Special-order POs (127,956 of 370,788 POs) have no WMS receipt on any billed line (121,364 paid-in-full lines, 0 with a receipt). Of the paid-in-full qty-over excess, 847,795.65 is on stock POs, where the shortfall is proven against a receipt. 1,498,042.39 is on special orders, where receipt can't be checked at all. Indirect check on special orders: matching each special PO line to its special sales line on day+branch+sku, 1,228 of 1,290 qty-over lines match exactly one sales line, and on all 1,228 the customer was shipped the PO qty, never the billed qty (0 shipped at or above the billed qty). The other 62 match more than one sales line and are ambiguous. So the extra special-order units were not passed on to a customer. That is consistent with 'not delivered', but it doesn't prove it.",
+   "queries": ["q155", "q156", "q163", "q164", "q187", "q189", "q193", "q207"]
+  },
+  {
+   "explanation": "The money / offsets: the credit test (390 credits worth 426,891.88 'match no vendor return') may come from a join error rather than from the data.",
+   "test": "Look at what ref_id means on return_vendor movements, then redo the credit-to-return match.",
+   "result": "The original test was broken. return_vendor movements have only 4 distinct ref_id values (1-4). These are vendor ids, not PO ids. The original query joined them to POs 1-4, which all belong to vendor 1. Matched on ref_id = vendor_id, sku, qty and a 60-day window, all 1,234 credits (all from OEM vendors 1-4) match a vendor return, and 0 are unmatched. So no credit is left over to offset overbilling. The 273,967.29 'floor' doesn't apply. The gross figure is the right one, and the offset argument gets stronger, not weaker.",
+   "queries": ["q160", "q166", "q169"]
+  },
+  {
+   "explanation": "Definitions: 'no price step' may say nothing about whether a real price increase occurred. If PO costs come from a fixed master price, real vendor increases would never show on the PO.",
+   "test": "Check whether PO unit cost ever changes over time for a SKU, and whether it equals the product master cost.",
+   "result": "PO cost never varies: 0 of 1,096 SKUs have more than one PO unit cost in 2016-2025, and all 568,216 paid-in-full lines have PO cost equal to the product master cost. Over ten years that included 2021-22 inflation, this looks like a property of how prices are recorded (or how the records were produced), not of real pricing. The 'no step' test is therefore weak evidence. What still argues against a real price increase: 97.5% of lines bill at the PO cost (base overpriced share 0.0249), and an increase would apply to all later lines, not to 2.5% of them. None of the 10,325 cost-over lines bill at a different master cost (overcost_eq_product_cost 0). Whether vendors had real increases can't be settled without vendor price lists.",
+   "queries": ["q110", "q171", "q183"]
+  },
+  {
+   "explanation": "Selection: the 'caught' bills may not be AP catching overbills. They may be a pay-at-PO-value rule applied to some share of any bill that differs from its PO, freight included.",
+   "test": "Compare the short-pay share across bills with and without line excess and with and without freight. Check what amount short-paid bills were paid.",
+   "result": "All 12,026 short-paid bills were paid exactly PO value, with freight excluded. The short-pay share is the same whatever the cause of the variance: 0.3008 on bills with freight only (6,115 of 20,329), 0.2986 on line-excess bills without freight (5,566 of 18,639), 0.2826 with both (345 of 1,221), and 0.0 on 322,260 bills that equal their PO. Interpretation: AP appears to pay PO value on about 30% of bills that differ from the PO for any reason, rather than reviewing line excess. This supports F2's 'fraction, not threshold' reading. It also means some withheld freight may have been owed, which F2 doesn't address.",
+   "queries": ["q197", "q202"]
+  },
+  {
+   "explanation": "Misleading averages / trend: a few huge lines or a single year (2016: 429,671.84) may drive the annual average.",
+   "test": "Excess by year with and without each year's top 10 lines; share of the top 5% of lines.",
+   "result": "Holds. In each year the top 10 lines carry 19,165.29-22,680.02, and the largest single line in any year is 3,219.00. Without the top 10, every year stays at 250,088.62 or more. The top 5% of lines carry a 0.3515 share of the 3,166,564.74. That is concentrated, but the cause is equipment value (OEM is 2,554,297.98), not outliers. Most qty-over lines are over by exactly 1 unit (3,249 of 3,769). 2016 is higher, but no single line drives it. The pattern is a level, not a period.",
+   "queries": ["q171", "q187", "q205"]
+  },
+  {
+   "explanation": "Definitions: bill amount may not be the sum of its lines, so 'paid in full' may not mean the excess was paid.",
+   "test": "Reconcile bill amount to line value plus freight.",
+   "result": "Holds. All 368,154 bills equal line value plus freight (346,268 have no freight), and all paid-in-full bills were paid that amount. Denominator check: the year PO values in q103 sum to 1,071,302,610.84, as stated.",
+   "queries": ["q154", "q207"]
+  },
+  {
+   "explanation": "The money: what can actually be recovered is smaller than the 10-year average, and a related, separate leak sits next to it.",
+   "test": "Excess in the most recent two years; duplicate bills on the same PO.",
+   "result": "2024-2025 paid-in-full excess is 658,006.40 (329,003.20 a year). Claims on 2016-2023 bills are likely past any practical dispute window (an interpretation; no contract terms in the data). Separately, 1,429 POs carry two bills of identical amount under different vendor invoice numbers (2016-2025). The later copy was paid on 963 of them, 2,732,286.38 in total (273,228.64 a year). This isn't part of F2 but is comparable in size. Only 102 of F2's paid-in-full overbilled bills sit on such POs, so the overlap is small.",
+   "queries": ["q126", "q172", "q187", "q207"]
+  }
+ ],
+ "what_changed": "(1) The 'never received' claim holds only for stock POs: 847,795.65 over 10 years (84,779.57 a year). The 1,498,042.39 (149,804.24 a year) of qty-over on special orders has no receipt record at all. For those, the evidence is indirect: the customer was shipped the PO qty on all 1,228 uniquely matched lines. (2) The vendor-credit test was a join error. Correctly matched, all 1,234 credits are vendor-return credits, so nothing offsets the excess and the 273,967.29 floor is dropped. (3) The 'no price increase' argument is weakened: PO costs never change over 10 years, so the PO isn't an independent measure of the price owed. (4) 'Short-paid' bills are paid at PO value excluding freight, at about 30% for any variance including freight-only bills, so AP's rule may also be withholding legitimate freight. (5) The recoverable amount is better framed as recent years: 329,003.20 a year in 2024-2025. A separate duplicate-bill issue was found (2,732,286.38 paid on second bills).",
+ "revised_conclusion": "Holds with changes. Over 2016-2025, Hartwell paid in full 13,949 bills whose line value exceeded the PO, 3,166,564.74 in total (316,656.47 a year, 0.2956% of 1,071,302,610.84 PO value paid in full). This is gross: no vendor credit offsets it, because all 1,234 credits trace to vendor returns. The excess breaks down into three parts. (a) Qty billed above a stock-PO receipt, proven unreceived: 847,795.65 (84,779.57 a year). (b) Qty billed above PO on special orders, with no receipt record. Customers were shipped only the PO qty on all 1,228 uniquely matched lines, so this is probably unreceived, but it needs vendor proof of delivery: 1,498,042.39 (149,804.24 a year). (c) Unit cost above PO on otherwise matching qty: 820,726.70 (82,072.67 a year). Whether (c) was owed can't be judged, because PO cost is a fixed master price that never changed in ten years. AP paid PO value on about 30% of bills that differed from the PO for any reason, including freight-only bills. That looks like partial application of a pay-to-PO rule rather than a match check. Action: hold every bill line above PO or receipt for match. Claim (a) first, against receipts, and (b) with vendor proof of delivery, starting with 2024-2025 (658,006.40). Ask AP how short-pay bills are chosen and whether withheld freight was owed. Separately, review the 963 paid second bills on duplicate-billed POs (2,732,286.38).",
+ "not_evidence_of": "Not evidence that any vendor or any AP staff member acted in bad faith. The pattern is uniform across 44 vendors and ten years, and the very regular structure (fixed ratio band, mostly +1 unit, flat rates, static PO prices) may partly reflect how the records were produced. Not evidence that special-order units were never delivered: there is no receipt record for special orders. Not evidence that the higher unit costs were wrong: there are no price lists or contracts. Not evidence that purchasing costs are generally inflated (0.2956% of PO value). Not evidence that AP short-pays are correct: some withheld freight may have been owed. The duplicate-bill observation shows payments against two invoices for one PO. It doesn't establish that the second invoice was invalid, because partial or split shipments outside these tables can't be ruled out."
+}

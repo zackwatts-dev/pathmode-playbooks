@@ -1,0 +1,62 @@
+{
+ "id": "F8",
+ "hypothesis": "H8",
+ "title": "H8 does not hold: in a fixed-window, month-adjusted test, short lines and returns don't predict a customer stopping for 12 months (2017-2024); the 2016 excess is mostly timing, and order fade isn't a usable early warning",
+ "conclusion": "Observed: 2017Q1-2024Q4 is a fixed-window test. Each customer-quarter's short lines are compared with what that customer's branch-month mix predicts. The outcome is no order in the next 4 quarters. Expected lapse is set within quarter x branch x trade x order band x line band (strata of 5 or more). Lapse runs at about expected in every band: 0.98 with no shorts (n=45,383), 1.059 under 1x expected, 1.078 at 1-2x, 1.042 at 2-4x and 1.028 at 4x+ (122 observed vs 118.7 expected, n=3,269) (q354). The window is not censored: 2025 has orders in all four quarters (q363). Returns show no link in either direction. Quarters with a damaged or wrong-item return: 1.111 (36 vs 32.4, n=1,665). Other returns only: 1.106 (50 vs 45.2, n=2,296). No return: 0.996 (n=69,930) (q361). In 2016 the same design shows a modest gradient, rising to 1.202 at 2x+ expected shorts (64 vs 53.3, n=1,140) (q356). That is far below the 127 vs 61.6 of the annual design (q292). Lapsers' orders fall in their final year: 0.5986 of the prior year, against 1.0563 for retained existing customers. They do not fall the year before: t-1 over t-2 was 1.086 for lapsers (n=1,758) vs 1.0493 for retained (n=16,538), median 1.0 in both (q359). Interpretation: there is no measurable link between short lines or returns and customers stopping. Most of the 2016 excess reflects when lapsing customers ordered. The 2016 residual could be a small real effect of the start-up stock-out, or noise. Lapse looks abrupt, not gradual. A first-half order-drop flag caught only 66 of 2,447 lapsers while they were still ordering (q362). The records support neither a service-recovery programme built on this link nor an order-fade watch list as an early warning.",
+ "dollars_a_year": null,
+ "size_query": null,
+ "claims": [
+  {
+   "text": "Lapse base: of customers active in a year, 465/3,364 (2016) down to 272/3,338 (2024) placed no order the next year.",
+   "queries": ["q276"]
+  },
+  {
+   "text": "Fixed-window test, 2017Q1-2024Q4 customer-quarters, month-adjusted short ratio, outcome no order in the next 4 quarters, stratified by quarter x branch x trade x order band x line band (strata >=5). Observed/expected lapse: 0 shorts 0.98 (1,663 vs 1,697.5, n=45,383); <1x 1.059 (n=8,589); 1-2x 1.078 (n=10,695); 2-4x 1.042 (n=5,955); 4x+ 1.028 (122 vs 118.7, n=3,269). There is no dose-response.",
+   "queries": ["q354"]
+  },
+  {
+   "text": "The 4-quarter follow-up is complete for every window: 2025 has orders in Q1-Q4 (2,546-2,985 customers per quarter).",
+   "queries": ["q363"]
+  },
+  {
+   "text": "Returns, same fixed-window design: damaged or wrong-item return 1.111 (36 vs 32.4, n=1,665); other returns only 1.106 (50 vs 45.2, n=2,296); no return 0.996 (2,236 vs 2,244.4, n=69,930). There is no association in either direction. The small excesses rest on about 4-5 extra lapses each.",
+   "queries": ["q361"]
+  },
+  {
+   "text": "The annual design is unreliable because of truncated exposure. When short lines are adjusted for each customer's own branch-month mix, the annual design flips: 2x+ expected shorts at 1.302 (223 vs 171.3, n=2,007, order band 3+), and 1.522 among customers with 30+ lines (85 vs 55.9, n=799). But zero-short customers are also elevated, at 1.208 (n=4,114) and 1.467 (n=1,160 with 30+ lines). That U shape fits partial-year exposure, not an effect. F8's original annual ratios (for example 0.702 at 6-10% short share, q298) are withdrawn for the same reason.",
+   "queries": ["q349", "q351", "q298"]
+  },
+  {
+   "text": "2016: January short share was 31.81% of 45,187 lines (q303). In the annual design, 20%+ short-share customers (order band 3+) lapsed 127 vs 61.6 expected (n=401) (q292). In the fixed quarterly window for 2016, the gradient is modest: 0 shorts 0.952 (n=4,083), <1x 0.895 (n=2,120), 1-2x 1.088 (n=2,238), 2x+ 1.202 (64 vs 53.3, n=1,140). A January-cohort test for 2016 is not monotone: 0.69, 0.545, 1.267 and 1.052 from 0% to 50%+ short, with a raw 12-month stop rate of 0.0100-0.0336.",
+   "queries": ["q303", "q292", "q356", "q355"]
+  },
+  {
+   "text": "No fade before the final year (2018-2024, customers with prior-year orders). Final-year orders over the prior year: lapsers 0.5986 (n=1,977), retained 1.0563 (n=18,463). One year earlier (t-1 over t-2): lapsers 1.086 (n=1,758), retained 1.0493 (n=16,538), median 1.0 in both.",
+   "queries": ["q359"]
+  },
+  {
+   "text": "Order-drop flag (2017-2024): customers whose first-half orders fell below half the prior year's first half (prior first half >=4 orders) lapsed at 0.1995 (n=1,644), against 0.0804 unflagged (n=15,944). Flagged customers who still ordered after the first half lapsed at only 0.0495 (n=1,332). Only 66 of 2,447 lapsers (0.027) were flagged while still ordering. Lapsers' last orders were spread across quarters: 678 Q1, 594 Q2, 522 Q3, 653 Q4.",
+   "queries": ["q360", "q362"]
+  },
+  {
+   "text": "Lapse is not confirmed churn. Of each year's lapsers, 18-47 ordered again in a later year (47 of 300 in 2023). The 2024 figure can't be checked. 458 of 465 2016 lapsers were onboarded before the records start.",
+   "queries": ["q358"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "That service doesn't matter. Short lines might reduce how much a customer buys (share of wallet) without ending the account. That wasn't tested here. Nor were backorders filled later, delivery speed or service-contact quality. The 2016 residual (1.202, q356) neither shows nor rules out that the start-up stock-out drove customers away, and that stock-out may itself be a data-migration artefact. 'Lapse' is a gap in orders, not confirmed churn: some lapsers return (q358), and accounts may continue under another id. The final-year order drop (q359) describes the stopping itself, not a warning sign before it.",
+ "could_not_tell": "Why customers stopped: there is no close date, churn reason or competitor data. Whether a lapsed account continued under another account id: a same-name check has no usable baseline (340 names over 6,156 accounts). Whether short lines were backordered and filled later. Whether the January-2016 stock-out was real or a migration effect (opening balances exist for only 4,548 of 10,322 SKU-branch pairs). Why goods came back: the return reason codes are spread almost evenly over five values (1,247-1,328 each, q346), which is a data-quality concern, so the damaged/wrong-item split in q361 may not reflect real causes.",
+ "next_step": "Don't fund a service-recovery programme or an order-fade watch list on this evidence. To make the question answerable: record a close/churn reason when an account goes quiet, link short lines to the backorder that filled them, and audit how return reason codes are entered. A useful next analysis is whether high short ratios reduce retained customers' next-year spend (share of wallet). This finding does not test that.",
+ "dead_ends": [
+  "Annual design, raw short share: a U shape (q279). Annual design, month-adjusted: also a U shape, with both 0-short and 2x+ elevated (q349, q351). Both reflect truncated exposure, which the fixed window removes (q354).",
+  "20%+ short share at O/E 1.363 overall (q285) is confined to 2016 (q292) and shrinks to 1.202 in a fixed window (q356).",
+  "Annual-design 'returns reduce lapse' (0.904/0.849, q285) does not survive the fixed window (q361).",
+  "January-2016 same-window tests: no consistent gradient (q312, q355).",
+  "Same-name sibling account check: not interpretable without a baseline (q302).",
+  "Within-quarter short-share comparison (q317) shows lapsers slightly higher in every quarter, with a visible gap in Q3 (7.55% vs 5.32%). It was superseded by the fixed-window test.",
+  "Order-fade early warning: there is no fade the year before (q359), and the flag rarely catches lapsers who are still reachable (q362)."
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted in full; the verdict 'stands with changes' is right. (1) Truncated exposure. The annual design measures exposure over partial years, and a month-adjusted version reverses its sign (q349, q351). I drop all the annual-design ratios as evidence and rest the null on the challenger's fixed-window test (q354, q361). I checked the one weakness that could undermine that test, right-censoring of the 4-quarter follow-up for 2024 quarters. 2025 is complete, with orders in all four quarters (q363), so the window holds. (2) 'Returns lower lapse' is withdrawn. Returns, including damaged or wrong-item returns, are simply not associated with lapse (q361). I also accept that erp_returns carries reason_code. Its near-uniform spread (q346) is now reported as a data-quality concern. (3) The 2016 excess: I accept that a modest residual remains (1.202, q356). The finding no longer calls it purely a timing artefact. (4) The early-warning recommendation is withdrawn. My fade comparison measured the stopping itself, and the retained group included new customers. Restricted to existing customers, there is no fade the year before the final year (q359), and the flag reaches 66 of 2,447 lapsers (q362). My claim that lapsers order mostly in Q1 was also wrong: their last orders are spread across all quarters (q360). (5) Lapse includes one-year gaps (q358). This is now stated in not_evidence_of. I found nothing in the challenge to rebut with new queries.",
+ "accepted": true
+}

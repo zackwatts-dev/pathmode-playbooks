@@ -1,0 +1,67 @@
+{
+ "id": "F5",
+ "hypothesis": "H5",
+ "title": "On hand-keyed orders a fixed share of shipped lines never reaches an invoice: about $285K a year at order price ($72K gross margin), worst at the counter, never billed later. The part still worth chasing is the recent tail of about $271K",
+ "conclusion": "The hypothesis holds, with a narrower framing of the money. Observed: from 2016 to 2025 (ship days 1-2520), 4,985 of 2,563,485 shipped order lines (0.194%) have no invoice line (q286). By channel the rate is counter 1.124% (2,500/222,392), email 0.155% (1,850/1,195,113), phone 0.148% (635/429,969), and 0 of 461,656 EDI and 0 of 254,355 web lines (q286). The link between invoice lines and order lines is clean. Across all 2,558,500 invoice lines there are 0 null, orphan or duplicate line_ids, and 0 lines whose quantity, price, SKU or order differs from its order line (q255, q277). So the gap is real and not a linkage artefact. For all 4,751 non-special lines, the WMS sale quantity includes the uninvoiced line, so the goods left (q275). Nothing else covers these lines. There are no re-bills on other lines (q229), no consolidated or re-used-PO invoices (q280, q282), every payment ties to an invoice, and 0 of 1,388,665 invoices are overpaid (q260, q262). For the 3,655 lines whose order got an invoice within a day of shipment, all 4,009 such invoices have a header within 3 cents of their line sum, and in 0 cases does the gap equal the missing line. 3,956 were paid at header amount (q326, q329). Sizing for 2016-2024: 4,495 lines, 2,569,213.83 at order price. That is 285,468.20 a year (yearly range 252,827.81 to 348,493.66), 0.1948% of billed revenue, 213,944.60 a year at cost and 71,523.61 a year of gross margin (q324). Interpretation: drops look like a random per-line loss at a fixed rate per manual channel. Per-rep dispersion matches chance (q268), and dropped lines look like billed lines on value, markdown and price (q269), order size and line position (q259), and month, trade and terms (q272). This points to an order-to-invoice step on manually keyed orders, especially counter, not to people, customers or products. Recoverable money is the recent tail, not the cumulative total. In the last 252 operating days that is 490 lines worth 271,314.82 across 408 customers, of which 156 lines worth 90,763.66 fall in the last 85 days (q290). A small second leak: all 16 uninvoiced lines that were later returned (4,618.19) got credit memos, so customers were credited for goods never billed (q290, q291).",
+ "dollars_a_year": 285468.2,
+ "size_query": "q324",
+ "claims": [
+  {
+   "text": "4,985 of 2,563,485 shipped lines in days 1-2520 (0.194%) have no invoice line. By channel: counter 1.124% (2,500/222,392), email 0.155% (1,850/1,195,113), phone 0.148% (635/429,969), EDI 0/461,656, web 0/254,355.",
+   "queries": ["q286", "q232"]
+  },
+  {
+   "text": "The rate is flat by year (0.181-0.216%) and branch (0.166-0.219%), with no $0-price lines. 2025 in-window has 490 lines worth 271,314.82, in line with other years. A further 947 lines (932,590.69) ship after day 2520 and are excluded as end effects.",
+   "queries": ["q232", "q224", "q226", "q290"]
+  },
+  {
+   "text": "The linkage is clean. Across 2,558,500 invoice lines: 0 null, orphan or duplicate line_ids, 0 invoices without an order or without lines, and 0 lines whose qty, price, SKU or order differs from the order line or that bill unshipped lines. The 1,303 lines where amount differs from qty x price net to -74.47 (ratio 0.9771-1.0185).",
+   "queries": ["q255", "q277", "q257"]
+  },
+  {
+   "text": "The goods left. For all 4,751 non-special uninvoiced lines, the WMS sale qty equals the order's total shipped for the SKU including the uninvoiced line, in 0 cases the total excluding it. 4,529 moved on the ship day. The 234 special-order lines never touch WMS and cannot be confirmed this way.",
+   "queries": ["q275", "q226"]
+  },
+  {
+   "text": "Not billed anywhere else. The 69 same-order-and-SKU matches are separate order lines billed only for their own qty. Of the 1,139 lines on orders with no invoice, 8 share a customer PO with another invoice, and all 9 matching invoices are other orders' invoices with no line for that SKU. 4 have a same-amount invoice within 60 days. All 1,366,817 payments (751,147 check, 615,670 ACH) tie to an existing invoice, and 0 of 1,388,665 invoices are overpaid.",
+   "queries": ["q229", "q280", "q282", "q260", "q262"]
+  },
+  {
+   "text": "Re-verified: 3,655 lines sit on orders with an invoice within 1 day of shipment. All 4,009 of those invoices have a header within 3 cents of their line sum: 3,998 within 2 cents, and the other 11 differ by -0.02 to 0.03, never by the missing line's value. 3,956 were paid at header amount and 53 are unpaid.",
+   "queries": ["q326", "q329"]
+  },
+  {
+   "text": "Random-looking drops. The per-rep chi-square is 36.5 (counter), 52.5 (email) and 53.8 (phone) across 48 reps each, with 0 reps beyond 3 SD. Counter uninvoiced vs invoiced: median value 235.64 vs 252.12, price-to-list 0.8361 vs 0.8363. Counter rate is 1.127%, 1.088% and 1.166% for 1, 2-3 and 4+ line orders, 0.975-1.212% by month, and 1.107-1.186% by trade.",
+   "queries": ["q268", "q269", "q259", "q272"]
+  },
+  {
+   "text": "Cash at the counter is unlikely. Payments hold only check and ACH. Counter rate by terms is 1.054% at 0 days (244/23,156), 1.120% at 30 (1,824/162,907) and 1.189% at 45 (432/36,329), so cash-terms customers are not higher.",
+   "queries": ["q260", "q272"]
+  },
+  {
+   "text": "Sizing for 2016-2024: 4,495 lines and 2,569,213.83 at order price, or 285,468.20 a year (range 252,827.81-348,493.66). That is 0.1948% of billed revenue, 213,944.60 a year at cost and 71,523.61 a year of gross margin. By channel per year: counter 137,555.05, email 109,830.29, phone 38,082.86.",
+   "queries": ["q324", "q286"]
+  },
+  {
+   "text": "Recent tail and returns. Last 252 operating days: 490 lines, 271,314.82 net of returns, 408 customers. Last 85: 156 lines, 90,763.66. Over days 1-2520, 16 uninvoiced lines were returned (4,618.19), and all 16 got a matching credit memo.",
+   "queries": ["q290", "q291"]
+  }
+ ],
+ "confidence": "high",
+ "not_evidence_of": "Any person's fault or misconduct: rep-level counts match chance across all 48 inside reps (q268). Nor is it proof that the full 2,569,213.83 (2016-2024 at order price, q324) is lost cash. Collection through a system outside these tables can't be seen, though there is no cash method and no higher rate for cash-terms customers (q260, q272). The economic loss is the goods given away. At cost that is 213,944.60 a year, and the forgone margin is 71,523.61 a year (q324). The finding also does not show how much is still collectible, and it does not identify the mechanism.",
+ "could_not_tell": "Whether any of these sales were collected outside the ERP and accounting tables (cash, manual invoices), because there is no POS or cash ledger. Why the line was dropped, because there is no invoicing or error log. How much of the recent tail is recoverable, which depends on customer terms and relationships. Whether the 234 special-order lines physically shipped, because special orders don't move through WMS.",
+ "next_step": "Give accounting the 156 lines (90,763.66) shipped in the last 85 operating days and the 490 lines (271,314.82, 408 customers) from the last 252 (q290). Confirm none were billed outside the ERP, then back-bill where terms allow. Add a daily exception report of shipped lines with no invoice line, keyed on line_id, and block credit memos against lines that were never invoiced (q291). Trace a sample of counter orders end to end to find where lines drop between order entry and invoice generation.",
+ "dead_ends": [
+  "Linkage artefact (null, orphan or duplicate line_ids, or qty, price, SKU or order mismatches): none (q255, q277, q257)",
+  "Re-bill on another line of the same order and SKU: 69 apparent matches are separate order lines billed only for their own qty (q229)",
+  "Consolidated or re-used customer-PO invoices, or unlinked payments: none cover these lines (q280, q282, q260, q262)",
+  "Invoice header including the missing line: 0 of 4,009 headers differ from their line sum by the missing value (q326, q329)",
+  "No WMS shipment: every non-special uninvoiced line's WMS sale includes it (q275)",
+  "$0-price or warranty lines: none (q224)",
+  "2025 end effects: in-window 2025 is at the normal rate. The hypothesis's 1.2M for 2025 came from lines shipping after day 2520 (q224, q226)",
+  "Concentration in a rep, customer, product, line position, month, trade or terms: none beyond chance (q268, q269, q259, q272, q238)"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted all five changes. (1) Cash caveat weakened: payments hold only check and ACH, and cash-terms customers show no higher counter rate (q260, q272). It still can't be excluded without a POS ledger. (2) Sizing reframed: 285,468.20 a year stays the headline as unbilled revenue at order price, because it is the true run rate. I now state alongside it the forgone gross margin of 71,523.61 a year and cost of 213,944.60 a year (q324). The actionable, recoverable amount is the recent tail: 271,314.82 over 490 lines and 408 customers in the last 252 days, of which 90,763.66 falls in the last 85 (q290). (3) Added the credit-memo leak: all 16 returned uninvoiced lines (4,618.19) were credited (q291). The next step now includes blocking such credits. (4) Populations are now labelled separately: 4,985 lines for days 1-2520 are used for rates, and 4,495 lines for 2016-2024 for sizing. (5) Re-verified the two items the challenger had not checked. q324 reproduces 213,944.60 a year at cost, the 0.1948% share and the 252,827.81-348,493.66 range. q326 reproduces 3,655 lines, 4,009 invoices and 3,956 paid at header. It gives 3,998 headers equal to line sums at a 2-cent tolerance, not the 4,008 I had stated. q329 shows the other 11 differ by only -0.02 to 0.03 and in 0 cases by the missing line's value, so the conclusion that the missing line is not in the header holds for all 4,009. I corrected that claim. I also added the challenger's linkage, re-use-PO, WMS-quantity and chance-dispersion tests as evidence and dead ends. Size query moved from q243 to q324, which re-runs the same sizing in this session with cost and margin.",
+ "accepted": true
+}

@@ -1,0 +1,11 @@
+# H2 notes
+- q247: re-order (any line) same customer+SKU within 1-10 days: short 9.34% (n=153,499, day<=2510); shipped re-order only 5.99% vs stock baseline 6.27%. Gap between any vs shipped = repeat shorts (stock-out persists).
+- q249 (days 253-2268): shipped re-order 10d short 6.30% vs stock 6.26%; 63d 24.9% vs 22.5%; 252d 40.9% vs 44.0%. Pre-short 10d rate 8.0%. No backorder bump.
+- q250: same-order cover by stock/transfer line same SKU: 352 of 155,280. Dead end for "filled by transfer".
+- q251: WMS on-hand at branch before order day: zero for 134,229; no history 11,653; >= ordered 6,386; partial 3,012. Shorts are real stock-outs mostly. 6,386 shorts with stock on hand = odd (allocation? timing), not pursued.
+- q252: per-year no uplift; category-level 10d re-buy ~66-74% for both short and stock -> uninformative about substitution.
+- q254: customer-SKU qty after/before 252d: short 1.033, stock 1.010 -> no lasting loss of that SKU's business. "Customers buy less afterwards" NOT supported.
+- q256: branches flat. Equipment short re-order 1.0% vs 2.6% baseline; supplies 11.5 vs 7.5, parts 9.9 vs 6.9, refrigeration 9.8 vs 6.4 -> small recovery 3-4 pts for non-equipment.
+- q258: special order within 30d after short: ~0. Equipment = 73,752 shorts, 18.5M of 26.6M short GM all years.
+- q263/q267: equipment substitute same tonnage: same order 19.2% vs 24.1% for stock lines; next 10d 27.6% vs 31.5%. No substitution signal.
+- q265 sizing: GM (standard cost) of shorts not reshipped in 10d, avg 2017-2024 = 2,165,946.53/yr. Upper bound; 2016 start-up, 2025 end-effects excluded.

@@ -1,0 +1,45 @@
+{
+ "finding": "F4",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Money/definition: the second bill was not a pure overpayment. Some first bills were short-paid or unpaid, so the '-R' payment may have settled a balance rather than paying twice.",
+   "test": "For each pair, put the payment status of the first bill next to the second's and compute total paid minus the bill amount.",
+   "result": "934 pairs: first paid in full and second paid, overpaid 2,670,334.82. 29 pairs: first short-paid (56,848.98 paid on 61,951.56 billed) and then second paid in full, so the net overpayment is 56,848.98, not 61,951.56. 4 pairs: both bills unpaid. 19 pairs: first short and second unpaid. 443 pairs: first paid in full and second unpaid. Net overpayment is 2,727,183.80, or 272,718.38 a year over 10 years. That is 5,102.58 below the gross 2,732,286.38. No pair is a case of the second bill paying for a first bill that was never paid.",
+   "queries": ["q148", "q170"]
+  },
+  {
+   "explanation": "Missing data/end effect: unpaid second bills may just not be due yet. That would inflate the 'held' count and depress 2025.",
+   "test": "Measure the payment lag on all bills, then restrict to second bills old enough to have come due.",
+   "result": "Every paid bill is paid exactly on its vendor's terms: lag 21 days on 30-day terms (188,660 bills), 31 on 45-day (74,466) and 41 on 60-day (99,323), each with one distinct lag. Ordinary bills are 100% paid in 2016-2024, and the only unpaid ones (5,235) are in 2025. Among 1,413 matured second bills, 962 were paid (0.6808) and 451 held (1,442,763.69). 15 unpaid second bills (21,759.97) are not yet due. The 2025 rate on matured bills is 0.6423 (n=137), so 2025's low 0.582 is partly an end effect. The '466 held' figure should be 451 held and 15 pending.",
+   "queries": ["q151", "q152", "q162", "q170", "q184"]
+  },
+  {
+   "explanation": "Definition/system artifact: the '-R' bill and its payment could be a copy the system made (a re-post or migration), not a second real cash payment.",
+   "test": "Check whether the second payment's timing is copied from the first. Check for payments without a bill, non-positive payments or reused invoice numbers.",
+   "result": "In all 962 matured paid seconds, the second bill's payment lag equals the first's. But q162 shows the lag is fully set by vendor terms on every bill, so this equality is expected and does not point to a copy artifact. There are no payments without a bill, no non-positive payments, no orphan payments, no reused invoice numbers and no other suffixed invoice formats. The tables can't separate a recorded payment from cash that actually left the bank: there is no bank data. Each second payment is a distinct payment row on a distinct day.",
+   "queries": ["q161", "q162", "q150", "q175"]
+  },
+  {
+   "explanation": "Second delivery: the '-R' bill could cover a genuine second shipment.",
+   "test": "Sum WMS receipt quantities (reason='receipt', ref_id=po_id) for the duplicate POs and compare with the PO and with one or two bills' quantity.",
+   "result": "All 944 stock POs were received on a single day. Received qty equals PO qty in all 944 and equals one bill's qty in 933. None equals two bills' qty. In 11, received qty is below the billed qty, which suggests the bill quantity exceeds the PO in those cases. For the stock POs, a second delivery is ruled out. It can't be tested for the 485 special POs, which have no receipts.",
+   "queries": ["q178", "q97"]
+  },
+  {
+   "explanation": "Recovery outside credits: vendors may have netted duplicates by Hartwell short-paying a later bill.",
+   "test": "For each paid duplicate, look for a same-vendor short-paid bill paid within 250 days whose shortfall is within 1% of the duplicate amount. Compare with a 1-in-20 sample of ordinary paid bills.",
+   "result": "1 in 1% of duplicates: 126 of 963 paid duplicates (0.1308) have such a match, against 2,396 of 18,004 sample bills (0.1331), which is the chance rate. So there is no sign of offset deductions. The credit-matching result in q113/q116 (6.96% vs 6.94%) is consistent with this. Side observation: 12,026 bills were short-paid by 2,249,435.22 in total, at about 0.85 of the amount on average. That's a separate pattern worth its own look.",
+   "queries": ["q165", "q151"]
+  },
+  {
+   "explanation": "Mix/confounding: which copies are held could depend on amount, branch, PO type or vendor rather than being a uniform failure.",
+   "test": "Paid rate on matured second bills by amount band, branch and purpose. Chi-square across branches. Compare the top vendor's share of duplicate dollars with its share of all billed dollars.",
+   "result": "By amount band: 0.667-0.691. Stock and special: both 0.681. By branch: 0.54 (Akron, n=100) to 0.776 (Pittsburgh, n=116), but chi-square = 17.25 on 11 df (n=1,413), which is within chance. Vendor 1 has 0.3796 of paid duplicate dollars and 0.3761 of all billed dollars, at a duplicate rate of 0.0041. Its 38% share reflects its size, not vendor-specific behaviour. What decides which copies are held is not visible in the data.",
+   "queries": ["q161", "q168", "q167"]
+  }
+ ],
+ "what_changed": "1) Size: the net overpayment is 2,727,183.80 (272,718.38 a year, 2016-01-01 to 2025-12-29), not 2,732,286.38. In 29 pairs the first bill was short-paid, so 5,102.58 of the second payment covered an unpaid balance (q148, q170). 2) Held vs pending: of 1,429 second bills, 15 (21,759.97) were not yet due at the end of the data. On 1,413 matured bills, 962 were paid (0.6808) and 451 (1,442,763.69) were held (q184). 3) The low 2025 rate is partly an end-of-data effect: 0.6423 on matured bills (q170). 4) The largest vendor's 38% share is proportional to its overall billing (0.3761), so it isn't a vendor-specific problem. Starting there makes sense only because the dollars are there (q167). 5) Branch differences in the held rate are within chance (q168). New support: a second delivery is ruled out for all 944 stock POs (q178), and there is no sign of recovery through offset short-payments (q165).",
+ "revised_conclusion": "From 2016-01-01 to 2025-12-29, 1,429 POs carry a second vendor bill. Its invoice number is the first plus '-R', and its lines, freight and amount are identical. On all 944 stock POs, WMS shows a single receipt equal to the PO quantity, so the copy doesn't reflect a second delivery. Hartwell pays every ordinary bill, on terms, without exception. Of the 1,413 '-R' bills that had come due, 962 were paid (0.6808) and 451 (1,442,763.69) were held, and 15 more are not yet due. The net overpayment, after allowing for 29 cases where the first bill had been short-paid, is 2,727,183.80, about 272,718.38 a year. The paid rate is flat across amount, PO type, branch (within chance) and vendor. The vendor mix follows billing volume. Neither vendor credits nor later short-payments show recovery above chance rates. Interpretation (not observed): a payables check catches about a third of these copies, and nothing in the records says why or how. A rule matching the base invoice number plus '-R', or the same PO and amount, would have flagged every one. The 962 paid copies are candidates for reconciliation against vendor statements. Confidence: high that the copies were recorded as paid. Whether the money is still unrecovered is uncertain, because statement and bank data are absent.",
+ "not_evidence_of": "Not evidence of vendor fraud, of any individual's fault, or of who entered or approved the bills (there is no user id). Not proof the cash is lost: recoveries could have been settled on vendor statements, by cheque refund or through netting outside finance_vendor_credits and the bill-linked payments, and none of that is recorded. For the 485 special POs, a second delivery can't be ruled out from WMS. The difference between held and paid copies doesn't show that a specific control or person exists: the reason a copy was held is not in the data. The 12,026 short-paid bills (2,249,435.22) are a separate pattern and are not part of this finding."
+}

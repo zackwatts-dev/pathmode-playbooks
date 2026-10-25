@@ -1,0 +1,14 @@
+# H7 notes
+- q261: due_day = invoice day + 0 / 21 / 31 operating days for terms 0/30/45. That's terms converted from calendar days, so 'late' is not an artefact. Terms-0 accounts are never late (they pay on the day).
+- q264: nobody pays before due_day (minimum is 0 days late). The days-late distribution has a bulk between 0 and 15 plus a second hump at about 30-40 days. No invoice is ever early, which is itself unusually clean.
+- q266: dead end / bug. It reported 10,178 customers, but there are only 6,025 paying customers (q270, q271). Probably a column-name clash with 'N'. Discarded; reran with explicit ON as q273.
+- q273: top 10% of customers (by overdue $-days) = 70.6% of overdue, against 47.2% of billing. Some of this is just size.
+- q274: customer weighted lateness is trimodal: about 2-3, about 8-10 and about 30 days. Segments: A <6, B 6-20, C 20+.
+- q278: C = 326 customers, 5.4% of billing, 33.3% of overdue, 31.1 days late. Credit limit median about 14.5k in all segments; 45-day terms share 16-19% in all segments. So terms and limits don't differ.
+- q281: persistence. Pearson 0.94 year to year on customer lateness (19,109 customer-year pairs); 1,152 of 1,171 C-years stay C next year.
+- q283: check vs ACH makes no difference in any segment. The mail/check explanation is dead.
+- q284: trade makes no difference (C share 5.1-6.2%). q289: branch C share 3.3-7.5%, no single branch.
+- q287: correlation of credit limit with avg AR is about 0. 20.9% of C customers have average AR above their limit. The limit doesn't seem to drive anything.
+- q293: C share of overdue 30-37% every year 2016-2025, with 174-192 C customers a year.
+- q301: 2016-2024 average overdue balance 2.98M = 5.12 operating days of sales; 8% cost = 238k. Bringing B+C to segment A's 2.43 days frees 0.92M (C) + 0.79M (B), worth 136,567.16/yr at an assumed 8%.
+- Suspicion: the trimodal, fixed-per-customer lateness looks generated (a per-customer pay-speed parameter). That reads more like a property of the dataset than of behaviour, but it's still the record as given.

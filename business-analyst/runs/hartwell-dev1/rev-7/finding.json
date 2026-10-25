@@ -1,0 +1,65 @@
+{
+ "id": "F7",
+ "hypothesis": "H7",
+ "title": "Overdue receivables sit in a persistent 'very slow' tier: customers flagged on 2016-19 data alone (152 accounts, 5.3% of 2020-24 billing) held 29.0% of the 2020-24 overdue balance. No recorded attribute explains the tier, including terms and credit limits.",
+ "conclusion": "Narrowed after the challenge. Observed: from 2016 to 2024 the overdue balance averaged 2,980,324, which is 20.0% of the 14,907,566 average total receivables (q343). Customers fall into three lateness tiers: prompt (about 2.4 days late, dollar-weighted), slow (about 8.7) and very slow (about 31) (q274, q278). A customer's tier persists. It also holds out of sample: customers classed on 2016-19 data only kept their tier's lateness in 2020-24 (prompt 2.45, slow 8.71, very slow 31.17). The 152 very slow accounts held 29.0% of the 2020-24 overdue balance on 5.3% of billing (q331). A customer's position within its tier does not persist. Year-to-year correlation inside each tier is 0.021, 0.013 and -0.061 (q341), so the overall 0.94 (q281) reflects only the gaps between tiers. The tier is the thing to act on; a ranking of individual customers is not. Terms, credit limit, size, tenure, discount, credit memos, invoice-question contacts, invoice month, payment method, trade and branch don't explain the tiers. Rep explains little if anything (q278, q283, q284, q289, q336, q337, q339, q347). Sizing: suppose the list had been drawn up in advance and the 152 accounts had been brought to prompt lateness in 2020-24. That would have released 786,932 of receivables, worth 62,955 a year at an assumed 8% (q357). Across scenarios the range runs from 30,760 a year (out-of-sample list moved only to slow lateness, at 5%; q357) to 136,567 a year (in-sample slow and very slow tiers both moved to prompt, at 8%; q343). Every figure is before any sales lost to tighter collections. Action: run a credit/AR review of the very slow tier, piloted against a control group, rather than tightening terms across the board.",
+ "dollars_a_year": 62954.5539934848,
+ "size_query": "q357",
+ "claims": [
+  {
+   "text": "due_day is the invoice day plus 0, 21 or 31 operating days for 0-, 30- and 45-day terms, so lateness is not an artefact of the day count. Terms-0 accounts (140,772 invoices) are never late, and no invoice is paid before due_day.",
+   "queries": ["q261", "q264"]
+  },
+  {
+   "text": "Every 2016-2024 invoice is paid in one payment for the full amount. All 21,848 unpaid invoices (17.29M) are from 2025, so 2016-2024 is the clean window for sizing.",
+   "queries": ["q322"]
+  },
+  {
+   "text": "Tiers on all data: 326 very slow customers (20+ days dollar-weighted) hold 5.4% of billing and 33.3% of the overdue balance at 31.13 days late. There are 1,285 slow customers at 8.67 days and 3,813 prompt customers at 2.43 days.",
+   "queries": ["q274", "q278"]
+  },
+  {
+   "text": "Out of sample: classed on 2016-19 (terms customers with at least 10 invoices), the tiers paid 2.45, 8.71 and 31.17 days late in 2020-24. The 152 very slow accounts held 5.3% of 2020-24 billing and 29.0% of the overdue balance. 1,635 customers who were new or had thin records in 2016-19 could not be classed beforehand; they account for 19.5% of billing and 18.5% of the overdue balance.",
+   "queries": ["q331"]
+  },
+  {
+   "text": "Tier membership persists: 1,152 of 1,171 very-slow customer-years stay very slow the next year (19,109 customer-year pairs, Pearson 0.94, Spearman 0.64). Within a tier, lateness doesn't persist: within-tier year-to-year Pearson is 0.021 for prompt (13,313 pairs), 0.013 for slow (4,613) and -0.061 for very slow (1,183).",
+   "queries": ["q281", "q341"]
+  },
+  {
+   "text": "No recorded attribute explains the tiers. Prompt against very slow: median invoice 1,042 against 1,054. Credit memos per invoice 0.0047 against 0.0050. Invoice-question contacts per invoice 0.0406 against 0.0413. Onboarded before 2016: 52.5% against 56.7%. Average discount 14.15% against 13.90%. Share on 45-day terms is 16.4%, 17.0% and 18.7% across the three tiers. Check and ACH payers show the same lateness. The very slow share is 5.1-6.2% by trade and 3.3-7.5% by branch. Across 36 reps, the very slow share has SD 0.021 against about 0.017 expected by chance.",
+   "queries": ["q336", "q278", "q283", "q284", "q289", "q337"]
+  },
+  {
+   "text": "Credit limit carries no usable signal. Across 6,025 customers it correlates -0.009 with billing and 0.006 with lateness. Equal limits across tiers therefore do not show that credit policy was tried and failed.",
+   "queries": ["q347", "q287"]
+  },
+  {
+   "text": "No seasonality: dollar-weighted lateness by invoice month runs 5.66-5.75 days for 2016-2024, while monthly billing ranges from 64.2M to 126.2M.",
+   "queries": ["q339"]
+  },
+  {
+   "text": "2025 is censored. 28.5% of very slow customers' 2025 invoices are unpaid, against 15.7% for prompt customers. The 2025 low point in the very slow share of overdue (30.3%) is therefore not an improvement.",
+   "queries": ["q327", "q293"]
+  },
+  {
+   "text": "Sizing. Out of sample for 2020-24: the 152 pre-classed very slow accounts hold 786,932 of receivables in excess of prompt lateness, worth 62,955 a year at 8%. Measured against slow lateness instead, the excess is 615,203, worth 30,760 a year at 5%. Adding the pre-classed slow tier at prompt lateness brings the total to 111,103 a year at 8%. In sample for 2016-24: 1,707,089 excess across the slow and very slow tiers, worth 136,567 a year at 8% (85,354 at 5%). Very slow alone is 921,328, worth 73,706 a year. The released receivables are a one-time release of cash; only the carrying cost recurs.",
+   "queries": ["q357", "q343"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "Credit risk or bad debt: every 2016-24 invoice is paid in full. That terms or limits are too generous, or that tightening them would work: limits track neither size nor lateness, and there's no history of terms or limits. Why accounts pay late: credit memos and invoice-question contacts don't differ by tier, and there are no dispute or dunning records. That collections effort would recover the sized amount: the figures rest on an assumed rate and ignore lost sales. That any rep or staff member is responsible: rep variation is close to chance. Interpretation: flat tiers with no persistence inside them, no seasonality and identical attributes look more like how the records were generated than like real payer behaviour. Treat the tiers as the record as given, not as established behaviour.",
+ "could_not_tell": "Why these accounts pay late (disputes, deductions, cash-flow trouble, an informal agreement). Whether credit holds were ever applied, or whether credit limits are enforced. Whether early-pay discounts or late fees exist. How many sales tighter collections would cost. Answering these would take an AR adjustments ledger, collection activity logs, effective-dated credit terms and limits, and an order-to-collection history before and after any intervention.",
+ "next_step": "Draw the very slow list from the most recent complete years with at least 10 invoices per customer (the q331 logic). Expect about a fifth of future overdue dollars to come from accounts not yet classifiable. Review the list with credit/AR for disputes or standing arrangements. Then randomise half the list to collection calls at due_day + 5 and keep half as a control. Measure the change in days late and in billing against the stable 31-day baseline. Confirm with finance whether credit limits are maintained or enforced.",
+ "dead_ends": [
+  "Due_day artefact from calendar vs operating days: didn't hold (q261)",
+  "Check vs ACH mailing lag: no difference (q283)",
+  "Terms or credit limit driving lateness: same in every tier, and the limit is unrelated to size (q278, q287, q347)",
+  "Trade, branch, size, tenure, discount, disputes as proxied by credit memos and invoice-question contacts, seasonality: none differ (q284, q289, q336, q339)",
+  "Individual ranking within the very slow tier: within-tier lateness doesn't persist (q341)",
+  "A first concentration query (q266) returned an impossible 10,178 customers against 6,025 paying customers (q270, q271); it was discarded and redone as q273"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "Accepted all seven points. (1) Circularity: accepted. The headline is now the out-of-sample result (q331: 152 accounts, 29.0% of later overdue on 5.3% of billing) rather than the in-sample 33%. I also ran a new query, q357, to size the saving for the list drawn up in advance: 62,955 a year at 8% to prompt lateness, 30,760 a year at 5% to slow lateness. This is now dollars_a_year, replacing the in-sample 136,567, which is kept as the upper end of the range (q343). (2) Correlation: accepted. 'A stable trait of each customer' is replaced by 'tier membership is stable'; within-tier r is about 0 (q341). (3) Confounders: accepted as further support. Size, tenure, discount, credit memos and invoice-question contacts show no differences, and rep explains at most a little (q336, q337). (4) Seasonality: accepted, flat (q339). (5) Censoring: accepted. The 2025 low point is attributed to unpaid invoices, and sizing stays on 2016-24 (q322, q327). (6) Credit limit: accepted. 'Limits no more generous' is reframed: the field carries no signal (q347), so policy effects can't be tested. (7) Money: accepted. It is now presented as a range, the cash release is one-time, there is no lost-sales offset, and the rate is assumed (q343, q357). Nothing in the challenge was rebutted; the recommendation is unchanged except for the added control group.",
+ "accepted": true
+}

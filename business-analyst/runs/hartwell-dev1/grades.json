@@ -1,0 +1,68 @@
+[
+ {
+  "finding": "F1",
+  "grade": "partly",
+  "problem": "P6",
+  "truth_queries": [
+   "t366",
+   "t367",
+   "t368"
+  ],
+  "why": "The finding matches the excess-stock half of P6: the buyer ignores discontinued dates, so retired equipment keeps being bought and then marked down. In 2025, 2,720 units (2015 wave) and 6,699 units (2023 wave) were bought for stock after their discontinued dates (t366), and marked-down stock lines lost -767,211 and -2,022,425 (t367). The truth tables back the claim that this is not rep discretion: rep extra discount averages about 0.028 on both marked-down and unmarked 2025 equipment lines (t368). The finding misses P6's other half, the seasonal stock-outs and short lines left unfilled while other branches had stock, so it covers one part of a two-part problem.",
+  "rank": 1,
+  "dollars_a_year": 2789636.578,
+  "grade_problems": []
+ },
+ {
+  "finding": "F2",
+  "grade": "full",
+  "problem": "P4",
+  "truth_queries": [
+   "t371",
+   "t372"
+  ],
+  "why": "All 13,949 paid-in-full bills the analyst flags as above PO are planted, uncaught P4 issues: 3,390 pure quantity-above-received bills ($2,087,672.59, an exact match) and 9,501 pure price-above-PO bills ($759,383.05 against $759,382.90 in truth), and the rest are mixed planted kinds (t372). The analyst's ~30% short-pay rate also matches the truth's catch rate, for example 1,713 of 5,542 quantity issues caught (t371). The finding gets the mechanism but undersizes it at $317K a year against the key's $876.6K. Its total counts only the quantity and price parts, while truth puts uncaught overpayment at $2.44M quantity, $1.13M price, $2.75M duplicates and $2.45M freight (t371). Duplicates (~$2.73M) come up only as a next step and freight only as withheld amounts. It also wrongly hedges that the special-order quantity and price excesses might have been owed, when truth marks all of them as overbilling.",
+  "rank": 2,
+  "dollars_a_year": 316656.47,
+  "grade_problems": [
+   "13,949 isn't in a cited truth query",
+   "30% isn't in a cited truth query",
+   "$317K isn't in a cited truth query",
+   "$876.6K isn't in a cited truth query",
+   "$2.73M isn't in a cited truth query"
+  ]
+ },
+ {
+  "finding": "F5",
+  "grade": "full",
+  "problem": "P3",
+  "truth_queries": [
+   "t376",
+   "t377"
+  ],
+  "why": "The truth table lists 4,989 unbilled lines worth $2,845,458.80. All 4,985 shipped-but-uninvoiced lines the analyst found are in it, worth $2,840,528.05 (t376). The truth has two causes: 2,797 lines dropped when the invoice was keyed ($1.61M) and 2,192 counter pickups never rung up ($1.23M) (t377). Those match the finding's order-to-invoice drop on hand-keyed orders, worst at the counter, and its ~$285K/yr size matches the key's $284,546/yr. The finding says it can't tell how lines get dropped, but it does identify what happens (goods shipped, line never invoiced) and where it shows in the records.",
+  "rank": 3,
+  "dollars_a_year": 285468.2,
+  "grade_problems": [
+   "$285K isn't in a cited truth query",
+   "$284,546 isn't in a cited truth query"
+  ]
+ },
+ {
+  "finding": "F7",
+  "grade": "full",
+  "problem": "P7",
+  "truth_queries": [
+   "t380"
+  ],
+  "why": "The truth table payer_profiles assigns each customer one fixed habit: prompt (mean 2 days late, 4,251 customers), late (12 days, 1,529) or slow (45 days, 376). The analyst's three tiers line up with these almost one to one: 324 of 326 'very slow' are truth-slow, 1,261 of 1,285 'slow' are truth-late and 3,722 of 3,813 'prompt' are truth-prompt (t380). So the finding identifies the planted per-customer payment habit from payments against due dates. It is also right that no other recorded attribute drives the tiers. The key gives no dollar figure, and the analyst's carrying-cost sizing of about $63K a year depends on an assumed interest rate.",
+  "rank": 4,
+  "dollars_a_year": 62954.5539934848,
+  "grade_problems": [
+   "326 isn't in a cited truth query",
+   "1,285 isn't in a cited truth query",
+   "3,813 isn't in a cited truth query",
+   "$63K isn't in a cited truth query"
+  ]
+ }
+]

@@ -1,0 +1,57 @@
+{
+ "finding": "F3",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions/denominator: the 5.92% 'outside the new line' share takes the new line out of the numerator but leaves its 10.5M of stock in the denominator. That makes the rest of the business look normal when it isn't.",
+   "test": "Recompute the dead + above-two-years share with the new R-454B line taken out of both numerator and denominator, at every year-end from 2018 to 2025 (same method as q140).",
+   "result": "Done consistently, the share outside the new line is 8.70% at end-2025 (1,949,995 / 22,409,266). The 2018-2024 range is 3.06%-5.17%, so 2025 sits well above it, not 'within range'. Flagged value outside the new line is 1.966x end-2024 (992,076) and 724,919 above the 2018-2024 average of 1,225,076. Of the rise from 2024, 681,875 is the R-410A SKUs discontinued 2025-01-01 (flagged 346,561 -> 1,028,436; share of their own stock 3.26% -> 19.52%) and 308,340 is other equipment (541,780 -> 850,120). Non-equipment stock is clean (1.57%). The original claim does not survive.",
+   "queries": ["q199", "q201", "q203", "q239"]
+  },
+  {
+   "explanation": "Definitions: the 'new' R-454B line (available_from 2025-01-01) may not be new in the records. If it held stock before 2025, part of its flagged value is old stock, and the historical baselines also contain it.",
+   "test": "Trace movements of available_from SKUs before 2025, and their year-end stock by year.",
+   "result": "6 of these SKUs had opening balances in 2016 (72 rows, 195,944) and 2 got receipts in 2016 (109,057). 72 pairs held 305,001 from 2018 to 2022, 100% flagged every year, with a first sale in 2023 and 161,839 of sales in 2024. So about 0.3M of the 'new line' is stock dating from 2016, not a pre-season buy. The available_from date is a catalogue attribute, not the true first-stock date. That doesn't change the headline, but these legacy pairs are genuinely stuck and belong with the old dead stock.",
+   "queries": ["q201", "q204"]
+  },
+  {
+   "explanation": "Seasonality vs overbuy: the new line's year-end stock could be a deliberate build for next season (the original reading) or an overbuy after a season in which demand fell away.",
+   "test": "Compare the R-410A->R-454B product family (130 SKUs discontinued 2025-01-01 plus 130 new) across 2024 and 2025: monthly sales and receipts, order fill and short lines, and year-end stock against prior years.",
+   "result": "Mostly supports the original reading. The family shows the same pattern every year: sales peak in May (2024: 5,529,622) and receipts peak July-August (2024: 5,207,681 in July). Year-end stock is built for next spring. In 2025 the new line had no receipts until June, and May family sales fell to 795,337. New-line orders were short on 4,433 lines worth 7,082,655 at cost, almost all May-August (June alone 3,860,721). Demand existed: family orders were 26,395,959 at cost in 2025 vs 23,780,411 in 2024. New-line year-end stock of 10,520,600 is in line with the predecessor's 2018-2024 year-end stock (10,643,363-11,956,569). Of the new line's 1,581,478 'dead' value, 1,043,170 (65.96%) sits in branch-SKU pairs that had short orders in 2025, so the stock arrived late rather than being stock nobody wanted. Caveat: the family as a whole holds 15,788,552 at year-end, 0.973 years of its 2024 stock sales vs 0.711 a year earlier. The overhang (4,883,881 above end-2024) is roughly the R-410A remainder, not the new line. Interpretation: the new line looks like a late, catch-up pre-season build. Only 2026 sell-through can confirm it.",
+   "queries": ["q201", "q210", "q213", "q214", "q215", "q218", "q220", "q223", "q241"]
+  },
+  {
+   "explanation": "Measurement: q147's 'moved within 252 days' (58-86%) may overstate how much flagged stock really cleared. It counts transfers out (stock still on Hartwell's books), and it counts any outflow even when that outflow was fresh receipts rather than the old units.",
+   "test": "Re-run the year-end 2017-2024 cohorts on three measures: the original (sale + transfer out), sales only, and net drawdown (stock at t minus stock at t+252, floored at 0). Net drawdown is a lower bound on old units moved.",
+   "result": "Sales only: 51.4%-78.2%. Net drawdown: 31.2%-52.2%. The true clearance of the old units lies somewhere between these and is not identifiable without lot or FIFO data. 'Slow rather than dead' is too strong. Somewhere between a third and four-fifths of flagged value clears within a year. (Flagged values match q147 except a few hundred dollars in 2023-2024, from float edge cases.)",
+   "queries": ["q237"]
+  },
+  {
+   "explanation": "Missing data claim: the original says there is no vendor return-rights data. If returns to vendors are recorded, the R-410A exposure can be sized as a recoverable amount, not only as a carrying cost.",
+   "test": "Look for return_vendor movements and vendor credits on discontinued equipment, and compare credit per unit with standard cost per unit.",
+   "result": "Both exist. In 2025, 604 return_vendor movements sent back 1,456,998 (995 units) of the R-410A SKUs discontinued 2025-01-01. Vendor credits so far total 731,905 for 624 units. In the 2023 discontinuation, 1,125,628 was returned and 899,305 credited. In both cycles credit per unit is 0.801 of standard cost, so returns recover about 80% and cost about 20% once. 371 returned units from 2025 have no credit yet. Applying that recorded ratio, returning the 1,028,436 of flagged discontinued R-410A would cost about 205,687 once. That is a recorded basis, unlike the assumed 20% carrying rate. Contract terms and deadlines are still not in the records.",
+   "queries": ["q227", "q228", "q230", "q233", "q239"]
+  },
+  {
+   "explanation": "Continued replenishment of discontinued R-410A could be POs placed before discontinuation that arrived late, not new buying.",
+   "test": "Join the 2025 receipts of 2025-discontinued SKUs to their purchase orders (ref_id = po_id) and check order day and purpose.",
+   "result": "Only 6,879 came from a PO placed before 2025 (day 2225). 836,715 came from 'stock' POs placed on days 2361-2482 (mid-2025), after the discontinuation date. Interpretation: this coincides with the new line's shortage months and may have been substitution buying, a pattern worth a conversation with purchasing. The records hold no buyer intent.",
+   "queries": ["q225"]
+  },
+  {
+   "explanation": "The money: the 389,999 a year applies an assumed 20% rate to all flagged value outside the new line. That includes the 1.0-1.4M of slow stock present at every year-end, which is structural and not new.",
+   "test": "Separate the recurring baseline from the 2025 increment, and compare with a recorded recovery cost.",
+   "result": "20% of the 2025 increment over the 2018-2024 average (724,919) is 144,984. 389,999 is 20% of everything flagged outside the new line. Both rest on an assumed rate. The only recorded figure is the roughly 20% one-time loss on vendor returns, about 205,687 on the flagged discontinued R-410A. dollars_a_year should be read as an assumption-driven upper range, not a recoverable amount.",
+   "queries": ["q158", "q239"]
+  },
+  {
+   "explanation": "Valuation: stock is valued at erp_products.unit_cost. If transaction costs differed, the totals would shift.",
+   "test": "Compare transaction unit_cost with product unit_cost on every movement.",
+   "result": "Zero rows differ across all 3.16M movements. Valuation is internally consistent, but it is a fixed standard cost, so actual cost is still unknown.",
+   "queries": ["q192"]
+  }
+ ],
+ "what_changed": "(1) Retracted: the claim that stock outside the new line is 'within the historical range'. Measured consistently it is 8.70% at end-2025 against 3.06%-5.17% for 2018-2024, and flagged value outside the new line nearly doubled from end-2024 (1.966x). The rise is concentrated in the R-410A SKUs discontinued 2025-01-01 and other equipment. (2) Strengthened: the reading of the new R-454B line as seasonal build. Its stock arrived after a short-heavy May-August (7,082,655 of short lines at cost), 65.96% of its 'dead' value sits where orders went short, and its year-end stock matches the predecessor's historical year-ends. About 0.3M of 'new line' stock actually dates from 2016. (3) Weakened: 'flagged stock is slow rather than dead'. The lower-bound clearance is 31-52%, not 58-86%. (4) Corrected: vendor return data exists. Returns of discontinued equipment are credited at 0.801 of standard cost per unit in both 2023 and 2025. (5) Specified: 836,715 of post-discontinuation R-410A receipts came from POs placed in mid-2025, not from late pre-2025 POs. (6) Money: 389,999 is an assumed-rate figure on all flagged stock. The 2025 increment at the same rate is 144,984, and the recorded one-time vendor-return loss on flagged R-410A is about 205,687.",
+ "revised_conclusion": "Observed (day 2520, standard cost): 18.77% of on-hand value (6,179,466 of 32,929,865) is dead or above two years of supply, so the 10% test is met (q108, q140). 4,229,471 of it is the R-454B line marked available 2025-01-01. That line's stock (10,520,600) looks like a late pre-season build, not overbuying. It arrived June-October after May-August short orders worth 7,082,655 at cost, two-thirds of its 'dead' value sits where those shorts occurred, and its size matches the predecessor line's 2018-2024 year-ends (q201, q215, q218, q220). Outside that line, though, the flagged share is 8.70% (1,949,995 of 22,409,266), above every year-end from 2018 to 2024 (3.06%-5.17%) and nearly double end-2024 (q203, q199). Most of the rise is the R-410A equipment discontinued 2025-01-01: 1,028,436 flagged, 19.52% of its 5,267,952 on hand, up from 346,561 (q201, q239). 836,715 of that line was received on stock POs placed after discontinuation (q225). Interpretation: there is no broad overstock, but there is a real and growing R-410A phase-out overhang, plus a recurring 1.0-1.4M of slow stock every year. Recorded vendor returns recover about 80% of standard cost per unit (q230, q233), so clearing the flagged R-410A by return would cost about 205,687 once. Carrying cost depends on an assumed rate (20% gives 389,999 a year on all flagged stock outside the new line, or 144,984 on the 2025 increment). Of historically flagged stock, between 31% and 86% cleared within a year, depending on the measure (q237). Confidence: medium.",
+ "not_evidence_of": "Not evidence that the R-454B purchases were a mistake or a deliberate pre-buy. The timing and shorts fit a late seasonal build, but the records hold no buyer intent or vendor allocation, and 2026 sell-through is outside the data. Not evidence that R-410A stock can't be sold. It still sold 4,769,233 in 2025, and the regulatory sell-by is not in the records. Not evidence of a buyer's judgement: the post-discontinuation POs are a pattern worth a conversation with purchasing, not a conclusion, and may have been substitution during the new line's shortage. The 80% credit ratio is what was recorded, not a contractual guarantee. The 20% carrying rate is assumed. discontinued_on and available_from are catalogue attributes that don't match actual stocking (R-454B SKUs 'discontinued' in 2015, 'new' SKUs stocked since 2016), so they should not be read as the true lifecycle dates."
+}

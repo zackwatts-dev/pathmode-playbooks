@@ -1,0 +1,51 @@
+{
+ "finding": "F5",
+ "verdict": "stands with changes",
+ "alternatives": [
+  {
+   "explanation": "Definitions / linkage artefact: the lines were billed, but the invoice line carries a null, orphan or wrong line_id, a different SKU or order, or an inflated quantity that absorbs the missing line. If so, 'uninvoiced' would describe how the records link, not what happened in the business.",
+   "test": "Check every invoice line (2,558,500) for a null or orphan line_id, duplicate line_ids, a SKU, order, quantity or price that differs from its order line, billing of unshipped lines, and amounts that differ from qty x price. Check for invoices with no order or no lines.",
+   "result": "0 null, 0 orphan and 0 duplicate line_ids. 0 invoices without a valid order and 0 without lines (q255). 0 invoice lines whose quantity is over or under, or whose price, SKU or order differs from the order line, and 0 billing unshipped lines (q277). 1,303 lines have amount different from qty x price, but the net difference is -74.47 with a ratio range of 0.9771 to 1.0185, and only 2 sit on affected orders, so this is rounding noise (q257). The link is clean, so the gap is not a linkage artefact.",
+   "queries": ["q255", "q257", "q277"]
+  },
+  {
+   "explanation": "Billed somewhere else: on another order's invoice, a consolidated invoice keyed by customer PO, or through payments not tied to an invoice.",
+   "test": "For the 1,139 lines on orders with no invoice, look for invoices for the same customer under the same customer PO, and for invoices in the next 60 days matching the line value. Check for payments with no invoice or an orphan invoice, and for invoices paid above their amount.",
+   "result": "Of the 1,139 lines (1,135 orders), 8 share a customer PO with another invoice (q280). On inspection all 9 matches are other orders' invoices with no line for the same SKU, and the invoice value equals the other order's own value, so these are reused POs, not re-bills (q282). 4 lines have a same-amount invoice within 60 days, which is negligible (q280). Every payment (751,147 check, 615,670 ACH) ties to an existing invoice, and 0 of 1,388,665 invoices are overpaid (q260, q262). Within these records, nothing was collected for the missing lines.",
+   "queries": ["q280", "q282", "q260", "q262"]
+  },
+  {
+   "explanation": "Cash at the counter: counter sales were paid on the spot and recorded outside these tables, which would make the counter excess a recording convention rather than leakage.",
+   "test": "Check payment methods for any cash. If cash collection explained the gap, cash-terms (terms_days=0) customers should show a higher counter rate than 30- or 45-day account customers.",
+   "result": "Payments contain only check and ACH, so cash is not recorded anywhere, for any sale (q260). Counter rates by terms are 1.054% at 0 days (244/23,156), 1.120% at 30 days (1,824/162,907) and 1.189% at 45 days (432/36,329) (q272). Cash-terms customers are not higher, which argues against cash collection. It cannot be ruled out, because there is no POS or cash ledger.",
+   "queries": ["q260", "q272"]
+  },
+  {
+   "explanation": "Concentration hidden in the average: a few reps, customers, product types, line positions or seasons drive the gap, so 'process' would be the wrong frame.",
+   "test": "Run a chi-square of per-rep uninvoiced counts against each channel's pooled rate. Compare uninvoiced and invoiced lines on value, markdown, partial shipment and price-to-list. Break the rate down by order size and line position, and by month, trade and terms.",
+   "result": "Per-rep dispersion is what chance predicts: chi-square 36.5 (counter), 52.5 (email) and 53.8 (phone) across 48 reps each, with 0 reps beyond 3 SD (q268). Uninvoiced lines look like invoiced ones. For counter, median value is 235.64 vs 252.12, average markdown 0.011 vs 0.0117, partial-ship share 0.0124 vs 0.0123 and price-to-list 0.8361 vs 0.8363 (q269). The counter rate is 1.127% on single-line orders, 1.088% on 2-3 lines and 1.166% on 4+ lines, and dropped lines are spread across positions (q259). By month, the counter rate runs from 0.975% to 1.212% (q272). By trade it runs from 1.107% to 1.186% (q272). Interpretation: the gap behaves like a random per-line drop at a fixed rate per channel. That supports a process or system cause, not one tied to people, customers or products.",
+   "queries": ["q268", "q269", "q259", "q272"]
+  },
+  {
+   "explanation": "The goods never left: lines marked shipped without stock moving, so nothing physical was given away.",
+   "test": "For the non-special uninvoiced lines, compare WMS sale quantity for the order and SKU with the total shipped across all of that order's lines for the SKU, including the uninvoiced line, and with the total excluding it.",
+   "result": "All 4,751 non-special lines have a WMS sale. In every case the WMS quantity equals the total including the uninvoiced line, and in 0 cases does it equal the total excluding it. 4,529 moved on the ship day (q275). The goods left. The 234 special-order lines cannot be confirmed through WMS.",
+   "queries": ["q275"]
+  },
+  {
+   "explanation": "Sizing: order-price value overstates the loss (returns, credits), or overstates what can be recovered.",
+   "test": "Re-run the sizing by channel, net out returns, and check whether returned uninvoiced lines got credit memos. Size the recent, plausibly recoverable portion.",
+   "result": "Re-run 2016-2024: 2,569,213.83 in total, 285,468.20 a year. By channel per year: counter 137,555.05, email 109,830.29, phone 38,082.86. Gross margin on those lines is 71,523.61 a year (q286). Over 2016-2025 (days 1-2520), 16 of the 4,985 lines were returned (4,618.19), leaving 2,835,910.46 net of returns (q290). All 16 returns got a matching credit memo (q291). Interpretation: customers were credited for goods they were never billed for, a small second leak. Recoverable is far smaller than the cumulative figure: 490 lines worth 271,314.82 across 408 customers in the last 252 operating days, and 156 lines worth 90,763.66 in the last 85 (q290).",
+   "queries": ["q286", "q290", "q291"]
+  },
+  {
+   "explanation": "Period or trend: a past episode or a window end effect rather than a steady leak.",
+   "test": "Re-run the channel rates. The year rates come from q232/q224, and the 2025 value is matched by my last-252-day figure.",
+   "result": "Channel rates reproduce exactly: counter 1.124% (2,500/222,392), email 0.155% (1,850/1,195,113), phone 0.148% (635/429,969), EDI 0/461,656, web 0/254,355, 0.194% overall (4,985/2,563,485) (q286). The 2025 value of 271,314.82 for 490 lines (q290) matches the original's 2025 row, so the leak is steady and not an end effect.",
+   "queries": ["q286", "q290"]
+  }
+ ],
+ "what_changed": "The core finding survived every test I ran. The invoice links are clean, no re-bill or off-invoice payment exists, the goods left per WMS, and rep spread is consistent with chance. Changes: (1) The 'cash at the counter' caveat is weakened. No cash method exists in payments, and cash-terms customers show no higher counter rate (q260, q272). It still cannot be excluded without a POS ledger. (2) Sizing is reframed. 285,468.20 a year is unbilled revenue at order price (q286). The figure the business can act on is the recent tail: 271,314.82 over 490 lines and 408 customers in the last 252 operating days, of which 90,763.66 over 156 lines falls in the last 85 (q290). (3) New: all 16 returned uninvoiced lines (4,618.19) received credit memos, so the business credited goods it never billed (q291). The exception report should also block credits against unbilled lines. (4) The original text mixes populations: 4,495 lines (2016-2024, for sizing) and 4,985 (2016-2025, for rates). Both are right for their purpose. (5) Not re-verified by me: the standard-cost figure of 213,944.60 and q240's paid-at-header count. q262 independently shows no invoice was paid above its amount.",
+ "revised_conclusion": "On hand-keyed orders, a small fixed share of shipped lines never reaches an invoice. From 2016 to 2025, 4,985 of 2,563,485 shipped lines (0.194%) have no invoice line. The rate is 1.124% for counter, 0.155% for email, 0.148% for phone, and 0 for EDI and web (q286). For those lines the goods left per WMS (q275). No other invoice or payment covers them (q255, q277, q280, q260, q262), and none of the uninvoiced lines was ever invoiced later. At order price that is 285,468.20 a year of unbilled revenue in 2016-2024, carrying 71,523.61 a year of gross margin (q286). Drops look random across reps, customers, products, line positions and months (q259, q268, q269, q272). Interpretation: this points to an order-to-invoice step on manual entry, worst at the counter, not to people. Recoverable money is the recent tail: 271,314.82 across 408 customers in the last 252 operating days (q290). Also, 16 such lines were returned and credited, 4,618.19 of credits for goods never billed (q291).",
+ "not_evidence_of": "Any person's fault or misconduct: rep-level counts match chance (q268). Nor is it proof that the full 2.57M (2016-2024 at order price) is lost cash: collection through a system outside these tables can't be seen. Nor does it show how much is still collectible, which depends on customer terms and relationships the records don't hold. It also does not identify the mechanism: there is no invoicing or error log. The 234 special-order lines have no WMS confirmation that goods left."
+}

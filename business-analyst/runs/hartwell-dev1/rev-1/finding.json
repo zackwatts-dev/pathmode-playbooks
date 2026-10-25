@@ -1,0 +1,73 @@
+{
+ "id": "F1",
+ "hypothesis": "H1",
+ "title": "H1 doesn't hold: the markdown is a mechanical clearance price on discontinued equipment sold from branch stock, not a discount anyone chooses. The actionable leak is that two discontinued waves keep being restocked at standard cost and sold off the 42% ladder (-2.79M gross profit in 2025)",
+ "conclusion": "Nobody chooses the markdown. It appears only on equipment lines ordered on or after the SKU's discontinued_on date: 84,092 lines, against 0 among 2,635,247 other lines from 2016 to 2025 (q105, q96, q157). It follows a fixed ladder of 0.021 per month, capped at 0.42 (q114). No equipment SKU-day carries two different values (0 of 328,178, q120). The price is cut only when the order is filled from branch stock. In 2025, 99.2% of 8,623 stock lines came from a branch that held stock the day before, against 0.3% of 6,042 special lines (q212). Invoices match order prices on 100% of lines (q179). The markdown shows no lift in quote wins: difference-in-differences of -0.004, comparing 2022 with 2025 (q219, q221). So H1's reading, that rep or customer discounts failed to win volume, is ruled out. The issue the business can act on is narrower. The 2015 and 2023 discontinuation waves are still restocked at standard cost: 2,720 and 6,699 stock units bought in 2025 (q129). Both are sold from stock at the 0.42 cap. Gross profit on those marked-down stock lines in 2025 was -767,211 for the 2015 wave and -2,022,425 for the 2023 wave, -2,789,637 in total (q196, q217). The 2015 wave has run at about -0.77M a year since at least 2022. The whole rise comes from the 2023 wave, whose restocking dropped to 1,645 units in 2023 and then resumed at 6,163 (2024) and 6,699 (2025) (q196, q198). The headline -2.49M is a net figure. It includes +298,745 from the 2025 wave's pre-discontinuation stock, which is still low on the ladder (q217). Stopping restocking would avoid up to about 2.79M a year at 2025 volumes, if that demand simply goes away. The challenger proposed a higher bound of 4.78M, which assumes the stock demand moves to special orders at about 0.83 of list. The records don't support that bound. In each wave's first year after discontinuation, stock dried up and special orders fell rather than rose: 2,103 to 959 for the 2023 wave (2022 to 2023), and 2,112 to 651 for the 2025 wave (2024 to 2025) (q245, q246). Separately, 9,231 discontinued units are on hand at end-2025, 3,571 of them in the 2025 wave, which will reach the cap (q191, q221). A return-to-vendor channel at 0.80 of standard cost already exists (q185). Recommended action: purchasing should confirm why the 2015 and 2023 waves are still replenished for stock when the 2025 wave largely isn't, and cost selling at the cap against returning to vendor at 80%.",
+ "dollars_a_year": 2789636.578,
+ "size_query": "q246",
+ "claims": [
+  {
+   "text": "Markdowns exist only on equipment lines ordered on or after discontinued_on: 84,092 such lines with a markdown, 373 without, and 0 marked-down lines among the 2,635,247 other lines, 2016-2025.",
+   "queries": ["q105", "q96", "q157"]
+  },
+  {
+   "text": "The markdown is a fixed ladder of 0.021 per month since discontinuation, capped at 0.42 from month 20. No equipment SKU-day carries two different values (0 of 328,178), so customers, reps and branches cannot differ except through the SKUs they buy and whether the branch has stock.",
+   "queries": ["q114", "q120", "q99"]
+  },
+  {
+   "text": "The markdown is cut into price only on stock-filled lines, and the stock-filled line is determined by branch availability, not by customer choice. 2025 (2015 and 2023 waves): 99.2% of 8,623 stock lines vs 0.3% of 6,042 special, 1.5% of 1,196 short and 3.8% of 417 transfer lines came from a branch holding stock the day before. Equipment lines since 2024: stock lines with a markdown are priced at 0.536 of list, while special, short and transfer lines with a markdown are priced at 0.828-0.831, the same as unmarked lines.",
+   "queries": ["q212", "q176", "q138"]
+  },
+  {
+   "text": "The order price is the billed price. Invoice unit price equals order unit price on 100% of post-discontinuation lines in 2024-2025. For 2025 stock marked-down lines that is 11,826 lines, 11,542,049 invoiced.",
+   "queries": ["q179"]
+  },
+  {
+   "text": "Gross profit on marked-down stock lines, by wave. 2015 wave: -774,018 (2022), -777,546 (2023), -790,997 (2024), -767,211 (2025). 2023 wave: +307,470 (2023), -1,383,848 (2024), -2,022,425 (2025). 2025 wave: +298,745 (2025). The two restocked waves lost 2,789,637 together in 2025. The net across all three waves is -2,490,892.",
+   "queries": ["q196", "q217"]
+  },
+  {
+   "text": "Restocking after discontinuation differs by wave. 2015 wave: 2,463-2,766 stock units bought each year 2018-2025, with 2,720 in 2025. 2023 wave: 11,453 (2022), 1,645 (2023), 6,163 (2024), 6,699 (2025). 2025 wave: 10,326 (2024), 582 (2025).",
+   "queries": ["q129", "q198"]
+  },
+  {
+   "text": "Standard cost is close to what is billed. PO cost equals standard cost, and vendor bill cost runs at 1.0008-1.0024x PO cost on post-discontinuation POs in 2024-2025. The loss is therefore not an artefact of standard costing.",
+   "queries": ["q181"]
+  },
+  {
+   "text": "A return-to-vendor credit channel exists. finance_vendor_credits holds 1,234 credits (1,849 units, 1,929,606) from 2016-07-06 to 2025-12-29, all on discontinued SKUs and dated after discontinuation, each at 0.80 of standard cost. WMS records -2,222 return_vendor units on discontinued SKUs.",
+   "queries": ["q180", "q185", "q186"]
+  },
+  {
+   "text": "In 2025, special-order lines for the same waves earn per unit +220 (2015 wave) and +241 (2023 wave). Stock lines lose -307 and -330.",
+   "queries": ["q208"]
+  },
+  {
+   "text": "When stock dried up in a wave's first discontinued year, special orders did not absorb the demand. The 2023 wave went from 16,108 lines (2022) to 5,757 (2023), with special lines 2,103 to 959. The 2025 wave went from 14,489 lines (2024) to 3,903 (2025), with special lines 2,112 to 651. As the 2023 wave was restocked, its special lines rose with its stock lines, reaching 3,257 in 2025, 3.40x the 2023 level. The 2015 wave sold 2,785 special units alongside 2,497 stock units in 2025.",
+   "queries": ["q245", "q246", "q208"]
+  },
+  {
+   "text": "The markdown shows no lift in quote wins. 2023-wave equipment quote lines: win rate 0.428 (30,557 lines, 2022) to 0.440 (19,522 lines, 2025), while the quoted price fell from 0.837 to 0.630 of list. Never-discontinued equipment: 0.430 (47,701) to 0.445 (68,210). Difference-in-differences: -0.004.",
+   "queries": ["q219", "q221"]
+  },
+  {
+   "text": "Discontinued units on hand at end-2025: 1,762 (2015 wave), 3,898 (2023 wave) and 3,571 (2025 wave), 9,231 in total.",
+   "queries": ["q191", "q221"]
+  }
+ ],
+ "confidence": "medium",
+ "not_evidence_of": "This is not evidence of rep, branch or customer discretion. Price is set by SKU, date and whether the branch had stock, and customers rarely see both fulfilment paths: 65 of 5,301 customer-SKU pairs (2015 wave) and 227 of 9,460 (2023 wave) were filled both ways in 2025 (q211). Most of the 13.26M 'markdown dollars' is not money given away. markdown_pct sits on special, short and transfer lines whose price is not cut. That fits a clearance rule that applies only to stock on hand, and is probably not a keying error. It is a reporting overstatement. The vendor credits are not rebates on units sold: they are 80%-of-cost credits on returned units. The first-year drop in special orders is not proof that demand at 42% off would vanish if restocking stopped. Interpretation: the drop coincides with discontinuation itself, when customers may switch to replacement SKUs, so it is confounded. The branch correlation (n=12) is weak and partly mechanical.",
+ "could_not_tell": "Three questions remain open. (1) How much of the 42%-off stock demand would vanish, and how much would move to special orders at about 0.83 of list, if restocking stopped. This needs a controlled stop at some branches, or a SKU-successor mapping to see whether demand moves to replacements. (2) What discontinued_on means in practice. SKUs flagged in 2015 are still bought from vendors every year, which points to a pricing flag rather than vendor end-of-life. Pricing and purchasing would need to confirm. (3) Which customer orders the special POs serve, because POs carry no order_id. There is also no record of who or what triggers stock POs on discontinued SKUs.",
+ "next_step": "Take the by-wave restocking pattern to purchasing. The 2025 wave's stock buys fell from 10,326 to 582 units, while the 2015 wave (2,720 units) and the 2023 wave (6,699 units) were still restocked in 2025. Ask whether that difference is a deliberate rule. Pilot a stop on stock replenishment for 2015- and 2023-wave SKUs at a few branches, and compare special-order and total volume against branches that keep restocking. That separates the 2.79M lower-bound saving from the demand question. Cost the 3,571 on-hand 2025-wave units at the 0.42 cap against vendor return at 0.80 of standard cost. Have markdown reporting count only stock-filled lines.",
+ "dead_ends": [
+  "Rep, branch and customer discretion test: impossible, because markdown is identical for every line of a SKU on a day (q120)",
+  "Quote win-rate lift from markdown: none, including by difference-in-differences (q136, q219, q221)",
+  "Branch order growth vs markdown change: no relation (q141)",
+  "q109 per-wave totals: join bug, discarded",
+  "Upper-bound saving of 4.78M if stock demand moved to special orders (q217): not supported. Special orders fell when stock dried up in each wave's first year (q245, q246)"
+ ],
+ "incomplete": false,
+ "response_to_challenge": "I accepted most of the challenge. (1) Size: -2.49M was a net that hid the 2025 wave's +298,745. The loss on the restocked waves is 2,789,637 (q196, q217), and the rise since 2022 is all the 2023 wave. dollars_a_year is now 2,789,636.578 (q246). (2) 'No closeout/rebate ledger' was wrong. finance_vendor_credits holds 1,929,606 of return-to-vendor credits at 0.80 of standard cost (q180, q185). They are credits on returned units, not on units sold, so the GP loss stands, but the disposal channel now appears in the recommendation. (3) 'Recorded but not applied' is better read as a clearance rule that applies only to stock on hand (q212), not a data fault. I reworded the claim and the next step. (4) Standard cost is close to billed cost (q181), so I dropped my caveat that standard cost isn't the cost paid. (5) Replenishment differs by wave (q198, q129), which narrows the question for purchasing. (6) Forward exposure is 9,231 units on hand (q191). (7) The invoice check (q179) and the difference-in-differences (q221) confirm the original claims. I disagreed with one part: the 2.79M-4.78M recoverable range. The upper bound assumes stock demand moves to special orders at about 0.83 of list. I tested this with q245 and q246. In each wave's first discontinued year, stock availability fell and special orders fell too: 2,103 to 959 for the 2023 wave, 2,112 to 651 for the 2025 wave. Later, the 2023 wave's special lines rose together with its restocked stock lines. Neither pattern shows demand switching to special orders, so I keep 2.79M as the sizing figure and treat 4.78M as unsupported. My reading of these patterns is an interpretation, and it is confounded by customers switching to replacement SKUs. A branch pilot would settle it.",
+ "accepted": true,
+ "data_concerns": "None of the records read contained text addressed to an AI."
+}

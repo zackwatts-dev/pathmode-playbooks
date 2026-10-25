@@ -1,0 +1,13 @@
+# H6 notes
+- q102: WMS reasons. q108: end-2025 base: 32.93M on hand, dead 2.60M (509 pairs), above-2y portion of excess 3.58M (758 pairs); dead+above-2y = 6.18M (matches q79).
+- q112: almost all in equipment, pairs without opening balance. Dead equipment pairs nearly all received in last 252 days -> not old stock.
+- q119/q125: 194 dead equipment pairs never sold; 160 pairs/1.55M are R-454B SKUs with available_from 2025-01-01, first received ~mid-2025. New-line pipeline fill, not dead.
+- q144: 130 R-410A SKUs discontinued 2025-01-01, 130 R-454B available 2025-01-01: refrigerant changeover. Other 'discontinued' 2015/2023 SKUs still sell; meaning of discontinued_on unclear (dead end for 'discontinued = dead').
+- q132/q137: R-454B new line = 4.23M of 6.18M flagged. Using H2 run-rate instead of trailing 252 cuts its excess to 1.05M.
+- q140: year-end over-2y share 2017 9.2%, 2018-2024 3.95-6.19%, 2025 18.77%. 2016 23.5% = start-up artefact. Stock ~3.65-4.53 months of COGS every year: no general overstock.
+- q143/q146: R-454B 2025 receipts 14.05M vs sales 3.83M; bought Jul-Sep; equipment demand summer-peaked so Dec is the low point. Disc equipment drawing down every year 2022-2025.
+- q147: flagged stock historically turns: 58-86% of value moves within next 252 days. Slow, not dead.
+- q149: R-410A (disc 2025) still 5.27M on hand, 0.84M received in 2025 after discontinuation date; H2 sales 1.90M.
+- q153: no sale/transfer 504 days: 1.84M, of which 1.46M new R-454B, only 0.10M held since end-2024.
+- Dead end: opening-balance gap doesn't explain anything here (flagged pairs are mostly no-opening pairs but stock is recently received).
+- Carrying rate 20% is an assumption.

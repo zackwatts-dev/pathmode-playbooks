@@ -1,0 +1,11 @@
+# H3 notes
+- q93: bill line ↔ PO line on po_id+sku is 1:1, no orphans, no multi-payments. Clean join.
+- q98: deviations one-sided: 0 under-qty, 0 under-cost lines in any pay group. Full-paid excess 3,166,564.74; short-paid 1,371,706.45; unpaid 72,323.24.
+- q103: yearly full-paid excess 272,769 (2023) to 429,672 (2016); qty-driven ~70%.
+- q110: price-step test DEAD for "weaken": after first overpriced bill per vendor-SKU, later lines overpriced 2.49% = base 2.49%; 0 of 1,082 vendor-SKUs step-like; ratio p10/p50/p90 1.035/1.055/1.075.
+- q115: spread across all 44 vendors; line rate 1.4-3.9% per vendor; OEM 2.55M of excess (equipment is high value); top vendor 34%.
+- q117: credits can't offset: 390 unmatched credits 426,892 total; only 114 (117,424) within 120 days after a same vendor+SKU overbill.
+- q122: full vs short-paid overbilled bills look alike (median ratio 1.0556 vs 1.0564, median excess 61.63 vs 62.43, 44 vendors both).
+- q126: caught share steady 27.6-31.2% per year; 102 full-paid overbilled bills sit on POs with duplicate bills (minor overlap with dup issue).
+- Freight not included in sizing: terms unknown.
+- Caveat: the uniform random pattern (fixed ratio band, flat rate) may be a property of how the data was generated / recorded, not real vendor behaviour.
