@@ -554,28 +554,34 @@ def test_every_answer_code_can_disprove_is_rejected_and_goes_to_a_person(bad):
 )
 def test_words_the_language_checker_finds_accusing_send_the_flag_to_a_person(text):
     f, data = flag_and_data()
-    words = lambda p, t=text: {
-        "accuses": True,
-        "names": False,
-        "cause_as_fact": False,
-        "discipline": False,
-        "words": t,
-        "why": "accuses",
-    }  # noqa: E731
+
+    def words(p, t=text):
+        return {
+            "accuses": True,
+            "names": False,
+            "cause_as_fact": False,
+            "discipline": False,
+            "words": t,
+            "why": "accuses",
+        }
+
     r = A.read_flag(f, data, Desk(answer(explanation=text), words=words))
     assert not r.explained and any("accus" in x or "cause" in x for x in r.problems)
 
 
 def test_a_language_verdict_whose_words_arent_in_the_answer_still_goes_to_a_person():
     f, data = flag_and_data()
-    words = lambda p: {
-        "accuses": True,
-        "names": False,
-        "cause_as_fact": False,
-        "discipline": False,
-        "words": "not there at all",
-        "why": "?",
-    }  # noqa: E731
+
+    def words(p):
+        return {
+            "accuses": True,
+            "names": False,
+            "cause_as_fact": False,
+            "discipline": False,
+            "words": "not there at all",
+            "why": "?",
+        }
+
     r = A.read_flag(f, data, Desk(answer(), words=words))
     assert r.problems and not r.explained
 
