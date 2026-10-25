@@ -785,3 +785,23 @@ def test_passages_joined_by_an_ellipsis_can_come_from_anywhere_in_the_document()
     )
     assert sa.passages_found("up to 5% of the prior year's purchases ... a restocking charge of 20% applies", text)
     assert not sa.passages_found("up to 5% of the prior year's purchases ... a restocking charge of 10% applies", text)
+
+
+def test_a_quote_from_a_table_cell_whose_lines_interleave_with_other_columns_is_found():
+    text = (
+        " 1      Clause B2 (Volume          Reduced from US$49,000,000 to                  From 1st January\n"
+        "        rebate): threshold for     US$41,000,000. The rebate rates are            2021\n"
+        "        Tier 3, the third tier     unchanged.\n"
+        " 2      New: R-454B                1.50 per cent on Eligible Purchases of R-      Invoices dated 1st\n"
+        "        transition incentive       454B equipment invoiced in the period          July 2021 to 31st\n"
+    )
+    assert sa.passages_found("Reduced from US$49,000,000 to US$41,000,000. The rebate rates are unchanged.", text)
+    assert sa.passages_found("1.50 per cent on Eligible Purchases of R-454B equipment invoiced in the period", text)
+    assert not sa.passages_found("Reduced from US$49,000,000 to US$40,000,000. The rebate rates are unchanged.", text)
+
+
+def test_a_list_quoted_with_an_ellipsis_is_found_and_words_far_apart_are_not():
+    text = "Schedule 1: Locations\n  Columbus\n  Cleveland\n  Lexington\n\n  Troy\n700 Settlement"
+    assert sa.passages_found("Columbus Cleveland Lexington ... Troy", text)
+    far = "the rebate " + "filler " * 60 + "is doubled"
+    assert not sa.passages_found("the rebate is doubled", far)

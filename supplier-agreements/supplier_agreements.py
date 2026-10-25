@@ -10,6 +10,7 @@ with what they paid and what we claimed. A person reviews every claim and sends 
 from __future__ import annotations
 
 import argparse
+import bisect
 import csv
 import email
 import email.policy
@@ -324,11 +325,39 @@ def line_in(quote: str, amount: float, text: str, reach: int = 300) -> bool:
     return False
 
 
+def words(text: str) -> list[str]:
+    """The words and numbers in a text, ignoring case, punctuation and hyphens: "R-\n454B" and "R-454B" are the same."""
+    return re.findall(r"[a-z0-9]+", text.lower().replace("’", "'").replace("'", ""))
+
+
+def in_order(want: list[str], have: list[str], gap: int = 30) -> bool:
+    """True if every word of `want` appears in `have` in order, with at most `gap` other words between one and the
+    next: a passage the PDF broke up (a table cell interleaved with its neighbours) is still found, and words
+    scattered across a document are not."""
+    if not want:
+        return False
+    at: dict[str, list[int]] = defaultdict(list)
+    for i, w in enumerate(have):
+        at[w].append(i)
+    reach = at.get(want[0], [])  # where the passage so far can end, in order
+    for w in want[1:]:
+        nxt = []
+        for i in at.get(w, []):
+            j = bisect.bisect_left(reach, i - gap - 1)  # the earliest place that's close enough before i
+            if j < len(reach) and reach[j] < i:
+                nxt.append(i)
+        if not (reach := nxt):
+            return False
+    return True
+
+
 def passages_found(quote: str, text: str) -> bool:
-    """True if every passage of the quote is in the document. Passages joined by "..." may come from anywhere in it:
-    what they mean together is the checker's to confirm, not their distance apart."""
-    pieces = [p_ for p_ in re.split(r"\.\.\.|…", quote) if p_.strip()]
-    return bool(pieces) and all(quote_found(p_, text) for p_ in pieces)
+    """True if every passage of the quote is in the document, word for word in order, however the PDF laid it out.
+    Passages joined by "..." may come from anywhere in it: what they mean together is the checker's to confirm."""
+    pieces = [words(p_) for p_ in re.split(r"\.\.\.|…", quote)]
+    pieces = [p_ for p_ in pieces if p_]
+    have = words(text)
+    return sum(map(len, pieces)) >= 3 and all(in_order(p_, have) for p_ in pieces)
 
 
 def in_quote(value: float, quote: str) -> bool:
