@@ -560,7 +560,7 @@ class Desk:
     def __init__(self, read, check=None, lines=None):
         self.read = read
         self.check = check or (lambda p: {"terms": []})
-        self.lines = lines or (lambda p: {"lines": [{"kind": "volume tiers", "clear": True} for _ in p["lines"]]})
+        self.lines = lines or (lambda p: {"lines": [{"kind": "volume tiers"} for _ in p["lines"]]})
         self.calls = []
 
     def complete(self, system, user, max_tokens=2000):
@@ -692,7 +692,7 @@ def test_a_statement_line_the_checker_reads_as_paying_another_term_goes_to_a_per
     m = Desk(
         reading(tier_term()),
         check=lambda p: as_checked(),
-        lines=lambda p: {"lines": [{"kind": "growth", "clear": True, "why": "it says growth"}]},
+        lines=lambda p: {"lines": [{"kind": "growth", "why": "it says growth"}]},
     )
     _, st, people = sa.read_supplier("Acme", list(docs().values()), m, 25000.0)
     assert st is None and any(p.what == "statement" and "growth" in p.reason for p in people)
@@ -737,3 +737,16 @@ def test_a_second_reading_counts_only_with_words_from_the_document_that_support_
     m = Desk(reading(tier_term()), check=lambda p: unsupported)
     terms, _, _ = sa.read_supplier("Acme", list(docs().values()), m, 25000.0)
     assert [t.kind for t in terms] == ["volume tiers"]
+
+
+def test_a_second_kind_for_a_statement_line_counts_only_with_words_that_support_it():
+    for words, settled in (("not on the statement", True), ("Volume rebate on", False)):
+        m = Desk(
+            reading(tier_term()),
+            check=lambda p: as_checked(),
+            lines=lambda p, w=words: {
+                "lines": [{"kind": "volume tiers", "other_kind": {"kind": "growth", "words": w}}]
+            },
+        )
+        _, st, _ = sa.read_supplier("Acme", list(docs().values()), m, 25000.0)
+        assert (st is not None) is settled, words
