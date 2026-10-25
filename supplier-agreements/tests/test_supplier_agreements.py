@@ -576,7 +576,13 @@ class Desk:
 
 
 def as_checked(**kw):
-    t = {"applies": "yes", "clear": True, "why": "", "tiers": [[1000000, 1.0], [2000000, 2.0]], "retroactive": True}
+    t = {
+        "applies": "yes",
+        "other_reading": None,
+        "why": "",
+        "tiers": [[1000000, 1.0], [2000000, 2.0]],
+        "retroactive": True,
+    }
     t.update(kw)
     return {"terms": [t]}
 
@@ -624,7 +630,7 @@ def test_a_date_or_place_the_checker_reads_differently_goes_to_a_person():
         "added_locations": ["Pittsburgh", "Louisville"],
         "from": "2025-03-03",
     }
-    agree = {"applies": "yes", "clear": True, "why": "", "added_locations": ["louisville", "PITTSBURGH"]}
+    agree = {"applies": "yes", "why": "", "added_locations": ["louisville", "PITTSBURGH"]}
     for other, used in (
         ({"from": "2025-03-03"}, True),
         ({"from": "2025-03-10"}, False),
@@ -643,14 +649,14 @@ def test_a_start_of_january_first_is_the_same_as_no_start():
         "rate": 10,
         "from": "2025-01-01",
     }
-    m = Desk(reading(g), check=lambda p: {"terms": [{"applies": "yes", "clear": True, "rate": 10.0}]})
+    m = Desk(reading(g), check=lambda p: {"terms": [{"applies": "yes", "rate": 10.0}]})
     terms, _, _ = sa.read_supplier("Acme", list(docs().values()), m, 25000.0)
     assert [t.kind for t in terms] == ["growth"]
 
 
-def test_a_term_the_checker_finds_unclear_not_binding_or_missing_goes_to_a_person():
+def test_a_term_with_a_second_reading_not_binding_or_missing_goes_to_a_person():
     for answer, word in (
-        (as_checked(clear=False, why="could be either"), "unclear"),
+        (as_checked(other_reading={"field": "retroactive", "value": False}, why="could be by band"), "two readings"),
         (as_checked(applies="informal", why="a rep's promise"), "outside the agreement"),
         (as_checked(applies="not 2025", why="next year's offer"), "doesn't apply"),
         ({"terms": []}, "found no"),

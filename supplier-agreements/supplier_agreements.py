@@ -409,9 +409,10 @@ Return JSON only:
   "applies": "yes" if it's part of the agreed {year} program; "informal" if it's promised outside the agreement \
 (a rep's personal email, say) rather than agreed in the program; "not {year}" if it has expired or is an offer \
 for {next}; "pays nothing" if it doesn't pay the distributor money back,
-  "clear": false only if the words could fairly be read two ways about how much is owed; otherwise true. A term \
-isn't unclear because it leaves something unsaid or doesn't repeat a definition: read it the way the supplier's \
-rebate team would, with the document's own definitions,
+  "other_reading": null; or, only if the words could fairly be read two ways about one of the fields below, \
+{"field": that field, "value": the other way to read it}. A term isn't open to two readings because it leaves \
+something unsaid or doesn't repeat a definition: read it the way the supplier's rebate team would, with the \
+document's own definitions,
   "why": one short sentence,
   and the fields for its kind:
   volume tiers: "tiers": [[threshold dollars, rate percent], ...] the full table, lowest first, and "retroactive": \
@@ -534,8 +535,8 @@ def checked_terms(
     supplier: str, terms: list[Term], by_name: dict[str, Doc], model, year: str
 ) -> tuple[list[Term], list[Person]]:
     """One checker call for each kind of term in each document cited. A term is used only if the checker found a
-    term of that kind there that applies to the year, reads clearly, and agrees with the reader on every field
-    its money depends on. An unusable answer accepts nothing it was checking."""
+    term of that kind there that applies to the year, agrees with the reader on every field its money depends on,
+    and sees no second reading of any of them. An unusable answer accepts nothing it was checking."""
     groups: dict[tuple[str, str], list[Term]] = defaultdict(list)
     for t in terms:
         groups[(t.doc, t.kind)].append(t)
@@ -591,10 +592,16 @@ def checked_terms(
                         True,
                     )
                 )
-            elif match.get("clear") is False:
+            elif isinstance(match.get("other_reading"), dict):
+                o = match["other_reading"]
                 people.append(
                     Person(
-                        supplier, what, f"the checker found the words unclear: {match.get('why', '')}", t.quote, name
+                        supplier,
+                        what,
+                        f"the checker found two readings: {o.get('field')} as {match.get(str(o.get('field')))!r} or "
+                        f"{o.get('value')!r} ({match.get('why', '')})",
+                        t.quote,
+                        name,
                     )
                 )
             else:
