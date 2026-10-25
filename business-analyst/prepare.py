@@ -26,9 +26,27 @@ BUSINESSES = {
                  "names": "select name from erp_sales_reps"},
     "fabricator": {"folder": "simulations/fabricator", "schemas": ["main"],
                    "names": "select name from hr_employees"},
-    "summit": {"folder": "simulation", "schemas": ["fsm", "portal", "acct", "inbox", "inv", "ext"],
-               "names": "select name from fsm.technicians"},
+    # Summit: the five systems, the weather and the warehouse's own conformed layer (dw, built by the
+    # simulation's warehouse script, not by an analysis). Its primer is cut to the development businesses' level
+    # (primers/summit.md: the corpus primer without its "three things that will bite you" and the share of visits
+    # with no hours), and its table list is generated the way theirs were. No concepts or saved queries.
+    "summit": {"folder": "simulation", "schemas": ["fsm", "portal", "acct", "inbox", "inv", "ext", "dw"],
+               "names": "select name from fsm.technicians", "primer": "primers/summit.md", "tables_doc": True},
 }
+
+
+def tables_doc(wh: Path) -> str:
+    """Every table with its row count and columns, as the development businesses' table lists are."""
+    con = duckdb.connect(str(wh), read_only=True)
+    lines = ["# Tables", "", "Every table in the warehouse, with its row count and columns.", ""]
+    for schema, table in con.execute("select table_schema, table_name from information_schema.tables "
+                                     "order by 1, 2").fetchall():
+        n = con.execute(f'select count(*) from "{schema}"."{table}"').fetchone()[0]
+        cols = con.execute("select column_name, data_type from information_schema.columns where table_schema = ? "
+                           "and table_name = ? order by ordinal_position", [schema, table]).fetchall()
+        lines += [f"## {schema}.{table} ({n:,} rows)", "", ", ".join(f"`{c}` {t.lower()}" for c, t in cols), ""]
+    con.close()
+    return "\n".join(lines)
 
 
 def prepare(name: str, corpus: Path, out: Path) -> None:
@@ -53,9 +71,14 @@ def prepare(name: str, corpus: Path, out: Path) -> None:
     target.execute("DETACH src")
     target.close()
     source.close()
-    for doc in ("layer0-context-primer.md", "layer2-tables.md"):
-        if (src / "dw-docs" / doc).exists():
-            shutil.copy(src / "dw-docs" / doc, dest / "docs" / doc)
+    if cfg.get("primer"):
+        shutil.copy(HERE / cfg["primer"], dest / "docs" / "layer0-context-primer.md")
+    else:
+        shutil.copy(src / "dw-docs" / "layer0-context-primer.md", dest / "docs" / "layer0-context-primer.md")
+    if cfg.get("tables_doc"):
+        (dest / "docs" / "layer2-tables.md").write_text(tables_doc(wh))
+    else:
+        shutil.copy(src / "dw-docs" / "layer2-tables.md", dest / "docs" / "layer2-tables.md")
     (dest / "staff-names.json").write_text(json.dumps(sorted(set(names))))
 
     truth = dest / "truth.duckdb"
