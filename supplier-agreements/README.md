@@ -22,7 +22,7 @@ For the program year in `records/program.json`, supplier by supplier, largest pu
 3. **Checks each term** (code, then an AI checker).
 
    **What code can check exactly.** A term goes on only if:
-   - each passage of its words is in the document it names, word for word and in order, ignoring case, punctuation, hyphens and how the PDF laid it out (a table cell interleaved with its neighbours is still found; passages joined by "..." may come from anywhere in the document);
+   - each passage of its words is in the document it names, word for word and in order (up to 30 other words allowed between two of them), ignoring case, punctuation, hyphens and how the PDF laid it out (a table cell interleaved with its neighbours is still found; passages joined by "..." may come from anywhere in the document);
    - every number in it is in those words, and every tier is in the document as its threshold followed closely by its rate;
    - co-op says what share is reimbursed, added locations say when they start counting, and a tier table says whether its rate applies from the first dollar;
    - its tiers rise, and its rates are between 0 and 10%.
