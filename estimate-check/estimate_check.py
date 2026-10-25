@@ -581,8 +581,9 @@ def priced(kind: str, req: Req | None, e: dict, lines: list[dict], data: Data) -
     for ln in lines:
         if ln["cost_code"] == code and line_amount(ln) > 0:
             return ln
-    for ln in lines:
-        if any(re.search(w, ln["description"], re.I) for w in KINDS[kind][2]) and line_amount(ln) > 0:
+    for ln in lines:  # folded into another line: only what it says it includes counts, not, say, a maker's name
+        folded = ln["description"].partition("incl.")[2]
+        if any(re.search(w, folded, re.I) for w in KINDS[kind][2]) and line_amount(ln) > 0:
             return ln
     return None
 

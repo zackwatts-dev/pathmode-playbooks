@@ -535,3 +535,26 @@ def test_the_offline_stand_in_answers_the_checker_by_agreeing(tmp_path):
     model = OfflineModel(E.offline)
     E.run(folder, model)
     assert any(s == E.CHECK_SYSTEM for s, _ in model.calls)
+
+
+def test_a_manufacturers_name_on_another_line_doesnt_price_a_requirement():
+    """Found after the 2023 held-back test: "Johnson Controls or equal" on the equipment line counted as a controls
+    line. On a line that isn't the requirement's own cost code, only what the line says it includes ("incl. ...", the
+    estimating export's convention) prices it."""
+    assert not E.priced(
+        "controls", req("controls"), EST, [line("23-0500", "Equipment per schedule: Johnson Controls or equal")], D()
+    )
+    assert E.priced(
+        "controls",
+        req("controls"),
+        EST,
+        [line("23-0500", "Equipment per schedule: Trane or equal; incl. DDC controls")],
+        D(),
+    )
+    assert E.priced(
+        "warranty",
+        req("warranty"),
+        EST,
+        [line("23-0500", "Equipment per schedule: Daikin Applied or equal; incl. extended warranty")],
+        D(),
+    )
